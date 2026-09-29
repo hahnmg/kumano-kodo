@@ -1,0 +1,10 @@
+.icon-circle {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: var(--border-hairline) solid var(--color-hair);
+    border-radius: var(--radius-full);
+}

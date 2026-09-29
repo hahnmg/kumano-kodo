@@ -1,0 +1,14 @@
+.logo {
+    display: inline-flex;
+    gap: var(--space-5);
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo__bird {
+    color: var(--color-accent);
+}
+
+.logo__wordmark {
+    color: var(--color-ink);
+}

@@ -1,0 +1,40 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+}
+
+.field__label {
+    color: var(--color-muted);
+}
+
+.field__box {
+    display: flex;
+    gap: var(--space-10);
+    align-items: center;
+    border-bottom: var(--border-hairline) solid var(--color-hair);
+    color: var(--color-muted);
+}
+
+.field__control {
+    width: 100%;
+    padding: var(--space-10) 0;
+    border: 0;
+    border-bottom: var(--border-hairline) solid var(--color-hair);
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-ink);
+}
+
+.field__box .field__control {
+    border-bottom: 0;
+}
+
+.field__control::placeholder {
+    color: var(--color-muted);
+}
+
+.field__control:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}

@@ -1,0 +1,19 @@
+.slider-dots {
+    display: flex;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.slider-dots__dot {
+    width: 24px;
+    height: 6px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius);
+    background: var(--color-hair);
+    cursor: pointer;
+}
+
+.slider-dots__dot--active {
+    background: var(--color-accent);
+}

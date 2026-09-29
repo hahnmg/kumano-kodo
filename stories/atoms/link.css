@@ -1,0 +1,10 @@
+.link {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}

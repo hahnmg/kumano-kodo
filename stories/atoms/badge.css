@@ -1,0 +1,7 @@
+.badge {
+    display: inline-block;
+    padding: var(--space-4) var(--space-10);
+    border-radius: var(--radius-pill);
+    background: var(--color-hair);
+    color: var(--color-ink);
+}

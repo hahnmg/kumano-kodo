@@ -1,0 +1,4 @@
+.field__control--textarea {
+    min-height: 120px;
+    resize: vertical;
+}

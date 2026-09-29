@@ -1,0 +1,18 @@
+.choice {
+    display: flex;
+    gap: var(--space-12);
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.choice__input {
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    margin: var(--space-4) 0 0;
+    accent-color: var(--color-accent);
+}
+
+.choice--checkbox .choice__label {
+    color: var(--color-muted);
+}
