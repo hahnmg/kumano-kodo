@@ -54,7 +54,7 @@ Hover follows the same form language as the rest: no boxes, no fills.
 
 - A hairline turns into an accent line drawn from left to right (tiles, list rows, teasers, CTA cards).
 - Arrows move a few pixels in their direction; the download icon moves down.
-- Teaser images zoom slowly; text links grow an underline; navigation changes colour only, never underlined.
+- Teaser images zoom slowly; text links grow an underline; navigation changes colour only, never underlined. The logo does not move.
 - Durations and the curve are tokens (`--motion-fast`, `--motion-base`, `--motion-slow`, `--ease-out`), code-only because Figma has no motion variables. With "reduce motion" set in the OS they drop to zero.
 
 ## Where things are

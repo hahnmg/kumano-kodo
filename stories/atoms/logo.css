@@ -7,13 +7,8 @@
 
 .logo__bird {
     color: var(--color-accent);
-    transition: transform var(--motion-base) var(--ease-out);
 }
 
 .logo__wordmark {
     color: var(--color-ink);
-}
-
-.logo:hover .logo__bird {
-    transform: translateY(-2px) rotate(-6deg);
 }

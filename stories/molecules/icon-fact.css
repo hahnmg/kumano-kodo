@@ -1,7 +1,7 @@
 .icon-fact {
     display: flex;
-    gap: var(--space-16);
-    align-items: flex-start;
+    gap: var(--space-12);
+    align-items: center;
 }
 
 .icon-fact__text {

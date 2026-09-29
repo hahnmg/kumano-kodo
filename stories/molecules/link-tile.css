@@ -1,6 +1,6 @@
 .link-tile {
     display: flex;
-    gap: var(--space-16);
+    gap: var(--space-12);
     align-items: center;
     padding: var(--space-24) 0;
     background:

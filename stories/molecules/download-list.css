@@ -7,7 +7,7 @@
 
 .download-list__row {
     display: flex;
-    gap: var(--space-16);
+    gap: var(--space-12);
     align-items: center;
     padding: var(--space-16) 0;
     background:
