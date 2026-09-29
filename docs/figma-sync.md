@@ -23,6 +23,10 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [ ] Slider: arrows disabled at either end, dots follow the scroll position; stage track runs to the viewport edge
 - [ ] Lightbox: dark full-screen view with close, previous and next buttons; new `close` icon
 
+- [ ] Navigation flyouts: dropdown (Practical) and full-width mega panel (The route) with link columns, text and teaser; mobile accordion
+- [ ] Slider: first card aligned to the container on load, no scrollbar
+- [ ] Lightbox: frosted glass background instead of solid
+
 ## Known differences between Figma and code
 
 - Photos `farn` and `laternen` are not in the Figma file: the Kohechi row keeps its old image, the Person Card default keeps its old portrait.

@@ -111,10 +111,38 @@ const build = (p: Photos) => {
         ],
     };
 
+    // Header flyouts: the route opens a full-width panel, practical a plain dropdown.
+    const routeMenu = {
+        kind: 'mega' as const,
+        columns: [
+            { title: 'Stages', links: stages.map((s) => ({ label: `${s.stage} · ${s.title}`, href: '#' })) },
+            { title: 'Places', links: places.map((pl) => ({ label: pl.title, href: '#' })) },
+        ],
+        text: {
+            title: 'The Nakahechi',
+            html: '<p>The old imperial route from Tanabe to the three grand shrines of Kumano. Four days on foot, 68 km, and a bus when the legs give up.</p>',
+        },
+        teaser: {
+            image: stages[2].image,
+            title: stages[2].title,
+            subtitle: stages[2].stats,
+            meta: 'Day 3 · 9:20 h',
+            badge: 'Longest stage',
+            href: '#',
+        },
+        overview: { label: 'All about the route', href: '#' },
+    };
+    const practicalMenu = {
+        kind: 'dropdown' as const,
+        links: ['Getting there and buses', 'Accommodation', 'Trail markers and safety', 'Maps and timetables', 'Newsletter'].map(
+            (label) => ({ label, href: '#' }),
+        ),
+    };
+
     const kumano = {
         nav: [
-            { label: 'The route', href: '#', active: true, hasChildren: true },
-            { label: 'Practical', href: '#', hasChildren: true },
+            { label: 'The route', href: '#', active: true, menu: routeMenu },
+            { label: 'Practical', href: '#', menu: practicalMenu },
             { label: 'Photos', href: '#' },
         ],
         hero: {
@@ -233,7 +261,7 @@ const build = (p: Photos) => {
             { label: 'The route', href: '#', active: true },
             { label: 'Stages', href: '#' },
             { label: 'Places', href: '#' },
-            { label: 'Practical', href: '#' },
+            { label: 'Practical', href: '#', menu: practicalMenu },
             { label: 'Photos', href: '#' },
         ],
         routes: [

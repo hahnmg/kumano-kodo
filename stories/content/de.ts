@@ -114,10 +114,39 @@ const build = (p: Photos): LocaleContent => {
         ],
     };
 
+    // Header flyouts: the route opens a full-width panel, practical a plain dropdown.
+    const routeMenu = {
+        kind: 'mega' as const,
+        columns: [
+            { title: 'Etappen', links: stages.map((s) => ({ label: `${s.stage} · ${s.title}`, href: '#' })) },
+            { title: 'Orte', links: places.map((pl) => ({ label: pl.title, href: '#' })) },
+        ],
+        text: {
+            title: 'Der Nakahechi',
+            html: '<p>Die alte Kaiserroute von Tanabe zu den drei großen Schreinen von Kumano. Vier Tage zu Fuß, 68 km, und ein Bus, wenn die Beine nicht mehr wollen.</p>',
+        },
+        teaser: {
+            image: stages[2].image,
+            title: stages[2].title,
+            subtitle: stages[2].stats,
+            meta: 'Tag 3 · 9:20 Std.',
+            badge: 'Längste Etappe',
+            href: '#',
+        },
+        overview: { label: 'Alles zur Route', href: '#' },
+    };
+    const practicalMenu = {
+        kind: 'dropdown' as const,
+        links: ['Anreise und Busse', 'Unterkunft', 'Wegmarken und Sicherheit', 'Karten und Fahrpläne', 'Newsletter'].map((label) => ({
+            label,
+            href: '#',
+        })),
+    };
+
     const kumano = {
         nav: [
-            { label: 'Die Route', href: '#', active: true, hasChildren: true },
-            { label: 'Praktisches', href: '#', hasChildren: true },
+            { label: 'Die Route', href: '#', active: true, menu: routeMenu },
+            { label: 'Praktisches', href: '#', menu: practicalMenu },
             { label: 'Fotos', href: '#' },
         ],
         hero: {
@@ -235,7 +264,7 @@ const build = (p: Photos): LocaleContent => {
             { label: 'Die Route', href: '#', active: true },
             { label: 'Etappen', href: '#' },
             { label: 'Orte', href: '#' },
-            { label: 'Praktisches', href: '#' },
+            { label: 'Praktisches', href: '#', menu: practicalMenu },
             { label: 'Fotos', href: '#' },
         ],
         routes: [

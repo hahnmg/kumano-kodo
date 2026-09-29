@@ -4,10 +4,19 @@
     gap: var(--space-40);
 }
 
+/* The first card lines up with the page container, while the track itself still runs to the viewport edge. */
 .slider__track {
+    --slider-edge: max(var(--gutter), (100% - var(--container-page)) / 2);
+
     position: relative;
-    scroll-padding-inline: var(--gutter);
+    padding-inline: var(--slider-edge);
+    scroll-padding-inline: var(--slider-edge);
     scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.slider__track::-webkit-scrollbar {
+    display: none;
 }
 
 .slider__track:focus-visible {
@@ -18,6 +27,11 @@
 .slider__dots {
     display: flex;
     justify-content: center;
+}
+
+/* In a bleed section the heading and dots keep to the container edge the track starts at. */
+.section--bleed .slider > :not(.slider__track) {
+    padding-inline: max(var(--gutter), (100% - var(--container-page)) / 2);
 }
 
 .icon-button:disabled {

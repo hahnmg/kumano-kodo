@@ -6,6 +6,7 @@ import '../src/styles/base.css';
 import './docs.css';
 import { bindLightbox } from '../src/scripts/lightbox';
 import { bindMenuToggle } from '../src/scripts/menu-toggle';
+import { bindNavFlyouts } from '../src/scripts/nav-flyout';
 import { bindSchemeToggle, syncSchemeToggles } from '../src/scripts/scheme-toggle';
 import { bindSliders, syncSliders } from '../src/scripts/slider';
 import { isLocale, locales } from '../stories/templates/content';
@@ -19,6 +20,7 @@ const updateGlobals = (globals: Record<string, string>) => addons.getChannel().e
 // The header controls drive the toolbar, so the toolbar and the page never disagree.
 bindSchemeToggle(document, (scheme) => updateGlobals({ scheme }));
 bindMenuToggle(document);
+bindNavFlyouts(document);
 bindSliders(document);
 bindLightbox(document);
 document.addEventListener('click', (event) => {

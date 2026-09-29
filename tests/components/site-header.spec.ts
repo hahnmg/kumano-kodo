@@ -6,7 +6,7 @@ import { expectAccessible, mount } from '../support/accessibility';
 describe('site-header', () => {
     it('marks the active nav item and language, without a theme picker', () => {
         const el = mount(siteHeader({ nav: kumano.nav, languages }));
-        expect(el.querySelector('nav [aria-current="page"]')?.textContent).toBe('The route');
+        expect(el.querySelector('.site-header__list > li > [aria-current]')?.textContent).toBe('The route');
         expect(el.querySelector('.site-header__languages [aria-current="true"]')?.getAttribute('data-locale')).toBe('en');
         expect(el.querySelector('[data-theme-value]')).toBeNull();
     });
@@ -25,7 +25,7 @@ describe('site-header', () => {
             }),
         );
         expect(el.querySelector('.site-header__nav')?.getAttribute('aria-label')).toBe(ui.mainNav);
-        expect(el.querySelector('[aria-current="true"]')?.getAttribute('lang')).toBe('ja');
+        expect(el.querySelector('.site-header__languages [aria-current="true"]')?.getAttribute('lang')).toBe('ja');
     });
     it('passes axe', () => expectAccessible(siteHeader({ nav: kumano.nav, languages })));
 });

@@ -112,10 +112,33 @@ const build = (p: Photos): LocaleContent => {
         ],
     };
 
+    // Header flyouts: the route opens a full-width panel, practical a plain dropdown.
+    const routeMenu = {
+        kind: 'mega' as const,
+        columns: [
+            { title: '区間', links: stages.map((s) => ({ label: `${s.stage} · ${s.title}`, href: '#' })) },
+            { title: '見どころ', links: places.map((pl) => ({ label: pl.title, href: '#' })) },
+        ],
+        text: { title: '中辺路', html: '<p>田辺から熊野三山へ向かう、かつての御幸道。徒歩で四日間、68 km。足が限界ならバスもある。</p>' },
+        teaser: {
+            image: stages[2].image,
+            title: stages[2].title,
+            subtitle: stages[2].stats,
+            meta: '3日目 · 9時間20分',
+            badge: '最長区間',
+            href: '#',
+        },
+        overview: { label: 'ルートのすべて', href: '#' },
+    };
+    const practicalMenu = {
+        kind: 'dropdown' as const,
+        links: ['アクセスとバス', '宿泊', '道標と安全', '地図と時刻表', 'ニュースレター'].map((label) => ({ label, href: '#' })),
+    };
+
     const kumano = {
         nav: [
-            { label: 'ルート', href: '#', active: true, hasChildren: true },
-            { label: '実用情報', href: '#', hasChildren: true },
+            { label: 'ルート', href: '#', active: true, menu: routeMenu },
+            { label: '実用情報', href: '#', menu: practicalMenu },
             { label: '写真', href: '#' },
         ],
         hero: {
@@ -233,7 +256,7 @@ const build = (p: Photos): LocaleContent => {
             { label: 'ルート', href: '#', active: true },
             { label: '区間', href: '#' },
             { label: '見どころ', href: '#' },
-            { label: '実用情報', href: '#' },
+            { label: '実用情報', href: '#', menu: practicalMenu },
             { label: '写真', href: '#' },
         ],
         routes: [
