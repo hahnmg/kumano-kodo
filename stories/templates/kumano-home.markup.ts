@@ -33,7 +33,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
                     sectionHeading(home.why),
                     split(
                         richText({ html: kumano.intro.map((p) => `<p>${p}</p>`).join('') }),
-                        figure({ images: [photos.steinbruecke], caption: home.bridgeCaption, labels: lightbox }),
+                        figure({ images: [photos['forest-stream']], caption: home.bridgeCaption, labels: lightbox }),
                         'text-media',
                     ),
                 ],
@@ -73,7 +73,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
                     split(placeCard(kumano.places[0]), placeCard(kumano.places[1]), 'wide-narrow'),
                     split(
                         placeCard(kumano.places[2]),
-                        figure({ images: [photos.krabbe, photos.nebelbaum], caption: home.roadsideCaption, labels: lightbox }),
+                        figure({ images: [photos['land-crab'], photos['cedar-canopy']], caption: home.roadsideCaption, labels: lightbox }),
                         'narrow-wide',
                     ),
                 ],

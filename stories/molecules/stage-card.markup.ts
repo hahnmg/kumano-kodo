@@ -9,7 +9,7 @@ export interface StageCardProps {
 }
 
 export const stageCard = ({ image, stage, stats, title, description }: StageCardProps): string =>
-    `<article class="stage-card">${img(image, 'stage-card__image', 420, 525)}` +
+    `<article class="stage-card">${img(image, 'stage-card__image', '(width <= 600px) 80vw, 420px')}` +
     `<div class="stage-card__meta"><p class="stage-card__stage type-label">${esc(stage)}</p><p class="stage-card__stats type-caption">${esc(stats)}</p></div>` +
     `<h3 class="stage-card__title type-h4">${esc(title)}</h3>` +
     `<p class="stage-card__description type-small">${esc(description)}</p></article>`;

@@ -5,7 +5,7 @@ import { textMedia, type TextMediaProps } from './text-media.markup';
 const meta: Meta<TextMediaProps> = {
     title: 'Molecules/Text & Media',
     render: localized(textMedia, (c) => ({
-        image: c.photos.onsen,
+        image: c.kumano.places[1].image,
         title: c.kumano.places[1].title,
         text: c.kumano.places[1].description,
         link: { label: c.ui.readMore, href: '#' },

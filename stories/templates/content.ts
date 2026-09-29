@@ -1,30 +1,21 @@
 import type { Image } from '../../src/lib/html';
+import manifest from '../content/photos.json';
 import { de } from '../content/de';
 import { en, type LocaleContent } from '../content/en';
 import { ja } from '../content/ja';
 
-export const photoNames = [
-    'zedernweg',
-    'wegmarke',
-    'talblick',
-    'sonnenpfad',
-    'kammweg',
-    'nebelberge',
-    'steinbruecke',
-    'nachi',
-    'onsen',
-    'torii',
-    'krabbe',
-    'nebelbaum',
-    'farn',
-    'laternen',
-    'bus',
-] as const;
-export type PhotoName = (typeof photoNames)[number];
+// Web versions of the trip photos, built by scripts/build-images.mjs from the local originals.
+export const photoNames = Object.keys(manifest) as PhotoName[];
+export type PhotoName = keyof typeof manifest;
 export type Photos = Record<PhotoName, Image>;
 
+export interface PhotoText {
+    alt: string;
+    place: string;
+}
+
 export interface LocaleModule<C> {
-    alts: Record<PhotoName, string>;
+    photos: Record<PhotoName, PhotoText>;
     build: (photos: Photos) => C;
 }
 
@@ -36,7 +27,34 @@ const modules: Record<Locale, LocaleModule<LocaleContent>> = { en, de, ja };
 
 const build = (locale: Locale) => {
     const m = modules[locale];
-    const photos = Object.fromEntries(photoNames.map((n) => [n, { src: `img/${n}.jpg`, alt: m.alts[n] }])) as Photos;
+    // Captions carry place, date and time from the photo itself.
+    const when = (iso: string) => {
+        const d = new Date(`${iso}:00`);
+        const day = new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long' }).format(d);
+        const time = new Intl.DateTimeFormat(locale, { hour: '2-digit', minute: '2-digit', hour12: false }).format(d);
+        return `${day}, ${time}`;
+    };
+    const photos = Object.fromEntries(
+        photoNames.map((n) => {
+            const file = manifest[n];
+            const text = m.photos[n];
+            const url = (w: string) => `img/photos/${n}-${w}.jpg`;
+            return [
+                n,
+                {
+                    src: url('1200'),
+                    srcset: Object.entries(file.sizes)
+                        .map(([w, px]) => `${url(w)} ${px}w`)
+                        .join(', '),
+                    full: url('2400'),
+                    width: 1200,
+                    height: Math.round((1200 * file.height) / file.width),
+                    alt: text.alt,
+                    caption: file.taken ? `${text.place}, ${when(file.taken)}` : text.place,
+                },
+            ];
+        }),
+    ) as Photos;
     const languages = (Object.keys(locales) as Locale[]).map((l) => ({
         code: l.toUpperCase(),
         locale: l,

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { stat, type StatProps } from './stat.markup';
 
-const onImage = (html: string) => `<div style="padding:40px;background:url(img/nebelberge.jpg) center/cover">${html}</div>`;
+const onImage = (html: string) => `<div style="padding:40px;background:url(img/photos/sea-of-clouds-1200.jpg) center/cover">${html}</div>`;
 
 const meta: Meta<StatProps> = {
     title: 'Molecules/Stat',

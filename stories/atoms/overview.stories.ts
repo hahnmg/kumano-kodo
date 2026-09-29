@@ -47,7 +47,7 @@ export const Overview: StoryObj = {
             row(
                 'Button',
                 button({ label: ui.subscribe }) +
-                    `<span style="display:inline-flex;gap:12px;padding:24px;background:url(img/nebelberge.jpg) center/cover">${button({ label: kumano.hero.actions[0].label, variant: 'light' })}${button({ label: kumano.hero.actions[1].label, variant: 'outline' })}</span>`,
+                    `<span style="display:inline-flex;gap:12px;padding:24px;background:url(img/photos/sea-of-clouds-1200.jpg) center/cover">${button({ label: kumano.hero.actions[0].label, variant: 'light' })}${button({ label: kumano.hero.actions[1].label, variant: 'outline' })}</span>`,
             ) +
             row('Link', link({ label: ui.readMore, href: '#' }) + link({ label: pages.detail.back, href: '#', direction: 'back' })) +
             row(
@@ -65,7 +65,7 @@ export const Overview: StoryObj = {
                     iconCircle({ name: 'clock' }) +
                     sliderDots({ count: 5, label: ui.card }),
             ) +
-            row('Avatar', avatar(photos.zedernweg) + avatar({ ...photos.onsen, size: 'small' })) +
+            row('Avatar', avatar(photos['stone-path-walkers']) + avatar({ ...photos['outdoor-bath'], size: 'small' })) +
             row(
                 'Fields',
                 `<div style="display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:32px">` +

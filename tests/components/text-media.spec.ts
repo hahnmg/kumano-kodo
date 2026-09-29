@@ -3,7 +3,7 @@ import { textMedia } from '../../stories/molecules/text-media.markup';
 import { photos } from '../../stories/templates/content';
 import { expectAccessible, mount } from '../support/accessibility';
 
-const props = { image: photos.steinbruecke, title: 'Jugendgruppe', text: 'Jeden Samstag.', link: { label: 'Mehr', href: '#' } };
+const props = { image: photos['forest-stream'], title: 'Jugendgruppe', text: 'Jeden Samstag.', link: { label: 'Mehr', href: '#' } };
 
 describe('text-media', () => {
     it('sets the image side as a modifier', () => {

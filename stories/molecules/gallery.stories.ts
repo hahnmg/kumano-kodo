@@ -5,7 +5,7 @@ import { gallery, type GalleryProps } from './gallery.markup';
 const meta: Meta<GalleryProps> = {
     title: 'Molecules/Gallery',
     render: localized(gallery, ({ photos: p, samples }) => ({
-        images: [p.zedernweg, p.nachi, p.onsen, p.torii, p.steinbruecke, p.krabbe],
+        images: [p['morning-bus'], p['cedar-canopy'], p['walker-in-mist'], p['oji-shrine'], p['yunomine-street'], p['outdoor-bath']],
         caption: samples.galleryCaption,
     })),
 };

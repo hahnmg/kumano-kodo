@@ -13,7 +13,24 @@ export const cx = (...names: (string | false | undefined | null)[]): string => n
 export interface Image {
     src: string;
     alt: string;
+    srcset?: string;
+    // The largest file, for the lightbox.
+    full?: string;
+    width?: number;
+    height?: number;
+    caption?: string;
 }
 
-export const img = ({ src, alt }: Image, className: string, width?: number, height?: number): string =>
-    `<img${attrs({ class: className, src, alt, width, height, loading: 'lazy', decoding: 'async' })}>`;
+// `sizes` tells the browser how wide the image is shown, so it picks the smallest file from srcset that is sharp.
+export const img = (image: Image, className: string, sizes = '(width <= 900px) 100vw, 50vw', eager = false): string =>
+    `<img${attrs({
+        class: className,
+        src: image.src,
+        srcset: image.srcset,
+        sizes: image.srcset ? sizes : undefined,
+        alt: image.alt,
+        width: image.width,
+        height: image.height,
+        loading: eager ? 'eager' : 'lazy',
+        decoding: 'async',
+    })}>`;

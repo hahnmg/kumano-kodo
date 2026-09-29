@@ -7,8 +7,8 @@ describe('stage-card', () => {
     it('renders image, stage, stats and title', () => {
         const el = mount(stageCard(kumano.stages[0]));
         expect(el.querySelector('img')?.getAttribute('alt')).toBe(kumano.stages[0].image.alt);
-        expect(el.querySelector('.stage-card__stage')?.textContent).toBe('Stage 01');
-        expect(el.querySelector('h3')?.textContent).toBe('Takijiri → Takahara');
+        expect(el.querySelector('.stage-card__stage')?.textContent).toBe(kumano.stages[0].stage);
+        expect(el.querySelector('h3')?.textContent).toBe(kumano.stages[0].title);
     });
     it('passes axe', () => expectAccessible(stageCard(kumano.stages[0])));
 });

@@ -11,7 +11,7 @@ describe('teaser-card', () => {
                 ?.getAttribute('href'),
         ).toBe('/x');
         expect(mount(teaserCard({ ...guide.entries[0], href: '/x' })).querySelector('.badge')).toBeNull();
-        expect(mount(teaserCard({ ...guide.entries[2], href: '/x' })).querySelector('.badge')?.textContent).toBe('Longest stage');
+        expect(mount(teaserCard({ ...guide.entries[1], href: '/x' })).querySelector('.badge')?.textContent).toBe('Longest day');
     });
     it('sets the heading level', () =>
         expect(mount(teaserCard({ ...guide.entries[0], href: '#', level: 2 })).querySelector('h2')).not.toBeNull());

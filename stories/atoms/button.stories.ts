@@ -4,7 +4,7 @@ import { button, type ButtonProps } from './button.markup';
 
 const onImage = { backgrounds: { disable: true } };
 const photo = (html: string) =>
-    `<div style="padding:40px;background:url(img/nebelberge.jpg) center/cover;display:inline-flex;gap:12px">${html}</div>`;
+    `<div style="padding:40px;background:url(img/photos/sea-of-clouds-1200.jpg) center/cover;display:inline-flex;gap:12px">${html}</div>`;
 
 const meta: Meta<ButtonProps> = {
     title: 'Atoms/Button',

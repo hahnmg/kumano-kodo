@@ -6,7 +6,7 @@ import { gallery, type GalleryProps } from './gallery.markup';
 const meta: Meta<GalleryProps> = {
     title: 'Molecules/Lightbox',
     render: localized(gallery, ({ photos: p, samples, ui }) => ({
-        images: [p.nachi, p.onsen, p.torii],
+        images: [p['seaside-station'], p['nachi-pagoda'], p['harbour-ferry']],
         caption: samples.galleryCaption,
         labels: { close: ui.close, previous: ui.previous, next: ui.next },
     })),

@@ -3,7 +3,7 @@ import { gallery } from '../../stories/molecules/gallery.markup';
 import { photos } from '../../stories/templates/content';
 import { expectAccessible, mount } from '../support/accessibility';
 
-const images = [photos.zedernweg, photos.nachi, photos.onsen];
+const images = [photos['morning-bus'], photos['cedar-canopy'], photos['walker-in-mist']];
 
 describe('gallery', () => {
     it('renders every image and an optional caption', () => {

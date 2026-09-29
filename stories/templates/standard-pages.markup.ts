@@ -127,7 +127,7 @@ export const detailPage = (c: Content = content()): string => {
                     stack(
                         [
                             figure({
-                                images: [photos.talblick],
+                                images: [photos['misty-valley']],
                                 caption: d.caption,
                                 rule: false,
                                 labels: { close: ui.close, previous: ui.previous, next: ui.next },

@@ -4,7 +4,7 @@ import { avatar, type AvatarProps } from './avatar.markup';
 
 const meta: Meta<AvatarProps> = {
     title: 'Atoms/Avatar',
-    render: localized(avatar, (c) => c.photos.zedernweg),
+    render: localized(avatar, (c) => c.photos['stone-path-walkers']),
     argTypes: { size: { control: 'inline-radio', options: ['large', 'small'] } },
 };
 export default meta;

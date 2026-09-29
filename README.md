@@ -62,6 +62,14 @@ Hover follows the same form language as the rest: no boxes, no fills.
 - Teaser images zoom slowly; text links grow an underline; navigation changes colour only, never underlined. The logo does not move.
 - Durations and the curve are tokens (`--motion-fast`, `--motion-base`, `--motion-slow`, `--ease-out`), code-only because Figma has no motion variables. With "reduce motion" set in the OS they drop to zero.
 
+## Photos
+
+The 27 trip photos live as originals in `img/original` on the maintainer's machine only; that folder is not in git
+(about 400 MB). `npm run images` builds the web versions into `img/photos`: 640, 1200 and 2400 px, rotated upright,
+sRGB, all metadata including GPS removed. It also writes `stories/content/photos.json` with size and capture time,
+which the captions use. The web versions and the manifest are committed. The older files directly in `img/` belong to
+the archived v3 export only.
+
 ## Where things are
 
 | Path                                   | Content                                                     |

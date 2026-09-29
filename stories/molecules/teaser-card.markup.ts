@@ -13,7 +13,7 @@ export interface TeaserCardProps {
 }
 
 export const teaserCard = ({ image, title, href, subtitle, meta, badge: badgeLabel, level = 3 }: TeaserCardProps): string =>
-    `<article class="teaser-card"><div class="teaser-card__media">${img(image, 'teaser-card__image', 314, 314)}</div>` +
+    `<article class="teaser-card"><div class="teaser-card__media">${img(image, 'teaser-card__image', '(width <= 600px) 100vw, (width <= 900px) 50vw, 320px')}</div>` +
     `<div class="teaser-card__body">` +
     `<${level === 'none' ? 'p' : `h${level}`} class="teaser-card__title type-h4"><a${attrs({ href })}>${esc(title)}</a></${level === 'none' ? 'p' : `h${level}`}>` +
     (subtitle ? `<p class="teaser-card__subtitle type-small">${esc(subtitle)}</p>` : '') +

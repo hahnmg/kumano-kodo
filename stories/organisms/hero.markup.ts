@@ -12,7 +12,7 @@ export interface HeroProps {
 }
 
 export const hero = ({ image, eyebrow, title, teaser, actions, stats }: HeroProps): string =>
-    `<section class="hero">${img(image, 'hero__image')}<div class="hero__shade"></div><div class="hero__content">` +
+    `<section class="hero">${img(image, 'hero__image', '100vw', true)}<div class="hero__shade"></div><div class="hero__content">` +
     `<p class="hero__eyebrow type-label">${esc(eyebrow)}</p>` +
     `<h1 class="hero__title type-hero">${esc(title)}</h1>` +
     `<div class="hero__teaser"><p class="type-lead">${esc(teaser)}</p><div class="hero__actions">` +

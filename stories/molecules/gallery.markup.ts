@@ -8,7 +8,7 @@ export interface GalleryProps {
 }
 
 export const lightboxLink = (image: Image, className: string): string =>
-    `<a${attrs({ class: 'lightbox-link', href: image.src, 'data-lightbox': true, 'aria-haspopup': 'dialog' })}>${img(image, className)}</a>`;
+    `<a${attrs({ class: 'lightbox-link', href: image.full ?? image.src, 'data-lightbox': true, 'aria-haspopup': 'dialog' })}>${img(image, className)}</a>`;
 
 export const gallery = ({ images, caption, labels }: GalleryProps): string =>
     `<figure${attrs({ class: 'gallery', ...lightboxGroupAttrs(labels) })}><div class="gallery__grid">${images.map((i) => lightboxLink(i, 'gallery__image')).join('')}</div>` +

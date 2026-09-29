@@ -8,12 +8,12 @@ const meta: Meta<FigureProps> = { title: 'Molecules/Figure' };
 export default meta;
 
 export const Single: StoryObj<FigureProps> = {
-    render: localized(frame, (c) => ({ images: [c.photos.steinbruecke], caption: c.home.bridgeCaption })),
+    render: localized(frame, (c) => ({ images: [c.photos['forest-stream']], caption: c.home.bridgeCaption })),
 };
 export const Pair: StoryObj<FigureProps> = {
-    render: localized(frame, (c) => ({ images: [c.photos.krabbe, c.photos.nebelbaum], caption: c.home.roadsideCaption })),
+    render: localized(frame, (c) => ({ images: [c.photos['land-crab'], c.photos['cedar-canopy']], caption: c.home.roadsideCaption })),
 };
 export const Unruled: StoryObj<FigureProps> = {
     args: { rule: false },
-    render: localized(frame, (c) => ({ images: [c.photos.talblick], caption: c.pages.detail.caption })),
+    render: localized(frame, (c) => ({ images: [c.photos['misty-valley']], caption: c.pages.detail.caption })),
 };
