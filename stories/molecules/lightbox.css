@@ -18,7 +18,7 @@
     outline-offset: 2px;
 }
 
-/* Photos read best on dark ground in either scheme, so the box uses the fixed on-image colours. */
+/* Frosted glass: the page stays visible as a blur behind a dark tint that holds in either scheme. */
 .lightbox {
     width: 100vw;
     max-width: none;
@@ -27,7 +27,8 @@
     margin: 0;
     padding: var(--space-56) var(--gutter) var(--space-24);
     border: 0;
-    background: var(--color-on-image-ink);
+    background: color-mix(in srgb, var(--color-on-image-ink) 72%, transparent);
+    backdrop-filter: blur(28px) saturate(1.2);
     color: var(--color-on-image);
 }
 
