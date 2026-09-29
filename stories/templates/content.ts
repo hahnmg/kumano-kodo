@@ -209,93 +209,77 @@ export const kumano = {
     },
 };
 
-// Fictional sample content for the standard templates; deliberately no real organisation or contact data.
-export const demo = {
+// Standard pages of the same trail journal. Figures come from the journal itself; phone and email are placeholders.
+const stageEntry = (i: number, meta: string, badge?: string) => ({
+    image: kumano.stages[i].image,
+    title: kumano.stages[i].title,
+    subtitle: kumano.stages[i].stats,
+    meta,
+    badge,
+});
+
+export const guide = {
     topbar: {
-        label: 'Besuchszeiten:',
-        value: 'Jeden 1. Sonntag im Monat von 14 bis 16 Uhr',
-        phone: '0000 000000',
-        email: 'info@example.org',
+        label: 'Trail status:',
+        value: 'All four Nakahechi stages open · checked May 2026',
+        phone: '+81 00 0000 0000',
+        email: 'post@kumano-kodo.example',
     },
     nav: [
-        { label: 'Tiervermittlung', href: '#', active: true },
-        { label: 'Fundtiere', href: '#' },
-        { label: 'Über uns', href: '#' },
-        { label: 'Mitmachen', href: '#' },
-        { label: 'Rat und Hilfe', href: '#' },
+        { label: 'The route', href: '#', active: true },
+        { label: 'Stages', href: '#' },
+        { label: 'Places', href: '#' },
+        { label: 'Practical', href: '#' },
+        { label: 'Photos', href: '#' },
     ],
-    animals: [
-        { image: photos.zedernweg, title: 'Gürkchen', subtitle: 'Mischling', meta: 'weiblich · geboren 2025' },
-        { image: photos.nachi, title: 'Mokky', subtitle: 'Weimaraner-Mix', meta: 'männlich' },
-        { image: photos.onsen, title: 'Donnie', subtitle: 'Mischling', meta: 'männlich', badge: 'älteres Tier' },
-        { image: photos.torii, title: 'Buddy', subtitle: 'Beagle-Mix', meta: 'männlich · geboren 2021' },
-        { image: photos.steinbruecke, title: 'Luna', subtitle: 'Schäferhund-Mix', meta: 'weiblich' },
-        { image: photos.krabbe, title: 'Rocky', subtitle: 'Boxer', meta: 'männlich' },
-        { image: photos.nebelbaum, title: 'Kira', subtitle: 'Labrador-Mix', meta: 'weiblich' },
-        { image: photos.farn, title: 'Bruno', subtitle: 'Mischling', meta: 'männlich' },
-    ],
-    categories: [
-        { image: photos.zedernweg, title: 'Hunde', meta: '39 Tiere', href: '#' },
-        { image: photos.onsen, title: 'Katzen', meta: '19 Tiere', href: '#' },
-        { image: photos.krabbe, title: 'Kleintiere', meta: '10 Tiere', href: '#' },
+    routes: [
+        { image: photos.zedernweg, title: 'Nakahechi', meta: '68 km in four days · this journal', href: '#' },
+        { image: photos.kammweg, title: 'Day trip', meta: '7 km · Hosshinmon → Hongu', href: '#' },
+        { image: photos.farn, title: 'Kohechi', meta: 'Koyasan → Hongu · next up', href: '#' },
     ],
     facts: [
-        { icon: 'clock' as const, label: 'Besuchszeiten', value: 'Jeden 1. Sonntag im Monat', note: 'von 14 bis 16 Uhr' },
-        { icon: 'phone' as const, label: 'Telefon', value: '0000 000000', note: 'Montag bis Sonntag 14:00 bis 16:30 Uhr' },
-        { icon: 'map-pin' as const, label: 'Adresse', value: 'Musterweg 1', note: '00000 Musterstadt' },
-        { icon: 'home' as const, label: 'Vermittelt', value: '2 997 Tiere', note: 'seit 2012' },
+        { icon: 'clock' as const, label: 'Best season', value: 'April and November', note: 'May works too, expect rain' },
+        { icon: 'map-pin' as const, label: 'Start', value: 'Takijiri-oji', note: 'Day 1 climbs 400 metres in one go' },
+        { icon: 'home' as const, label: 'Overnight', value: 'Minshuku', note: 'Book months ahead for May and November' },
+        { icon: 'file' as const, label: 'Walking time', value: '23 h 10 min', note: 'over four days, without breaks' },
     ],
-    help: [
+    entries: [
+        stageEntry(0, 'Day 1 · 2:10 h'),
+        stageEntry(1, 'Day 2 · 4:40 h'),
+        stageEntry(2, 'Day 3 · 9:20 h', 'Longest stage'),
+        stageEntry(3, 'Day 4 · 7:00 h'),
+        stageEntry(4, 'Half a day', 'Day trip'),
+        { image: photos.nachi, title: 'Nachi-no-Otaki', subtitle: 'Waterfall, 133 metres', meta: 'End of day 4' },
+        { image: photos.onsen, title: 'Yunomine Onsen', subtitle: 'Hot spring', meta: 'After day 3' },
+        { image: photos.torii, title: 'Kumano Nachi Taisha', subtitle: 'Shrine', meta: '467 steps from the village' },
+    ],
+    prep: [
         {
-            title: 'Spenden',
-            text: 'Futter, Tierarzt, Pflege: Jede Spende kommt unmittelbar bei unseren Tieren an.',
+            title: 'Book accommodation',
+            text: 'Takahara and Chikatsuyu each have a handful of minshuku, and in May and November they are full months ahead.',
             variant: 'featured' as const,
         },
-        { title: 'Gassi gehen', text: 'Unsere Hunde freuen sich über jeden Spaziergang – und über Menschen, die regelmäßig kommen.' },
+        { title: 'Pack for rain', text: 'Three of four days were wet. A dry change of clothes in a sealed bag helps more than gaiters.' },
         {
-            title: 'Tier gefunden?',
-            text: 'Zugelaufene Tiere melden Sie uns bitte umgehend. Hier sehen Sie, welche Fundtiere bei uns sind.',
+            title: 'Send your luggage ahead',
+            text: 'Luggage moves between the main villages, booked one day ahead through the Tanabe tourism office.',
         },
     ],
     tiles: [
-        { title: 'Tierabgabe', icon: 'home' as const },
-        { title: 'Infos zum Tierrecht', icon: 'file' as const },
-        { title: 'Jungvögeln helfen?', icon: 'alert' as const },
-        { title: 'Downloadbereich', icon: 'download' as const },
+        { title: 'Getting there and buses', icon: 'map-pin' as const },
+        { title: 'Accommodation', icon: 'home' as const },
+        { title: 'Trail markers and safety', icon: 'alert' as const },
+        { title: 'Maps and timetables', icon: 'download' as const },
     ],
-    team: [
-        { image: photos.steinbruecke, name: 'Alex Beispiel', role: 'Bereichsleitung Hunde', focus: 'Schwerpunkt Hunde' },
-        { image: photos.farn, name: 'Kim Muster', role: 'Tierpflegerin', focus: 'Schwerpunkt Hunde' },
-        { image: photos.laternen, name: 'Sam Probe', role: 'Tierpfleger', focus: 'Schwerpunkt Katzen' },
-        { image: photos.talblick, name: 'Robin Test', role: 'Tierpflegerin', focus: 'Schwerpunkt Kleintiere' },
-    ],
+    hosts: [{ image: photos.laternen, name: 'Minshuku host', role: 'Chikatsuyu', focus: '“The rain is part of it.”' }],
     footer: {
-        wordmark: 'Tierheim',
-        about: 'Tierschutzverein Musterstadt e. V. Beispielinhalt für das Design-System.',
-        columns: [
-            { title: 'Öffnungszeiten', links: [{ label: 'Besuch: 1. Sonntag im Monat' }, { label: 'Telefon: täglich 14–16:30 Uhr' }] },
-            {
-                title: 'Mitmachen',
-                links: [
-                    { label: 'Spenden', href: '#' },
-                    { label: 'Gassi gehen', href: '#' },
-                    { label: 'Pflegestelle', href: '#' },
-                ],
-            },
-            { title: 'Kontakt', links: [{ label: 'info@example.org' }, { label: '0000 000000' }] },
-        ],
-        notice: { title: 'Notfälle außerhalb der Öffnungszeiten:', text: 'Wenden Sie sich an die nächstgelegene Polizeiwache.' },
-        copyright: '© 2026 Tierschutzverein Musterstadt e. V. (Beispiel)',
-        legal: [
-            { label: 'Kontakt', href: '#' },
-            { label: 'Impressum', href: '#' },
-            { label: 'Datenschutz', href: '#' },
-        ],
+        ...kumano.footer,
+        notice: { title: 'Trail conditions:', text: 'After heavy rain, check the tourism office notices before you set out.' },
     },
 };
 
 export const richTextSample =
-    '<h2>Tierhaltung in Mietwohnungen</h2>' +
-    '<p>Ob Hund oder Katze erlaubt sind, regelt der Mietvertrag. Mehr dazu unter <a href="#">Tiervermittlung</a>.</p>' +
-    '<ul><li>Kleintiere sind in der Regel erlaubt</li><li>Hunde brauchen eine Zustimmung</li><li>Für Katzen gilt eine Einzelfallprüfung</li></ul>' +
-    '<h3>Was gilt bei Eigentum?</h3><p>Hier entscheidet die Hausordnung der Eigentümergemeinschaft.</p>';
+    '<h2>The long stage</h2>' +
+    '<p>26 km from Chikatsuyu to Hongu, the longest of the four days. At Mikoshi pass the mist broke briefly; after that it was downhill. To split it, catch the <a href="#">bus at Hosshinmon</a>.</p>' +
+    '<ul><li>Chikatsuyu: leave early, after breakfast at the minshuku</li><li>Mikoshi pass: where the mist broke</li><li>Hosshinmon: bus stop for anyone splitting the stage</li><li>Hongu: end of the stage</li></ul>' +
+    '<h3>Where to sleep</h3><p>Book the minshuku in Chikatsuyu months ahead; in May and November it is full.</p>';

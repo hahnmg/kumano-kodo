@@ -2,8 +2,9 @@ import type { Meta, StoryObj } from '@storybook/html-vite';
 import { factList, type FactListProps } from './fact-list.markup';
 
 const facts = [
-    { label: 'Gefunden am', value: '28.07.2026' },
-    { label: 'Fundort', value: 'Musterstadt, Beispielstraße' },
+    { label: 'Day', value: 'Day 3 · 15 May' },
+    { label: 'Distance', value: '25,9 km' },
+    { label: 'Walking time', value: '9:20 h' },
 ];
 
 const meta: Meta<FactListProps> = {
@@ -11,7 +12,7 @@ const meta: Meta<FactListProps> = {
     tags: ['autodocs'],
     render: (args) => `<div style="max-width:427px">${factList(args)}</div>`,
     argTypes: { layout: { control: 'inline-radio', options: ['inline', 'stacked'] } },
-    args: { title: 'Steckbrief', facts },
+    args: { title: 'Stage facts', facts },
 };
 export default meta;
 

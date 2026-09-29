@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { demo, kumano } from '../templates/content';
+import { guide, kumano } from '../templates/content';
 import { siteFooter, type SiteFooterProps } from './site-footer.markup';
 
 const meta: Meta<SiteFooterProps> = {
@@ -11,4 +11,4 @@ const meta: Meta<SiteFooterProps> = {
 export default meta;
 
 export const Kumano: StoryObj<SiteFooterProps> = { args: kumano.footer };
-export const WithNotice: StoryObj<SiteFooterProps> = { args: demo.footer };
+export const WithNotice: StoryObj<SiteFooterProps> = { args: guide.footer };

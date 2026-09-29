@@ -9,7 +9,7 @@ export interface TopbarProps {
 }
 
 export const topbar = ({ label, value, phone, email }: TopbarProps): string =>
-    `<aside class="topbar" aria-label="Kontakt und Öffnungszeiten">` +
+    `<aside class="topbar" aria-label="Trail status and contact">` +
     `<p class="topbar__hours">${icon({ name: 'clock', size: 16 })}<strong class="type-button">${esc(label)}</strong> <span class="type-small">${esc(value)}</span></p>` +
     `<p class="topbar__contact">` +
     `<a${attrs({ class: 'type-small', href: `tel:${phone.replace(/\s/g, '')}` })}>${icon({ name: 'phone', size: 16 })}${esc(phone)}</a>` +

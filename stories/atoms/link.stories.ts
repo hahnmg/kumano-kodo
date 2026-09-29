@@ -7,9 +7,9 @@ const meta: Meta<LinkProps> = {
     title: 'Atoms/Link',
     render: (args) => link(args),
     argTypes: { direction: { control: 'inline-radio', options: ['forward', 'back'] } },
-    args: { label: 'Mehr erfahren', href: '#', direction: 'forward' },
+    args: { label: 'Read more', href: '#', direction: 'forward' },
 };
 export default meta;
 
-export const Forward: StoryObj<LinkProps> = { args: { direction: 'forward', label: 'Mehr erfahren' } };
-export const Back: StoryObj<LinkProps> = { args: { direction: 'back', label: 'Zurück zur Übersicht' } };
+export const Forward: StoryObj<LinkProps> = { args: { direction: 'forward', label: 'Read more' } };
+export const Back: StoryObj<LinkProps> = { args: { direction: 'back', label: 'All stages' } };

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { demo, kumano } from '../templates/content';
+import { guide, kumano } from '../templates/content';
 import { siteHeader, type SiteHeaderProps } from './site-header.markup';
 
 const meta: Meta<SiteHeaderProps> = {
@@ -11,4 +11,4 @@ const meta: Meta<SiteHeaderProps> = {
 export default meta;
 
 export const Kumano: StoryObj<SiteHeaderProps> = { args: { nav: kumano.nav, languages: kumano.languages } };
-export const Standard: StoryObj<SiteHeaderProps> = { args: { nav: demo.nav, themes: false } };
+export const Standard: StoryObj<SiteHeaderProps> = { args: { nav: guide.nav, themes: false } };

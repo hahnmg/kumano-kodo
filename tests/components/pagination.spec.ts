@@ -7,8 +7,8 @@ describe('pagination', () => {
         const el = mount(pagination({ current: 1, total: 5, href: (p) => `?p=${p}` }));
         expect(el.querySelector('[aria-current="page"]')?.textContent).toBe('1');
         expect(el.textContent).toContain('…');
-        expect(el.querySelector('[aria-label="Vorherige Seite"]')).toBeNull();
-        expect(el.querySelector('[aria-label="Nächste Seite"]')?.getAttribute('href')).toBe('?p=2');
+        expect(el.querySelector('[aria-label="Previous page"]')).toBeNull();
+        expect(el.querySelector('[aria-label="Next page"]')?.getAttribute('href')).toBe('?p=2');
     });
     it('passes axe', () => expectAccessible(pagination({ current: 3, total: 9, href: (p) => `?p=${p}` })));
 });

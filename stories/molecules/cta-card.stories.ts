@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { demo } from '../templates/content';
+import { guide } from '../templates/content';
 import { ctaCard, type CtaCardProps } from './cta-card.markup';
 
 const meta: Meta<CtaCardProps> = {
@@ -7,9 +7,9 @@ const meta: Meta<CtaCardProps> = {
     tags: ['autodocs'],
     render: (args) => `<div style="max-width:426px">${ctaCard(args)}</div>`,
     argTypes: { variant: { control: 'inline-radio', options: ['default', 'featured'] } },
-    args: { linkLabel: 'Mehr erfahren', href: '#' },
+    args: { linkLabel: 'Read more', href: '#' },
 };
 export default meta;
 
-export const Default: StoryObj<CtaCardProps> = { args: { ...demo.help[1], variant: 'default' } };
-export const Featured: StoryObj<CtaCardProps> = { args: demo.help[0] };
+export const Default: StoryObj<CtaCardProps> = { args: { ...guide.prep[1], variant: 'default' } };
+export const Featured: StoryObj<CtaCardProps> = { args: guide.prep[0] };

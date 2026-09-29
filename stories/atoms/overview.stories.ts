@@ -46,13 +46,13 @@ export const Overview: StoryObj = {
             button({ label: 'Subscribe' }) +
                 `<span style="display:inline-flex;gap:12px;padding:24px;background:url(img/nebelberge.jpg) center/cover">${button({ label: 'See the stages', variant: 'light' })}${button({ label: 'Practical questions', variant: 'outline' })}</span>`,
         ) +
-        row('Link', link({ label: 'Mehr erfahren', href: '#' }) + link({ label: 'Zurück zur Übersicht', href: '#', direction: 'back' })) +
+        row('Link', link({ label: 'Read more', href: '#' }) + link({ label: 'All stages', href: '#', direction: 'back' })) +
         row(
             'Chip · Badge',
-            chip({ label: 'Hunde', href: '#', active: true }) +
-                chip({ label: 'Katzen', href: '#' }) +
-                chip({ label: 'Kleintiere', href: '#' }) +
-                badge({ label: 'älteres Tier' }),
+            chip({ label: 'Stages', href: '#', active: true }) +
+                chip({ label: 'Places', href: '#' }) +
+                chip({ label: 'Day trips', href: '#' }) +
+                badge({ label: 'Longest stage' }),
         ) +
         row('Icons', iconNames.map((name) => icon({ name })).join('')) +
         row(
@@ -64,22 +64,23 @@ export const Overview: StoryObj = {
         ) +
         row(
             'Avatar',
-            avatar({ src: 'img/zedernweg.jpg', alt: 'Dennis Kral' }) + avatar({ src: 'img/onsen.jpg', alt: 'Katzen', size: 'small' }),
+            avatar({ src: 'img/zedernweg.jpg', alt: 'Two walkers between tall cedars' }) +
+                avatar({ src: 'img/onsen.jpg', alt: 'Onsen pool under a wooden roof', size: 'small' }),
         ) +
         row(
             'Fields',
             `<div style="display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:32px">` +
                 textField({ label: 'Email address', name: 'email', placeholder: 'name@example.com' }) +
-                select({ label: 'Geschlecht', name: 'sex', options: ['alle', 'männlich', 'weiblich'] }) +
-                searchField({ label: 'Suchen', name: 'q', placeholder: 'z. B. Mischling' }) +
-                textarea({ label: 'Nachricht', name: 'message', placeholder: 'Ihre Nachricht' }) +
+                select({ label: 'Day', name: 'day', options: ['All days', 'Day 1', 'Day 2', 'Day 3', 'Day 4'] }) +
+                searchField({ label: 'Search', name: 'q', placeholder: 'e.g. Hongu' }) +
+                textarea({ label: 'Message', name: 'message', placeholder: 'Your question about the route' }) +
                 `</div>`,
         ) +
         row(
             'Choices',
             checkbox({ label: 'I would like to receive the newsletter.', name: 'c' }) +
-                radio({ label: 'Hund', name: 'r', value: 'dog', checked: true }) +
-                radio({ label: 'Katze', name: 'r', value: 'cat' }),
+                radio({ label: 'Nakahechi', name: 'r', value: 'nakahechi', checked: true }) +
+                radio({ label: 'Kohechi', name: 'r', value: 'kohechi' }),
         ) +
         `</div>`,
 };

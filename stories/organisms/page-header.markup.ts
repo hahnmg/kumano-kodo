@@ -11,5 +11,5 @@ export interface PageHeaderProps {
 export const pageHeader = ({ title, breadcrumb: trail, chips = [] }: PageHeaderProps): string =>
     `<div class="page-header"><div class="page-header__inner">${breadcrumb({ items: trail })}` +
     `<h1 class="page-header__title type-h2">${esc(title)}</h1>` +
-    (chips.length ? `<nav class="page-header__chips" aria-label="Kategorien">${chips.map(chip).join('')}</nav>` : '') +
+    (chips.length ? `<nav class="page-header__chips" aria-label="Categories">${chips.map(chip).join('')}</nav>` : '') +
     `</div></div>`;

@@ -6,9 +6,9 @@ const meta: Meta<DownloadListProps> = {
     render: (args) => `<div style="max-width:765px">${downloadList(args)}</div>`,
     args: {
         items: [
-            { title: 'Tierabgabevertrag', meta: 'PDF · 240 KB', href: '#' },
-            { title: 'Vermittlungsgebühren 2026', meta: 'PDF · 96 KB', href: '#' },
-            { title: 'Merkblatt Katzenhaltung', meta: 'PDF · 1,2 MB', href: '#' },
+            { title: 'Stage map Chikatsuyu → Hongu', meta: 'PDF · 1,2 MB', href: '#' },
+            { title: 'Bus timetable Hosshinmon – Hongu', meta: 'PDF · 96 KB', href: '#' },
+            { title: 'Packing list for rain', meta: 'PDF · 240 KB', href: '#' },
         ],
     },
 };

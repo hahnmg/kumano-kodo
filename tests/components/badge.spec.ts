@@ -4,6 +4,6 @@ import { expectAccessible, mount } from '../support/accessibility';
 
 describe('badge', () => {
     it('renders the label', () =>
-        expect(mount(badge({ label: 'älteres Tier' })).querySelector('.badge')?.textContent).toBe('älteres Tier'));
-    it('passes axe', () => expectAccessible(badge({ label: 'älteres Tier' })));
+        expect(mount(badge({ label: 'Longest stage' })).querySelector('.badge')?.textContent).toBe('Longest stage'));
+    it('passes axe', () => expectAccessible(badge({ label: 'Longest stage' })));
 });

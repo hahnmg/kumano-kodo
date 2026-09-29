@@ -4,10 +4,8 @@ import { expectAccessible, mount } from '../support/accessibility';
 
 describe('select', () => {
     it('selects the given value', () => {
-        const el = mount(select({ label: 'Geschlecht', name: 'sex', options: ['alle', 'männlich'], value: 'männlich' })).querySelector(
-            'select',
-        );
-        expect((el as HTMLSelectElement).value).toBe('männlich');
+        const el = mount(select({ label: 'Day', name: 'day', options: ['All days', 'Day 3'], value: 'Day 3' })).querySelector('select');
+        expect((el as HTMLSelectElement).value).toBe('Day 3');
     });
-    it('passes axe', () => expectAccessible(select({ label: 'Geschlecht', name: 'sex', options: ['alle', 'männlich', 'weiblich'] })));
+    it('passes axe', () => expectAccessible(select({ label: 'Day', name: 'day', options: ['All days', 'Day 3', 'Day 4'] })));
 });

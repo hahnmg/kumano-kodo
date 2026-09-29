@@ -6,7 +6,7 @@ import './textarea.css';
 const meta: Meta<TextareaProps> = {
     title: 'Atoms/Textarea',
     render: (args) => `<div style="max-width:539px">${textarea(args)}</div>`,
-    args: { label: 'Nachricht', name: 'message', placeholder: 'Ihre Nachricht' },
+    args: { label: 'Message', name: 'message', placeholder: 'Your question about the route' },
 };
 export default meta;
 

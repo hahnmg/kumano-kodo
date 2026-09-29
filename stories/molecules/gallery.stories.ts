@@ -7,7 +7,7 @@ const meta: Meta<GalleryProps> = {
     render: (args) => gallery(args),
     args: {
         images: [photos.zedernweg, photos.nachi, photos.onsen, photos.torii, photos.steinbruecke, photos.krabbe],
-        caption: 'Eindrücke vom Tag der offenen Tür 2026.',
+        caption: 'Notes from four days on the Nakahechi, May 2026.',
     },
 };
 export default meta;

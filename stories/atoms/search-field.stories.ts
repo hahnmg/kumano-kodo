@@ -6,7 +6,7 @@ import './text-field.css';
 const meta: Meta<SearchFieldProps> = {
     title: 'Atoms/Search Field',
     render: (args) => `<div style="max-width:450px">${searchField(args)}</div>`,
-    args: { label: 'Nach Namen oder Rasse suchen', name: 'q', placeholder: 'z. B. Mischling' },
+    args: { label: 'Search stages and places', name: 'q', placeholder: 'e.g. Hongu' },
 };
 export default meta;
 

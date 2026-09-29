@@ -6,7 +6,7 @@ export interface SliderDotsProps {
     label?: string;
 }
 
-export const sliderDots = ({ count, active = 0, label = 'Karte' }: SliderDotsProps): string =>
+export const sliderDots = ({ count, active = 0, label = 'Card' }: SliderDotsProps): string =>
     `<div class="slider-dots">` +
     Array.from(
         { length: count },

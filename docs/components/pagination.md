@@ -8,6 +8,6 @@ Page links with collapsed gaps; the current page in the accent colour.
 |---|---|
 | `current`, `total` | numbers |
 | `href` | function from page number to URL |
-| `label` | accessible name, default "Seiten" |
+| `label` | accessible name, default "Pages" |
 
 Tokens: `--color-muted`, `--color-ink`, `--color-accent`, `--space-8`.

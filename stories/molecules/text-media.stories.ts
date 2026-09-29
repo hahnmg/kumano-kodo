@@ -7,10 +7,10 @@ const meta: Meta<TextMediaProps> = {
     tags: ['autodocs'],
     render: (args) => textMedia(args),
     args: {
-        image: photos.steinbruecke,
-        title: 'Jugendgruppe',
-        text: 'Jeden zweiten Samstag lernen Kinder ab zehn Jahren, wie man Tiere versorgt, liest und respektiert.',
-        link: { label: 'Mehr erfahren', href: '#' },
+        image: photos.onsen,
+        title: 'Yunomine Onsen',
+        text: "Japan's oldest hot spring, in use since the twelfth century. After day three, the real reason to keep going.",
+        link: { label: 'Read more', href: '#' },
     },
 };
 export default meta;

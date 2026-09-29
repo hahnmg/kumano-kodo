@@ -5,13 +5,13 @@ const meta: Meta<SubNavProps> = {
     title: 'Molecules/Sub Nav',
     render: (args) => `<div style="max-width:290px">${subNav(args)}</div>`,
     args: {
-        title: 'Über uns',
+        title: 'The route',
         items: [
-            { label: 'Unser Team', href: '#', active: true },
-            { label: 'Kontakt', href: '#' },
-            { label: 'Ihr Weg zu uns', href: '#' },
-            { label: 'Jugendgruppe', href: '#' },
-            { label: 'Praktikum', href: '#' },
+            { label: 'Stage 01 · Takijiri → Takahara', href: '#' },
+            { label: 'Stage 02 · Takahara → Chikatsuyu', href: '#' },
+            { label: 'Stage 03 · Chikatsuyu → Hongu', href: '#', active: true },
+            { label: 'Stage 04 · Koguchi → Nachi', href: '#' },
+            { label: 'Optional · Hosshinmon → Hongu', href: '#' },
         ],
     },
 };

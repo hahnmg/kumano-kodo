@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { demo } from '../templates/content';
+import { guide } from '../templates/content';
 import { teaserCard, type TeaserCardProps } from './teaser-card.markup';
 
 const meta: Meta<TeaserCardProps> = {
@@ -9,5 +9,5 @@ const meta: Meta<TeaserCardProps> = {
 };
 export default meta;
 
-export const Default: StoryObj<TeaserCardProps> = { args: { ...demo.animals[0], href: '#' } };
-export const WithBadge: StoryObj<TeaserCardProps> = { args: { ...demo.animals[2], href: '#' } };
+export const Default: StoryObj<TeaserCardProps> = { args: { ...guide.entries[0], href: '#' } };
+export const WithBadge: StoryObj<TeaserCardProps> = { args: { ...guide.entries[2], href: '#' } };

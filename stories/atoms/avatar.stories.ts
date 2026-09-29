@@ -7,7 +7,7 @@ const meta: Meta<AvatarProps> = {
     title: 'Atoms/Avatar',
     render: (args) => avatar(args),
     argTypes: { size: { control: 'inline-radio', options: ['large', 'small'] } },
-    args: { src: 'img/zedernweg.jpg', alt: 'Dennis Kral', size: 'large' },
+    args: { src: 'img/zedernweg.jpg', alt: 'Two walkers between tall cedars', size: 'large' },
 };
 export default meta;
 

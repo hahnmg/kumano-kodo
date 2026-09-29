@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { mediaList } from '../../stories/molecules/media-list.markup';
-import { demo } from '../../stories/templates/content';
+import { guide } from '../../stories/templates/content';
 import { expectAccessible, mount } from '../support/accessibility';
 
-const props = { title: 'Tiere nach Art', items: demo.categories, more: { label: 'Alle Tiere ansehen', href: '#' } };
+const props = { title: 'Ways to walk it', items: guide.routes, more: { label: 'Compare the routes', href: '#' } };
 
 describe('media-list', () => {
     it('renders one link row per item', () => {

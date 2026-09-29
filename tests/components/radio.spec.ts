@@ -4,10 +4,12 @@ import { expectAccessible, mount } from '../support/accessibility';
 
 describe('radio', () => {
     it('renders a radio with value', () => {
-        const input = mount(radio({ label: 'Hund', name: 'a', value: 'dog', checked: true })).querySelector('input') as HTMLInputElement;
+        const input = mount(radio({ label: 'Nakahechi', name: 'a', value: 'nakahechi', checked: true })).querySelector(
+            'input',
+        ) as HTMLInputElement;
         expect(input.type).toBe('radio');
-        expect(input.value).toBe('dog');
+        expect(input.value).toBe('nakahechi');
         expect(input.checked).toBe(true);
     });
-    it('passes axe', () => expectAccessible(radio({ label: 'Hund', name: 'animal', value: 'dog' })));
+    it('passes axe', () => expectAccessible(radio({ label: 'Nakahechi', name: 'route', value: 'nakahechi' })));
 });

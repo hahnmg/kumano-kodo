@@ -7,7 +7,7 @@ describe('slider-dots', () => {
         const dots = mount(sliderDots({ count: 5, active: 2 })).querySelectorAll('button');
         expect(dots).toHaveLength(5);
         expect(dots[2].getAttribute('aria-current')).toBe('true');
-        expect(dots[0].getAttribute('aria-label')).toBe('Karte 1');
+        expect(dots[0].getAttribute('aria-label')).toBe('Card 1');
     });
     it('passes axe', () => expectAccessible(sliderDots({ count: 5 })));
 });

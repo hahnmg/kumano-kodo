@@ -5,7 +5,7 @@ import './badge.css';
 const meta: Meta<BadgeProps> = {
     title: 'Atoms/Badge',
     render: (args) => badge(args),
-    args: { label: 'älteres Tier' },
+    args: { label: 'Longest stage' },
 };
 export default meta;
 

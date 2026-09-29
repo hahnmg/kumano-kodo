@@ -5,15 +5,15 @@ import { expectAccessible, mount } from '../support/accessibility';
 describe('chip', () => {
     it('marks the active chip as current page', () => {
         expect(
-            mount(chip({ label: 'Hunde', href: '#', active: true }))
+            mount(chip({ label: 'Stages', href: '#', active: true }))
                 .querySelector('a')
                 ?.getAttribute('aria-current'),
         ).toBe('page');
         expect(
-            mount(chip({ label: 'Katzen', href: '#' }))
+            mount(chip({ label: 'Places', href: '#' }))
                 .querySelector('a')
                 ?.hasAttribute('aria-current'),
         ).toBe(false);
     });
-    it('passes axe', () => expectAccessible(chip({ label: 'Hunde', href: '#', active: true })));
+    it('passes axe', () => expectAccessible(chip({ label: 'Stages', href: '#', active: true })));
 });

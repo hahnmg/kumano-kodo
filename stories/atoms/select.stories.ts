@@ -7,7 +7,7 @@ import './select.css';
 const meta: Meta<SelectProps> = {
     title: 'Atoms/Select',
     render: (args) => `<div style="max-width:320px">${select(args)}</div>`,
-    args: { label: 'Geschlecht', name: 'sex', options: ['alle', 'männlich', 'weiblich'], value: 'alle' },
+    args: { label: 'Day', name: 'day', options: ['All days', 'Day 1', 'Day 2', 'Day 3', 'Day 4'], value: 'All days' },
 };
 export default meta;
 

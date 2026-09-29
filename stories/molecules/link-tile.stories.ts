@@ -6,7 +6,7 @@ const meta: Meta<LinkTileProps> = {
     title: 'Molecules/Link Tile',
     render: (args) => `<div style="max-width:640px">${linkTile(args)}</div>`,
     argTypes: { icon: { control: 'select', options: iconNames } },
-    args: { title: 'Tierabgabe', href: '#', icon: 'home' },
+    args: { title: 'Getting there and buses', href: '#', icon: 'map-pin' },
 };
 export default meta;
 

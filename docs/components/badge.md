@@ -2,7 +2,7 @@
 
 Figma: `Badge` (17:103). Markup: `stories/atoms/badge.markup.ts`.
 
-Short status label on a card, for example "älteres Tier".
+Short status label on a card, for example "Longest stage".
 
 | Prop | Values |
 |---|---|

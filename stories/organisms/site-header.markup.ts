@@ -24,10 +24,10 @@ export const navItem = ({ label, href, active, hasChildren }: NavItem): string =
 
 export const siteHeader = ({ nav, languages = [], themes = true }: SiteHeaderProps): string =>
     `<header class="site-header">${logo()}` +
-    `<nav class="site-header__nav" aria-label="Hauptnavigation"><ul class="site-header__list">${nav.map(navItem).join('')}</ul></nav>` +
+    `<nav class="site-header__nav" aria-label="Main navigation"><ul class="site-header__list">${nav.map(navItem).join('')}</ul></nav>` +
     `<div class="site-header__tools">` +
     (themes
-        ? `<div class="site-header__themes" role="group" aria-label="Farbthema">` +
+        ? `<div class="site-header__themes" role="group" aria-label="Colour theme">` +
           themeNames
               .map(
                   (t) =>
@@ -37,7 +37,7 @@ export const siteHeader = ({ nav, languages = [], themes = true }: SiteHeaderPro
           `</div>`
         : '') +
     (languages.length
-        ? `<ul class="site-header__languages" aria-label="Sprache">` +
+        ? `<ul class="site-header__languages" aria-label="Language">` +
           languages
               .map(
                   (l) =>
@@ -46,5 +46,5 @@ export const siteHeader = ({ nav, languages = [], themes = true }: SiteHeaderPro
               .join('') +
           `</ul>`
         : '') +
-    `<button class="site-header__scheme" type="button" aria-label="Hell oder dunkel"><span></span></button>` +
+    `<button class="site-header__scheme" type="button" aria-label="Light or dark"><span></span></button>` +
     `</div></header>`;

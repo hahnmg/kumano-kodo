@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { iconNames } from '../atoms/icon.markup';
-import { demo } from '../templates/content';
+import { guide } from '../templates/content';
 import { iconFact, type IconFactProps } from './icon-fact.markup';
 
 const meta: Meta<IconFactProps> = {
     title: 'Molecules/Icon Fact',
     render: (args) => `<div style="max-width:300px">${iconFact(args)}</div>`,
     argTypes: { icon: { control: 'select', options: iconNames } },
-    args: demo.facts[0],
+    args: guide.facts[0],
 };
 export default meta;
 

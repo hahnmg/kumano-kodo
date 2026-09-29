@@ -10,5 +10,5 @@ describe('gallery', () => {
         expect(mount(gallery({ images })).querySelectorAll('img')).toHaveLength(3);
         expect(mount(gallery({ images })).querySelector('figcaption')).toBeNull();
     });
-    it('passes axe', () => expectAccessible(gallery({ images, caption: 'Tag der offenen Tür' })));
+    it('passes axe', () => expectAccessible(gallery({ images, caption: 'Four days on the Nakahechi' })));
 });

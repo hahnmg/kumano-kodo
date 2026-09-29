@@ -10,7 +10,6 @@ import { iconFact } from '../molecules/icon-fact.markup';
 import { infoBox } from '../molecules/info-box.markup';
 import { linkTile } from '../molecules/link-tile.markup';
 import { pagination } from '../molecules/pagination.markup';
-import { personCard } from '../molecules/person-card.markup';
 import { richText } from '../molecules/rich-text.markup';
 import { sectionHeading } from '../molecules/section-heading.markup';
 import { subNav } from '../molecules/sub-nav.markup';
@@ -20,33 +19,39 @@ import { pageHeader } from '../organisms/page-header.markup';
 import { siteFooter } from '../organisms/site-footer.markup';
 import { siteHeader } from '../organisms/site-header.markup';
 import { topbar } from '../organisms/topbar.markup';
-import { demo, photos, richTextSample } from './content';
+import { guide, kumano, photos, richTextSample } from './content';
 
 const chrome = (main: string): string =>
-    topbar(demo.topbar) + siteHeader({ nav: demo.nav, themes: false }) + `<main>${main}</main>` + siteFooter(demo.footer);
+    topbar(guide.topbar) + siteHeader({ nav: guide.nav, languages: kumano.languages }) + `<main>${main}</main>` + siteFooter(guide.footer);
 
-const teasers = (count: number, level: 2 | 3 = 3) => demo.animals.slice(0, count).map((a) => teaserCard({ ...a, href: '#', level }));
+const teasers = (entries: typeof guide.entries, level: 2 | 3 = 3) => entries.map((e) => teaserCard({ ...e, href: '#', level }));
 
 export const startPage = (): string =>
     chrome(
         heroSplit({
-            title: 'Ein Zuhause für Tiere, die eines suchen',
-            text: 'Wir versorgen Hunde, Katzen und Kleintiere, bis sie ein neues Zuhause gefunden haben. Lernen Sie unsere Tiere kennen oder helfen Sie uns dabei, für sie da zu sein.',
-            action: { label: 'Tiere kennenlernen', href: '#' },
-            panel: { title: 'Tiere nach Art', items: demo.categories, more: { label: 'Alle Tiere ansehen', href: '#' } },
+            title: 'Four days on the Nakahechi',
+            text: 'A private trail journal from May 2026: the stages, the places worth a detour and what I wish I had known before setting out.',
+            action: { label: 'See the stages', href: '#' },
+            panel: { title: 'Ways to walk it', items: guide.routes, more: { label: 'Compare the routes', href: '#' } },
         }) +
-            section({ label: 'Kontakt', content: grid(demo.facts.map(iconFact), 4) }) +
+            section({ label: 'At a glance', content: grid(guide.facts.map(iconFact), 4) }) +
             section({
                 space: 'flush-top',
-                content: stack([sectionHeading({ title: 'Diese Tiere suchen ein Zuhause' }), grid(teasers(4), 4)], 56),
+                content: stack(
+                    [
+                        sectionHeading({ eyebrow: 'Stages', title: 'Four days, one stage each' }),
+                        grid(teasers(guide.entries.slice(0, 4)), 4),
+                    ],
+                    56,
+                ),
             }) +
             section({
                 tone: 'sunk',
                 content: stack(
                     [
-                        sectionHeading({ title: 'So können Sie helfen' }),
+                        sectionHeading({ eyebrow: 'Practical', title: 'Before you go' }),
                         grid(
-                            demo.help.map((h) => ctaCard({ ...h, linkLabel: 'Mehr erfahren', href: '#' })),
+                            guide.prep.map((p) => ctaCard({ ...p, linkLabel: 'Read more', href: '#' })),
                             3,
                         ),
                     ],
@@ -56,9 +61,9 @@ export const startPage = (): string =>
             section({
                 content: stack(
                     [
-                        sectionHeading({ title: 'Rat und Hilfe' }),
+                        sectionHeading({ title: 'Plan the walk' }),
                         grid(
-                            demo.tiles.map((t) => linkTile({ ...t, href: '#' })),
+                            guide.tiles.map((t) => linkTile({ ...t, href: '#' })),
                             2,
                         ),
                     ],
@@ -70,24 +75,20 @@ export const startPage = (): string =>
 export const listPage = (): string =>
     chrome(
         pageHeader({
-            title: 'Hunde',
-            breadcrumb: [{ label: 'Start', href: '#' }, { label: 'Tiervermittlung', href: '#' }, { label: 'Hunde' }],
-            chips: ['Hunde', 'Katzen', 'Kleintiere', 'Ältere Tiere', 'Vermittelte Tiere'].map((label, i) => ({
-                label,
-                href: '#',
-                active: i === 0,
-            })),
+            title: 'Stages and places',
+            breadcrumb: [{ label: 'Start', href: '#' }, { label: 'The route', href: '#' }, { label: 'Stages and places' }],
+            chips: ['All', 'Stages', 'Places', 'Day trips'].map((label, i) => ({ label, href: '#', active: i === 0 })),
         }) +
             section({
                 content: stack(
                     [
                         cluster([
-                            searchField({ label: 'Nach Namen oder Rasse suchen', name: 'q', placeholder: 'z. B. Mischling' }),
-                            select({ label: 'Geschlecht', name: 'sex', options: ['alle', 'männlich', 'weiblich'] }),
-                            richText({ html: '<p>39 Tiere</p>' }),
+                            searchField({ label: 'Search stages and places', name: 'q', placeholder: 'e.g. Hongu' }),
+                            select({ label: 'Day', name: 'day', options: ['All days', 'Day 1', 'Day 2', 'Day 3', 'Day 4'] }),
+                            richText({ html: '<p>12 entries</p>' }),
                         ]),
-                        grid(teasers(8, 2), 4),
-                        center(pagination({ current: 1, total: 5, href: (p) => `?page=${p}` })),
+                        grid(teasers(guide.entries, 2), 4),
+                        center(pagination({ current: 1, total: 2, href: (p) => `?page=${p}` })),
                     ],
                     56,
                 ),
@@ -97,19 +98,24 @@ export const listPage = (): string =>
 export const detailPage = (): string =>
     chrome(
         pageHeader({
-            title: 'Bulldoggen Mischling',
-            breadcrumb: [{ label: 'Start', href: '#' }, { label: 'Fundtiere', href: '#' }, { label: 'Fundhunde' }],
+            title: 'Chikatsuyu → Hongu',
+            breadcrumb: [
+                { label: 'Start', href: '#' },
+                { label: 'The route', href: '#' },
+                { label: 'Stages', href: '#' },
+                { label: 'Chikatsuyu → Hongu' },
+            ],
         }) +
             section({
                 content: split(
                     stack(
                         [
-                            figure({ images: [photos.steinbruecke], caption: 'Aufgenommen am Fundort.' }),
+                            figure({ images: [photos.talblick], caption: 'Looking back over the valley before the climb. Day 3, 15 May.' }),
                             richText({ html: richTextSample }),
                             downloadList({
                                 items: [
-                                    { title: 'Tierabgabevertrag', meta: 'PDF · 240 KB', href: '#' },
-                                    { title: 'Vermittlungsgebühren 2026', meta: 'PDF · 96 KB', href: '#' },
+                                    { title: 'Stage map Chikatsuyu → Hongu', meta: 'PDF · 1,2 MB', href: '#' },
+                                    { title: 'Bus timetable Hosshinmon – Hongu', meta: 'PDF · 96 KB', href: '#' },
                                 ],
                             }),
                         ],
@@ -118,21 +124,23 @@ export const detailPage = (): string =>
                     stack(
                         [
                             factList({
-                                title: 'Steckbrief',
+                                title: 'Stage facts',
                                 facts: [
-                                    { label: 'Gefunden am', value: '28.07.2026' },
-                                    { label: 'Fundort', value: 'Musterstadt, Beispielstraße' },
+                                    { label: 'Day', value: 'Day 3 · 15 May' },
+                                    { label: 'Distance', value: '25,9 km' },
+                                    { label: 'Ascent', value: '+1 180 m' },
+                                    { label: 'Walking time', value: '9:20 h' },
                                 ],
                             }),
                             infoBox({
-                                title: 'Interesse an diesem Tier?',
-                                text: 'Rufen Sie uns an oder schreiben Sie uns – wir beraten Sie gern.',
+                                title: 'Split the stage?',
+                                text: 'Catch the bus at Hosshinmon and walk only the last 7 km to Hongu.',
                                 links: [
-                                    { label: '0000 000000', href: 'tel:0000000000' },
-                                    { label: 'info@example.org', href: 'mailto:info@example.org' },
+                                    { label: 'Bus timetable', href: '#' },
+                                    { label: 'Stay in Chikatsuyu', href: '#' },
                                 ],
                             }),
-                            link({ label: 'Zurück zur Übersicht', href: '#', direction: 'back' }),
+                            link({ label: 'All stages', href: '#', direction: 'back' }),
                         ],
                         40,
                     ),
@@ -141,18 +149,13 @@ export const detailPage = (): string =>
             }) +
             section({
                 tone: 'sunk',
-                label: 'Team',
+                label: 'Along the route',
                 content: split(
                     subNav({
-                        title: 'Über uns',
-                        items: [
-                            { label: 'Unser Team', href: '#', active: true },
-                            { label: 'Kontakt', href: '#' },
-                            { label: 'Ihr Weg zu uns', href: '#' },
-                            { label: 'Jugendgruppe', href: '#' },
-                        ],
+                        title: 'The route',
+                        items: kumano.stages.map((s, i) => ({ label: `${s.stage} · ${s.title}`, href: '#', active: i === 2 })),
                     }),
-                    grid(demo.team.map(personCard), 4),
+                    grid(teasers([guide.entries[1], guide.entries[3], guide.entries[6]]), 3),
                     'heading-content',
                 ),
             }),

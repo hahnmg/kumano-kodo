@@ -6,9 +6,9 @@ const meta: Meta<RadioProps> = {
     tags: ['autodocs'],
     title: 'Atoms/Radio',
     render: (args) => radio(args),
-    args: { label: 'Hund', name: 'animal', value: 'dog', checked: true },
+    args: { label: 'Nakahechi', name: 'route', value: 'nakahechi', checked: true },
 };
 export default meta;
 
 export const Checked: StoryObj<RadioProps> = { args: { checked: true } };
-export const Unchecked: StoryObj<RadioProps> = { args: { checked: false, label: 'Katze', value: 'cat' } };
+export const Unchecked: StoryObj<RadioProps> = { args: { checked: false, label: 'Kohechi', value: 'kohechi' } };
