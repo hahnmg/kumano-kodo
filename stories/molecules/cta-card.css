@@ -3,11 +3,17 @@
     flex-direction: column;
     gap: var(--space-12);
     padding-top: var(--space-24);
-    border-top: var(--border-hairline) solid var(--color-line);
+    background:
+        linear-gradient(var(--color-accent), var(--color-accent)) left top / 0 var(--border-hairline) no-repeat,
+        linear-gradient(var(--color-line), var(--color-line)) left top / 100% var(--border-hairline) no-repeat;
+    transition: background-size var(--motion-base) var(--ease-out);
 }
 
-.cta-card--featured {
-    border-top-color: var(--color-accent);
+.cta-card--featured,
+.cta-card:has(.link:hover) {
+    background-size:
+        100% var(--border-hairline),
+        100% var(--border-hairline);
 }
 
 .cta-card h3,

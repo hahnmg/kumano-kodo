@@ -10,13 +10,35 @@
     gap: var(--space-16);
     align-items: center;
     padding: var(--space-16) 0;
-    border-bottom: var(--border-hairline) solid var(--color-line);
+    background:
+        linear-gradient(var(--color-accent), var(--color-accent)) left bottom / 0 var(--border-hairline) no-repeat,
+        linear-gradient(var(--color-line), var(--color-line)) left bottom / 100% var(--border-hairline) no-repeat;
+    transition: background-size var(--motion-base) var(--ease-out);
     color: var(--color-ink);
     text-decoration: none;
 }
 
+.download-list__row .type-button {
+    transition: color var(--motion-fast) var(--ease-out);
+}
+
+.download-list__row > .icon:last-child {
+    transition: transform var(--motion-base) var(--ease-out);
+}
+
+.download-list__row:hover,
+.download-list__row:focus-visible {
+    background-size:
+        100% var(--border-hairline),
+        100% var(--border-hairline);
+}
+
 .download-list__row:hover .type-button {
     color: var(--color-accent);
+}
+
+.download-list__row:hover > .icon:last-child {
+    transform: translateY(3px);
 }
 
 .download-list__text {

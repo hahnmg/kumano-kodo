@@ -43,5 +43,14 @@
 
 .rich-text a {
     color: var(--color-accent);
+    text-decoration-thickness: var(--border-hairline);
     text-underline-offset: 0.2em;
+    transition:
+        text-decoration-thickness var(--motion-fast) var(--ease-out),
+        text-underline-offset var(--motion-fast) var(--ease-out);
+}
+
+.rich-text a:hover {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.3em;
 }

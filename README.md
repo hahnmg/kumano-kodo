@@ -44,9 +44,18 @@ Each component has four files and nothing else holds its markup:
 docs/components/<name>.md            definition: purpose, props, tokens, Figma node
 stories/<group>/<name>.markup.ts     the markup builder, the only copy of the HTML
 stories/<group>/<name>.css           styles, tokens only
-stories/<group>/<name>.stories.ts    Storybook: playground plus one story per variant
+stories/<group>/<name>.stories.ts    Storybook: one story per variant
 tests/components/<name>.spec.ts      structure and accessibility, using the same builder
 ```
+
+## Hover and motion
+
+Hover follows the same form language as the rest: no boxes, no fills.
+
+- A hairline turns into an accent line drawn from left to right (tiles, list rows, teasers, CTA cards).
+- Arrows move a few pixels in their direction; the download icon moves down.
+- Teaser images zoom slowly; text links grow an underline; navigation changes colour only, never underlined.
+- Durations and the curve are tokens (`--motion-fast`, `--motion-base`, `--motion-slow`, `--ease-out`), code-only because Figma has no motion variables. With "reduce motion" set in the OS they drop to zero.
 
 ## Where things are
 

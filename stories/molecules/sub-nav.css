@@ -12,12 +12,22 @@
 .sub-nav__link {
     display: block;
     padding: var(--space-12) 0;
-    border-bottom: var(--border-hairline) solid var(--color-line);
+    background:
+        linear-gradient(var(--color-accent), var(--color-accent)) left bottom / 0 var(--border-hairline) no-repeat,
+        linear-gradient(var(--color-line), var(--color-line)) left bottom / 100% var(--border-hairline) no-repeat;
     color: var(--color-muted);
     text-decoration: none;
+    transition:
+        background-size var(--motion-base) var(--ease-out),
+        color var(--motion-fast) var(--ease-out),
+        padding var(--motion-base) var(--ease-out);
 }
 
 .sub-nav__link:hover {
+    padding-left: var(--space-8);
+    background-size:
+        100% var(--border-hairline),
+        100% var(--border-hairline);
     color: var(--color-ink);
 }
 

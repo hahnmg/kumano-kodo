@@ -61,6 +61,19 @@ for (const mode of Color.modes) {
 out.push(block(":root,\n[data-theme='caramel']", ['--display-case: none;', '--display-tracking: 0em;']));
 out.push(block("[data-theme='violet']", ['--display-case: uppercase;', '--display-tracking: 0.09em;']));
 
+// Motion has no Figma variable type; one curve and three durations keep every hover effect in step.
+out.push(
+    block(':root', [
+        '--motion-fast: 160ms;',
+        '--motion-base: 320ms;',
+        '--motion-slow: 700ms;',
+        '--ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);',
+    ]),
+);
+out.push(
+    `@media (prefers-reduced-motion: reduce) {\n${block(':root', ['--motion-fast: 0ms;', '--motion-base: 0ms;', '--motion-slow: 0ms;'])}}\n`,
+);
+
 // Each text style becomes variables (for editorial HTML without classes) and a .type-* class using them.
 const slug = (name) => name.split('/')[1].toLowerCase().replace(/\s+/g, '-');
 const typeVars = [];

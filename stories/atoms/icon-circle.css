@@ -7,4 +7,7 @@
     height: 48px;
     border: var(--border-hairline) solid var(--color-hair);
     border-radius: var(--radius-full);
+    transition:
+        border-color var(--motion-base) var(--ease-out),
+        color var(--motion-base) var(--ease-out);
 }

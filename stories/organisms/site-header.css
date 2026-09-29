@@ -1,9 +1,10 @@
+/* Contents align with the page container; the bottom hairline still runs edge to edge. */
 .site-header {
     display: flex;
     gap: var(--space-24);
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-12) var(--gutter);
+    padding: var(--space-12) max(var(--gutter), (100% - var(--container-page)) / 2);
     border-bottom: var(--border-hairline) solid var(--color-line);
     background: var(--color-paper);
 }
@@ -31,6 +32,7 @@
     padding: var(--space-8) var(--space-12);
     color: var(--color-ink);
     text-decoration: none;
+    transition: color var(--motion-fast) var(--ease-out);
 }
 
 .site-header__link .icon {
@@ -63,6 +65,14 @@
     border-radius: var(--radius-full);
     opacity: 0.55;
     cursor: pointer;
+    transition:
+        opacity var(--motion-fast) var(--ease-out),
+        transform var(--motion-fast) var(--ease-out);
+}
+
+.site-header__theme:hover {
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .site-header__theme--caramel {
@@ -96,6 +106,11 @@
     padding: var(--space-5) var(--space-8);
     color: var(--color-muted);
     text-decoration: none;
+    transition: color var(--motion-fast) var(--ease-out);
+}
+
+.site-header__languages a:hover {
+    color: var(--color-ink);
 }
 
 .site-header__languages a[aria-current='true'] {
@@ -113,6 +128,11 @@
     border-radius: var(--radius-full);
     background: transparent;
     cursor: pointer;
+    transition: border-color var(--motion-fast) var(--ease-out);
+}
+
+.site-header__scheme:hover {
+    border-color: var(--color-ink);
 }
 
 .site-header__scheme span {

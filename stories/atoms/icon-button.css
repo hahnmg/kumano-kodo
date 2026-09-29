@@ -10,6 +10,14 @@
     background: transparent;
     color: var(--color-ink);
     cursor: pointer;
+    transition:
+        border-color var(--motion-fast) var(--ease-out),
+        background-color var(--motion-fast) var(--ease-out);
+}
+
+.icon-button:hover {
+    border-color: var(--color-ink);
+    background: color-mix(in srgb, var(--color-ink) 6%, transparent);
 }
 
 .icon-button:focus-visible {

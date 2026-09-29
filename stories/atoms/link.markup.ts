@@ -9,6 +9,8 @@ export interface LinkProps {
 }
 
 export const link = ({ label, href, direction = 'forward' }: LinkProps): string => {
-    const text = direction === 'back' ? `← ${label}` : `${label} →`;
-    return `<a${attrs({ class: 'link type-button', href })}>${esc(text)}</a>`;
+    // The arrow is decorative and moves on hover, so it sits in its own span outside the accessible name.
+    const arrow = `<span class="link__arrow" aria-hidden="true">${direction === 'back' ? '←' : '→'}</span>`;
+    const text = `<span class="link__label">${esc(label)}</span>`;
+    return `<a${attrs({ class: `link link--${direction} type-button`, href })}>${direction === 'back' ? `${arrow} ${text}` : `${text} ${arrow}`}</a>`;
 };

@@ -3,8 +3,30 @@
     text-decoration: none;
 }
 
-.link:hover,
+.link__label {
+    background: linear-gradient(currentcolor, currentcolor) left bottom / 0 var(--border-hairline) no-repeat;
+    transition: background-size var(--motion-base) var(--ease-out);
+}
+
+.link__arrow {
+    display: inline-block;
+    transition: transform var(--motion-base) var(--ease-out);
+}
+
+.link:hover .link__label,
+.link:focus-visible .link__label {
+    background-size: 100% var(--border-hairline);
+}
+
+.link--forward:hover .link__arrow {
+    transform: translateX(4px);
+}
+
+.link--back:hover .link__arrow {
+    transform: translateX(-4px);
+}
+
 .link:focus-visible {
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
 }

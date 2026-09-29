@@ -15,6 +15,7 @@
     height: 40px;
     color: var(--color-muted);
     text-decoration: none;
+    transition: color var(--motion-fast) var(--ease-out);
 }
 
 a.pagination__item:hover {

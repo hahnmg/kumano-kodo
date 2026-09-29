@@ -6,6 +6,14 @@
     border-radius: var(--radius);
     text-decoration: none;
     cursor: pointer;
+    transition:
+        background-color var(--motion-fast) var(--ease-out),
+        border-color var(--motion-fast) var(--ease-out),
+        transform var(--motion-fast) var(--ease-out);
+}
+
+.button:active {
+    transform: scale(0.97);
 }
 
 .button:focus-visible {
@@ -27,4 +35,17 @@
     background: transparent;
     border-color: color-mix(in srgb, var(--color-on-image) 70%, transparent);
     color: var(--color-on-image);
+}
+
+.button--primary:hover {
+    background: color-mix(in oklab, var(--color-ink) 82%, var(--color-paper));
+}
+
+.button--light:hover {
+    background: color-mix(in oklab, var(--color-on-image) 86%, var(--color-on-image-ink));
+}
+
+.button--outline:hover {
+    border-color: var(--color-on-image);
+    background: color-mix(in srgb, var(--color-on-image) 12%, transparent);
 }

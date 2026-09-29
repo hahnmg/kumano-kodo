@@ -12,6 +12,13 @@
     border-radius: var(--radius);
     background: var(--color-hair);
     cursor: pointer;
+    transition:
+        background-color var(--motion-fast) var(--ease-out),
+        width var(--motion-base) var(--ease-out);
+}
+
+.slider-dots__dot:hover {
+    background: var(--color-muted);
 }
 
 .slider-dots__dot--active {

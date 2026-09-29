@@ -14,6 +14,7 @@
     align-items: center;
     border-bottom: var(--border-hairline) solid var(--color-hair);
     color: var(--color-muted);
+    transition: border-color var(--motion-fast) var(--ease-out);
 }
 
 .field__control {
@@ -24,6 +25,17 @@
     border-radius: 0;
     background: transparent;
     color: var(--color-ink);
+    transition: border-color var(--motion-fast) var(--ease-out);
+}
+
+.field__control:hover,
+.field__box:hover {
+    border-bottom-color: var(--color-ink);
+}
+
+.field__control:focus,
+.field__box:focus-within {
+    border-bottom-color: var(--color-accent);
 }
 
 .field__box .field__control {

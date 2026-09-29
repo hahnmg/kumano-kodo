@@ -15,4 +15,9 @@
 
 .choice--checkbox .choice__label {
     color: var(--color-muted);
+    transition: color var(--motion-fast) var(--ease-out);
+}
+
+.choice:hover .choice__label {
+    color: var(--color-ink);
 }

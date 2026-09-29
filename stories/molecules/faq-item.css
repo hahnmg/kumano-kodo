@@ -19,6 +19,7 @@
     color: var(--color-ink);
     list-style: none;
     cursor: pointer;
+    transition: color var(--motion-fast) var(--ease-out);
 }
 
 .faq-item__question::-webkit-details-marker {
@@ -27,7 +28,14 @@
 
 .faq-item__question .icon {
     color: var(--color-ink);
-    transition: transform 0.2s;
+    transition:
+        transform var(--motion-base) var(--ease-out),
+        color var(--motion-fast) var(--ease-out);
+}
+
+.faq-item__question:hover,
+.faq-item__question:hover .icon {
+    color: var(--color-accent);
 }
 
 .faq-item[open] .faq-item__question .icon {
