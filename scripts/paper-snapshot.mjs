@@ -47,7 +47,10 @@ async function rpc(method, params, { notification = false } = {}) {
     if (notification) {
         return null;
     }
-    const data = text.split('\n').filter((line) => line.startsWith('data: ')).map((line) => JSON.parse(line.slice(6)));
+    const data = text
+        .split('\n')
+        .filter((line) => line.startsWith('data: '))
+        .map((line) => JSON.parse(line.slice(6)));
     const message = data.find((entry) => entry.id === body.id) ?? JSON.parse(text);
     if (message.error) {
         throw new Error(`${method}: ${message.error.message}`);
@@ -69,7 +72,11 @@ async function tool(name, args) {
     return texts.at(-1);
 }
 
-const exists = (path) => access(path).then(() => true, () => false);
+const exists = (path) =>
+    access(path).then(
+        () => true,
+        () => false,
+    );
 
 async function waitFor(path) {
     for (let attempt = 0; attempt < 50; attempt++) {
