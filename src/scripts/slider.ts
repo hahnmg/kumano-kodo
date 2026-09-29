@@ -9,40 +9,65 @@ const parts = (root: Element) => ({
 });
 
 const items = (el: HTMLElement): HTMLElement[] => [...el.children].filter((c): c is HTMLElement => c instanceof HTMLElement);
+const maxScroll = (el: HTMLElement): number => Math.max(0, el.scrollWidth - el.clientWidth);
 
-// Positions are measured against the first item, so the track's gutter padding does not count.
-const offset = (el: HTMLElement, item: HTMLElement): number => item.offsetLeft - (items(el)[0]?.offsetLeft ?? 0);
-
-export const activeIndex = (el: HTMLElement): number => {
+// Stops are the scroll positions the track can actually reach: one per item until the end is in view,
+// then the end itself. When several cards fit, the last ones share that final stop.
+export const stops = (el: HTMLElement): number[] => {
     const all = items(el);
-    if (el.scrollLeft + el.clientWidth >= el.scrollWidth - 1) return all.length - 1;
+    const first = all[0]?.offsetLeft ?? 0;
+    const max = maxScroll(el);
+    const out: number[] = [];
+    for (const item of all) {
+        const pos = Math.min(item.offsetLeft - first, max);
+        if (!out.length || pos - out[out.length - 1] > 1) out.push(pos);
+    }
+    return out.length ? out : [0];
+};
+
+// While a smooth scroll runs, the position it is heading for counts, so quick repeated clicks add up.
+const position = (el: HTMLElement): number => {
+    const target = Number(el.dataset.sliderTarget);
+    return Number.isFinite(target) && el.dataset.sliderTarget !== undefined ? target : el.scrollLeft;
+};
+
+export const activeStop = (el: HTMLElement, at = position(el)): number => {
+    const s = stops(el);
     let best = 0;
-    all.forEach((item, i) => {
-        if (Math.abs(offset(el, item) - el.scrollLeft) < Math.abs(offset(el, all[best]) - el.scrollLeft)) best = i;
+    s.forEach((pos, i) => {
+        if (Math.abs(pos - at) < Math.abs(s[best] - at)) best = i;
     });
     return best;
+};
+
+const scrollToStop = (el: HTMLElement, index: number): void => {
+    const s = stops(el);
+    const left = s[Math.max(0, Math.min(index, s.length - 1))];
+    el.dataset.sliderTarget = String(left);
+    el.scrollTo({ left });
 };
 
 export const syncSliders = (root: ParentNode = document): void => {
     root.querySelectorAll(slider).forEach((s) => {
         const { track: t, previous, next, dots } = parts(s);
         if (!t) return;
-        const active = activeIndex(t);
+        // The target is reached (or abandoned by a swipe) once the track rests near a stop.
+        if (t.dataset.sliderTarget !== undefined && Math.abs(Number(t.dataset.sliderTarget) - t.scrollLeft) <= 2)
+            delete t.dataset.sliderTarget;
+        const count = stops(t).length;
+        const active = activeStop(t);
         dots.forEach((dot, i) => {
+            dot.hidden = i >= count;
             dot.classList.toggle('slider-dots__dot--active', i === active);
             if (i === active) dot.setAttribute('aria-current', 'true');
             else dot.removeAttribute('aria-current');
         });
-        if (previous) previous.disabled = t.scrollLeft <= 1;
-        if (next) next.disabled = t.scrollLeft + t.clientWidth >= t.scrollWidth - 1;
+        if (previous) previous.disabled = active === 0;
+        if (next) next.disabled = active >= count - 1;
     });
 };
 
-const goTo = (t: HTMLElement, index: number): void => {
-    const all = items(t);
-    const target = all[Math.max(0, Math.min(index, all.length - 1))];
-    if (target) t.scrollTo({ left: offset(t, target) });
-};
+const step = (t: HTMLElement, delta: number): void => scrollToStop(t, activeStop(t) + delta);
 
 export const bindSliders = (doc: Document = document): (() => void) => {
     const click = (event: Event): void => {
@@ -52,28 +77,44 @@ export const bindSliders = (doc: Document = document): (() => void) => {
         if (!root || !t) return;
         const arrow = event.target.closest<HTMLElement>('[data-direction]');
         const dot = event.target.closest('.slider-dots__dot');
-        if (arrow) goTo(t, activeIndex(t) + (arrow.dataset.direction === 'next' ? 1 : -1));
-        else if (dot) goTo(t, parts(root).dots.indexOf(dot as HTMLButtonElement));
+        if (arrow) step(t, arrow.dataset.direction === 'next' ? 1 : -1);
+        else if (dot) scrollToStop(t, parts(root).dots.indexOf(dot as HTMLButtonElement));
+        syncSliders(doc);
     };
     const key = (event: KeyboardEvent): void => {
         const t = event.target instanceof HTMLElement && event.target.matches(track) ? event.target : null;
         if (!t || (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft')) return;
         event.preventDefault();
-        goTo(t, activeIndex(t) + (event.key === 'ArrowRight' ? 1 : -1));
+        step(t, event.key === 'ArrowRight' ? 1 : -1);
+        syncSliders(doc);
     };
     // Scroll does not bubble; capturing on the document sees every track, including ones rendered later.
     let frame = 0;
-    const scroll = (event: Event): void => {
-        if (!(event.target instanceof Element) || !event.target.matches(track)) return;
+    const schedule = (): void => {
         cancelAnimationFrame(frame);
         frame = requestAnimationFrame(() => syncSliders(doc));
     };
+    const scroll = (event: Event): void => {
+        if (event.target instanceof Element && event.target.matches(track)) schedule();
+    };
+    // A swipe or wheel gesture takes over from a pending arrow target.
+    const takeOver = (event: Event): void => {
+        const t = event.target instanceof Element ? event.target.closest<HTMLElement>(track) : null;
+        if (t) delete t.dataset.sliderTarget;
+    };
+    const view = doc.defaultView;
     doc.addEventListener('click', click);
     doc.addEventListener('keydown', key);
     doc.addEventListener('scroll', scroll, true);
+    doc.addEventListener('pointerdown', takeOver);
+    doc.addEventListener('wheel', takeOver, { passive: true });
+    view?.addEventListener('resize', schedule);
     return () => {
         doc.removeEventListener('click', click);
         doc.removeEventListener('keydown', key);
         doc.removeEventListener('scroll', scroll, true);
+        doc.removeEventListener('pointerdown', takeOver);
+        doc.removeEventListener('wheel', takeOver);
+        view?.removeEventListener('resize', schedule);
     };
 };

@@ -29,6 +29,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 
 - [x] 2026-09-29 Sticky header: docked state with tighter padding, logo at 82 % and frosted background (prototype: fixed position on scroll)
 
+- [ ] Slider dots: only as many as reachable positions (three on desktop, five on phones)
+
 ## Known differences between Figma and code
 
 - Mobile exists in Figma only as screenshots of the coded Storybook; they are not built from components.
