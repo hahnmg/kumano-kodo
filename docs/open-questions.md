@@ -12,3 +12,4 @@
 | 8 | Unify section headings? | Eyebrow-to-heading spacing is 20, 44 or 64px and heading size 48–66px across sections; make `Section Heading / Default` (20px, 60px) the only spacing and size | Visible change in Intro, Places, Day list, FAQ and Newsletter headings |
 | 9 | Rebuild the Desktop page from components? | Paper has no instances; replace each section's inner parts with duplicates of the component artboards, named identically | Until then, edits on the Components page do not show on the Desktop page |
 | 10 | Merge `Place Card / Ruled` into `Default`? | It differs only by a top rule and a taller image; model both as props of one variant | One artboard fewer; the rule and image ratio become props in code |
+| 11 | Upgrade to Paper Pro? | Yes, before the token step; binding tokens and a full snapshot alone exceed the free 100 calls/week | Without it, each sync waits for the weekly reset (next: 2026-10-03) |

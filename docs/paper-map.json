@@ -4,6 +4,9 @@
         "componentsPage": "p-2-0",
         "pagesPage": "p-1-0"
     },
+    "pages": [
+        { "name": "Startseite – Desktop", "slug": "desktop", "page": "p-1-0", "artboard": "1-0" }
+    ],
     "components": [
         { "name": "Button / Primary", "group": "atoms", "component": "button", "variant": "primary", "artboard": "94-0", "node": "9C-0" },
         { "name": "Button / Light", "group": "atoms", "component": "button", "variant": "light", "artboard": "95-0", "node": "9E-0" },
