@@ -3,6 +3,7 @@ import { center, rail, section, split, stack } from '../layout/layout.markup';
 import { dayList } from '../molecules/day-row.markup';
 import { faqList } from '../molecules/faq-item.markup';
 import { figure } from '../molecules/figure.markup';
+import { highlight } from '../molecules/highlight.markup';
 import { newsletterForm } from '../molecules/newsletter-form.markup';
 import { placeCard } from '../molecules/place-card.markup';
 import { quote } from '../molecules/quote.markup';
@@ -33,6 +34,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
             64,
         ),
     }) +
+    section({ tone: 'sunk', content: highlight(home.crow) }) +
     section({
         space: 'large',
         content: quote(home.quote),

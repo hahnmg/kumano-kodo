@@ -289,6 +289,11 @@ const build = (p: Photos) => {
         '<h3>Where to sleep</h3><p>Book the minshuku in Chikatsuyu months ahead; in May and November it is full.</p>';
 
     const home = {
+        crow: {
+            eyebrow: 'Yatagarasu',
+            title: 'The three-legged crow',
+            text: "The bird in the logo is the Yatagarasu, messenger of the Kumano deities. According to the old chronicles it guided Emperor Jimmu through the mountains from Kumano to Yamato. Its three legs are often read as heaven, earth and humankind. On the trail you meet it on shrine banners and on the goōhōin talismans, and far from Kumano on the shirts of Japan's national football team.",
+        },
         why: { eyebrow: 'Why this trail', title: 'A path in use for a thousand years' },
         bridgeCaption: 'Between Takahara and Chikatsuyu a dozen dry-stone bridges cross the slope. Kilometre 14.',
         quote: {

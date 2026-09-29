@@ -18,6 +18,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 
 - [ ] Mobile frames (390px) for the four templates, including the open header menu (open question 4)
 
+- [ ] Highlight: new molecule with the logo bird as emblem; Kumano Home row explaining the three-legged crow
+
 ## Known differences between Figma and code
 
 - Photos `farn` and `laternen` are not in the Figma file: the Kohechi row keeps its old image, the Person Card default keeps its old portrait.

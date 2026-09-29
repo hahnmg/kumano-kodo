@@ -291,6 +291,11 @@ const build = (p: Photos): LocaleContent => {
         '<h3>Wo übernachten</h3><p>Das Minshuku in Chikatsuyu Monate vorher buchen; im Mai und November ist es voll.</p>';
 
     const home = {
+        crow: {
+            eyebrow: 'Yatagarasu',
+            title: 'Die dreibeinige Krähe',
+            text: 'Der Vogel im Logo ist die Yatagarasu, Botin der Kumano-Gottheiten. Den alten Chroniken nach führte sie Kaiser Jimmu durch die Berge von Kumano nach Yamato. Ihre drei Beine werden oft als Himmel, Erde und Mensch gedeutet. Am Weg begegnet man ihr auf Schreinfahnen und den Goōhōin-Amuletten, und weit weg von Kumano auf den Trikots der japanischen Fußballnationalmannschaft.',
+        },
         why: { eyebrow: 'Warum dieser Weg', title: 'Ein Pfad, der seit tausend Jahren begangen wird' },
         bridgeCaption: 'Zwischen Takahara und Chikatsuyu queren ein Dutzend Trockenmauerbrücken den Hang. Kilometer 14.',
         quote: {
