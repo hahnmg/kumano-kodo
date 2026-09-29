@@ -5,9 +5,8 @@ import { expectAccessible, mount } from '../support/accessibility';
 
 describe('figure', () => {
     it('switches to the pair variant with two images', () => {
-        expect(
-            mount(figure({ images: [photos.krabbe, photos.nebelbaum], caption: 'c' })).querySelector('.figure--pair img + img'),
-        ).not.toBeNull();
+        const pair = mount(figure({ images: [photos.krabbe, photos.nebelbaum], caption: 'c' }));
+        expect(pair.querySelectorAll('.figure--pair a[data-lightbox] img')).toHaveLength(2);
         expect(mount(figure({ images: [photos.steinbruecke], caption: 'c' })).querySelector('.figure--default')).not.toBeNull();
     });
     it('passes axe', () => expectAccessible(figure({ images: [photos.steinbruecke], caption: 'Kilometre 14.' })));

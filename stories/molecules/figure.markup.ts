@@ -1,12 +1,15 @@
-import { cx, esc, img, type Image } from '../../src/lib/html';
+import { attrs, cx, esc, type Image } from '../../src/lib/html';
+import { lightboxGroupAttrs, type LightboxLabels } from '../../src/scripts/lightbox';
+import { lightboxLink } from './gallery.markup';
 
 export interface FigureProps {
     images: [Image] | [Image, Image];
     caption: string;
     rule?: boolean;
+    labels?: Partial<LightboxLabels>;
 }
 
-export const figure = ({ images, caption, rule = true }: FigureProps): string =>
-    `<figure class="${cx('figure', `figure--${images.length === 2 ? 'pair' : 'default'}`, !rule && 'figure--unruled')}">` +
-    `<div class="figure__images">${images.map((i) => img(i, 'figure__image')).join('')}</div>` +
+export const figure = ({ images, caption, rule = true, labels }: FigureProps): string =>
+    `<figure${attrs({ class: cx('figure', `figure--${images.length === 2 ? 'pair' : 'default'}`, !rule && 'figure--unruled'), ...lightboxGroupAttrs(labels) })}>` +
+    `<div class="figure__images">${images.map((i) => lightboxLink(i, 'figure__image')).join('')}</div>` +
     `<figcaption class="figure__caption type-caption">${esc(caption)}</figcaption></figure>`;

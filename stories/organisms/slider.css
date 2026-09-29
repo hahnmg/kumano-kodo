@@ -1,0 +1,32 @@
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+}
+
+.slider__track {
+    position: relative;
+    scroll-padding-inline: var(--gutter);
+    scroll-behavior: smooth;
+}
+
+.slider__track:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+.slider__dots {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider__track {
+        scroll-behavior: auto;
+    }
+}

@@ -13,6 +13,6 @@ const arrows: Record<IconButtonDirection, string> = {
 };
 
 export const iconButton = ({ direction, label = direction === 'previous' ? 'Previous' : 'Next' }: IconButtonProps): string =>
-    `<button${attrs({ class: 'icon-button', type: 'button', 'aria-label': label })}>` +
+    `<button${attrs({ class: 'icon-button', type: 'button', 'aria-label': label, 'data-direction': direction })}>` +
     `<svg width="20" height="12" viewBox="0 0 20 12" fill="none" aria-hidden="true"><path d="${arrows[direction]}" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>` +
     `</button>`;

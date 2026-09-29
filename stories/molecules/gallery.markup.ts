@@ -1,11 +1,16 @@
-import { esc, img, type Image } from '../../src/lib/html';
+import { attrs, esc, img, type Image } from '../../src/lib/html';
+import { lightboxGroupAttrs, type LightboxLabels } from '../../src/scripts/lightbox';
 
 export interface GalleryProps {
     images: Image[];
     caption?: string;
+    labels?: Partial<LightboxLabels>;
 }
 
-export const gallery = ({ images, caption }: GalleryProps): string =>
-    `<figure class="gallery"><div class="gallery__grid">${images.map((i) => img(i, 'gallery__image')).join('')}</div>` +
+export const lightboxLink = (image: Image, className: string): string =>
+    `<a${attrs({ class: 'lightbox-link', href: image.src, 'data-lightbox': true, 'aria-haspopup': 'dialog' })}>${img(image, className)}</a>`;
+
+export const gallery = ({ images, caption, labels }: GalleryProps): string =>
+    `<figure${attrs({ class: 'gallery', ...lightboxGroupAttrs(labels) })}><div class="gallery__grid">${images.map((i) => lightboxLink(i, 'gallery__image')).join('')}</div>` +
     (caption ? `<figcaption class="gallery__caption type-caption">${esc(caption)}</figcaption>` : '') +
     `</figure>`;

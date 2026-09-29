@@ -20,6 +20,9 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 
 - [ ] Highlight: new molecule with the logo bird as emblem; Kumano Home row explaining the three-legged crow
 
+- [ ] Slider: arrows disabled at either end, dots follow the scroll position; stage track runs to the viewport edge
+- [ ] Lightbox: dark full-screen view with close, previous and next buttons; new `close` icon
+
 ## Known differences between Figma and code
 
 - Photos `farn` and `laternen` are not in the Figma file: the Kohechi row keeps its old image, the Person Card default keeps its old portrait.

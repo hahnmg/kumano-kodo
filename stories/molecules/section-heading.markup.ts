@@ -9,9 +9,10 @@ export interface SectionHeadingProps {
     aside?: string;
     variant?: SectionHeadingVariant;
     level?: 1 | 2;
+    controlLabels?: { previous: string; next: string };
 }
 
-export const sectionHeading = ({ title, eyebrow, aside, variant = 'default', level = 2 }: SectionHeadingProps): string => {
+export const sectionHeading = ({ title, eyebrow, aside, variant = 'default', level = 2, controlLabels }: SectionHeadingProps): string => {
     const heading =
         `<div class="section-heading__main">` +
         (eyebrow ? `<p class="section-heading__eyebrow type-label">${esc(eyebrow)}</p>` : '') +
@@ -20,7 +21,7 @@ export const sectionHeading = ({ title, eyebrow, aside, variant = 'default', lev
         variant === 'with-aside' && aside
             ? `<p class="section-heading__aside type-small">${esc(aside)}</p>`
             : variant === 'with-controls'
-              ? `<div class="section-heading__controls">${iconButton({ direction: 'previous' })}${iconButton({ direction: 'next' })}</div>`
+              ? `<div class="section-heading__controls">${iconButton({ direction: 'previous', label: controlLabels?.previous })}${iconButton({ direction: 'next', label: controlLabels?.next })}</div>`
               : '';
     return `<header class="section-heading section-heading--${variant}">${heading}${end}</header>`;
 };

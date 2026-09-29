@@ -126,7 +126,12 @@ export const detailPage = (c: Content = content()): string => {
                 content: split(
                     stack(
                         [
-                            figure({ images: [photos.talblick], caption: d.caption, rule: false }),
+                            figure({
+                                images: [photos.talblick],
+                                caption: d.caption,
+                                rule: false,
+                                labels: { close: ui.close, previous: ui.previous, next: ui.next },
+                            }),
                             richText({ html: richTextSample }),
                             downloadList({ items: d.downloads.slice(0, 2) }),
                         ],
