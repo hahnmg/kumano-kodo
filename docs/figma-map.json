@@ -28,7 +28,12 @@
             "group": "atoms",
             "component": "icon-button",
             "node": "5:16",
-            "variants": ["Direction=Previous", "Direction=Next"]
+            "variants": [
+                "Direction=Previous, State=Default",
+                "Direction=Next, State=Default",
+                "Direction=Previous, State=Disabled",
+                "Direction=Next, State=Disabled"
+            ]
         },
         {
             "name": "Slider Dots",
@@ -92,7 +97,7 @@
             "group": "molecules",
             "component": "figure",
             "node": "7:40",
-            "variants": ["Variant=Default", "Variant=Pair"]
+            "variants": ["Variant=Default", "Variant=Pair", "Variant=Unruled"]
         },
         {
             "name": "FAQ Item",
@@ -111,7 +116,8 @@
             "name": "Site Header",
             "group": "organisms",
             "component": "site-header",
-            "node": "9:18"
+            "node": "36:213",
+            "variants": ["State=Default", "State=Docked"]
         },
         {
             "name": "Site Footer",
@@ -318,11 +324,62 @@
             "group": "organisms",
             "component": "hero-split",
             "node": "21:418"
+        },
+        {
+            "name": "Scheme Toggle",
+            "group": "organisms",
+            "component": "site-header",
+            "node": "36:173",
+            "variants": ["State=Off", "State=On"]
+        },
+        {
+            "name": "Menu Button",
+            "group": "organisms",
+            "component": "site-header",
+            "node": "36:182",
+            "variants": ["State=Closed", "State=Open"]
+        },
+        {
+            "name": "Site Header · Mobile",
+            "group": "organisms",
+            "component": "site-header",
+            "node": "37:317",
+            "variants": ["State=Closed", "State=Open"]
+        },
+        {
+            "name": "Nav Dropdown",
+            "group": "organisms",
+            "component": "site-header",
+            "node": "37:181"
+        },
+        {
+            "name": "Nav Mega",
+            "group": "organisms",
+            "component": "site-header",
+            "node": "37:194"
+        },
+        {
+            "name": "Highlight",
+            "group": "molecules",
+            "component": "highlight",
+            "node": "37:232"
+        },
+        {
+            "name": "Lightbox",
+            "group": "molecules",
+            "component": "lightbox",
+            "node": "37:242"
+        },
+        {
+            "name": "Icon Close",
+            "group": "atoms",
+            "component": "icon",
+            "node": "36:217"
         }
     ],
     "pages": [
         {
-            "name": "Startseite – Desktop",
+            "name": "Kumano Home · Caramel",
             "slug": "home",
             "node": "12:2"
         },
@@ -340,6 +397,36 @@
             "name": "Beispiel – Detail",
             "slug": "detail",
             "node": "22:1579"
+        },
+        {
+            "name": "Kumano Home · Forest",
+            "slug": "home-forest",
+            "node": "39:1702"
+        },
+        {
+            "name": "Kumano Home · Ocean",
+            "slug": "home-ocean",
+            "node": "39:1768"
+        },
+        {
+            "name": "Kumano Home · Violet",
+            "slug": "home-violet",
+            "node": "39:1834"
+        },
+        {
+            "name": "Beispiel – Start · DE",
+            "slug": "start-de",
+            "node": "40:2544"
+        },
+        {
+            "name": "Beispiel – Start · JA",
+            "slug": "start-ja",
+            "node": "40:2841"
+        },
+        {
+            "name": "Mobile references · 390px from code",
+            "slug": "mobile-references",
+            "node": "40:3204"
         }
     ]
 }
