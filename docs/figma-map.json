@@ -1,0 +1,30 @@
+{
+    "file": {
+        "key": "p6SK2xN5ZzBisOW1wKlrDm",
+        "url": "https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm",
+        "pages": { "foundations": "4:2", "components": "4:3", "pages": "4:4" }
+    },
+    "components": [
+        { "name": "Button", "group": "atoms", "component": "button", "node": "5:9", "variants": ["Style=Primary", "Style=Light", "Style=Outline"] },
+        { "name": "Icon Button", "group": "atoms", "component": "icon-button", "node": "5:16", "variants": ["Direction=Previous", "Direction=Next"] },
+        { "name": "Slider Dots", "group": "atoms", "component": "slider-dots", "node": "5:17" },
+        { "name": "Text Field", "group": "atoms", "component": "text-field", "node": "5:23" },
+        { "name": "Checkbox", "group": "atoms", "component": "checkbox", "node": "5:27" },
+        { "name": "Stat", "group": "molecules", "component": "stat", "node": "6:9", "variants": ["Variant=Large", "Variant=On Image"] },
+        { "name": "Quote", "group": "molecules", "component": "quote", "node": "6:10" },
+        { "name": "Section Heading", "group": "molecules", "component": "section-heading", "node": "6:33", "variants": ["Variant=Default", "Variant=With Aside", "Variant=With Controls"] },
+        { "name": "Day Row", "group": "molecules", "component": "day-row", "node": "6:34" },
+        { "name": "Stage Card", "group": "molecules", "component": "stage-card", "node": "7:7" },
+        { "name": "Place Card", "group": "molecules", "component": "place-card", "node": "7:31", "variants": ["Variant=Featured", "Variant=Default", "Variant=Ruled"] },
+        { "name": "Figure", "group": "molecules", "component": "figure", "node": "7:40", "variants": ["Variant=Default", "Variant=Pair"] },
+        { "name": "FAQ Item", "group": "molecules", "component": "faq-item", "node": "8:19", "variants": ["State=Open", "State=Closed"] },
+        { "name": "Newsletter Form", "group": "molecules", "component": "newsletter-form", "node": "8:20" },
+        { "name": "Site Header", "group": "organisms", "component": "site-header", "node": "9:18" },
+        { "name": "Site Footer", "group": "organisms", "component": "site-footer", "node": "9:49" },
+        { "name": "Hero", "group": "organisms", "component": "hero", "node": "10:13" },
+        { "name": "Route Map", "group": "organisms", "component": "route-map", "node": "10:41" }
+    ],
+    "pages": [
+        { "name": "Startseite – Desktop", "slug": "home", "node": "12:2" }
+    ]
+}

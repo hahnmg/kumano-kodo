@@ -1,7 +1,7 @@
 # Paper is the source of truth, code is synced from it
 
 Date: 2026-09-23
-Status: accepted
+Status: superseded by 2026-09-29-figma-replaces-paper.md
 
 ## Context
 

@@ -1,7 +1,7 @@
 # Version the Paper state in git
 
 Date: 2026-09-29
-Status: accepted
+Status: superseded by 2026-09-29-figma-replaces-paper.md
 
 ## Context
 

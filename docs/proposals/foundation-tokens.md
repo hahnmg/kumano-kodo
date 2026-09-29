@@ -1,6 +1,6 @@
 # Proposal: foundation tokens
 
-Status: awaiting approval
+Status: implemented as Figma variables and text styles, see ADR 2026-09-29-figma-replaces-paper.md
 
 Values are taken from the current Paper page, which mirrors the "caramel / light"
 theme of the original export. Tailwind v4 namespaces, as Paper expects.
