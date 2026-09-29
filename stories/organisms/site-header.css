@@ -318,14 +318,15 @@
         width: 100%;
     }
 
-    /* In the folded menu, flyouts open inline like an accordion. */
+    /* In the folded menu, flyouts open inline like an accordion; an accent rule marks the second level. */
     .site-header__flyout {
         position: static;
         display: none;
         min-width: 0;
-        padding: var(--space-8) 0 var(--space-16) var(--space-16);
+        margin: var(--space-12) 0 var(--space-16);
+        padding: 0 0 0 var(--space-20);
         border: 0;
-        border-bottom: var(--border-hairline) solid var(--color-line);
+        border-left: var(--border-hairline) solid var(--color-accent);
         opacity: 1;
         transform: none;
         visibility: visible;
@@ -337,9 +338,36 @@
 
     .site-header__mega {
         grid-auto-flow: row;
+        gap: var(--space-24);
     }
 
-    .site-header__mega-teaser {
-        max-width: 314px;
+    .site-header__mega-title {
+        margin-bottom: var(--space-4);
+    }
+
+    .site-header__menu-link {
+        padding: var(--space-8) 0;
+    }
+
+    .site-header__mega-text {
+        gap: var(--space-8);
+    }
+
+    .site-header__mega-text .rich-text p {
+        font-size: var(--type-small-size);
+        line-height: var(--type-small-line-height);
+    }
+
+    /* The teaser shrinks to a row with a thumbnail, so the image does not outweigh the menu. */
+    .site-header__mega-teaser .teaser-card {
+        display: grid;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: var(--space-16);
+        align-items: start;
+    }
+
+    .site-header__mega-teaser .teaser-card__body {
+        padding-top: 0;
+        background: none;
     }
 }
