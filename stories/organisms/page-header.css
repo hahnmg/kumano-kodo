@@ -1,0 +1,24 @@
+.page-header {
+    padding: var(--space-24) var(--gutter) var(--space-40);
+    border-bottom: var(--border-hairline) solid var(--color-line);
+    background: var(--color-sunk);
+}
+
+.page-header__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    max-width: var(--container-page);
+    margin-inline: auto;
+}
+
+.page-header__title {
+    margin: 0;
+    color: var(--color-ink);
+}
+
+.page-header__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-24);
+}

@@ -1,0 +1,35 @@
+.place-card h3,
+.place-card p {
+    margin: 0;
+}
+
+.place-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 765 / 425;
+}
+
+.place-card--default .place-card__image {
+    aspect-ratio: 539 / 425;
+}
+
+.place-card--ruled {
+    padding-top: var(--space-24);
+    border-top: var(--border-hairline) solid var(--color-line);
+}
+
+.place-card--ruled .place-card__image {
+    aspect-ratio: 539 / 490;
+}
+
+.place-card__title {
+    padding: var(--space-20) 0 var(--space-10);
+    color: var(--color-ink);
+}
+
+.place-card__description {
+    max-width: 686px;
+    color: var(--color-muted);
+}

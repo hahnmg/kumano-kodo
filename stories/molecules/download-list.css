@@ -1,0 +1,30 @@
+.download-list {
+    margin: 0;
+    padding: 0;
+    border-top: var(--border-hairline) solid var(--color-line);
+    list-style: none;
+}
+
+.download-list__row {
+    display: flex;
+    gap: var(--space-16);
+    align-items: center;
+    padding: var(--space-16) 0;
+    border-bottom: var(--border-hairline) solid var(--color-line);
+    color: var(--color-ink);
+    text-decoration: none;
+}
+
+.download-list__row:hover .type-button {
+    color: var(--color-accent);
+}
+
+.download-list__text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.download-list__meta {
+    color: var(--color-muted);
+}

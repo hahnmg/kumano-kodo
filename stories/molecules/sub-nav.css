@@ -1,0 +1,26 @@
+.sub-nav__title {
+    margin: 0 0 var(--space-16);
+    color: var(--color-ink);
+}
+
+.sub-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sub-nav__link {
+    display: block;
+    padding: var(--space-12) 0;
+    border-bottom: var(--border-hairline) solid var(--color-line);
+    color: var(--color-muted);
+    text-decoration: none;
+}
+
+.sub-nav__link:hover {
+    color: var(--color-ink);
+}
+
+.sub-nav__link[aria-current='page'] {
+    color: var(--color-accent);
+}

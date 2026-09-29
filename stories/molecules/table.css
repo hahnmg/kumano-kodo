@@ -1,0 +1,25 @@
+.table-wrap {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: var(--border-hairline) solid var(--color-line);
+}
+
+.table th,
+.table td {
+    padding: var(--space-12) var(--space-16);
+    border-bottom: var(--border-hairline) solid var(--color-line);
+    text-align: left;
+}
+
+.table th {
+    background: var(--color-sunk);
+    color: var(--color-muted);
+}
+
+.table td {
+    color: var(--color-ink);
+}

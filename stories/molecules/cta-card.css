@@ -1,0 +1,28 @@
+.cta-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding-top: var(--space-24);
+    border-top: var(--border-hairline) solid var(--color-line);
+}
+
+.cta-card--featured {
+    border-top-color: var(--color-accent);
+}
+
+.cta-card h3,
+.cta-card p {
+    margin: 0;
+}
+
+.cta-card__title {
+    color: var(--color-ink);
+}
+
+.cta-card__text {
+    color: var(--color-muted);
+}
+
+.cta-card__link {
+    padding-top: var(--space-12);
+}

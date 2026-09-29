@@ -1,0 +1,22 @@
+import { attrs, esc, img, type Image } from '../../src/lib/html';
+import { badge } from '../atoms/badge.markup';
+
+export interface TeaserCardProps {
+    image: Image;
+    title: string;
+    href: string;
+    subtitle?: string;
+    meta?: string;
+    badge?: string;
+    level?: 2 | 3;
+}
+
+export const teaserCard = ({ image, title, href, subtitle, meta, badge: badgeLabel, level = 3 }: TeaserCardProps): string =>
+    `<article class="teaser-card">${img(image, 'teaser-card__image', 314, 314)}` +
+    `<div class="teaser-card__body">` +
+    `<h${level} class="teaser-card__title type-h4"><a${attrs({ href })}>${esc(title)}</a></h${level}>` +
+    (subtitle ? `<p class="teaser-card__subtitle type-small">${esc(subtitle)}</p>` : '') +
+    (meta || badgeLabel
+        ? `<div class="teaser-card__meta">${meta ? `<p class="type-caption">${esc(meta)}</p>` : ''}${badgeLabel ? badge({ label: badgeLabel }) : ''}</div>`
+        : '') +
+    `</div></article>`;

@@ -1,0 +1,25 @@
+.person-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    align-items: center;
+    text-align: center;
+}
+
+.person-card h3,
+.person-card p {
+    margin: 0;
+}
+
+.person-card__name {
+    padding-top: var(--space-12);
+    color: var(--color-ink);
+}
+
+.person-card__role {
+    color: var(--color-ink);
+}
+
+.person-card__focus {
+    color: var(--color-muted);
+}

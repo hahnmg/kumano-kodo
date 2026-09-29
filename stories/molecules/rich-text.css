@@ -1,0 +1,47 @@
+.rich-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+    max-width: 652px;
+    color: var(--color-ink);
+}
+
+.rich-text > * {
+    margin: 0;
+}
+
+.rich-text h2 {
+    font-family: var(--type-h3-family);
+    font-size: var(--type-h3-size);
+    font-weight: var(--type-h3-weight);
+    line-height: var(--type-h3-line-height);
+    letter-spacing: var(--type-h3-tracking);
+    text-transform: var(--type-h3-case);
+}
+
+.rich-text h3 {
+    font-family: var(--type-h4-family);
+    font-size: var(--type-h4-size);
+    font-weight: var(--type-h4-weight);
+    line-height: var(--type-h4-line-height);
+    letter-spacing: var(--type-h4-tracking);
+    text-transform: var(--type-h4-case);
+}
+
+.rich-text p,
+.rich-text li {
+    font-family: var(--type-body-family);
+    font-size: var(--type-body-size);
+    font-weight: var(--type-body-weight);
+    line-height: var(--type-body-line-height);
+}
+
+.rich-text ul,
+.rich-text ol {
+    padding-left: 1.25em;
+}
+
+.rich-text a {
+    color: var(--color-accent);
+    text-underline-offset: 0.2em;
+}

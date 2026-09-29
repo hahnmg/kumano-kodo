@@ -1,0 +1,153 @@
+.section {
+    padding: var(--section-sm) var(--gutter);
+}
+
+.section--sunk {
+    background: var(--color-sunk);
+}
+
+.section--space-large {
+    padding-block: var(--section-lg);
+}
+
+.section--space-flush-top {
+    padding-top: 0;
+}
+
+.section--space-none {
+    padding-block: 0;
+}
+
+.section__inner {
+    max-width: var(--container-page);
+    margin-inline: auto;
+}
+
+.section--bleed {
+    padding-inline: 0;
+}
+
+.section--bleed .section__inner {
+    max-width: none;
+}
+
+.section--bleed .section__inner > :not(.rail) {
+    max-width: var(--container-page);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+    box-sizing: content-box;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap);
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-40) var(--space-24);
+}
+
+.grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.split {
+    display: grid;
+    gap: var(--space-40) var(--space-64);
+}
+
+.split--even {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.split--content-sidebar {
+    grid-template-columns: minmax(0, 765fr) minmax(0, 427fr);
+    justify-content: space-between;
+}
+
+.split--text-media {
+    grid-template-columns: minmax(0, 652fr) minmax(0, 539fr);
+}
+
+.split--heading-content {
+    grid-template-columns: minmax(0, 427fr) minmax(0, 764fr);
+}
+
+.split--wide-narrow {
+    grid-template-columns: minmax(0, 765fr) minmax(0, 539fr);
+    gap: var(--space-40) var(--space-24);
+}
+
+.split--narrow-wide {
+    grid-template-columns: minmax(0, 539fr) minmax(0, 765fr);
+    gap: var(--space-40) var(--space-24);
+}
+
+.split--align-start {
+    align-items: start;
+}
+
+.split--align-center {
+    align-items: center;
+}
+
+.split--align-end {
+    align-items: end;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-24);
+    align-items: flex-end;
+}
+
+.cluster > * {
+    flex: 0 1 320px;
+}
+
+.cluster > :last-child:not(:first-child) {
+    flex: 0 0 auto;
+    margin-left: auto;
+}
+
+.rail {
+    display: flex;
+    gap: var(--space-24);
+    padding: 0 var(--gutter) var(--space-14);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.rail > * {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+/* Provisional narrow layout until a mobile reference exists (open question 4). */
+@media (width <= 900px) {
+    .grid--3,
+    .grid--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid--2,
+    .split {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

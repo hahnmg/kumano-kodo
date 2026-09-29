@@ -1,0 +1,40 @@
+.stage-card {
+    width: 420px;
+    max-width: 80vw;
+}
+
+.stage-card p,
+.stage-card h3 {
+    margin: 0;
+}
+
+.stage-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.stage-card__meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: var(--space-20);
+    padding-top: var(--space-14);
+    border-top: var(--border-hairline) solid var(--color-hair);
+}
+
+.stage-card__stage {
+    color: var(--color-accent);
+}
+
+.stage-card__stats,
+.stage-card__description {
+    color: var(--color-muted);
+}
+
+.stage-card__title {
+    padding: var(--space-12) 0 var(--space-10);
+    color: var(--color-ink);
+}

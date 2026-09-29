@@ -1,0 +1,16 @@
+.notice {
+    display: flex;
+    gap: var(--space-12);
+    align-items: center;
+    padding: var(--space-16) 0;
+    border-block: var(--border-hairline) solid var(--color-line);
+}
+
+.notice__body {
+    margin: 0;
+    color: var(--color-ink);
+}
+
+.notice__title {
+    color: var(--color-accent);
+}

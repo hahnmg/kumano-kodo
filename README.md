@@ -13,8 +13,11 @@ npm ci
 npm run storybook        # http://localhost:6006
 ```
 
-The toolbar switches **theme** (caramel, forest, ocean, violet) and **scheme** (light, dark). "Atoms/Overview" shows all
-atoms on one page.
+The toolbar switches **theme** (caramel, forest, ocean, violet) and **scheme** (light, dark).
+
+The sidebar runs from whole pages to parts: **Templates** (Kumano Home, Start, List, Detail), **Organisms**, **Molecules**,
+**Atoms** ("Atoms/Overview" shows all atoms on one page) and **Layout**. A component with variants opens on a Docs page
+with all variants and the controls; a component without variants is a single entry.
 
 | Command             | Does                                                                                  |
 | ------------------- | ------------------------------------------------------------------------------------- |

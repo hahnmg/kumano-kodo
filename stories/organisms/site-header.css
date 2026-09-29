@@ -1,0 +1,136 @@
+.site-header {
+    display: flex;
+    gap: var(--space-24);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-12) var(--gutter);
+    border-bottom: var(--border-hairline) solid var(--color-line);
+    background: var(--color-paper);
+}
+
+.site-header__nav {
+    margin-left: auto;
+}
+
+.site-header__list,
+.site-header__languages {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-header__list {
+    gap: var(--space-2);
+}
+
+.site-header__link {
+    display: flex;
+    gap: var(--space-6);
+    align-items: center;
+    padding: var(--space-8) var(--space-12);
+    color: var(--color-ink);
+    text-decoration: none;
+}
+
+.site-header__link .icon {
+    color: currentcolor;
+}
+
+.site-header__link:hover,
+.site-header__link[aria-current='page'] {
+    color: var(--color-accent);
+}
+
+.site-header__tools {
+    display: flex;
+    gap: var(--space-12);
+    align-items: center;
+}
+
+.site-header__themes {
+    display: flex;
+    gap: var(--space-10);
+    padding-right: var(--space-12);
+    border-right: var(--border-hairline) solid var(--color-line);
+}
+
+.site-header__theme {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-full);
+    opacity: 0.55;
+    cursor: pointer;
+}
+
+.site-header__theme--caramel {
+    background: var(--theme-caramel);
+}
+
+.site-header__theme--forest {
+    background: var(--theme-forest);
+}
+
+.site-header__theme--ocean {
+    background: var(--theme-ocean);
+}
+
+.site-header__theme--violet {
+    background: var(--theme-violet);
+}
+
+[data-theme='caramel'] .site-header__theme--caramel,
+[data-theme='forest'] .site-header__theme--forest,
+[data-theme='ocean'] .site-header__theme--ocean,
+[data-theme='violet'] .site-header__theme--violet,
+:root:not([data-theme]) .site-header__theme--caramel {
+    opacity: 1;
+    outline: var(--border-hairline) solid var(--color-ink);
+    outline-offset: 2px;
+}
+
+.site-header__languages a {
+    display: block;
+    padding: var(--space-5) var(--space-8);
+    color: var(--color-muted);
+    text-decoration: none;
+}
+
+.site-header__languages a[aria-current='true'] {
+    color: var(--color-accent);
+}
+
+.site-header__scheme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: var(--border-hairline) solid var(--color-line);
+    border-radius: var(--radius-full);
+    background: transparent;
+    cursor: pointer;
+}
+
+.site-header__scheme span {
+    width: 10px;
+    height: 10px;
+    border: var(--border-hairline) solid var(--color-ink);
+    border-radius: var(--radius-full);
+}
+
+@media (width <= 900px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+
+    .site-header__nav {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,24 @@
+.icon-fact {
+    display: flex;
+    gap: var(--space-16);
+    align-items: flex-start;
+}
+
+.icon-fact__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.icon-fact__text p {
+    margin: 0;
+}
+
+.icon-fact__label,
+.icon-fact__note {
+    color: var(--color-muted);
+}
+
+.icon-fact__value {
+    color: var(--color-ink);
+}

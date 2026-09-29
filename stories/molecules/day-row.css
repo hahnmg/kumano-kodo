@@ -1,0 +1,48 @@
+.day-list {
+    margin: 0;
+    padding: 0;
+    border-bottom: var(--border-hairline) solid var(--color-ink);
+    list-style: none;
+}
+
+.day-row {
+    display: grid;
+    grid-template-columns: minmax(0, 201fr) minmax(0, 427fr) minmax(0, 427fr) minmax(0, 201fr);
+    gap: var(--space-24);
+    align-items: baseline;
+    padding: var(--space-26) 0;
+    border-top: var(--border-hairline) solid var(--color-line);
+}
+
+.day-row p,
+.day-row h3 {
+    margin: 0;
+}
+
+.day-row__date {
+    color: var(--color-accent);
+}
+
+.day-row__route {
+    color: var(--color-ink);
+}
+
+.day-row__description,
+.day-row__time {
+    color: var(--color-muted);
+}
+
+.day-row__time {
+    text-align: right;
+}
+
+@media (width <= 900px) {
+    .day-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .day-row__route,
+    .day-row__description {
+        grid-column: 1 / -1;
+    }
+}
