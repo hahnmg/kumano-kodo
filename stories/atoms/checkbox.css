@@ -1,7 +1,7 @@
 .choice {
     display: flex;
     gap: var(--space-12);
-    align-items: flex-start;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -9,7 +9,7 @@
     flex-shrink: 0;
     width: 17px;
     height: 17px;
-    margin: var(--space-4) 0 0;
+    margin: 0;
     accent-color: var(--color-accent);
 }
 

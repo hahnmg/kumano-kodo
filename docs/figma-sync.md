@@ -8,4 +8,5 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [ ] Icon-to-text gaps by icon size: 16 px icon 6, 24 px icon 8, 48 px circle 12
 - [ ] Topbar: 32 between phone and email
 - [ ] Icon fact: icon circle centred to its text block
+- [ ] Checkbox and radio: control centred to its label, no top offset
 - [ ] Hover states (drawn accent hairline, arrow nudge, teaser zoom, link underline) as Figma variants or prototype notes; motion tokens stay code-only
