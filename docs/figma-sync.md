@@ -27,6 +27,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [ ] Slider: first card aligned to the container on load, no scrollbar
 - [ ] Lightbox: frosted glass background instead of solid
 
+- [ ] Sticky header: docked state with tighter padding, logo at 82 % and frosted background (prototype: fixed position on scroll)
+
 ## Known differences between Figma and code
 
 - Photos `farn` and `laternen` are not in the Figma file: the Kohechi row keeps its old image, the Person Card default keeps its old portrait.

@@ -9,6 +9,7 @@ import { bindMenuToggle } from '../src/scripts/menu-toggle';
 import { bindNavFlyouts } from '../src/scripts/nav-flyout';
 import { bindSchemeToggle, syncSchemeToggles } from '../src/scripts/scheme-toggle';
 import { bindSliders, syncSliders } from '../src/scripts/slider';
+import { bindStickyHeader, syncStickyHeaders } from '../src/scripts/sticky-header';
 import { isLocale, locales } from '../stories/templates/content';
 import { formatSource } from './format-source';
 
@@ -23,6 +24,7 @@ bindMenuToggle(document);
 bindNavFlyouts(document);
 bindSliders(document);
 bindLightbox(document);
+bindStickyHeader(window);
 document.addEventListener('click', (event) => {
     const link = event.target instanceof Element ? event.target.closest('a[data-locale]') : null;
     const locale = link?.getAttribute('data-locale');
@@ -55,6 +57,7 @@ const preview: Preview = {
             requestAnimationFrame(() => {
                 syncSchemeToggles();
                 syncSliders();
+                syncStickyHeaders();
             });
             return rendered;
         },

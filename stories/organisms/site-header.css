@@ -1,14 +1,40 @@
 /* Contents align with the page container; the bottom hairline still runs edge to edge. */
 .site-header {
+    --header-pad-block: var(--space-12);
+
     display: flex;
     gap: var(--space-24);
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-12) max(var(--gutter), (100% - var(--container-page)) / 2);
-    position: relative;
+    padding: var(--header-pad-block) max(var(--gutter), (100% - var(--container-page)) / 2);
+    position: sticky;
+    top: 0;
     z-index: 30;
     border-bottom: var(--border-hairline) solid var(--color-line);
     background: var(--color-paper);
+    transition:
+        padding var(--motion-base) var(--ease-out),
+        margin var(--motion-base) var(--ease-out),
+        background-color var(--motion-base) var(--ease-out);
+}
+
+/* Docked at the top (src/scripts/sticky-header.ts): tighter and frosted. The bottom margin returns the height
+   the padding gives up, so the page below does not jump. */
+.site-header[data-stuck] {
+    --header-pad-block: var(--space-6);
+
+    margin-bottom: calc(2 * (var(--space-12) - var(--space-6)));
+    background: color-mix(in srgb, var(--color-paper) 82%, transparent);
+    backdrop-filter: blur(16px) saturate(1.2);
+}
+
+.site-header .logo {
+    transform-origin: left center;
+    transition: transform var(--motion-base) var(--ease-out);
+}
+
+.site-header[data-stuck] .logo {
+    transform: scale(0.82);
 }
 
 /* The nav fills the header height so dropdowns can start exactly at its bottom rule. */
@@ -99,7 +125,7 @@
 }
 
 .site-header__flyout--dropdown {
-    top: calc(100% + var(--space-12) + var(--border-hairline));
+    top: calc(100% + var(--header-pad-block) + var(--border-hairline));
     left: 0;
     min-width: 280px;
     padding: var(--space-4) var(--space-20) var(--space-8);
@@ -287,6 +313,8 @@
 
     .site-header[data-menu-open] .site-header__panel {
         display: flex;
+        max-height: calc(100dvh - 96px);
+        overflow-y: auto;
     }
 
     .site-header__nav {

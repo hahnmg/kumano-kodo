@@ -2,3 +2,8 @@
 .docs-story {
     background: var(--color-paper);
 }
+
+/* A sticky header would follow the reader down the docs page. */
+.docs-story .site-header {
+    position: relative;
+}
