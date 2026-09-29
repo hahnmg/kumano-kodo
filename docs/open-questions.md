@@ -2,7 +2,6 @@
 
 | # | Question | Proposal | Impact |
 |---|---|---|---|
-| 3 | Target output of the components? | Plain HTML builders (`.markup.ts`) in Storybook `html-vite` | Decides the Storybook framework; React or Fluid/Twig would change every builder |
 | 4 | Mobile reference? | Add mobile frames (390px) in Figma before the first coded component | Without them, stories and tests cover desktop only |
 | 6 | Hero gradient | Built as a local value, the only unbound fill; confirm or tokenize | One exception to the tokens-only rule |
 | 7 | Keep `sections/`, `index.html`, `original/`, `referenz-v3.jpg`, `PROMPT.md`? | Move into `docs/archive/v3-export/` | Clean root; history stays in git |
