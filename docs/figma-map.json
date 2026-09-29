@@ -327,15 +327,15 @@
         },
         {
             "name": "Scheme Toggle",
-            "group": "organisms",
-            "component": "site-header",
+            "group": "atoms",
+            "component": "scheme-toggle",
             "node": "36:173",
             "variants": ["State=Off", "State=On"]
         },
         {
             "name": "Menu Button",
-            "group": "organisms",
-            "component": "site-header",
+            "group": "atoms",
+            "component": "menu-button",
             "node": "36:182",
             "variants": ["State=Closed", "State=Open"]
         },
@@ -348,14 +348,14 @@
         },
         {
             "name": "Nav Dropdown",
-            "group": "organisms",
-            "component": "site-header",
+            "group": "molecules",
+            "component": "nav-flyout",
             "node": "37:181"
         },
         {
             "name": "Nav Mega",
-            "group": "organisms",
-            "component": "site-header",
+            "group": "molecules",
+            "component": "nav-flyout",
             "node": "37:194"
         },
         {

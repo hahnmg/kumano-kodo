@@ -11,7 +11,7 @@ describe('site-header', () => {
         expect(el.querySelector('[data-theme-value]')).toBeNull();
     });
     it('offers the scheme toggle as a pressed-state button', () => {
-        const button = mount(siteHeader({ nav: kumano.nav })).querySelector('.site-header__scheme');
+        const button = mount(siteHeader({ nav: kumano.nav })).querySelector('.scheme-toggle');
         expect(button?.getAttribute('aria-pressed')).toBe('false');
         expect(button?.getAttribute('aria-label')).toBe('Dark mode');
     });

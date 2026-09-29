@@ -1,4 +1,4 @@
-const button = '.site-header__menu';
+const button = '.menu-button';
 
 const setOpen = (header: Element, open: boolean): void => {
     header.toggleAttribute('data-menu-open', open);

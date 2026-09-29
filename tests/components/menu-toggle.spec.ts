@@ -11,7 +11,7 @@ describe('menu-toggle', () => {
         document.body.innerHTML = siteHeader({ nav: kumano.nav, languages });
         unbind = bindMenuToggle(document);
         const header = document.querySelector('.site-header');
-        const button = document.querySelector<HTMLButtonElement>('.site-header__menu');
+        const button = document.querySelector<HTMLButtonElement>('.menu-button');
         button?.click();
         expect(header?.hasAttribute('data-menu-open')).toBe(true);
         expect(button?.getAttribute('aria-expanded')).toBe('true');
@@ -22,7 +22,7 @@ describe('menu-toggle', () => {
     it('closes on Escape and returns focus to the button', () => {
         document.body.innerHTML = siteHeader({ nav: kumano.nav });
         unbind = bindMenuToggle(document);
-        const button = document.querySelector<HTMLButtonElement>('.site-header__menu');
+        const button = document.querySelector<HTMLButtonElement>('.menu-button');
         button?.click();
         document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
         expect(document.querySelector('.site-header')?.hasAttribute('data-menu-open')).toBe(false);

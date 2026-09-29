@@ -1,0 +1,38 @@
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: var(--border-hairline) solid var(--color-line);
+    border-radius: var(--radius-full);
+    background: transparent;
+    cursor: pointer;
+    transition: border-color var(--motion-fast) var(--ease-out);
+}
+
+.menu-button:hover {
+    border-color: var(--color-ink);
+}
+
+.menu-button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.menu-button__bar {
+    width: 12px;
+    border-top: var(--border-hairline) solid var(--color-ink);
+    transition: transform var(--motion-base) var(--ease-out);
+}
+
+.menu-button[aria-expanded='true'] .menu-button__bar:first-child {
+    transform: translateY(3px) rotate(45deg);
+}
+
+.menu-button[aria-expanded='true'] .menu-button__bar:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+}

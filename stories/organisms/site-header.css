@@ -105,10 +105,9 @@
     outline-offset: 2px;
 }
 
-.site-header__flyout {
+.site-header .nav-flyout {
     position: absolute;
     visibility: hidden;
-    background: var(--color-paper);
     opacity: 0;
     transform: translateY(-6px);
     transition:
@@ -117,79 +116,24 @@
         visibility 0s linear var(--motion-base);
 }
 
-.site-header__item[data-open] > .site-header__flyout {
+.site-header__item[data-open] > .nav-flyout {
     visibility: visible;
     opacity: 1;
     transform: none;
     transition-delay: 0s;
 }
 
-.site-header__flyout--dropdown {
+.site-header .nav-flyout--dropdown {
     top: calc(100% + var(--header-pad-block) + var(--border-hairline));
     left: 0;
-    min-width: 280px;
-    padding: var(--space-4) var(--space-20) var(--space-8);
-    border: var(--border-hairline) solid var(--color-line);
-    border-top-color: var(--color-accent);
 }
 
-.site-header__flyout--mega {
+/* The mega panel spans the header; its contents keep to the page container. */
+.site-header .nav-flyout--mega {
     top: calc(100% + var(--border-hairline));
     right: 0;
     left: 0;
-    padding: var(--space-40) max(var(--gutter), (100% - var(--container-page)) / 2) var(--space-56);
-    border-top: var(--border-hairline) solid var(--color-accent);
-    border-bottom: var(--border-hairline) solid var(--color-line);
-}
-
-.site-header__mega {
-    display: grid;
-    grid-auto-columns: minmax(0, 1fr);
-    grid-auto-flow: column;
-    gap: var(--space-40) var(--space-56);
-}
-
-.site-header__mega-title {
-    margin: 0 0 var(--space-12);
-    color: var(--color-muted);
-}
-
-.site-header__mega-text {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-16);
-}
-
-.site-header__mega-text .site-header__mega-title {
-    margin: 0;
-}
-
-.site-header__menu-links {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.site-header__menu-links li + li {
-    border-top: var(--border-hairline) solid var(--color-line);
-}
-
-.site-header__menu-link {
-    display: block;
-    padding: var(--space-10) 0;
-    color: var(--color-ink);
-    text-decoration: none;
-    transition: color var(--motion-fast) var(--ease-out);
-}
-
-.site-header__menu-link:hover,
-.site-header__menu-link[aria-current] {
-    color: var(--color-accent);
-}
-
-.site-header__menu-link:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
+    padding-inline: max(var(--gutter), (100% - var(--container-page)) / 2);
 }
 
 .site-header__tools {
@@ -218,76 +162,10 @@
     display: contents;
 }
 
-.site-header__menu {
+.site-header .menu-button {
     display: none;
-    flex-direction: column;
-    gap: var(--space-5);
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    border: var(--border-hairline) solid var(--color-line);
-    border-radius: var(--radius-full);
-    background: transparent;
-    cursor: pointer;
-    transition: border-color var(--motion-fast) var(--ease-out);
 }
 
-.site-header__menu:hover {
-    border-color: var(--color-ink);
-}
-
-.site-header__menu:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-}
-
-.site-header__bar {
-    width: 12px;
-    border-top: var(--border-hairline) solid var(--color-ink);
-    transition: transform var(--motion-base) var(--ease-out);
-}
-
-.site-header__menu[aria-expanded='true'] .site-header__bar:first-child {
-    transform: translateY(3px) rotate(45deg);
-}
-
-.site-header__menu[aria-expanded='true'] .site-header__bar:last-child {
-    transform: translateY(-3px) rotate(-45deg);
-}
-
-.site-header__scheme {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    border: var(--border-hairline) solid var(--color-line);
-    border-radius: var(--radius-full);
-    background: transparent;
-    cursor: pointer;
-    transition: border-color var(--motion-fast) var(--ease-out);
-}
-
-.site-header__scheme:hover {
-    border-color: var(--color-ink);
-}
-
-.site-header__scheme span {
-    width: 10px;
-    height: 10px;
-    border: var(--border-hairline) solid var(--color-ink);
-    border-radius: var(--radius-full);
-    transition: background-color var(--motion-fast) var(--ease-out);
-}
-
-.site-header__scheme[aria-pressed='true'] span {
-    background: var(--color-ink);
-}
-
-.site-header__scheme:focus-visible,
 .site-header__languages a:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
@@ -299,7 +177,7 @@
         flex-wrap: wrap;
     }
 
-    .site-header__menu {
+    .site-header .menu-button {
         display: flex;
     }
 
@@ -347,7 +225,7 @@
     }
 
     /* In the folded menu, flyouts open inline like an accordion; an accent rule marks the second level. */
-    .site-header__flyout {
+    .site-header .nav-flyout {
         position: static;
         display: none;
         min-width: 0;
@@ -360,41 +238,40 @@
         visibility: visible;
     }
 
-    .site-header__item[data-open] > .site-header__flyout {
+    .site-header__item[data-open] > .nav-flyout {
         display: block;
     }
 
-    .site-header__mega {
-        grid-auto-flow: row;
+    .site-header .nav-flyout__grid {
         gap: var(--space-24);
     }
 
-    .site-header__mega-title {
+    .site-header .nav-flyout__title {
         margin-bottom: var(--space-4);
     }
 
-    .site-header__menu-link {
+    .site-header .nav-flyout__link {
         padding: var(--space-8) 0;
     }
 
-    .site-header__mega-text {
+    .site-header .nav-flyout__text {
         gap: var(--space-8);
     }
 
-    .site-header__mega-text .rich-text p {
+    .site-header .nav-flyout__text .rich-text p {
         font-size: var(--type-small-size);
         line-height: var(--type-small-line-height);
     }
 
     /* The teaser shrinks to a row with a thumbnail, so the image does not outweigh the menu. */
-    .site-header__mega-teaser .teaser-card {
+    .site-header .nav-flyout__teaser .teaser-card {
         display: grid;
         grid-template-columns: 88px minmax(0, 1fr);
         gap: var(--space-16);
         align-items: start;
     }
 
-    .site-header__mega-teaser .teaser-card__body {
+    .site-header .nav-flyout__teaser .teaser-card__body {
         padding-top: 0;
         background: none;
     }

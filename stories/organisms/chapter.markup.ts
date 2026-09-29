@@ -38,10 +38,3 @@ export const chapter = ({ id, number, date, title, text, photos, labels }: Chapt
     `<h2${attrs({ id, class: 'chapter__title type-h3' })}>${esc(title)}</h2><p class="type-lead">${esc(text)}</p></div></div>` +
     `<div${attrs({ class: 'chapter__photos', ...lightboxGroupAttrs(labels) })}>${photos.map(photo).join('')}</div>` +
     `</div></section>`;
-
-// A photo across the full viewport width, the caption back in the page container.
-export const bleedPhoto = (image: Image, caption = image.caption, labels?: Partial<LightboxLabels>): string =>
-    `<figure${attrs({ class: 'bleed-photo', ...lightboxGroupAttrs(labels) })}>` +
-    `<a${attrs({ class: 'lightbox-link', href: image.full ?? image.src, 'data-lightbox': true, 'aria-haspopup': 'dialog' })}>${img(image, 'bleed-photo__image', '100vw')}</a>` +
-    (caption ? `<figcaption class="bleed-photo__caption type-caption">${esc(caption)}</figcaption>` : '') +
-    `</figure>`;

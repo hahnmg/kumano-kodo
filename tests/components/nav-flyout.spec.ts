@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { bindNavFlyouts } from '../../src/scripts/nav-flyout';
+import { navFlyout } from '../../stories/molecules/nav-flyout.markup';
 import { siteHeader } from '../../stories/organisms/site-header.markup';
 import { kumano } from '../../stories/templates/content';
 import { expectAccessible } from '../support/accessibility';
@@ -14,11 +15,11 @@ describe('nav-flyout', () => {
         document.body.innerHTML = siteHeader({ nav: kumano.nav });
         expect(toggles()).toHaveLength(2);
         expect(toggles()[0].getAttribute('aria-expanded')).toBe('false');
-        const mega = document.querySelector('.site-header__flyout--mega');
-        expect(mega?.querySelectorAll('.site-header__mega-column')).toHaveLength(2);
+        const mega = document.querySelector('.nav-flyout--mega');
+        expect(mega?.querySelectorAll('.nav-flyout__column')).toHaveLength(2);
         expect(mega?.querySelector('.rich-text')).not.toBeNull();
         expect(mega?.querySelector('.teaser-card p.teaser-card__title')).not.toBeNull();
-        expect(document.querySelector('.site-header__flyout--dropdown a')).not.toBeNull();
+        expect(document.querySelector('.nav-flyout--dropdown a')).not.toBeNull();
     });
     it('opens one flyout at a time and closes on Escape and outside clicks', () => {
         document.body.innerHTML = siteHeader({ nav: kumano.nav }) + '<main><p>Page</p></main>';
@@ -38,4 +39,11 @@ describe('nav-flyout', () => {
     });
     it('passes axe with the mega panel open', () =>
         expectAccessible(siteHeader({ nav: kumano.nav.map((n, i) => ({ ...n, open: i === 0 })) }), true));
+    it('renders on its own, dropdown and mega', () => {
+        const [route, practical] = kumano.nav;
+        document.body.innerHTML = route.menu && practical.menu ? navFlyout(route.menu) + navFlyout(practical.menu) : '';
+        expect(document.querySelectorAll('.nav-flyout--mega .nav-flyout__column')).toHaveLength(2);
+        expect(document.querySelector('.nav-flyout--mega .teaser-card')).not.toBeNull();
+        expect(document.querySelectorAll('.nav-flyout--dropdown a').length).toBeGreaterThan(1);
+    });
 });

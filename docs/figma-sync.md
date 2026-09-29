@@ -35,6 +35,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [ ] Site pages: route overview, days and places, day page, place page, practical overview and subpage, photos, text page
 - [ ] All 27 trip photos (web versions in img/photos) replace the earlier set
 - [ ] Contents: the walk Takijiri → Nachi, 20–23 April 2024, in EN, DE, JA
+- [ ] Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
 
 ## Known differences between Figma and code
 

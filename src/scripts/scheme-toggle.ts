@@ -1,6 +1,6 @@
 export type Scheme = 'light' | 'dark';
 
-const toggle = '.site-header__scheme';
+const toggle = '.scheme-toggle';
 
 export const currentScheme = (doc: Document = document): Scheme => (doc.documentElement.dataset.scheme === 'dark' ? 'dark' : 'light');
 
