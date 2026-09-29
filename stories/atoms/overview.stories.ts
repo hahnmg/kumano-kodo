@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { content } from '../templates/content';
 import { avatar } from './avatar.markup';
 import { badge } from './badge.markup';
 import { button } from './button.markup';
@@ -38,49 +39,49 @@ const meta: Meta = { title: 'Atoms/Overview', parameters: { layout: 'fullscreen'
 export default meta;
 
 export const Overview: StoryObj = {
-    render: () =>
-        `<div style="padding:56px;background:var(--color-paper)">` +
-        row('Logo', logo()) +
-        row(
-            'Button',
-            button({ label: 'Subscribe' }) +
-                `<span style="display:inline-flex;gap:12px;padding:24px;background:url(img/nebelberge.jpg) center/cover">${button({ label: 'See the stages', variant: 'light' })}${button({ label: 'Practical questions', variant: 'outline' })}</span>`,
-        ) +
-        row('Link', link({ label: 'Read more', href: '#' }) + link({ label: 'All stages', href: '#', direction: 'back' })) +
-        row(
-            'Chip · Badge',
-            chip({ label: 'Stages', href: '#', active: true }) +
-                chip({ label: 'Places', href: '#' }) +
-                chip({ label: 'Day trips', href: '#' }) +
-                badge({ label: 'Longest stage' }),
-        ) +
-        row('Icons', iconNames.map((name) => icon({ name })).join('')) +
-        row(
-            'Controls',
-            iconButton({ direction: 'previous' }) +
-                iconButton({ direction: 'next' }) +
-                iconCircle({ name: 'clock' }) +
-                sliderDots({ count: 5 }),
-        ) +
-        row(
-            'Avatar',
-            avatar({ src: 'img/zedernweg.jpg', alt: 'Two walkers between tall cedars' }) +
-                avatar({ src: 'img/onsen.jpg', alt: 'Onsen pool under a wooden roof', size: 'small' }),
-        ) +
-        row(
-            'Fields',
-            `<div style="display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:32px">` +
-                textField({ label: 'Email address', name: 'email', placeholder: 'name@example.com' }) +
-                select({ label: 'Day', name: 'day', options: ['All days', 'Day 1', 'Day 2', 'Day 3', 'Day 4'] }) +
-                searchField({ label: 'Search', name: 'q', placeholder: 'e.g. Hongu' }) +
-                textarea({ label: 'Message', name: 'message', placeholder: 'Your question about the route' }) +
-                `</div>`,
-        ) +
-        row(
-            'Choices',
-            checkbox({ label: 'I would like to receive the newsletter.', name: 'c' }) +
-                radio({ label: 'Nakahechi', name: 'r', value: 'nakahechi', checked: true }) +
-                radio({ label: 'Kohechi', name: 'r', value: 'kohechi' }),
-        ) +
-        `</div>`,
+    render: (_, { globals }) => {
+        const { ui, kumano, pages, guide, photos, samples } = content(globals.locale);
+        return (
+            `<div style="padding:56px;background:var(--color-paper)">` +
+            row('Logo', logo()) +
+            row(
+                'Button',
+                button({ label: ui.subscribe }) +
+                    `<span style="display:inline-flex;gap:12px;padding:24px;background:url(img/nebelberge.jpg) center/cover">${button({ label: kumano.hero.actions[0].label, variant: 'light' })}${button({ label: kumano.hero.actions[1].label, variant: 'outline' })}</span>`,
+            ) +
+            row('Link', link({ label: ui.readMore, href: '#' }) + link({ label: pages.detail.back, href: '#', direction: 'back' })) +
+            row(
+                'Chip · Badge',
+                pages.list.chips
+                    .slice(1)
+                    .map((label, i) => chip({ label, href: '#', active: i === 0 }))
+                    .join('') + badge({ label: pages.list.chips[3] }),
+            ) +
+            row('Icons', iconNames.map((name) => icon({ name })).join('')) +
+            row(
+                'Controls',
+                iconButton({ direction: 'previous' }) +
+                    iconButton({ direction: 'next' }) +
+                    iconCircle({ name: 'clock' }) +
+                    sliderDots({ count: 5, label: ui.card }),
+            ) +
+            row('Avatar', avatar(photos.zedernweg) + avatar({ ...photos.onsen, size: 'small' })) +
+            row(
+                'Fields',
+                `<div style="display:grid;grid-template-columns:repeat(2,minmax(0,360px));gap:32px">` +
+                    textField({ label: ui.emailAddress, name: 'email', placeholder: ui.emailPlaceholder }) +
+                    select({ label: pages.list.day.label, name: 'day', options: pages.list.day.options }) +
+                    searchField({ label: samples.search, name: 'q', placeholder: pages.list.search.placeholder }) +
+                    textarea({ ...samples.textarea, name: 'message' }) +
+                    `</div>`,
+            ) +
+            row(
+                'Choices',
+                checkbox({ label: ui.consent, name: 'c' }) +
+                    radio({ label: guide.routes[0].title, name: 'r', value: 'nakahechi', checked: true }) +
+                    radio({ label: guide.routes[2].title, name: 'r', value: 'kohechi' }),
+            ) +
+            `</div>`
+        );
+    },
 };

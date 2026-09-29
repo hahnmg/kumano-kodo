@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { checkbox, type CheckboxProps } from './checkbox.markup';
-import './checkbox.css';
 
 const meta: Meta<CheckboxProps> = {
     title: 'Atoms/Checkbox',
-    render: (args) => checkbox(args),
-    args: { label: 'I would like to receive the newsletter and have read the privacy policy.', name: 'consent', checked: false },
+    render: localized(checkbox, (c) => ({ label: c.ui.consent })),
+    args: { name: 'consent', checked: false },
 };
 export default meta;
 

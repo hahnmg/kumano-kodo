@@ -1,13 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { select, type SelectProps } from './select.markup';
-import './icon.css';
-import './text-field.css';
-import './select.css';
 
 const meta: Meta<SelectProps> = {
     title: 'Atoms/Select',
-    render: (args) => `<div style="max-width:320px">${select(args)}</div>`,
-    args: { label: 'Day', name: 'day', options: ['All days', 'Day 1', 'Day 2', 'Day 3', 'Day 4'], value: 'All days' },
+    render: localized(
+        (p: SelectProps) => `<div style="max-width:320px">${select(p)}</div>`,
+        (c) => ({ ...c.pages.list.day, value: c.pages.list.day.options[0] }),
+    ),
+    args: { name: 'day' },
 };
 export default meta;
 

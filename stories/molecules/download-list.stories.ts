@@ -1,16 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { downloadList, type DownloadListProps } from './download-list.markup';
 
 const meta: Meta<DownloadListProps> = {
     title: 'Molecules/Download List',
-    render: (args) => `<div style="max-width:765px">${downloadList(args)}</div>`,
-    args: {
-        items: [
-            { title: 'Stage map Chikatsuyu → Hongu', meta: 'PDF · 1,2 MB', href: '#' },
-            { title: 'Bus timetable Hosshinmon – Hongu', meta: 'PDF · 96 KB', href: '#' },
-            { title: 'Packing list for rain', meta: 'PDF · 240 KB', href: '#' },
-        ],
-    },
+    render: localized(
+        (p: DownloadListProps) => `<div style="max-width:765px">${downloadList(p)}</div>`,
+        (c) => ({ items: c.pages.detail.downloads }),
+    ),
 };
 export default meta;
 

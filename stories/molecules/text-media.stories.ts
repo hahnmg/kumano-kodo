@@ -1,17 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { photos } from '../templates/content';
+import { localized } from '../templates/content';
 import { textMedia, type TextMediaProps } from './text-media.markup';
 
 const meta: Meta<TextMediaProps> = {
     title: 'Molecules/Text & Media',
-    tags: ['autodocs'],
-    render: (args) => textMedia(args),
-    args: {
-        image: photos.onsen,
-        title: 'Yunomine Onsen',
-        text: "Japan's oldest hot spring, in use since the twelfth century. After day three, the real reason to keep going.",
-        link: { label: 'Read more', href: '#' },
-    },
+    render: localized(textMedia, (c) => ({
+        image: c.photos.onsen,
+        title: c.kumano.places[1].title,
+        text: c.kumano.places[1].description,
+        link: { label: c.ui.readMore, href: '#' },
+    })),
 };
 export default meta;
 

@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { guide } from '../templates/content';
+import { localized } from '../templates/content';
 import { topbar, type TopbarProps } from './topbar.markup';
 
 const meta: Meta<TopbarProps> = {
     title: 'Organisms/Topbar',
-    render: (args) => topbar(args),
-    args: guide.topbar,
+    render: localized(topbar, (c) => ({ ...c.guide.topbar, ariaLabel: c.ui.trailStatus })),
     parameters: { layout: 'fullscreen' },
 };
 export default meta;

@@ -13,11 +13,16 @@ npm ci
 npm run storybook        # http://localhost:6006
 ```
 
-The toolbar switches **theme** (caramel, forest, ocean, violet) and **scheme** (light, dark).
+The toolbar switches **language** (日本語, Deutsch, English) and **scheme** (light, dark). The JA · DE · EN links and the
+dark mode button in the site header do the same and keep the toolbar in step. Themes are shown as templates
+(Kumano Home · Caramel, Forest, Ocean, Violet); components render in Caramel.
 
-The sidebar runs from whole pages to parts: **Templates** (Kumano Home, Start, List, Detail), **Organisms**, **Molecules**,
-**Atoms** ("Atoms/Overview" shows all atoms on one page) and **Layout**. A component with variants opens on a Docs page
-with all variants and the controls; a component without variants is a single entry.
+Sample content lives in `stories/content/en.ts`, `de.ts` and `ja.ts`, one object each with the same shape; TypeScript
+fails the build if a language misses a key. The Japanese text has not been checked by a native speaker.
+
+The sidebar runs from whole pages to parts: **Templates** (Kumano Home in four themes, Start, List, Detail),
+**Organisms**, **Molecules**, **Atoms** ("Atoms/Overview" shows all atoms on one page) and **Layout**. Every component
+is one Docs page with all its variants and the controls; single stories are not listed.
 
 | Command             | Does                                                                                  |
 | ------------------- | ------------------------------------------------------------------------------------- |

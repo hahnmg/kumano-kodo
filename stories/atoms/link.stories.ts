@@ -1,15 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { link, type LinkProps } from './link.markup';
-import './link.css';
 
 const meta: Meta<LinkProps> = {
-    tags: ['autodocs'],
     title: 'Atoms/Link',
-    render: (args) => link(args),
     argTypes: { direction: { control: 'inline-radio', options: ['forward', 'back'] } },
-    args: { label: 'Read more', href: '#', direction: 'forward' },
+    args: { href: '#' },
 };
 export default meta;
 
-export const Forward: StoryObj<LinkProps> = { args: { direction: 'forward', label: 'Read more' } };
-export const Back: StoryObj<LinkProps> = { args: { direction: 'back', label: 'All stages' } };
+export const Forward: StoryObj<LinkProps> = { args: { direction: 'forward' }, render: localized(link, (c) => ({ label: c.ui.readMore })) };
+export const Back: StoryObj<LinkProps> = { args: { direction: 'back' }, render: localized(link, (c) => ({ label: c.pages.detail.back })) };

@@ -11,6 +11,11 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-09-29 Checkbox and radio: control centred to its label, no top offset
 - [x] 2026-09-29 Hover states as `State=Hover` variants with smart animate 320 ms (Button, Link, Link Tile, Teaser Card, Nav Item, Chip, Sub Nav Item); motion tokens stay code-only
 
+- [ ] Site header: theme swatches removed; dark mode toggle as pressed-state button
+- [ ] Themes as page templates: Kumano Home in Caramel, Forest, Ocean, Violet
+- [ ] Figure: variant without top rule, used on the detail page
+- [ ] Content in three languages (EN, DE, JA): at least one page per language, or text properties per locale
+
 ## Known differences between Figma and code
 
 - Photos `farn` and `laternen` are not in the Figma file: the Kohechi row keeps its old image, the Person Card default keeps its old portrait.

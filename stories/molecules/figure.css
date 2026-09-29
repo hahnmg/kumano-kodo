@@ -37,3 +37,8 @@
     max-width: 579px;
     color: var(--color-muted);
 }
+
+.figure--unruled {
+    padding-top: 0;
+    border-top: 0;
+}

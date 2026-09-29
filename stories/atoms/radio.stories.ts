@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { radio, type RadioProps } from './radio.markup';
-import './checkbox.css';
 
-const meta: Meta<RadioProps> = {
-    tags: ['autodocs'],
-    title: 'Atoms/Radio',
-    render: (args) => radio(args),
-    args: { label: 'Nakahechi', name: 'route', value: 'nakahechi', checked: true },
-};
+const meta: Meta<RadioProps> = { title: 'Atoms/Radio', args: { name: 'route' } };
 export default meta;
 
-export const Checked: StoryObj<RadioProps> = { args: { checked: true } };
-export const Unchecked: StoryObj<RadioProps> = { args: { checked: false, label: 'Kohechi', value: 'kohechi' } };
+export const Checked: StoryObj<RadioProps> = {
+    args: { checked: true, value: 'nakahechi' },
+    render: localized(radio, (c) => ({ label: c.guide.routes[0].title })),
+};
+export const Unchecked: StoryObj<RadioProps> = {
+    args: { checked: false, value: 'kohechi' },
+    render: localized(radio, (c) => ({ label: c.guide.routes[2].title })),
+};

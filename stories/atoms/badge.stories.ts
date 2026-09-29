@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { badge, type BadgeProps } from './badge.markup';
-import './badge.css';
 
 const meta: Meta<BadgeProps> = {
     title: 'Atoms/Badge',
-    render: (args) => badge(args),
-    args: { label: 'Longest stage' },
+    render: localized(badge, (c) => {
+        const entry = c.guide.entries[2];
+        return { label: 'badge' in entry && entry.badge ? entry.badge : '' };
+    }),
 };
 export default meta;
 

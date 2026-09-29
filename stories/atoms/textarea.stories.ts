@@ -1,12 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { textarea, type TextareaProps } from './textarea.markup';
-import './text-field.css';
-import './textarea.css';
 
 const meta: Meta<TextareaProps> = {
     title: 'Atoms/Textarea',
-    render: (args) => `<div style="max-width:539px">${textarea(args)}</div>`,
-    args: { label: 'Message', name: 'message', placeholder: 'Your question about the route' },
+    render: localized(
+        (p: TextareaProps) => `<div style="max-width:539px">${textarea(p)}</div>`,
+        (c) => c.samples.textarea,
+    ),
+    args: { name: 'message' },
 };
 export default meta;
 

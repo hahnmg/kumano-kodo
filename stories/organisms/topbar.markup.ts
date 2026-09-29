@@ -6,10 +6,11 @@ export interface TopbarProps {
     value: string;
     phone: string;
     email: string;
+    ariaLabel?: string;
 }
 
-export const topbar = ({ label, value, phone, email }: TopbarProps): string =>
-    `<aside class="topbar" aria-label="Trail status and contact">` +
+export const topbar = ({ label, value, phone, email, ariaLabel = 'Trail status and contact' }: TopbarProps): string =>
+    `<aside class="topbar" aria-label="${esc(ariaLabel)}">` +
     `<p class="topbar__hours">${icon({ name: 'clock', size: 16 })}<strong class="type-button">${esc(label)}</strong> <span class="type-small">${esc(value)}</span></p>` +
     `<p class="topbar__contact">` +
     `<a${attrs({ class: 'type-small', href: `tel:${phone.replace(/\s/g, '')}` })}>${icon({ name: 'phone', size: 16 })}${esc(phone)}</a>` +

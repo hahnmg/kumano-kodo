@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { textField, type TextFieldProps } from './text-field.markup';
-import './text-field.css';
 
 const meta: Meta<TextFieldProps> = {
     title: 'Atoms/Text Field',
-    render: (args) => `<div style="max-width:539px">${textField(args)}</div>`,
-    args: { label: 'Email address', name: 'email', type: 'email', placeholder: 'name@example.com' },
+    render: localized(
+        (p: TextFieldProps) => `<div style="max-width:539px">${textField(p)}</div>`,
+        (c) => ({ label: c.ui.emailAddress, placeholder: c.ui.emailPlaceholder }),
+    ),
+    args: { name: 'email', type: 'email' },
 };
 export default meta;
 

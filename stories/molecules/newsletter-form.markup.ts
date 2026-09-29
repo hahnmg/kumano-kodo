@@ -8,6 +8,7 @@ export interface NewsletterFormProps {
     emailLabel?: string;
     consent?: string;
     submit?: string;
+    placeholder?: string;
 }
 
 export const newsletterForm = ({
@@ -15,8 +16,9 @@ export const newsletterForm = ({
     emailLabel = 'Email address',
     consent = 'I would like to receive the newsletter and have read the privacy policy.',
     submit = 'Subscribe',
+    placeholder = 'name@example.com',
 }: NewsletterFormProps): string =>
     `<form${attrs({ class: 'newsletter-form', action, method: 'post' })}>` +
-    textField({ label: emailLabel, name: 'email', type: 'email', placeholder: 'name@example.com', required: true }) +
+    textField({ label: emailLabel, name: 'email', type: 'email', placeholder, required: true }) +
     checkbox({ label: consent, name: 'consent', required: true }) +
     `<div>${button({ label: submit, type: 'submit' })}</div></form>`;

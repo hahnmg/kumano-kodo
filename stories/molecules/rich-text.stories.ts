@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { richTextSample } from '../templates/content';
+import { localized } from '../templates/content';
 import { richText, type RichTextProps } from './rich-text.markup';
 
-const meta: Meta<RichTextProps> = { title: 'Molecules/Rich Text', render: (args) => richText(args), args: { html: richTextSample } };
+const meta: Meta<RichTextProps> = { title: 'Molecules/Rich Text', render: localized(richText, (c) => ({ html: c.richTextSample })) };
 export default meta;
 
 export const RichText: StoryObj<RichTextProps> = {};

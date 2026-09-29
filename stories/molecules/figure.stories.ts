@@ -1,23 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { photos } from '../templates/content';
+import { localized } from '../templates/content';
 import { figure, type FigureProps } from './figure.markup';
 
-const meta: Meta<FigureProps> = {
-    title: 'Molecules/Figure',
-    tags: ['autodocs'],
-    render: (args) => `<div style="max-width:765px">${figure(args)}</div>`,
-};
+const frame = (p: FigureProps) => `<div style="max-width:765px">${figure(p)}</div>`;
+
+const meta: Meta<FigureProps> = { title: 'Molecules/Figure' };
 export default meta;
 
 export const Single: StoryObj<FigureProps> = {
-    args: {
-        images: [photos.steinbruecke],
-        caption: 'Between Takahara and Chikatsuyu a dozen dry-stone bridges cross the slope. Kilometre 14.',
-    },
+    render: localized(frame, (c) => ({ images: [c.photos.steinbruecke], caption: c.home.bridgeCaption })),
 };
 export const Pair: StoryObj<FigureProps> = {
-    args: {
-        images: [photos.krabbe, photos.nebelbaum],
-        caption: 'Notes from the roadside. A land crab after the rain, a cedar in the mist.',
-    },
+    render: localized(frame, (c) => ({ images: [c.photos.krabbe, c.photos.nebelbaum], caption: c.home.roadsideCaption })),
+};
+export const Unruled: StoryObj<FigureProps> = {
+    args: { rule: false },
+    render: localized(frame, (c) => ({ images: [c.photos.talblick], caption: c.pages.detail.caption })),
 };

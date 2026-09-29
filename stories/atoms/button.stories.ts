@@ -1,28 +1,32 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
+import { localized } from '../templates/content';
 import { button, type ButtonProps } from './button.markup';
-import './button.css';
 
 const onImage = { backgrounds: { disable: true } };
 const photo = (html: string) =>
     `<div style="padding:40px;background:url(img/nebelberge.jpg) center/cover;display:inline-flex;gap:12px">${html}</div>`;
 
 const meta: Meta<ButtonProps> = {
-    tags: ['autodocs'],
     title: 'Atoms/Button',
-    render: (args) => button(args),
+    render: localized(button, (c) => ({ label: c.ui.subscribe })),
     argTypes: { variant: { control: 'inline-radio', options: ['primary', 'light', 'outline'] } },
-    args: { label: 'Subscribe', variant: 'primary' },
 };
 export default meta;
 
-export const Primary: StoryObj<ButtonProps> = { args: { variant: 'primary', label: 'Subscribe' } };
+export const Primary: StoryObj<ButtonProps> = { args: { variant: 'primary' } };
 export const Light: StoryObj<ButtonProps> = {
-    args: { variant: 'light', label: 'See the stages' },
-    render: (args) => photo(button(args)),
+    args: { variant: 'light' },
+    render: localized(
+        (p: ButtonProps) => photo(button(p)),
+        (c) => ({ label: c.kumano.hero.actions[0].label }),
+    ),
     parameters: onImage,
 };
 export const Outline: StoryObj<ButtonProps> = {
-    args: { variant: 'outline', label: 'Practical questions' },
-    render: (args) => photo(button(args)),
+    args: { variant: 'outline' },
+    render: localized(
+        (p: ButtonProps) => photo(button(p)),
+        (c) => ({ label: c.kumano.hero.actions[1].label }),
+    ),
     parameters: onImage,
 };
