@@ -3,6 +3,7 @@ import { UPDATE_GLOBALS } from 'storybook/internal/core-events';
 import { addons } from 'storybook/preview-api';
 import '../src/tokens/tokens.css';
 import '../src/styles/base.css';
+import './docs.css';
 import { bindMenuToggle } from '../src/scripts/menu-toggle';
 import { bindSchemeToggle, syncSchemeToggles } from '../src/scripts/scheme-toggle';
 import { isLocale, locales } from '../stories/templates/content';

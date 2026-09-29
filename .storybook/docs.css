@@ -1,0 +1,4 @@
+/* Docs pages keep Storybook's light chrome; the story canvas takes the page colour of the active scheme. */
+.docs-story {
+    background: var(--color-paper);
+}
