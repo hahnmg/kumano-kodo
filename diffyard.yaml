@@ -1,0 +1,10 @@
+compare:
+  a: http://127.0.0.1:6007
+  b: http://127.0.0.1:6007
+browser:
+  viewports:
+    desktop: { width: 1440, height: 900 }
+scenarios:
+  - name: atoms-caramel-light-vs-violet-dark
+    a: /iframe.html?id=atoms-overview--all&viewMode=story&globals=theme:caramel;scheme:light
+    b: /iframe.html?id=atoms-overview--all&viewMode=story&globals=theme:violet;scheme:dark
