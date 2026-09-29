@@ -6,6 +6,7 @@ import '../src/styles/base.css';
 import { bindMenuToggle } from '../src/scripts/menu-toggle';
 import { bindSchemeToggle, syncSchemeToggles } from '../src/scripts/scheme-toggle';
 import { isLocale, locales } from '../stories/templates/content';
+import { formatSource } from './format-source';
 
 // Every component stylesheet, so stories and templates render with all styles present.
 import.meta.glob('../stories/**/*.css', { eager: true });
@@ -50,6 +51,7 @@ const preview: Preview = {
     ],
     parameters: {
         layout: 'padded',
+        docs: { source: { language: 'html', transform: (code: string) => formatSource(code) } },
         options: { storySort: { order: ['Templates', 'Organisms', 'Molecules', 'Atoms', 'Layout'] } },
     },
 };
