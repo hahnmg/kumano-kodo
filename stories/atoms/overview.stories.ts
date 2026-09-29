@@ -44,7 +44,7 @@ export const All: StoryObj = {
         row(
             'Button',
             button({ label: 'Subscribe' }) +
-                `<span style="display:inline-flex;gap:12px;padding:24px;background:url(/img/nebelberge.jpg) center/cover">${button({ label: 'See the stages', variant: 'light' })}${button({ label: 'Practical questions', variant: 'outline' })}</span>`,
+                `<span style="display:inline-flex;gap:12px;padding:24px;background:url(img/nebelberge.jpg) center/cover">${button({ label: 'See the stages', variant: 'light' })}${button({ label: 'Practical questions', variant: 'outline' })}</span>`,
         ) +
         row('Link', link({ label: 'Mehr erfahren', href: '#' }) + link({ label: 'Zurück zur Übersicht', href: '#', direction: 'back' })) +
         row(
@@ -64,7 +64,7 @@ export const All: StoryObj = {
         ) +
         row(
             'Avatar',
-            avatar({ src: '/img/zedernweg.jpg', alt: 'Dennis Kral' }) + avatar({ src: '/img/onsen.jpg', alt: 'Katzen', size: 'small' }),
+            avatar({ src: 'img/zedernweg.jpg', alt: 'Dennis Kral' }) + avatar({ src: 'img/onsen.jpg', alt: 'Katzen', size: 'small' }),
         ) +
         row(
             'Fields',

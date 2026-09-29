@@ -7,3 +7,4 @@ img
 docs/paper-snapshot
 src/tokens
 package-lock.json
+.diffyard-report
