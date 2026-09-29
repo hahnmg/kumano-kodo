@@ -11,4 +11,4 @@ const meta: Meta<SelectProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<SelectProps> = {};
+export const Select: StoryObj<SelectProps> = {};

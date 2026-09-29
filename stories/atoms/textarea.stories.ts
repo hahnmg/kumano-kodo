@@ -10,4 +10,4 @@ const meta: Meta<TextareaProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<TextareaProps> = {};
+export const Textarea: StoryObj<TextareaProps> = {};

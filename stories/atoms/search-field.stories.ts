@@ -10,4 +10,4 @@ const meta: Meta<SearchFieldProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<SearchFieldProps> = {};
+export const SearchField: StoryObj<SearchFieldProps> = {};

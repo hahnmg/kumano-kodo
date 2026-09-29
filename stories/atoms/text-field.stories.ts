@@ -9,4 +9,4 @@ const meta: Meta<TextFieldProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<TextFieldProps> = {};
+export const TextField: StoryObj<TextFieldProps> = {};

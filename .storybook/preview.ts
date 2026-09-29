@@ -2,6 +2,9 @@ import type { Preview } from '@storybook/html-vite';
 import '../src/tokens/tokens.css';
 import '../src/styles/base.css';
 
+// Every component stylesheet, so stories and templates render with all styles present.
+import.meta.glob('../stories/**/*.css', { eager: true });
+
 const preview: Preview = {
     globalTypes: {
         theme: {
@@ -21,7 +24,10 @@ const preview: Preview = {
             return story();
         },
     ],
-    parameters: { layout: 'padded' },
+    parameters: {
+        layout: 'padded',
+        options: { storySort: { order: ['Templates', 'Organisms', 'Molecules', 'Atoms', 'Layout'] } },
+    },
 };
 
 export default preview;

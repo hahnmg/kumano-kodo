@@ -3,6 +3,7 @@ import { avatar, type AvatarProps } from './avatar.markup';
 import './avatar.css';
 
 const meta: Meta<AvatarProps> = {
+    tags: ['autodocs'],
     title: 'Atoms/Avatar',
     render: (args) => avatar(args),
     argTypes: { size: { control: 'inline-radio', options: ['large', 'small'] } },
@@ -10,6 +11,5 @@ const meta: Meta<AvatarProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<AvatarProps> = {};
 export const Large: StoryObj<AvatarProps> = { args: { size: 'large' } };
 export const Small: StoryObj<AvatarProps> = { args: { size: 'small' } };

@@ -9,4 +9,4 @@ const meta: Meta<BadgeProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<BadgeProps> = {};
+export const Badge: StoryObj<BadgeProps> = {};

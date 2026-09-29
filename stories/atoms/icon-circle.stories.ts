@@ -12,4 +12,4 @@ const meta: Meta<IconCircleProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<IconCircleProps> = {};
+export const IconCircle: StoryObj<IconCircleProps> = {};

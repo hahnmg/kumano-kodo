@@ -9,4 +9,4 @@ const meta: Meta<SliderDotsProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<SliderDotsProps> = {};
+export const SliderDots: StoryObj<SliderDotsProps> = {};

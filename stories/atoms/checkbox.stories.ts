@@ -9,4 +9,4 @@ const meta: Meta<CheckboxProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<CheckboxProps> = {};
+export const Checkbox: StoryObj<CheckboxProps> = {};

@@ -37,7 +37,7 @@ const row = (label: string, html: string) =>
 const meta: Meta = { title: 'Atoms/Overview', parameters: { layout: 'fullscreen' } };
 export default meta;
 
-export const All: StoryObj = {
+export const Overview: StoryObj = {
     render: () =>
         `<div style="padding:56px;background:var(--color-paper)">` +
         row('Logo', logo()) +

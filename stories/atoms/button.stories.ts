@@ -7,6 +7,7 @@ const photo = (html: string) =>
     `<div style="padding:40px;background:url(img/nebelberge.jpg) center/cover;display:inline-flex;gap:12px">${html}</div>`;
 
 const meta: Meta<ButtonProps> = {
+    tags: ['autodocs'],
     title: 'Atoms/Button',
     render: (args) => button(args),
     argTypes: { variant: { control: 'inline-radio', options: ['primary', 'light', 'outline'] } },
@@ -14,7 +15,6 @@ const meta: Meta<ButtonProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<ButtonProps> = {};
 export const Primary: StoryObj<ButtonProps> = { args: { variant: 'primary', label: 'Subscribe' } };
 export const Light: StoryObj<ButtonProps> = {
     args: { variant: 'light', label: 'See the stages' },

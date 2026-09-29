@@ -3,6 +3,7 @@ import { link, type LinkProps } from './link.markup';
 import './link.css';
 
 const meta: Meta<LinkProps> = {
+    tags: ['autodocs'],
     title: 'Atoms/Link',
     render: (args) => link(args),
     argTypes: { direction: { control: 'inline-radio', options: ['forward', 'back'] } },
@@ -10,6 +11,5 @@ const meta: Meta<LinkProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<LinkProps> = {};
 export const Forward: StoryObj<LinkProps> = { args: { direction: 'forward', label: 'Mehr erfahren' } };
 export const Back: StoryObj<LinkProps> = { args: { direction: 'back', label: 'Zurück zur Übersicht' } };

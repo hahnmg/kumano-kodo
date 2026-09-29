@@ -3,6 +3,7 @@ import { iconButton, type IconButtonProps } from './icon-button.markup';
 import './icon-button.css';
 
 const meta: Meta<IconButtonProps> = {
+    tags: ['autodocs'],
     title: 'Atoms/Icon Button',
     render: (args) => iconButton(args),
     argTypes: { direction: { control: 'inline-radio', options: ['previous', 'next'] } },
@@ -10,6 +11,5 @@ const meta: Meta<IconButtonProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<IconButtonProps> = {};
 export const Previous: StoryObj<IconButtonProps> = { args: { direction: 'previous' } };
 export const Next: StoryObj<IconButtonProps> = { args: { direction: 'next' } };

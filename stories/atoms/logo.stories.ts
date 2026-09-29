@@ -9,4 +9,4 @@ const meta: Meta<LogoProps> = {
 };
 export default meta;
 
-export const Playground: StoryObj<LogoProps> = {};
+export const Logo: StoryObj<LogoProps> = {};
