@@ -14,7 +14,14 @@
             "group": "atoms",
             "component": "button",
             "node": "5:9",
-            "variants": ["Style=Primary", "Style=Light", "Style=Outline"]
+            "variants": [
+                "Style=Primary, State=Default",
+                "Style=Light, State=Default",
+                "Style=Outline, State=Default",
+                "Style=Primary, State=Hover",
+                "Style=Light, State=Hover",
+                "Style=Outline, State=Hover"
+            ]
         },
         {
             "name": "Icon Button",
@@ -128,7 +135,13 @@
             "name": "Link",
             "group": "atoms",
             "component": "link",
-            "node": "17:75"
+            "node": "17:75",
+            "variants": [
+                "Direction=Forward, State=Default",
+                "Direction=Back, State=Default",
+                "Direction=Forward, State=Hover",
+                "Direction=Back, State=Hover"
+            ]
         },
         {
             "name": "Badge",
@@ -188,7 +201,8 @@
             "name": "Teaser Card",
             "group": "molecules",
             "component": "teaser-card",
-            "node": "18:38"
+            "node": "29:189",
+            "variants": ["State=Default", "State=Hover"]
         },
         {
             "name": "Person Card",
@@ -200,7 +214,8 @@
             "name": "Link Tile",
             "group": "molecules",
             "component": "link-tile",
-            "node": "18:54"
+            "node": "29:177",
+            "variants": ["State=Default", "State=Hover"]
         },
         {
             "name": "CTA Card",
