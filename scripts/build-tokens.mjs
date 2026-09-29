@@ -61,24 +61,33 @@ for (const mode of Color.modes) {
 out.push(block(":root,\n[data-theme='caramel']", ['--display-case: none;', '--display-tracking: 0em;']));
 out.push(block("[data-theme='violet']", ['--display-case: uppercase;', '--display-tracking: 0.09em;']));
 
+// Each text style becomes variables (for editorial HTML without classes) and a .type-* class using them.
 const slug = (name) => name.split('/')[1].toLowerCase().replace(/\s+/g, '-');
+const typeVars = [];
 for (const s of data.textStyles) {
-    const family = s.family.startsWith('font/') ? `var(${cssName(Theme, s.family)})` : fontStacks[s.family];
-    const weight = typeof s.weight === 'string' ? `var(${cssName(Theme, s.weight)})` : s.weight;
-    const lineHeight = typeof s.lineHeight === 'string' ? `var(${cssName(Theme, s.lineHeight)})` : `${s.lineHeight}px`;
+    const id = `--type-${slug(s.name)}`;
     const display = s.family === 'font/display';
     const tracking = `${s.tracking / 100}em`;
-    const lines = [
-        `font-family: ${family};`,
-        `font-weight: ${weight};`,
-        `font-size: ${s.size}px;`,
-        `line-height: ${lineHeight};`,
-        `letter-spacing: ${display ? `calc(${tracking} + var(--display-tracking))` : tracking};`,
-    ];
-    if (s.case === 'UPPER') lines.push('text-transform: uppercase;');
-    else if (display) lines.push('text-transform: var(--display-case);');
-    out.push(block(`.type-${slug(s.name)}`, lines));
+    typeVars.push(
+        `${id}-family: ${s.family.startsWith('font/') ? `var(${cssName(Theme, s.family)})` : fontStacks[s.family]};`,
+        `${id}-weight: ${typeof s.weight === 'string' ? `var(${cssName(Theme, s.weight)})` : s.weight};`,
+        `${id}-size: ${s.size}px;`,
+        `${id}-line-height: ${typeof s.lineHeight === 'string' ? `var(${cssName(Theme, s.lineHeight)})` : `${s.lineHeight}px`};`,
+        `${id}-tracking: ${display ? `calc(${tracking} + var(--display-tracking))` : tracking};`,
+        `${id}-case: ${s.case === 'UPPER' ? 'uppercase' : display ? 'var(--display-case)' : 'none'};`,
+    );
+    out.push(
+        block(`.type-${slug(s.name)}`, [
+            `font-family: var(${id}-family);`,
+            `font-weight: var(${id}-weight);`,
+            `font-size: var(${id}-size);`,
+            `line-height: var(${id}-line-height);`,
+            `letter-spacing: var(${id}-tracking);`,
+            `text-transform: var(${id}-case);`,
+        ]),
+    );
 }
+out.push(block(':root', typeVars));
 
 await mkdir(join(root, 'src/tokens'), { recursive: true });
 await writeFile(join(root, 'src/tokens/tokens.css'), out.join('\n'));
