@@ -20,7 +20,7 @@ dark mode button in the site header do the same and keep the toolbar in step. Th
 Sample content lives in `stories/content/en.ts`, `de.ts` and `ja.ts`, one object each with the same shape; TypeScript
 fails the build if a language misses a key. The Japanese text has not been checked by a native speaker.
 
-The sidebar runs from whole pages to parts: **Templates** (Kumano Home in four themes, Start, List, Detail),
+The sidebar runs from whole pages to parts: **Site** (every page), **Templates** (the home page in four themes and the v3 home it replaced),
 **Organisms**, **Molecules**, **Atoms** ("Atoms/Overview" shows all atoms on one page) and **Layout**. Every component
 is one Docs page with all its variants and the controls; single stories are not listed.
 
@@ -61,6 +61,15 @@ Hover follows the same form language as the rest: no boxes, no fills.
 - Arrows move a few pixels in their direction; the download icon moves down.
 - Teaser images zoom slowly; text links grow an underline; navigation changes colour only, never underlined. The logo does not move.
 - Durations and the curve are tokens (`--motion-fast`, `--motion-base`, `--motion-slow`, `--ease-out`), code-only because Figma has no motion variables. With "reduce motion" set in the OS they drop to zero.
+
+## Site
+
+The **Site** group holds every page of the trail journal: home, the route, days and places, one page per day and per
+place, practical information with four subpages, photos, newsletter, Kohechi and the legal pages, in three languages.
+Links are real paths (`/days/2`, `/places/yunomine`), listed once in `stories/content/paths.ts`. In Storybook a small
+router in `.storybook/preview.ts` opens the matching story when a path is clicked and scrolls to `#anchors`; on the real
+site the same paths are the page URLs. A test renders every page in every language and fails on any link that points
+nowhere.
 
 ## Photos
 

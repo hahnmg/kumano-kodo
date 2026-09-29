@@ -9,11 +9,12 @@ export interface SectionProps {
     space?: SectionSpace;
     label?: string;
     bleed?: boolean;
+    id?: string;
 }
 
 // bleed lets rails scroll to the viewport edge instead of stopping at the gutter.
-export const section = ({ content, tone = 'paper', space = 'default', label, bleed = false }: SectionProps): string =>
-    `<section${attrs({ class: cx('section', `section--${tone}`, `section--space-${space}`, bleed && 'section--bleed'), 'aria-label': label })}>` +
+export const section = ({ content, tone = 'paper', space = 'default', label, bleed = false, id }: SectionProps): string =>
+    `<section${attrs({ class: cx('section', `section--${tone}`, `section--space-${space}`, bleed && 'section--bleed'), 'aria-label': label, id })}>` +
     `<div class="section__inner">${content}</div></section>`;
 
 export const stack = (items: string[], gap: 16 | 24 | 40 | 56 | 64 | 96 = 40): string =>

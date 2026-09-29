@@ -1,5 +1,6 @@
 import type { LocaleModule, Photos } from '../templates/content';
 import type { LocaleContent } from './en';
+import { paths } from './paths';
 
 const build = (p: Photos): LocaleContent => {
     const ui = {
@@ -28,37 +29,42 @@ const build = (p: Photos): LocaleContent => {
         {
             image: p['signpost'],
             stage: '1日目',
-            stats: '3.7 km · +400 m',
+            stats: '3.7 km',
             title: '滝尻 → 高原',
-            description: 'バスを降りてすぐ、15時45分に出発。最初の一時間はひたすら登り。',
+            description: '15時45分に歩き始めた。最初の一時間はひたすら登り。',
+            href: paths.day(1),
         },
         {
             image: p['stone-path-walkers'],
             stage: '2日目',
-            stats: '9.8 km · +620 m',
+            stats: '9.8 km',
             title: '高原 → 近露',
-            description: '朝7時は集落の下に雲、9時から雨、17時半に近露の提灯の門。',
-        },
-        {
-            image: p['morning-bus'],
-            stage: 'バス',
-            stats: '07:18 · 近露 → 発心門',
-            title: '飛ばした区間',
-            description: '長い中間区間は、雨のなかバスで。後悔はない。',
+            description: '朝7時は集落の下に雲、石畳、沢、17時半に近露の提灯の門。',
+            href: paths.day(2),
         },
         {
             image: p['walker-in-mist'],
             stage: '3日目',
-            stats: '7.0 km · +180 m',
-            title: '発心門 → 本宮',
-            description: '杉林、王子の社、尾根の眺め、そして午後は湯の峰へ。',
+            stats: '約25 km',
+            title: '近露 → 本宮',
+            description: 'いちばん長い日。杉林を抜け、小さな王子の社を過ぎて、湯の峰で泊まった。',
+            href: paths.day(3),
+        },
+        {
+            image: p['fern-frond'],
+            stage: '4日目',
+            stats: '約13 km',
+            title: '小雲取越',
+            description: '温泉から、海へ向かう二つの峠のうち最初の峠へ。',
+            href: paths.day(4),
         },
         {
             image: p['nachi-pagoda'],
             stage: '4日目',
-            stats: '電車とバスで',
-            title: '那智と勝浦',
-            description: '歩かない一日。海沿いの電車、滝の前の三重塔、旅館へ渡る船。',
+            stats: '約14.5 km',
+            title: '大雲取越 → 那智',
+            description: '二つ目の峠を越え、最後は滝の前に立つ三重塔。',
+            href: paths.day(4),
         },
     ];
 
@@ -66,7 +72,7 @@ const build = (p: Photos): LocaleContent => {
         {
             image: p['nachi-pagoda'],
             title: '青岸渡寺と那智の滝',
-            description: '滝の前に立つ三重塔。昼にバスで着いた。雨は一度もきちんと止まなかった。',
+            description: '滝の前に立つ三重塔、この旅の終点。雨が降り、滝は数分ごとに霧に消えた。',
             variant: 'featured' as const,
         },
         {
@@ -89,71 +95,91 @@ const build = (p: Photos): LocaleContent => {
             {
                 title: 'ルート',
                 links: [
-                    { label: '中辺路', href: '#' },
-                    { label: '小辺路', href: '#' },
-                    { label: 'ルートマップ', href: '#' },
+                    { label: '中辺路', href: paths.route },
+                    { label: '小辺路', href: paths.kohechi },
+                    { label: 'ルートマップ', href: paths.map },
                 ],
             },
             {
                 title: '実用情報',
                 links: [
-                    { label: 'アクセスとバス', href: '#' },
-                    { label: '宿泊', href: '#' },
-                    { label: 'ニュースレター', href: '#' },
+                    { label: 'アクセスとバス', href: paths.practicalPage('getting-there') },
+                    { label: '宿泊', href: paths.practicalPage('accommodation') },
+                    { label: 'ニュースレター', href: paths.newsletter },
                 ],
             },
             { title: 'お問い合わせ', links: [{ label: 'post@kumano-kodo.example' }, { label: '通常一週間以内に返信します' }] },
         ],
         copyright: '© 2024 熊野古道 山歩き日記',
         legal: [
-            { label: '運営者情報', href: '#' },
-            { label: 'プライバシー', href: '#' },
-            { label: 'アクセシビリティ', href: '#' },
+            { label: '運営者情報', href: paths.legal('imprint') },
+            { label: 'プライバシー', href: paths.legal('privacy') },
+            { label: 'アクセシビリティ', href: paths.legal('accessibility') },
         ],
     };
 
     const routeMenu = {
         kind: 'mega' as const,
         columns: [
-            { title: '日程', links: stages.map((s) => ({ label: `${s.stage} · ${s.title}`, href: '#' })) },
-            { title: '見どころ', links: places.map((pl) => ({ label: pl.title, href: '#' })) },
+            {
+                title: '日程',
+                links: [1, 2, 3, 4].map((n) => ({
+                    label: `${n}日目 · ${['滝尻 → 高原', '高原 → 近露', '近露 → 本宮', '湯の峰 → 那智'][n - 1]}`,
+                    href: paths.day(n),
+                })),
+            },
+            {
+                title: '見どころ',
+                links: [
+                    { label: places[2].title, href: paths.place('chikatsuyu') },
+                    { label: places[1].title, href: paths.place('yunomine') },
+                    { label: places[0].title, href: paths.place('nachi') },
+                ],
+            },
         ],
         text: {
             title: '中辺路',
-            html: '<p>田辺から熊野三山へ向かう、かつての御幸道。4月にそのうち三日間を歩き、足が限界のところはバスに乗った。</p>',
+            html: '<p>田辺から熊野三山へ向かう、かつての御幸道。4月に滝尻から那智まで、四日間で歩いた。</p>',
         },
         teaser: {
-            image: stages[1].image,
-            title: stages[1].title,
-            subtitle: stages[1].stats,
-            meta: '4月21日 · 07:02–17:28',
+            image: stages[2].image,
+            title: stages[2].title,
+            subtitle: stages[2].stats,
+            meta: '4月22日 · 07:18–16:05',
             badge: 'いちばん長い日',
-            href: '#',
+            href: paths.day(3),
         },
-        overview: { label: 'ルートのすべて', href: '#' },
+        overview: { label: 'ルートのすべて', href: paths.route },
     };
     const practicalMenu = {
         kind: 'dropdown' as const,
-        links: ['アクセスとバス', '宿泊', '道標と安全', '地図と時刻表', 'ニュースレター'].map((label) => ({ label, href: '#' })),
+        links: [
+            { label: '実用情報のすべて', href: paths.practical },
+            { label: 'アクセスとバス', href: paths.practicalPage('getting-there') },
+            { label: '宿泊', href: paths.practicalPage('accommodation') },
+            { label: '道標と安全', href: paths.practicalPage('trail-markers') },
+            { label: '地図と時刻表', href: paths.practicalPage('maps') },
+            { label: 'ニュースレター', href: paths.newsletter },
+        ],
     };
 
     const kumano = {
         nav: [
-            { label: 'ルート', href: '#', active: true, menu: routeMenu },
-            { label: '実用情報', href: '#', menu: practicalMenu },
-            { label: '写真', href: '#' },
+            { label: 'ルート', href: paths.route, active: true, menu: routeMenu },
+            { label: '実用情報', href: paths.practical, menu: practicalMenu },
+            { label: '写真', href: paths.photos },
         ],
         hero: {
             image: p['sea-of-clouds'],
             eyebrow: '紀伊半島 · 和歌山 · 2024年4月',
             title: '杉の霧のなかを\n歩いた四日間',
-            teaser: '熊野古道は一本の長距離トレイルではなく、三つの神社へ向かう古い参詣道の網です。4月、ほとんど雨のなかで中辺路を歩き、ちょうどいいところではバスに乗りました。',
+            teaser: '熊野古道は一本の長距離トレイルではなく、三つの神社へ向かう古い参詣道の網です。4月、滝尻から那智まで、四日間で中辺路を歩きました。',
             actions: [
                 { label: '日程を見る', href: '#stages' },
                 { label: 'よくある質問', href: '#faq' },
             ],
             stats: [
-                { label: '徒歩', value: '21 km' },
+                { label: '徒歩', value: '68 km' },
                 { label: '日数', value: '4日' },
                 { label: '写真', value: '27' },
                 { label: '月', value: '4月' },
@@ -164,34 +190,34 @@ const build = (p: Photos): LocaleContent => {
             '道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。',
         ],
         stats: [
-            { value: '21', label: '歩いたキロ数' },
-            { value: '1', label: '一日を救ったバス' },
-            { value: '3', label: '四日のうち雨の日' },
+            { value: '68', label: '歩いたキロ数' },
+            { value: '4', label: '日間、滝尻から那智まで' },
+            { value: '27', label: '枚の写真' },
             { value: '1', label: '道で出会ったカニ' },
         ],
         days: [
             {
                 date: '1日目 · 4月20日',
                 route: '滝尻 → 高原',
-                description: '15時半にバスを降り、15時45分に歩き始めた。3.7 km、ほとんど登りで、谷を見下ろす集落へ。',
+                description: '15時45分に歩き始めた。3.7 km、ほとんど登りで、谷を見下ろす集落へ。',
                 time: '15:40から',
             },
             {
                 date: '2日目 · 4月21日',
                 route: '高原 → 近露',
-                description: '朝7時、谷に雲。9時から雨。石畳、沢、昼にカニ、17時28分に近露の提灯の門。',
+                description: '朝7時、谷に雲。石畳、沢、昼にカニ、17時28分に近露の提灯の門。',
                 time: '07:02–17:28',
             },
             {
                 date: '3日目 · 4月22日',
-                route: '発心門 → 本宮 → 湯の峰',
-                description: '7時18分のバスで長い中間区間を越え、最後の7キロを歩いた。午後は湯の峰の露天風呂。',
+                route: '近露 → 本宮 → 湯の峰',
+                description: 'いちばん長い日。杉林を約25キロ歩いて本宮へ、さらに湯の峰へ。4時に露天風呂。',
                 time: '07:18–16:05',
             },
             {
                 date: '4日目 · 4月23日',
-                route: '那智と勝浦',
-                description: '歩かない一日。海沿いの電車、滝の前の三重塔、港を渡る船で旅館へ。',
+                route: '湯の峰 → 那智',
+                description: '小雲取越と大雲取越を越えて那智へ、滝の前の三重塔。勝浦から船で旅館へ。',
                 time: '10:55–15:48',
             },
         ],
@@ -203,18 +229,18 @@ const build = (p: Photos): LocaleContent => {
                 { name: '滝尻', x: 40, y: 200, labelY: 228, anchor: 'start' as const },
                 { name: '高原', x: 250, y: 100, labelY: 82, boundary: true },
                 { name: '近露', x: 430, y: 140, labelY: 122, boundary: true },
-                { name: '発心門', x: 610, y: 70, labelY: 52, boundary: true },
-                { name: '本宮', x: 800, y: 120, labelY: 102, boundary: true },
+                { name: '本宮', x: 610, y: 70, labelY: 52, boundary: true },
+                { name: '小口', x: 800, y: 120, labelY: 102 },
                 { name: '那智', x: 960, y: 86, labelY: 68, anchor: 'end' as const },
             ],
             days: [
                 { label: '1日目 · 3.7 km', x: 145 },
                 { label: '2日目 · 9.8 km', x: 340 },
-                { label: 'バス', x: 520 },
-                { label: '3日目 · 7 km', x: 705 },
-                { label: '電車', x: 880 },
+                { label: '3日目 · 25 km', x: 520 },
+                { label: '4日目 · 13 km', x: 705 },
+                { label: '4日目 · 14.5 km', x: 880 },
             ],
-            legend: { walked: 'ルート', end: '旅の終点', boundary: '宿泊を伴う日の区切り' },
+            legend: { walked: '歩いた区間', end: 'ウォークの終点', boundary: '宿泊を伴う日の区切り' },
         },
         places,
         faq: [
@@ -224,12 +250,12 @@ const build = (p: Photos): LocaleContent => {
                 open: true,
             },
             {
-                question: '雨はどれくらいひどいですか？',
-                answer: '四日のうち三日が雨でした。防水の靴やスパッツは思ったほど役に立たず、密封袋に入れた乾いた着替えのほうが助かります。',
+                question: '雨はどのくらい降りますか？',
+                answer: '紀伊半島は日本でも特に雨の多い地域です。防水の靴やスパッツは思ったほど役に立たず、密封袋に入れた乾いた着替えのほうが助かります。',
             },
             {
                 question: 'バスで移動できますか？',
-                answer: 'はい。近露、発心門、本宮の間を一日に何本かバスが走っています。私たちは7時18分のバスで長い中間区間を飛ばしました。',
+                answer: 'はい。ルート沿いの集落を一日に何本かバスが結んでいるので、一日を短くしたり出発地へ戻ったりしやすいです。',
             },
             {
                 question: '荷物の配送はありますか？',
@@ -245,6 +271,7 @@ const build = (p: Photos): LocaleContent => {
         subtitle: stages[i].stats,
         meta,
         badge,
+        href: stages[i].href,
     });
 
     const guide = {
@@ -254,50 +281,65 @@ const build = (p: Photos): LocaleContent => {
             phone: '+81 00 0000 0000',
             email: 'post@kumano-kodo.example',
         },
-        nav: [
-            { label: 'ルート', href: '#', active: true },
-            { label: '日程', href: '#' },
-            { label: '見どころ', href: '#' },
-            { label: '実用情報', href: '#', menu: practicalMenu },
-            { label: '写真', href: '#' },
-        ],
+        nav: kumano.nav,
         routes: [
-            { image: p['stone-path-walkers'], title: '中辺路', meta: '徒歩三日間 · この日記', href: '#' },
-            { image: p['walker-in-mist'], title: '日帰り', meta: '7 km · 発心門 → 本宮', href: '#' },
-            { image: p['fern-frond'], title: '小辺路', meta: '高野山 → 本宮 · 次の機会に', href: '#' },
+            { image: p['stone-path-walkers'], title: '中辺路', meta: '徒歩四日間 · この日記', href: paths.route },
+            { image: p['walker-in-mist'], title: '3日目', meta: '近露 → 本宮 · いちばん長い日', href: paths.day(3) },
+            { image: p['cedar-canopy'], title: '小辺路', meta: '高野山 → 本宮 · 次の機会に', href: paths.kohechi },
         ],
         facts: [
-            { icon: 'clock' as const, label: '時期', value: '4月20日〜23日', note: '四日のうち三日が雨' },
-            { icon: 'map-pin' as const, label: '出発地', value: '滝尻', note: '15時半にバスを降りて' },
+            { icon: 'clock' as const, label: '時期', value: '4月20日〜23日', note: '徒歩四日間' },
+            { icon: 'map-pin' as const, label: '出発地', value: '滝尻', note: '15時40分に歩き始め' },
             { icon: 'home' as const, label: '宿泊', value: '民宿と旅館', note: '数か月前に予約' },
-            { icon: 'file' as const, label: '徒歩', value: '約21 km', note: '三日間、さらに電車で一日' },
+            { icon: 'file' as const, label: '徒歩', value: '約68 km', note: '滝尻から那智まで' },
         ],
         entries: [
             stageEntry(0, '4月20日 · 15:40から'),
-            stageEntry(1, '4月21日 · 07:02–17:28', 'いちばん長い日'),
-            stageEntry(2, '4月22日 · 07:18'),
-            stageEntry(3, '4月22日 · 08:26–12:05'),
-            stageEntry(4, '4月23日 · 10:55–15:48', '歩かない日'),
-            { image: p['outdoor-bath'], title: places[1].title, subtitle: '露天風呂', meta: '4月22日 · 16:05' },
-            { image: p['chikatsuyu-gate'], title: places[2].title, subtitle: '提灯の門', meta: '4月21日 · 17:28' },
-            { image: p['ryokan-room'], title: '勝浦', subtitle: '港の旅館', meta: '4月23日 · 15:48' },
+            stageEntry(1, '4月21日 · 07:02–17:28'),
+            stageEntry(2, '4月22日 · 07:18–16:05', 'いちばん長い日'),
+            stageEntry(4, '4月23日 · 10:55–15:48'),
+            {
+                image: p['chikatsuyu-gate'],
+                title: places[2].title,
+                subtitle: '提灯の門',
+                meta: '4月21日 · 17:28',
+                href: paths.place('chikatsuyu'),
+            },
+            {
+                image: p['outdoor-bath'],
+                title: places[1].title,
+                subtitle: '露天風呂',
+                meta: '4月22日 · 16:05',
+                href: paths.place('yunomine'),
+            },
+            { image: p['nachi-pagoda'], title: '那智', subtitle: '三重塔と滝', meta: '4月23日 · 12:31', href: paths.place('nachi') },
+            { image: p['ryokan-room'], title: '勝浦', subtitle: '港の旅館', meta: '4月23日 · 15:48', href: paths.day(4) },
         ],
         prep: [
             {
                 title: '宿を予約する',
                 text: '高原と近露には民宿が数軒ずつしかなく、春と秋は数か月前に満室になります。',
                 variant: 'featured' as const,
+                href: paths.practicalPage('accommodation'),
             },
-            { title: '雨に備える', text: '四日のうち三日が雨でした。スパッツより、密封袋に入れた乾いた着替えが役に立ちます。' },
-            { title: 'バスを使う', text: 'ルート沿いの集落はバスで結ばれています。近露発7時18分のバスで、いちばん長い区間を省けました。' },
+            {
+                title: '雨に備える',
+                text: 'スパッツより、密封袋に入れた乾いた着替えが役に立ちます。',
+                href: paths.practicalPage('trail-markers'),
+            },
+            {
+                title: '荷物を先に送る',
+                text: '主な集落の間で荷物を運んでもらえます。前日までに田辺市観光協会で予約します。',
+                href: paths.practicalPage('getting-there'),
+            },
         ],
         tiles: [
-            { title: 'アクセスとバス', icon: 'map-pin' as const },
-            { title: '宿泊', icon: 'home' as const },
-            { title: '道標と安全', icon: 'alert' as const },
-            { title: '地図と時刻表', icon: 'download' as const },
+            { title: 'アクセスとバス', icon: 'map-pin' as const, href: paths.practicalPage('getting-there') },
+            { title: '宿泊', icon: 'home' as const, href: paths.practicalPage('accommodation') },
+            { title: '道標と安全', icon: 'alert' as const, href: paths.practicalPage('trail-markers') },
+            { title: '地図と時刻表', icon: 'download' as const, href: paths.practicalPage('maps') },
         ],
-        hosts: [{ image: p['ryokan-room'], name: '勝浦の旅館', role: '海辺の最後の夜', focus: '「夕食は六時です。」' }],
+        hosts: [{ image: p['ryokan-room'], name: '勝浦の旅館', role: '那智のあとの夜', focus: '「夕食は六時です。」' }],
         footer: {
             ...footer,
             notice: { title: '道の状況：', text: '大雨のあとは、出発前に観光協会のお知らせを確認してください。' },
@@ -305,8 +347,8 @@ const build = (p: Photos): LocaleContent => {
     };
 
     const richTextSample =
-        '<h2>いちばん長い日</h2>' +
-        '<p>高原から近露まで9.8 km。朝7時、集落の下の谷に雲が溜まり、9時から雨になった。石畳は濡れても滑りにくいが、その間の木の根は滑る。一日を短くするなら<a href="#">幹線道路のバス</a>に乗る。</p>' +
+        '<h2>近露までの一日</h2>' +
+        '<p>高原から近露まで9.8 km。朝7時、集落の下の谷に雲が溜まっていた。石畳は濡れても滑りにくいが、その間の木の根は滑る。早めに切り上げるなら<a href="/practical/getting-there">幹線道路</a>にバスが走っている。</p>' +
         '<ul><li>07:02 · 高原：集落の下の雲</li><li>09:05 · 杉の間の石畳</li><li>12:03 · 道の上のカニ</li><li>17:28 · 近露の提灯の門</li></ul>' +
         '<h3>泊まる場所</h3><p>近露には川沿いに民宿が数軒ある。春と秋は数か月前に予約を。</p>';
 
@@ -320,7 +362,7 @@ const build = (p: Photos): LocaleContent => {
         bridgeCaption: p['forest-stream'].caption ?? '',
         quote: { quote: '「夕食は六時です。お風呂は十一時まで。」', source: '勝浦の旅館、4月23日' },
         days: { title: '四日間の記録', aside: '時刻は計画ではなく、写真から。' },
-        stages: { eyebrow: '日程', title: '三日歩いて、一日は電車' },
+        stages: { eyebrow: '日程', title: '四日間、滝尻から那智へ' },
         map: {
             eyebrow: 'ルートマップ',
             title: '概略図、縮尺なし',
@@ -336,12 +378,12 @@ const build = (p: Photos): LocaleContent => {
         draft: {
             kicker: '熊野古道 · 中辺路',
             title: '四月の四日間',
-            lede: '紀伊半島の杉林を三日歩き、一日は海沿いを電車で。撮った順に並べた二十七枚の写真。',
+            lede: '滝尻から那智まで、紀伊半島の杉林を四日間歩いた。撮った順に並べた二十七枚の写真。',
             chapters: [
-                '15時半に滝尻でバスを降り、15分後には道の上にいた。最初の一時間は容赦がない。石段、木の根、また石段。',
-                '朝は雲の上で始まり、紙の提灯の門で終わった。その間に雨、濡れても滑りにくい石畳、そしてカメラの前でじっとしていた鮮やかな橙色のカニ。',
-                '長い中間区間は7時18分のバスで飛ばし、本宮までの最後の7キロを歩いた。4時には湯の峰で、木の屋根の下の石の湯船に浸かり、雨の音を聞いていた。',
-                '道のない一日。雨の海沿いを走る電車、滝の前に立つ三重塔、そして港を渡って海の見える旅館へ向かう船。',
+                '15時40分に滝尻の川辺に着き、15分後には道の上にいた。最初の一時間は容赦がない。石段、木の根、また石段。',
+                '朝は雲の上で始まり、紙の提灯の門で終わった。その間に、濡れても滑りにくい石畳、杉林の沢、そしてカメラの前でじっとしていた鮮やかな橙色のカニ。',
+                'いちばん長い日。近露から杉林を抜け、小さな王子の社を過ぎて本宮へ、さらに湯の峰へ。4時には木の屋根の下の石の湯船に浸かっていた。',
+                '小雲取越と大雲取越を越えて那智へ。滝の前に三重塔が立っている。勝浦では港を渡る船で、海の見える旅館へ向かった。',
             ],
             coda: '二日後、最後の夕方。二十分だけ光が差した。',
             mapTitle: '歩いた道',
@@ -352,13 +394,13 @@ const build = (p: Photos): LocaleContent => {
 
     const pages = {
         start: {
-            title: '中辺路を歩いた四日間',
-            text: '2024年4月の個人的な山歩き日記。日ごとの記録、寄り道する価値のある場所、出発前に知っておきたかったこと。',
+            title: '四日間の中辺路',
+            text: '2024年4月20日〜23日、滝尻から那智まで徒歩で。日ごとの記録、寄り道する価値のある場所、出発前に知っておきたかったこと。',
             action: '日程を見る',
             panelTitle: '歩き方',
-            panelMore: 'ルートを比べる',
+            panelMore: 'すべての日程と見どころ',
             factsLabel: 'ひと目でわかる',
-            stages: { eyebrow: '日程', title: '三日歩いて、一日は電車' },
+            stages: { eyebrow: '日程', title: '四日間、滝尻から那智へ' },
             prep: { eyebrow: '実用情報', title: '出発前に' },
             plan: '計画を立てる',
         },
@@ -375,22 +417,21 @@ const build = (p: Photos): LocaleContent => {
             caption: p['misty-valley'].caption ?? '',
             downloads: [
                 { title: '区間地図 高原 → 近露', meta: 'PDF · 1.2 MB', href: '#' },
-                { title: 'バス時刻表 近露 – 発心門', meta: 'PDF · 96 KB', href: '#' },
+                { title: 'ルート沿いのバス時刻表', meta: 'PDF · 96 KB', href: '#' },
                 { title: '雨の日の持ち物リスト', meta: 'PDF · 240 KB', href: '#' },
             ],
             factsTitle: 'この日の数字',
             facts: [
                 { label: '日程', value: '2日目 · 4月21日' },
                 { label: '距離', value: '9.8 km' },
-                { label: '累積標高', value: '+620 m' },
                 { label: '撮影', value: '07:02–17:28' },
             ],
             info: {
                 title: '長すぎる？',
                 text: '高原と近露の間の幹線道路にはバスが走っているので、途中で切り上げられます。',
                 links: [
-                    { label: 'バス時刻表', href: '#' },
-                    { label: '近露に泊まる', href: '#' },
+                    { label: 'アクセスとバス', href: paths.practicalPage('getting-there') },
+                    { label: '近露', href: paths.place('chikatsuyu') },
                 ],
             },
             back: 'すべての日程',
@@ -399,23 +440,135 @@ const build = (p: Photos): LocaleContent => {
         },
     };
 
+    const site = {
+        home: 'ホーム',
+        route: { title: 'ルート', lede: pages.start.text },
+        days: {
+            title: '日程と見どころ',
+            intro: '四日間を順番に、そのあと立ち寄った場所と泊まった場所。',
+            groups: { days: '日程', places: '見どころ', stays: '宿' },
+        },
+        day: {
+            label: '日目',
+            previous: '前の日',
+            next: '次の日',
+            photos: 'この日の写真',
+            factsTitle: 'この日の数字',
+            facts: { date: '日付', route: 'ルート', distance: '徒歩', photos: '撮影' },
+            distances: ['3.7 km', '9.8 km', '約25 km', '約27.5 km'],
+            tipTitle: 'この日のヒント',
+            tips: [
+                '明るいうちに高原に着けるよう早めに出発を。最初の一時間は急で、途中には何もない。',
+                '石畳は濡れても安全だが、その間の木の根は滑る。石の上を歩くこと。',
+                'いちばん長い日。道路沿いの集落にあるのは店ではなく自販機。',
+                '二つの峠で長い一日になる。出発前に那智発の最終バスを確認すること。',
+            ],
+        },
+        places: {
+            chikatsuyu: {
+                title: '近露',
+                text: [
+                    '滝尻と本宮のほぼ中間にある川沿いの集落。二日目の夜はほとんどの人がここに泊まり、民宿の多くは川沿いにある。',
+                    '集落の入口の提灯の門は見逃しようがない。真ん中の提灯には熊野の神々の使い、三本足の烏が描かれている。',
+                ],
+                photos: ['vending-machines', 'chikatsuyu-gate', 'morning-bus'] as const,
+                day: 2,
+            },
+            yunomine: {
+                title: '湯の峰温泉',
+                text: [
+                    '日本最古級の温泉のひとつで、本宮から少し歩いたところにある。狭い谷の沢沿いに湯屋が並ぶ。',
+                    '4月の終わり、こどもの日を前に鯉のぼりが沢をまたいでいた。夕食の前に、木の屋根の下の露天風呂に浸かった。',
+                ],
+                photos: ['yunomine-street', 'river-bridge', 'outdoor-bath'] as const,
+                day: 3,
+            },
+            nachi: {
+                title: '那智',
+                text: [
+                    'ウォークの終点。那智の滝の前に青岸渡寺の三重塔が立ち、その隣に熊野那智大社がある。',
+                    '那智からは海沿いへバスが出ている。勝浦では港を渡る船で旅館へ向かう。',
+                ],
+                photos: ['nachi-pagoda', 'harbour-ferry', 'ryokan-room'] as const,
+                day: 4,
+            },
+        },
+        practical: {
+            title: '実用情報',
+            intro: '中辺路を計画する人に伝えたいこと。アクセス、宿、道標、持っていくべき地図。',
+            pages: {
+                'getting-there': {
+                    title: 'アクセスとバス',
+                    text: [
+                        '滝尻へは、大阪からのJR線にある紀伊田辺駅からバスで行く。所要時間は約40分。',
+                        'ルート沿いの集落は一日に何本かのバスで結ばれている。一日を短くしたり、本宮や那智から海沿いへ戻ったりするのに便利。',
+                        '主な集落の間では荷物を先に送れる。前日までに田辺市観光協会で予約する。',
+                    ],
+                },
+                accommodation: {
+                    title: '宿泊',
+                    text: [
+                        '中辺路では、家族経営の小さな宿、民宿に泊まる。夕食と朝食が付くことが多く、夕食は早い。',
+                        '高原と近露には数軒しかない。春と秋は数か月前に満室になるので、全行程をまとめて予約するのがよい。',
+                        '田辺市観光協会の予約サービスは英語で、ルート全体の宿を予約できる。',
+                    ],
+                },
+                'trail-markers': {
+                    title: '道標と安全',
+                    text: [
+                        '中辺路には数百メートルごとに番号付きの木の道標が立っている。自分の位置を誰かに伝えるときに番号が役に立つ。',
+                        '一日分の水と食べ物を持っていくこと。集落の間では何も買えない。',
+                        '大雨のあとは道の一部が通行止めになることがある。出発前に観光協会のお知らせを確認すること。',
+                    ],
+                },
+                maps: {
+                    title: '地図と時刻表',
+                    text: [
+                        '道案内には観光協会のルートマップを持っていくこと。このサイトの地図は概略図。',
+                        'バスの時刻表は季節で変わる。歩く日の時刻表を、特に那智発の最終バスを確認すること。',
+                    ],
+                },
+            },
+        },
+        photos: { title: '写真', intro: '二十七枚の写真すべて。日ごとに、撮った順に。' },
+        newsletter: { title: 'ニュースレター', intro: home.newsletter.text },
+        kohechi: {
+            title: '小辺路',
+            text: [
+                '小辺路は高野山から本宮へ向かう山のルート。中辺路より短いが、高い峠が三つある。',
+                'まだ歩いていない。次に歩くルートで、書き上げたらここに載せる。',
+            ],
+        },
+        legal: {
+            imprint: { title: '運営者情報', text: ['デザインシステムのサンプルテキストです。実際のサイトの運営者情報がここに入ります。'] },
+            privacy: {
+                title: 'プライバシー',
+                text: ['デザインシステムのサンプルテキストです。実際のサイトのプライバシーポリシーがここに入ります。'],
+            },
+            accessibility: {
+                title: 'アクセシビリティ',
+                text: ['デザインシステムのサンプルテキストです。実際のサイトのアクセシビリティ方針がここに入ります。'],
+            },
+        },
+    };
+
     const samples = {
         textarea: { label: 'メッセージ', placeholder: 'ルートについてのご質問' },
         search: '検索',
-        galleryCaption: '3日目、4月22日：7時18分のバスから湯の峰の湯まで。',
+        galleryCaption: '3日目、4月22日：近露から湯の峰の湯まで。',
         table: {
             caption: '日程の一覧',
-            head: ['日付', 'ルート', '距離', '撮影'],
+            head: ['日付', 'ルート', '徒歩', '撮影'],
             rows: [
                 ['4月20日', '滝尻 → 高原', '3.7 km', '15:40から'],
                 ['4月21日', '高原 → 近露', '9.8 km', '07:02–17:28'],
-                ['4月22日', '発心門 → 本宮', '7.0 km', '07:18–16:05'],
-                ['4月23日', '那智と勝浦', '電車', '10:55–15:48'],
+                ['4月22日', '近露 → 本宮 → 湯の峰', '約25 km', '07:18–16:05'],
+                ['4月23日', '湯の峰 → 那智', '約27.5 km', '10:55–15:48'],
             ],
         },
     };
 
-    return { ui, kumano, guide, richTextSample, home, pages, samples };
+    return { ui, kumano, guide, richTextSample, home, pages, site, samples };
 };
 
 export const ja: LocaleModule<LocaleContent> = {
@@ -424,11 +577,11 @@ export const ja: LocaleModule<LocaleContent> = {
         signpost: { alt: '落ち葉の道に立つ「熊野古道 KUMANO KODO」と書かれた木の道標', place: '滝尻' },
         'sea-of-clouds': { alt: '幾重にも連なる森の尾根、谷に雲が溜まっている', place: '高原' },
         'misty-valley': { alt: '霧に満ちた深い谷、森の斜面が灰色に溶けていく', place: '高原' },
-        'roadside-markers': { alt: '若木の下、静かな道路脇に立つ木の道標', place: '高原の上' },
+        'roadside-markers': { alt: '若木の下、静かな道路脇に立つ木の道標', place: '' },
         'stone-path-walkers': { alt: '背の高い杉の間の石畳を歩く雨具姿の二人', place: '中辺路' },
         'forest-stream': { alt: '杉林を流れる沢と、それを渡る小さな板の橋', place: '中辺路' },
         'land-crab': { alt: '濡れた岩と杉の葉の上にいる橙色のカニ', place: '中辺路' },
-        'vending-machines': { alt: '屋根の下に並ぶ飲み物の自販機とソフトクリームの看板、市松模様の床', place: '近露の手前' },
+        'vending-machines': { alt: '屋根の下に並ぶ飲み物の自販機とソフトクリームの看板、市松模様の床', place: '近露' },
         'chikatsuyu-gate': { alt: '大きな紙の提灯を三つ下げた木の門、真ん中の提灯に三本足の烏', place: '近露' },
         'morning-bus': { alt: '濡れた道路を走る赤と白のバス、背後に霧の山', place: '近露' },
         'cedar-canopy': { alt: '杉の幹を真下から見上げた明るい空', place: '中辺路' },
@@ -438,15 +591,15 @@ export const ja: LocaleModule<LocaleContent> = {
         'cobbled-path': { alt: 'まっすぐな杉の幹の間を続く古い石畳', place: '本宮へ' },
         'sunlit-path': { alt: '杉の並木の間の森の道に差し込む日の光', place: '本宮へ' },
         'ridge-view': { alt: '松の枝越しに見る森の尾根', place: '本宮へ' },
-        'fern-frond': { alt: '巻きをほどき始めたシダの若葉の接写', place: '本宮' },
+        'fern-frond': { alt: '巻きをほどき始めたシダの若葉の接写', place: '' },
         'yunomine-street': { alt: '沢沿いの細い温泉街の通り、鯉のぼりが川をまたいで下がっている', place: '湯の峰' },
-        'river-bridge': { alt: '吊り橋の架かる広い河原、手前にツツジ', place: '湯の峰の近く' },
+        'river-bridge': { alt: '吊り橋の架かる広い河原、手前にツツジ', place: '' },
         'outdoor-bath': { alt: '緑に囲まれた木の屋根の下の石造りの露天風呂', place: '湯の峰' },
-        'seaside-station': { alt: '雨の海沿いの小さな駅のホーム、柵の向こうに海', place: '海沿いの線路' },
+        'seaside-station': { alt: '雨の海沿いの小さな駅のホーム、柵の向こうに海', place: '' },
         'nachi-pagoda': { alt: '霧のなか、高い滝の前に立つ朱色の三重塔', place: '那智' },
         'harbour-ferry': { alt: '灰色の港を渡る色鮮やかな船', place: '勝浦' },
         'ryokan-room': { alt: '低い座卓のある畳の部屋、窓の外に海', place: '勝浦' },
-        'evening-rooftops': { alt: '夕方の光のなかの小さな町の瓦屋根、地平線に山並み', place: '最後の夕方' },
+        'evening-rooftops': { alt: '夕方の光のなかの小さな町の瓦屋根、地平線に山並み', place: '' },
     },
     build,
 };

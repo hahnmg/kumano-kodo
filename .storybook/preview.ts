@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/html-vite';
-import { UPDATE_GLOBALS } from 'storybook/internal/core-events';
+import { SELECT_STORY, UPDATE_GLOBALS } from 'storybook/internal/core-events';
 import { addons } from 'storybook/preview-api';
 import '../src/tokens/tokens.css';
 import '../src/styles/base.css';
@@ -10,6 +10,7 @@ import { bindNavFlyouts } from '../src/scripts/nav-flyout';
 import { bindSchemeToggle, syncSchemeToggles } from '../src/scripts/scheme-toggle';
 import { bindSliders, syncSliders } from '../src/scripts/slider';
 import { bindStickyHeader, syncStickyHeaders } from '../src/scripts/sticky-header';
+import { storyFor } from '../stories/content/paths';
 import { isLocale, locales } from '../stories/templates/content';
 import { formatSource } from './format-source';
 
@@ -31,6 +32,27 @@ document.addEventListener('click', (event) => {
     if (!link || !isLocale(locale)) return;
     event.preventDefault();
     updateGlobals({ locale });
+});
+
+// Site links are real paths (/days/2); here they open the matching story, and a #hash scrolls once it has rendered.
+// Storybook's <base target="_parent"> would send plain #anchors to the manager window, so those scroll here too.
+let pendingHash = '';
+document.addEventListener('click', (event) => {
+    const anchor = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href^="#"]') : null;
+    const target =
+        anchor && anchor.getAttribute('href') !== '#' ? document.getElementById((anchor.getAttribute('href') ?? '').slice(1)) : null;
+    if (anchor && target) {
+        event.preventDefault();
+        target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        return;
+    }
+    const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href^="/"]') : null;
+    const href = link?.getAttribute('href') ?? '';
+    const storyId = storyFor(href);
+    if (!link || !storyId || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+    event.preventDefault();
+    pendingHash = href.includes('#') ? href.split('#')[1] : '';
+    addons.getChannel().emit(SELECT_STORY, { storyId });
 });
 
 const preview: Preview = {
@@ -55,6 +77,9 @@ const preview: Preview = {
             html.lang = isLocale(context.globals.locale) ? context.globals.locale : 'en';
             const rendered = story();
             requestAnimationFrame(() => {
+                if (pendingHash) document.getElementById(pendingHash)?.scrollIntoView();
+                else if (context.viewMode === 'story') window.scrollTo(0, 0);
+                pendingHash = '';
                 syncSchemeToggles();
                 syncSliders();
                 syncStickyHeaders();
@@ -65,7 +90,7 @@ const preview: Preview = {
     parameters: {
         layout: 'padded',
         docs: { source: { language: 'html', transform: (code: string) => formatSource(code) } },
-        options: { storySort: { order: ['Templates', 'Organisms', 'Molecules', 'Atoms', 'Layout'] } },
+        options: { storySort: { order: ['Site', 'Templates', 'Organisms', 'Molecules', 'Atoms', 'Layout'] } },
     },
 };
 

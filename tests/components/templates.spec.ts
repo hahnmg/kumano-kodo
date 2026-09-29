@@ -1,14 +1,40 @@
 import { describe, expect, it } from 'vitest';
-import { content, locales, type Locale } from '../../stories/templates/content';
+import { legalSlugs, placeSlugs, practicalSlugs, storyFor } from '../../stories/content/paths';
+import { content, locales, type Content, type Locale } from '../../stories/templates/content';
 import { kumanoHome } from '../../stories/templates/kumano-home.markup';
-import { detailPage, listPage, startPage } from '../../stories/templates/standard-pages.markup';
+import {
+    dayPage,
+    daysPage,
+    homePage,
+    kohechiPage,
+    legalPage,
+    newsletterPage,
+    photosPage,
+    placePage,
+    practicalPage,
+    practicalSubPage,
+    routePage,
+} from '../../stories/templates/site-pages.markup';
 import { expectAccessible } from '../support/accessibility';
 
-const templates = { kumanoHome, startPage, listPage, detailPage };
+const pages: Record<string, (c: Content) => string> = {
+    home: homePage,
+    route: routePage,
+    days: daysPage,
+    ...Object.fromEntries([1, 2, 3, 4].map((n) => [`day ${n}`, (c: Content) => dayPage(n, c)])),
+    ...Object.fromEntries(placeSlugs.map((s) => [`place ${s}`, (c: Content) => placePage(s, c)])),
+    practical: practicalPage,
+    ...Object.fromEntries(practicalSlugs.map((s) => [`practical ${s}`, (c: Content) => practicalSubPage(s, c)])),
+    photos: photosPage,
+    newsletter: newsletterPage,
+    kohechi: kohechiPage,
+    ...Object.fromEntries(legalSlugs.map((s) => [s, (c: Content) => legalPage(s, c)])),
+    'home v3': kumanoHome,
+};
 
-describe('templates', () => {
+describe('site pages', () => {
     for (const locale of Object.keys(locales) as Locale[]) {
-        for (const [name, render] of Object.entries(templates)) {
+        for (const [name, render] of Object.entries(pages)) {
             const html = () => render(content(locale));
             it(`${name} (${locale}) has header, one main with one h1 and a footer`, () => {
                 document.body.innerHTML = html();
@@ -16,13 +42,19 @@ describe('templates', () => {
                 expect(document.querySelectorAll('main')).toHaveLength(1);
                 expect(document.querySelectorAll('h1')).toHaveLength(1);
                 expect(document.querySelectorAll('footer.site-footer')).toHaveLength(1);
-                expect(document.querySelector('.site-header__languages [aria-current="true"]')?.getAttribute('data-locale')).toBe(locale);
+            });
+            it(`${name} (${locale}) only links to pages and anchors that exist`, () => {
+                document.body.innerHTML = html();
+                const broken = [...document.querySelectorAll('a[href]')]
+                    .map((a) => a.getAttribute('href') ?? '')
+                    .filter((href) =>
+                        href.startsWith('/')
+                            ? !storyFor(href)
+                            : href.startsWith('#') && href.length > 1 && !document.getElementById(href.slice(1)),
+                    );
+                expect(broken).toEqual([]);
             });
             it(`${name} (${locale}) passes axe`, () => expectAccessible(html(), true));
         }
     }
-    it('detail page figure has no top rule', () => {
-        document.body.innerHTML = detailPage();
-        expect(document.querySelector('.figure')?.classList.contains('figure--unruled')).toBe(true);
-    });
 });

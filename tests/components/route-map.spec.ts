@@ -8,7 +8,9 @@ describe('route-map', () => {
         const el = mount(routeMap(kumano.route));
         expect(el.querySelectorAll('.route-map__station')).toHaveLength(6);
         expect(el.querySelectorAll('.route-map__station--end')).toHaveLength(1);
-        expect(el.querySelectorAll('.route-map__boundary')).toHaveLength(4);
+        expect(el.querySelectorAll('.route-map__boundary')).toHaveLength(
+            kumano.route.stations.filter((s) => 'boundary' in s && s.boundary).length,
+        );
         expect(el.querySelector('svg')?.getAttribute('role')).toBe('img');
     });
     it('passes axe', () => expectAccessible(routeMap(kumano.route)));

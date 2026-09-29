@@ -31,6 +31,11 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 
 - [ ] Slider dots: only as many as reachable positions (three on desktop, five on phones)
 
+- [ ] Home page as editorial journal: Journal Opener, Chapter (numeral, text, staggered photo grid with captions), Bleed Photo
+- [ ] Site pages: route overview, days and places, day page, place page, practical overview and subpage, photos, text page
+- [ ] All 27 trip photos (web versions in img/photos) replace the earlier set
+- [ ] Contents: the walk Takijiri → Nachi, 20–23 April 2024, in EN, DE, JA
+
 ## Known differences between Figma and code
 
 - Mobile exists in Figma only as screenshots of the coded Storybook; they are not built from components.

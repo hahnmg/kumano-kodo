@@ -56,6 +56,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
             tone: 'sunk',
             bleed: true,
             label: home.stages.eyebrow,
+            id: 'stages',
             content: slider({
                 heading: home.stages,
                 items: kumano.stages.map(stageCard),
@@ -81,6 +82,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
             ),
         }) +
         section({
+            id: 'faq',
             tone: 'sunk',
             content: split(
                 stack(

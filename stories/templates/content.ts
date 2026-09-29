@@ -50,7 +50,8 @@ const build = (locale: Locale) => {
                     width: 1200,
                     height: Math.round((1200 * file.height) / file.width),
                     alt: text.alt,
-                    caption: file.taken ? `${text.place}, ${when(file.taken)}` : text.place,
+                    // Where the place is not certain it stays out; date and time come from the photo.
+                    caption: [text.place, file.taken ? when(file.taken) : ''].filter(Boolean).join(', '),
                 },
             ];
         }),

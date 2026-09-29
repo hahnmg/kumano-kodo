@@ -1,21 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { content, type Content } from './content';
 import { kumanoHome } from './kumano-home.markup';
-import { detailPage, listPage, startPage } from './standard-pages.markup';
+import { kumanoJournal } from './kumano-journal.markup';
 
 const page =
     (render: (c: Content) => string): StoryObj['render'] =>
     (_, { globals }) =>
         render(content(globals.locale));
 
-// Templates stay single stories in the sidebar; the four themes replace the old theme picker.
+// The home page in the four themes, and the v3 home it replaced for comparison.
 const meta: Meta = { title: 'Templates', tags: ['!autodocs', 'dev'], parameters: { layout: 'fullscreen', options: { showPanel: false } } };
 export default meta;
 
-export const KumanoHome: StoryObj = { name: 'Kumano Home · Caramel', render: page(kumanoHome), parameters: { theme: 'caramel' } };
-export const KumanoHomeForest: StoryObj = { name: 'Kumano Home · Forest', render: page(kumanoHome), parameters: { theme: 'forest' } };
-export const KumanoHomeOcean: StoryObj = { name: 'Kumano Home · Ocean', render: page(kumanoHome), parameters: { theme: 'ocean' } };
-export const KumanoHomeViolet: StoryObj = { name: 'Kumano Home · Violet', render: page(kumanoHome), parameters: { theme: 'violet' } };
-export const Start: StoryObj = { render: page(startPage) };
-export const List: StoryObj = { render: page(listPage) };
-export const Detail: StoryObj = { render: page(detailPage) };
+export const HomeCaramel: StoryObj = { name: 'Home · Caramel', render: page(kumanoJournal), parameters: { theme: 'caramel' } };
+export const HomeForest: StoryObj = { name: 'Home · Forest', render: page(kumanoJournal), parameters: { theme: 'forest' } };
+export const HomeOcean: StoryObj = { name: 'Home · Ocean', render: page(kumanoJournal), parameters: { theme: 'ocean' } };
+export const HomeViolet: StoryObj = { name: 'Home · Violet', render: page(kumanoJournal), parameters: { theme: 'violet' } };
+export const HomeV3: StoryObj = { name: 'Home · v3 (previous)', render: page(kumanoHome) };

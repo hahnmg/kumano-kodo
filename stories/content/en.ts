@@ -1,6 +1,7 @@
 import type { LocaleModule, Photos } from '../templates/content';
+import { paths } from './paths';
 
-// The trip behind the photos: 20 to 23 April 2024, Takijiri to Katsuura, plus one evening two days later.
+// The walk behind the photos: Takijiri to Nachi on foot, 20 to 23 April 2024, plus one evening two days later.
 const build = (p: Photos) => {
     const ui = {
         mainNav: 'Main navigation',
@@ -28,37 +29,42 @@ const build = (p: Photos) => {
         {
             image: p['signpost'],
             stage: 'Day 1',
-            stats: '3.7 km · +400 m',
+            stats: '3.7 km',
             title: 'Takijiri → Takahara',
-            description: 'Started at a quarter to four, straight off the bus. The first hour climbs the whole way.',
+            description: 'On the trail at a quarter to four. The first hour climbs the whole way.',
+            href: paths.day(1),
         },
         {
             image: p['stone-path-walkers'],
             stage: 'Day 2',
-            stats: '9.8 km · +620 m',
+            stats: '9.8 km',
             title: 'Takahara → Chikatsuyu',
-            description: 'Clouds below the village at seven, rain from nine, the lantern gate of Chikatsuyu at half past five.',
-        },
-        {
-            image: p['morning-bus'],
-            stage: 'Bus',
-            stats: '07:18 · Chikatsuyu → Hosshinmon',
-            title: 'The part we skipped',
-            description: 'The long middle section, done by bus in the rain. No regrets.',
+            description: 'Clouds below the village at seven, stone paving, a stream, the lantern gate of Chikatsuyu at half past five.',
+            href: paths.day(2),
         },
         {
             image: p['walker-in-mist'],
             stage: 'Day 3',
-            stats: '7.0 km · +180 m',
-            title: 'Hosshinmon → Hongu',
-            description: 'Cedars, an oji shrine, a view across the ridges, and Yunomine in the afternoon.',
+            stats: 'about 25 km',
+            title: 'Chikatsuyu → Hongu',
+            description: 'The longest day, through the cedars and past a small oji shrine, and on to Yunomine for the night.',
+            href: paths.day(3),
+        },
+        {
+            image: p['fern-frond'],
+            stage: 'Day 4',
+            stats: 'about 13 km',
+            title: 'Kogumotori-goe',
+            description: 'From the hot springs over the first of the two passes that lead to the coast.',
+            href: paths.day(4),
         },
         {
             image: p['nachi-pagoda'],
             stage: 'Day 4',
-            stats: 'By train and bus',
-            title: 'Nachi and Katsuura',
-            description: 'No hiking. The coast line, the pagoda in front of the falls, a ferry to the ryokan.',
+            stats: 'about 14.5 km',
+            title: 'Ogumotori-goe → Nachi',
+            description: 'The second pass, and at the end the pagoda standing in front of the falls.',
+            href: paths.day(4),
         },
     ];
 
@@ -66,7 +72,8 @@ const build = (p: Photos) => {
         {
             image: p['nachi-pagoda'],
             title: 'Seiganto-ji and Nachi falls',
-            description: 'The three-storey pagoda in front of the falls. We came by bus at lunchtime, in rain that never quite stopped.',
+            description:
+                'The three-storey pagoda in front of the falls, the end of the walk. It rained, and the falls disappeared in the mist every few minutes.',
             variant: 'featured' as const,
         },
         {
@@ -90,26 +97,26 @@ const build = (p: Photos) => {
             {
                 title: 'The route',
                 links: [
-                    { label: 'Nakahechi', href: '#' },
-                    { label: 'Kohechi', href: '#' },
-                    { label: 'Trail map', href: '#' },
+                    { label: 'Nakahechi', href: paths.route },
+                    { label: 'Kohechi', href: paths.kohechi },
+                    { label: 'Trail map', href: paths.map },
                 ],
             },
             {
                 title: 'Practical',
                 links: [
-                    { label: 'Getting there and buses', href: '#' },
-                    { label: 'Accommodation', href: '#' },
-                    { label: 'Newsletter', href: '#' },
+                    { label: 'Getting there and buses', href: paths.practicalPage('getting-there') },
+                    { label: 'Accommodation', href: paths.practicalPage('accommodation') },
+                    { label: 'Newsletter', href: paths.newsletter },
                 ],
             },
             { title: 'Contact', links: [{ label: 'post@kumano-kodo.example' }, { label: 'Usually answered within a week' }] },
         ],
         copyright: '© 2024 Kumano Kodo Trail journal',
         legal: [
-            { label: 'Imprint', href: '#' },
-            { label: 'Privacy', href: '#' },
-            { label: 'Accessibility', href: '#' },
+            { label: 'Imprint', href: paths.legal('imprint') },
+            { label: 'Privacy', href: paths.legal('privacy') },
+            { label: 'Accessibility', href: paths.legal('accessibility') },
         ],
     };
 
@@ -117,50 +124,65 @@ const build = (p: Photos) => {
     const routeMenu = {
         kind: 'mega' as const,
         columns: [
-            { title: 'Days', links: stages.map((s) => ({ label: `${s.stage} · ${s.title}`, href: '#' })) },
-            { title: 'Places', links: places.map((pl) => ({ label: pl.title, href: '#' })) },
+            {
+                title: 'Days',
+                links: [1, 2, 3, 4].map((n) => ({
+                    label: `Day ${n} · ${['Takijiri → Takahara', 'Takahara → Chikatsuyu', 'Chikatsuyu → Hongu', 'Yunomine → Nachi'][n - 1]}`,
+                    href: paths.day(n),
+                })),
+            },
+            {
+                title: 'Places',
+                links: [
+                    { label: places[2].title, href: paths.place('chikatsuyu') },
+                    { label: places[1].title, href: paths.place('yunomine') },
+                    { label: places[0].title, href: paths.place('nachi') },
+                ],
+            },
         ],
         text: {
             title: 'The Nakahechi',
-            html: '<p>The old imperial route from Tanabe to the three grand shrines of Kumano. We walked three days of it in April and took the bus where the legs said so.</p>',
+            html: '<p>The old imperial route from Tanabe to the three grand shrines of Kumano. We walked it in four days in April, from Takijiri to Nachi.</p>',
         },
         teaser: {
-            image: stages[1].image,
-            title: stages[1].title,
-            subtitle: stages[1].stats,
-            meta: '21 April · 07:02–17:28',
+            image: stages[2].image,
+            title: stages[2].title,
+            subtitle: stages[2].stats,
+            meta: '22 April · 07:18–16:05',
             badge: 'Longest day',
-            href: '#',
+            href: paths.day(3),
         },
-        overview: { label: 'All about the route', href: '#' },
+        overview: { label: 'All about the route', href: paths.route },
     };
     const practicalMenu = {
         kind: 'dropdown' as const,
-        links: ['Getting there and buses', 'Accommodation', 'Trail markers and safety', 'Maps and timetables', 'Newsletter'].map(
-            (label) => ({
-                label,
-                href: '#',
-            }),
-        ),
+        links: [
+            { label: 'All practical information', href: paths.practical },
+            { label: 'Getting there and buses', href: paths.practicalPage('getting-there') },
+            { label: 'Accommodation', href: paths.practicalPage('accommodation') },
+            { label: 'Trail markers and safety', href: paths.practicalPage('trail-markers') },
+            { label: 'Maps and timetables', href: paths.practicalPage('maps') },
+            { label: 'Newsletter', href: paths.newsletter },
+        ],
     };
 
     const kumano = {
         nav: [
-            { label: 'The route', href: '#', active: true, menu: routeMenu },
-            { label: 'Practical', href: '#', menu: practicalMenu },
-            { label: 'Photos', href: '#' },
+            { label: 'The route', href: paths.route, active: true, menu: routeMenu },
+            { label: 'Practical', href: paths.practical, menu: practicalMenu },
+            { label: 'Photos', href: paths.photos },
         ],
         hero: {
             image: p['sea-of-clouds'],
             eyebrow: 'Kii Peninsula · Wakayama · April 2024',
             title: 'Four days through\nthe cedar mist',
-            teaser: 'The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines. We walked the Nakahechi in April, mostly in the rain, and took the bus where it made sense.',
+            teaser: 'The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines. We walked the Nakahechi in April, from Takijiri to Nachi, in four days.',
             actions: [
                 { label: 'See the days', href: '#stages' },
                 { label: 'Practical questions', href: '#faq' },
             ],
             stats: [
-                { label: 'On foot', value: '21 km' },
+                { label: 'On foot', value: '68 km' },
                 { label: 'Days', value: '4' },
                 { label: 'Photos', value: '27' },
                 { label: 'Month', value: 'April' },
@@ -171,38 +193,37 @@ const build = (p: Photos) => {
             'Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.',
         ],
         stats: [
-            { value: '21', label: 'kilometres on foot' },
-            { value: '1', label: 'bus that saved a day' },
-            { value: '3', label: 'wet days out of four' },
+            { value: '68', label: 'kilometres on foot' },
+            { value: '4', label: 'days, Takijiri to Nachi' },
+            { value: '27', label: 'photos' },
             { value: '1', label: 'land crab on the path' },
         ],
         days: [
             {
                 date: 'Day 1 · 20 April',
                 route: 'Takijiri → Takahara',
-                description:
-                    'Off the bus at half past three, on the trail at a quarter to four. 3.7 km, almost all of it uphill, to a village that sits above the valley.',
+                description: 'On the trail at a quarter to four. 3.7 km, almost all of it uphill, to a village that sits above the valley.',
                 time: 'from 15:40',
             },
             {
                 date: 'Day 2 · 21 April',
                 route: 'Takahara → Chikatsuyu',
                 description:
-                    'Clouds lying in the valley at seven, rain from nine. Stone paving, a stream, a land crab at noon, the lantern gate of Chikatsuyu at 17:28.',
+                    'Clouds lying in the valley at seven. Stone paving, a stream, a land crab at noon, the lantern gate of Chikatsuyu at 17:28.',
                 time: '07:02–17:28',
             },
             {
                 date: 'Day 3 · 22 April',
-                route: 'Hosshinmon → Hongu → Yunomine',
+                route: 'Chikatsuyu → Hongu → Yunomine',
                 description:
-                    'The 07:18 bus over the long middle section, then the last seven kilometres on foot. In the afternoon an outdoor bath in Yunomine.',
+                    'The longest day, about 25 kilometres through the cedars to Hongu, and on to Yunomine. At four an outdoor bath.',
                 time: '07:18–16:05',
             },
             {
                 date: 'Day 4 · 23 April',
-                route: 'Nachi and Katsuura',
+                route: 'Yunomine → Nachi',
                 description:
-                    'A day without hiking: the train along the coast, the pagoda in front of the falls, a ferry across the harbour to the ryokan.',
+                    'Over the Kogumotori-goe and the Ogumotori-goe to Nachi and the pagoda in front of the falls. In Katsuura a ferry to the ryokan.',
                 time: '10:55–15:48',
             },
         ],
@@ -214,18 +235,18 @@ const build = (p: Photos) => {
                 { name: 'Takijiri', x: 40, y: 200, labelY: 228, anchor: 'start' as const },
                 { name: 'Takahara', x: 250, y: 100, labelY: 82, boundary: true },
                 { name: 'Chikatsuyu', x: 430, y: 140, labelY: 122, boundary: true },
-                { name: 'Hosshinmon', x: 610, y: 70, labelY: 52, boundary: true },
-                { name: 'Hongu', x: 800, y: 120, labelY: 102, boundary: true },
+                { name: 'Hongu', x: 610, y: 70, labelY: 52, boundary: true },
+                { name: 'Koguchi', x: 800, y: 120, labelY: 102 },
                 { name: 'Nachi', x: 960, y: 86, labelY: 68, anchor: 'end' as const },
             ],
             days: [
                 { label: 'Day 1 · 3.7 km', x: 145 },
                 { label: 'Day 2 · 9.8 km', x: 340 },
-                { label: 'Bus', x: 520 },
-                { label: 'Day 3 · 7 km', x: 705 },
-                { label: 'Train', x: 880 },
+                { label: 'Day 3 · 25 km', x: 520 },
+                { label: 'Day 4 · 13 km', x: 705 },
+                { label: 'Day 4 · 14.5 km', x: 880 },
             ],
-            legend: { walked: 'Route', end: 'End of the trip', boundary: 'Day boundary with overnight stay' },
+            legend: { walked: 'Walked section', end: 'End of the walk', boundary: 'Day boundary with overnight stay' },
         },
         places,
         faq: [
@@ -235,12 +256,12 @@ const build = (p: Photos) => {
                 open: true,
             },
             {
-                question: 'How bad is the rain really?',
-                answer: 'Three of our four days were wet. Waterproof boots and gaiters help less than you hope; a dry change of clothes in a sealed bag helps more.',
+                question: 'How much rain should I expect?',
+                answer: 'The Kii peninsula is one of the wettest regions of Japan. Waterproof boots and gaiters help less than you hope; a dry change of clothes in a sealed bag helps more.',
             },
             {
                 question: 'Can you get around by bus?',
-                answer: 'Yes. Buses link Chikatsuyu, Hosshinmon and Hongu several times a day. We took the 07:18 and skipped the long middle section.',
+                answer: 'Yes. Buses link the villages along the route several times a day, which makes it easy to shorten a day or to get back to the start.',
             },
             {
                 question: 'Is there a luggage transfer?',
@@ -256,9 +277,10 @@ const build = (p: Photos) => {
         subtitle: stages[i].stats,
         meta,
         badge,
+        href: stages[i].href,
     });
 
-    // Standard pages of the same trail journal. Phone and email are placeholders.
+    // Pages of the trail journal besides the home page. Phone and email are placeholders.
     const guide = {
         topbar: {
             label: 'Trail status:',
@@ -266,56 +288,71 @@ const build = (p: Photos) => {
             phone: '+81 00 0000 0000',
             email: 'post@kumano-kodo.example',
         },
-        nav: [
-            { label: 'The route', href: '#', active: true },
-            { label: 'Days', href: '#' },
-            { label: 'Places', href: '#' },
-            { label: 'Practical', href: '#', menu: practicalMenu },
-            { label: 'Photos', href: '#' },
-        ],
+        nav: kumano.nav,
         routes: [
-            { image: p['stone-path-walkers'], title: 'Nakahechi', meta: 'Three days on foot · this journal', href: '#' },
-            { image: p['walker-in-mist'], title: 'Day trip', meta: '7 km · Hosshinmon → Hongu', href: '#' },
-            { image: p['fern-frond'], title: 'Kohechi', meta: 'Koyasan → Hongu · next time', href: '#' },
+            { image: p['stone-path-walkers'], title: 'Nakahechi', meta: 'Four days on foot · this journal', href: paths.route },
+            { image: p['walker-in-mist'], title: 'Day 3', meta: 'Chikatsuyu → Hongu · the longest day', href: paths.day(3) },
+            { image: p['cedar-canopy'], title: 'Kohechi', meta: 'Koyasan → Hongu · next time', href: paths.kohechi },
         ],
         facts: [
-            { icon: 'clock' as const, label: 'When', value: '20 to 23 April', note: 'Three wet days out of four' },
-            { icon: 'map-pin' as const, label: 'Start', value: 'Takijiri', note: 'Off the bus at half past three' },
+            { icon: 'clock' as const, label: 'When', value: '20 to 23 April', note: 'Four days on foot' },
+            { icon: 'map-pin' as const, label: 'Start', value: 'Takijiri', note: 'On the trail at 15:40' },
             { icon: 'home' as const, label: 'Overnight', value: 'Minshuku and ryokan', note: 'Booked months ahead' },
-            { icon: 'file' as const, label: 'On foot', value: 'About 21 km', note: 'over three days, plus one by train' },
+            { icon: 'file' as const, label: 'On foot', value: 'About 68 km', note: 'Takijiri to Nachi' },
         ],
         entries: [
             stageEntry(0, '20 April · from 15:40'),
-            stageEntry(1, '21 April · 07:02–17:28', 'Longest day'),
-            stageEntry(2, '22 April · 07:18'),
-            stageEntry(3, '22 April · 08:26–12:05'),
-            stageEntry(4, '23 April · 10:55–15:48', 'No hiking'),
-            { image: p['outdoor-bath'], title: places[1].title, subtitle: 'Outdoor bath', meta: '22 April · 16:05' },
-            { image: p['chikatsuyu-gate'], title: places[2].title, subtitle: 'Lantern gate', meta: '21 April · 17:28' },
-            { image: p['ryokan-room'], title: 'Katsuura', subtitle: 'Ryokan by the harbour', meta: '23 April · 15:48' },
+            stageEntry(1, '21 April · 07:02–17:28'),
+            stageEntry(2, '22 April · 07:18–16:05', 'Longest day'),
+            stageEntry(4, '23 April · 10:55–15:48'),
+            {
+                image: p['chikatsuyu-gate'],
+                title: places[2].title,
+                subtitle: 'Lantern gate',
+                meta: '21 April · 17:28',
+                href: paths.place('chikatsuyu'),
+            },
+            {
+                image: p['outdoor-bath'],
+                title: places[1].title,
+                subtitle: 'Outdoor bath',
+                meta: '22 April · 16:05',
+                href: paths.place('yunomine'),
+            },
+            {
+                image: p['nachi-pagoda'],
+                title: 'Nachi',
+                subtitle: 'Pagoda and falls',
+                meta: '23 April · 12:31',
+                href: paths.place('nachi'),
+            },
+            { image: p['ryokan-room'], title: 'Katsuura', subtitle: 'Ryokan by the harbour', meta: '23 April · 15:48', href: paths.day(4) },
         ],
         prep: [
             {
                 title: 'Book accommodation',
                 text: 'Takahara and Chikatsuyu each have a handful of minshuku, and in spring and autumn they are full months ahead.',
                 variant: 'featured' as const,
+                href: paths.practicalPage('accommodation'),
             },
             {
                 title: 'Pack for rain',
-                text: 'Three of four days were wet. A dry change of clothes in a sealed bag helps more than gaiters.',
+                text: 'A dry change of clothes in a sealed bag helps more than gaiters.',
+                href: paths.practicalPage('trail-markers'),
             },
             {
-                title: 'Take the bus',
-                text: 'Buses link the villages along the route. The 07:18 from Chikatsuyu saved us the longest stage.',
+                title: 'Send your luggage ahead',
+                text: 'Luggage moves between the main villages, booked one day ahead through the Tanabe tourism office.',
+                href: paths.practicalPage('getting-there'),
             },
         ],
         tiles: [
-            { title: 'Getting there and buses', icon: 'map-pin' as const },
-            { title: 'Accommodation', icon: 'home' as const },
-            { title: 'Trail markers and safety', icon: 'alert' as const },
-            { title: 'Maps and timetables', icon: 'download' as const },
+            { title: 'Getting there and buses', icon: 'map-pin' as const, href: paths.practicalPage('getting-there') },
+            { title: 'Accommodation', icon: 'home' as const, href: paths.practicalPage('accommodation') },
+            { title: 'Trail markers and safety', icon: 'alert' as const, href: paths.practicalPage('trail-markers') },
+            { title: 'Maps and timetables', icon: 'download' as const, href: paths.practicalPage('maps') },
         ],
-        hosts: [{ image: p['ryokan-room'], name: 'Ryokan in Katsuura', role: 'Last night on the coast', focus: '“Dinner is at six.”' }],
+        hosts: [{ image: p['ryokan-room'], name: 'Ryokan in Katsuura', role: 'The night after Nachi', focus: '“Dinner is at six.”' }],
         footer: {
             ...footer,
             notice: { title: 'Trail conditions:', text: 'After heavy rain, check the tourism office notices before you set out.' },
@@ -323,8 +360,8 @@ const build = (p: Photos) => {
     };
 
     const richTextSample =
-        '<h2>The longest day</h2>' +
-        '<p>9.8 km from Takahara to Chikatsuyu. At seven the clouds lay in the valley below the village; from nine it rained. The stone paving holds up in the wet, the roots between it do not. To shorten the day, catch a <a href="#">bus along the main road</a>.</p>' +
+        '<h2>The day to Chikatsuyu</h2>' +
+        '<p>9.8 km from Takahara to Chikatsuyu. At seven the clouds lay in the valley below the village. The stone paving holds up in the wet, the roots between it do not. Buses run along the <a href="/practical/getting-there">main road</a> if the day has to end early.</p>' +
         '<ul><li>07:02 · Takahara: clouds below the village</li><li>09:05 · stone paving between the cedars</li><li>12:03 · a land crab on the path</li><li>17:28 · the lantern gate of Chikatsuyu</li></ul>' +
         '<h3>Where to sleep</h3><p>Chikatsuyu has a handful of minshuku along the river. Book months ahead for spring and autumn.</p>';
 
@@ -338,7 +375,7 @@ const build = (p: Photos) => {
         bridgeCaption: p['forest-stream'].caption ?? '',
         quote: { quote: '“Dinner is at six. The bath is open until eleven.”', source: 'Ryokan in Katsuura, 23 April' },
         days: { title: 'How the four days went', aside: 'Times from the photos, not from a plan.' },
-        stages: { eyebrow: 'Days', title: 'Three days on foot, one by train' },
+        stages: { eyebrow: 'Days', title: 'Four days, Takijiri to Nachi' },
         map: {
             eyebrow: 'Trail map',
             title: 'Schematic, not to scale',
@@ -351,16 +388,16 @@ const build = (p: Photos) => {
             title: 'Two emails a year, whenever a new route is written up',
             text: 'Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.',
         },
-        // The editorial counter-proposal (Kumano Home · Draft).
+        // The editorial home page.
         draft: {
             kicker: 'Kumano Kodo · Nakahechi',
             title: 'Four days in April',
-            lede: 'Three days on foot through the cedars of the Kii peninsula, one by train along the coast. Twenty-seven photos, in the order they were taken.',
+            lede: 'Four days on foot from Takijiri to Nachi, through the cedars of the Kii peninsula. Twenty-seven photos, in the order they were taken.',
             chapters: [
-                'We came off the bus at Takijiri at half past three and were on the trail fifteen minutes later. The first hour does not pretend: steps, roots, then more steps.',
-                'The morning began above the clouds and ended at a gate of paper lanterns. In between, rain, stone paving that stays grippy when wet, and a bright orange crab that did not move for the camera.',
-                'We skipped the long middle section with the 07:18 bus and walked the last seven kilometres into Hongu. By four we were sitting in a stone pool in Yunomine, under a wooden roof, listening to the rain.',
-                'A day with no trail at all. The coast line in the rain, the pagoda standing in front of the falls, and a ferry across the harbour to a ryokan with a view of the water.',
+                'At twenty to four we were at the river in Takijiri, a quarter of an hour later on the trail. The first hour does not pretend: steps, roots, then more steps.',
+                'The morning began above the clouds and ended at a gate of paper lanterns. In between, stone paving that stays grippy when wet, a stream under the cedars and a bright orange crab that did not move for the camera.',
+                'The longest day. From Chikatsuyu through the cedars and past a small oji shrine to Hongu, then on to Yunomine. By four we were sitting in a stone pool under a wooden roof.',
+                'Over the Kogumotori-goe and the Ogumotori-goe to Nachi, where the pagoda stands in front of the falls. In Katsuura a ferry took us across the harbour to a ryokan with a view of the water.',
             ],
             coda: 'Two days later, the last evening. The light came out for twenty minutes.',
             mapTitle: 'Where it went',
@@ -372,36 +409,35 @@ const build = (p: Photos) => {
     const detailFacts = [
         { label: 'Day', value: 'Day 2 · 21 April' },
         { label: 'Distance', value: '9.8 km' },
-        { label: 'Ascent', value: '+620 m' },
         { label: 'Photos taken', value: '07:02–17:28' },
     ];
 
     const pages = {
         start: {
-            title: 'Four days on the Nakahechi',
-            text: 'A private trail journal from April 2024: the days, the places worth a detour and what we wish we had known before setting out.',
+            title: 'The Nakahechi in four days',
+            text: 'From Takijiri to Nachi on foot, 20 to 23 April 2024: the days, the places worth a detour and what we wish we had known before setting out.',
             action: 'See the days',
             panelTitle: 'Ways to walk it',
-            panelMore: 'Compare the routes',
+            panelMore: 'All days and places',
             factsLabel: 'At a glance',
-            stages: { eyebrow: 'Days', title: 'Three days on foot, one by train' },
+            stages: { eyebrow: 'Days', title: 'Four days, Takijiri to Nachi' },
             prep: { eyebrow: 'Practical', title: 'Before you go' },
             plan: 'Plan the walk',
         },
         list: {
             title: 'Days and places',
-            crumbs: ['Start', 'The route'],
+            crumbs: ['Home', 'The route'],
             chips: ['All', 'Days', 'Places', 'Stays'],
             search: { label: 'Search days and places', placeholder: 'e.g. Chikatsuyu' },
             day: { label: 'Day', options: ['All days', 'Day 1', 'Day 2', 'Day 3', 'Day 4'] },
             count: '8 entries',
         },
         detail: {
-            crumbs: ['Start', 'The route', 'Days'],
+            crumbs: ['Home', 'The route', 'Days'],
             caption: p['misty-valley'].caption ?? '',
             downloads: [
                 { title: 'Stage map Takahara → Chikatsuyu', meta: 'PDF · 1.2 MB', href: '#' },
-                { title: 'Bus timetable Chikatsuyu – Hosshinmon', meta: 'PDF · 96 KB', href: '#' },
+                { title: 'Bus timetable along the route', meta: 'PDF · 96 KB', href: '#' },
                 { title: 'Packing list for rain', meta: 'PDF · 240 KB', href: '#' },
             ],
             factsTitle: 'The day in figures',
@@ -410,8 +446,8 @@ const build = (p: Photos) => {
                 title: 'Too long?',
                 text: 'Buses run along the main road between Takahara and Chikatsuyu, so the day can end early.',
                 links: [
-                    { label: 'Bus timetable', href: '#' },
-                    { label: 'Stay in Chikatsuyu', href: '#' },
+                    { label: 'Getting there and buses', href: paths.practicalPage('getting-there') },
+                    { label: 'Chikatsuyu', href: paths.place('chikatsuyu') },
                 ],
             },
             back: 'All days',
@@ -420,23 +456,133 @@ const build = (p: Photos) => {
         },
     };
 
+    // Texts of the pages behind the links.
+    const site = {
+        home: 'Home',
+        route: { title: 'The route', lede: pages.start.text },
+        days: {
+            title: 'Days and places',
+            intro: 'The four days in order, then the places we stopped at and where we slept.',
+            groups: { days: 'Days', places: 'Places', stays: 'Stays' },
+        },
+        day: {
+            label: 'Day',
+            previous: 'Previous day',
+            next: 'Next day',
+            photos: 'The day in photos',
+            factsTitle: 'The day in figures',
+            facts: { date: 'Date', route: 'Route', distance: 'On foot', photos: 'Photos taken' },
+            distances: ['3.7 km', '9.8 km', 'about 25 km', 'about 27.5 km'],
+            tipTitle: 'Tip for this day',
+            tips: [
+                'Start early enough to reach Takahara in daylight; the first hour is steep and there is nothing in between.',
+                'The stone paving is safe in the wet, the roots between it are not. Walk on the stones.',
+                'It is the longest day. The villages along the road have vending machines, not shops.',
+                'The two passes make a long day. Check the last bus from Nachi before you set out.',
+            ],
+        },
+        places: {
+            chikatsuyu: {
+                title: 'Chikatsuyu',
+                text: [
+                    'A village along the river, halfway between Takijiri and Hongu. Most walkers sleep here after day two, and most minshuku stand along the river.',
+                    'The lantern gate at the edge of the village is hard to miss. The middle lantern shows the three-legged crow, the messenger of the Kumano deities.',
+                ],
+                photos: ['vending-machines', 'chikatsuyu-gate', 'morning-bus'] as const,
+                day: 2,
+            },
+            yunomine: {
+                title: 'Yunomine Onsen',
+                text: [
+                    'One of the oldest hot springs in Japan, a short walk from Hongu. The bath houses stand along a stream in a narrow valley.',
+                    'In late April carp streamers hung across the stream for Children’s Day. We sat in an outdoor bath under a wooden roof before dinner.',
+                ],
+                photos: ['yunomine-street', 'river-bridge', 'outdoor-bath'] as const,
+                day: 3,
+            },
+            nachi: {
+                title: 'Nachi',
+                text: [
+                    'The end of the walk: the three-storey pagoda of Seiganto-ji in front of Nachi falls, and next to it the shrine of Kumano Nachi Taisha.',
+                    'From Nachi, buses run to the coast. In Katsuura a ferry crosses the harbour to the ryokan.',
+                ],
+                photos: ['nachi-pagoda', 'harbour-ferry', 'ryokan-room'] as const,
+                day: 4,
+            },
+        },
+        practical: {
+            title: 'Practical',
+            intro: 'What we would tell anyone planning the Nakahechi: getting there, where to sleep, how the trail is marked, and which maps to take.',
+            pages: {
+                'getting-there': {
+                    title: 'Getting there and buses',
+                    text: [
+                        'Takijiri is reached by bus from Kii-Tanabe station, which is on the JR line from Osaka. The ride takes about forty minutes.',
+                        'Along the route, buses link the villages several times a day. They make it easy to shorten a day, and to get back to the coast from Hongu or Nachi.',
+                        'Luggage can be sent ahead between the main villages. Book it through the Tanabe tourism office one day before.',
+                    ],
+                },
+                accommodation: {
+                    title: 'Accommodation',
+                    text: [
+                        'Along the Nakahechi you sleep in minshuku, small family guest houses. Dinner and breakfast are usually included, and dinner is early.',
+                        'Takahara and Chikatsuyu have only a handful of them. In spring and autumn they are full months ahead, so book the whole walk at once.',
+                        'The Tanabe tourism office runs a reservation service in English that books the whole route.',
+                    ],
+                },
+                'trail-markers': {
+                    title: 'Trail markers and safety',
+                    text: [
+                        'The Nakahechi is marked with numbered wooden posts every few hundred metres. The numbers help if you ever need to tell someone where you are.',
+                        'Carry water and something to eat for the whole day; between the villages there is nothing to buy.',
+                        'After heavy rain parts of the trail can be closed. Check the tourism office notices before you set out.',
+                    ],
+                },
+                maps: {
+                    title: 'Maps and timetables',
+                    text: [
+                        'For navigation, take the trail map of the tourism office. The map on this site is schematic.',
+                        'Bus timetables change with the season. Check them for the day you walk, especially the last bus from Nachi.',
+                    ],
+                },
+            },
+        },
+        photos: { title: 'Photos', intro: 'All twenty-seven photos, day by day, in the order they were taken.' },
+        newsletter: { title: 'Newsletter', intro: home.newsletter.text },
+        kohechi: {
+            title: 'Kohechi',
+            text: [
+                'The Kohechi is the mountain route from Koyasan to Hongu, shorter than the Nakahechi but with three high passes.',
+                'We have not walked it yet. It is the next route on the list, and it will be here when it is written up.',
+            ],
+        },
+        legal: {
+            imprint: { title: 'Imprint', text: ['Sample text of the design system. The imprint of the real site goes here.'] },
+            privacy: { title: 'Privacy', text: ['Sample text of the design system. The privacy policy of the real site goes here.'] },
+            accessibility: {
+                title: 'Accessibility',
+                text: ['Sample text of the design system. The accessibility statement of the real site goes here.'],
+            },
+        },
+    };
+
     const samples = {
         textarea: { label: 'Message', placeholder: 'Your question about the route' },
         search: 'Search',
-        galleryCaption: 'Day 3, 22 April: from the 07:18 bus to the bath in Yunomine.',
+        galleryCaption: 'Day 3, 22 April: from Chikatsuyu to the bath in Yunomine.',
         table: {
             caption: 'The days at a glance',
-            head: ['Day', 'Route', 'Distance', 'Photos taken'],
+            head: ['Day', 'Route', 'On foot', 'Photos taken'],
             rows: [
                 ['20 April', 'Takijiri → Takahara', '3.7 km', 'from 15:40'],
                 ['21 April', 'Takahara → Chikatsuyu', '9.8 km', '07:02–17:28'],
-                ['22 April', 'Hosshinmon → Hongu', '7.0 km', '07:18–16:05'],
-                ['23 April', 'Nachi and Katsuura', 'by train', '10:55–15:48'],
+                ['22 April', 'Chikatsuyu → Hongu → Yunomine', 'about 25 km', '07:18–16:05'],
+                ['23 April', 'Yunomine → Nachi', 'about 27.5 km', '10:55–15:48'],
             ],
         },
     };
 
-    return { ui, kumano, guide, richTextSample, home, pages, samples };
+    return { ui, kumano, guide, richTextSample, home, pages, site, samples };
 };
 
 export const en: LocaleModule<ReturnType<typeof build>> = {
@@ -445,13 +591,13 @@ export const en: LocaleModule<ReturnType<typeof build>> = {
         signpost: { alt: 'Wooden signpost reading 熊野古道 Kumano Kodo on a path of fallen leaves', place: 'Takijiri' },
         'sea-of-clouds': { alt: 'Ridge after ridge of forested mountains with clouds lying in the valleys', place: 'Takahara' },
         'misty-valley': { alt: 'A steep valley filled with mist, forested slopes fading into grey', place: 'Takahara' },
-        'roadside-markers': { alt: 'Wooden trail markers beside a quiet road under young trees', place: 'Above Takahara' },
+        'roadside-markers': { alt: 'Wooden trail markers beside a quiet road under young trees', place: '' },
         'stone-path-walkers': { alt: 'Two walkers in rain gear on a stone-paved path between tall cedars', place: 'Nakahechi' },
         'forest-stream': { alt: 'A stream running through cedar forest, crossed by a small plank bridge', place: 'Nakahechi' },
         'land-crab': { alt: 'An orange land crab on wet rocks and cedar needles', place: 'Nakahechi' },
         'vending-machines': {
             alt: 'Drink vending machines under a roof next to an ice-cream sign, a chequered floor',
-            place: 'Before Chikatsuyu',
+            place: 'Chikatsuyu',
         },
         'chikatsuyu-gate': {
             alt: 'A wooden gate with three large paper lanterns, the middle one showing a three-legged crow',
@@ -468,21 +614,15 @@ export const en: LocaleModule<ReturnType<typeof build>> = {
         'cobbled-path': { alt: 'Old cobblestones leading between straight cedar trunks', place: 'Towards Hongu' },
         'sunlit-path': { alt: 'Sunlight falling onto a forest path between rows of cedars', place: 'Towards Hongu' },
         'ridge-view': { alt: 'View over forested ridges framed by a pine branch', place: 'Towards Hongu' },
-        'fern-frond': { alt: 'Close-up of a fern frond unrolling', place: 'Hongu' },
+        'fern-frond': { alt: 'Close-up of a fern frond unrolling', place: '' },
         'yunomine-street': { alt: 'A narrow village street along a stream with carp streamers hanging across it', place: 'Yunomine' },
-        'river-bridge': { alt: 'A wide river bed with a suspension bridge, azaleas in the foreground', place: 'Near Yunomine' },
+        'river-bridge': { alt: 'A wide river bed with a suspension bridge, azaleas in the foreground', place: '' },
         'outdoor-bath': { alt: 'A stone-edged outdoor bath under a wooden roof, surrounded by greenery', place: 'Yunomine' },
-        'seaside-station': {
-            alt: 'A small station platform on the coast in the rain, the sea behind the fence',
-            place: 'On the coast line',
-        },
+        'seaside-station': { alt: 'A small station platform on the coast in the rain, the sea behind the fence', place: '' },
         'nachi-pagoda': { alt: 'A red three-storey pagoda in front of a tall waterfall in the mist', place: 'Nachi' },
         'harbour-ferry': { alt: 'A brightly painted ferry crossing a grey harbour', place: 'Katsuura' },
         'ryokan-room': { alt: 'A tatami room with a low table, the window looking out over the water', place: 'Katsuura' },
-        'evening-rooftops': {
-            alt: 'Tiled roofs of a small town in the evening light, mountains on the horizon',
-            place: 'The last evening',
-        },
+        'evening-rooftops': { alt: 'Tiled roofs of a small town in the evening light, mountains on the horizon', place: '' },
     },
     build,
 };
