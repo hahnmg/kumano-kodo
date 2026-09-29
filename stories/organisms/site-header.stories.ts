@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized, type Content } from '../templates/content';
 import { siteHeader, type SiteHeaderProps } from './site-header.markup';
 
-const labels = ({ ui }: Content) => ({ nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode });
+const labels = ({ ui }: Content) => ({ nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu });
 
 const meta: Meta<SiteHeaderProps> = { title: 'Organisms/Site Header', parameters: { layout: 'fullscreen' } };
 export default meta;

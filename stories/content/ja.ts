@@ -5,6 +5,7 @@ const build = (p: Photos): LocaleContent => {
     const ui = {
         mainNav: 'メインナビゲーション',
         language: '言語',
+        menu: 'メニュー',
         darkMode: 'ダークモード',
         trailStatus: '道の状況と連絡先',
         categories: 'カテゴリー',

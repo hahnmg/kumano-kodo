@@ -102,6 +102,38 @@ for (const s of data.textStyles) {
 }
 out.push(block(':root', typeVars));
 
+// No mobile reference exists (open question 4): large styles and page spacing step down in code only.
+// The wordmark is sized to the content width; measured across the four themes it needs up to 7.8 em.
+const fit = 'calc((100vw - 2 * var(--gutter)) / 8)';
+const steps = {
+    900: { hero: [88, 92], h2: [48, 52], quote: [40, 46], stat: [52, 52], wordmark: [fit, '1'] },
+    600: {
+        hero: [52, 56],
+        h2: [36, 40],
+        h3: [28, 32],
+        'h3-regular': [26, 32],
+        h4: [22, 26],
+        'h4-regular': [22, 30],
+        quote: [30, 36],
+        stat: [44, 44],
+    },
+};
+const px = (v) => (typeof v === 'number' ? `${v}px` : v);
+const layout = {
+    900: ['--gutter: 32px;', '--section-sm: 72px;', '--section-lg: 96px;'],
+    600: ['--gutter: 20px;', '--section-sm: 56px;', '--section-lg: 72px;'],
+};
+// Wider step first: at phone width both match and the narrower one must win.
+for (const width of [900, 600]) {
+    const sizes = steps[width];
+    const lines = Object.entries(sizes).flatMap(([name, [size, lh]]) => [
+        `--type-${name}-size: ${px(size)};`,
+        `--type-${name}-line-height: ${px(lh)};`,
+    ]);
+    // Themes set gutter and section spacing, so the override has to match their selectors.
+    out.push(`@media (width <= ${width}px) {\n${block(':root', lines)}${block(':root,\n[data-theme]', layout[width])}}\n`);
+}
+
 await mkdir(join(root, 'src/tokens'), { recursive: true });
 await writeFile(join(root, 'src/tokens/tokens.css'), out.join('\n'));
 console.log(`tokens.css: ${Object.keys(allVars).length} variables, ${data.textStyles.length} text styles`);

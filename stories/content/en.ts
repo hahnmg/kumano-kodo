@@ -4,6 +4,7 @@ const build = (p: Photos) => {
     const ui = {
         mainNav: 'Main navigation',
         language: 'Language',
+        menu: 'Menu',
         darkMode: 'Dark mode',
         trailStatus: 'Trail status and contact',
         categories: 'Categories',

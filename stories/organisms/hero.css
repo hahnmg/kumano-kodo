@@ -65,6 +65,7 @@
 
 .hero__actions {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-12);
 }
 
@@ -81,12 +82,19 @@
         min-height: 640px;
     }
 
-    .hero__title {
-        font-size: 64px;
-        line-height: 68px;
-    }
-
     .hero__stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (width <= 600px) {
+    .hero {
+        min-height: 560px;
+        padding-top: var(--space-56);
+    }
+
+    .hero__actions > * {
+        flex: 1 1 auto;
+        justify-content: center;
     }
 }

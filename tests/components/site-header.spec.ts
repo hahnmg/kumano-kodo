@@ -18,7 +18,11 @@ describe('site-header', () => {
     it('takes translated labels', () => {
         const { ui, languages: ja } = content('ja');
         const el = mount(
-            siteHeader({ nav: kumano.nav, languages: ja, labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode } }),
+            siteHeader({
+                nav: kumano.nav,
+                languages: ja,
+                labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu },
+            }),
         );
         expect(el.querySelector('.site-header__nav')?.getAttribute('aria-label')).toBe(ui.mainNav);
         expect(el.querySelector('[aria-current="true"]')?.getAttribute('lang')).toBe('ja');

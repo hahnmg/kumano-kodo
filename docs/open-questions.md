@@ -2,7 +2,7 @@
 
 | # | Question | Proposal | Impact |
 |---|---|---|---|
-| 4 | Mobile reference? | Add mobile frames (390px) in Figma before the first coded component | Without them, stories and tests cover desktop only |
+| 4 | Mobile reference? | Code has provisional steps since 2026-09-29: at 900px and 600px large text styles, gutter and section spacing step down (`scripts/build-tokens.mjs`), grids go to one column, the header folds behind a menu button, the route map scrolls. Draw 390px frames in Figma to confirm or correct them | Until then mobile is derived from the desktop form language, not designed |
 | 6 | Hero gradient | Built as a local value, the only unbound fill; confirm or tokenize | One exception to the tokens-only rule |
 | 7 | Keep `sections/`, `index.html`, `original/`, `referenz-v3.jpg`, `PROMPT.md`? | Move into `docs/archive/v3-export/` | Clean root; history stays in git |
 | 8 | Unified section headings — keep? | Built as proposed: every heading uses `Section Heading` (eyebrow 20px above a 60px H2) | Intro, FAQ and Newsletter headings shifted by a few pixels versus v3 |

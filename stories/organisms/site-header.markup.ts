@@ -20,6 +20,7 @@ export interface SiteHeaderLabels {
     nav: string;
     languages: string;
     scheme: string;
+    menu: string;
 }
 
 export interface SiteHeaderProps {
@@ -28,7 +29,7 @@ export interface SiteHeaderProps {
     labels?: Partial<SiteHeaderLabels>;
 }
 
-const defaultLabels: SiteHeaderLabels = { nav: 'Main navigation', languages: 'Language', scheme: 'Dark mode' };
+const defaultLabels: SiteHeaderLabels = { nav: 'Main navigation', languages: 'Language', scheme: 'Dark mode', menu: 'Menu' };
 
 export const navItem = ({ label, href, active, hasChildren }: NavItem): string =>
     `<li><a${attrs({ class: 'site-header__link type-small', href, 'aria-current': active ? 'page' : undefined })}>${esc(label)}` +
@@ -40,6 +41,9 @@ export const siteHeader = ({ nav, languages = [], labels = {} }: SiteHeaderProps
     const l = { ...defaultLabels, ...labels };
     return (
         `<header class="site-header">${logo()}` +
+        `<button${attrs({ class: 'site-header__menu', type: 'button', 'aria-label': l.menu, 'aria-expanded': 'false' })}><span class="site-header__bar"></span><span class="site-header__bar"></span></button>` +
+        // Below 900px the panel collapses behind the menu button; above it, display: contents keeps the one-row header.
+        `<div class="site-header__panel">` +
         `<nav class="site-header__nav" aria-label="${esc(l.nav)}"><ul class="site-header__list">${nav.map(navItem).join('')}</ul></nav>` +
         `<div class="site-header__tools">` +
         (languages.length
@@ -53,6 +57,6 @@ export const siteHeader = ({ nav, languages = [], labels = {} }: SiteHeaderProps
               `</ul>`
             : '') +
         `<button${attrs({ class: 'site-header__scheme', type: 'button', 'aria-label': l.scheme, 'aria-pressed': 'false' })}><span></span></button>` +
-        `</div></header>`
+        `</div></div></header>`
     );
 };

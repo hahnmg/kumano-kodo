@@ -36,3 +36,30 @@
 .topbar a:hover {
     color: var(--color-ink);
 }
+
+/* Phones: the status flows as text, contact links sit on one line below it. */
+@media (width <= 600px) {
+    .topbar {
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+
+    .topbar .topbar__hours {
+        display: block;
+    }
+
+    .topbar__hours .icon {
+        display: inline-block;
+        margin-right: var(--space-6);
+        vertical-align: -2px;
+    }
+
+    .topbar .topbar__contact {
+        flex-wrap: wrap;
+        gap: var(--space-6) var(--space-20);
+    }
+
+    .topbar a {
+        white-space: nowrap;
+    }
+}

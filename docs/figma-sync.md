@@ -16,6 +16,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [ ] Figure: variant without top rule, used on the detail page
 - [ ] Content in three languages (EN, DE, JA): at least one page per language, or text properties per locale
 
+- [ ] Mobile frames (390px) for the four templates, including the open header menu (open question 4)
+
 ## Known differences between Figma and code
 
 - Photos `farn` and `laternen` are not in the Figma file: the Kohechi row keeps its old image, the Person Card default keeps its old portrait.

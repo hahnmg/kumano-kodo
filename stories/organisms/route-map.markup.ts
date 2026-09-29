@@ -11,7 +11,7 @@ export interface RouteMapProps {
 export const routeMap = ({ stations, path, days, legend, label }: RouteMapProps): string => {
     const last = stations.length - 1;
     return (
-        `<figure class="route-map"><svg class="route-map__svg" viewBox="0 0 1000 250" role="img" aria-label="${esc(label)}">` +
+        `<figure class="route-map"><div class="route-map__scroll" tabindex="0" role="group" aria-label="${esc(label)}"><svg class="route-map__svg" viewBox="0 0 1000 250" role="img" aria-label="${esc(label)}">` +
         `<path class="route-map__path" d="${esc(path)}"/>` +
         stations
             .filter((s) => s.boundary)
@@ -26,7 +26,7 @@ export const routeMap = ({ stations, path, days, legend, label }: RouteMapProps)
             .join('') +
         `</svg><ol class="route-map__days type-caption">` +
         days.map((d) => `<li style="left:${d.x / 10}%">${esc(d.label)}</li>`).join('') +
-        `</ol><figcaption class="route-map__legend type-caption">` +
+        `</ol></div><figcaption class="route-map__legend type-caption">` +
         `<span><i class="route-map__key route-map__key--walked"></i>${esc(legend.walked)}</span>` +
         `<span><i class="route-map__key route-map__key--end"></i>${esc(legend.end)}</span>` +
         `<span><i class="route-map__key route-map__key--boundary"></i>${esc(legend.boundary)}</span>` +

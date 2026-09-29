@@ -3,6 +3,7 @@ import { UPDATE_GLOBALS } from 'storybook/internal/core-events';
 import { addons } from 'storybook/preview-api';
 import '../src/tokens/tokens.css';
 import '../src/styles/base.css';
+import { bindMenuToggle } from '../src/scripts/menu-toggle';
 import { bindSchemeToggle, syncSchemeToggles } from '../src/scripts/scheme-toggle';
 import { isLocale, locales } from '../stories/templates/content';
 
@@ -13,6 +14,7 @@ const updateGlobals = (globals: Record<string, string>) => addons.getChannel().e
 
 // The header controls drive the toolbar, so the toolbar and the page never disagree.
 bindSchemeToggle(document, (scheme) => updateGlobals({ scheme }));
+bindMenuToggle(document);
 document.addEventListener('click', (event) => {
     const link = event.target instanceof Element ? event.target.closest('a[data-locale]') : null;
     const locale = link?.getAttribute('data-locale');

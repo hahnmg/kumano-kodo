@@ -17,7 +17,7 @@ import { siteHeader } from '../organisms/site-header.markup';
 import { content, type Content } from './content';
 
 export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = content()): string =>
-    siteHeader({ nav: kumano.nav, languages, labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode } }) +
+    siteHeader({ nav: kumano.nav, languages, labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu } }) +
     `<main>` +
     hero(kumano.hero) +
     section({

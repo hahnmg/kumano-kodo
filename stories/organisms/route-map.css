@@ -93,3 +93,19 @@
     width: 24px;
     border-top: var(--border-hairline) dashed var(--color-hair);
 }
+
+.route-map__scroll:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+@media (width <= 600px) {
+    .route-map__scroll {
+        overflow-x: auto;
+    }
+
+    .route-map__svg,
+    .route-map__days {
+        min-width: 720px;
+    }
+}

@@ -23,7 +23,7 @@ import { content, type Content } from './content';
 
 const chrome = ({ guide, languages, ui }: Content, main: string): string =>
     topbar({ ...guide.topbar, ariaLabel: ui.trailStatus }) +
-    siteHeader({ nav: guide.nav, languages, labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode } }) +
+    siteHeader({ nav: guide.nav, languages, labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu } }) +
     `<main>${main}</main>` +
     siteFooter(guide.footer);
 
