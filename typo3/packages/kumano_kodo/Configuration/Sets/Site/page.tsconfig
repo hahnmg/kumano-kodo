@@ -1,3 +1,8 @@
 @import './BackendLayouts/*.tsconfig'
 
 TCEFORM.tt_content.CType.keepItems = header,text,kumano_link_list,kumano_notice,kumano_section,kumano_journal_opener,kumano_chapter,kumano_bleed_photo,kumano_highlight,kumano_route_map,kumano_faq,kumano_newsletter,kumano_hero_split,kumano_hero,kumano_icon_facts,kumano_teasers,kumano_cta_cards,kumano_link_tiles,kumano_figure,kumano_gallery,kumano_fact_list,kumano_info_box,kumano_sub_nav,kumano_downloads,kumano_links,kumano_quote,kumano_stats,kumano_slider,kumano_day_list,kumano_place_card,kumano_persons,kumano_media_list,kumano_table,kumano_text_media,kumano_section_heading
+
+# The logo on the root page appears on every page, so saving the root page clears them all.
+[traverse(page, "is_siteroot") == "1"]
+  TCEMAIN.clearCacheCmd = pages
+[END]

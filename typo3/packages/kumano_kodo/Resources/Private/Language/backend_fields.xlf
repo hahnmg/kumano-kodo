@@ -881,6 +881,12 @@
             <trans-unit id="tx_kumanokodo_nav_column.title.description">
                 <source>Not shown in a dropdown.</source>
             </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_logo">
+                <source>Logo</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_logo.description">
+                <source>Replaces the logo of the theme on every page (SVG, PNG or WebP). An SVG takes the theme colours only when its groups are named bird and text, as the layers in Figma are: bird gets the accent colour, text the ink colour. Shapes outside these groups, and PNG or WebP files, keep their own colours.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

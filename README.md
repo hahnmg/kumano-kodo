@@ -87,6 +87,8 @@ the previous home (`/home-v3`) and a page with the remaining components (`/compo
 - **Site settings** (Sites › Setup › Settings): theme, colour mode, dark mode toggle, site name, contact, the 18 palette
   colours, three typefaces (Google Fonts, served from this server), display weight, spacing unit, page margin, section
   spacing, content width and radii. Empty fields and colours left at their default keep the theme's value.
+- **Logo**: Caramel shows the classic mark, the other themes the modern one; an editor can upload another on the home
+  page (tab Appearance). An SVG takes the theme colours when its groups are named `bird` and `text`.
 - **Content elements**: one per component (group Kumano Kodo), plus **Section** for two columns. Top bar and footer
   texts are content elements on the home page. Why: `docs/adr/2026-09-30-typo3-content-and-theme-settings.md`.
 

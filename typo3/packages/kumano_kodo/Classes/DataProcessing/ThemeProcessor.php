@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace KumanoKodo\Sitepackage\DataProcessing;
 
+use KumanoKodo\Sitepackage\Theme\SiteLogo;
 use KumanoKodo\Sitepackage\Theme\ThemePresets;
 use KumanoKodo\Sitepackage\Theme\WebFontService;
 use TYPO3\CMS\Core\Site\Entity\Site;
@@ -20,6 +21,7 @@ final class ThemeProcessor implements DataProcessorInterface
     public function __construct(
         private readonly ThemePresets $presets,
         private readonly WebFontService $webFonts,
+        private readonly SiteLogo $logo,
     ) {}
 
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
@@ -101,6 +103,7 @@ final class ThemeProcessor implements DataProcessorInterface
         $processedData[$processorConfiguration['as'] ?? 'theme'] = [
             'css' => $css,
             'fonts' => $this->stylesheets($fonts, $display === '' && $weight === 0),
+            'logo' => $this->logo->markup($site->getRootPageId()),
         ];
         return $processedData;
     }
