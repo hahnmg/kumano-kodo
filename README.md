@@ -81,9 +81,14 @@ ddev start               # installs TYPO3 and imports the demo on the first star
 ```
 
 The site answers at https://kumano-kodo.ddev.site in EN, `/de/` and `/ja/`; the backend at `/typo3` with user `admin`
-and the password the first start prints (also in `typo3/var/admin-password`). Theme, colour mode, dark mode toggle,
-site name and contact are site settings (Sites › Setup › Settings). Top bar and footer texts are content elements on
-the home page.
+and the password the first start prints (also in `typo3/var/admin-password`). The demo holds every Storybook site page,
+the previous home (`/home-v3`) and a page with the remaining components (`/components`).
+
+- **Site settings** (Sites › Setup › Settings): theme, colour mode, dark mode toggle, site name, contact, the 18 palette
+  colours, three typefaces (Google Fonts, served from this server), display weight, spacing unit, page margin, section
+  spacing, content width and radii. Empty fields and colours left at their default keep the theme's value.
+- **Content elements**: one per component (group Kumano Kodo), plus **Section** for two columns. Top bar and footer
+  texts are content elements on the home page. Why: `docs/adr/2026-09-30-typo3-content-and-theme-settings.md`.
 
 | Command                                                 | Does                                                                    |
 | ------------------------------------------------------- | ----------------------------------------------------------------------- |

@@ -9,4 +9,3 @@
 | 10 | Merge `Place Card / Ruled` into `Default`? | It differs only by a top rule and a taller image; model both as props of one variant | One variant fewer; the rule and image ratio become props in code |
 | 12 | Quote position | Centred in the page instead of starting at grid column 3 (225px), which has no spacing token | Quote sits 56px further left than in v3 |
 | 13 | Theme effects Figma cannot show | Keep them code-only and document each in Storybook: ocean accent gradient (rules, dots, hero scrim), violet sun-gradient H1, uppercase display, +0.08em tracking, glow, triple rule | Figma previews of ocean and violet look plainer than the coded result |
-| 14 | Web fonts on the TYPO3 site | Self-host the seven families in the sitepackage instead of loading them from Google Fonts, as Storybook does | GDPR: the demo currently sends visitor IPs to Google on every page |
