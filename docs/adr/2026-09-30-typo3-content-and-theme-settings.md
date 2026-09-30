@@ -1,7 +1,7 @@
 # Every component as a content element, theme values as site settings
 
 Date: 2026-09-30
-Status: accepted
+Status: accepted; content elements superseded by 2026-09-30-typo3-content-model.md
 
 ## Context
 

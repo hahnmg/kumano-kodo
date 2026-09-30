@@ -1,6 +1,6 @@
 # Proposal: a content model derived from Storybook
 
-Status: accepted 2026-09-30, being built. Replaces the 31 content elements of `2026-09-30-typo3-content-and-theme-settings`.
+Status: accepted and built 2026-09-30, see `docs/adr/2026-09-30-typo3-content-model.md`. Replaces the 31 content elements of `2026-09-30-typo3-content-and-theme-settings`.
 
 ## What is wrong with the current model
 
