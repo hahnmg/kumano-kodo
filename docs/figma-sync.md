@@ -31,11 +31,13 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 
 - [ ] Slider dots: only as many as reachable positions (three on desktop, five on phones)
 
-- [ ] Home page as editorial journal: Journal Opener, Chapter (numeral, text, staggered photo grid with captions), Bleed Photo
+- [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
+- [x] 2026-09-30 Components page in three sections (Atoms, Molecules, Organisms) as in Storybook, 160 apart
+- [ ] Home page as editorial journal, composed from those components
 - [ ] Site pages: route overview, days and places, day page, place page, practical overview and subpage, photos, text page
 - [ ] All 27 trip photos (web versions in img/photos) replace the earlier set
 - [ ] Contents: the walk Takijiri → Nachi, 20–23 April 2024, in EN, DE, JA
-- [ ] Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
+- [x] 2026-09-30 Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
 
 ## Known differences between Figma and code
 
@@ -46,3 +48,4 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - Detail page fact list shows two of the four facts (the component has two rows); the figure has no caption; the breadcrumb has three levels instead of four.
 - Hover movement (arrow nudge, download icon) and the drawn accent line are shown as their end state, not as motion.
 - CTA Card: both variants share one default text.
+- Journal Opener: the upright site name breaks after each character; Figma has no vertical writing mode.

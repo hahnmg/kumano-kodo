@@ -1,6 +1,6 @@
 # Chapter
 
-Figma: not yet drawn. Markup: `stories/organisms/chapter.markup.ts`.
+Figma: Chapter (61:204). Markup: `stories/organisms/chapter.markup.ts`.
 
 One day of the trail journal: a large numeral, date, route and a paragraph, then the day's photos in capture order on a
 twelve-column grid. Each photo sets its `span` and may be lowered by a `shift` of one or two steps, so the rows do not

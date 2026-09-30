@@ -381,6 +381,24 @@
             "group": "atoms",
             "component": "icon",
             "node": "36:217"
+        },
+        {
+            "name": "Bleed Photo",
+            "group": "molecules",
+            "component": "bleed-photo",
+            "node": "61:227"
+        },
+        {
+            "name": "Journal Opener",
+            "group": "organisms",
+            "component": "journal-opener",
+            "node": "61:218"
+        },
+        {
+            "name": "Chapter",
+            "group": "organisms",
+            "component": "chapter",
+            "node": "61:204"
         }
     ],
     "pages": [
