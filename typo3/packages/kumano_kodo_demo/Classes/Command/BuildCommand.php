@@ -251,7 +251,8 @@ final class BuildCommand extends Command
         $this->lastContent[$pid . ':' . $element['colPos']] = $uid;
 
         foreach (self::LANGUAGES as $code => $language) {
-            $translated = [];
+            // Localized content starts hidden; the demo is published in every language.
+            $translated = ['hidden' => 0];
             foreach ($texts as $field => $value) {
                 $translated[$field] = $value[$code];
             }
