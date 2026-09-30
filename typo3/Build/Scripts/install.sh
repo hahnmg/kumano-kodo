@@ -19,3 +19,6 @@ else
 fi
 
 vendor/bin/typo3 cache:flush
+
+# The first page request downloads the web fonts to this server; do it now rather than for the first visitor.
+curl -s -o /dev/null http://localhost/ || true

@@ -83,14 +83,21 @@ final class BuildCommand extends Command
                 $this->addFlyout($page);
             }
         }
-        foreach ($demo['content'] as $element) {
-            $this->createContent($element);
+        $elements = 0;
+        foreach ($demo['pages'] as $page) {
+            $uid = $this->pages[$page['key']];
+            if (isset($page['chips'])) {
+                $this->addItems('pages', $uid, 'tx_kumanokodo_chips', $page['chips'], $uid);
+            }
+            foreach ($page['content'] as $element) {
+                $elements += $this->createElement($element, $uid, (int)($element['colPos'] ?? 0));
+            }
         }
         // This instance holds the records the export ships, so its own setup must not import them again.
         $this->registry->set('extensionDataImport', 'kumano_kodo_demo:Initialisation/dataImported', 1);
         $this->registry->set('siteConfigImport', self::SITE, 1);
 
-        $output->writeln(sprintf('Built %d pages and %d content elements, root page %d.', count($this->pages), count($demo['content']), $this->pages['home']));
+        $output->writeln(sprintf('Built %d pages and %d content elements, root page %d.', count($this->pages), $elements, $this->pages['home']));
         return Command::SUCCESS;
     }
 
@@ -108,11 +115,11 @@ final class BuildCommand extends Command
                 ? $storage->getFileInFolder($name, $folder)
                 : $storage->addFile($source . '/' . $photo['file'], $folder, $name, DuplicationBehavior::REPLACE, false);
             assert($file instanceof File);
-            $file->getMetaData()->add(['alternative' => $photo['alt']['en']])->save();
+            $file->getMetaData()->add(['alternative' => $photo['alt']['en'], 'description' => $photo['caption']['en']])->save();
             $this->photos[$slug] = $file->getUid();
             $metaUid = (int)$file->getMetaData()->offsetGet('uid');
             foreach (self::LANGUAGES as $code => $language) {
-                $this->translate('sys_file_metadata', $metaUid, $language, ['alternative' => $photo['alt'][$code]]);
+                $this->translate('sys_file_metadata', $metaUid, $language, ['alternative' => $photo['alt'][$code], 'description' => $photo['caption'][$code]]);
             }
         }
     }
@@ -226,47 +233,164 @@ final class BuildCommand extends Command
         }
     }
 
-    private function createContent(array $element): void
+    // Nested inline records are written in steps: they only attach to a parent that is already saved.
+    // Returns the number of elements created, children included.
+    private function createElement(array $element, int $pid, int $colPos, int $parent = 0, string $column = ''): int
     {
-        $pid = $this->pages[$element['page']];
-        $texts = array_intersect_key($element, array_flip(['header', 'subheader', 'bodytext']));
-        $data = ['tt_content' => ['NEWce' => ['pid' => $pid, 'colPos' => $element['colPos'], 'CType' => $element['type']]]];
-        foreach ($texts as $field => $value) {
-            $data['tt_content']['NEWce'][$field] = $value['en'];
+        $fields = ['pid' => $pid, 'colPos' => $colPos, 'CType' => $element['type'], 'hidden' => 0];
+        foreach ($element['fields'] ?? [] as $field => $value) {
+            $fields[$field] = $this->value($value, 'en');
         }
-        $links = [];
-        foreach ($element['links'] ?? [] as $l => $link) {
-            $links[] = 'NEWlink' . $l;
-            $data['tx_kumanokodo_link']['NEWlink' . $l] = ['pid' => $pid, 'label' => $link['label']['en'], 'link' => $this->link($link['link'])];
+        if ($parent > 0) {
+            $fields += ['tx_kumanokodo_parent' => $parent, 'tx_kumanokodo_column' => $column];
         }
-        if ($links !== []) {
-            $data['tt_content']['NEWce']['tx_kumanokodo_links'] = implode(',', $links);
+        // A positive pid inserts at the top, so later elements go after the last one created there.
+        $slot = $pid . ':' . $colPos . ':' . $parent . ':' . $column;
+        if (isset($this->lastContent[$slot])) {
+            $fields['pid'] = -$this->lastContent[$slot];
         }
-        // Appending keeps the order of the definition; a positive pid would insert each at the top.
-        $last = $this->lastContent[$pid . ':' . $element['colPos']] ?? null;
-        if ($last !== null) {
-            $data['tt_content']['NEWce']['pid'] = -$last;
+        $data = ['tt_content' => ['NEWce' => $fields]];
+        if ($element['image'] ?? []) {
+            $data['tt_content']['NEWce']['image'] = $this->references($data, $element['image'], $pid);
         }
-        $uid = $this->create('tt_content', $data['tt_content']['NEWce'], $data);
-        $this->lastContent[$pid . ':' . $element['colPos']] = $uid;
+        $uid = $this->create('tt_content', $fields, $data);
+        $this->lastContent[$slot] = $uid;
 
-        foreach (self::LANGUAGES as $code => $language) {
-            // Localized content starts hidden; the demo is published in every language.
-            $translated = ['hidden' => 0];
-            foreach ($texts as $field => $value) {
-                $translated[$field] = $value[$code];
+        foreach (['items' => 'tx_kumanokodo_items', 'items2' => 'tx_kumanokodo_items2'] as $key => $field) {
+            if ($element[$key] ?? []) {
+                $this->addItems('tt_content', $uid, $field, $element[$key], $pid);
             }
-            $this->translate('tt_content', $uid, $language, $translated);
-            if ($links !== []) {
-                $this->syncInline('tt_content', $uid, 'tx_kumanokodo_links', $language);
-                foreach ($this->children('tx_kumanokodo_link', 'uid_foreign', $uid, 'tt_content') as $l => $linkUid) {
-                    $this->process(['tx_kumanokodo_link' => [$this->translationOf('tx_kumanokodo_link', $linkUid, $language) => ['label' => $element['links'][$l]['label'][$code]]]]);
-                }
+        }
+        if ($element['links'] ?? []) {
+            $links = [];
+            foreach ($element['links'] as $l => $link) {
+                $links['NEWlink' . $l] = ['pid' => $pid, 'label' => $link['label']['en'], 'link' => $this->link($link['link'])];
+            }
+            $this->process(['tx_kumanokodo_link' => $links, 'tt_content' => [$uid => ['tx_kumanokodo_links' => implode(',', array_keys($links))]]]);
+        }
+        $count = 1;
+        foreach ($element['children'] ?? [] as $childColumn => $children) {
+            $uids = [];
+            foreach ($children as $child) {
+                $count += $this->createElement($child, $pid, $colPos, $uid, $childColumn);
+                $uids[] = $this->lastContent[$pid . ':' . $colPos . ':' . $uid . ':' . $childColumn];
+            }
+            $this->process(['tt_content' => [$uid => ['tx_kumanokodo_column_' . $childColumn => implode(',', $uids)]]]);
+        }
+        if ($parent === 0) {
+            foreach (self::LANGUAGES as $code => $language) {
+                $this->translateElement($element, $uid, $language, $code);
+            }
+        }
+        return $count;
+    }
+
+    private function translateElement(array $element, int $uid, int $language, string $code): void
+    {
+        $fields = ['hidden' => 0];
+        foreach ($element['fields'] ?? [] as $field => $value) {
+            if (is_array($value)) {
+                $fields[$field] = $value[$code];
+            }
+        }
+        $this->translate('tt_content', $uid, $language, $fields);
+        if ($element['image'] ?? []) {
+            $this->syncInline('tt_content', $uid, 'image', $language);
+        }
+        foreach (['items' => 'tx_kumanokodo_items', 'items2' => 'tx_kumanokodo_items2'] as $key => $field) {
+            if ($element[$key] ?? []) {
+                $this->translateItems('tt_content', $uid, $field, $element[$key], $language, $code);
+            }
+        }
+        if ($element['links'] ?? []) {
+            $this->syncInline('tt_content', $uid, 'tx_kumanokodo_links', $language);
+            foreach ($this->children('tx_kumanokodo_link', 'uid_foreign', $uid, 'tt_content') as $l => $linkUid) {
+                $this->process(['tx_kumanokodo_link' => [$this->translationOf('tx_kumanokodo_link', $linkUid, $language) => ['label' => $element['links'][$l]['label'][$code], 'hidden' => 0]]]);
+            }
+        }
+        foreach ($element['children'] ?? [] as $column => $children) {
+            $this->syncInline('tt_content', $uid, 'tx_kumanokodo_column_' . $column, $language);
+            foreach ($this->childElements($uid, $column) as $c => $childUid) {
+                $this->translateElement($children[$c], $childUid, $language, $code);
             }
         }
     }
 
-    /** @var array<string, int> "pid:colPos" => uid of the last element created there */
+    /** Items of one inline field; their images are attached once the items are saved. */
+    private function addItems(string $table, int $uid, string $field, array $items, int $pid): void
+    {
+        $records = [];
+        foreach ($items as $i => $item) {
+            $record = ['pid' => $pid, 'hidden' => 0];
+            foreach ($item as $name => $value) {
+                if ($name !== 'image') {
+                    $record[$name] = $name === 'link' ? $this->link((string)$value) : $this->value($value, 'en');
+                }
+            }
+            $records['NEWitem' . $i] = $record;
+        }
+        $this->process(['tx_kumanokodo_item' => $records, $table => [$uid => [$field => implode(',', array_keys($records))]]]);
+        foreach ($this->children('tx_kumanokodo_item', 'uid_foreign', $uid, $table, $field) as $i => $itemUid) {
+            if (($items[$i]['image'] ?? '') !== '') {
+                $data = [];
+                $data['tx_kumanokodo_item'][$itemUid]['image'] = $this->references($data, [$items[$i]['image']], $pid);
+                $this->process($data);
+            }
+        }
+        if ($table === 'pages') {
+            foreach (self::LANGUAGES as $code => $language) {
+                $this->translateItems($table, $uid, $field, $items, $language, $code);
+            }
+        }
+    }
+
+    private function translateItems(string $table, int $uid, string $field, array $items, int $language, string $code): void
+    {
+        $this->syncInline($table, $uid, $field, $language);
+        foreach ($this->children('tx_kumanokodo_item', 'uid_foreign', $uid, $table, $field) as $i => $itemUid) {
+            $fields = ['hidden' => 0];
+            foreach ($items[$i] as $name => $value) {
+                if (is_array($value)) {
+                    $fields[$name] = $value[$code];
+                }
+            }
+            $this->process(['tx_kumanokodo_item' => [$this->translationOf('tx_kumanokodo_item', $itemUid, $language) => $fields]]);
+            if (($items[$i]['image'] ?? '') !== '') {
+                $this->syncInline('tx_kumanokodo_item', $itemUid, 'image', $language);
+            }
+        }
+    }
+
+    /** Adds file references for photo slugs to a datamap and returns their placeholders. */
+    private function references(array &$data, array $slugs, int $pid): string
+    {
+        $ids = [];
+        foreach ($slugs as $slug) {
+            $id = 'NEWref' . count($data['sys_file_reference'] ?? []);
+            $data['sys_file_reference'][$id] = ['pid' => $pid, 'uid_local' => $this->photos[$slug]];
+            $ids[] = $id;
+        }
+        return implode(',', $ids);
+    }
+
+    /** @return list<int> the section's children in one column, in their order */
+    private function childElements(int $parent, string $column): array
+    {
+        $query = $this->connectionPool->getQueryBuilderForTable('tt_content');
+        $query->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
+        return array_map('intval', $query->select('uid')->from('tt_content')->where(
+            $query->expr()->eq('tx_kumanokodo_parent', $query->createNamedParameter($parent, \Doctrine\DBAL\ParameterType::INTEGER)),
+            $query->expr()->eq('tx_kumanokodo_column', $query->createNamedParameter($column)),
+            $query->expr()->eq('sys_language_uid', 0),
+        )->orderBy('sorting')->executeQuery()->fetchFirstColumn());
+    }
+
+    private function value(mixed $value, string $code): mixed
+    {
+        return is_array($value) ? $value[$code] : $value;
+    }
+
+    /** @var array<string, int> "pid:colPos:parent:column" => uid of the last element created there */
     private array $lastContent = [];
 
     private function writeSite(array $site): void
@@ -339,7 +463,7 @@ final class BuildCommand extends Command
     }
 
     /** @return list<int> default language children in their sorting */
-    private function children(string $table, string $parentField, int $parent, ?string $parentTable = null): array
+    private function children(string $table, string $parentField, int $parent, ?string $parentTable = null, ?string $fieldname = null): array
     {
         $query = $this->connectionPool->getQueryBuilderForTable($table);
         $query->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
@@ -349,6 +473,9 @@ final class BuildCommand extends Command
         )->orderBy($GLOBALS['TCA'][$table]['ctrl']['sortby']);
         if ($parentTable !== null) {
             $query->andWhere($query->expr()->eq('tablename', $query->createNamedParameter($parentTable)));
+        }
+        if ($fieldname !== null) {
+            $query->andWhere($query->expr()->eq('fieldname', $query->createNamedParameter($fieldname)));
         }
         return array_map('intval', $query->executeQuery()->fetchFirstColumn());
     }
