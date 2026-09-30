@@ -113,6 +113,28 @@ const buildPartials = async () => {
                 `<f:if condition="{active}"><f:then>${fill(chip({ label: '__LABEL__', href: '__HREF__', active: true }))}</f:then>` +
                 `<f:else>${fill(chip({ label: '__LABEL__', href: '__HREF__' }))}</f:else></f:if>`,
         };
+        const { button } = await atom('button');
+        const { iconButton } = await atom('icon-button');
+        const { newsletterForm } = await server.ssrLoadModule('/stories/molecules/newsletter-form.markup.ts');
+        const variant = (html) => fill(html).replaceAll('button--primary', 'button--{variant}');
+        atoms.Button =
+            `<f:if condition="{href}"><f:then>${variant(button({ label: '__LABEL__', href: '__HREF__' }))}</f:then>` +
+            `<f:else>${variant(button({ label: '__LABEL__' })).replace('type="button"', 'type="{type}"')}</f:else></f:if>`;
+        atoms.IconButton =
+            `<f:if condition="{direction} == 'previous'"><f:then>${fill(iconButton({ direction: 'previous', label: '__LABEL__' }))}</f:then>` +
+            `<f:else>${fill(iconButton({ direction: 'next', label: '__LABEL__' }))}</f:else></f:if>`;
+        atoms.NewsletterForm = newsletterForm({
+            action: '__HREF__',
+            emailLabel: '__EMAIL__',
+            placeholder: '__PLACEHOLDER__',
+            consent: '__CONSENT__',
+            submit: '__LABEL__',
+        })
+            .replaceAll('__HREF__', '{action}')
+            .replaceAll('__EMAIL__', '{emailLabel}')
+            .replaceAll('__PLACEHOLDER__', '{placeholder}')
+            .replaceAll('__CONSENT__', '{consent}')
+            .replaceAll('__LABEL__', '{submit}');
         for (const [name, body] of Object.entries(atoms)) await writeFile(join(partials, `${name}.fluid.html`), fluid(body));
         await buildLabels(await server.ssrLoadModule('/stories/templates/content.ts'));
         return iconNames.length;
@@ -146,6 +168,168 @@ const buildLabels = async ({ content, locales }) => {
     }
 };
 
+// Theme presets for the site settings: what an empty setting falls back to, and which fonts a theme loads.
+const buildThemes = async () => {
+    const data = JSON.parse(await readFile(join(root, 'docs/figma-export/variables.json'), 'utf8'));
+    const theme = data.collections.Theme;
+    const head = await readFile(join(root, '.storybook/preview-head.html'), 'utf8');
+    // Axes and weights per family exactly as the Storybook preview requests them.
+    const fonts = Object.fromEntries(
+        [...head.matchAll(/family=([^&"]+)/g)].map(([, spec]) => {
+            const [family, axes = ''] = decodeURIComponent(spec).split(':');
+            return [family.replaceAll('+', ' '), axes];
+        }),
+    );
+    const weights = { Regular: 400, Medium: 500, SemiBold: 600, Bold: 700 };
+    const roles = ['paper', 'surface', 'sunk', 'ink', 'muted', 'line', 'hair', 'moss', 'accent'];
+    const body = data.textStyles.find((s) => s.name === 'Text/Body').family;
+    const themes = Object.fromEntries(
+        theme.modes.map((mode) => {
+            const v = (name) => theme.vars[name].v[mode];
+            return [
+                mode.toLowerCase(),
+                {
+                    font: { display: v('font/display'), meta: v('font/meta'), body, displayWeight: weights[v('font/display-strong')] },
+                    color: Object.fromEntries(
+                        ['light', 'dark'].map((scheme) => [scheme, Object.fromEntries(roles.map((r) => [r, v(`palette/${scheme}/${r}`)]))]),
+                    ),
+                    spacing: {
+                        unit: v('space/8'),
+                        gutter: v('layout/gutter'),
+                        sectionLarge: v('layout/section'),
+                        sectionSmall: v('layout/section-sm'),
+                        container: v('layout/page'),
+                    },
+                    radius: { button: v('radius/button'), pill: v('radius/pill') },
+                },
+            ];
+        }),
+    );
+    const out = join(pkg, 'Resources/Private/Themes');
+    await mkdir(out, { recursive: true });
+    await writeFile(join(out, 'themes.json'), `${JSON.stringify({ fonts, themes }, null, 4)}\n`);
+    await buildSettings(themes);
+};
+
+// The set's settings and their labels; every theme override names the value each theme uses when it is empty.
+const buildSettings = async (themes) => {
+    const set = join(pkg, 'Configuration/Sets/Site');
+    const names = Object.keys(themes);
+    const title = (s) => s[0].toUpperCase() + s.slice(1);
+    const per = (pick, unit = '') => names.map((n) => `${title(n)} ${pick(themes[n])}${unit}`).join(', ');
+    const settings = [];
+    const add = (key, category, type, def, label, description = '', extra = {}) =>
+        settings.push({ key, category, type, def, label, description, ...extra });
+    add(
+        'brand.name',
+        'appearance',
+        'string',
+        'Kumano Kodo',
+        'Site name',
+        'Accessible name of the logo and the large wordmark in the footer.',
+    );
+    add(
+        'theme',
+        'appearance',
+        'string',
+        'caramel',
+        'Theme',
+        'Colours, typefaces and spacing of the whole site; the settings below override single values.',
+        {
+            enum: Object.fromEntries(names.map((n) => [n, title(n)])),
+        },
+    );
+    add('scheme', 'appearance', 'string', 'light', 'Colour mode on load', '', { enum: { light: 'Light', dark: 'Dark' } });
+    add('schemeToggle', 'appearance', 'bool', true, 'Show the dark mode toggle');
+    for (const scheme of ['light', 'dark']) {
+        for (const role of Object.keys(themes.caramel.color.light)) {
+            // A colour setting needs a valid default; the Caramel value stands for "use the theme's colour".
+            add(
+                `color.${scheme}.${role}`,
+                `colors.${scheme}`,
+                'color',
+                themes.caramel.color[scheme][role],
+                title(role),
+                `Left at its default, the chosen theme's colour applies: ${per((t) => t.color[scheme][role])}.`,
+            );
+        }
+    }
+    const font = (role, label, note) =>
+        add(
+            `font.${role}`,
+            'fonts',
+            'string',
+            '',
+            label,
+            `${note} A Google Fonts family name, loaded from this server. Empty: ${per((t) => t.font[role])}.`,
+        );
+    font('display', 'Display typeface', 'Headings, hero, quote and wordmark.');
+    font('body', 'Text typeface', 'Body text, captions, buttons.');
+    font('meta', 'Label typeface', 'Small uppercase labels.');
+    add('font.displayWeight', 'fonts', 'string', '', 'Display weight', `Empty: ${per((t) => t.font.displayWeight)}.`, {
+        enum: { '': 'Theme', 400: '400', 500: '500', 600: '600', 700: '700', 800: '800' },
+    });
+    const px = (key, category, label, pick, note = '') =>
+        add(key, category, 'string', '', label, `${note}Pixels. Empty: ${per(pick, 'px')}.`);
+    px('spacing.unit', 'spacing', 'Spacing unit', (t) => t.spacing.unit, 'Scales every gap, padding and margin; 8 is the design grid. ');
+    px('spacing.gutter', 'spacing', 'Page margin', (t) => t.spacing.gutter, 'Above 900px; narrower screens keep their own margin. ');
+    px('spacing.sectionLarge', 'spacing', 'Large section spacing', (t) => t.spacing.sectionLarge, 'Above 900px. ');
+    px('spacing.sectionSmall', 'spacing', 'Section spacing', (t) => t.spacing.sectionSmall, 'Above 900px. ');
+    px('spacing.container', 'spacing', 'Content width', (t) => t.spacing.container);
+    px('radius.button', 'spacing', 'Corner radius', (t) => t.radius.button, 'Buttons, fields and cards. ');
+    px('radius.pill', 'spacing', 'Pill radius', (t) => t.radius.pill, 'Chips and badges. ');
+    add('contact.phone', 'contact', 'string', '', 'Phone');
+    add('contact.email', 'contact', 'string', '', 'Email');
+
+    const categories = {
+        appearance: 'Appearance',
+        colors: 'Colours',
+        'colors.light': 'Light mode',
+        'colors.dark': 'Dark mode',
+        fonts: 'Typefaces',
+        spacing: 'Spacing and shape',
+        contact: 'Contact in the top bar',
+    };
+    const q = (v) => (typeof v === 'string' ? `'${v.replaceAll("'", "''")}'` : String(v));
+    const yaml = [
+        '# Generated by scripts/build-typo3.mjs from the Figma variables. Do not edit.',
+        'categories:',
+        '  kumanoKodo: ~',
+        ...Object.keys(categories).flatMap((c) => [
+            `  kumanoKodo.${c}:`,
+            `    parent: kumanoKodo${c.includes('.') ? `.${c.split('.')[0]}` : ''}`,
+        ]),
+        '',
+        'settings:',
+        ...settings.flatMap((s) => [
+            `  kumanoKodo.${s.key}:`,
+            `    type: ${s.type}`,
+            `    default: ${q(s.def)}`,
+            `    category: kumanoKodo.${s.category}`,
+            ...(s.enum ? ['    enum:', ...Object.keys(s.enum).map((v) => `      - ${q(v)}`)] : []),
+        ]),
+    ];
+    await writeFile(join(set, 'settings.definitions.yaml'), `${yaml.join('\n')}\n`);
+    const unit = (id, text) =>
+        `            <trans-unit id="${id}">\n                <source>${xml(text)}</source>\n            </trans-unit>`;
+    const units = [
+        unit('label', 'Kumano Kodo'),
+        unit('categories.kumanoKodo', 'Kumano Kodo'),
+        ...Object.entries(categories).map(([c, l]) => unit(`categories.kumanoKodo.${c}`, l)),
+        ...settings.flatMap((s) => [
+            unit(`settings.kumanoKodo.${s.key}`, s.label),
+            ...(s.description ? [unit(`settings.description.kumanoKodo.${s.key}`, s.description)] : []),
+            ...Object.entries(s.enum ?? {}).map(([v, l]) => unit(`settings.kumanoKodo.${s.key}.enum.${v}`, l)),
+        ]),
+    ];
+    await writeFile(
+        join(set, 'labels.xlf'),
+        `<?xml version="1.0" encoding="UTF-8"?>\n<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n` +
+            `    <file source-language="en" datatype="plaintext" original="labels" product-name="kumano_kodo">\n        <body>\n${units.join('\n')}\n        </body>\n    </file>\n</xliff>\n`,
+    );
+};
+
+await buildThemes();
 const cssCount = await buildCss();
 await buildJs();
 const icons = await buildPartials();
