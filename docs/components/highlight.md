@@ -1,6 +1,6 @@
 # Highlight
 
-Figma: not yet drawn. Markup: `stories/molecules/highlight.markup.ts`.
+Figma: Highlight (37:232). Markup: `stories/molecules/highlight.markup.ts`.
 
 A highlighted note in its own row: the logo bird as emblem, an accent rule on top, eyebrow, heading and text. Used on
 Kumano Home to explain the three-legged crow (Yatagarasu).

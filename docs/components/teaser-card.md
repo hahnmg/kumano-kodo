@@ -1,6 +1,6 @@
 # Teaser Card
 
-Figma: Teaser Card (18:38). Markup: `stories/molecules/teaser-card.markup.ts`.
+Figma: Teaser Card (29:189). Markup: `stories/molecules/teaser-card.markup.ts`.
 
 Generic teaser (animal, product, article): square image, linked title, subtitle, meta and optional badge. The whole card is clickable.
 

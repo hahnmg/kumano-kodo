@@ -1,6 +1,6 @@
 # Lightbox
 
-Figma: not yet drawn. Script: `src/scripts/lightbox.ts`. Styles: `stories/molecules/lightbox.css`.
+Figma: Lightbox (37:242). Script: `src/scripts/lightbox.ts`. Styles: `stories/molecules/lightbox.css`.
 
 Images in Gallery and Figure are links to the image file (`a[data-lightbox]`), grouped by `data-lightbox-group` on the
 figure. Without the script a click opens the image. With it, a modal `<dialog>` shows the image on dark ground with its

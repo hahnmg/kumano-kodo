@@ -1,6 +1,6 @@
 # Link Tile
 
-Figma: Link Tile (18:54). Markup: `stories/molecules/link-tile.markup.ts`.
+Figma: Link Tile (29:177). Markup: `stories/molecules/link-tile.markup.ts`.
 
 Navigational row: icon, title and arrow under a top rule.
 
