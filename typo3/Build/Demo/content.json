@@ -1,0 +1,858 @@
+{
+    "site": {
+        "languages": [
+            {
+                "code": "en",
+                "navigationTitle": "EN"
+            },
+            {
+                "code": "de",
+                "navigationTitle": "DE"
+            },
+            {
+                "code": "ja",
+                "navigationTitle": "JA"
+            }
+        ],
+        "settings": {
+            "kumanoKodo.contact.phone": "+81 00 0000 0000",
+            "kumanoKodo.contact.email": "post@kumano-kodo.example"
+        }
+    },
+    "photos": {
+        "trailhead-river": {
+            "file": "img/photos/trailhead-river-2400.jpg",
+            "alt": {
+                "en": "Wooden hall with a red railing above a wide stony riverbed, forested hills behind",
+                "de": "Holzhalle mit rotem Geländer über einem breiten steinigen Flussbett, dahinter bewaldete Hügel",
+                "ja": "広い石の河原の上に建つ赤い手すりの木造の建物、背後に森の丘"
+            }
+        },
+        "signpost": {
+            "file": "img/photos/signpost-2400.jpg",
+            "alt": {
+                "en": "Wooden signpost reading 熊野古道 Kumano Kodo on a path of fallen leaves",
+                "de": "Hölzerner Wegweiser mit der Aufschrift 熊野古道 Kumano Kodo auf einem Pfad voller Laub",
+                "ja": "落ち葉の道に立つ「熊野古道 KUMANO KODO」と書かれた木の道標"
+            }
+        },
+        "sea-of-clouds": {
+            "file": "img/photos/sea-of-clouds-2400.jpg",
+            "alt": {
+                "en": "Ridge after ridge of forested mountains with clouds lying in the valleys",
+                "de": "Bewaldete Bergkämme hintereinander, in den Tälern liegen Wolken",
+                "ja": "幾重にも連なる森の尾根、谷に雲が溜まっている"
+            }
+        },
+        "misty-valley": {
+            "file": "img/photos/misty-valley-2400.jpg",
+            "alt": {
+                "en": "A steep valley filled with mist, forested slopes fading into grey",
+                "de": "Ein steiles Tal voller Nebel, die bewaldeten Hänge verschwimmen im Grau",
+                "ja": "霧に満ちた深い谷、森の斜面が灰色に溶けていく"
+            }
+        },
+        "roadside-markers": {
+            "file": "img/photos/roadside-markers-2400.jpg",
+            "alt": {
+                "en": "Wooden trail markers beside a quiet road under young trees",
+                "de": "Hölzerne Wegmarken an einer ruhigen Straße unter jungen Bäumen",
+                "ja": "若木の下、静かな道路脇に立つ木の道標"
+            }
+        },
+        "stone-path-walkers": {
+            "file": "img/photos/stone-path-walkers-2400.jpg",
+            "alt": {
+                "en": "Two walkers in rain gear on a stone-paved path between tall cedars",
+                "de": "Zwei Wandernde in Regenkleidung auf einem gepflasterten Weg zwischen hohen Zedern",
+                "ja": "背の高い杉の間の石畳を歩く雨具姿の二人"
+            }
+        },
+        "forest-stream": {
+            "file": "img/photos/forest-stream-2400.jpg",
+            "alt": {
+                "en": "A stream running through cedar forest, crossed by a small plank bridge",
+                "de": "Ein Bach im Zedernwald, über den ein schmaler Holzsteg führt",
+                "ja": "杉林を流れる沢と、それを渡る小さな板の橋"
+            }
+        },
+        "land-crab": {
+            "file": "img/photos/land-crab-2400.jpg",
+            "alt": {
+                "en": "An orange land crab on wet rocks and cedar needles",
+                "de": "Eine orange Landkrabbe auf nassen Steinen und Zedernnadeln",
+                "ja": "濡れた岩と杉の葉の上にいる橙色のカニ"
+            }
+        },
+        "vending-machines": {
+            "file": "img/photos/vending-machines-2400.jpg",
+            "alt": {
+                "en": "Drink vending machines under a roof next to an ice-cream sign, a chequered floor",
+                "de": "Getränkeautomaten unter einem Dach neben einer Eiswaffel-Figur, karierter Boden",
+                "ja": "屋根の下に並ぶ飲み物の自販機とソフトクリームの看板、市松模様の床"
+            }
+        },
+        "chikatsuyu-gate": {
+            "file": "img/photos/chikatsuyu-gate-2400.jpg",
+            "alt": {
+                "en": "A wooden gate with three large paper lanterns, the middle one showing a three-legged crow",
+                "de": "Ein Holztor mit drei großen Papierlaternen, auf der mittleren eine dreibeinige Krähe",
+                "ja": "大きな紙の提灯を三つ下げた木の門、真ん中の提灯に三本足の烏"
+            }
+        },
+        "morning-bus": {
+            "file": "img/photos/morning-bus-2400.jpg",
+            "alt": {
+                "en": "A red and white bus on a wet road, misty hills behind",
+                "de": "Ein rot-weißer Bus auf nasser Straße, dahinter neblige Hügel",
+                "ja": "濡れた道路を走る赤と白のバス、背後に霧の山"
+            }
+        },
+        "cedar-canopy": {
+            "file": "img/photos/cedar-canopy-2400.jpg",
+            "alt": {
+                "en": "Looking straight up the trunks of cedars into a pale sky",
+                "de": "Blick an den Stämmen von Zedern hinauf in einen hellen Himmel",
+                "ja": "杉の幹を真下から見上げた明るい空"
+            }
+        },
+        "walker-in-mist": {
+            "file": "img/photos/walker-in-mist-2400.jpg",
+            "alt": {
+                "en": "A walker with a blue rucksack cover on a narrow path through misty cedar forest",
+                "de": "Eine wandernde Person mit blauem Rucksackschutz auf einem schmalen Pfad im nebligen Zedernwald",
+                "ja": "霧の杉林の細い道を歩く、青いザックカバーの人"
+            }
+        },
+        "root-path": {
+            "file": "img/photos/root-path-2400.jpg",
+            "alt": {
+                "en": "A path of exposed roots and earth between ferns and cedars",
+                "de": "Ein Weg aus freiliegenden Wurzeln und Erde zwischen Farnen und Zedern",
+                "ja": "シダと杉の間の、木の根がむき出しになった道"
+            }
+        },
+        "oji-shrine": {
+            "file": "img/photos/oji-shrine-2400.jpg",
+            "alt": {
+                "en": "A small wooden shrine behind a weathered torii in the forest",
+                "de": "Ein kleiner Holzschrein hinter einem verwitterten Torii im Wald",
+                "ja": "森のなかの古びた鳥居の奥にある小さな木の社"
+            }
+        },
+        "cobbled-path": {
+            "file": "img/photos/cobbled-path-2400.jpg",
+            "alt": {
+                "en": "Old cobblestones leading between straight cedar trunks",
+                "de": "Altes Kopfsteinpflaster zwischen geraden Zedernstämmen",
+                "ja": "まっすぐな杉の幹の間を続く古い石畳"
+            }
+        },
+        "sunlit-path": {
+            "file": "img/photos/sunlit-path-2400.jpg",
+            "alt": {
+                "en": "Sunlight falling onto a forest path between rows of cedars",
+                "de": "Sonnenlicht fällt auf einen Waldweg zwischen Reihen von Zedern",
+                "ja": "杉の並木の間の森の道に差し込む日の光"
+            }
+        },
+        "ridge-view": {
+            "file": "img/photos/ridge-view-2400.jpg",
+            "alt": {
+                "en": "View over forested ridges framed by a pine branch",
+                "de": "Blick über bewaldete Kämme, eingerahmt von einem Kiefernzweig",
+                "ja": "松の枝越しに見る森の尾根"
+            }
+        },
+        "fern-frond": {
+            "file": "img/photos/fern-frond-2400.jpg",
+            "alt": {
+                "en": "Close-up of a fern frond unrolling",
+                "de": "Nahaufnahme eines sich entrollenden Farnwedels",
+                "ja": "巻きをほどき始めたシダの若葉の接写"
+            }
+        },
+        "yunomine-street": {
+            "file": "img/photos/yunomine-street-2400.jpg",
+            "alt": {
+                "en": "A narrow village street along a stream with carp streamers hanging across it",
+                "de": "Eine schmale Dorfstraße an einem Bach, Karpfenfahnen hängen quer darüber",
+                "ja": "沢沿いの細い温泉街の通り、鯉のぼりが川をまたいで下がっている"
+            }
+        },
+        "river-bridge": {
+            "file": "img/photos/river-bridge-2400.jpg",
+            "alt": {
+                "en": "A wide river bed with a suspension bridge, azaleas in the foreground",
+                "de": "Ein breites Flussbett mit einer Hängebrücke, im Vordergrund Azaleen",
+                "ja": "吊り橋の架かる広い河原、手前にツツジ"
+            }
+        },
+        "outdoor-bath": {
+            "file": "img/photos/outdoor-bath-2400.jpg",
+            "alt": {
+                "en": "A stone-edged outdoor bath under a wooden roof, surrounded by greenery",
+                "de": "Ein steingefasstes Außenbad unter einem Holzdach, ringsum Grün",
+                "ja": "緑に囲まれた木の屋根の下の石造りの露天風呂"
+            }
+        },
+        "seaside-station": {
+            "file": "img/photos/seaside-station-2400.jpg",
+            "alt": {
+                "en": "A small station platform on the coast in the rain, the sea behind the fence",
+                "de": "Ein kleiner Bahnsteig an der Küste im Regen, hinter dem Zaun das Meer",
+                "ja": "雨の海沿いの小さな駅のホーム、柵の向こうに海"
+            }
+        },
+        "nachi-pagoda": {
+            "file": "img/photos/nachi-pagoda-2400.jpg",
+            "alt": {
+                "en": "A red three-storey pagoda in front of a tall waterfall in the mist",
+                "de": "Eine rote dreistöckige Pagode vor einem hohen Wasserfall im Nebel",
+                "ja": "霧のなか、高い滝の前に立つ朱色の三重塔"
+            }
+        },
+        "harbour-ferry": {
+            "file": "img/photos/harbour-ferry-2400.jpg",
+            "alt": {
+                "en": "A brightly painted ferry crossing a grey harbour",
+                "de": "Eine bunt bemalte Fähre überquert einen grauen Hafen",
+                "ja": "灰色の港を渡る色鮮やかな船"
+            }
+        },
+        "ryokan-room": {
+            "file": "img/photos/ryokan-room-2400.jpg",
+            "alt": {
+                "en": "A tatami room with a low table, the window looking out over the water",
+                "de": "Ein Tatami-Zimmer mit niedrigem Tisch, das Fenster geht aufs Wasser",
+                "ja": "低い座卓のある畳の部屋、窓の外に海"
+            }
+        },
+        "evening-rooftops": {
+            "file": "img/photos/evening-rooftops-2400.jpg",
+            "alt": {
+                "en": "Tiled roofs of a small town in the evening light, mountains on the horizon",
+                "de": "Ziegeldächer einer kleinen Stadt im Abendlicht, am Horizont Berge",
+                "ja": "夕方の光のなかの小さな町の瓦屋根、地平線に山並み"
+            }
+        }
+    },
+    "pages": [
+        {
+            "key": "home",
+            "parent": null,
+            "slug": "/",
+            "layout": "Landing",
+            "navHide": false,
+            "title": {
+                "en": "Home",
+                "de": "Start",
+                "ja": "ホーム"
+            },
+            "nextLayout": "Default"
+        },
+        {
+            "key": "route",
+            "parent": "home",
+            "slug": "/route",
+            "layout": "Landing",
+            "navHide": false,
+            "title": {
+                "en": "The route",
+                "de": "Die Route",
+                "ja": "ルート"
+            },
+            "flyout": {
+                "kind": "mega",
+                "columns": [
+                    {
+                        "title": {
+                            "en": "Days",
+                            "de": "Tage",
+                            "ja": "日程"
+                        },
+                        "links": [
+                            {
+                                "label": {
+                                    "en": "Day 1 · Takijiri → Takahara",
+                                    "de": "Tag 1 · Takijiri → Takahara",
+                                    "ja": "1日目 · 滝尻 → 高原"
+                                },
+                                "link": "page:day-1"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 2 · Takahara → Chikatsuyu",
+                                    "de": "Tag 2 · Takahara → Chikatsuyu",
+                                    "ja": "2日目 · 高原 → 近露"
+                                },
+                                "link": "page:day-2"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 3 · Chikatsuyu → Hongu",
+                                    "de": "Tag 3 · Chikatsuyu → Hongu",
+                                    "ja": "3日目 · 近露 → 本宮"
+                                },
+                                "link": "page:day-3"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · Yunomine → Nachi",
+                                    "de": "Tag 4 · Yunomine → Nachi",
+                                    "ja": "4日目 · 湯の峰 → 那智"
+                                },
+                                "link": "page:day-4"
+                            }
+                        ]
+                    },
+                    {
+                        "title": {
+                            "en": "Places",
+                            "de": "Orte",
+                            "ja": "見どころ"
+                        },
+                        "links": [
+                            {
+                                "label": {
+                                    "en": "Chikatsuyu",
+                                    "de": "Chikatsuyu",
+                                    "ja": "近露"
+                                },
+                                "link": "page:place-chikatsuyu"
+                            },
+                            {
+                                "label": {
+                                    "en": "Yunomine Onsen",
+                                    "de": "Yunomine Onsen",
+                                    "ja": "湯の峰温泉"
+                                },
+                                "link": "page:place-yunomine"
+                            },
+                            {
+                                "label": {
+                                    "en": "Seiganto-ji and Nachi falls",
+                                    "de": "Seiganto-ji und Nachi-Fall",
+                                    "ja": "青岸渡寺と那智の滝"
+                                },
+                                "link": "page:place-nachi"
+                            }
+                        ]
+                    }
+                ],
+                "text": {
+                    "title": {
+                        "en": "The Nakahechi",
+                        "de": "Der Nakahechi",
+                        "ja": "中辺路"
+                    },
+                    "html": {
+                        "en": "<p>The old imperial route from Tanabe to the three grand shrines of Kumano. We walked it in four days in April, from Takijiri to Nachi.</p>",
+                        "de": "<p>Die alte Kaiserroute von Tanabe zu den drei großen Schreinen von Kumano. Wir sind sie im April in vier Tagen gegangen, von Takijiri bis Nachi.</p>",
+                        "ja": "<p>田辺から熊野三山へ向かう、かつての御幸道。4月に滝尻から那智まで、四日間で歩いた。</p>"
+                    }
+                },
+                "overview": {
+                    "label": {
+                        "en": "All about the route",
+                        "de": "Alles zur Route",
+                        "ja": "ルートのすべて"
+                    },
+                    "link": "page:route"
+                },
+                "teaser": {
+                    "image": "walker-in-mist",
+                    "title": {
+                        "en": "Chikatsuyu → Hongu",
+                        "de": "Chikatsuyu → Hongu",
+                        "ja": "近露 → 本宮"
+                    },
+                    "subtitle": {
+                        "en": "about 25 km",
+                        "de": "rund 25 km",
+                        "ja": "約25 km"
+                    },
+                    "meta": {
+                        "en": "22 April · 07:18–16:05",
+                        "de": "22. April · 07:18–16:05",
+                        "ja": "4月22日 · 07:18–16:05"
+                    },
+                    "badge": {
+                        "en": "Longest day",
+                        "de": "Längster Tag",
+                        "ja": "いちばん長い日"
+                    },
+                    "link": "page:day-3"
+                }
+            }
+        },
+        {
+            "key": "days",
+            "parent": "route",
+            "slug": "/days",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Days and places",
+                "de": "Tage und Orte",
+                "ja": "日程と見どころ"
+            }
+        },
+        {
+            "key": "day-1",
+            "parent": "days",
+            "slug": "/days/1",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Takijiri → Takahara",
+                "de": "Takijiri → Takahara",
+                "ja": "滝尻 → 高原"
+            }
+        },
+        {
+            "key": "day-2",
+            "parent": "days",
+            "slug": "/days/2",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Takahara → Chikatsuyu",
+                "de": "Takahara → Chikatsuyu",
+                "ja": "高原 → 近露"
+            }
+        },
+        {
+            "key": "day-3",
+            "parent": "days",
+            "slug": "/days/3",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Chikatsuyu → Hongu → Yunomine",
+                "de": "Chikatsuyu → Hongu → Yunomine",
+                "ja": "近露 → 本宮 → 湯の峰"
+            }
+        },
+        {
+            "key": "day-4",
+            "parent": "days",
+            "slug": "/days/4",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Yunomine → Nachi",
+                "de": "Yunomine → Nachi",
+                "ja": "湯の峰 → 那智"
+            }
+        },
+        {
+            "key": "place-chikatsuyu",
+            "parent": "days",
+            "slug": "/places/chikatsuyu",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Chikatsuyu",
+                "de": "Chikatsuyu",
+                "ja": "近露"
+            }
+        },
+        {
+            "key": "place-yunomine",
+            "parent": "days",
+            "slug": "/places/yunomine",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Yunomine Onsen",
+                "de": "Yunomine Onsen",
+                "ja": "湯の峰温泉"
+            }
+        },
+        {
+            "key": "place-nachi",
+            "parent": "days",
+            "slug": "/places/nachi",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Nachi",
+                "de": "Nachi",
+                "ja": "那智"
+            }
+        },
+        {
+            "key": "kohechi",
+            "parent": "route",
+            "slug": "/kohechi",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Kohechi",
+                "de": "Kohechi",
+                "ja": "小辺路"
+            }
+        },
+        {
+            "key": "practical",
+            "parent": "home",
+            "slug": "/practical",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Practical",
+                "de": "Praktisches",
+                "ja": "実用情報"
+            },
+            "flyout": {
+                "kind": "dropdown",
+                "columns": [
+                    {
+                        "title": {
+                            "en": "",
+                            "de": "",
+                            "ja": ""
+                        },
+                        "links": [
+                            {
+                                "label": {
+                                    "en": "All practical information",
+                                    "de": "Alles Praktische",
+                                    "ja": "実用情報のすべて"
+                                },
+                                "link": "page:practical"
+                            },
+                            {
+                                "label": {
+                                    "en": "Getting there and buses",
+                                    "de": "Anreise und Busse",
+                                    "ja": "アクセスとバス"
+                                },
+                                "link": "page:practical-getting-there"
+                            },
+                            {
+                                "label": {
+                                    "en": "Accommodation",
+                                    "de": "Unterkunft",
+                                    "ja": "宿泊"
+                                },
+                                "link": "page:practical-accommodation"
+                            },
+                            {
+                                "label": {
+                                    "en": "Trail markers and safety",
+                                    "de": "Wegmarken und Sicherheit",
+                                    "ja": "道標と安全"
+                                },
+                                "link": "page:practical-trail-markers"
+                            },
+                            {
+                                "label": {
+                                    "en": "Maps and timetables",
+                                    "de": "Karten und Fahrpläne",
+                                    "ja": "地図と時刻表"
+                                },
+                                "link": "page:practical-maps"
+                            },
+                            {
+                                "label": {
+                                    "en": "Newsletter",
+                                    "de": "Newsletter",
+                                    "ja": "ニュースレター"
+                                },
+                                "link": "page:newsletter"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "key": "practical-getting-there",
+            "parent": "practical",
+            "slug": "/practical/getting-there",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Getting there and buses",
+                "de": "Anreise und Busse",
+                "ja": "アクセスとバス"
+            }
+        },
+        {
+            "key": "practical-accommodation",
+            "parent": "practical",
+            "slug": "/practical/accommodation",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Accommodation",
+                "de": "Unterkunft",
+                "ja": "宿泊"
+            }
+        },
+        {
+            "key": "practical-trail-markers",
+            "parent": "practical",
+            "slug": "/practical/trail-markers",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Trail markers and safety",
+                "de": "Wegmarken und Sicherheit",
+                "ja": "道標と安全"
+            }
+        },
+        {
+            "key": "practical-maps",
+            "parent": "practical",
+            "slug": "/practical/maps",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Maps and timetables",
+                "de": "Karten und Fahrpläne",
+                "ja": "地図と時刻表"
+            }
+        },
+        {
+            "key": "photos",
+            "parent": "home",
+            "slug": "/photos",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Photos",
+                "de": "Fotos",
+                "ja": "写真"
+            }
+        },
+        {
+            "key": "newsletter",
+            "parent": "home",
+            "slug": "/newsletter",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Newsletter",
+                "de": "Newsletter",
+                "ja": "ニュースレター"
+            }
+        },
+        {
+            "key": "imprint",
+            "parent": "home",
+            "slug": "/imprint",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Imprint",
+                "de": "Impressum",
+                "ja": "運営者情報"
+            }
+        },
+        {
+            "key": "privacy",
+            "parent": "home",
+            "slug": "/privacy",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Privacy",
+                "de": "Datenschutz",
+                "ja": "プライバシー"
+            }
+        },
+        {
+            "key": "accessibility",
+            "parent": "home",
+            "slug": "/accessibility",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Accessibility",
+                "de": "Barrierefreiheit",
+                "ja": "アクセシビリティ"
+            }
+        }
+    ],
+    "content": [
+        {
+            "page": "home",
+            "colPos": 30,
+            "type": "header",
+            "header": {
+                "en": "Trail status:",
+                "de": "Wegzustand:",
+                "ja": "道の状況："
+            },
+            "subheader": {
+                "en": "All Nakahechi sections open · as of April 2024",
+                "de": "Alle Nakahechi-Abschnitte offen · Stand April 2024",
+                "ja": "中辺路の全区間通行可 · 2024年4月時点"
+            }
+        },
+        {
+            "page": "home",
+            "colPos": 20,
+            "type": "text",
+            "bodytext": {
+                "en": "<p>A private trail journal. Photos from 20 to 25 April 2024, all details without guarantee.</p>",
+                "de": "<p>Ein privates Wandertagebuch. Fotos vom 20. bis 25. April 2024, alle Angaben ohne Gewähr.</p>",
+                "ja": "<p>個人の山歩き日記です。写真は2024年4月20日から25日に撮影。情報の正確さは保証しません。</p>"
+            }
+        },
+        {
+            "page": "home",
+            "colPos": 20,
+            "type": "kumano_link_list",
+            "header": {
+                "en": "The route",
+                "de": "Die Route",
+                "ja": "ルート"
+            },
+            "links": [
+                {
+                    "label": {
+                        "en": "Nakahechi",
+                        "de": "Nakahechi",
+                        "ja": "中辺路"
+                    },
+                    "link": "page:route"
+                },
+                {
+                    "label": {
+                        "en": "Kohechi",
+                        "de": "Kohechi",
+                        "ja": "小辺路"
+                    },
+                    "link": "page:kohechi"
+                },
+                {
+                    "label": {
+                        "en": "Trail map",
+                        "de": "Wegekarte",
+                        "ja": "ルートマップ"
+                    },
+                    "link": "page:route#map"
+                }
+            ]
+        },
+        {
+            "page": "home",
+            "colPos": 20,
+            "type": "kumano_link_list",
+            "header": {
+                "en": "Practical",
+                "de": "Praktisches",
+                "ja": "実用情報"
+            },
+            "links": [
+                {
+                    "label": {
+                        "en": "Getting there and buses",
+                        "de": "Anreise und Busse",
+                        "ja": "アクセスとバス"
+                    },
+                    "link": "page:practical-getting-there"
+                },
+                {
+                    "label": {
+                        "en": "Accommodation",
+                        "de": "Unterkunft",
+                        "ja": "宿泊"
+                    },
+                    "link": "page:practical-accommodation"
+                },
+                {
+                    "label": {
+                        "en": "Newsletter",
+                        "de": "Newsletter",
+                        "ja": "ニュースレター"
+                    },
+                    "link": "page:newsletter"
+                }
+            ]
+        },
+        {
+            "page": "home",
+            "colPos": 20,
+            "type": "kumano_link_list",
+            "header": {
+                "en": "Contact",
+                "de": "Kontakt",
+                "ja": "お問い合わせ"
+            },
+            "links": [
+                {
+                    "label": {
+                        "en": "post@kumano-kodo.example",
+                        "de": "post@kumano-kodo.example",
+                        "ja": "post@kumano-kodo.example"
+                    },
+                    "link": ""
+                },
+                {
+                    "label": {
+                        "en": "Usually answered within a week",
+                        "de": "Antwort meist innerhalb einer Woche",
+                        "ja": "通常一週間以内に返信します"
+                    },
+                    "link": ""
+                }
+            ]
+        },
+        {
+            "page": "home",
+            "colPos": 21,
+            "type": "kumano_notice",
+            "header": {
+                "en": "Trail conditions:",
+                "de": "Wegzustand:",
+                "ja": "道の状況："
+            },
+            "bodytext": {
+                "en": "After heavy rain, check the tourism office notices before you set out.",
+                "de": "Nach starkem Regen vor dem Aufbruch die Hinweise des Tourismusbüros prüfen.",
+                "ja": "大雨のあとは、出発前に観光協会のお知らせを確認してください。"
+            }
+        },
+        {
+            "page": "home",
+            "colPos": 22,
+            "type": "kumano_link_list",
+            "header": {
+                "en": "© 2024 Kumano Kodo Trail journal",
+                "de": "© 2024 Kumano Kodo Wandertagebuch",
+                "ja": "© 2024 熊野古道 山歩き日記"
+            },
+            "links": [
+                {
+                    "label": {
+                        "en": "Imprint",
+                        "de": "Impressum",
+                        "ja": "運営者情報"
+                    },
+                    "link": "page:imprint"
+                },
+                {
+                    "label": {
+                        "en": "Privacy",
+                        "de": "Datenschutz",
+                        "ja": "プライバシー"
+                    },
+                    "link": "page:privacy"
+                },
+                {
+                    "label": {
+                        "en": "Accessibility",
+                        "de": "Barrierefreiheit",
+                        "ja": "アクセシビリティ"
+                    },
+                    "link": "page:accessibility"
+                }
+            ]
+        }
+    ]
+}

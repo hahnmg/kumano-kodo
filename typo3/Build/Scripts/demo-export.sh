@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Rebuilds the demo from Build/Demo/content.json and writes it into the demo package as its Initialisation data.
+set -euo pipefail
+cd "$(dirname "$0")/../.."
+
+typo3=vendor/bin/typo3
+target=packages/kumano_kodo_demo/Initialisation
+$typo3 kumano:demo:build --replace
+root=$($typo3 site:show kumano-kodo | sed -n 's/.*rootPageId: *\([0-9]*\).*/\1/p')
+
+# Each own table needs its --table; images and alt texts only come along as related sys_file(_metadata).
+$typo3 impexp:export data --type=xml --pid="$root" --levels=999 \
+    --table=tt_content --table=tx_kumanokodo_link --table=tx_kumanokodo_nav_column --table=sys_file_reference \
+    --include-related=sys_file --include-related=sys_file_metadata \
+    --save-files-outside-export-file --title="Kumano Kodo demo" --dependency=kumano_kodo
+
+rm -rf "$target/data.xml" "$target/data.xml.files" "$target/Site"
+mv public/fileadmin/user_upload/_temp_/importexport/data.xml public/fileadmin/user_upload/_temp_/importexport/data.xml.files "$target/"
+mkdir -p "$target/Site" && cp -R config/sites/kumano-kodo "$target/Site/"
+
+grep -q '<files_fal' "$target/data.xml" || { echo "data.xml has no files_fal section: the images are missing" >&2; exit 1; }
+echo "Exported root page $root with $(ls "$target/data.xml.files" | wc -l | tr -d ' ') files to $target"

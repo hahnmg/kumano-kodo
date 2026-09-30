@@ -1,0 +1,25 @@
+{
+    "name": "kumano-kodo/demo",
+    "description": "Kumano Kodo Demo - The trail journal as demo content for the Kumano Kodo sitepackage",
+    "type": "typo3-cms-extension",
+    "license": "proprietary",
+    "version": "0.1.0",
+    "require": {
+        "kumano-kodo/sitepackage": "@dev",
+        "typo3/cms-core": "^14.3",
+        "typo3/cms-impexp": "^14.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "KumanoKodo\\Demo\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "kumano_kodo_demo",
+            "Package": {
+                "providesPackages": {}
+            }
+        }
+    }
+}
