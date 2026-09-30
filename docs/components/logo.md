@@ -1,12 +1,20 @@
 # Logo
 
-Figma: `Logo` inside `Site Header` (2:878). Markup: `stories/atoms/logo.markup.ts`.
+Figma: `Logo` (2:878) and `Logo modern` (55:3167) on the Components page. Paths: `docs/figma-export/logos.json`.
+Markup: `stories/atoms/logo.markup.ts`.
 
-Bird and wordmark as two SVGs linked home. The bird takes the accent colour, the wordmark the ink colour, so both follow theme and scheme.
+Both marks as exported from Figma, linked home. Caramel shows the classic mark, every other theme the modern one; CSS
+picks by `data-theme`, so the markup is the same everywhere. In each mark the group `bird` takes the accent colour and
+the group `text` the ink colour, so both follow theme and scheme. Below 900px the mark scales down beside the menu
+button.
 
-| Prop | Values |
-|---|---|
-| `href` | default `/` |
+| Prop    | Values                                 |
+| ------- | -------------------------------------- |
+| `href`  | default `/`                            |
 | `label` | accessible name, default "Kumano Kodo" |
 
-Tokens: `--color-accent`, `--color-ink`, `--space-5`.
+In TYPO3 an editor can replace the mark on the root page (field Logo, tab Appearance). An uploaded SVG takes the theme
+colours only when its groups are named `bird` and `text`, as the Figma layers are; everything else keeps its own
+colours.
+
+Tokens: `--color-accent`, `--color-ink`.

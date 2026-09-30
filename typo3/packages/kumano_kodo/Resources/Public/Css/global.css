@@ -846,17 +846,38 @@ body {
 /* stories/atoms/logo.css */
 .logo {
     display: inline-flex;
-    gap: var(--space-5);
     align-items: center;
+    min-width: 0;
     text-decoration: none;
 }
 
-.logo__bird {
-    color: var(--color-accent);
+.logo__mark {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-.logo__wordmark {
-    color: var(--color-ink);
+.logo__bird {
+    fill: var(--color-accent);
+}
+
+.logo__text {
+    fill: var(--color-ink);
+}
+
+/* An uploaded SVG may colour its shapes itself; inside the named groups the theme wins. */
+.logo__bird *,
+.logo__text * {
+    fill: inherit;
+}
+
+.logo__mark--modern,
+[data-theme]:not([data-theme='caramel']) .logo__mark--classic {
+    display: none;
+}
+
+[data-theme]:not([data-theme='caramel']) .logo__mark--modern {
+    display: block;
 }
 
 /* stories/atoms/menu-button.css */
@@ -1440,6 +1461,11 @@ body {
 
 /* Provisional until a mobile reference exists (open question 4): nav, languages and scheme fold behind the menu button. */
 @media (width <= 900px) {
+    /* A zero basis keeps the menu button on the logo's line; a wide mark scales down instead of wrapping it. */
+    .site-header .logo {
+        flex: 1 1 0;
+    }
+
     .site-header {
         flex-wrap: wrap;
     }

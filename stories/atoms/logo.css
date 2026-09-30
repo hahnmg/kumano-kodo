@@ -1,14 +1,35 @@
 .logo {
     display: inline-flex;
-    gap: var(--space-5);
     align-items: center;
+    min-width: 0;
     text-decoration: none;
 }
 
-.logo__bird {
-    color: var(--color-accent);
+.logo__mark {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-.logo__wordmark {
-    color: var(--color-ink);
+.logo__bird {
+    fill: var(--color-accent);
+}
+
+.logo__text {
+    fill: var(--color-ink);
+}
+
+/* An uploaded SVG may colour its shapes itself; inside the named groups the theme wins. */
+.logo__bird *,
+.logo__text * {
+    fill: inherit;
+}
+
+.logo__mark--modern,
+[data-theme]:not([data-theme='caramel']) .logo__mark--classic {
+    display: none;
+}
+
+[data-theme]:not([data-theme='caramel']) .logo__mark--modern {
+    display: block;
 }

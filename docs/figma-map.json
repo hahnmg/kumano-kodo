@@ -326,6 +326,12 @@
             "node": "21:418"
         },
         {
+            "name": "Logo modern",
+            "group": "atoms",
+            "component": "logo",
+            "node": "55:3167"
+        },
+        {
             "name": "Scheme Toggle",
             "group": "atoms",
             "component": "scheme-toggle",
