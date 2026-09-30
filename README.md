@@ -86,12 +86,14 @@ the previous home (`/home-v3`) and a page with the remaining components (`/compo
 
 - **Site settings** (Sites › Setup › Settings): theme, colour mode, dark mode toggle, site name, contact, the 18 palette
   colours, three typefaces (Google Fonts, served from this server), display weight, spacing unit, page margin, section
-  spacing, content width and radii. Empty fields and colours left at their default keep the theme's value.
+  spacing, content width and radii, the upright name beside the journal title, the newsletter form target. Empty fields
+  and colours left at their default keep the theme's value.
 - **Logo**: Caramel shows the classic mark, the other themes the modern one; an editor can upload another on the home
   page (tab Appearance). An SVG takes the theme colours when its groups are named `bird` and `text`.
 - **Content**: containers **Section** and **Columns** for layout, 13 content elements with a display option each
-  (Cards, List, Facts, Images …). Top bar and footer texts are content elements on the home page. Why:
-  `docs/adr/2026-09-30-typo3-content-model.md`.
+  (Cards, List, Facts, Images …), one form order for all (General, Images, Appearance), one entry table for cards,
+  lists, links and chips. Spacing comes from the design, not from fields. Top bar and footer texts are content elements
+  on the home page. Why: `docs/adr/2026-09-30-typo3-content-model.md`, `docs/adr/2026-09-30-typo3-content-form.md`.
 
 | Command                                                 | Does                                                                    |
 | ------------------------------------------------------- | ----------------------------------------------------------------------- |
