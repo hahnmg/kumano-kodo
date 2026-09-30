@@ -409,7 +409,7 @@
                         }
                     },
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "Nakahechi",
@@ -434,7 +434,8 @@
                                 },
                                 "link": "page:route#map"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     },
                     "colPos": 20
                 },
@@ -449,7 +450,7 @@
                         }
                     },
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "Getting there and buses",
@@ -474,7 +475,8 @@
                                 },
                                 "link": "page:newsletter"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     },
                     "colPos": 20
                 },
@@ -489,7 +491,7 @@
                         }
                     },
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "post@kumano-kodo.example",
@@ -506,7 +508,8 @@
                                 },
                                 "link": ""
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     },
                     "colPos": 20
                 },
@@ -520,9 +523,9 @@
                             "ja": "道の状況："
                         },
                         "bodytext": {
-                            "en": "After heavy rain, check the tourism office notices before you set out.",
-                            "de": "Nach starkem Regen vor dem Aufbruch die Hinweise des Tourismusbüros prüfen.",
-                            "ja": "大雨のあとは、出発前に観光協会のお知らせを確認してください。"
+                            "en": "<p>After heavy rain, check the tourism office notices before you set out.</p>",
+                            "de": "<p>Nach starkem Regen vor dem Aufbruch die Hinweise des Tourismusbüros prüfen.</p>",
+                            "ja": "<p>大雨のあとは、出発前に観光協会のお知らせを確認してください。</p>"
                         }
                     },
                     "colPos": 21
@@ -538,7 +541,7 @@
                         }
                     },
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "Imprint",
@@ -563,7 +566,8 @@
                                 },
                                 "link": "page:accessibility"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     },
                     "colPos": 22
                 },
@@ -576,29 +580,27 @@
                             "de": "Kumano Kodo · Nakahechi",
                             "ja": "熊野古道 · 中辺路"
                         },
-                        "tx_kumanokodo_heading": {
+                        "header": {
                             "en": "Four days in April",
                             "de": "Vier Tage im April",
                             "ja": "四月の四日間"
                         },
                         "bodytext": {
-                            "en": "Four days on foot from Takijiri to Nachi, through the cedars of the Kii peninsula. Twenty-seven photos, in the order they were taken.",
-                            "de": "Vier Tage zu Fuß von Takijiri nach Nachi, durch die Zedern der Kii-Halbinsel. Siebenundzwanzig Fotos, in der Reihenfolge, in der sie entstanden sind.",
-                            "ja": "滝尻から那智まで、紀伊半島の杉林を四日間歩いた。撮った順に並べた二十七枚の写真。"
+                            "en": "<p>Four days on foot from Takijiri to Nachi, through the cedars of the Kii peninsula. Twenty-seven photos, in the order they were taken.</p>",
+                            "de": "<p>Vier Tage zu Fuß von Takijiri nach Nachi, durch die Zedern der Kii-Halbinsel. Siebenundzwanzig Fotos, in der Reihenfolge, in der sie entstanden sind.</p>",
+                            "ja": "<p>滝尻から那智まで、紀伊半島の杉林を四日間歩いた。撮った順に並べた二十七枚の写真。</p>"
                         },
                         "tx_kumanokodo_meta": {
                             "en": "Kii Peninsula · Wakayama · April 2024 · 27 photos",
                             "de": "Kii-Halbinsel · Wakayama · April 2024 · 27 Fotos",
                             "ja": "紀伊半島 · 和歌山 · 2024年4月 · 写真27枚"
-                        },
-                        "tx_kumanokodo_vertical": "熊野古道"
+                        }
                     }
                 },
                 {
                     "type": "kumano_chapter",
                     "fields": {
                         "tx_kumanokodo_anchor": "day-1",
-                        "tx_kumanokodo_number": "1",
                         "subheader": {
                             "en": "Day 1 · 20 April · from 15:40",
                             "de": "Tag 1 · 20. April · ab 15:40",
@@ -610,9 +612,9 @@
                             "ja": "滝尻 → 高原"
                         },
                         "bodytext": {
-                            "en": "At twenty to four we were at the river in Takijiri, a quarter of an hour later on the trail. The first hour does not pretend: steps, roots, then more steps.",
-                            "de": "Um zwanzig vor vier standen wir am Fluss in Takijiri, eine Viertelstunde später auf dem Weg. Die erste Stunde macht keine Umstände: Stufen, Wurzeln, noch mehr Stufen.",
-                            "ja": "15時40分に滝尻の川辺に着き、15分後には道の上にいた。最初の一時間は容赦がない。石段、木の根、また石段。"
+                            "en": "<p>At twenty to four we were at the river in Takijiri, a quarter of an hour later on the trail. The first hour does not pretend: steps, roots, then more steps.</p>",
+                            "de": "<p>Um zwanzig vor vier standen wir am Fluss in Takijiri, eine Viertelstunde später auf dem Weg. Die erste Stunde macht keine Umstände: Stufen, Wurzeln, noch mehr Stufen.</p>",
+                            "ja": "<p>15時40分に滝尻の川辺に着き、15分後には道の上にいた。最初の一時間は容赦がない。石段、木の根、また石段。</p>"
                         }
                     },
                     "image": [
@@ -641,7 +643,6 @@
                     "type": "kumano_chapter",
                     "fields": {
                         "tx_kumanokodo_anchor": "day-2",
-                        "tx_kumanokodo_number": "2",
                         "subheader": {
                             "en": "Day 2 · 21 April · 07:02–17:28",
                             "de": "Tag 2 · 21. April · 07:02–17:28",
@@ -653,9 +654,9 @@
                             "ja": "高原 → 近露"
                         },
                         "bodytext": {
-                            "en": "The morning began above the clouds and ended at a gate of paper lanterns. In between, stone paving that stays grippy when wet, a stream under the cedars and a bright orange crab that did not move for the camera.",
-                            "de": "Der Morgen begann über den Wolken und endete an einem Tor aus Papierlaternen. Dazwischen Steinpflaster, das auch nass griffig bleibt, ein Bach unter den Zedern und eine leuchtend orange Krabbe, die für die Kamera stillhielt.",
-                            "ja": "朝は雲の上で始まり、紙の提灯の門で終わった。その間に、濡れても滑りにくい石畳、杉林の沢、そしてカメラの前でじっとしていた鮮やかな橙色のカニ。"
+                            "en": "<p>The morning began above the clouds and ended at a gate of paper lanterns. In between, stone paving that stays grippy when wet, a stream under the cedars and a bright orange crab that did not move for the camera.</p>",
+                            "de": "<p>Der Morgen begann über den Wolken und endete an einem Tor aus Papierlaternen. Dazwischen Steinpflaster, das auch nass griffig bleibt, ein Bach unter den Zedern und eine leuchtend orange Krabbe, die für die Kamera stillhielt.</p>",
+                            "ja": "<p>朝は雲の上で始まり、紙の提灯の門で終わった。その間に、濡れても滑りにくい石畳、杉林の沢、そしてカメラの前でじっとしていた鮮やかな橙色のカニ。</p>"
                         }
                     },
                     "image": [
@@ -712,9 +713,9 @@
                             "ja": "三本足の烏"
                         },
                         "bodytext": {
-                            "en": "The bird in the logo is the Yatagarasu, messenger of the Kumano deities. According to the old chronicles it guided Emperor Jimmu through the mountains from Kumano to Yamato. Its three legs are often read as heaven, earth and humankind. On the trail you meet it on shrine banners and on the goōhōin talismans, and on the middle lantern of the gate in Chikatsuyu.",
-                            "de": "Der Vogel im Logo ist die Yatagarasu, Botin der Kumano-Gottheiten. Den alten Chroniken nach führte sie Kaiser Jimmu durch die Berge von Kumano nach Yamato. Ihre drei Beine werden oft als Himmel, Erde und Mensch gedeutet. Am Weg begegnet man ihr auf Schreinfahnen, den Goōhōin-Amuletten und auf der mittleren Laterne des Tors in Chikatsuyu.",
-                            "ja": "ロゴの鳥は八咫烏、熊野の神々の使いです。古い記録によれば、神武天皇を熊野から大和へと山中で導いたとされます。三本の足は天・地・人を表すとよく言われます。道中では神社の幟や熊野牛王宝印の護符に、そして近露の門の真ん中の提灯にも姿を見せます。"
+                            "en": "<p>The bird in the logo is the Yatagarasu, messenger of the Kumano deities. According to the old chronicles it guided Emperor Jimmu through the mountains from Kumano to Yamato. Its three legs are often read as heaven, earth and humankind. On the trail you meet it on shrine banners and on the goōhōin talismans, and on the middle lantern of the gate in Chikatsuyu.</p>",
+                            "de": "<p>Der Vogel im Logo ist die Yatagarasu, Botin der Kumano-Gottheiten. Den alten Chroniken nach führte sie Kaiser Jimmu durch die Berge von Kumano nach Yamato. Ihre drei Beine werden oft als Himmel, Erde und Mensch gedeutet. Am Weg begegnet man ihr auf Schreinfahnen, den Goōhōin-Amuletten und auf der mittleren Laterne des Tors in Chikatsuyu.</p>",
+                            "ja": "<p>ロゴの鳥は八咫烏、熊野の神々の使いです。古い記録によれば、神武天皇を熊野から大和へと山中で導いたとされます。三本の足は天・地・人を表すとよく言われます。道中では神社の幟や熊野牛王宝印の護符に、そして近露の門の真ん中の提灯にも姿を見せます。</p>"
                         }
                     }
                 },
@@ -722,7 +723,6 @@
                     "type": "kumano_chapter",
                     "fields": {
                         "tx_kumanokodo_anchor": "day-3",
-                        "tx_kumanokodo_number": "3",
                         "subheader": {
                             "en": "Day 3 · 22 April · 07:18–16:05",
                             "de": "Tag 3 · 22. April · 07:18–16:05",
@@ -734,9 +734,9 @@
                             "ja": "近露 → 本宮 → 湯の峰"
                         },
                         "bodytext": {
-                            "en": "The longest day. From Chikatsuyu through the cedars and past a small oji shrine to Hongu, then on to Yunomine. By four we were sitting in a stone pool under a wooden roof.",
-                            "de": "Der längste Tag. Von Chikatsuyu durch die Zedern und an einem kleinen Oji-Schrein vorbei nach Hongu, dann weiter nach Yunomine. Um vier saßen wir in einem Steinbecken unter einem Holzdach.",
-                            "ja": "いちばん長い日。近露から杉林を抜け、小さな王子の社を過ぎて本宮へ、さらに湯の峰へ。4時には木の屋根の下の石の湯船に浸かっていた。"
+                            "en": "<p>The longest day. From Chikatsuyu through the cedars and past a small oji shrine to Hongu, then on to Yunomine. By four we were sitting in a stone pool under a wooden roof.</p>",
+                            "de": "<p>Der längste Tag. Von Chikatsuyu durch die Zedern und an einem kleinen Oji-Schrein vorbei nach Hongu, dann weiter nach Yunomine. Um vier saßen wir in einem Steinbecken unter einem Holzdach.</p>",
+                            "ja": "<p>いちばん長い日。近露から杉林を抜け、小さな王子の社を過ぎて本宮へ、さらに湯の峰へ。4時には木の屋根の下の石の湯船に浸かっていた。</p>"
                         }
                     },
                     "image": [
@@ -806,7 +806,6 @@
                     "type": "kumano_chapter",
                     "fields": {
                         "tx_kumanokodo_anchor": "day-4",
-                        "tx_kumanokodo_number": "4",
                         "subheader": {
                             "en": "Day 4 · 23 April · 10:55–15:48",
                             "de": "Tag 4 · 23. April · 10:55–15:48",
@@ -818,9 +817,9 @@
                             "ja": "湯の峰 → 那智"
                         },
                         "bodytext": {
-                            "en": "Over the Kogumotori-goe and the Ogumotori-goe to Nachi, where the pagoda stands in front of the falls. In Katsuura a ferry took us across the harbour to a ryokan with a view of the water.",
-                            "de": "Über den Kogumotori-goe und den Ogumotori-goe nach Nachi, wo die Pagode vor dem Wasserfall steht. In Katsuura brachte uns eine Fähre über den Hafen zu einem Ryokan mit Blick aufs Wasser.",
-                            "ja": "小雲取越と大雲取越を越えて那智へ。滝の前に三重塔が立っている。勝浦では港を渡る船で、海の見える旅館へ向かった。"
+                            "en": "<p>Over the Kogumotori-goe and the Ogumotori-goe to Nachi, where the pagoda stands in front of the falls. In Katsuura a ferry took us across the harbour to a ryokan with a view of the water.</p>",
+                            "de": "<p>Über den Kogumotori-goe und den Ogumotori-goe nach Nachi, wo die Pagode vor dem Wasserfall steht. In Katsuura brachte uns eine Fähre über den Hafen zu einem Ryokan mit Blick aufs Wasser.</p>",
+                            "ja": "<p>小雲取越と大雲取越を越えて那智へ。滝の前に三重塔が立っている。勝浦では港を渡る船で、海の見える旅館へ向かった。</p>"
                         }
                     },
                     "image": [
@@ -851,9 +850,9 @@
                     "fields": {
                         "tx_kumanokodo_variant": "fullwidth",
                         "bodytext": {
-                            "en": "Two days later, the last evening. The light came out for twenty minutes. April 25, 17:37",
-                            "de": "Zwei Tage später, der letzte Abend. Für zwanzig Minuten kam das Licht heraus. 25. April, 17:37",
-                            "ja": "二日後、最後の夕方。二十分だけ光が差した。 4月25日, 17:37"
+                            "en": "<p>Two days later, the last evening. The light came out for twenty minutes. April 25, 17:37</p>",
+                            "de": "<p>Zwei Tage später, der letzte Abend. Für zwanzig Minuten kam das Licht heraus. 25. April, 17:37</p>",
+                            "ja": "<p>二日後、最後の夕方。二十分だけ光が差した。 4月25日, 17:37</p>"
                         }
                     },
                     "image": [
@@ -873,28 +872,12 @@
                             "de": "Die Reihenfolge der Stationen und die Tagesgrenzen stimmen, die Geometrie nicht. Zum Navigieren braucht man die Karte des Tourismusbüros.",
                             "ja": "地点の順序と日の区切りは正確だが、形は正確ではない。道案内には観光協会の地図が必要。"
                         },
-                        "tx_kumanokodo_gap": "56",
-                        "tx_kumanokodo_meta": {
-                            "en": "Schematic map of the route with six stations",
-                            "de": "Schematische Karte der Route mit sechs Stationen",
-                            "ja": "六つの地点を結ぶルートの概略図"
+                        "bodytext": {
+                            "en": "<p>Schematic map of the route with six stations</p>",
+                            "de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
+                            "ja": "<p>六つの地点を結ぶルートの概略図</p>"
                         },
-                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86",
-                        "tx_kumanokodo_legend_walked": {
-                            "en": "Walked section",
-                            "de": "Gegangener Abschnitt",
-                            "ja": "歩いた区間"
-                        },
-                        "tx_kumanokodo_legend_end": {
-                            "en": "End of the walk",
-                            "de": "Ende der Wanderung",
-                            "ja": "ウォークの終点"
-                        },
-                        "tx_kumanokodo_legend_boundary": {
-                            "en": "Day boundary with overnight stay",
-                            "de": "Tagesgrenze mit Übernachtung",
-                            "ja": "宿泊を伴う日の区切り"
-                        }
+                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
                     },
                     "items": {
                         "tx_kumanokodo_stations": [
@@ -1091,9 +1074,9 @@
                             "ja": "新しいルートを書いたときだけ、年に二通のメール"
                         },
                         "bodytext": {
-                            "en": "Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.",
-                            "de": "Beim nächsten Mal der Kohechi, der Bergpfad von Koyasan nach Hongu. Keine Werbung, keine Weitergabe Ihrer Adresse.",
-                            "ja": "次は高野山から本宮へ向かう山道、小辺路です。広告なし、アドレスの共有なし。"
+                            "en": "<p>Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.</p>",
+                            "de": "<p>Beim nächsten Mal der Kohechi, der Bergpfad von Koyasan nach Hongu. Keine Werbung, keine Weitergabe Ihrer Adresse.</p>",
+                            "ja": "<p>次は高野山から本宮へ向かう山道、小辺路です。広告なし、アドレスの共有なし。</p>"
                         }
                     }
                 }
@@ -1113,80 +1096,108 @@
             },
             "content": [
                 {
-                    "type": "kumano_page_top",
+                    "type": "kumano_columns",
                     "fields": {
-                        "tx_kumanokodo_variant": "hero_list",
-                        "tx_kumanokodo_heading": {
-                            "en": "The Nakahechi in four days",
-                            "de": "Der Nakahechi in vier Tagen",
-                            "ja": "四日間の中辺路"
-                        },
-                        "bodytext": {
-                            "en": "From Takijiri to Nachi on foot, 20 to 23 April 2024: the days, the places worth a detour and what we wish we had known before setting out.",
-                            "de": "Zu Fuß von Takijiri nach Nachi, 20. bis 23. April 2024: die Tage, die Orte, die einen Umweg lohnen, und was wir gern vor dem Aufbruch gewusst hätten.",
-                            "ja": "2024年4月20日〜23日、滝尻から那智まで徒歩で。日ごとの記録、寄り道する価値のある場所、出発前に知っておきたかったこと。"
-                        },
-                        "tx_kumanokodo_link": "page:days",
-                        "tx_kumanokodo_link_label": {
-                            "en": "See the days",
-                            "de": "Zu den Tagen",
-                            "ja": "日程を見る"
-                        },
-                        "subheader": {
-                            "en": "Ways to walk it",
-                            "de": "Wege, ihn zu gehen",
-                            "ja": "歩き方"
-                        },
-                        "tx_kumanokodo_link2": "page:days",
-                        "tx_kumanokodo_link2_label": {
-                            "en": "All days and places",
-                            "de": "Alle Tage und Orte",
-                            "ja": "すべての日程と見どころ"
-                        }
+                        "tx_kumanokodo_layout": "hero"
                     },
-                    "items": {
-                        "tx_kumanokodo_list_items": [
+                    "children": {
+                        "201": [
                             {
-                                "image": "stone-path-walkers",
-                                "title": {
-                                    "en": "Nakahechi",
-                                    "de": "Nakahechi",
-                                    "ja": "中辺路"
+                                "type": "kumano_page_top",
+                                "fields": {
+                                    "tx_kumanokodo_variant": "text",
+                                    "header": {
+                                        "en": "The Nakahechi in four days",
+                                        "de": "Der Nakahechi in vier Tagen",
+                                        "ja": "四日間の中辺路"
+                                    },
+                                    "bodytext": {
+                                        "en": "<p>From Takijiri to Nachi on foot, 20 to 23 April 2024: the days, the places worth a detour and what we wish we had known before setting out.</p>",
+                                        "de": "<p>Zu Fuß von Takijiri nach Nachi, 20. bis 23. April 2024: die Tage, die Orte, die einen Umweg lohnen, und was wir gern vor dem Aufbruch gewusst hätten.</p>",
+                                        "ja": "<p>2024年4月20日〜23日、滝尻から那智まで徒歩で。日ごとの記録、寄り道する価値のある場所、出発前に知っておきたかったこと。</p>"
+                                    }
                                 },
-                                "meta": {
-                                    "en": "Four days on foot · this journal",
-                                    "de": "Vier Tage zu Fuß · dieses Tagebuch",
-                                    "ja": "徒歩四日間 · この日記"
-                                },
-                                "link": "page:route"
-                            },
+                                "items": {
+                                    "tx_kumanokodo_links": [
+                                        {
+                                            "title": {
+                                                "en": "See the days",
+                                                "de": "Zu den Tagen",
+                                                "ja": "日程を見る"
+                                            },
+                                            "link": "page:days"
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "202": [
                             {
-                                "image": "walker-in-mist",
-                                "title": {
-                                    "en": "Day 3",
-                                    "de": "Tag 3",
-                                    "ja": "3日目"
+                                "type": "kumano_list",
+                                "fields": {
+                                    "tx_kumanokodo_variant": "media",
+                                    "header": {
+                                        "en": "Ways to walk it",
+                                        "de": "Wege, ihn zu gehen",
+                                        "ja": "歩き方"
+                                    }
                                 },
-                                "meta": {
-                                    "en": "Chikatsuyu → Hongu · the longest day",
-                                    "de": "Chikatsuyu → Hongu · der längste Tag",
-                                    "ja": "近露 → 本宮 · いちばん長い日"
-                                },
-                                "link": "page:day-3"
-                            },
-                            {
-                                "image": "cedar-canopy",
-                                "title": {
-                                    "en": "Kohechi",
-                                    "de": "Kohechi",
-                                    "ja": "小辺路"
-                                },
-                                "meta": {
-                                    "en": "Koyasan → Hongu · next time",
-                                    "de": "Koyasan → Hongu · beim nächsten Mal",
-                                    "ja": "高野山 → 本宮 · 次の機会に"
-                                },
-                                "link": "page:kohechi"
+                                "items": {
+                                    "tx_kumanokodo_entries": [
+                                        {
+                                            "image": "stone-path-walkers",
+                                            "title": {
+                                                "en": "Nakahechi",
+                                                "de": "Nakahechi",
+                                                "ja": "中辺路"
+                                            },
+                                            "meta": {
+                                                "en": "Four days on foot · this journal",
+                                                "de": "Vier Tage zu Fuß · dieses Tagebuch",
+                                                "ja": "徒歩四日間 · この日記"
+                                            },
+                                            "link": "page:route"
+                                        },
+                                        {
+                                            "image": "walker-in-mist",
+                                            "title": {
+                                                "en": "Day 3",
+                                                "de": "Tag 3",
+                                                "ja": "3日目"
+                                            },
+                                            "meta": {
+                                                "en": "Chikatsuyu → Hongu · the longest day",
+                                                "de": "Chikatsuyu → Hongu · der längste Tag",
+                                                "ja": "近露 → 本宮 · いちばん長い日"
+                                            },
+                                            "link": "page:day-3"
+                                        },
+                                        {
+                                            "image": "cedar-canopy",
+                                            "title": {
+                                                "en": "Kohechi",
+                                                "de": "Kohechi",
+                                                "ja": "小辺路"
+                                            },
+                                            "meta": {
+                                                "en": "Koyasan → Hongu · next time",
+                                                "de": "Koyasan → Hongu · beim nächsten Mal",
+                                                "ja": "高野山 → 本宮 · 次の機会に"
+                                            },
+                                            "link": "page:kohechi"
+                                        }
+                                    ],
+                                    "tx_kumanokodo_links": [
+                                        {
+                                            "title": {
+                                                "en": "All days and places",
+                                                "de": "Alle Tage und Orte",
+                                                "ja": "すべての日程と見どころ"
+                                            },
+                                            "link": "page:days"
+                                        }
+                                    ]
+                                }
                             }
                         ]
                     }
@@ -1195,11 +1206,12 @@
                     "type": "kumano_facts",
                     "fields": {
                         "tx_kumanokodo_variant": "icons",
-                        "tx_kumanokodo_label": {
+                        "header": {
                             "en": "At a glance",
                             "de": "Auf einen Blick",
                             "ja": "ひと目でわかる"
                         },
+                        "header_layout": "100",
                         "tx_kumanokodo_columns": "4"
                     },
                     "items": {
@@ -1289,11 +1301,10 @@
                             "en": "Four days, Takijiri to Nachi",
                             "de": "Vier Tage, Takijiri bis Nachi",
                             "ja": "四日間、滝尻から那智へ"
-                        },
-                        "tx_kumanokodo_gap": "56"
+                        }
                     },
                     "items": {
-                        "tx_kumanokodo_cards": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "image": "signpost",
                                 "title": {
@@ -1387,28 +1398,12 @@
                             "de": "Die Reihenfolge der Stationen und die Tagesgrenzen stimmen, die Geometrie nicht. Zum Navigieren braucht man die Karte des Tourismusbüros.",
                             "ja": "地点の順序と日の区切りは正確だが、形は正確ではない。道案内には観光協会の地図が必要。"
                         },
-                        "tx_kumanokodo_gap": "56",
-                        "tx_kumanokodo_meta": {
-                            "en": "Schematic map of the route with six stations",
-                            "de": "Schematische Karte der Route mit sechs Stationen",
-                            "ja": "六つの地点を結ぶルートの概略図"
+                        "bodytext": {
+                            "en": "<p>Schematic map of the route with six stations</p>",
+                            "de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
+                            "ja": "<p>六つの地点を結ぶルートの概略図</p>"
                         },
-                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86",
-                        "tx_kumanokodo_legend_walked": {
-                            "en": "Walked section",
-                            "de": "Gegangener Abschnitt",
-                            "ja": "歩いた区間"
-                        },
-                        "tx_kumanokodo_legend_end": {
-                            "en": "End of the walk",
-                            "de": "Ende der Wanderung",
-                            "ja": "ウォークの終点"
-                        },
-                        "tx_kumanokodo_legend_boundary": {
-                            "en": "Day boundary with overnight stay",
-                            "de": "Tagesgrenze mit Übernachtung",
-                            "ja": "宿泊を伴う日の区切り"
-                        }
+                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
                     },
                     "items": {
                         "tx_kumanokodo_stations": [
@@ -1539,11 +1534,10 @@
                             "en": "Before you go",
                             "de": "Vor dem Aufbruch",
                             "ja": "出発前に"
-                        },
-                        "tx_kumanokodo_gap": "56"
+                        }
                     },
                     "items": {
-                        "tx_kumanokodo_cards": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "Book accommodation",
@@ -1613,11 +1607,10 @@
                             "en": "Plan the walk",
                             "de": "Die Wanderung planen",
                             "ja": "計画を立てる"
-                        },
-                        "tx_kumanokodo_gap": "40"
+                        }
                     },
                     "items": {
-                        "tx_kumanokodo_cards": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "icon": "map-pin",
                                 "title": {
@@ -1814,11 +1807,10 @@
                             "en": "Days",
                             "de": "Tage",
                             "ja": "日程"
-                        },
-                        "tx_kumanokodo_gap": "40"
+                        }
                     },
                     "items": {
-                        "tx_kumanokodo_cards": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "image": "signpost",
                                 "title": {
@@ -1908,11 +1900,10 @@
                             "en": "Places",
                             "de": "Orte",
                             "ja": "見どころ"
-                        },
-                        "tx_kumanokodo_gap": "40"
+                        }
                     },
                     "items": {
-                        "tx_kumanokodo_cards": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "image": "chikatsuyu-gate",
                                 "title": {
@@ -1983,11 +1974,10 @@
                             "en": "Stays",
                             "de": "Unterkünfte",
                             "ja": "宿"
-                        },
-                        "tx_kumanokodo_gap": "40"
+                        }
                     },
                     "items": {
-                        "tx_kumanokodo_cards": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "image": "misty-valley",
                                 "title": {
@@ -2106,8 +2096,7 @@
                             {
                                 "type": "kumano_images",
                                 "fields": {
-                                    "tx_kumanokodo_variant": "figure",
-                                    "tx_kumanokodo_rule": 0
+                                    "tx_kumanokodo_variant": "figure-plain"
                                 },
                                 "image": [
                                     "trailhead-river"
@@ -2198,13 +2187,13 @@
                                         "ja": "この日のヒント"
                                     },
                                     "bodytext": {
-                                        "en": "Start early enough to reach Takahara in daylight; the first hour is steep and there is nothing in between.",
-                                        "de": "Früh genug losgehen, um Takahara bei Tageslicht zu erreichen; die erste Stunde ist steil, und dazwischen gibt es nichts.",
-                                        "ja": "明るいうちに高原に着けるよう早めに出発を。最初の一時間は急で、途中には何もない。"
+                                        "en": "<p>Start early enough to reach Takahara in daylight; the first hour is steep and there is nothing in between.</p>",
+                                        "de": "<p>Früh genug losgehen, um Takahara bei Tageslicht zu erreichen; die erste Stunde ist steil, und dazwischen gibt es nichts.</p>",
+                                        "ja": "<p>明るいうちに高原に着けるよう早めに出発を。最初の一時間は急で、途中には何もない。</p>"
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_links": [
                                         {
                                             "title": {
                                                 "en": "Practical",
@@ -2227,7 +2216,7 @@
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Day 1 · Takijiri → Takahara",
@@ -2260,7 +2249,8 @@
                                             },
                                             "link": "page:day-4"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -2275,8 +2265,7 @@
                             "en": "The day in photos",
                             "de": "Der Tag in Fotos",
                             "ja": "この日の写真"
-                        },
-                        "tx_kumanokodo_gap": "40"
+                        }
                     },
                     "image": [
                         "signpost"
@@ -2288,7 +2277,7 @@
                         "tx_kumanokodo_variant": "links"
                     },
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "Next day",
@@ -2298,7 +2287,8 @@
                                 "link": "page:day-2",
                                 "direction": "forward"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     }
                 }
             ]
@@ -2325,8 +2315,7 @@
                             {
                                 "type": "kumano_images",
                                 "fields": {
-                                    "tx_kumanokodo_variant": "figure",
-                                    "tx_kumanokodo_rule": 0
+                                    "tx_kumanokodo_variant": "figure-plain"
                                 },
                                 "image": [
                                     "sea-of-clouds"
@@ -2417,13 +2406,13 @@
                                         "ja": "この日のヒント"
                                     },
                                     "bodytext": {
-                                        "en": "The stone paving is safe in the wet, the roots between it are not. Walk on the stones.",
-                                        "de": "Das Steinpflaster ist bei Nässe sicher, die Wurzeln dazwischen nicht. Auf den Steinen gehen.",
-                                        "ja": "石畳は濡れても安全だが、その間の木の根は滑る。石の上を歩くこと。"
+                                        "en": "<p>The stone paving is safe in the wet, the roots between it are not. Walk on the stones.</p>",
+                                        "de": "<p>Das Steinpflaster ist bei Nässe sicher, die Wurzeln dazwischen nicht. Auf den Steinen gehen.</p>",
+                                        "ja": "<p>石畳は濡れても安全だが、その間の木の根は滑る。石の上を歩くこと。</p>"
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_links": [
                                         {
                                             "title": {
                                                 "en": "Practical",
@@ -2446,7 +2435,7 @@
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Day 1 · Takijiri → Takahara",
@@ -2479,7 +2468,8 @@
                                             },
                                             "link": "page:day-4"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -2494,8 +2484,7 @@
                             "en": "The day in photos",
                             "de": "Der Tag in Fotos",
                             "ja": "この日の写真"
-                        },
-                        "tx_kumanokodo_gap": "40"
+                        }
                     },
                     "image": [
                         "misty-valley",
@@ -2513,7 +2502,7 @@
                         "tx_kumanokodo_variant": "links"
                     },
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "Previous day",
@@ -2532,7 +2521,8 @@
                                 "link": "page:day-3",
                                 "direction": "forward"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     }
                 }
             ]
@@ -2559,8 +2549,7 @@
                             {
                                 "type": "kumano_images",
                                 "fields": {
-                                    "tx_kumanokodo_variant": "figure",
-                                    "tx_kumanokodo_rule": 0
+                                    "tx_kumanokodo_variant": "figure-plain"
                                 },
                                 "image": [
                                     "morning-bus"
@@ -2651,13 +2640,13 @@
                                         "ja": "この日のヒント"
                                     },
                                     "bodytext": {
-                                        "en": "It is the longest day. The villages along the road have vending machines, not shops.",
-                                        "de": "Es ist der längste Tag. Die Orte an der Straße haben Automaten, keine Läden.",
-                                        "ja": "いちばん長い日。道路沿いの集落にあるのは店ではなく自販機。"
+                                        "en": "<p>It is the longest day. The villages along the road have vending machines, not shops.</p>",
+                                        "de": "<p>Es ist der längste Tag. Die Orte an der Straße haben Automaten, keine Läden.</p>",
+                                        "ja": "<p>いちばん長い日。道路沿いの集落にあるのは店ではなく自販機。</p>"
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_links": [
                                         {
                                             "title": {
                                                 "en": "Practical",
@@ -2680,7 +2669,7 @@
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Day 1 · Takijiri → Takahara",
@@ -2713,7 +2702,8 @@
                                             },
                                             "link": "page:day-4"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -2728,8 +2718,7 @@
                             "en": "The day in photos",
                             "de": "Der Tag in Fotos",
                             "ja": "この日の写真"
-                        },
-                        "tx_kumanokodo_gap": "40"
+                        }
                     },
                     "image": [
                         "cedar-canopy",
@@ -2751,7 +2740,7 @@
                         "tx_kumanokodo_variant": "links"
                     },
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "Previous day",
@@ -2770,7 +2759,8 @@
                                 "link": "page:day-4",
                                 "direction": "forward"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     }
                 }
             ]
@@ -2797,8 +2787,7 @@
                             {
                                 "type": "kumano_images",
                                 "fields": {
-                                    "tx_kumanokodo_variant": "figure",
-                                    "tx_kumanokodo_rule": 0
+                                    "tx_kumanokodo_variant": "figure-plain"
                                 },
                                 "image": [
                                     "seaside-station"
@@ -2889,13 +2878,13 @@
                                         "ja": "この日のヒント"
                                     },
                                     "bodytext": {
-                                        "en": "The two passes make a long day. Check the last bus from Nachi before you set out.",
-                                        "de": "Die beiden Pässe ergeben einen langen Tag. Vor dem Aufbruch den letzten Bus ab Nachi prüfen.",
-                                        "ja": "二つの峠で長い一日になる。出発前に那智発の最終バスを確認すること。"
+                                        "en": "<p>The two passes make a long day. Check the last bus from Nachi before you set out.</p>",
+                                        "de": "<p>Die beiden Pässe ergeben einen langen Tag. Vor dem Aufbruch den letzten Bus ab Nachi prüfen.</p>",
+                                        "ja": "<p>二つの峠で長い一日になる。出発前に那智発の最終バスを確認すること。</p>"
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_links": [
                                         {
                                             "title": {
                                                 "en": "Practical",
@@ -2918,7 +2907,7 @@
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Day 1 · Takijiri → Takahara",
@@ -2951,7 +2940,8 @@
                                             },
                                             "link": "page:day-4"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -2966,8 +2956,7 @@
                             "en": "The day in photos",
                             "de": "Der Tag in Fotos",
                             "ja": "この日の写真"
-                        },
-                        "tx_kumanokodo_gap": "40"
+                        }
                     },
                     "image": [
                         "nachi-pagoda",
@@ -2981,7 +2970,7 @@
                         "tx_kumanokodo_variant": "links"
                     },
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "title": {
                                     "en": "Previous day",
@@ -2991,7 +2980,8 @@
                                 "link": "page:day-3",
                                 "direction": "back"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     }
                 }
             ]
@@ -3044,7 +3034,7 @@
                                     "tx_kumanokodo_variant": "links-stacked"
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Day 2 · 21 April: Takahara → Chikatsuyu",
@@ -3063,7 +3053,8 @@
                                             "link": "page:days",
                                             "direction": "back"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -3119,7 +3110,7 @@
                                     "tx_kumanokodo_variant": "links-stacked"
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Day 3 · 22 April: Chikatsuyu → Hongu → Yunomine",
@@ -3138,7 +3129,8 @@
                                             "link": "page:days",
                                             "direction": "back"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -3194,7 +3186,7 @@
                                     "tx_kumanokodo_variant": "links-stacked"
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Day 4 · 23 April: Yunomine → Nachi",
@@ -3213,7 +3205,8 @@
                                             "link": "page:days",
                                             "direction": "back"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -3254,7 +3247,7 @@
                                     "tx_kumanokodo_variant": "links"
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "The route",
@@ -3264,7 +3257,8 @@
                                             "link": "page:route",
                                             "direction": "back"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -3302,7 +3296,7 @@
                         "space_before_class": "flush-top"
                     },
                     "items": {
-                        "tx_kumanokodo_cards": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "icon": "map-pin",
                                 "title": {
@@ -3515,7 +3509,7 @@
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Getting there and buses",
@@ -3548,7 +3542,8 @@
                                             },
                                             "link": "page:practical-maps"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -3598,7 +3593,7 @@
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Getting there and buses",
@@ -3631,7 +3626,8 @@
                                             },
                                             "link": "page:practical-maps"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -3681,7 +3677,7 @@
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Getting there and buses",
@@ -3714,7 +3710,8 @@
                                             },
                                             "link": "page:practical-maps"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -3757,7 +3754,7 @@
                                     "tx_kumanokodo_variant": "downloads"
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Stage map Takahara → Chikatsuyu",
@@ -3797,7 +3794,8 @@
                                             },
                                             "link": ""
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ],
@@ -3813,7 +3811,7 @@
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "title": {
                                                 "en": "Getting there and buses",
@@ -3846,7 +3844,8 @@
                                             },
                                             "link": "page:practical-maps"
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -3880,7 +3879,6 @@
                     "type": "kumano_chapter",
                     "fields": {
                         "tx_kumanokodo_anchor": "photos-day-1",
-                        "tx_kumanokodo_number": "1",
                         "subheader": {
                             "en": "Day 1 · 20 April · from 15:40",
                             "de": "Tag 1 · 20. April · ab 15:40",
@@ -3892,9 +3890,9 @@
                             "ja": "滝尻 → 高原"
                         },
                         "bodytext": {
-                            "en": "At twenty to four we were at the river in Takijiri, a quarter of an hour later on the trail. The first hour does not pretend: steps, roots, then more steps.",
-                            "de": "Um zwanzig vor vier standen wir am Fluss in Takijiri, eine Viertelstunde später auf dem Weg. Die erste Stunde macht keine Umstände: Stufen, Wurzeln, noch mehr Stufen.",
-                            "ja": "15時40分に滝尻の川辺に着き、15分後には道の上にいた。最初の一時間は容赦がない。石段、木の根、また石段。"
+                            "en": "<p>At twenty to four we were at the river in Takijiri, a quarter of an hour later on the trail. The first hour does not pretend: steps, roots, then more steps.</p>",
+                            "de": "<p>Um zwanzig vor vier standen wir am Fluss in Takijiri, eine Viertelstunde später auf dem Weg. Die erste Stunde macht keine Umstände: Stufen, Wurzeln, noch mehr Stufen.</p>",
+                            "ja": "<p>15時40分に滝尻の川辺に着き、15分後には道の上にいた。最初の一時間は容赦がない。石段、木の根、また石段。</p>"
                         }
                     },
                     "image": [
@@ -3914,7 +3912,6 @@
                     "type": "kumano_chapter",
                     "fields": {
                         "tx_kumanokodo_anchor": "photos-day-2",
-                        "tx_kumanokodo_number": "2",
                         "subheader": {
                             "en": "Day 2 · 21 April · 07:02–17:28",
                             "de": "Tag 2 · 21. April · 07:02–17:28",
@@ -3926,9 +3923,9 @@
                             "ja": "高原 → 近露"
                         },
                         "bodytext": {
-                            "en": "The morning began above the clouds and ended at a gate of paper lanterns. In between, stone paving that stays grippy when wet, a stream under the cedars and a bright orange crab that did not move for the camera.",
-                            "de": "Der Morgen begann über den Wolken und endete an einem Tor aus Papierlaternen. Dazwischen Steinpflaster, das auch nass griffig bleibt, ein Bach unter den Zedern und eine leuchtend orange Krabbe, die für die Kamera stillhielt.",
-                            "ja": "朝は雲の上で始まり、紙の提灯の門で終わった。その間に、濡れても滑りにくい石畳、杉林の沢、そしてカメラの前でじっとしていた鮮やかな橙色のカニ。"
+                            "en": "<p>The morning began above the clouds and ended at a gate of paper lanterns. In between, stone paving that stays grippy when wet, a stream under the cedars and a bright orange crab that did not move for the camera.</p>",
+                            "de": "<p>Der Morgen begann über den Wolken und endete an einem Tor aus Papierlaternen. Dazwischen Steinpflaster, das auch nass griffig bleibt, ein Bach unter den Zedern und eine leuchtend orange Krabbe, die für die Kamera stillhielt.</p>",
+                            "ja": "<p>朝は雲の上で始まり、紙の提灯の門で終わった。その間に、濡れても滑りにくい石畳、杉林の沢、そしてカメラの前でじっとしていた鮮やかな橙色のカニ。</p>"
                         }
                     },
                     "image": [
@@ -3973,7 +3970,6 @@
                     "type": "kumano_chapter",
                     "fields": {
                         "tx_kumanokodo_anchor": "photos-day-3",
-                        "tx_kumanokodo_number": "3",
                         "subheader": {
                             "en": "Day 3 · 22 April · 07:18–16:05",
                             "de": "Tag 3 · 22. April · 07:18–16:05",
@@ -3985,9 +3981,9 @@
                             "ja": "近露 → 本宮 → 湯の峰"
                         },
                         "bodytext": {
-                            "en": "The longest day. From Chikatsuyu through the cedars and past a small oji shrine to Hongu, then on to Yunomine. By four we were sitting in a stone pool under a wooden roof.",
-                            "de": "Der längste Tag. Von Chikatsuyu durch die Zedern und an einem kleinen Oji-Schrein vorbei nach Hongu, dann weiter nach Yunomine. Um vier saßen wir in einem Steinbecken unter einem Holzdach.",
-                            "ja": "いちばん長い日。近露から杉林を抜け、小さな王子の社を過ぎて本宮へ、さらに湯の峰へ。4時には木の屋根の下の石の湯船に浸かっていた。"
+                            "en": "<p>The longest day. From Chikatsuyu through the cedars and past a small oji shrine to Hongu, then on to Yunomine. By four we were sitting in a stone pool under a wooden roof.</p>",
+                            "de": "<p>Der längste Tag. Von Chikatsuyu durch die Zedern und an einem kleinen Oji-Schrein vorbei nach Hongu, dann weiter nach Yunomine. Um vier saßen wir in einem Steinbecken unter einem Holzdach.</p>",
+                            "ja": "<p>いちばん長い日。近露から杉林を抜け、小さな王子の社を過ぎて本宮へ、さらに湯の峰へ。4時には木の屋根の下の石の湯船に浸かっていた。</p>"
                         }
                     },
                     "image": [
@@ -4057,7 +4053,6 @@
                     "type": "kumano_chapter",
                     "fields": {
                         "tx_kumanokodo_anchor": "photos-day-4",
-                        "tx_kumanokodo_number": "4",
                         "subheader": {
                             "en": "Day 4 · 23 April · 10:55–15:48",
                             "de": "Tag 4 · 23. April · 10:55–15:48",
@@ -4069,9 +4064,9 @@
                             "ja": "湯の峰 → 那智"
                         },
                         "bodytext": {
-                            "en": "Over the Kogumotori-goe and the Ogumotori-goe to Nachi, where the pagoda stands in front of the falls. In Katsuura a ferry took us across the harbour to a ryokan with a view of the water.",
-                            "de": "Über den Kogumotori-goe und den Ogumotori-goe nach Nachi, wo die Pagode vor dem Wasserfall steht. In Katsuura brachte uns eine Fähre über den Hafen zu einem Ryokan mit Blick aufs Wasser.",
-                            "ja": "小雲取越と大雲取越を越えて那智へ。滝の前に三重塔が立っている。勝浦では港を渡る船で、海の見える旅館へ向かった。"
+                            "en": "<p>Over the Kogumotori-goe and the Ogumotori-goe to Nachi, where the pagoda stands in front of the falls. In Katsuura a ferry took us across the harbour to a ryokan with a view of the water.</p>",
+                            "de": "<p>Über den Kogumotori-goe und den Ogumotori-goe nach Nachi, wo die Pagode vor dem Wasserfall steht. In Katsuura brachte uns eine Fähre über den Hafen zu einem Ryokan mit Blick aufs Wasser.</p>",
+                            "ja": "<p>小雲取越と大雲取越を越えて那智へ。滝の前に三重塔が立っている。勝浦では港を渡る船で、海の見える旅館へ向かった。</p>"
                         }
                     },
                     "image": [
@@ -4111,9 +4106,9 @@
                     "fields": {
                         "tx_kumanokodo_variant": "fullwidth",
                         "bodytext": {
-                            "en": "Two days later, the last evening. The light came out for twenty minutes. April 25, 17:37",
-                            "de": "Zwei Tage später, der letzte Abend. Für zwanzig Minuten kam das Licht heraus. 25. April, 17:37",
-                            "ja": "二日後、最後の夕方。二十分だけ光が差した。 4月25日, 17:37"
+                            "en": "<p>Two days later, the last evening. The light came out for twenty minutes. April 25, 17:37</p>",
+                            "de": "<p>Zwei Tage später, der letzte Abend. Für zwanzig Minuten kam das Licht heraus. 25. April, 17:37</p>",
+                            "ja": "<p>二日後、最後の夕方。二十分だけ光が差した。 4月25日, 17:37</p>"
                         }
                     },
                     "image": [
@@ -4138,9 +4133,9 @@
                     "type": "kumano_newsletter",
                     "fields": {
                         "bodytext": {
-                            "en": "Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.",
-                            "de": "Beim nächsten Mal der Kohechi, der Bergpfad von Koyasan nach Hongu. Keine Werbung, keine Weitergabe Ihrer Adresse.",
-                            "ja": "次は高野山から本宮へ向かう山道、小辺路です。広告なし、アドレスの共有なし。"
+                            "en": "<p>Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.</p>",
+                            "de": "<p>Beim nächsten Mal der Kohechi, der Bergpfad von Koyasan nach Hongu. Keine Werbung, keine Weitergabe Ihrer Adresse.</p>",
+                            "ja": "<p>次は高野山から本宮へ向かう山道、小辺路です。広告なし、アドレスの共有なし。</p>"
                         }
                     }
                 }
@@ -4263,22 +4258,22 @@
                             "de": "Kii-Halbinsel · Wakayama · April 2024",
                             "ja": "紀伊半島 · 和歌山 · 2024年4月"
                         },
-                        "tx_kumanokodo_heading": {
+                        "header": {
                             "en": "Four days through\nthe cedar mist",
                             "de": "Vier Tage durch\nden Zedernnebel",
                             "ja": "杉の霧のなかを\n歩いた四日間"
                         },
                         "bodytext": {
-                            "en": "The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines. We walked the Nakahechi in April, from Takijiri to Nachi, in four days.",
-                            "de": "Der Kumano Kodo ist kein einzelner Fernwanderweg, sondern ein Netz alter Pilgerpfade zu drei Schreinen. Wir sind im April den Nakahechi gegangen, von Takijiri bis Nachi, in vier Tagen.",
-                            "ja": "熊野古道は一本の長距離トレイルではなく、三つの神社へ向かう古い参詣道の網です。4月、滝尻から那智まで、四日間で中辺路を歩きました。"
+                            "en": "<p>The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines. We walked the Nakahechi in April, from Takijiri to Nachi, in four days.</p>",
+                            "de": "<p>Der Kumano Kodo ist kein einzelner Fernwanderweg, sondern ein Netz alter Pilgerpfade zu drei Schreinen. Wir sind im April den Nakahechi gegangen, von Takijiri bis Nachi, in vier Tagen.</p>",
+                            "ja": "<p>熊野古道は一本の長距離トレイルではなく、三つの神社へ向かう古い参詣道の網です。4月、滝尻から那智まで、四日間で中辺路を歩きました。</p>"
                         }
                     },
                     "image": [
                         "sea-of-clouds"
                     ],
                     "items": {
-                        "tx_kumanokodo_list_items": [
+                        "tx_kumanokodo_links": [
                             {
                                 "title": {
                                     "en": "See the days",
@@ -4361,8 +4356,7 @@
                             "en": "Why this trail",
                             "de": "Warum dieser Weg",
                             "ja": "この道を選ぶ理由"
-                        },
-                        "tx_kumanokodo_gap": "64"
+                        }
                     },
                     "children": {
                         "201": [
@@ -4383,9 +4377,9 @@
                                 "fields": {
                                     "tx_kumanokodo_variant": "figure",
                                     "bodytext": {
-                                        "en": "Nakahechi, April 21, 11:47",
-                                        "de": "Nakahechi, 21. April, 11:47",
-                                        "ja": "中辺路, 4月21日, 11:47"
+                                        "en": "<p>Nakahechi, April 21, 11:47</p>",
+                                        "de": "<p>Nakahechi, 21. April, 11:47</p>",
+                                        "ja": "<p>中辺路, 4月21日, 11:47</p>"
                                     }
                                 },
                                 "image": [
@@ -4411,9 +4405,9 @@
                             "ja": "三本足の烏"
                         },
                         "bodytext": {
-                            "en": "The bird in the logo is the Yatagarasu, messenger of the Kumano deities. According to the old chronicles it guided Emperor Jimmu through the mountains from Kumano to Yamato. Its three legs are often read as heaven, earth and humankind. On the trail you meet it on shrine banners and on the goōhōin talismans, and on the middle lantern of the gate in Chikatsuyu.",
-                            "de": "Der Vogel im Logo ist die Yatagarasu, Botin der Kumano-Gottheiten. Den alten Chroniken nach führte sie Kaiser Jimmu durch die Berge von Kumano nach Yamato. Ihre drei Beine werden oft als Himmel, Erde und Mensch gedeutet. Am Weg begegnet man ihr auf Schreinfahnen, den Goōhōin-Amuletten und auf der mittleren Laterne des Tors in Chikatsuyu.",
-                            "ja": "ロゴの鳥は八咫烏、熊野の神々の使いです。古い記録によれば、神武天皇を熊野から大和へと山中で導いたとされます。三本の足は天・地・人を表すとよく言われます。道中では神社の幟や熊野牛王宝印の護符に、そして近露の門の真ん中の提灯にも姿を見せます。"
+                            "en": "<p>The bird in the logo is the Yatagarasu, messenger of the Kumano deities. According to the old chronicles it guided Emperor Jimmu through the mountains from Kumano to Yamato. Its three legs are often read as heaven, earth and humankind. On the trail you meet it on shrine banners and on the goōhōin talismans, and on the middle lantern of the gate in Chikatsuyu.</p>",
+                            "de": "<p>Der Vogel im Logo ist die Yatagarasu, Botin der Kumano-Gottheiten. Den alten Chroniken nach führte sie Kaiser Jimmu durch die Berge von Kumano nach Yamato. Ihre drei Beine werden oft als Himmel, Erde und Mensch gedeutet. Am Weg begegnet man ihr auf Schreinfahnen, den Goōhōin-Amuletten und auf der mittleren Laterne des Tors in Chikatsuyu.</p>",
+                            "ja": "<p>ロゴの鳥は八咫烏、熊野の神々の使いです。古い記録によれば、神武天皇を熊野から大和へと山中で導いたとされます。三本の足は天・地・人を表すとよく言われます。道中では神社の幟や熊野牛王宝印の護符に、そして近露の門の真ん中の提灯にも姿を見せます。</p>"
                         }
                     }
                 },
@@ -4423,11 +4417,11 @@
                         "tx_kumanokodo_variant": "quote",
                         "space_before_class": "large",
                         "bodytext": {
-                            "en": "“Dinner is at six. The bath is open until eleven.”",
-                            "de": "„Abendessen gibt es um sechs. Das Bad ist bis elf offen.“",
-                            "ja": "「夕食は六時です。お風呂は十一時まで。」"
+                            "en": "<p>“Dinner is at six. The bath is open until eleven.”</p>",
+                            "de": "<p>„Abendessen gibt es um sechs. Das Bad ist bis elf offen.“</p>",
+                            "ja": "<p>「夕食は六時です。お風呂は十一時まで。」</p>"
                         },
-                        "subheader": {
+                        "header": {
                             "en": "Ryokan in Katsuura, 23 April",
                             "de": "Ryokan in Katsuura, 23. April",
                             "ja": "勝浦の旅館、4月23日"
@@ -4437,8 +4431,7 @@
                 {
                     "type": "kumano_section",
                     "fields": {
-                        "space_before_class": "flush-top",
-                        "tx_kumanokodo_column_gap": "96"
+                        "space_before_class": "flush-top"
                     },
                     "children": {
                         "201": [
@@ -4513,11 +4506,10 @@
                                         "en": "Times from the photos, not from a plan.",
                                         "de": "Uhrzeiten aus den Fotos, nicht aus einem Plan.",
                                         "ja": "時刻は計画ではなく、写真から。"
-                                    },
-                                    "tx_kumanokodo_gap": "56"
+                                    }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "label": {
                                                 "en": "Day 1 · 20 April",
@@ -4606,7 +4598,8 @@
                                                 "ja": "10:55–15:48"
                                             }
                                         }
-                                    ]
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]
@@ -4618,11 +4611,6 @@
                         "tx_kumanokodo_variant": "stage",
                         "tx_kumanokodo_columns": "slider",
                         "frame_class": "sunk",
-                        "tx_kumanokodo_label": {
-                            "en": "Days",
-                            "de": "Tage",
-                            "ja": "日程"
-                        },
                         "tx_kumanokodo_anchor": "stages",
                         "header": {
                             "en": "Four days, Takijiri to Nachi",
@@ -4636,7 +4624,7 @@
                         }
                     },
                     "items": {
-                        "tx_kumanokodo_cards": [
+                        "tx_kumanokodo_entries": [
                             {
                                 "image": "signpost",
                                 "label": {
@@ -4773,28 +4761,12 @@
                             "de": "Die Reihenfolge der Stationen und die Tagesgrenzen stimmen, die Geometrie nicht. Zum Navigieren braucht man die Karte des Tourismusbüros.",
                             "ja": "地点の順序と日の区切りは正確だが、形は正確ではない。道案内には観光協会の地図が必要。"
                         },
-                        "tx_kumanokodo_gap": "56",
-                        "tx_kumanokodo_meta": {
-                            "en": "Schematic map of the route with six stations",
-                            "de": "Schematische Karte der Route mit sechs Stationen",
-                            "ja": "六つの地点を結ぶルートの概略図"
+                        "bodytext": {
+                            "en": "<p>Schematic map of the route with six stations</p>",
+                            "de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
+                            "ja": "<p>六つの地点を結ぶルートの概略図</p>"
                         },
-                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86",
-                        "tx_kumanokodo_legend_walked": {
-                            "en": "Walked section",
-                            "de": "Gegangener Abschnitt",
-                            "ja": "歩いた区間"
-                        },
-                        "tx_kumanokodo_legend_end": {
-                            "en": "End of the walk",
-                            "de": "Ende der Wanderung",
-                            "ja": "ウォークの終点"
-                        },
-                        "tx_kumanokodo_legend_boundary": {
-                            "en": "Day boundary with overnight stay",
-                            "de": "Tagesgrenze mit Übernachtung",
-                            "ja": "宿泊を伴う日の区切り"
-                        }
+                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
                     },
                     "items": {
                         "tx_kumanokodo_stations": [
@@ -4928,9 +4900,7 @@
                             "en": "Along the way",
                             "de": "Am Weg",
                             "ja": "道中"
-                        },
-                        "tx_kumanokodo_gap": "64",
-                        "tx_kumanokodo_column_gap": "64"
+                        }
                     },
                     "children": {
                         "201": [
@@ -4948,7 +4918,7 @@
                                                 "tx_kumanokodo_columns": "2"
                                             },
                                             "items": {
-                                                "tx_kumanokodo_cards": [
+                                                "tx_kumanokodo_entries": [
                                                     {
                                                         "image": "nachi-pagoda",
                                                         "title": {
@@ -4975,7 +4945,7 @@
                                                 "tx_kumanokodo_columns": "2"
                                             },
                                             "items": {
-                                                "tx_kumanokodo_cards": [
+                                                "tx_kumanokodo_entries": [
                                                     {
                                                         "image": "yunomine-street",
                                                         "title": {
@@ -5010,7 +4980,7 @@
                                                 "tx_kumanokodo_columns": "2"
                                             },
                                             "items": {
-                                                "tx_kumanokodo_cards": [
+                                                "tx_kumanokodo_entries": [
                                                     {
                                                         "image": "chikatsuyu-gate",
                                                         "title": {
@@ -5035,9 +5005,9 @@
                                             "fields": {
                                                 "tx_kumanokodo_variant": "figure",
                                                 "bodytext": {
-                                                    "en": "Nakahechi, April 21, 12:03 · Nakahechi, April 22, 08:26",
-                                                    "de": "Nakahechi, 21. April, 12:03 · Nakahechi, 22. April, 08:26",
-                                                    "ja": "中辺路, 4月21日, 12:03 · 中辺路, 4月22日, 08:26"
+                                                    "en": "<p>Nakahechi, April 21, 12:03 · Nakahechi, April 22, 08:26</p>",
+                                                    "de": "<p>Nakahechi, 21. April, 12:03 · Nakahechi, 22. April, 08:26</p>",
+                                                    "ja": "<p>中辺路, 4月21日, 12:03 · 中辺路, 4月22日, 08:26</p>"
                                                 }
                                             },
                                             "image": [
@@ -5067,9 +5037,9 @@
                             "ja": "帰ってから聞かれたこと"
                         },
                         "bodytext": {
-                            "en": "The four that came up most often.",
-                            "de": "Die vier Fragen, die am häufigsten kamen.",
-                            "ja": "いちばん多かった四つの質問。"
+                            "en": "<p>The four that came up most often.</p>",
+                            "de": "<p>Die vier Fragen, die am häufigsten kamen.</p>",
+                            "ja": "<p>いちばん多かった四つの質問。</p>"
                         }
                     },
                     "items": {
@@ -5138,9 +5108,9 @@
                             "ja": "新しいルートを書いたときだけ、年に二通のメール"
                         },
                         "bodytext": {
-                            "en": "Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.",
-                            "de": "Beim nächsten Mal der Kohechi, der Bergpfad von Koyasan nach Hongu. Keine Werbung, keine Weitergabe Ihrer Adresse.",
-                            "ja": "次は高野山から本宮へ向かう山道、小辺路です。広告なし、アドレスの共有なし。"
+                            "en": "<p>Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.</p>",
+                            "de": "<p>Beim nächsten Mal der Kohechi, der Bergpfad von Koyasan nach Hongu. Keine Werbung, keine Weitergabe Ihrer Adresse.</p>",
+                            "ja": "<p>次は高野山から本宮へ向かう山道、小辺路です。広告なし、アドレスの共有なし。</p>"
                         }
                     }
                 }
@@ -5187,21 +5157,27 @@
                             "ja": "湯の峰温泉"
                         },
                         "bodytext": {
-                            "en": "A narrow valley with the bath houses along the stream. Carp streamers hung across it for Children’s Day.",
-                            "de": "Ein enges Tal, die Badehäuser am Bach entlang. Zum Kindertag hingen Karpfenfahnen quer darüber.",
-                            "ja": "狭い谷の沢沿いに湯屋が並ぶ。こどもの日を前に、鯉のぼりが川をまたいで泳いでいた。"
+                            "en": "<p>A narrow valley with the bath houses along the stream. Carp streamers hung across it for Children’s Day.</p>",
+                            "de": "<p>Ein enges Tal, die Badehäuser am Bach entlang. Zum Kindertag hingen Karpfenfahnen quer darüber.</p>",
+                            "ja": "<p>狭い谷の沢沿いに湯屋が並ぶ。こどもの日を前に、鯉のぼりが川をまたいで泳いでいた。</p>"
                         },
-                        "tx_kumanokodo_link": "page:route",
-                        "tx_kumanokodo_link_label": {
-                            "en": "Read more",
-                            "de": "Weiterlesen",
-                            "ja": "続きを読む"
-                        },
-                        "tx_kumanokodo_variant": "left"
+                        "imageorient": 26
                     },
                     "image": [
                         "yunomine-street"
-                    ]
+                    ],
+                    "items": {
+                        "tx_kumanokodo_links": [
+                            {
+                                "title": {
+                                    "en": "Read more",
+                                    "de": "Weiterlesen",
+                                    "ja": "続きを読む"
+                                },
+                                "link": "page:route"
+                            }
+                        ]
+                    }
                 },
                 {
                     "type": "kumano_columns",
@@ -5218,16 +5194,10 @@
                                         "en": "Ways to walk it",
                                         "de": "Wege, ihn zu gehen",
                                         "ja": "歩き方"
-                                    },
-                                    "tx_kumanokodo_link": "page:days",
-                                    "tx_kumanokodo_link_label": {
-                                        "en": "All days and places",
-                                        "de": "Alle Tage und Orte",
-                                        "ja": "すべての日程と見どころ"
                                     }
                                 },
                                 "items": {
-                                    "tx_kumanokodo_list_items": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "image": "stone-path-walkers",
                                             "title": {
@@ -5270,6 +5240,16 @@
                                             },
                                             "link": "page:kohechi"
                                         }
+                                    ],
+                                    "tx_kumanokodo_links": [
+                                        {
+                                            "title": {
+                                                "en": "All days and places",
+                                                "de": "Alle Tage und Orte",
+                                                "ja": "すべての日程と見どころ"
+                                            },
+                                            "link": "page:days"
+                                        }
                                     ]
                                 }
                             }
@@ -5282,7 +5262,7 @@
                                     "tx_kumanokodo_columns": "2"
                                 },
                                 "items": {
-                                    "tx_kumanokodo_cards": [
+                                    "tx_kumanokodo_entries": [
                                         {
                                             "image": "ryokan-room",
                                             "title": {

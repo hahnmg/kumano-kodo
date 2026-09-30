@@ -14,11 +14,15 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-special-html',
         'group' => 'kumano_journal',
     ],
-    '--palette--;;headers, tx_kumanokodo_meta, tx_kumanokodo_path, --linebreak--, tx_kumanokodo_legend_walked, tx_kumanokodo_legend_end, tx_kumanokodo_legend_boundary, tx_kumanokodo_stations, tx_kumanokodo_day_marks, --div--;core.form.tabs:appearance, --palette--;;frames',
+    '--palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, bodytext, --div--;kumano_kodo.backend_fields:tabs.map, tx_kumanokodo_path, tx_kumanokodo_stations, tx_kumanokodo_day_marks, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
-            'tx_kumanokodo_meta' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_meta.maplabel',
+            'bodytext' => [
+                'config' => [
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'minimal',
+                ],
+                'description' => 'kumano_kodo.backend_fields:tt_content.bodytext.description.map',
             ],
         ],
     ],

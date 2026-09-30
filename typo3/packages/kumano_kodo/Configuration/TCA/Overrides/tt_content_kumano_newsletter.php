@@ -14,18 +14,14 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-form',
         'group' => 'kumano_text',
     ],
-    '--palette--;;headers, bodytext, tx_kumanokodo_link, --div--;core.form.tabs:appearance, --palette--;;frames',
+    '--palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_plain, bodytext, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
             'bodytext' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.bodytext.intro',
                 'config' => [
-                    'enableRichtext' => false,
-                    'rows' => 4,
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'minimal',
                 ],
-            ],
-            'tx_kumanokodo_link' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_link.action',
             ],
         ],
     ],

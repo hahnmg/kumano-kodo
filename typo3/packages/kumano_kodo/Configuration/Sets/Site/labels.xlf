@@ -29,6 +29,9 @@
             <trans-unit id="categories.kumanoKodo.contact">
                 <source>Contact in the top bar</source>
             </trans-unit>
+            <trans-unit id="categories.kumanoKodo.newsletter">
+                <source>Newsletter</source>
+            </trans-unit>
             <trans-unit id="settings.kumanoKodo.brand.name">
                 <source>Site name</source>
             </trans-unit>
@@ -52,6 +55,12 @@
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.theme.enum.violet">
                 <source>Violet</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.brand.upright">
+                <source>Upright name</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.brand.upright">
+                <source>Set vertically beside the journal title; decorative, hidden from screen readers. Empty: none.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.scheme">
                 <source>Colour mode on load</source>
@@ -262,6 +271,12 @@
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.contact.email">
                 <source>Email</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.newsletter.target">
+                <source>Form target</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.newsletter.target">
+                <source>The page that receives the newsletter sign-up.</source>
             </trans-unit>
         </body>
     </file>

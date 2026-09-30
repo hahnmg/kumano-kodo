@@ -12,7 +12,7 @@ ExtensionManagementUtility::addTCAcolumns('pages', [
         'description' => 'kumano_kodo.backend_fields:pages.tx_kumanokodo_chips.description',
         'config' => [
             'type' => 'inline',
-            'foreign_table' => 'tx_kumanokodo_list_item',
+            'foreign_table' => 'tx_kumanokodo_entry',
             'foreign_field' => 'uid_foreign',
             'foreign_table_field' => 'tablename',
             'foreign_match_fields' => [
@@ -27,6 +27,11 @@ ExtensionManagementUtility::addTCAcolumns('pages', [
             'overrideChildTca' => [
                 'types' => [
                     '0' => [
+                        'showitem' => '--palette--;;chip',
+                    ],
+                ],
+                'palettes' => [
+                    'chip' => [
                         'showitem' => 'title, link, active',
                     ],
                 ],

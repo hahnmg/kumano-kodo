@@ -26,4 +26,4 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         ->setGroup('kumano_layout')
 );
 
-$GLOBALS['TCA']['tt_content']['types']['kumano_section']['showitem'] = '--palette--;;headers, tx_kumanokodo_column_gap, --div--;core.form.tabs:appearance, --palette--;;frames';
+$GLOBALS['TCA']['tt_content']['types']['kumano_section']['showitem'] = '--palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, --div--;core.form.tabs:appearance, --palette--;;frames';

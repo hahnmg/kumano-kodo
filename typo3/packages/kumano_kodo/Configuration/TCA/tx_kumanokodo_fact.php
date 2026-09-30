@@ -126,7 +126,12 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'icon, --linebreak--, label, value, --linebreak--, note',
+            'showitem' => 'icon, --palette--;;value, note',
+        ],
+    ],
+    'palettes' => [
+        'value' => [
+            'showitem' => 'label, value',
         ],
     ],
 ];

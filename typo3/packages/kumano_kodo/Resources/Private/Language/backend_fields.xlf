@@ -21,7 +21,10 @@
                 <source>Tinted</source>
             </trans-unit>
             <trans-unit id="header_layout.hidden">
-                <source>Hidden</source>
+                <source>Hidden: names the section for screen readers</source>
+            </trans-unit>
+            <trans-unit id="header_layout.label">
+                <source>Heading shown as</source>
             </trans-unit>
             <trans-unit id="header_layout.section">
                 <source>Section heading</source>
@@ -92,8 +95,8 @@
             <trans-unit id="pages.tx_kumanokodo_logo.description">
                 <source>Replaces the logo of the theme on every page (SVG, PNG or WebP). An SVG takes the theme colours only when its groups are named bird and text, as the layers in Figma are: bird gets the accent colour, text the ink colour. Shapes outside these groups, and PNG or WebP files, keep their own colours.</source>
             </trans-unit>
-            <trans-unit id="preview.cards">
-                <source>Cards</source>
+            <trans-unit id="palettes.heading">
+                <source>Heading</source>
             </trans-unit>
             <trans-unit id="preview.chapter">
                 <source>Chapter</source>
@@ -107,8 +110,8 @@
             <trans-unit id="preview.facts">
                 <source>Facts</source>
             </trans-unit>
-            <trans-unit id="preview.formTarget">
-                <source>Form target:</source>
+            <trans-unit id="preview.links">
+                <source>Links</source>
             </trans-unit>
             <trans-unit id="preview.photos">
                 <source>Photos</source>
@@ -188,6 +191,9 @@
             <trans-unit id="sys_file_reference.tx_kumanokodo_span.9">
                 <source>9 / 12</source>
             </trans-unit>
+            <trans-unit id="tabs.map">
+                <source>Map</source>
+            </trans-unit>
             <trans-unit id="tt_content.CType.kumano_callout">
                 <source>Callout</source>
             </trans-unit>
@@ -204,7 +210,7 @@
                 <source>Chapter</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.kumano_chapter.description">
-                <source>One day of the journal: numeral, date, title, text and its photos.</source>
+                <source>One day of the journal: numeral, date, title, text and its photos. Chapters on a page are numbered in order.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.kumano_columns">
                 <source>Columns</source>
@@ -234,13 +240,13 @@
                 <source>Newsletter</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.kumano_newsletter.description">
-                <source>Heading, text and the sign-up form.</source>
+                <source>Heading, text and the sign-up form; its target page is a site setting.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.kumano_page_top">
                 <source>Page top</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.kumano_page_top.description">
-                <source>The opening of a page: a photo hero, a hero with a list, or the journal opener.</source>
+                <source>The opening of a page: a photo hero, a title with text, or the journal opener.</source>
             </trans-unit>
             <trans-unit id="tt_content.CType.kumano_questions">
                 <source>Questions</source>
@@ -266,14 +272,11 @@
             <trans-unit id="tt_content.CType.kumano_text_image.description">
                 <source>A heading, text and a link beside a photo.</source>
             </trans-unit>
-            <trans-unit id="tt_content.bodytext.caption">
-                <source>Caption (empty: the photo's own)</source>
+            <trans-unit id="tt_content.bodytext.description.caption">
+                <source>The caption. Empty: the caption of the photo itself.</source>
             </trans-unit>
-            <trans-unit id="tt_content.bodytext.intro">
-                <source>Introduction</source>
-            </trans-unit>
-            <trans-unit id="tt_content.bodytext.text">
-                <source>Text</source>
+            <trans-unit id="tt_content.bodytext.description.map">
+                <source>Describes the map for screen readers.</source>
             </trans-unit>
             <trans-unit id="tt_content.group.kumano_journal">
                 <source>Journal</source>
@@ -287,17 +290,17 @@
             <trans-unit id="tt_content.group.kumano_text">
                 <source>Text and media</source>
             </trans-unit>
-            <trans-unit id="tt_content.header.title">
-                <source>Title</source>
+            <trans-unit id="tt_content.header.description.lines">
+                <source>Line breaks are kept.</source>
             </trans-unit>
-            <trans-unit id="tt_content.image.photo">
-                <source>Photo</source>
+            <trans-unit id="tt_content.header.description.quote">
+                <source>For a quotation: its source.</source>
             </trans-unit>
-            <trans-unit id="tt_content.image.photos">
-                <source>Photos</source>
+            <trans-unit id="tt_content.imageorient.left">
+                <source>Photo on the left</source>
             </trans-unit>
-            <trans-unit id="tt_content.kumano_callout.links">
-                <source>Links</source>
+            <trans-unit id="tt_content.imageorient.right">
+                <source>Photo on the right</source>
             </trans-unit>
             <trans-unit id="tt_content.kumano_callout.variant">
                 <source>Display</source>
@@ -311,38 +314,11 @@
             <trans-unit id="tt_content.kumano_images.variant">
                 <source>Display</source>
             </trans-unit>
-            <trans-unit id="tt_content.kumano_list.more">
-                <source>Link below the list</source>
-            </trans-unit>
             <trans-unit id="tt_content.kumano_list.variant">
                 <source>Display</source>
             </trans-unit>
-            <trans-unit id="tt_content.kumano_page_top.button">
-                <source>Button</source>
-            </trans-unit>
-            <trans-unit id="tt_content.kumano_page_top.figures">
-                <source>Figures on the photo</source>
-            </trans-unit>
-            <trans-unit id="tt_content.kumano_page_top.list">
-                <source>Hero: buttons. Hero with list: the list</source>
-            </trans-unit>
-            <trans-unit id="tt_content.kumano_page_top.more">
-                <source>Link below the list</source>
-            </trans-unit>
             <trans-unit id="tt_content.kumano_page_top.variant">
                 <source>Display</source>
-            </trans-unit>
-            <trans-unit id="tt_content.kumano_text_image.variant">
-                <source>Display</source>
-            </trans-unit>
-            <trans-unit id="tt_content.subheader.date">
-                <source>Date and time</source>
-            </trans-unit>
-            <trans-unit id="tt_content.subheader.eyebrow_source">
-                <source>Eyebrow; for a quotation its source</source>
-            </trans-unit>
-            <trans-unit id="tt_content.subheader.kicker">
-                <source>Eyebrow; hero with list: title of the list</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_align">
                 <source>Vertical alignment</source>
@@ -365,32 +341,8 @@
             <trans-unit id="tt_content.tx_kumanokodo_aside">
                 <source>Text beside the heading</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_cards">
-                <source>Cards</source>
-            </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_chips">
                 <source>Chips</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_column_gap">
-                <source>Space between elements</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_column_gap.16">
-                <source>16px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_column_gap.24">
-                <source>24px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_column_gap.40">
-                <source>40px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_column_gap.56">
-                <source>56px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_column_gap.64">
-                <source>64px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_column_gap.96">
-                <source>96px</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_columns">
                 <source>Shown as</source>
@@ -410,41 +362,14 @@
             <trans-unit id="tt_content.tx_kumanokodo_day_marks">
                 <source>Day marks</source>
             </trans-unit>
+            <trans-unit id="tt_content.tx_kumanokodo_entries">
+                <source>Entries</source>
+            </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_facts">
                 <source>Facts</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_gap">
-                <source>Space below the heading</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_gap.16">
-                <source>16px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_gap.24">
-                <source>24px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_gap.40">
-                <source>40px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_gap.56">
-                <source>56px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_gap.64">
-                <source>64px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_gap.96">
-                <source>96px</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_heading">
-                <source>Title</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_heading.description">
-                <source>Line breaks are kept.</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_label">
-                <source>Name for screen readers</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_label.description">
-                <source>Only needed when the element has no visible heading.</source>
+            <trans-unit id="tt_content.tx_kumanokodo_facts.description.hero">
+                <source>Figures on the photo.</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_layout">
                 <source>Arrangement</source>
@@ -458,6 +383,9 @@
             <trans-unit id="tt_content.tx_kumanokodo_layout.heading-content">
                 <source>Heading and content</source>
             </trans-unit>
+            <trans-unit id="tt_content.tx_kumanokodo_layout.hero">
+                <source>Page top: text and list</source>
+            </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_layout.narrow-wide">
                 <source>Narrow and wide</source>
             </trans-unit>
@@ -467,50 +395,26 @@
             <trans-unit id="tt_content.tx_kumanokodo_layout.wide-narrow">
                 <source>Wide and narrow</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_legend_boundary">
-                <source>Legend: end of a day</source>
+            <trans-unit id="tt_content.tx_kumanokodo_links">
+                <source>Links</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_legend_end">
-                <source>Legend: end</source>
+            <trans-unit id="tt_content.tx_kumanokodo_links.description.buttons">
+                <source>Shown as buttons.</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_legend_walked">
-                <source>Legend: walked</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_link">
-                <source>Link</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_link.action">
-                <source>Form target</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_link2">
-                <source>Second link</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_link2_label">
-                <source>Second link text</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_link_label">
-                <source>Link text</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_list_items">
-                <source>Entries</source>
+            <trans-unit id="tt_content.tx_kumanokodo_links.description.more">
+                <source>The link below the list.</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_meta">
                 <source>Meta line</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_meta.maplabel">
-                <source>Description of the map for screen readers</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_number">
-                <source>Numeral</source>
+            <trans-unit id="tt_content.tx_kumanokodo_meta.description">
+                <source>A short line under the text.</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_path">
                 <source>Route line (SVG path in 1000 × 250)</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_questions">
                 <source>Questions</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_rule">
-                <source>Line above</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_stations">
                 <source>Stations</source>
@@ -533,6 +437,9 @@
             <trans-unit id="tt_content.tx_kumanokodo_variant.figure">
                 <source>Figure: one or two photos</source>
             </trans-unit>
+            <trans-unit id="tt_content.tx_kumanokodo_variant.figure-plain">
+                <source>Figure without line above</source>
+            </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_variant.figures">
                 <source>Large figures</source>
             </trans-unit>
@@ -545,9 +452,6 @@
             <trans-unit id="tt_content.tx_kumanokodo_variant.hero">
                 <source>Photo hero</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_variant.hero_list">
-                <source>Hero with list</source>
-            </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_variant.highlight">
                 <source>Highlight with the crow</source>
             </trans-unit>
@@ -556,9 +460,6 @@
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_variant.infobox">
                 <source>Info box</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_variant.left">
-                <source>Photo on the left</source>
             </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_variant.links">
                 <source>Links side by side</source>
@@ -587,9 +488,6 @@
             <trans-unit id="tt_content.tx_kumanokodo_variant.quote">
                 <source>Quotation</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_variant.right">
-                <source>Photo on the right</source>
-            </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_variant.stage">
                 <source>Stage</source>
             </trans-unit>
@@ -599,122 +497,11 @@
             <trans-unit id="tt_content.tx_kumanokodo_variant.teaser">
                 <source>Teaser</source>
             </trans-unit>
+            <trans-unit id="tt_content.tx_kumanokodo_variant.text">
+                <source>Title and text</source>
+            </trans-unit>
             <trans-unit id="tt_content.tx_kumanokodo_variant.tile">
                 <source>Link tile</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_vertical">
-                <source>Vertical text</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_vertical.description">
-                <source>Set upright beside the title; hidden from screen readers.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card">
-                <source>Card</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.badge">
-                <source>Badge</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.badge.description">
-                <source>Used by: Teaser.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.emphasis">
-                <source>Emphasis</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.emphasis.default">
-                <source>None</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.emphasis.description">
-                <source>Place: featured or with a line above. Call to action: featured. Used by: Place, Call to action.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.emphasis.featured">
-                <source>Featured</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.emphasis.ruled">
-                <source>Line above</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon">
-                <source>Icon</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.alert">
-                <source>Alert</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.arrow-right">
-                <source>Arrow right</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.chevron-down">
-                <source>Chevron down</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.clock">
-                <source>Clock</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.close">
-                <source>Close</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.description">
-                <source>Used by: Link tile.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.download">
-                <source>Download</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.file">
-                <source>File</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.home">
-                <source>Home</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.mail">
-                <source>Mail</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.map-pin">
-                <source>Map pin</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.phone">
-                <source>Phone</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.search">
-                <source>Search</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.icon.sun">
-                <source>Sun</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.image">
-                <source>Image</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.image.description">
-                <source>Used by: Teaser, Place, Person, Stage.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.label">
-                <source>Stage</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.label.description">
-                <source>For example "Day 1". Used by: Stage.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.link">
-                <source>Link</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.link.description">
-                <source>Used by: Teaser, Call to action, Link tile.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.link_label">
-                <source>Link text</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.link_label.description">
-                <source>Empty: "Read more". Used by: Call to action.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.meta">
-                <source>Meta line</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.meta.description">
-                <source>Teaser: date and time. Person: role. Stage: distance and figures. Used by: Teaser, Person, Stage.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.text">
-                <source>Text</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.text.description">
-                <source>Teaser: the line under the title. Person: what they are known for. Used by: Teaser, Place, Person, Call to action, Stage.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_card.title">
-                <source>Title</source>
             </trans-unit>
             <trans-unit id="tx_kumanokodo_day_mark">
                 <source>Day mark</source>
@@ -724,6 +511,132 @@
             </trans-unit>
             <trans-unit id="tx_kumanokodo_day_mark.x">
                 <source>Across (0–1000)</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry">
+                <source>Entry</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.active">
+                <source>Marked as current</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.active.description">
+                <source>Used by: Chips.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.badge">
+                <source>Badge</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.badge.description">
+                <source>Used by: Teaser.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.direction">
+                <source>Arrow</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.direction.back">
+                <source>← Back</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.direction.description">
+                <source>Used by: Links side by side, Links one below the other.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.direction.forward">
+                <source>Forward →</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.emphasis">
+                <source>Emphasis</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.emphasis.default">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.emphasis.description">
+                <source>Place: featured or with a line above. Call to action: featured. Used by: Place, Call to action.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.emphasis.featured">
+                <source>Featured</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.emphasis.ruled">
+                <source>Line above</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.alert">
+                <source>Alert</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.arrow-right">
+                <source>Arrow right</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.chevron-down">
+                <source>Chevron down</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.clock">
+                <source>Clock</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.close">
+                <source>Close</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.description">
+                <source>Used by: Link tile.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.download">
+                <source>Download</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.file">
+                <source>File</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.home">
+                <source>Home</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.mail">
+                <source>Mail</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.map-pin">
+                <source>Map pin</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.phone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.search">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.icon.sun">
+                <source>Sun</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.image">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.image.description">
+                <source>Used by: Teaser, Place, Person, Stage, Media list.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.label">
+                <source>Label</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.label.description">
+                <source>A short line above the title, for example "Day 1" or a date. Used by: Stage, Days.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.link">
+                <source>Link or file</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.link_label">
+                <source>Link text</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.link_label.description">
+                <source>Empty: "Read more". Used by: Call to action.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.meta">
+                <source>Meta line</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.meta.description">
+                <source>Teaser: date and time. Person: role. Stage: distance. Media list: short description. Days: time. Downloads: type and size.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.text.description">
+                <source>Used by: Teaser, Place, Person, Call to action, Stage, Days.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_entry.title.description">
+                <source>For a link or a download: its text.</source>
             </trans-unit>
             <trans-unit id="tx_kumanokodo_fact">
                 <source>Fact</source>
@@ -796,57 +709,6 @@
             </trans-unit>
             <trans-unit id="tx_kumanokodo_link.link.description">
                 <source>Leave empty to show the label as plain text.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item">
-                <source>List entry</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.active">
-                <source>Marked as current</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.direction">
-                <source>Arrow</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.direction.back">
-                <source>← Back</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.direction.description">
-                <source>Used by: Links side by side, Links one below the other.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.direction.forward">
-                <source>Forward →</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.image">
-                <source>Image</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.image.description">
-                <source>Used by: Media list, Page top: hero with list.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.label">
-                <source>Date</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.label.description">
-                <source>Used by: Days.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.link">
-                <source>Link or file</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.meta">
-                <source>Meta line</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.meta.description">
-                <source>Media list: short description. Days: time. Downloads: type and size. Used by: Media list, Page top: hero with list, Days, Downloads.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.text">
-                <source>Description</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.text.description">
-                <source>Used by: Days.</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.title">
-                <source>Title</source>
-            </trans-unit>
-            <trans-unit id="tx_kumanokodo_list_item.title.description">
-                <source>The text of a link, a download or a day's route.</source>
             </trans-unit>
             <trans-unit id="tx_kumanokodo_nav_column">
                 <source>Flyout column</source>

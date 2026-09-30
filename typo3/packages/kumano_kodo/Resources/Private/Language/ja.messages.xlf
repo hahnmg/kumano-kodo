@@ -78,6 +78,18 @@
                 <source>Subscribe</source>
                 <target>登録する</target>
             </trans-unit>
+            <trans-unit id="mapWalked">
+                <source>Walked section</source>
+                <target>歩いた区間</target>
+            </trans-unit>
+            <trans-unit id="mapEnd">
+                <source>End of the walk</source>
+                <target>ウォークの終点</target>
+            </trans-unit>
+            <trans-unit id="mapBoundary">
+                <source>Day boundary with overnight stay</source>
+                <target>宿泊を伴う日の区切り</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -55,6 +55,11 @@ return [
     ],
     'types' => [
         '0' => [
+            'showitem' => '--palette--;;mark',
+        ],
+    ],
+    'palettes' => [
+        'mark' => [
             'showitem' => 'label, x',
         ],
     ],

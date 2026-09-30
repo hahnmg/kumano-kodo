@@ -104,7 +104,15 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'name, --linebreak--, x, y, label_y, --linebreak--, anchor, boundary',
+            'showitem' => 'name, --palette--;;position, --palette--;;label, boundary',
+        ],
+    ],
+    'palettes' => [
+        'position' => [
+            'showitem' => 'x, y',
+        ],
+        'label' => [
+            'showitem' => 'label_y, anchor',
         ],
     ],
 ];

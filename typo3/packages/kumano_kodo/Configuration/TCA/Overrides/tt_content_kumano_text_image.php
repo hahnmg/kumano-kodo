@@ -14,37 +14,39 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-textpic',
         'group' => 'kumano_text',
     ],
-    '--palette--;;headers, bodytext, image, --linebreak--, tx_kumanokodo_link, tx_kumanokodo_link_label, tx_kumanokodo_variant, --div--;core.form.tabs:appearance, --palette--;;frames',
+    '--palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_plain, bodytext, tx_kumanokodo_links, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames, imageorient',
     [
         'columnsOverrides' => [
             'bodytext' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.bodytext.text',
                 'config' => [
-                    'enableRichtext' => false,
-                    'rows' => 4,
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'minimal',
                 ],
             ],
             'image' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.image.photo',
                 'config' => [
                     'maxitems' => 1,
                     'minitems' => 1,
                 ],
             ],
-            'tx_kumanokodo_variant' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.kumano_text_image.variant',
+            'tx_kumanokodo_links' => [
+                'config' => [
+                    'maxitems' => 1,
+                ],
+            ],
+            'imageorient' => [
                 'config' => [
                     'items' => [
                         [
-                            'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.left',
-                            'value' => 'left',
+                            'label' => 'kumano_kodo.backend_fields:tt_content.imageorient.left',
+                            'value' => 26,
                         ],
                         [
-                            'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.right',
-                            'value' => 'right',
+                            'label' => 'kumano_kodo.backend_fields:tt_content.imageorient.right',
+                            'value' => 25,
                         ],
                     ],
-                    'default' => 'left',
+                    'default' => 26,
                 ],
             ],
         ],

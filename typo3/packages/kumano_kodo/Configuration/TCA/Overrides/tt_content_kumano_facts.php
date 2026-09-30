@@ -14,7 +14,7 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-table',
         'group' => 'kumano_lists',
     ],
-    'tx_kumanokodo_variant, tx_kumanokodo_columns, --palette--;;headers, tx_kumanokodo_facts, --div--;core.form.tabs:appearance, --palette--;;frames',
+    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, tx_kumanokodo_facts, --div--;core.form.tabs:appearance, --palette--;;frames, tx_kumanokodo_columns',
     [
         'columnsOverrides' => [
             'tx_kumanokodo_variant' => [

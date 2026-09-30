@@ -30,4 +30,4 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
         ->setGroup('kumano_layout')
 );
 
-$GLOBALS['TCA']['tt_content']['types']['kumano_columns']['showitem'] = 'tx_kumanokodo_layout, tx_kumanokodo_align, --palette--;;headers, tx_kumanokodo_column_gap, --div--;core.form.tabs:appearance, --palette--;;frames';
+$GLOBALS['TCA']['tt_content']['types']['kumano_columns']['showitem'] = 'tx_kumanokodo_layout, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, --div--;core.form.tabs:appearance, --palette--;;frames, tx_kumanokodo_align';

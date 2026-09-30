@@ -236,13 +236,13 @@ final class BuildCommand extends Command
 
     /** Inline fields of content elements and pages, and the item table each holds. */
     private const ITEMS = [
-        'tx_kumanokodo_cards' => 'tx_kumanokodo_card',
-        'tx_kumanokodo_list_items' => 'tx_kumanokodo_list_item',
+        'tx_kumanokodo_entries' => 'tx_kumanokodo_entry',
+        'tx_kumanokodo_links' => 'tx_kumanokodo_entry',
         'tx_kumanokodo_facts' => 'tx_kumanokodo_fact',
         'tx_kumanokodo_questions' => 'tx_kumanokodo_question',
         'tx_kumanokodo_stations' => 'tx_kumanokodo_station',
         'tx_kumanokodo_day_marks' => 'tx_kumanokodo_day_mark',
-        'tx_kumanokodo_chips' => 'tx_kumanokodo_list_item',
+        'tx_kumanokodo_chips' => 'tx_kumanokodo_entry',
     ];
 
     // Nested records are written in steps: an inline child only attaches to a parent that is already saved.

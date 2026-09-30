@@ -14,7 +14,7 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-info',
         'group' => 'kumano_text',
     ],
-    'tx_kumanokodo_variant, header, subheader, bodytext, tx_kumanokodo_list_items, --div--;core.form.tabs:appearance, --palette--;;frames',
+    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_links, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
             'tx_kumanokodo_variant' => [
@@ -42,24 +42,16 @@ ExtensionManagementUtility::addRecordType(
                 ],
             ],
             'header' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.header.title',
-            ],
-            'subheader' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.subheader.eyebrow_source',
+                'description' => 'kumano_kodo.backend_fields:tt_content.header.description.quote',
             ],
             'bodytext' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.bodytext.text',
                 'config' => [
-                    'enableRichtext' => false,
-                    'rows' => 4,
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'minimal',
                 ],
             ],
-            'tx_kumanokodo_list_items' => [
+            'tx_kumanokodo_links' => [
                 'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:infobox',
-                'label' => 'kumano_kodo.backend_fields:tt_content.kumano_callout.links',
-                'config' => [
-                    'minitems' => 0,
-                ],
             ],
         ],
     ],

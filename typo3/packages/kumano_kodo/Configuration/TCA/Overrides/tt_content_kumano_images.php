@@ -14,7 +14,7 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-image',
         'group' => 'kumano_text',
     ],
-    'tx_kumanokodo_variant, --palette--;;headers, image, bodytext, tx_kumanokodo_rule, --div--;core.form.tabs:appearance, --palette--;;frames',
+    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, bodytext, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
             'tx_kumanokodo_variant' => [
@@ -24,6 +24,10 @@ ExtensionManagementUtility::addRecordType(
                         [
                             'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.figure',
                             'value' => 'figure',
+                        ],
+                        [
+                            'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.figure-plain',
+                            'value' => 'figure-plain',
                         ],
                         [
                             'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.gallery',
@@ -38,20 +42,16 @@ ExtensionManagementUtility::addRecordType(
                 ],
             ],
             'image' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.image.photos',
                 'config' => [
                     'minitems' => 1,
                 ],
             ],
             'bodytext' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.bodytext.caption',
                 'config' => [
-                    'enableRichtext' => false,
-                    'rows' => 4,
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'minimal',
                 ],
-            ],
-            'tx_kumanokodo_rule' => [
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:figure',
+                'description' => 'kumano_kodo.backend_fields:tt_content.bodytext.description.caption',
             ],
         ],
     ],

@@ -11,3 +11,8 @@ services:
     tags:
       - name: data.processor
         identifier: kumano-theme
+
+  KumanoKodo\Sitepackage\DataProcessing\ChapterNumberProcessor:
+    tags:
+      - name: data.processor
+        identifier: kumano-chapter-number

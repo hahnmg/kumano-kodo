@@ -14,27 +14,21 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-textpic',
         'group' => 'kumano_journal',
     ],
-    'tx_kumanokodo_number, subheader, header, bodytext, image, --div--;core.form.tabs:appearance, --palette--;;frames',
+    '--palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
-            'subheader' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.subheader.date',
-            ],
             'header' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.header.title',
                 'config' => [
                     'required' => true,
                 ],
             ],
             'bodytext' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.bodytext.text',
                 'config' => [
-                    'enableRichtext' => false,
-                    'rows' => 4,
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'minimal',
                 ],
             ],
             'image' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.image.photos',
                 'config' => [
                     'minitems' => 1,
                     'overrideChildTca' => [

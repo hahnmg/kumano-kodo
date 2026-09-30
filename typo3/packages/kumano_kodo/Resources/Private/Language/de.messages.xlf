@@ -78,6 +78,18 @@
                 <source>Subscribe</source>
                 <target>Abonnieren</target>
             </trans-unit>
+            <trans-unit id="mapWalked">
+                <source>Walked section</source>
+                <target>Gegangener Abschnitt</target>
+            </trans-unit>
+            <trans-unit id="mapEnd">
+                <source>End of the walk</source>
+                <target>Ende der Wanderung</target>
+            </trans-unit>
+            <trans-unit id="mapBoundary">
+                <source>Day boundary with overnight stay</source>
+                <target>Tagesgrenze mit Übernachtung</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -11,6 +11,7 @@ TCEFORM.tt_content {
   CType.keepItems = header,text,kumano_section,kumano_columns,kumano_text_image,kumano_images,kumano_cards,kumano_list,kumano_facts,kumano_callout,kumano_questions,kumano_page_top,kumano_chapter,kumano_route_map,kumano_newsletter
   subheader.label = LLL:kumano_kodo.backend_fields:subheader.eyebrow
   header_layout {
+    label = LLL:kumano_kodo.backend_fields:header_layout.label
     keepItems = 0,100
     altLabels.0 = LLL:kumano_kodo.backend_fields:header_layout.section
     altLabels.100 = LLL:kumano_kodo.backend_fields:header_layout.hidden

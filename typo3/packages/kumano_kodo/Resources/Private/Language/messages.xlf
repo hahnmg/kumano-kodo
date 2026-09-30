@@ -59,6 +59,15 @@
             <trans-unit id="subscribe">
                 <source>Subscribe</source>
             </trans-unit>
+            <trans-unit id="mapWalked">
+                <source>Walked section</source>
+            </trans-unit>
+            <trans-unit id="mapEnd">
+                <source>End of the walk</source>
+            </trans-unit>
+            <trans-unit id="mapBoundary">
+                <source>Day boundary with overnight stay</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

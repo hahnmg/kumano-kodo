@@ -14,7 +14,7 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-header',
         'group' => 'kumano_text',
     ],
-    'tx_kumanokodo_variant, image, subheader, tx_kumanokodo_heading, bodytext, tx_kumanokodo_meta, tx_kumanokodo_vertical, --linebreak--, tx_kumanokodo_link, tx_kumanokodo_link_label, tx_kumanokodo_list_items, tx_kumanokodo_link2, tx_kumanokodo_link2_label, tx_kumanokodo_facts',
+    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_meta, tx_kumanokodo_facts, tx_kumanokodo_links, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
             'tx_kumanokodo_variant' => [
@@ -26,8 +26,8 @@ ExtensionManagementUtility::addRecordType(
                             'value' => 'hero',
                         ],
                         [
-                            'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.hero_list',
-                            'value' => 'hero_list',
+                            'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.text',
+                            'value' => 'text',
                         ],
                         [
                             'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.opener',
@@ -37,53 +37,36 @@ ExtensionManagementUtility::addRecordType(
                     'default' => 'hero',
                 ],
             ],
-            'image' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.image.photo',
+            'header' => [
                 'config' => [
-                    'maxitems' => 1,
+                    'type' => 'text',
+                    'rows' => 2,
+                    'required' => true,
                 ],
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero',
-            ],
-            'subheader' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.subheader.kicker',
+                'description' => 'kumano_kodo.backend_fields:tt_content.header.description.lines',
             ],
             'bodytext' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.bodytext.text',
                 'config' => [
-                    'enableRichtext' => false,
-                    'rows' => 4,
+                    'enableRichtext' => true,
+                    'richtextConfiguration' => 'minimal',
+                ],
+            ],
+            'image' => [
+                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero',
+                'config' => [
+                    'maxitems' => 1,
                 ],
             ],
             'tx_kumanokodo_meta' => [
                 'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:opener',
             ],
-            'tx_kumanokodo_vertical' => [
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:opener',
-            ],
-            'tx_kumanokodo_link' => [
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero_list',
-                'label' => 'kumano_kodo.backend_fields:tt_content.kumano_page_top.button',
-            ],
-            'tx_kumanokodo_link_label' => [
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero_list',
-            ],
-            'tx_kumanokodo_list_items' => [
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero,hero_list',
-                'label' => 'kumano_kodo.backend_fields:tt_content.kumano_page_top.list',
-                'config' => [
-                    'minitems' => 0,
-                ],
-            ],
-            'tx_kumanokodo_link2' => [
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero_list',
-                'label' => 'kumano_kodo.backend_fields:tt_content.kumano_page_top.more',
-            ],
-            'tx_kumanokodo_link2_label' => [
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero_list',
-            ],
             'tx_kumanokodo_facts' => [
                 'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero',
-                'label' => 'kumano_kodo.backend_fields:tt_content.kumano_page_top.figures',
+                'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_facts.description.hero',
+            ],
+            'tx_kumanokodo_links' => [
+                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero,text',
+                'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_links.description.buttons',
             ],
         ],
     ],

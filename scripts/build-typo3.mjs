@@ -146,12 +146,19 @@ const buildPartials = async () => {
 const xml = (s) => String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
 // Frontend labels come from the same ui strings the stories use; English is the source, the others its targets.
+// The route map legend joins them: editors do not retype it per map.
+const labelsOf = (c) => ({
+    ...c.ui,
+    mapWalked: c.kumano.route.legend.walked,
+    mapEnd: c.kumano.route.legend.end,
+    mapBoundary: c.kumano.route.legend.boundary,
+});
 const buildLabels = async ({ content, locales }) => {
     const language = join(pkg, 'Resources/Private/Language');
     await mkdir(language, { recursive: true });
-    const source = content('en').ui;
+    const source = labelsOf(content('en'));
     for (const locale of Object.keys(locales)) {
-        const ui = content(locale).ui;
+        const ui = labelsOf(content(locale));
         const target = locale === 'en' ? '' : ` target-language="${locale}"`;
         const units = Object.keys(source)
             .map(
@@ -239,6 +246,14 @@ const buildSettings = async (themes) => {
             enum: Object.fromEntries(names.map((n) => [n, title(n)])),
         },
     );
+    add(
+        'brand.upright',
+        'appearance',
+        'string',
+        '熊野古道',
+        'Upright name',
+        'Set vertically beside the journal title; decorative, hidden from screen readers. Empty: none.',
+    );
     add('scheme', 'appearance', 'string', 'light', 'Colour mode on load', '', { enum: { light: 'Light', dark: 'Dark' } });
     add('schemeToggle', 'appearance', 'bool', true, 'Show the dark mode toggle');
     for (const scheme of ['light', 'dark']) {
@@ -280,6 +295,7 @@ const buildSettings = async (themes) => {
     px('radius.pill', 'spacing', 'Pill radius', (t) => t.radius.pill, 'Chips and badges. ');
     add('contact.phone', 'contact', 'string', '', 'Phone');
     add('contact.email', 'contact', 'string', '', 'Email');
+    add('newsletter.target', 'newsletter', 'page', 0, 'Form target', 'The page that receives the newsletter sign-up.');
 
     const categories = {
         appearance: 'Appearance',
@@ -289,6 +305,7 @@ const buildSettings = async (themes) => {
         fonts: 'Typefaces',
         spacing: 'Spacing and shape',
         contact: 'Contact in the top bar',
+        newsletter: 'Newsletter',
     };
     const q = (v) => (typeof v === 'string' ? `'${v.replaceAll("'", "''")}'` : String(v));
     const yaml = [
