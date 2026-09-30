@@ -71,6 +71,26 @@ router in `.storybook/preview.ts` opens the matching story when a path is clicke
 site the same paths are the page URLs. A test renders every page in every language and fails on any link that points
 nowhere.
 
+## TYPO3
+
+`typo3/` holds a TYPO3 v14 installation with the sitepackage (`packages/kumano_kodo`) and the trail journal as demo
+content (`packages/kumano_kodo_demo`). Why it is built this way: `docs/adr/2026-09-30-typo3-sitepackage.md`.
+
+```
+ddev start               # installs TYPO3 and imports the demo on the first start
+```
+
+The site answers at https://kumano-kodo.ddev.site in EN, `/de/` and `/ja/`; the backend at `/typo3` with user `admin`
+and the password the first start prints (also in `typo3/var/admin-password`). Theme, colour mode, dark mode toggle,
+site name and contact are site settings (Sites › Setup › Settings). Top bar and footer texts are content elements on
+the home page.
+
+| Command                                                 | Does                                                                    |
+| ------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `npm run build:typo3`                                   | CSS, scripts, generated partials and labels into the sitepackage        |
+| `npm run export:demo`                                   | Demo pages and texts from the Storybook content into `typo3/Build/Demo` |
+| `ddev exec -d /var/www/html/typo3 composer demo:export` | Rebuilds the demo records and exports them as the demo's `data.xml`     |
+
 ## Photos
 
 The 27 trip photos live as originals in `img/original` on the maintainer's machine only; that folder is not in git
