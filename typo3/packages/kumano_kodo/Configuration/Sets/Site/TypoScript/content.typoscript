@@ -16,4 +16,14 @@ lib.contentElement {
 }
 
 tt_content = CASE
+tt_content.key.field = CType
 tt_content.default =< lib.contentElement
+
+tt_content.kumano_table =< lib.contentElement
+tt_content.kumano_table.dataProcessing.20 = comma-separated-value
+tt_content.kumano_table.dataProcessing.20 {
+  fieldName = bodytext
+  fieldDelimiter = |
+  fieldEnclosure = "
+  as = table
+}

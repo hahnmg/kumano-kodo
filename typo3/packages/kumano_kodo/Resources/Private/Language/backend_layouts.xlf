@@ -23,6 +23,12 @@
             <trans-unit id="column.footerLegal">
                 <source>Footer: copyright and legal links (inherited)</source>
             </trans-unit>
+            <trans-unit id="layout.journal">
+                <source>Kumano Kodo: journal home without top bar</source>
+            </trans-unit>
+            <trans-unit id="layout.classic">
+                <source>Kumano Kodo: previous home (v3) without top bar</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
