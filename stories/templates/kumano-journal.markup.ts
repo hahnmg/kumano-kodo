@@ -52,7 +52,7 @@ export const kumanoJournal = ({ kumano, photos, home, ui, languages }: Content =
         section({
             content: stack(
                 [sectionHeading({ title: d.mapTitle, variant: 'with-aside', aside: home.map.aside }), routeMap(kumano.route)],
-                56,
+                'heading',
             ),
         }) +
         section({ tone: 'sunk', content: split(sectionHeading({ title: d.practicalTitle }), faqList(kumano.faq), 'heading-content') }) +

@@ -41,6 +41,9 @@
     --gutter: 56px;
     --section-lg: 128px;
     --section-sm: 96px;
+    --section-heading-gap: var(--space-56);
+    --section-element-gap: var(--space-96);
+    --column-element-gap: var(--space-40);
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 2px;
@@ -106,6 +109,9 @@
     --gutter: 42px;
     --section-lg: 96px;
     --section-sm: 72px;
+    --section-heading-gap: var(--space-56);
+    --section-element-gap: var(--space-96);
+    --column-element-gap: var(--space-40);
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 0px;
@@ -171,6 +177,9 @@
     --gutter: 57.6px;
     --section-lg: 160px;
     --section-sm: 120px;
+    --section-heading-gap: var(--space-56);
+    --section-element-gap: var(--space-96);
+    --column-element-gap: var(--space-40);
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 16px;
@@ -236,6 +245,9 @@
     --gutter: 56px;
     --section-lg: 112px;
     --section-sm: 88px;
+    --section-heading-gap: var(--space-56);
+    --section-element-gap: var(--space-96);
+    --column-element-gap: var(--space-40);
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 0px;

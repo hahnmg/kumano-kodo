@@ -85,13 +85,13 @@ export const routePage = (c: Content = content()): string => {
             section({ label: s.factsLabel, content: grid(guide.facts.map(iconFact), 4) }) +
             section({
                 space: 'flush-top',
-                content: stack([sectionHeading({ title: s.stages.title }), grid(teasers(dayTeasers(c)), 4)], 56),
+                content: stack([sectionHeading({ title: s.stages.title }), grid(teasers(dayTeasers(c)), 4)], 'heading'),
             }) +
             section({
                 id: 'map',
                 content: stack(
                     [sectionHeading({ title: home.map.title, variant: 'with-aside', aside: home.map.aside }), routeMap(kumano.route)],
-                    56,
+                    'heading',
                 ),
             }) +
             section({
@@ -104,10 +104,10 @@ export const routePage = (c: Content = content()): string => {
                             3,
                         ),
                     ],
-                    56,
+                    'heading',
                 ),
             }) +
-            section({ content: stack([sectionHeading({ title: s.plan }), grid(guide.tiles.map(linkTile), 2)], 40) }),
+            section({ content: stack([sectionHeading({ title: s.plan }), grid(guide.tiles.map(linkTile), 2)], 'heading') }),
     );
 };
 
@@ -123,7 +123,7 @@ export const daysPage = (c: Content = content()): string => {
         { image: c.photos['ryokan-room'], title: guide.entries[7].title, meta: kumano.days[3].date, href: paths.day(4) },
     ];
     const group = (id: string, title: string, items: TeaserCardProps[]) =>
-        section({ id, content: stack([sectionHeading({ title }), grid(teasers(items, 3), 4)], 40) });
+        section({ id, content: stack([sectionHeading({ title }), grid(teasers(items, 3), 4)], 'heading') });
     return chrome(
         c,
         0,
@@ -180,7 +180,7 @@ export const dayPage = (n: number, c: Content = content()): string => {
                             }),
                             richText({ html: paragraphs([home.draft.chapters[i], d.description]) }),
                         ],
-                        40,
+                        'column',
                     ),
                     stack(
                         [
@@ -200,7 +200,7 @@ export const dayPage = (n: number, c: Content = content()): string => {
                             }),
                             subNav({ title: site.days.groups.days, items: dayNav }),
                         ],
-                        40,
+                        'column',
                     ),
                     'content-sidebar',
                 ),
@@ -212,7 +212,7 @@ export const dayPage = (n: number, c: Content = content()): string => {
                         sectionHeading({ title: s.photos }),
                         gallery({ images: names.slice(1).map((name) => photos[name]), labels: lightbox(c) }),
                     ],
-                    40,
+                    'heading',
                 ),
             }) +
             section({ content: cluster(steps.filter(Boolean)) }),
@@ -236,7 +236,7 @@ export const placePage = (slug: PlaceSlug, c: Content = content()): string => {
                             richText({ html: paragraphs(p.text) }),
                             gallery({ images: p.photos.map((name) => photos[name]), labels: lightbox(c) }),
                         ],
-                        40,
+                        'column',
                     ),
                     stack([
                         link({ label: `${kumano.days[p.day - 1].date}: ${kumano.days[p.day - 1].route}`, href: paths.day(p.day) }),
@@ -278,7 +278,7 @@ export const practicalSubPage = (slug: PracticalSlug, c: Content = content()): s
                             richText({ html: paragraphs(page.text) }),
                             slug === 'maps' ? downloadList({ items: pages.detail.downloads }) : '',
                         ].filter(Boolean),
-                        40,
+                        'column',
                     ),
                     subNav({ title: site.practical.title, items: nav }),
                     'content-sidebar',
@@ -339,7 +339,7 @@ const textPage = (c: Content, active: Section, title: string, text: readonly str
     chrome(
         c,
         active,
-        header(c, title, trail) + section({ content: stack([richText({ html: paragraphs(text) }), after].filter(Boolean), 40) }),
+        header(c, title, trail) + section({ content: stack([richText({ html: paragraphs(text) }), after].filter(Boolean), 'elements') }),
     );
 
 export const kohechiPage = (c: Content = content()): string =>

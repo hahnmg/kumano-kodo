@@ -1,5 +1,5 @@
 {
-    "exportedAt": "2026-09-29T07:08:12.106Z",
+    "exportedAt": "2026-09-30T13:30:00.000Z",
     "file": "p6SK2xN5ZzBisOW1wKlrDm",
     "collections": {
         "Primitives": {
@@ -112,6 +112,36 @@
                     "type": "FLOAT",
                     "css": "--section-sm",
                     "v": { "Caramel": 96, "Forest": 72, "Ocean": 120, "Violet": 88 }
+                },
+                "layout/heading-gap": {
+                    "type": "FLOAT",
+                    "css": "--section-heading-gap",
+                    "v": {
+                        "Caramel": { "alias": "space/56" },
+                        "Forest": { "alias": "space/56" },
+                        "Ocean": { "alias": "space/56" },
+                        "Violet": { "alias": "space/56" }
+                    }
+                },
+                "layout/element-gap": {
+                    "type": "FLOAT",
+                    "css": "--section-element-gap",
+                    "v": {
+                        "Caramel": { "alias": "space/96" },
+                        "Forest": { "alias": "space/96" },
+                        "Ocean": { "alias": "space/96" },
+                        "Violet": { "alias": "space/96" }
+                    }
+                },
+                "layout/column-gap": {
+                    "type": "FLOAT",
+                    "css": "--column-element-gap",
+                    "v": {
+                        "Caramel": { "alias": "space/40" },
+                        "Forest": { "alias": "space/40" },
+                        "Ocean": { "alias": "space/40" },
+                        "Violet": { "alias": "space/40" }
+                    }
                 },
                 "layout/grid-gap": {
                     "type": "FLOAT",

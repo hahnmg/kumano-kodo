@@ -37,7 +37,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
                         'text-media',
                     ),
                 ],
-                64,
+                'heading',
             ),
         }) +
         section({ tone: 'sunk', content: highlight(home.crow) }) +
@@ -48,8 +48,8 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
         section({
             space: 'flush-top',
             content: stack(
-                [statRow(kumano.stats), stack([sectionHeading({ ...home.days, variant: 'with-aside' }), dayList(kumano.days)], 56)],
-                96,
+                [statRow(kumano.stats), stack([sectionHeading({ ...home.days, variant: 'with-aside' }), dayList(kumano.days)], 'heading')],
+                'elements',
             ),
         }) +
         section({
@@ -64,21 +64,30 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
             }),
         }) +
         section({
-            content: stack([sectionHeading({ ...home.map, variant: 'with-aside' }), routeMap(kumano.route)], 56),
+            content: stack([sectionHeading({ ...home.map, variant: 'with-aside' }), routeMap(kumano.route)], 'heading'),
         }) +
         section({
             space: 'flush-top',
             content: stack(
                 [
                     sectionHeading(home.places),
-                    split(placeCard(kumano.places[0]), placeCard(kumano.places[1]), 'wide-narrow'),
-                    split(
-                        placeCard(kumano.places[2]),
-                        figure({ images: [photos['land-crab'], photos['cedar-canopy']], caption: home.roadsideCaption, labels: lightbox }),
-                        'narrow-wide',
+                    stack(
+                        [
+                            split(placeCard(kumano.places[0]), placeCard(kumano.places[1]), 'wide-narrow'),
+                            split(
+                                placeCard(kumano.places[2]),
+                                figure({
+                                    images: [photos['land-crab'], photos['cedar-canopy']],
+                                    caption: home.roadsideCaption,
+                                    labels: lightbox,
+                                }),
+                                'narrow-wide',
+                            ),
+                        ],
+                        'elements',
                     ),
                 ],
-                64,
+                'heading',
             ),
         }) +
         section({

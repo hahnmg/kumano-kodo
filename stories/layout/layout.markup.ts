@@ -17,8 +17,12 @@ export const section = ({ content, tone = 'paper', space = 'default', label, ble
     `<section${attrs({ class: cx('section', `section--${tone}`, `section--space-${space}`, bleed && 'section--bleed'), 'aria-label': label, id })}>` +
     `<div class="section__inner">${content}</div></section>`;
 
-export const stack = (items: string[], gap: 16 | 24 | 40 | 56 | 64 | 96 = 40): string =>
-    `<div class="stack" style="--stack-gap: var(--space-${gap})">${items.join('')}</div>`;
+// Named gaps are the layout rule; numbers stay for spacing inside one component.
+const namedGaps = { heading: '--section-heading-gap', elements: '--section-element-gap', column: '--column-element-gap' } as const;
+export type StackGap = keyof typeof namedGaps | 16 | 24;
+
+export const stack = (items: string[], gap: StackGap = 'column'): string =>
+    `<div class="stack" style="--stack-gap: var(${typeof gap === 'number' ? `--space-${gap}` : namedGaps[gap]})">${items.join('')}</div>`;
 
 export const grid = (items: string[], columns: 2 | 3 | 4): string => `<div class="grid grid--${columns}">${items.join('')}</div>`;
 

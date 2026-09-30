@@ -30,6 +30,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-09-29 Sticky header: docked state with tighter padding, logo at 82 % and frosted background (prototype: fixed position on scroll)
 
 - [ ] Slider dots: only as many as reachable positions (three on desktop, five on phones)
+- [x] 2026-09-30 Spacing rule as variables: `layout/heading-gap` (56), `layout/element-gap` (96), `layout/column-gap` (40)
+- [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the page frames
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
 - [x] 2026-09-30 Components page in three sections (Atoms, Molecules, Organisms) as in Storybook, 160 apart
