@@ -25,6 +25,11 @@
     fill: inherit;
 }
 
+.logo__mark--modern {
+    width: auto;
+    height: 30px;
+}
+
 .logo__mark--modern,
 [data-theme]:not([data-theme='caramel']) .logo__mark--classic {
     display: none;

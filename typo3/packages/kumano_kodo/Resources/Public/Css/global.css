@@ -871,6 +871,11 @@ body {
     fill: inherit;
 }
 
+.logo__mark--modern {
+    width: auto;
+    height: 30px;
+}
+
 .logo__mark--modern,
 [data-theme]:not([data-theme='caramel']) .logo__mark--classic {
     display: none;
@@ -1288,7 +1293,9 @@ body {
 /* stories/organisms/site-header.css */
 /* Contents align with the page container; the bottom hairline still runs edge to edge. */
 .site-header {
-    --header-pad-block: var(--space-12);
+    --header-pad-rest: var(--space-12);
+    --header-pad-docked: var(--space-6);
+    --header-pad-block: var(--header-pad-rest);
 
     display: flex;
     gap: var(--space-24);
@@ -1309,11 +1316,17 @@ body {
 /* Docked at the top (src/scripts/sticky-header.ts): tighter and frosted. The bottom margin returns the height
    the padding gives up, so the page below does not jump. */
 .site-header[data-stuck] {
-    --header-pad-block: var(--space-6);
+    --header-pad-block: var(--header-pad-docked);
 
-    margin-bottom: calc(2 * (var(--space-12) - var(--space-6)));
+    margin-bottom: calc(2 * (var(--header-pad-rest) - var(--header-pad-docked)));
     background: color-mix(in srgb, var(--color-paper) 82%, transparent);
     backdrop-filter: blur(16px) saturate(1.2);
+}
+
+/* The modern logo is lower than the classic one, so the header gives it more room above and below. */
+[data-theme]:not([data-theme='caramel']) .site-header {
+    --header-pad-rest: var(--space-24);
+    --header-pad-docked: var(--space-12);
 }
 
 .site-header .logo {
