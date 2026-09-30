@@ -6,101 +6,58 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') or die();
 
-ExtensionManagementUtility::addTcaSelectItemGroup(
-    'tt_content',
-    'CType',
-    'kumano_kodo',
-    'kumano_kodo.backend_fields:tt_content.group.kumano_kodo',
-    'after:default'
-);
+ExtensionManagementUtility::addTcaSelectItemGroup('tt_content', 'CType', 'kumano_layout', 'kumano_kodo.backend_fields:tt_content.group.kumano_layout', 'after:default');
+ExtensionManagementUtility::addTcaSelectItemGroup('tt_content', 'CType', 'kumano_text', 'kumano_kodo.backend_fields:tt_content.group.kumano_text', 'after:default');
+ExtensionManagementUtility::addTcaSelectItemGroup('tt_content', 'CType', 'kumano_lists', 'kumano_kodo.backend_fields:tt_content.group.kumano_lists', 'after:default');
+ExtensionManagementUtility::addTcaSelectItemGroup('tt_content', 'CType', 'kumano_journal', 'kumano_kodo.backend_fields:tt_content.group.kumano_journal', 'after:default');
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', [
-    'tx_kumanokodo_links' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_links',
-        'config' => [
-            'type' => 'inline',
-            'foreign_table' => 'tx_kumanokodo_link',
-            'foreign_field' => 'uid_foreign',
-            'foreign_table_field' => 'tablename',
-            'foreign_match_fields' => [
-                'fieldname' => 'tx_kumanokodo_links',
-            ],
-            'appearance' => [
-                'useSortable' => true,
-                'expandSingle' => true,
-                'showAllLocalizationLink' => true,
-                'showPossibleLocalizationRecords' => true,
-            ],
-        ],
-    ],
-    'tx_kumanokodo_tone' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_tone',
+    'tx_kumanokodo_variant' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant',
+        'onChange' => 'reload',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
                 [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_tone.paper',
-                    'value' => 'paper',
-                ],
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_tone.sunk',
-                    'value' => 'sunk',
-                ],
-            ],
-            'default' => 'paper',
-        ],
-    ],
-    'tx_kumanokodo_space' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_space',
-        'config' => [
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => [
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_space.default',
+                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.default',
                     'value' => 'default',
-                ],
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_space.large',
-                    'value' => 'large',
-                ],
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_space.flush-top',
-                    'value' => 'flush-top',
-                ],
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_space.none',
-                    'value' => 'none',
                 ],
             ],
             'default' => 'default',
         ],
     ],
-    'tx_kumanokodo_bleed' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_bleed',
+    'tx_kumanokodo_columns' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns',
         'config' => [
-            'type' => 'check',
-            'renderType' => 'checkboxToggle',
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                [
+                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns.2',
+                    'value' => '2',
+                ],
+                [
+                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns.3',
+                    'value' => '3',
+                ],
+                [
+                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns.4',
+                    'value' => '4',
+                ],
+                [
+                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns.slider',
+                    'value' => 'slider',
+                ],
+            ],
+            'default' => '3',
         ],
     ],
-    'tx_kumanokodo_anchor' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_anchor',
-        'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_anchor.description',
+    'tx_kumanokodo_aside' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_aside',
         'config' => [
-            'type' => 'input',
-            'size' => 20,
-            'max' => 60,
-            'eval' => 'alphanum_x,nospace,lower',
-        ],
-    ],
-    'tx_kumanokodo_label' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_label',
-        'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_label.description',
-        'config' => [
-            'type' => 'input',
-            'size' => 40,
-            'max' => 255,
+            'type' => 'text',
+            'rows' => 2,
         ],
     ],
     'tx_kumanokodo_gap' => [
@@ -137,11 +94,23 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
             'default' => '40',
         ],
     ],
-    'tx_kumanokodo_aside' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_aside',
+    'tx_kumanokodo_anchor' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_anchor',
+        'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_anchor.description',
         'config' => [
-            'type' => 'text',
-            'rows' => 2,
+            'type' => 'input',
+            'size' => 20,
+            'max' => 60,
+            'eval' => 'alphanum_x,nospace,lower',
+        ],
+    ],
+    'tx_kumanokodo_label' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_label',
+        'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_label.description',
+        'config' => [
+            'type' => 'input',
+            'size' => 40,
+            'max' => 255,
         ],
     ],
     'tx_kumanokodo_heading' => [
@@ -151,42 +120,6 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
             'type' => 'text',
             'rows' => 2,
             'required' => true,
-        ],
-    ],
-    'tx_kumanokodo_items' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_items',
-        'config' => [
-            'type' => 'inline',
-            'foreign_table' => 'tx_kumanokodo_item',
-            'foreign_field' => 'uid_foreign',
-            'foreign_table_field' => 'tablename',
-            'foreign_match_fields' => [
-                'fieldname' => 'tx_kumanokodo_items',
-            ],
-            'appearance' => [
-                'useSortable' => true,
-                'expandSingle' => true,
-                'showAllLocalizationLink' => true,
-                'showPossibleLocalizationRecords' => true,
-            ],
-        ],
-    ],
-    'tx_kumanokodo_items2' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_items2',
-        'config' => [
-            'type' => 'inline',
-            'foreign_table' => 'tx_kumanokodo_item',
-            'foreign_field' => 'uid_foreign',
-            'foreign_table_field' => 'tablename',
-            'foreign_match_fields' => [
-                'fieldname' => 'tx_kumanokodo_items2',
-            ],
-            'appearance' => [
-                'useSortable' => true,
-                'expandSingle' => true,
-                'showAllLocalizationLink' => true,
-                'showPossibleLocalizationRecords' => true,
-            ],
         ],
     ],
     'tx_kumanokodo_link' => [
@@ -200,7 +133,7 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_link_label',
         'config' => [
             'type' => 'input',
-            'size' => 30,
+            'size' => 40,
             'max' => 255,
         ],
     ],
@@ -215,51 +148,15 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_link2_label',
         'config' => [
             'type' => 'input',
-            'size' => 30,
+            'size' => 40,
             'max' => 255,
-        ],
-    ],
-    'tx_kumanokodo_columns' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns',
-        'config' => [
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => [
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns.2',
-                    'value' => '2',
-                ],
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns.3',
-                    'value' => '3',
-                ],
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_columns.4',
-                    'value' => '4',
-                ],
-            ],
-            'default' => '3',
-        ],
-    ],
-    'tx_kumanokodo_variant' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant',
-        'config' => [
-            'type' => 'select',
-            'renderType' => 'selectSingle',
-            'items' => [
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.default',
-                    'value' => 'default',
-                ],
-            ],
-            'default' => 'default',
         ],
     ],
     'tx_kumanokodo_meta' => [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_meta',
         'config' => [
             'type' => 'input',
-            'size' => 50,
+            'size' => 40,
             'max' => 255,
         ],
     ],
@@ -300,34 +197,32 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_legend_walked',
         'config' => [
             'type' => 'input',
-            'size' => 30,
+            'size' => 40,
+            'max' => 255,
         ],
     ],
     'tx_kumanokodo_legend_end' => [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_legend_end',
         'config' => [
             'type' => 'input',
-            'size' => 30,
+            'size' => 40,
+            'max' => 255,
         ],
     ],
     'tx_kumanokodo_legend_boundary' => [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_legend_boundary',
         'config' => [
             'type' => 'input',
-            'size' => 30,
+            'size' => 40,
+            'max' => 255,
         ],
     ],
     'tx_kumanokodo_layout' => [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_layout',
-        'onChange' => 'reload',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                [
-                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_layout.stack',
-                    'value' => 'stack',
-                ],
                 [
                     'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_layout.even',
                     'value' => 'even',
@@ -353,12 +248,11 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
                     'value' => 'narrow-wide',
                 ],
             ],
-            'default' => 'stack',
+            'default' => 'even',
         ],
     ],
     'tx_kumanokodo_align' => [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_align',
-        'displayCond' => 'FIELD:tx_kumanokodo_layout:!=:stack',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
@@ -413,63 +307,120 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
             'default' => '40',
         ],
     ],
-    'tx_kumanokodo_column_a' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_column_a',
+    'tx_kumanokodo_cards' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_cards',
         'config' => [
             'type' => 'inline',
-            'foreign_table' => 'tt_content',
-            'foreign_field' => 'tx_kumanokodo_parent',
+            'foreign_table' => 'tx_kumanokodo_card',
+            'foreign_field' => 'uid_foreign',
+            'foreign_table_field' => 'tablename',
             'foreign_match_fields' => [
-                'tx_kumanokodo_column' => 'a',
+                'fieldname' => 'tx_kumanokodo_cards',
             ],
-            'foreign_sortby' => 'sorting',
             'appearance' => [
                 'useSortable' => true,
-                'collapseAll' => true,
+                'expandSingle' => true,
                 'showAllLocalizationLink' => true,
                 'showPossibleLocalizationRecords' => true,
-                'levelLinksPosition' => 'both',
             ],
+            'minitems' => 1,
         ],
     ],
-    'tx_kumanokodo_column_b' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_column_b',
+    'tx_kumanokodo_list_items' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_list_items',
         'config' => [
             'type' => 'inline',
-            'foreign_table' => 'tt_content',
-            'foreign_field' => 'tx_kumanokodo_parent',
+            'foreign_table' => 'tx_kumanokodo_list_item',
+            'foreign_field' => 'uid_foreign',
+            'foreign_table_field' => 'tablename',
             'foreign_match_fields' => [
-                'tx_kumanokodo_column' => 'b',
+                'fieldname' => 'tx_kumanokodo_list_items',
             ],
-            'foreign_sortby' => 'sorting',
             'appearance' => [
                 'useSortable' => true,
-                'collapseAll' => true,
+                'expandSingle' => true,
                 'showAllLocalizationLink' => true,
                 'showPossibleLocalizationRecords' => true,
-                'levelLinksPosition' => 'both',
+            ],
+            'minitems' => 1,
+        ],
+    ],
+    'tx_kumanokodo_facts' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_facts',
+        'config' => [
+            'type' => 'inline',
+            'foreign_table' => 'tx_kumanokodo_fact',
+            'foreign_field' => 'uid_foreign',
+            'foreign_table_field' => 'tablename',
+            'foreign_match_fields' => [
+                'fieldname' => 'tx_kumanokodo_facts',
+            ],
+            'appearance' => [
+                'useSortable' => true,
+                'expandSingle' => true,
+                'showAllLocalizationLink' => true,
+                'showPossibleLocalizationRecords' => true,
             ],
         ],
-        'displayCond' => 'FIELD:tx_kumanokodo_layout:!=:stack',
     ],
-    'tx_kumanokodo_parent' => [
+    'tx_kumanokodo_questions' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_questions',
         'config' => [
-            'type' => 'number',
-            'default' => 0,
+            'type' => 'inline',
+            'foreign_table' => 'tx_kumanokodo_question',
+            'foreign_field' => 'uid_foreign',
+            'foreign_table_field' => 'tablename',
+            'foreign_match_fields' => [
+                'fieldname' => 'tx_kumanokodo_questions',
+            ],
+            'appearance' => [
+                'useSortable' => true,
+                'expandSingle' => true,
+                'showAllLocalizationLink' => true,
+                'showPossibleLocalizationRecords' => true,
+            ],
+            'minitems' => 1,
         ],
     ],
-    'tx_kumanokodo_column' => [
+    'tx_kumanokodo_stations' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_stations',
         'config' => [
-            'type' => 'input',
-            'size' => 5,
+            'type' => 'inline',
+            'foreign_table' => 'tx_kumanokodo_station',
+            'foreign_field' => 'uid_foreign',
+            'foreign_table_field' => 'tablename',
+            'foreign_match_fields' => [
+                'fieldname' => 'tx_kumanokodo_stations',
+            ],
+            'appearance' => [
+                'useSortable' => true,
+                'expandSingle' => true,
+                'showAllLocalizationLink' => true,
+                'showPossibleLocalizationRecords' => true,
+            ],
+            'minitems' => 2,
+        ],
+    ],
+    'tx_kumanokodo_day_marks' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_day_marks',
+        'config' => [
+            'type' => 'inline',
+            'foreign_table' => 'tx_kumanokodo_day_mark',
+            'foreign_field' => 'uid_foreign',
+            'foreign_table_field' => 'tablename',
+            'foreign_match_fields' => [
+                'fieldname' => 'tx_kumanokodo_day_marks',
+            ],
+            'appearance' => [
+                'useSortable' => true,
+                'expandSingle' => true,
+                'showAllLocalizationLink' => true,
+                'showPossibleLocalizationRecords' => true,
+            ],
         ],
     ],
 ]);
 
-$GLOBALS['TCA']['tt_content']['palettes']['kumanokodo_section'] = [
-    'label' => 'kumano_kodo.backend_fields:tt_content.palettes.section',
-    'showitem' => 'tx_kumanokodo_tone, tx_kumanokodo_space, tx_kumanokodo_bleed, --linebreak--, tx_kumanokodo_anchor, tx_kumanokodo_label',
-];
-
-// Core text and header render as sections too.
-ExtensionManagementUtility::addToAllTCAtypes('tt_content', '--div--;kumano_kodo.backend_fields:tabs.section, --palette--;;kumanokodo_section', 'text,header', 'after:bodytext');
+// The heading palette carries the text beside it and the space below it; the frame palette the anchor.
+ExtensionManagementUtility::addFieldsToPalette('tt_content', 'headers', '--linebreak--, tx_kumanokodo_aside, tx_kumanokodo_gap', 'after:subheader');
+ExtensionManagementUtility::addFieldsToPalette('tt_content', 'frames', '--linebreak--, tx_kumanokodo_anchor, tx_kumanokodo_label', 'after:space_after_class');

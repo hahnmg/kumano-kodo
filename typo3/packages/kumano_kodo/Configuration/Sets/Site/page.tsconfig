@@ -1,8 +1,53 @@
 @import './BackendLayouts/*.tsconfig'
 
-TCEFORM.tt_content.CType.keepItems = header,text,kumano_link_list,kumano_notice,kumano_section,kumano_journal_opener,kumano_chapter,kumano_bleed_photo,kumano_highlight,kumano_route_map,kumano_faq,kumano_newsletter,kumano_hero_split,kumano_hero,kumano_icon_facts,kumano_teasers,kumano_cta_cards,kumano_link_tiles,kumano_figure,kumano_gallery,kumano_fact_list,kumano_info_box,kumano_sub_nav,kumano_downloads,kumano_links,kumano_quote,kumano_stats,kumano_slider,kumano_day_list,kumano_place_card,kumano_persons,kumano_media_list,kumano_table,kumano_text_media,kumano_section_heading
 
 # The logo on the root page appears on every page, so saving the root page clears them all.
 [traverse(page, "is_siteroot") == "1"]
   TCEMAIN.clearCacheCmd = pages
 [END]
+
+# The catalogue and the core fields, limited to what the design system has.
+TCEFORM.tt_content {
+  CType.keepItems = header,text,kumano_section,kumano_columns,kumano_text_image,kumano_images,kumano_cards,kumano_list,kumano_facts,kumano_callout,kumano_questions,kumano_page_top,kumano_chapter,kumano_route_map,kumano_newsletter
+  subheader.label = LLL:kumano_kodo.backend_fields:subheader.eyebrow
+  header_layout {
+    keepItems = 0,100
+    altLabels.0 = LLL:kumano_kodo.backend_fields:header_layout.section
+    altLabels.100 = LLL:kumano_kodo.backend_fields:header_layout.hidden
+  }
+  frame_class {
+    label = LLL:kumano_kodo.backend_fields:frame.label
+    keepItems = default
+    altLabels.default = LLL:kumano_kodo.backend_fields:frame.paper
+    addItems.sunk = LLL:kumano_kodo.backend_fields:frame.sunk
+  }
+  space_before_class {
+    label = LLL:kumano_kodo.backend_fields:space.label
+    keepItems = large
+    addItems.flush-top = LLL:kumano_kodo.backend_fields:space.flush-top
+    addItems.none = LLL:kumano_kodo.backend_fields:space.none
+  }
+  space_after_class.disabled = 1
+  layout.disabled = 1
+  header_position.disabled = 1
+  header_link.disabled = 1
+  date.disabled = 1
+  sectionIndex.disabled = 1
+  linkToTop.disabled = 1
+  categories.disabled = 1
+}
+
+mod.web_layout.tt_content.preview {
+    kumano_text_image = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoTextImage.fluid.html
+    kumano_images = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoImages.fluid.html
+    kumano_cards = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoCards.fluid.html
+    kumano_list = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoList.fluid.html
+    kumano_facts = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoFacts.fluid.html
+    kumano_callout = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoCallout.fluid.html
+    kumano_questions = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoQuestions.fluid.html
+    kumano_page_top = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoPageTop.fluid.html
+    kumano_chapter = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoChapter.fluid.html
+    kumano_route_map = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoRouteMap.fluid.html
+    kumano_newsletter = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoNewsletter.fluid.html
+}
+

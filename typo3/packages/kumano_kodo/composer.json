@@ -5,6 +5,7 @@
     "license": "proprietary",
     "version": "0.1.0",
     "require": {
+        "b13/container": "^4.1",
         "typo3/cms-core": "^14.3",
         "typo3/cms-fluid": "^14.3",
         "typo3/cms-frontend": "^14.3",

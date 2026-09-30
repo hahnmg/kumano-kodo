@@ -36,7 +36,7 @@ mod.web_layout.BackendLayouts {
                 identifier = footer
                 colspan = 2
                 slideMode = slide
-                allowedContentTypes = text, kumano_link_list
+                allowedContentTypes = text, kumano_list
               }
             }
           }
@@ -48,7 +48,7 @@ mod.web_layout.BackendLayouts {
                 identifier = footerNotice
                 colspan = 1
                 slideMode = slide
-                allowedContentTypes = kumano_notice
+                allowedContentTypes = kumano_callout
               }
               2 {
                 name = LLL:kumano_kodo.backend_layouts:column.footerLegal
@@ -56,7 +56,7 @@ mod.web_layout.BackendLayouts {
                 identifier = footerLegal
                 colspan = 1
                 slideMode = slide
-                allowedContentTypes = kumano_link_list
+                allowedContentTypes = kumano_list
               }
             }
           }

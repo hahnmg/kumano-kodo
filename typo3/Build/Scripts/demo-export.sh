@@ -10,7 +10,9 @@ root=$($typo3 site:show kumano-kodo | sed -n 's/.*rootPageId: *\([0-9]*\).*/\1/p
 
 # Each own table needs its --table; images and alt texts only come along as related sys_file(_metadata).
 $typo3 impexp:export data --type=xml --pid="$root" --levels=999 \
-    --table=tt_content --table=tx_kumanokodo_link --table=tx_kumanokodo_nav_column --table=tx_kumanokodo_item --table=sys_file_reference \
+    --table=tt_content --table=tx_kumanokodo_link --table=tx_kumanokodo_nav_column \
+    --table=tx_kumanokodo_card --table=tx_kumanokodo_list_item --table=tx_kumanokodo_fact --table=tx_kumanokodo_question \
+    --table=tx_kumanokodo_station --table=tx_kumanokodo_day_mark --table=sys_file_reference \
     --include-related=sys_file --include-related=sys_file_metadata \
     --save-files-outside-export-file --title="Kumano Kodo demo" --dependency=kumano_kodo
 

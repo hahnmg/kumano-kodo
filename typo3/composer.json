@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "b13/container": "^4.1",
         "kumano-kodo/demo": "@dev",
         "kumano-kodo/sitepackage": "@dev",
         "typo3/cms-backend": "^14.3",

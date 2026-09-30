@@ -19,11 +19,9 @@ tt_content = CASE
 tt_content.key.field = CType
 tt_content.default =< lib.contentElement
 
-tt_content.kumano_table =< lib.contentElement
-tt_content.kumano_table.dataProcessing.20 = comma-separated-value
-tt_content.kumano_table.dataProcessing.20 {
-  fieldName = bodytext
-  fieldDelimiter = |
-  fieldEnclosure = "
-  as = table
-}
+# Containers get their columns as content areas (EXT:container), rendered like the page's own areas.
+tt_content.kumano_section < lib.contentElement
+tt_content.kumano_section.dataProcessing.20 = container-content-area
+tt_content.kumano_section.dataProcessing.20.as = columns
+
+tt_content.kumano_columns < tt_content.kumano_section

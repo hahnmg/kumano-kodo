@@ -93,6 +93,7 @@ final class BuildCommand extends Command
                 $elements += $this->createElement($element, $uid, (int)($element['colPos'] ?? 0));
             }
         }
+        $this->applyOrder();
         // This instance holds the records the export ships, so its own setup must not import them again.
         $this->registry->set('extensionDataImport', 'kumano_kodo_demo:Initialisation/dataImported', 1);
         $this->registry->set('siteConfigImport', self::SITE, 1);
@@ -233,19 +234,30 @@ final class BuildCommand extends Command
         }
     }
 
-    // Nested inline records are written in steps: they only attach to a parent that is already saved.
-    // Returns the number of elements created, children included.
-    private function createElement(array $element, int $pid, int $colPos, int $parent = 0, string $column = ''): int
+    /** Inline fields of content elements and pages, and the item table each holds. */
+    private const ITEMS = [
+        'tx_kumanokodo_cards' => 'tx_kumanokodo_card',
+        'tx_kumanokodo_list_items' => 'tx_kumanokodo_list_item',
+        'tx_kumanokodo_facts' => 'tx_kumanokodo_fact',
+        'tx_kumanokodo_questions' => 'tx_kumanokodo_question',
+        'tx_kumanokodo_stations' => 'tx_kumanokodo_station',
+        'tx_kumanokodo_day_marks' => 'tx_kumanokodo_day_mark',
+        'tx_kumanokodo_chips' => 'tx_kumanokodo_list_item',
+    ];
+
+    // Nested records are written in steps: an inline child only attaches to a parent that is already saved.
+    // Returns the number of elements created, children of containers included.
+    private function createElement(array $element, int $pid, int $colPos, int $container = 0): int
     {
         $fields = ['pid' => $pid, 'colPos' => $colPos, 'CType' => $element['type'], 'hidden' => 0];
         foreach ($element['fields'] ?? [] as $field => $value) {
-            $fields[$field] = $this->value($value, 'en');
+            $fields[$field] = $field === 'tx_kumanokodo_link' || $field === 'tx_kumanokodo_link2' ? $this->link((string)$value) : $this->value($value, 'en');
         }
-        if ($parent > 0) {
-            $fields += ['tx_kumanokodo_parent' => $parent, 'tx_kumanokodo_column' => $column];
+        if ($container > 0) {
+            $fields['tx_container_parent'] = $container;
         }
         // A positive pid inserts at the top, so later elements go after the last one created there.
-        $slot = $pid . ':' . $colPos . ':' . $parent . ':' . $column;
+        $slot = $pid . ':' . $colPos . ':' . $container;
         if (isset($this->lastContent[$slot])) {
             $fields['pid'] = -$this->lastContent[$slot];
         }
@@ -255,29 +267,18 @@ final class BuildCommand extends Command
         }
         $uid = $this->create('tt_content', $fields, $data);
         $this->lastContent[$slot] = $uid;
+        $this->order[$slot][] = $uid;
 
-        foreach (['items' => 'tx_kumanokodo_items', 'items2' => 'tx_kumanokodo_items2'] as $key => $field) {
-            if ($element[$key] ?? []) {
-                $this->addItems('tt_content', $uid, $field, $element[$key], $pid);
-            }
-        }
-        if ($element['links'] ?? []) {
-            $links = [];
-            foreach ($element['links'] as $l => $link) {
-                $links['NEWlink' . $l] = ['pid' => $pid, 'label' => $link['label']['en'], 'link' => $this->link($link['link'])];
-            }
-            $this->process(['tx_kumanokodo_link' => $links, 'tt_content' => [$uid => ['tx_kumanokodo_links' => implode(',', array_keys($links))]]]);
+        foreach ($element['items'] ?? [] as $field => $items) {
+            $this->addItems('tt_content', $uid, $field, $items, $pid);
         }
         $count = 1;
-        foreach ($element['children'] ?? [] as $childColumn => $children) {
-            $uids = [];
+        foreach ($element['children'] ?? [] as $childColPos => $children) {
             foreach ($children as $child) {
-                $count += $this->createElement($child, $pid, $colPos, $uid, $childColumn);
-                $uids[] = $this->lastContent[$pid . ':' . $colPos . ':' . $uid . ':' . $childColumn];
+                $count += $this->createElement($child, $pid, (int)$childColPos, $uid);
             }
-            $this->process(['tt_content' => [$uid => ['tx_kumanokodo_column_' . $childColumn => implode(',', $uids)]]]);
         }
-        if ($parent === 0) {
+        if ($container === 0) {
             foreach (self::LANGUAGES as $code => $language) {
                 $this->translateElement($element, $uid, $language, $code);
             }
@@ -285,6 +286,7 @@ final class BuildCommand extends Command
         return $count;
     }
 
+    // Translating a container translates its children (EXT:container); their texts are set afterwards.
     private function translateElement(array $element, int $uid, int $language, string $code): void
     {
         $fields = ['hidden' => 0];
@@ -297,28 +299,19 @@ final class BuildCommand extends Command
         if ($element['image'] ?? []) {
             $this->syncInline('tt_content', $uid, 'image', $language);
         }
-        foreach (['items' => 'tx_kumanokodo_items', 'items2' => 'tx_kumanokodo_items2'] as $key => $field) {
-            if ($element[$key] ?? []) {
-                $this->translateItems('tt_content', $uid, $field, $element[$key], $language, $code);
-            }
+        foreach ($element['items'] ?? [] as $field => $items) {
+            $this->translateItems('tt_content', $uid, $field, $items, $language, $code);
         }
-        if ($element['links'] ?? []) {
-            $this->syncInline('tt_content', $uid, 'tx_kumanokodo_links', $language);
-            foreach ($this->children('tx_kumanokodo_link', 'uid_foreign', $uid, 'tt_content') as $l => $linkUid) {
-                $this->process(['tx_kumanokodo_link' => [$this->translationOf('tx_kumanokodo_link', $linkUid, $language) => ['label' => $element['links'][$l]['label'][$code], 'hidden' => 0]]]);
-            }
-        }
-        foreach ($element['children'] ?? [] as $column => $children) {
-            $this->syncInline('tt_content', $uid, 'tx_kumanokodo_column_' . $column, $language);
-            foreach ($this->childElements($uid, $column) as $c => $childUid) {
+        foreach ($element['children'] ?? [] as $colPos => $children) {
+            foreach ($this->childElements($uid, (int)$colPos) as $c => $childUid) {
                 $this->translateElement($children[$c], $childUid, $language, $code);
             }
         }
     }
 
-    /** Items of one inline field; their images are attached once the items are saved. */
     private function addItems(string $table, int $uid, string $field, array $items, int $pid): void
     {
+        $itemTable = self::ITEMS[$field];
         $records = [];
         foreach ($items as $i => $item) {
             $record = ['pid' => $pid, 'hidden' => 0];
@@ -329,11 +322,11 @@ final class BuildCommand extends Command
             }
             $records['NEWitem' . $i] = $record;
         }
-        $this->process(['tx_kumanokodo_item' => $records, $table => [$uid => [$field => implode(',', array_keys($records))]]]);
-        foreach ($this->children('tx_kumanokodo_item', 'uid_foreign', $uid, $table, $field) as $i => $itemUid) {
+        $this->process([$itemTable => $records, $table => [$uid => [$field => implode(',', array_keys($records))]]]);
+        foreach ($this->children($itemTable, 'uid_foreign', $uid, $table, $field) as $i => $itemUid) {
             if (($items[$i]['image'] ?? '') !== '') {
                 $data = [];
-                $data['tx_kumanokodo_item'][$itemUid]['image'] = $this->references($data, [$items[$i]['image']], $pid);
+                $data[$itemTable][$itemUid]['image'] = $this->references($data, [$items[$i]['image']], $pid);
                 $this->process($data);
             }
         }
@@ -346,41 +339,43 @@ final class BuildCommand extends Command
 
     private function translateItems(string $table, int $uid, string $field, array $items, int $language, string $code): void
     {
+        $itemTable = self::ITEMS[$field];
         $this->syncInline($table, $uid, $field, $language);
-        foreach ($this->children('tx_kumanokodo_item', 'uid_foreign', $uid, $table, $field) as $i => $itemUid) {
+        foreach ($this->children($itemTable, 'uid_foreign', $uid, $table, $field) as $i => $itemUid) {
             $fields = ['hidden' => 0];
             foreach ($items[$i] as $name => $value) {
                 if (is_array($value)) {
                     $fields[$name] = $value[$code];
                 }
             }
-            $this->process(['tx_kumanokodo_item' => [$this->translationOf('tx_kumanokodo_item', $itemUid, $language) => $fields]]);
+            $this->process([$itemTable => [$this->translationOf($itemTable, $itemUid, $language) => $fields]]);
             if (($items[$i]['image'] ?? '') !== '') {
-                $this->syncInline('tx_kumanokodo_item', $itemUid, 'image', $language);
+                $this->syncInline($itemTable, $itemUid, 'image', $language);
             }
         }
     }
 
-    /** Adds file references for photo slugs to a datamap and returns their placeholders. */
-    private function references(array &$data, array $slugs, int $pid): string
+    // A photo is a slug, or a slug with reference fields such as the chapter's width and step.
+    private function references(array &$data, array $photos, int $pid): string
     {
         $ids = [];
-        foreach ($slugs as $slug) {
+        foreach ($photos as $photo) {
+            $photo = is_array($photo) ? $photo : ['photo' => $photo];
             $id = 'NEWref' . count($data['sys_file_reference'] ?? []);
-            $data['sys_file_reference'][$id] = ['pid' => $pid, 'uid_local' => $this->photos[$slug]];
+            $data['sys_file_reference'][$id] = ['pid' => $pid, 'uid_local' => $this->photos[$photo['photo']]] + array_diff_key($photo, ['photo' => 1]);
             $ids[] = $id;
         }
         return implode(',', $ids);
     }
 
-    /** @return list<int> the section's children in one column, in their order */
-    private function childElements(int $parent, string $column): array
+    /** @return list<int> a container's children in one column, in their order */
+    private function childElements(int $container, int $colPos): array
     {
         $query = $this->connectionPool->getQueryBuilderForTable('tt_content');
         $query->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
         return array_map('intval', $query->select('uid')->from('tt_content')->where(
-            $query->expr()->eq('tx_kumanokodo_parent', $query->createNamedParameter($parent, \Doctrine\DBAL\ParameterType::INTEGER)),
-            $query->expr()->eq('tx_kumanokodo_column', $query->createNamedParameter($column)),
+            $query->expr()->eq('tx_container_parent', $query->createNamedParameter($container, \Doctrine\DBAL\ParameterType::INTEGER)),
+            $query->expr()->eq('colPos', $query->createNamedParameter($colPos, \Doctrine\DBAL\ParameterType::INTEGER)),
             $query->expr()->eq('sys_language_uid', 0),
         )->orderBy('sorting')->executeQuery()->fetchFirstColumn());
     }
@@ -390,7 +385,23 @@ final class BuildCommand extends Command
         return is_array($value) ? $value[$code] : $value;
     }
 
-    /** @var array<string, int> "pid:colPos:parent:column" => uid of the last element created there */
+    /** @var array<string, list<int>> "pid:colPos:container" => elements in the order of the definition */
+    private array $order = [];
+
+    // Adding children to a container moves elements around; the definition's order is set once at the end.
+    private function applyOrder(): void
+    {
+        $connection = $this->connectionPool->getConnectionForTable('tt_content');
+        foreach ($this->order as $uids) {
+            foreach ($uids as $position => $uid) {
+                $sorting = ($position + 1) * 256;
+                $connection->update('tt_content', ['sorting' => $sorting], ['uid' => $uid]);
+                $connection->update('tt_content', ['sorting' => $sorting], ['l18n_parent' => $uid]);
+            }
+        }
+    }
+
+    /** @var array<string, int> "pid:colPos:container" => uid of the last element created there */
     private array $lastContent = [];
 
     private function writeSite(array $site): void

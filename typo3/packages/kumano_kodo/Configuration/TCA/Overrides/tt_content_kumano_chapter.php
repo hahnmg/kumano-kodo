@@ -12,9 +12,9 @@ ExtensionManagementUtility::addRecordType(
         'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_chapter.description',
         'value' => 'kumano_chapter',
         'icon' => 'content-textpic',
-        'group' => 'kumano_kodo',
+        'group' => 'kumano_journal',
     ],
-    'tx_kumanokodo_number, subheader, header, bodytext, tx_kumanokodo_items',
+    'tx_kumanokodo_number, subheader, header, bodytext, image, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
             'subheader' => [
@@ -22,6 +22,9 @@ ExtensionManagementUtility::addRecordType(
             ],
             'header' => [
                 'label' => 'kumano_kodo.backend_fields:tt_content.header.title',
+                'config' => [
+                    'required' => true,
+                ],
             ],
             'bodytext' => [
                 'label' => 'kumano_kodo.backend_fields:tt_content.bodytext.text',
@@ -30,23 +33,18 @@ ExtensionManagementUtility::addRecordType(
                     'rows' => 4,
                 ],
             ],
-            'tx_kumanokodo_items' => [
+            'image' => [
+                'label' => 'kumano_kodo.backend_fields:tt_content.image.photos',
                 'config' => [
+                    'minitems' => 1,
                     'overrideChildTca' => [
                         'types' => [
-                            '0' => [
-                                'showitem' => 'image, --linebreak--, span, shift',
-                            ],
-                        ],
-                        'columns' => [
-                            'image' => [
-                                'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_item.kumano_chapter.image',
+                            '2' => [
+                                'showitem' => '--palette--;;imageoverlayPalette, --palette--;;kumanokodo_chapter_photo, --palette--;;filePalette',
                             ],
                         ],
                     ],
-                    'minitems' => 1,
                 ],
-                'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_items.kumano_chapter',
             ],
         ],
     ],

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Writes the TYPO3 demo from the Storybook content (en, de, ja): every page of stories/templates/site-pages.markup.ts,
-// the journal home and the previous home, as content elements. `typo3 kumano:demo:build` turns it into records.
+// Writes the TYPO3 demo from the Storybook content (en, de, ja): every site page, the journal home, the previous home
+// and a page of the remaining components. `typo3 kumano:demo:build` turns it into records.
 
 import { writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -47,11 +47,14 @@ const photos = Object.fromEntries(
     ]),
 );
 
-// ---------- content element builders; field names are the TCA columns ----------
+// ---------- elements; field names are the TCA columns ----------
 const el = (type, fields = {}, extra = {}) => ({ type, fields, ...extra });
 const list = (pickList, map) => pickList(c.en).map((_, i) => map((x) => pickList(x)[i], i));
-const section = (fields, a, b, extra = {}) => el('kumano_section', fields, { children: { a, ...(b ? { b } : {}) }, ...extra });
+const section = (fields, children) => el('kumano_section', fields, { children: { 201: children } });
+const columns = (layout, fields, first, second) =>
+    el('kumano_columns', { tx_kumanokodo_layout: layout, ...fields }, { children: { 201: first, 202: second } });
 const text = (html, fields = {}) => el('text', { bodytext: html, ...fields });
+const sunk = { frame_class: 'sunk' };
 
 const heading = (pick, gap) => ({
     header: t((x) => pick(x).title),
@@ -60,15 +63,35 @@ const heading = (pick, gap) => ({
     ...(gap ? { tx_kumanokodo_gap: String(gap) } : {}),
 });
 
-const teaserItems = (pickList) =>
+const cards = (style, shownAs, fields, items) =>
+    el(
+        'kumano_cards',
+        { tx_kumanokodo_variant: style, tx_kumanokodo_columns: String(shownAs), ...fields },
+        { items: { tx_kumanokodo_cards: items } },
+    );
+const listEl = (variant, fields, items) =>
+    el('kumano_list', { tx_kumanokodo_variant: variant, ...fields }, { items: { tx_kumanokodo_list_items: items } });
+const facts = (variant, fields, items) =>
+    el('kumano_facts', { tx_kumanokodo_variant: variant, ...fields }, { items: { tx_kumanokodo_facts: items } });
+const images = (variant, names, fields = {}) => el('kumano_images', { tx_kumanokodo_variant: variant, ...fields }, { image: names });
+
+const teasers = (pickList) =>
     list(pickList, (p) => ({
         image: photo(p(c.en).image),
         title: t((x) => p(x).title),
-        ...(p(c.en).subtitle ? { subtitle: t((x) => p(x).subtitle) } : {}),
+        ...(p(c.en).subtitle ? { text: t((x) => p(x).subtitle) } : {}),
         ...(p(c.en).meta ? { meta: t((x) => p(x).meta) } : {}),
         ...(p(c.en).badge ? { badge: t((x) => p(x).badge) } : {}),
         link: link(p(c.en).href),
     }));
+const mediaItems = (pickList) =>
+    list(pickList, (p) => ({
+        image: photo(p(c.en).image),
+        title: t((x) => p(x).title),
+        meta: t((x) => p(x).meta),
+        link: link(p(c.en).href),
+    }));
+const linkItems = (pickList, here) => list(pickList, (p) => ({ title: t((x) => p(x).label), link: link(p(c.en).href, here) }));
 
 const dayTeasers = (x) =>
     x.kumano.days.map((d, i) => ({
@@ -91,30 +114,34 @@ const routeMap = (fields) =>
             tx_kumanokodo_legend_boundary: t((x) => x.kumano.route.legend.boundary),
         },
         {
-            items: list(
-                (x) => x.kumano.route.stations,
-                (s) => ({
-                    title: t((x) => s(x).name),
-                    x: s(c.en).x,
-                    y: s(c.en).y,
-                    label_y: s(c.en).labelY,
-                    anchor: s(c.en).anchor ?? 'middle',
-                    boundary: s(c.en).boundary ? 1 : 0,
-                }),
-            ),
-            items2: list(
-                (x) => x.kumano.route.days,
-                (d) => ({ label: t((x) => d(x).label), x: d(c.en).x }),
-            ),
+            items: {
+                tx_kumanokodo_stations: list(
+                    (x) => x.kumano.route.stations,
+                    (s) => ({
+                        name: t((x) => s(x).name),
+                        x: s(c.en).x,
+                        y: s(c.en).y,
+                        label_y: s(c.en).labelY,
+                        anchor: s(c.en).anchor ?? 'middle',
+                        boundary: s(c.en).boundary ? 1 : 0,
+                    }),
+                ),
+                tx_kumanokodo_day_marks: list(
+                    (x) => x.kumano.route.days,
+                    (d) => ({ label: t((x) => d(x).label), x: d(c.en).x }),
+                ),
+            },
         },
     );
 
-const faq = (fields) =>
-    el('kumano_faq', fields, {
-        items: list(
-            (x) => x.kumano.faq,
-            (f) => ({ title: t((x) => f(x).question), text: t((x) => f(x).answer), open: f(c.en).open ? 1 : 0 }),
-        ),
+const questions = (fields) =>
+    el('kumano_questions', fields, {
+        items: {
+            tx_kumanokodo_questions: list(
+                (x) => x.kumano.faq,
+                (f) => ({ question: t((x) => f(x).question), answer: t((x) => f(x).answer), open: f(c.en).open ? 1 : 0 }),
+            ),
+        },
     });
 
 const chapter = (i, id) =>
@@ -127,64 +154,58 @@ const chapter = (i, id) =>
             header: t((x) => x.kumano.days[i].route),
             bodytext: t((x) => x.home.draft.chapters[i]),
         },
-        { items: dayPhotos[i].map(([name, span, shift]) => ({ image: name, span: String(span), shift: String(shift ?? 0) })) },
+        { image: dayPhotos[i].map(([name, span, shift]) => ({ photo: name, tx_kumanokodo_span: span, tx_kumanokodo_shift: shift ?? 0 })) },
     );
 
-const bleed = (name, caption) => el('kumano_bleed_photo', caption ? { bodytext: caption } : {}, { image: [name] });
-
-const lightboxCaption = (name, pickText) => t((x) => `${pickText(x)} ${x.photos[name].caption ?? ''}`);
+const coda = t((x) => `${x.home.draft.coda} ${x.photos['evening-rooftops'].caption ?? ''}`);
+const highlight = () =>
+    el('kumano_callout', {
+        tx_kumanokodo_variant: 'highlight',
+        ...sunk,
+        ...(c.en.home.crow.eyebrow ? { subheader: t((x) => x.home.crow.eyebrow) } : {}),
+        header: t((x) => x.home.crow.title),
+        bodytext: t((x) => x.home.crow.text),
+    });
 
 // ---------- pages ----------
-const page = (key, parent, title, extra = {}) => ({
-    key,
-    parent,
-    slug: Object.entries(routes).find(([, id]) => id === `site--${key}`)?.[0] ?? `/${key}`,
-    layout: 'Default',
-    navHide: false,
-    title,
-    content: [],
-    ...extra,
-});
-
-const nav = (i) => t((x) => x.kumano.nav[i].menu);
-const route = nav(0);
-const linksOf = (pickLinks, here) =>
-    pickLinks(c.en).map((_, i) => ({ label: t((x) => pickLinks(x)[i].label), link: link(pickLinks(c.en)[i].href, here) }));
-
 const journal = [
-    el('kumano_journal_opener', {
+    el('kumano_page_top', {
+        tx_kumanokodo_variant: 'opener',
         subheader: t((x) => x.home.draft.kicker),
-        header: t((x) => x.home.draft.title),
+        tx_kumanokodo_heading: t((x) => x.home.draft.title),
         bodytext: t((x) => x.home.draft.lede),
         tx_kumanokodo_meta: t((x) => `${x.kumano.hero.eyebrow} · ${x.home.draft.allPhotos}`),
         tx_kumanokodo_vertical: '熊野古道',
     }),
     chapter(0, 'day-1'),
-    bleed('sea-of-clouds'),
+    images('fullwidth', ['sea-of-clouds']),
     chapter(1, 'day-2'),
-    el('kumano_highlight', {
-        tx_kumanokodo_tone: 'sunk',
-        ...(c.en.home.crow.eyebrow ? { subheader: t((x) => x.home.crow.eyebrow) } : {}),
-        header: t((x) => x.home.crow.title),
-        bodytext: t((x) => x.home.crow.text),
-    }),
+    highlight(),
     chapter(2, 'day-3'),
     chapter(3, 'day-4'),
-    bleed(
-        'evening-rooftops',
-        lightboxCaption('evening-rooftops', (x) => x.home.draft.coda),
-    ),
-    routeMap({ ...heading((x) => ({ title: x.home.draft.mapTitle, aside: x.home.map.aside }), 56) }),
-    faq({ tx_kumanokodo_tone: 'sunk', header: t((x) => x.home.draft.practicalTitle) }),
+    images('fullwidth', ['evening-rooftops'], { bodytext: coda }),
+    routeMap(heading((x) => ({ title: x.home.draft.mapTitle, aside: x.home.map.aside }), 56)),
+    questions({ ...sunk, header: t((x) => x.home.draft.practicalTitle) }),
     el('kumano_newsletter', { header: t((x) => x.home.newsletter.title), bodytext: t((x) => x.home.newsletter.text) }),
 ];
 
 const s = (x) => x.pages.start;
+const tiles = (fields) =>
+    cards(
+        'tile',
+        2,
+        fields,
+        list(
+            (x) => x.guide.tiles,
+            (p) => ({ icon: p(c.en).icon, title: t((x) => p(x).title), link: link(p(c.en).href) }),
+        ),
+    );
 const routeContent = [
     el(
-        'kumano_hero_split',
+        'kumano_page_top',
         {
-            header: t((x) => s(x).title),
+            tx_kumanokodo_variant: 'hero_list',
+            tx_kumanokodo_heading: t((x) => s(x).title),
             bodytext: t((x) => s(x).text),
             tx_kumanokodo_link: link(paths.days),
             tx_kumanokodo_link_label: t((x) => s(x).action),
@@ -192,50 +213,39 @@ const routeContent = [
             tx_kumanokodo_link2: link(paths.days),
             tx_kumanokodo_link2_label: t((x) => s(x).panelMore),
         },
-        { items: teaserItems((x) => x.guide.routes) },
+        { items: { tx_kumanokodo_list_items: mediaItems((x) => x.guide.routes) } },
     ),
-    el(
-        'kumano_icon_facts',
+    facts(
+        'icons',
         { tx_kumanokodo_label: t((x) => s(x).factsLabel), tx_kumanokodo_columns: '4' },
-        {
-            items: list(
-                (x) => x.guide.facts,
-                (f) => ({ icon: f(c.en).icon, label: t((x) => f(x).label), value: t((x) => f(x).value), note: t((x) => f(x).note) }),
-            ),
-        },
+        list(
+            (x) => x.guide.facts,
+            (f) => ({ icon: f(c.en).icon, label: t((x) => f(x).label), value: t((x) => f(x).value), note: t((x) => f(x).note) }),
+        ),
     ),
-    el(
-        'kumano_teasers',
-        { tx_kumanokodo_space: 'flush-top', header: t((x) => s(x).stages.title), tx_kumanokodo_gap: '56', tx_kumanokodo_columns: '4' },
-        { items: teaserItems(dayTeasers) },
+    cards(
+        'teaser',
+        4,
+        { space_before_class: 'flush-top', header: t((x) => s(x).stages.title), tx_kumanokodo_gap: '56' },
+        teasers(dayTeasers),
     ),
     routeMap({ tx_kumanokodo_anchor: 'map', ...heading((x) => ({ title: x.home.map.title, aside: x.home.map.aside }), 56) }),
-    el(
-        'kumano_cta_cards',
-        { tx_kumanokodo_tone: 'sunk', header: t((x) => s(x).prep.title), tx_kumanokodo_gap: '56', tx_kumanokodo_columns: '3' },
-        {
-            items: list(
-                (x) => x.guide.prep,
-                (p) => ({
-                    title: t((x) => p(x).title),
-                    text: t((x) => p(x).text),
-                    link: link(p(c.en).href),
-                    link_label: t((x) => x.ui.readMore),
-                    variant: p(c.en).variant ?? 'default',
-                }),
-            ),
-        },
+    cards(
+        'cta',
+        3,
+        { ...sunk, header: t((x) => s(x).prep.title), tx_kumanokodo_gap: '56' },
+        list(
+            (x) => x.guide.prep,
+            (p) => ({
+                title: t((x) => p(x).title),
+                text: t((x) => p(x).text),
+                link: link(p(c.en).href),
+                link_label: t((x) => x.ui.readMore),
+                emphasis: p(c.en).variant ?? 'default',
+            }),
+        ),
     ),
-    el(
-        'kumano_link_tiles',
-        { header: t((x) => s(x).plan), tx_kumanokodo_gap: '40', tx_kumanokodo_columns: '2' },
-        {
-            items: list(
-                (x) => x.guide.tiles,
-                (p) => ({ icon: p(c.en).icon, title: t((x) => p(x).title), link: link(p(c.en).href) }),
-            ),
-        },
-    ),
+    tiles({ header: t((x) => s(x).plan), tx_kumanokodo_gap: '40' }),
 ];
 
 const g = (x) => x.site.days.groups;
@@ -249,11 +259,7 @@ const stays = (x) => {
     ];
 };
 const group = (id, pickTitle, pickItems) =>
-    el(
-        'kumano_teasers',
-        { tx_kumanokodo_anchor: id, header: t(pickTitle), tx_kumanokodo_gap: '40', tx_kumanokodo_columns: '4' },
-        { items: teaserItems(pickItems) },
-    );
+    cards('teaser', 4, { tx_kumanokodo_anchor: id, header: t(pickTitle), tx_kumanokodo_gap: '40' }, teasers(pickItems));
 const daysContent = [
     text(t((x) => `<p>${esc(x.site.days.intro)}</p>`)),
     group('days', (x) => g(x).days, dayTeasers),
@@ -265,10 +271,10 @@ const daysContent = [
     group('stays', (x) => g(x).stays, stays),
 ];
 const daysChips = [
-    { link_label: t((x) => x.pages.list.chips[0]), link: 'page:days#days', active: 1 },
-    { link_label: t((x) => g(x).days), link: 'page:days#days' },
-    { link_label: t((x) => g(x).places), link: 'page:days#places' },
-    { link_label: t((x) => g(x).stays), link: 'page:days#stays' },
+    { title: t((x) => x.pages.list.chips[0]), link: 'page:days#days', active: 1 },
+    { title: t((x) => g(x).days), link: 'page:days#days' },
+    { title: t((x) => g(x).places), link: 'page:days#places' },
+    { title: t((x) => g(x).stays), link: 'page:days#stays' },
 ];
 
 const photosOfDay = (i) => [...(i === 1 ? ['sea-of-clouds'] : []), ...dayPhotos[i].map(([name]) => name)];
@@ -278,57 +284,40 @@ const dayContent = (n) => {
     const d = (x) => x.kumano.days[i];
     const sd = (x) => x.site.day;
     return [
-        section(
-            { tx_kumanokodo_layout: 'content-sidebar' },
+        columns(
+            'content-sidebar',
+            {},
             [
-                el('kumano_figure', { tx_kumanokodo_rule: 0 }, { image: [names[0]] }),
+                images('figure', [names[0]], { tx_kumanokodo_rule: 0 }),
                 text(t((x) => `<p>${esc(x.home.draft.chapters[i])}</p><p>${esc(d(x).description)}</p>`)),
             ],
             [
+                facts('pairs', { header: t((x) => sd(x).factsTitle) }, [
+                    { label: t((x) => sd(x).facts.date), value: t((x) => d(x).date) },
+                    { label: t((x) => sd(x).facts.route), value: t((x) => d(x).route) },
+                    { label: t((x) => sd(x).facts.distance), value: t((x) => sd(x).distances[i]) },
+                    { label: t((x) => sd(x).facts.photos), value: t((x) => d(x).time) },
+                ]),
                 el(
-                    'kumano_fact_list',
-                    { header: t((x) => sd(x).factsTitle), tx_kumanokodo_variant: 'inline' },
-                    {
-                        items: [
-                            { label: t((x) => sd(x).facts.date), value: t((x) => d(x).date) },
-                            { label: t((x) => sd(x).facts.route), value: t((x) => d(x).route) },
-                            { label: t((x) => sd(x).facts.distance), value: t((x) => sd(x).distances[i]) },
-                            { label: t((x) => sd(x).facts.photos), value: t((x) => d(x).time) },
-                        ],
-                    },
+                    'kumano_callout',
+                    { tx_kumanokodo_variant: 'infobox', header: t((x) => sd(x).tipTitle), bodytext: t((x) => sd(x).tips[i]) },
+                    { items: { tx_kumanokodo_list_items: [{ title: t((x) => x.site.practical.title), link: link(paths.practical) }] } },
                 ),
-                el(
-                    'kumano_info_box',
-                    { header: t((x) => sd(x).tipTitle), bodytext: t((x) => sd(x).tips[i]) },
-                    { links: [{ label: t((x) => x.site.practical.title), link: link(paths.practical) }] },
-                ),
-                el(
-                    'kumano_sub_nav',
+                listEl(
+                    'subnav',
                     { header: t((x) => g(x).days) },
-                    {
-                        links: [0, 1, 2, 3].map((k) => ({
-                            label: t((x) => `${x.kumano.days[k].date.split(' · ')[0]} · ${x.kumano.days[k].route}`),
-                            link: `page:day-${k + 1}`,
-                        })),
-                    },
+                    [0, 1, 2, 3].map((k) => ({
+                        title: t((x) => `${x.kumano.days[k].date.split(' · ')[0]} · ${x.kumano.days[k].route}`),
+                        link: `page:day-${k + 1}`,
+                    })),
                 ),
             ],
         ),
-        el(
-            'kumano_gallery',
-            { tx_kumanokodo_tone: 'sunk', header: t((x) => sd(x).photos), tx_kumanokodo_gap: '40' },
-            { image: names.slice(1) },
-        ),
-        el(
-            'kumano_links',
-            { tx_kumanokodo_variant: 'cluster' },
-            {
-                items: [
-                    ...(n > 1 ? [{ link_label: t((x) => sd(x).previous), link: `page:day-${n - 1}`, direction: 'back' }] : []),
-                    ...(n < 4 ? [{ link_label: t((x) => sd(x).next), link: `page:day-${n + 1}`, direction: 'forward' }] : []),
-                ],
-            },
-        ),
+        images('gallery', names.slice(1), { ...sunk, header: t((x) => sd(x).photos), tx_kumanokodo_gap: '40' }),
+        listEl('links', {}, [
+            ...(n > 1 ? [{ title: t((x) => sd(x).previous), link: `page:day-${n - 1}`, direction: 'back' }] : []),
+            ...(n < 4 ? [{ title: t((x) => sd(x).next), link: `page:day-${n + 1}`, direction: 'forward' }] : []),
+        ]),
     ];
 };
 
@@ -336,24 +325,19 @@ const placeContent = (slug) => {
     const p = (x) => x.site.places[slug];
     const day = c.en.site.places[slug].day;
     return [
-        section(
-            { tx_kumanokodo_layout: 'content-sidebar' },
-            [text(paragraphs((x) => p(x).text)), el('kumano_gallery', {}, { image: [...c.en.site.places[slug].photos] })],
+        columns(
+            'content-sidebar',
+            {},
+            [text(paragraphs((x) => p(x).text)), images('gallery', [...c.en.site.places[slug].photos])],
             [
-                el(
-                    'kumano_links',
-                    { tx_kumanokodo_variant: 'stack' },
+                listEl('links-stacked', {}, [
                     {
-                        items: [
-                            {
-                                link_label: t((x) => `${x.kumano.days[day - 1].date}: ${x.kumano.days[day - 1].route}`),
-                                link: `page:day-${day}`,
-                                direction: 'forward',
-                            },
-                            { link_label: t((x) => x.site.days.title), link: 'page:days', direction: 'back' },
-                        ],
+                        title: t((x) => `${x.kumano.days[day - 1].date}: ${x.kumano.days[day - 1].route}`),
+                        link: `page:day-${day}`,
+                        direction: 'forward',
                     },
-                ),
+                    { title: t((x) => x.site.days.title), link: 'page:days', direction: 'back' },
+                ]),
             ],
         ),
     ];
@@ -361,46 +345,34 @@ const placeContent = (slug) => {
 
 const practicalContent = [
     text(t((x) => `<p>${esc(x.site.practical.intro)}</p>`)),
-    el(
-        'kumano_link_tiles',
-        { tx_kumanokodo_space: 'flush-top', tx_kumanokodo_columns: '2' },
-        {
-            items: list(
-                (x) => x.guide.tiles,
-                (p) => ({ icon: p(c.en).icon, title: t((x) => p(x).title), link: link(p(c.en).href) }),
-            ),
-        },
-    ),
-    faq({ tx_kumanokodo_tone: 'sunk', header: t((x) => x.home.practical.title) }),
+    tiles({ space_before_class: 'flush-top' }),
+    questions({ ...sunk, header: t((x) => x.home.practical.title) }),
 ];
 
 const practicalSubContent = (slug) => [
-    section(
-        { tx_kumanokodo_layout: 'content-sidebar' },
+    columns(
+        'content-sidebar',
+        {},
         [
             text(paragraphs((x) => x.site.practical.pages[slug].text)),
             ...(slug === 'maps'
                 ? [
-                      el(
-                          'kumano_downloads',
+                      listEl(
+                          'downloads',
                           {},
-                          {
-                              items: list(
-                                  (x) => x.pages.detail.downloads,
-                                  (d) => ({ title: t((x) => d(x).title), meta: t((x) => d(x).meta), link: link(d(c.en).href) }),
-                              ),
-                          },
+                          list(
+                              (x) => x.pages.detail.downloads,
+                              (d) => ({ title: t((x) => d(x).title), meta: t((x) => d(x).meta), link: link(d(c.en).href) }),
+                          ),
                       ),
                   ]
                 : []),
         ],
         [
-            el(
-                'kumano_sub_nav',
+            listEl(
+                'subnav',
                 { header: t((x) => x.site.practical.title) },
-                {
-                    links: practicalSlugs.map((p) => ({ label: t((x) => x.site.practical.pages[p].title), link: `page:practical-${p}` })),
-                },
+                practicalSlugs.map((p) => ({ title: t((x) => x.site.practical.pages[p].title), link: `page:practical-${p}` })),
             ),
         ],
     ),
@@ -409,132 +381,131 @@ const practicalSubContent = (slug) => [
 const photosContent = [
     text(t((x) => `<p>${esc(x.site.photos.intro)}</p>`)),
     ...dayPhotos.map((_, i) => chapter(i, `photos-day-${i + 1}`)),
-    bleed('sea-of-clouds'),
-    bleed(
-        'evening-rooftops',
-        lightboxCaption('evening-rooftops', (x) => x.home.draft.coda),
-    ),
+    images('fullwidth', ['sea-of-clouds']),
+    images('fullwidth', ['evening-rooftops'], { bodytext: coda }),
 ];
 
 const textPage = (pickText, after = []) => [section({}, [text(paragraphs(pickText)), ...after])];
 
+const place = (i) => {
+    const p = (x) => x.kumano.places[i];
+    return cards('place', 2, {}, [
+        {
+            image: photo(p(c.en).image),
+            title: t((x) => p(x).title),
+            text: t((x) => p(x).description),
+            emphasis: p(c.en).variant ?? 'default',
+        },
+    ]);
+};
 const v3 = [
     el(
-        'kumano_hero',
+        'kumano_page_top',
         {
+            tx_kumanokodo_variant: 'hero',
             subheader: t((x) => x.kumano.hero.eyebrow),
             tx_kumanokodo_heading: t((x) => x.kumano.hero.title),
             bodytext: t((x) => x.kumano.hero.teaser),
         },
         {
             image: [photo(c.en.kumano.hero.image)],
-            items: list(
-                (x) => x.kumano.hero.actions,
-                (a) => ({ link_label: t((x) => a(x).label), link: link(a(c.en).href, 'home-v3') }),
-            ),
-            items2: list(
-                (x) => x.kumano.hero.stats,
-                (a) => ({ label: t((x) => a(x).label), value: t((x) => a(x).value) }),
-            ),
+            items: {
+                tx_kumanokodo_list_items: list(
+                    (x) => x.kumano.hero.actions,
+                    (a) => ({ title: t((x) => a(x).label), link: link(a(c.en).href, 'home-v3') }),
+                ),
+                tx_kumanokodo_facts: list(
+                    (x) => x.kumano.hero.stats,
+                    (a) => ({ label: t((x) => a(x).label), value: t((x) => a(x).value) }),
+                ),
+            },
         },
     ),
-    section(
-        { ...heading((x) => x.home.why, 64), tx_kumanokodo_layout: 'text-media' },
+    columns(
+        'text-media',
+        heading((x) => x.home.why, 64),
         [text(t((x) => x.kumano.intro.map((p) => `<p>${p}</p>`).join('')))],
-        [el('kumano_figure', { bodytext: t((x) => x.home.bridgeCaption) }, { image: ['forest-stream'] })],
+        [images('figure', ['forest-stream'], { bodytext: t((x) => x.home.bridgeCaption) })],
     ),
-    el('kumano_highlight', {
-        tx_kumanokodo_tone: 'sunk',
-        ...(c.en.home.crow.eyebrow ? { subheader: t((x) => x.home.crow.eyebrow) } : {}),
-        header: t((x) => x.home.crow.title),
-        bodytext: t((x) => x.home.crow.text),
+    highlight(),
+    el('kumano_callout', {
+        tx_kumanokodo_variant: 'quote',
+        space_before_class: 'large',
+        bodytext: t((x) => x.home.quote.quote),
+        subheader: t((x) => x.home.quote.source),
     }),
-    el('kumano_quote', { tx_kumanokodo_space: 'large', bodytext: t((x) => x.home.quote.quote), subheader: t((x) => x.home.quote.source) }),
-    section({ tx_kumanokodo_space: 'flush-top', tx_kumanokodo_column_gap: '96' }, [
-        el(
-            'kumano_stats',
+    section({ space_before_class: 'flush-top', tx_kumanokodo_column_gap: '96' }, [
+        facts(
+            'figures',
             {},
-            {
-                items: list(
-                    (x) => x.kumano.stats,
-                    (a) => ({ value: t((x) => a(x).value), label: t((x) => a(x).label) }),
-                ),
-            },
+            list(
+                (x) => x.kumano.stats,
+                (a) => ({ value: t((x) => a(x).value), label: t((x) => a(x).label) }),
+            ),
         ),
-        el(
-            'kumano_day_list',
-            { ...heading((x) => x.home.days, 56) },
-            {
-                items: list(
-                    (x) => x.kumano.days,
-                    (d) => ({
-                        label: t((x) => d(x).date),
-                        title: t((x) => d(x).route),
-                        text: t((x) => d(x).description),
-                        meta: t((x) => d(x).time),
-                    }),
-                ),
-            },
+        listEl(
+            'days',
+            heading((x) => x.home.days, 56),
+            list(
+                (x) => x.kumano.days,
+                (d) => ({
+                    label: t((x) => d(x).date),
+                    title: t((x) => d(x).route),
+                    text: t((x) => d(x).description),
+                    meta: t((x) => d(x).time),
+                }),
+            ),
         ),
     ]),
-    el(
-        'kumano_slider',
+    cards(
+        'stage',
+        'slider',
         {
-            tx_kumanokodo_tone: 'sunk',
-            tx_kumanokodo_bleed: 1,
+            ...sunk,
             tx_kumanokodo_label: t((x) => x.home.stages.eyebrow),
             tx_kumanokodo_anchor: 'stages',
             header: t((x) => x.home.stages.title),
             subheader: t((x) => x.home.stages.eyebrow),
         },
-        {
-            items: list(
-                (x) => x.kumano.stages,
-                (st) => ({
-                    image: photo(st(c.en).image),
-                    label: t((x) => st(x).stage),
-                    meta: t((x) => st(x).stats),
-                    title: t((x) => st(x).title),
-                    text: t((x) => st(x).description),
-                }),
-            ),
-        },
+        list(
+            (x) => x.kumano.stages,
+            (st) => ({
+                image: photo(st(c.en).image),
+                label: t((x) => st(x).stage),
+                meta: t((x) => st(x).stats),
+                title: t((x) => st(x).title),
+                text: t((x) => st(x).description),
+            }),
+        ),
     ),
-    routeMap({ ...heading((x) => x.home.map, 56) }),
-    section({ tx_kumanokodo_space: 'flush-top', ...heading((x) => x.home.places, 64), tx_kumanokodo_column_gap: '64' }, [
-        section({ tx_kumanokodo_layout: 'wide-narrow' }, [placeCard(0)], [placeCard(1)]),
-        section(
-            { tx_kumanokodo_layout: 'narrow-wide' },
-            [placeCard(2)],
-            [el('kumano_figure', { bodytext: t((x) => x.home.roadsideCaption) }, { image: ['land-crab', 'cedar-canopy'] })],
+    routeMap(heading((x) => x.home.map, 56)),
+    section({ space_before_class: 'flush-top', ...heading((x) => x.home.places, 64), tx_kumanokodo_column_gap: '64' }, [
+        columns('wide-narrow', {}, [place(0)], [place(1)]),
+        columns(
+            'narrow-wide',
+            {},
+            [place(2)],
+            [images('figure', ['land-crab', 'cedar-canopy'], { bodytext: t((x) => x.home.roadsideCaption) })],
         ),
     ]),
-    faq({
+    questions({
         tx_kumanokodo_anchor: 'faq',
-        tx_kumanokodo_tone: 'sunk',
+        ...sunk,
         subheader: t((x) => x.home.practical.eyebrow),
         header: t((x) => x.home.practical.title),
         bodytext: t((x) => x.home.practical.intro),
     }),
     el('kumano_newsletter', { header: t((x) => x.home.newsletter.title), bodytext: t((x) => x.home.newsletter.text) }),
 ];
-function placeCard(i) {
-    const p = (x) => x.kumano.places[i];
-    return el(
-        'kumano_place_card',
-        { header: t((x) => p(x).title), bodytext: t((x) => p(x).description), tx_kumanokodo_variant: p(c.en).variant ?? 'default' },
-        { image: [photo(p(c.en).image)] },
-    );
-}
 
-// Components no page uses, with the sample data of their stories, so every element is in the demo.
+// Components no page uses, with the sample data of their stories, so every element and style is in the demo.
 const components = [
     el(
-        'kumano_section_heading',
+        'header',
         heading((x) => x.home.map),
     ),
     el(
-        'kumano_text_media',
+        'kumano_text_image',
         {
             header: t((x) => x.kumano.places[1].title),
             bodytext: t((x) => x.kumano.places[1].description),
@@ -544,42 +515,53 @@ const components = [
         },
         { image: [photo(c.en.kumano.places[1].image)] },
     ),
-    section(
-        { tx_kumanokodo_layout: 'even' },
+    columns(
+        'even',
+        {},
         [
-            el(
-                'kumano_media_list',
+            listEl(
+                'media',
                 {
                     header: t((x) => x.pages.start.panelTitle),
                     tx_kumanokodo_link: 'page:days',
                     tx_kumanokodo_link_label: t((x) => x.pages.start.panelMore),
                 },
-                { items: teaserItems((x) => x.guide.routes) },
+                mediaItems((x) => x.guide.routes),
             ),
         ],
         [
-            el('kumano_table', {
-                header: t((x) => x.samples.table.caption),
-                bodytext: t((x) => [x.samples.table.head, ...x.samples.table.rows].map((r) => r.join('|')).join('\n')),
-            }),
+            cards(
+                'person',
+                2,
+                {},
+                list(
+                    (x) => x.guide.hosts,
+                    (h) => ({
+                        image: photo(h(c.en).image),
+                        title: t((x) => h(x).name),
+                        meta: t((x) => h(x).role),
+                        text: t((x) => h(x).focus),
+                    }),
+                ),
+            ),
         ],
     ),
-    el(
-        'kumano_persons',
-        { tx_kumanokodo_columns: '4' },
-        {
-            items: list(
-                (x) => x.guide.hosts,
-                (h) => ({
-                    image: photo(h(c.en).image),
-                    title: t((x) => h(x).name),
-                    subtitle: t((x) => h(x).role),
-                    text: t((x) => h(x).focus),
-                }),
-            ),
-        },
-    ),
 ];
+
+const nav = (i) => t((x) => x.kumano.nav[i].menu);
+const route = nav(0);
+const flyoutLinks = (pickLinks) =>
+    pickLinks(c.en).map((_, i) => ({ label: t((x) => pickLinks(x)[i].label), link: link(pickLinks(c.en)[i].href) }));
+const page = (key, parent, title, extra = {}) => ({
+    key,
+    parent,
+    slug: Object.entries(routes).find(([, id]) => id === `site--${key}`)?.[0] ?? `/${key}`,
+    layout: 'Default',
+    navHide: false,
+    title,
+    content: [],
+    ...extra,
+});
 
 const pages = [
     page(
@@ -599,7 +581,7 @@ const pages = [
                 kind: 'mega',
                 columns: route.en.columns.map((col, i) => ({
                     title: t((_, l) => route[l].columns[i].title),
-                    links: linksOf((x) => x.kumano.nav[0].menu.columns[i].links),
+                    links: flyoutLinks((x) => x.kumano.nav[0].menu.columns[i].links),
                 })),
                 text: { title: t((_, l) => route[l].text.title), html: t((_, l) => route[l].text.html) },
                 overview: { label: t((_, l) => route[l].overview.label), link: link(route.en.overview.href) },
@@ -644,13 +626,7 @@ const pages = [
             navHide: true,
             content: textPage(
                 (x) => x.site.kohechi.text,
-                [
-                    el(
-                        'kumano_links',
-                        { tx_kumanokodo_variant: 'plain' },
-                        { items: [{ link_label: t((x) => x.site.route.title), link: 'page:route', direction: 'back' }] },
-                    ),
-                ],
+                [listEl('links', {}, [{ title: t((x) => x.site.route.title), link: 'page:route', direction: 'back' }])],
             ),
         },
     ),
@@ -660,7 +636,7 @@ const pages = [
         t((x) => x.kumano.nav[1].label),
         {
             content: practicalContent,
-            flyout: { kind: 'dropdown', columns: [{ title: t(() => ''), links: linksOf((x) => x.kumano.nav[1].menu.links) }] },
+            flyout: { kind: 'dropdown', columns: [{ title: t(() => ''), links: flyoutLinks((x) => x.kumano.nav[1].menu.links) }] },
         },
     ),
     ...practicalSlugs.map((slug) =>
@@ -681,10 +657,7 @@ const pages = [
         'newsletter',
         'home',
         t((x) => x.site.newsletter.title),
-        {
-            navHide: true,
-            content: [el('kumano_newsletter', { bodytext: t((x) => x.site.newsletter.intro) })],
-        },
+        { navHide: true, content: [el('kumano_newsletter', { bodytext: t((x) => x.site.newsletter.intro) })] },
     ),
     ...legalSlugs.map((slug) =>
         page(
@@ -713,15 +686,27 @@ const footer = (x) => x.guide.footer;
 const frame = [
     el('header', { header: t((x) => x.guide.topbar.label), subheader: t((x) => x.guide.topbar.value) }, { colPos: 30 }),
     el('text', { bodytext: t((x) => `<p>${footer(x).about}</p>`) }, { colPos: 20 }),
-    ...footer(c.en).columns.map((col, i) =>
-        el(
-            'kumano_link_list',
+    ...footer(c.en).columns.map((col, i) => ({
+        ...listEl(
+            'links',
             { header: t((x) => footer(x).columns[i].title) },
-            { colPos: 20, links: linksOf((x) => footer(x).columns[i].links) },
+            linkItems((x) => footer(x).columns[i].links),
         ),
+        colPos: 20,
+    })),
+    el(
+        'kumano_callout',
+        { tx_kumanokodo_variant: 'notice', header: t((x) => footer(x).notice.title), bodytext: t((x) => footer(x).notice.text) },
+        { colPos: 21 },
     ),
-    el('kumano_notice', { header: t((x) => footer(x).notice.title), bodytext: t((x) => footer(x).notice.text) }, { colPos: 21 }),
-    el('kumano_link_list', { header: t((x) => footer(x).copyright) }, { colPos: 22, links: linksOf((x) => footer(x).legal) }),
+    {
+        ...listEl(
+            'links',
+            { header: t((x) => footer(x).copyright) },
+            linkItems((x) => footer(x).legal),
+        ),
+        colPos: 22,
+    },
 ];
 pages[0].content = [...frame, ...pages[0].content];
 

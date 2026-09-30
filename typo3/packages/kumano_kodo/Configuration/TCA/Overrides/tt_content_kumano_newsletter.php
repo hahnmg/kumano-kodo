@@ -12,14 +12,11 @@ ExtensionManagementUtility::addRecordType(
         'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_newsletter.description',
         'value' => 'kumano_newsletter',
         'icon' => 'content-form',
-        'group' => 'kumano_kodo',
+        'group' => 'kumano_text',
     ],
-    'header, bodytext, tx_kumanokodo_link, --div--;kumano_kodo.backend_fields:tabs.section, --palette--;;kumanokodo_section',
+    '--palette--;;headers, bodytext, tx_kumanokodo_link, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
-            'header' => [
-                'label' => 'kumano_kodo.backend_fields:tt_content.header.section',
-            ],
             'bodytext' => [
                 'label' => 'kumano_kodo.backend_fields:tt_content.bodytext.intro',
                 'config' => [
