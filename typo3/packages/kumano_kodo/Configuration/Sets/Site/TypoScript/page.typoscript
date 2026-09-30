@@ -1,0 +1,43 @@
+page = PAGE
+page {
+  # Same font request as the Storybook preview head, so both render alike.
+  headerData.10 = TEXT
+  headerData.10.value (
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=Instrument+Sans:wght@400;600&family=Sora:wght@400;600&family=Space+Grotesk:wght@400;700&family=Space+Mono&family=Noto+Sans+JP:wght@400;500;600&display=swap">
+  )
+
+  10 = PAGEVIEW
+  10 {
+    paths.10 = EXT:kumano_kodo/Resources/Private/Templates/
+
+    dataProcessing {
+      10 = menu
+      10 {
+        levels = 1
+        as = mainNavigation
+        dataProcessing.10 = record-transformation
+      }
+
+      20 = language-menu
+      20 {
+        languages = auto
+        as = languageNavigation
+      }
+
+      30 = menu
+      30 {
+        special = rootline
+        # Pages hidden from the navigation, such as the days overview, still belong to the trail.
+        includeNotInMenu = 1
+        as = breadcrumb
+      }
+    }
+  }
+}
+
+config.htmlTag.attributes {
+  data-theme = {$kumanoKodo.theme}
+  data-scheme = {$kumanoKodo.scheme}
+}

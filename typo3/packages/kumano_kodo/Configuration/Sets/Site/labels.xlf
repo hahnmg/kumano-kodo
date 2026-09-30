@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="labels" product-name="kumano_kodo">
+        <body>
+            <trans-unit id="label">
+                <source>Kumano Kodo</source>
+            </trans-unit>
+            <trans-unit id="categories.kumanoKodo">
+                <source>Kumano Kodo</source>
+            </trans-unit>
+            <trans-unit id="categories.kumanoKodo.appearance">
+                <source>Appearance</source>
+            </trans-unit>
+            <trans-unit id="categories.kumanoKodo.contact">
+                <source>Contact in the top bar</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.brand.name">
+                <source>Site name</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.brand.name">
+                <source>Accessible name of the logo and the large wordmark in the footer.</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.theme">
+                <source>Theme</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.theme">
+                <source>Colour palette and typefaces of the whole site.</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.theme.enum.caramel">
+                <source>Caramel</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.theme.enum.forest">
+                <source>Forest</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.theme.enum.ocean">
+                <source>Ocean</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.theme.enum.violet">
+                <source>Violet</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.scheme">
+                <source>Colour mode on load</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.scheme.enum.light">
+                <source>Light</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.scheme.enum.dark">
+                <source>Dark</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.schemeToggle">
+                <source>Show the dark mode toggle</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.contact.phone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.contact.email">
+                <source>Email</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

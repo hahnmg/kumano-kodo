@@ -1,0 +1,27 @@
+.pagination__list {
+    display: flex;
+    gap: var(--space-8);
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pagination__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color var(--motion-fast) var(--ease-out);
+}
+
+a.pagination__item:hover {
+    color: var(--color-ink);
+}
+
+.pagination__item[aria-current='page'] {
+    color: var(--color-accent);
+}

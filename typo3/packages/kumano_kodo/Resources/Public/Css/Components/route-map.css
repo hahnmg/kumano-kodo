@@ -1,0 +1,111 @@
+.route-map {
+    margin: 0;
+    padding-top: var(--space-40);
+    border-top: var(--border-hairline) solid var(--color-ink);
+}
+
+.route-map__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.route-map__path {
+    fill: none;
+    stroke: var(--color-moss);
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.route-map__boundary {
+    stroke: var(--color-line);
+    stroke-dasharray: 3 7;
+}
+
+.route-map__station {
+    fill: var(--color-paper);
+    stroke: var(--color-moss);
+    stroke-width: 2;
+}
+
+.route-map__station--end {
+    fill: var(--color-accent);
+    stroke: var(--color-paper);
+}
+
+.route-map__label {
+    fill: var(--color-ink);
+    font-family: var(--type-lead-family);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.route-map__days {
+    position: relative;
+    height: 24px;
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    color: var(--color-muted);
+    list-style: none;
+}
+
+.route-map__days li {
+    position: absolute;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.route-map__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-26);
+    margin-top: var(--space-28);
+    padding-top: var(--space-18);
+    border-top: var(--border-hairline) solid var(--color-line);
+    color: var(--color-muted);
+}
+
+.route-map__legend span {
+    display: flex;
+    gap: var(--space-9);
+    align-items: center;
+}
+
+.route-map__key {
+    display: block;
+}
+
+.route-map__key--walked {
+    width: 24px;
+    height: 2px;
+    background: var(--color-moss);
+}
+
+.route-map__key--end {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+}
+
+.route-map__key--boundary {
+    width: 24px;
+    border-top: var(--border-hairline) dashed var(--color-hair);
+}
+
+.route-map__scroll:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+@media (width <= 600px) {
+    .route-map__scroll {
+        overflow-x: auto;
+    }
+
+    .route-map__svg,
+    .route-map__days {
+        min-width: 720px;
+    }
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="ja" datatype="plaintext" original="messages" product-name="kumano_kodo">
+        <body>
+            <trans-unit id="mainNav">
+                <source>Main navigation</source>
+                <target>メインナビゲーション</target>
+            </trans-unit>
+            <trans-unit id="language">
+                <source>Language</source>
+                <target>言語</target>
+            </trans-unit>
+            <trans-unit id="menu">
+                <source>Menu</source>
+                <target>メニュー</target>
+            </trans-unit>
+            <trans-unit id="darkMode">
+                <source>Dark mode</source>
+                <target>ダークモード</target>
+            </trans-unit>
+            <trans-unit id="trailStatus">
+                <source>Trail status and contact</source>
+                <target>道の状況と連絡先</target>
+            </trans-unit>
+            <trans-unit id="categories">
+                <source>Categories</source>
+                <target>カテゴリー</target>
+            </trans-unit>
+            <trans-unit id="breadcrumb">
+                <source>Breadcrumb</source>
+                <target>パンくずリスト</target>
+            </trans-unit>
+            <trans-unit id="pages">
+                <source>Pages</source>
+                <target>ページ</target>
+            </trans-unit>
+            <trans-unit id="previousPage">
+                <source>Previous page</source>
+                <target>前のページ</target>
+            </trans-unit>
+            <trans-unit id="nextPage">
+                <source>Next page</source>
+                <target>次のページ</target>
+            </trans-unit>
+            <trans-unit id="previous">
+                <source>Previous</source>
+                <target>前へ</target>
+            </trans-unit>
+            <trans-unit id="next">
+                <source>Next</source>
+                <target>次へ</target>
+            </trans-unit>
+            <trans-unit id="close">
+                <source>Close</source>
+                <target>閉じる</target>
+            </trans-unit>
+            <trans-unit id="card">
+                <source>Card</source>
+                <target>カード</target>
+            </trans-unit>
+            <trans-unit id="readMore">
+                <source>Read more</source>
+                <target>続きを読む</target>
+            </trans-unit>
+            <trans-unit id="emailAddress">
+                <source>Email address</source>
+                <target>メールアドレス</target>
+            </trans-unit>
+            <trans-unit id="emailPlaceholder">
+                <source>name@example.com</source>
+                <target>name@example.jp</target>
+            </trans-unit>
+            <trans-unit id="consent">
+                <source>I would like to receive the newsletter and have read the privacy policy.</source>
+                <target>ニュースレターの受信を希望し、プライバシーポリシーを読みました。</target>
+            </trans-unit>
+            <trans-unit id="subscribe">
+                <source>Subscribe</source>
+                <target>登録する</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

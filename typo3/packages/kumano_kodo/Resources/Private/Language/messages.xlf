@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="messages" product-name="kumano_kodo">
+        <body>
+            <trans-unit id="mainNav">
+                <source>Main navigation</source>
+            </trans-unit>
+            <trans-unit id="language">
+                <source>Language</source>
+            </trans-unit>
+            <trans-unit id="menu">
+                <source>Menu</source>
+            </trans-unit>
+            <trans-unit id="darkMode">
+                <source>Dark mode</source>
+            </trans-unit>
+            <trans-unit id="trailStatus">
+                <source>Trail status and contact</source>
+            </trans-unit>
+            <trans-unit id="categories">
+                <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="breadcrumb">
+                <source>Breadcrumb</source>
+            </trans-unit>
+            <trans-unit id="pages">
+                <source>Pages</source>
+            </trans-unit>
+            <trans-unit id="previousPage">
+                <source>Previous page</source>
+            </trans-unit>
+            <trans-unit id="nextPage">
+                <source>Next page</source>
+            </trans-unit>
+            <trans-unit id="previous">
+                <source>Previous</source>
+            </trans-unit>
+            <trans-unit id="next">
+                <source>Next</source>
+            </trans-unit>
+            <trans-unit id="close">
+                <source>Close</source>
+            </trans-unit>
+            <trans-unit id="card">
+                <source>Card</source>
+            </trans-unit>
+            <trans-unit id="readMore">
+                <source>Read more</source>
+            </trans-unit>
+            <trans-unit id="emailAddress">
+                <source>Email address</source>
+            </trans-unit>
+            <trans-unit id="emailPlaceholder">
+                <source>name@example.com</source>
+            </trans-unit>
+            <trans-unit id="consent">
+                <source>I would like to receive the newsletter and have read the privacy policy.</source>
+            </trans-unit>
+            <trans-unit id="subscribe">
+                <source>Subscribe</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

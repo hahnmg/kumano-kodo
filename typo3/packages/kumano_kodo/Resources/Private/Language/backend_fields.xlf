@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="backend_fields" product-name="kumano_kodo">
+        <body>
+            <trans-unit id="tt_content.group.kumano_kodo">
+                <source>Kumano Kodo</source>
+            </trans-unit>
+            <trans-unit id="tt_content.tx_kumanokodo_links">
+                <source>Links</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.kumano_link_list">
+                <source>Link list</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.kumano_link_list.description">
+                <source>A heading with a list of links; in the footer a link column, in the legal row the copyright line with the legal links.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.kumano_link_list.header.description">
+                <source>In the legal row of the footer this is the copyright line.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.kumano_notice">
+                <source>Notice</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.kumano_notice.description">
+                <source>A short highlighted note with a warning icon, such as trail conditions.</source>
+            </trans-unit>
+            <trans-unit id="tt_content.kumano_notice.bodytext">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_link">
+                <source>Link</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_link.label">
+                <source>Label</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_link.link">
+                <source>Link target</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_link.link.description">
+                <source>Leave empty to show the label as plain text.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_nav_column">
+                <source>Flyout column</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_nav_column.title">
+                <source>Column title</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_nav_column.title.description">
+                <source>Not shown in a dropdown.</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_nav_column.links">
+                <source>Links</source>
+            </trans-unit>
+            <trans-unit id="pages.tabs.flyout">
+                <source>Navigation flyout</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout">
+                <source>Flyout</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout.description">
+                <source>Only for pages in the main navigation.</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout.none">
+                <source>None: a plain link</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout.dropdown">
+                <source>Dropdown: one list of links</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout.mega">
+                <source>Mega: link columns, text and a teaser</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_columns">
+                <source>Link columns</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_text_title">
+                <source>Text title</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_overview">
+                <source>Overview link</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_overview_label">
+                <source>Overview link label</source>
+            </trans-unit>
+            <trans-unit id="pages.palettes.flyout_teaser">
+                <source>Teaser card (mega flyout only)</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_teaser_image">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_teaser_title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_teaser_subtitle">
+                <source>Subtitle</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_teaser_meta">
+                <source>Meta line</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_teaser_badge">
+                <source>Badge</source>
+            </trans-unit>
+            <trans-unit id="pages.tx_kumanokodo_flyout_teaser_link">
+                <source>Link</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

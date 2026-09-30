@@ -1,0 +1,3 @@
+@import './BackendLayouts/*.tsconfig'
+
+TCEFORM.tt_content.CType.keepItems = header,text,kumano_link_list,kumano_notice

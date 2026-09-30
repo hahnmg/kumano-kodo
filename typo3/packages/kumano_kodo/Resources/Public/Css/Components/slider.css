@@ -1,0 +1,46 @@
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-40);
+}
+
+/* The first card lines up with the page container, while the track itself still runs to the viewport edge. */
+.slider__track {
+    --slider-edge: max(var(--gutter), (100% - var(--container-page)) / 2);
+
+    position: relative;
+    padding-inline: var(--slider-edge);
+    scroll-padding-inline: var(--slider-edge);
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.slider__track::-webkit-scrollbar {
+    display: none;
+}
+
+.slider__track:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+.slider__dots {
+    display: flex;
+    justify-content: center;
+}
+
+/* In a bleed section the heading and dots keep to the container edge the track starts at. */
+.section--bleed .slider > :not(.slider__track) {
+    padding-inline: max(var(--gutter), (100% - var(--container-page)) / 2);
+}
+
+.icon-button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slider__track {
+        scroll-behavior: auto;
+    }
+}

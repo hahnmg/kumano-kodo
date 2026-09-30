@@ -1,0 +1,20 @@
+.quote {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+.quote__text {
+    margin: 0;
+    color: var(--color-ink);
+}
+
+.quote__text p {
+    margin: 0;
+}
+
+.quote__source {
+    color: var(--color-muted);
+}

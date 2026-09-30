@@ -1,0 +1,19 @@
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+  layoutRootPaths.10 = EXT:kumano_kodo/Resources/Private/Templates/Layouts/
+  partialRootPaths.10 = EXT:kumano_kodo/Resources/Private/Templates/Partials/
+  templateRootPaths.10 = EXT:kumano_kodo/Resources/Private/Templates/Content/
+
+  # kumano_link_list renders Content/KumanoLinkList.fluid.html.
+  templateName.cObject = TEXT
+  templateName.cObject {
+    field = CType
+    required = 1
+    case = uppercamelcase
+  }
+
+  dataProcessing.10 = record-transformation
+}
+
+tt_content = CASE
+tt_content.default =< lib.contentElement

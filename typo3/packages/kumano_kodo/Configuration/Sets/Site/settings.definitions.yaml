@@ -1,0 +1,40 @@
+categories:
+  kumanoKodo: ~
+  kumanoKodo.appearance:
+    parent: kumanoKodo
+  kumanoKodo.contact:
+    parent: kumanoKodo
+
+settings:
+  kumanoKodo.brand.name:
+    type: string
+    default: 'Kumano Kodo'
+    category: kumanoKodo.appearance
+  kumanoKodo.theme:
+    type: string
+    default: caramel
+    enum:
+      - caramel
+      - forest
+      - ocean
+      - violet
+    category: kumanoKodo.appearance
+  kumanoKodo.scheme:
+    type: string
+    default: light
+    enum:
+      - light
+      - dark
+    category: kumanoKodo.appearance
+  kumanoKodo.schemeToggle:
+    type: bool
+    default: true
+    category: kumanoKodo.appearance
+  kumanoKodo.contact.phone:
+    type: string
+    default: ''
+    category: kumanoKodo.contact
+  kumanoKodo.contact.email:
+    type: string
+    default: ''
+    category: kumanoKodo.contact
