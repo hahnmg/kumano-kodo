@@ -8,3 +8,5 @@ docs/paper-snapshot
 src/tokens
 package-lock.json
 .diffyard-report
+typo3
+.ddev
