@@ -153,12 +153,17 @@ const labelsOf = (c) => ({
     mapEnd: c.kumano.route.legend.end,
     mapBoundary: c.kumano.route.legend.boundary,
 });
-const buildLabels = async ({ content, locales }) => {
-    const language = join(pkg, 'Resources/Private/Language');
-    await mkdir(language, { recursive: true });
-    const source = labelsOf(content('en'));
+// EXT:form looks its messages up by validator code; the theme answers the ones its forms raise with its own words.
+const formLabelsOf = (c) => ({
+    ...Object.fromEntries(
+        ['1221560910', '1221560718', '1347992400', '1347992453'].map((code) => [`validation.error.${code}`, c.ui.fieldRequired]),
+    ),
+    'validation.error.1221559976': c.ui.emailInvalid,
+});
+const writeXliff = async (language, name, pick, { content, locales }) => {
+    const source = pick(content('en'));
     for (const locale of Object.keys(locales)) {
-        const ui = labelsOf(content(locale));
+        const ui = pick(content(locale));
         const target = locale === 'en' ? '' : ` target-language="${locale}"`;
         const units = Object.keys(source)
             .map(
@@ -170,9 +175,15 @@ const buildLabels = async ({ content, locales }) => {
             .join('\n');
         const file =
             `<?xml version="1.0" encoding="UTF-8"?>\n<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n` +
-            `    <file source-language="en"${target} datatype="plaintext" original="messages" product-name="kumano_kodo">\n        <body>\n${units}\n        </body>\n    </file>\n</xliff>\n`;
-        await writeFile(join(language, `${locale === 'en' ? '' : `${locale}.`}messages.xlf`), file);
+            `    <file source-language="en"${target} datatype="plaintext" original="${name}" product-name="kumano_kodo">\n        <body>\n${units}\n        </body>\n    </file>\n</xliff>\n`;
+        await writeFile(join(language, `${locale === 'en' ? '' : `${locale}.`}${name}.xlf`), file);
     }
+};
+const buildLabels = async (sources) => {
+    const language = join(pkg, 'Resources/Private/Language');
+    await mkdir(language, { recursive: true });
+    await writeXliff(language, 'messages', labelsOf, sources);
+    await writeXliff(language, 'form', formLabelsOf, sources);
 };
 
 // Theme presets for the site settings: what an empty setting falls back to, and which fonts a theme loads.

@@ -7,6 +7,9 @@ prototypes:
     formElementsDefinition:
       Form:
         renderingOptions:
+          translation:
+            translationFiles:
+              15: 'EXT:kumano_kodo/Resources/Private/Language/form.xlf'
           templateRootPaths:
             100: 'EXT:kumano_kodo/Resources/Private/Extensions/Form/Templates/'
           partialRootPaths:
