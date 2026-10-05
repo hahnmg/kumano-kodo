@@ -131,7 +131,14 @@ const build = (p: Photos): LocaleContent => {
                     { label: 'ニュースレター', href: paths.newsletter },
                 ],
             },
-            { title: 'お問い合わせ', links: [{ label: 'post@kumano-kodo.example' }, { label: '通常一週間以内に返信します' }] },
+            {
+                title: 'お問い合わせ',
+                links: [
+                    { label: 'post@kumano-kodo.example' },
+                    { label: '通常一週間以内に返信します' },
+                    { label: '一緒に歩いた方はログイン', href: paths.login },
+                ],
+            },
         ],
         copyright: '© 2024 熊野古道 山歩き日記',
         legal: [

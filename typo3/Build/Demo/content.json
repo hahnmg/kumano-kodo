@@ -546,6 +546,14 @@
                                     "ja": "通常一週間以内に返信します"
                                 },
                                 "link": ""
+                            },
+                            {
+                                "title": {
+                                    "en": "Walked with us? Log in",
+                                    "de": "Mitgewandert? Anmelden",
+                                    "ja": "一緒に歩いた方はログイン"
+                                },
+                                "link": "page:login"
                             }
                         ],
                         "tx_kumanokodo_links": []

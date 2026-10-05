@@ -133,7 +133,14 @@ const build = (p: Photos) => {
                     { label: 'Newsletter', href: paths.newsletter },
                 ],
             },
-            { title: 'Contact', links: [{ label: 'post@kumano-kodo.example' }, { label: 'Usually answered within a week' }] },
+            {
+                title: 'Contact',
+                links: [
+                    { label: 'post@kumano-kodo.example' },
+                    { label: 'Usually answered within a week' },
+                    { label: 'Walked with us? Log in', href: paths.login },
+                ],
+            },
         ],
         copyright: '© 2024 Kumano Kodo Trail journal',
         legal: [

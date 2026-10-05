@@ -132,7 +132,14 @@ const build = (p: Photos): LocaleContent => {
                     { label: 'Newsletter', href: paths.newsletter },
                 ],
             },
-            { title: 'Kontakt', links: [{ label: 'post@kumano-kodo.example' }, { label: 'Antwort meist innerhalb einer Woche' }] },
+            {
+                title: 'Kontakt',
+                links: [
+                    { label: 'post@kumano-kodo.example' },
+                    { label: 'Antwort meist innerhalb einer Woche' },
+                    { label: 'Mitgewandert? Anmelden', href: paths.login },
+                ],
+            },
         ],
         copyright: '© 2024 Kumano Kodo Wandertagebuch',
         legal: [
