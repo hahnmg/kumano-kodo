@@ -16,3 +16,8 @@ services:
     tags:
       - name: data.processor
         identifier: kumano-chapter-number
+
+  KumanoKodo\Sitepackage\DataProcessing\StructuredDataProcessor:
+    tags:
+      - name: data.processor
+        identifier: kumano-structured-data

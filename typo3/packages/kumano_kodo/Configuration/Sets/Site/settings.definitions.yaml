@@ -17,12 +17,10 @@ categories:
     parent: kumanoKodo
   kumanoKodo.newsletter:
     parent: kumanoKodo
+  kumanoKodo.custom:
+    parent: kumanoKodo
 
 settings:
-  kumanoKodo.brand.name:
-    type: string
-    default: 'Kumano Kodo'
-    category: kumanoKodo.appearance
   kumanoKodo.theme:
     type: string
     default: 'caramel'
@@ -182,3 +180,15 @@ settings:
     type: page
     default: 0
     category: kumanoKodo.newsletter
+  kumanoKodo.custom.css:
+    type: string
+    default: ''
+    category: kumanoKodo.custom
+  kumanoKodo.custom.js:
+    type: string
+    default: ''
+    category: kumanoKodo.custom
+  kumanoKodo.templates.path:
+    type: string
+    default: ''
+    category: kumanoKodo.custom

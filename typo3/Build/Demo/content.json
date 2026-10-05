@@ -1,5 +1,6 @@
 {
     "site": {
+        "websiteTitle": "Kumano Kodo",
         "settings": {
             "kumanoKodo.contact.phone": "+81 00 0000 0000",
             "kumanoKodo.contact.email": "post@kumano-kodo.example"
@@ -1081,7 +1082,12 @@
                     }
                 }
             ],
-            "nextLayout": "Default"
+            "nextLayout": "Default",
+            "description": {
+                "en": "Four days on foot from Takijiri to Nachi, through the cedars of the Kii peninsula. Twenty-seven photos, in the order they were taken.",
+                "de": "Vier Tage zu Fuß von Takijiri nach Nachi, durch die Zedern der Kii-Halbinsel. Siebenundzwanzig Fotos, in der Reihenfolge, in der sie entstanden sind.",
+                "ja": "滝尻から那智まで、紀伊半島の杉林を四日間歩いた。撮った順に並べた二十七枚の写真。"
+            }
         },
         {
             "key": "route",
@@ -1773,6 +1779,11 @@
                     },
                     "link": "page:day-3"
                 }
+            },
+            "description": {
+                "en": "From Takijiri to Nachi on foot, 20 to 23 April 2024: the days, the places worth a detour and what we wish we had known before setting out.",
+                "de": "Zu Fuß von Takijiri nach Nachi, 20. bis 23. April 2024: die Tage, die Orte, die einen Umweg lohnen, und was wir gern vor dem Aufbruch gewusst hätten.",
+                "ja": "2024年4月20日〜23日、滝尻から那智まで徒歩で。日ごとの記録、寄り道する価値のある場所、出発前に知っておきたかったこと。"
             }
         },
         {
@@ -2072,7 +2083,12 @@
                     },
                     "link": "page:days#stays"
                 }
-            ]
+            ],
+            "description": {
+                "en": "The four days in order, then the places we stopped at and where we slept.",
+                "de": "Die vier Tage der Reihe nach, dann die Orte, an denen wir Halt gemacht und übernachtet haben.",
+                "ja": "四日間を順番に、そのあと立ち寄った場所と泊まった場所。"
+            }
         },
         {
             "key": "day-1",
@@ -2291,7 +2307,12 @@
                         "tx_kumanokodo_links": []
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "On the trail at a quarter to four. 3.7 km, almost all of it uphill, to a village that sits above the valley.",
+                "de": "Um Viertel vor vier auf dem Weg. 3,7 km, fast alles bergauf, zu einem Dorf über dem Tal.",
+                "ja": "15時45分に歩き始めた。3.7 km、ほとんど登りで、谷を見下ろす集落へ。"
+            }
         },
         {
             "key": "day-2",
@@ -2525,7 +2546,12 @@
                         "tx_kumanokodo_links": []
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "Clouds lying in the valley at seven. Stone paving, a stream, a land crab at noon, the lantern gate of Chikatsuyu at 17:28.",
+                "de": "Um sieben Wolken im Tal. Steinpflaster, ein Bach, mittags eine Landkrabbe, um 17:28 das Laternentor von Chikatsuyu.",
+                "ja": "朝7時、谷に雲。石畳、沢、昼にカニ、17時28分に近露の提灯の門。"
+            }
         },
         {
             "key": "day-3",
@@ -2763,7 +2789,12 @@
                         "tx_kumanokodo_links": []
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "The longest day, about 25 kilometres through the cedars to Hongu, and on to Yunomine. At four an outdoor bath.",
+                "de": "Der längste Tag, rund 25 Kilometer durch die Zedern nach Hongu und weiter nach Yunomine. Um vier ein Außenbad.",
+                "ja": "いちばん長い日。杉林を約25キロ歩いて本宮へ、さらに湯の峰へ。4時に露天風呂。"
+            }
         },
         {
             "key": "day-4",
@@ -2984,7 +3015,12 @@
                         "tx_kumanokodo_links": []
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "Over the Kogumotori-goe and the Ogumotori-goe to Nachi and the pagoda in front of the falls. In Katsuura a ferry to the ryokan.",
+                "de": "Über den Kogumotori-goe und den Ogumotori-goe nach Nachi zur Pagode vor dem Wasserfall. In Katsuura eine Fähre zum Ryokan.",
+                "ja": "小雲取越と大雲取越を越えて那智へ、滝の前の三重塔。勝浦から船で旅館へ。"
+            }
         },
         {
             "key": "place-chikatsuyu",
@@ -3060,7 +3096,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "A village along the river, halfway between Takijiri and Hongu. Most walkers sleep here after day two, and most minshuku stand along the river.",
+                "de": "Ein Dorf am Fluss, auf halbem Weg zwischen Takijiri und Hongu. Die meisten übernachten hier nach Tag zwei, und die meisten Minshuku stehen am Fluss.",
+                "ja": "滝尻と本宮のほぼ中間にある川沿いの集落。二日目の夜はほとんどの人がここに泊まり、民宿の多くは川沿いにある。"
+            }
         },
         {
             "key": "place-yunomine",
@@ -3136,7 +3177,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "One of the oldest hot springs in Japan, a short walk from Hongu. The bath houses stand along a stream in a narrow valley.",
+                "de": "Eine der ältesten heißen Quellen Japans, ein kurzes Stück von Hongu entfernt. Die Badehäuser stehen an einem Bach in einem engen Tal.",
+                "ja": "日本最古級の温泉のひとつで、本宮から少し歩いたところにある。狭い谷の沢沿いに湯屋が並ぶ。"
+            }
         },
         {
             "key": "place-nachi",
@@ -3212,7 +3258,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "The end of the walk: the three-storey pagoda of Seiganto-ji in front of Nachi falls, and next to it the shrine of Kumano Nachi Taisha.",
+                "de": "Das Ende der Wanderung: die dreistöckige Pagode des Seiganto-ji vor dem Nachi-Fall, daneben der Schrein Kumano Nachi Taisha.",
+                "ja": "ウォークの終点。那智の滝の前に青岸渡寺の三重塔が立ち、その隣に熊野那智大社がある。"
+            }
         },
         {
             "key": "kohechi",
@@ -3264,7 +3315,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "The Kohechi is the mountain route from Koyasan to Hongu, shorter than the Nakahechi but with three high passes.",
+                "de": "Der Kohechi ist die Bergroute von Koyasan nach Hongu, kürzer als der Nakahechi, aber mit drei hohen Pässen.",
+                "ja": "小辺路は高野山から本宮へ向かう山のルート。中辺路より短いが、高い峠が三つある。"
+            }
         },
         {
             "key": "practical",
@@ -3465,6 +3521,11 @@
                         ]
                     }
                 ]
+            },
+            "description": {
+                "en": "What we would tell anyone planning the Nakahechi: getting there, where to sleep, how the trail is marked, and which maps to take.",
+                "de": "Was wir allen sagen würden, die den Nakahechi planen: Anreise, Unterkunft, Wegmarkierung und welche Karten man mitnehmen sollte.",
+                "ja": "中辺路を計画する人に伝えたいこと。アクセス、宿、道標、持っていくべき地図。"
             }
         },
         {
@@ -3549,7 +3610,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "Takijiri is reached by bus from Kii-Tanabe station, which is on the JR line from Osaka. The ride takes about forty minutes.",
+                "de": "Takijiri erreicht man mit dem Bus ab dem Bahnhof Kii-Tanabe, der an der JR-Strecke von Osaka liegt. Die Fahrt dauert etwa vierzig Minuten.",
+                "ja": "滝尻へは、大阪からのJR線にある紀伊田辺駅からバスで行く。所要時間は約40分。"
+            }
         },
         {
             "key": "practical-accommodation",
@@ -3633,7 +3699,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "Along the Nakahechi you sleep in minshuku, small family guest houses. Dinner and breakfast are usually included, and dinner is early.",
+                "de": "Am Nakahechi schläft man in Minshuku, kleinen Familienpensionen. Abendessen und Frühstück sind meist dabei, und das Abendessen ist früh.",
+                "ja": "中辺路では、家族経営の小さな宿、民宿に泊まる。夕食と朝食が付くことが多く、夕食は早い。"
+            }
         },
         {
             "key": "practical-trail-markers",
@@ -3717,7 +3788,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "The Nakahechi is marked with numbered wooden posts every few hundred metres. The numbers help if you ever need to tell someone where you are.",
+                "de": "Der Nakahechi ist mit nummerierten Holzpfosten im Abstand von einigen hundert Metern markiert. Die Nummern helfen, wenn man jemandem sagen muss, wo man ist.",
+                "ja": "中辺路には数百メートルごとに番号付きの木の道標が立っている。自分の位置を誰かに伝えるときに番号が役に立つ。"
+            }
         },
         {
             "key": "practical-maps",
@@ -3851,7 +3927,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "For navigation, take the trail map of the tourism office. The map on this site is schematic.",
+                "de": "Zum Navigieren die Wegekarte des Tourismusbüros mitnehmen. Die Karte auf dieser Seite ist schematisch.",
+                "ja": "道案内には観光協会のルートマップを持っていくこと。このサイトの地図は概略図。"
+            }
         },
         {
             "key": "photos",
@@ -4115,7 +4196,12 @@
                         "evening-rooftops"
                     ]
                 }
-            ]
+            ],
+            "description": {
+                "en": "All twenty-seven photos, day by day, in the order they were taken.",
+                "de": "Alle siebenundzwanzig Fotos, Tag für Tag, in der Reihenfolge, in der sie entstanden sind.",
+                "ja": "二十七枚の写真すべて。日ごとに、撮った順に。"
+            }
         },
         {
             "key": "newsletter",
@@ -4139,7 +4225,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.",
+                "de": "Beim nächsten Mal der Kohechi, der Bergpfad von Koyasan nach Hongu. Keine Werbung, keine Weitergabe Ihrer Adresse.",
+                "ja": "次は高野山から本宮へ向かう山道、小辺路です。広告なし、アドレスの共有なし。"
+            }
         },
         {
             "key": "imprint",
@@ -4171,7 +4262,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "Sample text of the design system. The imprint of the real site goes here.",
+                "de": "Beispieltext des Designsystems. Hier steht das Impressum der echten Seite.",
+                "ja": "デザインシステムのサンプルテキストです。実際のサイトの運営者情報がここに入ります。"
+            }
         },
         {
             "key": "privacy",
@@ -4203,7 +4299,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "Sample text of the design system. The privacy policy of the real site goes here.",
+                "de": "Beispieltext des Designsystems. Hier steht die Datenschutzerklärung der echten Seite.",
+                "ja": "デザインシステムのサンプルテキストです。実際のサイトのプライバシーポリシーがここに入ります。"
+            }
         },
         {
             "key": "accessibility",
@@ -4235,7 +4336,12 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "Sample text of the design system. The accessibility statement of the real site goes here.",
+                "de": "Beispieltext des Designsystems. Hier steht die Erklärung zur Barrierefreiheit der echten Seite.",
+                "ja": "デザインシステムのサンプルテキストです。実際のサイトのアクセシビリティ方針がここに入ります。"
+            }
         },
         {
             "key": "home-v3",
@@ -5114,7 +5220,12 @@
                         }
                     }
                 }
-            ]
+            ],
+            "description": {
+                "en": "The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines.",
+                "de": "Der Kumano Kodo ist kein einzelner Fernwanderweg, sondern ein Netz alter Pilgerpfade zu drei Schreinen.",
+                "ja": "熊野古道は一本の長距離トレイルではなく、三つの神社へ向かう古い参詣道の網です。4月、滝尻から那智まで、四日間で中辺路を歩きました。"
+            }
         },
         {
             "key": "components",

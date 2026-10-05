@@ -228,14 +228,6 @@ const buildSettings = async (themes) => {
     const add = (key, category, type, def, label, description = '', extra = {}) =>
         settings.push({ key, category, type, def, label, description, ...extra });
     add(
-        'brand.name',
-        'appearance',
-        'string',
-        'Kumano Kodo',
-        'Site name',
-        'Accessible name of the logo and the large wordmark in the footer.',
-    );
-    add(
         'theme',
         'appearance',
         'string',
@@ -296,6 +288,30 @@ const buildSettings = async (themes) => {
     add('contact.phone', 'contact', 'string', '', 'Phone');
     add('contact.email', 'contact', 'string', '', 'Email');
     add('newsletter.target', 'newsletter', 'page', 0, 'Form target', 'The page that receives the newsletter sign-up.');
+    add(
+        'custom.css',
+        'custom',
+        'string',
+        '',
+        'Own stylesheet',
+        'Loaded after the theme, for example EXT:my_site/Resources/Public/Css/site.css.',
+    );
+    add(
+        'custom.js',
+        'custom',
+        'string',
+        '',
+        'Own script',
+        'Loaded after the theme as a module, for example EXT:my_site/Resources/Public/JavaScript/site.js.',
+    );
+    add(
+        'templates.path',
+        'custom',
+        'string',
+        '',
+        'Own templates',
+        "A folder like EXT:my_site/Resources/Private/Templates/ with the theme's Pages/, Layouts/, Partials/ and Content/; a file there replaces the theme's file of the same name.",
+    );
 
     const categories = {
         appearance: 'Appearance',
@@ -306,6 +322,7 @@ const buildSettings = async (themes) => {
         spacing: 'Spacing and shape',
         contact: 'Contact in the top bar',
         newsletter: 'Newsletter',
+        custom: 'Own files',
     };
     const q = (v) => (typeof v === 'string' ? `'${v.replaceAll("'", "''")}'` : String(v));
     const yaml = [

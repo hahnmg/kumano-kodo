@@ -8,6 +8,8 @@ use KumanoKodo\Sitepackage\Theme\SiteLogo;
 use KumanoKodo\Sitepackage\Theme\ThemePresets;
 use KumanoKodo\Sitepackage\Theme\WebFontService;
 use TYPO3\CMS\Core\Site\Entity\Site;
+use TYPO3\CMS\Core\SystemResource\SystemResourceFactory;
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -22,6 +24,7 @@ final class ThemeProcessor implements DataProcessorInterface
         private readonly ThemePresets $presets,
         private readonly WebFontService $webFonts,
         private readonly SiteLogo $logo,
+        private readonly SystemResourceFactory $resources,
     ) {}
 
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
@@ -104,11 +107,36 @@ final class ThemeProcessor implements DataProcessorInterface
             'css' => $css,
             'fonts' => $this->stylesheets($fonts, $display === '' && $weight === 0),
             'logo' => $this->logo->markup($site->getRootPageId()),
+            // The core's website title, per language where one is set; the theme keeps no second copy.
+            'name' => $this->websiteTitle($cObj, $site),
+            'ownCss' => $this->publicFile($setting('custom.css')),
+            'ownJs' => $this->publicFile($setting('custom.js')),
         ];
         return $processedData;
     }
 
     /** @param array<string, list<int>> $fonts family => weights */
+    // A mistyped path is left out rather than ending the page with an exception.
+    private function publicFile(string $path): string
+    {
+        if ($path === '') {
+            return '';
+        }
+        try {
+            $this->resources->createPublicResource($path);
+            return $path;
+        } catch (\Throwable) {
+            return '';
+        }
+    }
+
+    private function websiteTitle(ContentObjectRenderer $cObj, Site $site): string
+    {
+        $language = $cObj->getRequest()->getAttribute('language');
+        $title = $language instanceof SiteLanguage ? $language->getWebsiteTitle() : '';
+        return trim($title) !== '' ? $title : (string)($site->getConfiguration()['websiteTitle'] ?? '');
+    }
+
     private function stylesheets(array $fonts, bool $themeDisplay): array
     {
         $urls = [];

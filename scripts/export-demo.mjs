@@ -676,6 +676,30 @@ const pages = [
     ),
 ];
 
+// Meta descriptions come from each page's own intro; a long one ends at its last full sentence within 160 characters.
+const summary = (text) => {
+    const plain = (Array.isArray(text) ? text[0] : text).replace(/<[^>]+>/g, '').trim();
+    if (plain.length <= 160) return plain;
+    const cut = plain.slice(0, 160);
+    const end = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('。'));
+    return end > 60 ? cut.slice(0, end + 1) : `${cut.slice(0, cut.lastIndexOf(' '))} …`;
+};
+const intros = {
+    home: (x) => x.home.draft.lede,
+    route: (x) => x.pages.start.text,
+    days: (x) => x.site.days.intro,
+    ...Object.fromEntries([1, 2, 3, 4].map((n) => [`day-${n}`, (x) => x.kumano.days[n - 1].description])),
+    ...Object.fromEntries(placeSlugs.map((slug) => [`place-${slug}`, (x) => x.site.places[slug].text])),
+    kohechi: (x) => x.site.kohechi.text,
+    practical: (x) => x.site.practical.intro,
+    ...Object.fromEntries(practicalSlugs.map((slug) => [`practical-${slug}`, (x) => x.site.practical.pages[slug].text])),
+    photos: (x) => x.site.photos.intro,
+    newsletter: (x) => x.site.newsletter.intro,
+    ...Object.fromEntries(legalSlugs.map((slug) => [slug, (x) => x.site.legal[slug].text])),
+    'home-v3': (x) => x.kumano.hero.teaser,
+};
+for (const p of pages) if (intros[p.key]) p.description = t((x) => summary(intros[p.key](x)));
+
 // The frame's texts live on the root page and slide down to every page.
 const footer = (x) => x.guide.footer;
 const frame = [
@@ -706,6 +730,7 @@ const frame = [
 pages[0].content = [...frame, ...pages[0].content];
 
 const site = {
+    websiteTitle: 'Kumano Kodo',
     settings: {
         'kumanoKodo.contact.phone': c.en.guide.topbar.phone,
         'kumanoKodo.contact.email': c.en.guide.topbar.email,

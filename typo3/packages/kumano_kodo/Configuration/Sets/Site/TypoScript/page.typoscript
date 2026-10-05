@@ -38,11 +38,28 @@ page {
         includeNotInMenu = 1
         as = breadcrumb
       }
+
+      40 = kumano-structured-data
     }
   }
 }
+
+# "Page – Site", the page first since it is what tells two tabs of one site apart.
+config.pageTitleFirst = 1
+config.pageTitleSeparator = –
+config.pageTitleSeparator.noTrimWrap = | | |
 
 config.htmlTag.attributes {
   data-theme = {$kumanoKodo.theme}
   data-scheme = {$kumanoKodo.scheme}
 }
+
+# A site's own templates come before the theme's, file by file.
+["{$kumanoKodo.templates.path}" != ""]
+  page.10.paths.20 = {$kumanoKodo.templates.path}
+  lib.contentElement {
+    templateRootPaths.20 = {$kumanoKodo.templates.path}Content/
+    partialRootPaths.20 = {$kumanoKodo.templates.path}Partials/
+    layoutRootPaths.20 = {$kumanoKodo.templates.path}Layouts/
+  }
+[END]

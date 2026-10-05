@@ -32,11 +32,8 @@
             <trans-unit id="categories.kumanoKodo.newsletter">
                 <source>Newsletter</source>
             </trans-unit>
-            <trans-unit id="settings.kumanoKodo.brand.name">
-                <source>Site name</source>
-            </trans-unit>
-            <trans-unit id="settings.description.kumanoKodo.brand.name">
-                <source>Accessible name of the logo and the large wordmark in the footer.</source>
+            <trans-unit id="categories.kumanoKodo.custom">
+                <source>Own files</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.theme">
                 <source>Theme</source>
@@ -277,6 +274,24 @@
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.newsletter.target">
                 <source>The page that receives the newsletter sign-up.</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.custom.css">
+                <source>Own stylesheet</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.custom.css">
+                <source>Loaded after the theme, for example EXT:my_site/Resources/Public/Css/site.css.</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.custom.js">
+                <source>Own script</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.custom.js">
+                <source>Loaded after the theme as a module, for example EXT:my_site/Resources/Public/JavaScript/site.js.</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.templates.path">
+                <source>Own templates</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.templates.path">
+                <source>A folder like EXT:my_site/Resources/Private/Templates/ with the theme's Pages/, Layouts/, Partials/ and Content/; a file there replaces the theme's file of the same name.</source>
             </trans-unit>
         </body>
     </file>

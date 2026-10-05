@@ -134,6 +134,7 @@ final class BuildCommand extends Command
         $fields = [
             'pid' => $pid,
             'title' => $page['title']['en'],
+            'description' => $page['description']['en'] ?? '',
             'slug' => $page['slug'],
             'nav_hide' => (int)$page['navHide'],
             'backend_layout' => 'pagets__' . $page['layout'],
@@ -153,7 +154,7 @@ final class BuildCommand extends Command
     private function translatePage(array $page): void
     {
         foreach (self::LANGUAGES as $code => $language) {
-            $this->translate('pages', $this->pages[$page['key']], $language, ['title' => $page['title'][$code], 'slug' => $page['slug'], 'hidden' => 0]);
+            $this->translate('pages', $this->pages[$page['key']], $language, ['title' => $page['title'][$code], 'description' => $page['description'][$code] ?? '', 'slug' => $page['slug'], 'hidden' => 0]);
         }
     }
 
@@ -414,6 +415,7 @@ final class BuildCommand extends Command
         $this->siteWriter->write(self::SITE, [
             'rootPageId' => $this->pages['home'],
             'base' => '/',
+            'websiteTitle' => $site['websiteTitle'],
             'dependencies' => ['kumano-kodo/site'],
             'languages' => $languages,
         ]);
