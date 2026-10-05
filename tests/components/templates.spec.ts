@@ -69,7 +69,8 @@ describe('site pages', () => {
                     );
                 expect(broken).toEqual([]);
             });
-            it(`${name} (${locale}) passes axe`, () => expectAccessible(html(), true));
+            // A whole page under a full parallel run can outlast the default 5 s, and a timed-out run blocks every later axe call.
+            it(`${name} (${locale}) passes axe`, () => expectAccessible(html(), true), 20_000);
         }
     }
 });
