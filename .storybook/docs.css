@@ -14,3 +14,15 @@
     font-family: var(--font-display);
     font-weight: 600;
 }
+
+.sbdocs .docs-callout {
+    margin: 0 0 var(--space-32);
+    padding: var(--space-16) var(--space-20);
+    border: var(--border-hairline) solid var(--color-accent);
+    background: var(--color-sunk);
+}
+
+.sbdocs .docs-callout a {
+    color: var(--color-accent);
+    font-weight: 600;
+}

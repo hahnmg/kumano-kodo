@@ -15,8 +15,8 @@ cause does not exist here), **Not checked**.
 | Say whether the theme is a starting point or a demo | Partly      | Theme and demo are two packages; a starter set as a choice in the demo is open           |
 | Decide what integrators can customise               | Covered     | Site settings, own CSS and JS, template folder, recipe for own elements (README › TYPO3) |
 | Support the core extensions                         | Covered     | `indexed_search`, `felogin`, `form`, sitemap (see below)                                 |
-| Do not depend on fluid_styled_content               | Covered     | Own `lib.contentElement`, set load order, documented failure (README › TYPO3)            |
-| Uploads without fluid_styled_content                | Covered     | List "Downloads" takes file references; type, size and title come from the file          |
+| Do not depend on `fluid_styled_content`             | Covered     | Own `lib.contentElement`, set load order, documented failure (README › TYPO3)            |
+| Uploads without `fluid_styled_content`              | Covered     | List "Downloads" takes file references; type, size and title come from the file          |
 
 ## Accessibility
 
@@ -33,12 +33,12 @@ cause does not exist here), **Not checked**.
 
 ## Core extensions
 
-| Issue                                            | Topic                                            | Core status  | Status here | How                                                                                                   |
-| ------------------------------------------------ | ------------------------------------------------ | ------------ | ----------- | ----------------------------------------------------------------------------------------------------- |
-| [#108673](https://forge.typo3.org/issues/108673) | Indexed Search styles                            | Accepted     | Covered     | Search in the header, results as Media List (`Resources/Private/Extensions/IndexedSearch/`)           |
-| [#108674](https://forge.typo3.org/issues/108674) | Frontend Login styles                            | Closed       | Covered     | Login Form molecule, logged-in state, demo account (`Resources/Private/Extensions/Felogin/`)          |
-| [#108675](https://forge.typo3.org/issues/108675) | Form extension styles                            | Accepted     | Covered     | Form atoms with error states (`Configuration/Form/KumanoKodo/`, `Resources/Private/Extensions/Form/`) |
-| [#109670](https://forge.typo3.org/issues/109670) | fluid_styled_content resets `lib.contentElement` | Under Review | Covered     | The site set loads fluid_styled_content first where installed; a replacement fails visibly            |
+| Issue                                            | Topic                                              | Core status  | Status here | How                                                                                                   |
+| ------------------------------------------------ | -------------------------------------------------- | ------------ | ----------- | ----------------------------------------------------------------------------------------------------- |
+| [#108673](https://forge.typo3.org/issues/108673) | Indexed Search styles                              | Accepted     | Covered     | Search in the header, results as Media List (`Resources/Private/Extensions/IndexedSearch/`)           |
+| [#108674](https://forge.typo3.org/issues/108674) | Frontend Login styles                              | Closed       | Covered     | Login Form molecule, logged-in state, demo account (`Resources/Private/Extensions/Felogin/`)          |
+| [#108675](https://forge.typo3.org/issues/108675) | Form extension styles                              | Accepted     | Covered     | Form atoms with error states (`Configuration/Form/KumanoKodo/`, `Resources/Private/Extensions/Form/`) |
+| [#109670](https://forge.typo3.org/issues/109670) | `fluid_styled_content` resets `lib.contentElement` | Under Review | Covered     | The site set loads fluid_styled_content first where installed; a replacement fails visibly            |
 
 ## Content and editing
 
