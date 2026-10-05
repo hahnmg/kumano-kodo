@@ -1,1 +1,47 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true"><f:layout name="Content/Default"/><f:section name="Main"><f:render partial="Kumano/Css" arguments="{names: 'highlight,quote,info-box'}"/><f:switch expression="{data.tx_kumanokodo_variant}"><f:case value="quote"><f:variable name="body"><figure class="quote"><blockquote class="quote__text type-quote"><p>{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p></blockquote><figcaption class="quote__source type-label">{record.header}</figcaption></figure></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/></f:case><f:case value="infobox"><f:variable name="body"><aside class="info-box"><h2 class="info-box__title type-label">{record.header}</h2><p class="info-box__text type-small">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p><f:if condition="{record.tx_kumanokodo_links}"><ul class="info-box__links"><f:for each="{record.tx_kumanokodo_links}" as="entry"><li><a class="type-button" href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a></li></f:for></ul></f:if></aside></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/></f:case><f:case value="notice"><f:variable name="body"><div class="notice" role="note"><f:render partial="Kumano/Icon" arguments="{name: 'alert', size: 24}"/><p class="notice__body"><strong class="notice__title type-label">{record.header}</strong> <span class="type-small">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</span></p></div></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/></f:case><f:defaultCase><f:variable name="body"><div class="highlight"><f:render partial="Kumano/LogoBird" arguments="{class: 'highlight__emblem'}"/><div class="highlight__body"><f:if condition="{record.subheader}"><p class="highlight__eyebrow type-label">{record.subheader}</p></f:if><h2 class="highlight__title type-h3">{record.header}</h2><p class="highlight__text type-lead">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p></div></div></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/></f:defaultCase></f:switch></f:section></html>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:render partial="Kumano/Css" arguments="{names: 'highlight,quote,info-box'}"/>
+    <f:switch expression="{data.tx_kumanokodo_variant}">
+        <f:case value="quote">
+            <f:variable name="body">
+                <figure class="quote">
+                    <blockquote class="quote__text type-quote">
+                        <p>{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p>
+                    </blockquote>
+                    <figcaption class="quote__source type-label">{record.header}</figcaption>
+                </figure>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:case>
+        <f:case value="infobox">
+            <f:variable name="body">
+                <aside class="info-box">
+                    <h2 class="info-box__title type-label">{record.header}</h2>
+                    <p class="info-box__text type-small">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p>
+                    <f:if condition="{record.tx_kumanokodo_links}">
+                        <ul class="info-box__links">
+                            <f:for each="{record.tx_kumanokodo_links}" as="entry">
+                                <li><a class="type-button" href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a></li>
+                            </f:for>
+                        </ul>
+                    </f:if>
+                </aside>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:case>
+        <f:case value="notice">
+            <f:variable name="body">
+                <div class="notice" role="note"><f:render partial="Kumano/Icon" arguments="{name: 'alert', size: 24}"/><p class="notice__body"><strong class="notice__title type-label">{record.header}</strong> <span class="type-small">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</span></p></div>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="body">
+                <div class="highlight"><f:render partial="Kumano/LogoBird" arguments="{class: 'highlight__emblem'}"/><div class="highlight__body"><f:if condition="{record.subheader}"><p class="highlight__eyebrow type-label">{record.subheader}</p></f:if><h2 class="highlight__title type-h3">{record.header}</h2><p class="highlight__text type-lead">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p></div></div>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:defaultCase>
+    </f:switch>
+</f:section>
+</html>

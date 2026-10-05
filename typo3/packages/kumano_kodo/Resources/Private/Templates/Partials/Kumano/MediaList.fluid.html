@@ -1,1 +1,13 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" data-namespace-typo3-fluid="true"><section class="media-list"><h2 class="media-list__title type-label">{title}</h2><ul class="media-list__items"><f:for each="{items}" as="item"><li><a class="media-list__row" href="{f:uri.typolink(parameter: item.link)}"><f:for each="{item.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'avatar avatar--small', sizes: '56px', width: 56, height: 56}"/></f:if></f:for><span class="media-list__text"><span class="type-h4">{item.title}</span><span class="media-list__meta type-caption">{item.meta}</span></span><span class="icon-circle"><f:render partial="Kumano/Icon" arguments="{name: 'arrow-right', size: 24}"/></span></a></li></f:for></ul><f:if condition="{moreLink}"><p class="media-list__more"><f:render partial="Kumano/Link" arguments="{label: moreLabel, href: '{f:uri.typolink(parameter: moreLink)}'}"/></p></f:if></section></html>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<section class="media-list">
+    <h2 class="media-list__title type-label">{title}</h2>
+    <ul class="media-list__items">
+        <f:for each="{items}" as="item">
+            <li><a class="media-list__row" href="{f:uri.typolink(parameter: item.link)}"><f:for each="{item.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'avatar avatar--small', sizes: '56px', width: 56, height: 56}"/></f:if></f:for><span class="media-list__text"><span class="type-h4">{item.title}</span><span class="media-list__meta type-caption">{item.meta}</span></span><span class="icon-circle"><f:render partial="Kumano/Icon" arguments="{name: 'arrow-right', size: 24}"/></span></a></li>
+        </f:for>
+    </ul>
+    <f:if condition="{moreLink}">
+        <p class="media-list__more"><f:render partial="Kumano/Link" arguments="{label: moreLabel, href: '{f:uri.typolink(parameter: moreLink)}'}"/></p>
+    </f:if>
+</section>
+</html>

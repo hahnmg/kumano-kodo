@@ -1,1 +1,25 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true"><f:layout name="Content/Default"/><f:section name="Main"><f:render partial="Kumano/Css" arguments="{names: 'cta-card,link-tile,place-card,person-card,stage-card,slider,section-heading'}"/><f:asset.script identifier="kumano-slider" src="EXT:kumano_kodo/Resources/Public/JavaScript/slider.js" type="module"/><f:if condition="{data.tx_kumanokodo_columns} == 'slider'"><f:then><f:variable name="body"><div class="slider" data-slider><f:render partial="Kumano/SectionHeading" arguments="{title: record.header, eyebrow: record.subheader, controls: 1}"/><div class="rail slider__track" tabindex="0" role="group" aria-label="{record.header}"><f:for each="{record.tx_kumanokodo_entries}" as="card"><f:render partial="Kumano/Card" arguments="{card: card, data: data}"/></f:for></div><div class="slider__dots"><div class="slider-dots"><f:for each="{record.tx_kumanokodo_entries}" as="card" iteration="i"><f:if condition="{i.isFirst}"><f:then><button class="slider-dots__dot slider-dots__dot--active" type="button" aria-label="{f:translate(key: 'card', domain: 'kumano_kodo.messages')} {i.cycle}" aria-current="true"></button></f:then><f:else><button class="slider-dots__dot" type="button" aria-label="{f:translate(key: 'card', domain: 'kumano_kodo.messages')} {i.cycle}"></button></f:else></f:if></f:for></div></div></div></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 1, body: body}"/></f:then><f:else><f:variable name="body"><f:if condition="{record.tx_kumanokodo_entries -> f:count()} == 1"><f:then><f:for each="{record.tx_kumanokodo_entries}" as="card"><f:render partial="Kumano/Card" arguments="{card: card, data: data}"/></f:for></f:then><f:else><div class="grid grid--{data.tx_kumanokodo_columns}"><f:for each="{record.tx_kumanokodo_entries}" as="card"><f:render partial="Kumano/Card" arguments="{card: card, data: data}"/></f:for></div></f:else></f:if></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/></f:else></f:if></f:section></html>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:render partial="Kumano/Css" arguments="{names: 'cta-card,link-tile,place-card,person-card,stage-card,slider,section-heading'}"/>
+    <f:asset.script identifier="kumano-slider" src="EXT:kumano_kodo/Resources/Public/JavaScript/slider.js" type="module"/>
+    <f:if condition="{data.tx_kumanokodo_columns} == 'slider'">
+        <f:then>
+            <f:variable name="body">
+                <div class="slider" data-slider>
+                    <f:render partial="Kumano/SectionHeading" arguments="{title: record.header, eyebrow: record.subheader, controls: 1}"/>
+                    <div class="rail slider__track" tabindex="0" role="group" aria-label="{record.header}"><f:for each="{record.tx_kumanokodo_entries}" as="card"><f:render partial="Kumano/Card" arguments="{card: card, data: data}"/></f:for></div>
+                    <div class="slider__dots">
+                        <div class="slider-dots"><f:for each="{record.tx_kumanokodo_entries}" as="card" iteration="i"><f:if condition="{i.isFirst}"><f:then><button class="slider-dots__dot slider-dots__dot--active" type="button" aria-label="{f:translate(key: 'card', domain: 'kumano_kodo.messages')} {i.cycle}" aria-current="true"></button></f:then><f:else><button class="slider-dots__dot" type="button" aria-label="{f:translate(key: 'card', domain: 'kumano_kodo.messages')} {i.cycle}"></button></f:else></f:if></f:for></div>
+                    </div>
+                </div>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 1, body: body}"/>
+        </f:then>
+        <f:else>
+            <f:variable name="body"><f:if condition="{record.tx_kumanokodo_entries -> f:count()} == 1"><f:then><f:for each="{record.tx_kumanokodo_entries}" as="card"><f:render partial="Kumano/Card" arguments="{card: card, data: data}"/></f:for></f:then><f:else><div class="grid grid--{data.tx_kumanokodo_columns}"><f:for each="{record.tx_kumanokodo_entries}" as="card"><f:render partial="Kumano/Card" arguments="{card: card, data: data}"/></f:for></div></f:else></f:if></f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

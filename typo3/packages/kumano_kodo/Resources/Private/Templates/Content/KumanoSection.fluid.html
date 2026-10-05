@@ -1,1 +1,17 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true"><f:layout name="Content/Default"/><f:section name="Main"><f:if condition="{record.header} && {data.header_layout} != 100"><f:then><f:variable name="body"><div class="stack" style="--stack-gap: var(--section-heading-gap)"><f:render partial="Kumano/SectionHeading" arguments="{title: record.header, eyebrow: record.subheader, aside: data.tx_kumanokodo_aside}"/><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--section-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></div></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/></f:then><f:else><f:variable name="body"><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--section-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/></f:else></f:if></f:section></html>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:if condition="{record.header} && {data.header_layout} != 100">
+        <f:then>
+            <f:variable name="body">
+                <div class="stack" style="--stack-gap: var(--section-heading-gap)"><f:render partial="Kumano/SectionHeading" arguments="{title: record.header, eyebrow: record.subheader, aside: data.tx_kumanokodo_aside}"/><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--section-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></div>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:then>
+        <f:else>
+            <f:variable name="body"><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--section-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

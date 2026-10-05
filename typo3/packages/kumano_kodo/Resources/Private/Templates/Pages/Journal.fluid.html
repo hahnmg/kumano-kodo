@@ -1,1 +1,11 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"><f:layout name="Pages/Default"/><f:comment>The journal opens with its own header: no top bar, and the footer without the notice.</f:comment><f:section name="Topbar"></f:section><f:section name="Main"><main class="journal"><!--TYPO3SEARCH_begin--><f:if condition="{content.main}"><f:render.contentArea contentArea="{content.main}"/></f:if><!--TYPO3SEARCH_end--></main></f:section><f:section name="Footer"><f:render partial="Page/SiteFooter" arguments="{content: content, settings: settings, theme: theme, hideNotice: 1}"/></f:section></html>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Pages/Default"/>
+<f:comment>The journal opens with its own header: no top bar, and the footer without the notice.</f:comment>
+<f:section name="Topbar"></f:section>
+<f:section name="Main">
+    <main class="journal"><!--TYPO3SEARCH_begin--><f:if condition="{content.main}"><f:render.contentArea contentArea="{content.main}"/></f:if><!--TYPO3SEARCH_end--></main>
+</f:section>
+<f:section name="Footer">
+    <f:render partial="Page/SiteFooter" arguments="{content: content, settings: settings, theme: theme, hideNotice: 1}"/>
+</f:section>
+</html>

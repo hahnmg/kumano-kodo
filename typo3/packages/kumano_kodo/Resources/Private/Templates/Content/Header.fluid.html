@@ -1,1 +1,17 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true"><f:layout name="Content/Default"/><f:section name="Main"><f:render partial="Kumano/Css" arguments="{names: 'section-heading'}"/><f:if condition="{data.colPos} == 30"><f:then><p class="topbar__hours"><f:render partial="Kumano/Icon" arguments="{name: 'clock', size: 16}"/><strong class="type-button">{record.header}</strong> <span class="type-small">{record.subheader}</span></p></f:then><f:else><f:variable name="body"><f:render partial="Kumano/SectionHeading" arguments="{title: record.header, eyebrow: record.subheader, aside: data.tx_kumanokodo_aside}"/></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/></f:else></f:if></f:section></html>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:render partial="Kumano/Css" arguments="{names: 'section-heading'}"/>
+    <f:if condition="{data.colPos} == 30">
+        <f:then>
+            <p class="topbar__hours"><f:render partial="Kumano/Icon" arguments="{name: 'clock', size: 16}"/><strong class="type-button">{record.header}</strong> <span class="type-small">{record.subheader}</span></p>
+        </f:then>
+        <f:else>
+            <f:variable name="body">
+                <f:render partial="Kumano/SectionHeading" arguments="{title: record.header, eyebrow: record.subheader, aside: data.tx_kumanokodo_aside}"/>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

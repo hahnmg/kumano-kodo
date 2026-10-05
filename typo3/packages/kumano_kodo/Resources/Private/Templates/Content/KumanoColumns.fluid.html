@@ -1,1 +1,25 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true"><f:layout name="Content/Default"/><f:section name="Main"><f:if condition="{data.tx_kumanokodo_layout} == 'hero'"><f:then><f:render partial="Kumano/Css" arguments="{names: 'hero-split'}"/><section class="hero-split"><div class="hero-split__inner"><div class="hero-split__text"><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--column-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></div><div class="hero-split__panel"><f:if condition="{columns.202}"><f:if condition="{columns.202.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.202}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--column-element-gap)"><f:render.contentArea contentArea="{columns.202}"/></div></f:else></f:if></f:if></div></div></section></f:then><f:else><f:variable name="body"><div class="split split--{data.tx_kumanokodo_layout} split--align-{data.tx_kumanokodo_align}"><div><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--column-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></div><div><f:if condition="{columns.202}"><f:if condition="{columns.202.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.202}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--column-element-gap)"><f:render.contentArea contentArea="{columns.202}"/></div></f:else></f:if></f:if></div></div></f:variable><f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/></f:else></f:if></f:section></html>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:if condition="{data.tx_kumanokodo_layout} == 'hero'">
+        <f:then>
+            <f:render partial="Kumano/Css" arguments="{names: 'hero-split'}"/>
+            <section class="hero-split">
+                <div class="hero-split__inner">
+                    <div class="hero-split__text"><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--column-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></div>
+                    <div class="hero-split__panel"><f:if condition="{columns.202}"><f:if condition="{columns.202.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.202}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--column-element-gap)"><f:render.contentArea contentArea="{columns.202}"/></div></f:else></f:if></f:if></div>
+                </div>
+            </section>
+        </f:then>
+        <f:else>
+            <f:variable name="body">
+                <div class="split split--{data.tx_kumanokodo_layout} split--align-{data.tx_kumanokodo_align}">
+                    <div><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--column-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></div>
+                    <div><f:if condition="{columns.202}"><f:if condition="{columns.202.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.202}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--column-element-gap)"><f:render.contentArea contentArea="{columns.202}"/></div></f:else></f:if></f:if></div>
+                </div>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+        </f:else>
+    </f:if>
+</f:section>
+</html>
