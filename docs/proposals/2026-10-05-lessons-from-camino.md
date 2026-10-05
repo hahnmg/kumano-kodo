@@ -6,7 +6,7 @@ sitemap; Storybook, Figma, TYPO3), 4 (load order, documented failure, uploads fr
 for every element and record type), 7 (caching documented, slider focus). Open: 1, and from 7 the docs.typo3.org
 documentation.
 
-Overview of every issue and how it is handled: `docs/core-theme-issues.md`.
+Overview of every issue and how it is handled: Storybook › Core theme issues (`docs/core-theme-issues.json`).
 
 Sources: feedback from the core team (2026-09-30) and every Forge issue about Camino: the 33 issues of the category
 "Themes" and the full-text matches for "camino" and "theme_camino" (checked 2026-10-05). Each point names its issue.

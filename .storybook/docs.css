@@ -26,3 +26,131 @@
     color: var(--color-accent);
     font-weight: 600;
 }
+
+/* Core theme issues: one row per problem, the status colour as a bar on the left. */
+.sbdocs .issue--solved {
+    --issue-colour: var(--color-moss);
+}
+
+.sbdocs .issue--partly {
+    --issue-colour: var(--color-accent);
+}
+
+.sbdocs .issue--check {
+    --issue-colour: var(--color-muted);
+}
+
+.sbdocs .issue--irrelevant {
+    --issue-colour: var(--color-hair);
+}
+
+.sbdocs .issue-lede {
+    max-width: 60ch;
+    color: var(--color-muted);
+}
+
+.sbdocs .issue-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-12);
+    margin: var(--space-24) 0 var(--space-40);
+    padding: 0;
+    list-style: none;
+}
+
+.sbdocs .issue-summary__item {
+    margin: 0;
+    padding: var(--space-8) var(--space-16);
+    border-left: var(--space-4) solid var(--issue-colour);
+    background: var(--color-sunk);
+}
+
+.sbdocs .issue-summary__item strong {
+    margin-right: var(--space-4);
+    font-family: var(--font-display);
+    font-size: 1.4em;
+}
+
+.sbdocs .issue-group {
+    margin-bottom: var(--space-40);
+}
+
+.sbdocs .issue-group__title {
+    margin: 0 0 var(--space-12);
+    padding: 0;
+    border: 0;
+    color: var(--issue-colour);
+}
+
+.sbdocs .issue--irrelevant .issue-group__title {
+    color: var(--color-muted);
+}
+
+.sbdocs .issue-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sbdocs .issue {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr) 13rem;
+    gap: var(--space-24);
+    align-items: baseline;
+    margin: 0;
+    padding: var(--space-14) var(--space-16);
+    border-bottom: var(--border-hairline) solid var(--color-line);
+    border-left: var(--space-4) solid var(--issue-colour);
+}
+
+.sbdocs .issue p {
+    margin: 0;
+}
+
+.sbdocs .issue__problem {
+    font-weight: 600;
+}
+
+.sbdocs .issue__refs {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-8);
+    color: var(--color-muted);
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+.sbdocs .issue__refs a {
+    color: var(--color-accent);
+}
+
+.sbdocs .issue--head {
+    padding-block: var(--space-8);
+    border-bottom-color: var(--color-hair);
+    color: var(--color-muted);
+    font-size: 0.85em;
+}
+
+.sbdocs .issue--head .issue__problem {
+    font-weight: 400;
+}
+
+.sbdocs .issue-source {
+    color: var(--color-muted);
+    font-size: 0.85em;
+}
+
+@media (width <= 720px) {
+    .sbdocs .issue {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .sbdocs .issue--head {
+        display: none;
+    }
+
+    .sbdocs .issue__refs {
+        justify-content: flex-start;
+    }
+}
