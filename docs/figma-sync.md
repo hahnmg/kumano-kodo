@@ -29,18 +29,18 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 
 - [x] 2026-09-29 Sticky header: docked state with tighter padding, logo at 82 % and frosted background (prototype: fixed position on scroll)
 
-- [ ] Slider dots: only as many as reachable positions (three on desktop, five on phones)
+- [x] 2026-10-05 Slider dots: only as many as reachable positions (three on desktop, five on phones)
 - [x] 2026-09-30 Spacing rule as variables: `layout/heading-gap` (56), `layout/element-gap` (96), `layout/column-gap` (40)
 - [x] 2026-10-05 Text Field and Checkbox with an Invalid state; Search Toggle in the header, Search Panel, Search Form (row and stacked, open at the top of the mobile menu), Search Results, Login Form, Form
 - [x] 2026-10-05 Site Footer: "Walked with us? Log in" in the contact column leads to the log-in page
-- [ ] Pages: search, log-in, contact, travel papers and page-not-found frames
-- [ ] Days overview: the days as Slider of linked Stage Cards (hover: title in accent); FAQ on Practical in Columns "heading-content"
-- [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the page frames
+- [x] 2026-10-05 Pages: search, log-in, contact, travel papers and page-not-found frames (section Site pages)
+- [x] 2026-10-05 Days overview with the days as Slider of Stage Cards (state Hover: title in accent); Practical with the FAQ in "heading-content"
+- [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the older page frames; the Site pages use it
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
 - [x] 2026-09-30 Components page in three sections (Atoms, Molecules, Organisms) as in Storybook, 160 apart
 - [ ] Home page as editorial journal, composed from those components
-- [ ] Site pages: route overview, days and places, day page, place page, practical overview and subpage, photos, text page
+- [ ] Site pages: route overview, day page, place page, practical subpage, photos, text page (days and places, practical overview: done 2026-10-05)
 - [ ] All 27 trip photos (web versions in img/photos) replace the earlier set
 - [ ] Contents: the walk Takijiri → Nachi, 20–23 April 2024, in EN, DE, JA
 - [x] 2026-09-30 Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
@@ -48,6 +48,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 ## Known differences between Figma and code
 
 - Mobile exists in Figma only as screenshots of the coded Storybook; they are not built from components.
+- The Site pages use the photos Figma already holds (the earlier set); places and stays show the components' sample photo until the trip photos are in Figma.
 - Language copies exist for the start page only; the other templates are English in Figma.
 - The header dark mode toggle, menu, flyouts, slider, lightbox and sticky state are drawn as states; their behaviour lives in `src/scripts/`.
 

@@ -85,7 +85,7 @@
             "name": "Stage Card",
             "group": "molecules",
             "component": "stage-card",
-            "node": "7:7"
+            "node": "70:3346"
         },
         {
             "name": "Place Card",
@@ -493,6 +493,41 @@
             "name": "Mobile references · 390px from code",
             "slug": "mobile-references",
             "node": "40:3204"
+        },
+        {
+            "name": "Site · Search",
+            "slug": "search",
+            "node": "73:3146"
+        },
+        {
+            "name": "Site · Log in",
+            "slug": "login",
+            "node": "73:3329"
+        },
+        {
+            "name": "Site · Contact",
+            "slug": "contact",
+            "node": "73:3489"
+        },
+        {
+            "name": "Site · Travel papers",
+            "slug": "papers",
+            "node": "73:3663"
+        },
+        {
+            "name": "Site · Page not found",
+            "slug": "not-found",
+            "node": "73:3881"
+        },
+        {
+            "name": "Site · Days and places",
+            "slug": "days",
+            "node": "75:3897"
+        },
+        {
+            "name": "Site · Practical",
+            "slug": "practical",
+            "node": "75:4126"
         }
     ]
 }
