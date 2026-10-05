@@ -9,6 +9,7 @@
         "build:typo3": "npm run tokens && node scripts/build-typo3.mjs && node scripts/build-docs.mjs",
         "export:demo": "node scripts/export-demo.mjs",
         "export:starter": "node scripts/export-starter.mjs",
+        "docs": "docker run --rm -v \"$PWD/typo3/packages/kumano_kodo\":/project ghcr.io/typo3-documentation/render-guides:latest --config=Documentation",
         "lint": "eslint . && stylelint \"stories/**/*.css\" \"src/**/*.css\" && node scripts/check-filenames.mjs && prettier --check \"**/*.{ts,mjs,css,json}\"",
         "size": "node scripts/check-size.mjs",
         "test": "npm run tokens && vitest run",

@@ -8,6 +8,8 @@ This README is for those who build Kumano Kodo. Who uses the TYPO3 packages read
 
 - Figma: https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm (pages Foundations, Components, Pages)
 - Storybook: https://hahnmg.github.io/kumano-kodo/ (deployed from `develop`)
+- Manual for users of the TYPO3 packages: https://hahnmg.github.io/kumano-kodo/manual/Index.html (`npm run docs` renders it
+  locally into `typo3/packages/kumano_kodo/Documentation-GENERATED-temp/`)
 
 ## Run it
 
@@ -97,13 +99,13 @@ site page, the previous home (`/home-v3`) and a page with the remaining componen
 published walker account `pilgrim` (`stories/content/demo-login.ts`). Set `KUMANO_DEMO=starter` before the first start
 (`ddev config --web-environment-add=KUMANO_DEMO=starter`) to build the starter pages instead.
 
-| Command                                                                                                        | Does                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `npm run build:typo3`                                                                                          | CSS, scripts, generated partials, labels and the manual's settings page |
-| `npm run export:demo`, `npm run export:starter`                                                                | Demo and starter pages and texts from the Storybook content as JSON     |
-| `ddev exec -d /var/www/html/typo3 composer demo:export`                                                        | Rebuilds the demo records and exports them as the demo's `data.xml`     |
-| `ddev exec -d /var/www/html/typo3 composer starter:export`                                                     | The same for the starter package, then puts the demo back               |
-| `docker run --rm -v "$(pwd)":/project ghcr.io/typo3-documentation/render-guides:latest --config=Documentation` | Renders the manual, run in `typo3/packages/kumano_kodo`                 |
+| Command                                                    | Does                                                                           |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| `npm run build:typo3`                                      | CSS, scripts, generated partials, labels and the manual's settings page        |
+| `npm run export:demo`, `npm run export:starter`            | Demo and starter pages and texts from the Storybook content as JSON            |
+| `ddev exec -d /var/www/html/typo3 composer demo:export`    | Rebuilds the demo records and exports them as the demo's `data.xml`            |
+| `ddev exec -d /var/www/html/typo3 composer starter:export` | The same for the starter package, then puts the demo back                      |
+| `npm run docs`                                             | Renders the manual (Docker) into the package's `Documentation-GENERATED-temp/` |
 
 - **Imports keep their links**: impexp remaps only the root page of an imported site; the demo's
   `RemapErrorPagesOnPackageInitialization` points its error pages at the imported pages.

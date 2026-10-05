@@ -29,6 +29,9 @@ jobs:
             - run: npm test
             - run: npm run size
             - run: npm run build
+            # The user manual travels with the Storybook, at /manual/Index.html.
+            - run: npm run docs
+            - run: cp -R typo3/packages/kumano_kodo/Documentation-GENERATED-temp storybook-static/manual
             - uses: actions/upload-pages-artifact@v5
               if: github.event_name != 'pull_request'
               with:
