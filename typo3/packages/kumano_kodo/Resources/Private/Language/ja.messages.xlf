@@ -146,6 +146,26 @@
                 <source>Username %1$s · password %2$s</source>
                 <target>ユーザー名 %1$s・パスワード %2$s</target>
             </trans-unit>
+            <trans-unit id="notFoundTitle">
+                <source>Page not found</source>
+                <target>ページが見つかりません</target>
+            </trans-unit>
+            <trans-unit id="notFoundText">
+                <source>This path is not on the map: the page may have moved, or the address has a typo. Search the journal above, or start again from here.</source>
+                <target>この道は地図に載っていません。ページが移動したか、アドレスが間違っている可能性があります。上の検索を使うか、ここからもう一度始めてください。</target>
+            </trans-unit>
+            <trans-unit id="papersTitle">
+                <source>Travel papers</source>
+                <target>旅の資料</target>
+            </trans-unit>
+            <trans-unit id="papersText">
+                <source>Welcome back. Here are the papers from our walk: the stage map, how we got there, and what to pack for rain. The days below lead back to each stage.</source>
+                <target>おかえりなさい。私たちの旅の資料はこちらです。区間地図、アクセス、雨の日の持ち物リスト。下の各日から、それぞれの行程に戻れます。</target>
+            </trans-unit>
+            <trans-unit id="papersLink">
+                <source>Your travel papers</source>
+                <target>あなたの旅の資料</target>
+            </trans-unit>
             <trans-unit id="requiredNote">
                 <source>Fields marked * are required.</source>
                 <target>* の項目は必須です。</target>

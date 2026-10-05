@@ -146,6 +146,26 @@
                 <source>Username %1$s · password %2$s</source>
                 <target>Benutzername %1$s · Passwort %2$s</target>
             </trans-unit>
+            <trans-unit id="notFoundTitle">
+                <source>Page not found</source>
+                <target>Seite nicht gefunden</target>
+            </trans-unit>
+            <trans-unit id="notFoundText">
+                <source>This path is not on the map: the page may have moved, or the address has a typo. Search the journal above, or start again from here.</source>
+                <target>Dieser Weg steht auf keiner Karte: Die Seite ist umgezogen, oder in der Adresse steckt ein Tippfehler. Durchsuchen Sie das Tagebuch oben, oder beginnen Sie hier neu.</target>
+            </trans-unit>
+            <trans-unit id="papersTitle">
+                <source>Travel papers</source>
+                <target>Reiseunterlagen</target>
+            </trans-unit>
+            <trans-unit id="papersText">
+                <source>Welcome back. Here are the papers from our walk: the stage map, how we got there, and what to pack for rain. The days below lead back to each stage.</source>
+                <target>Willkommen zurück. Hier liegen die Unterlagen unserer Wanderung: die Etappenkarte, die Anreise und die Packliste für Regen. Die Tage darunter führen zurück zu jeder Etappe.</target>
+            </trans-unit>
+            <trans-unit id="papersLink">
+                <source>Your travel papers</source>
+                <target>Ihre Reiseunterlagen</target>
+            </trans-unit>
             <trans-unit id="requiredNote">
                 <source>Fields marked * are required.</source>
                 <target>Mit * markierte Felder sind Pflichtfelder.</target>
