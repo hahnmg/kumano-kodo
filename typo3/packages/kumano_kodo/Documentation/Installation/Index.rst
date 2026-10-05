@@ -23,7 +23,9 @@ Demo or starter set
 Content comes from one of two packages; they exclude each other.
 
 `kumano-kodo/demo`
-    The full trail journal.
+    The full trail journal: four days, places, practical pages, photos, a search page, a contact form and a log-in
+    with a published account (user `pilgrim`, password `Kumano-Kodo-2024`) that leads to a page only logged-in
+    visitors see. Unknown addresses answer with its page "Page not found".
 
 `kumano-kodo/starter`
     Five pages with placeholder texts to replace (home, about us, contact, imprint, privacy), the footer and the

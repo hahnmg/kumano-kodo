@@ -21,8 +21,8 @@ Kumano Kodo for TYPO3
 
 ----
 
-A theme for TYPO3 v14, built from the Kumano Kodo design system: site set, page layouts, 13 content elements in two
-containers, and templates for search, login and forms. It renders without fluid_styled_content.
+A theme for TYPO3 v14: site set, page layouts, 13 content elements in two containers, and templates for search,
+login and forms. It renders without fluid_styled_content.
 
 ----
 

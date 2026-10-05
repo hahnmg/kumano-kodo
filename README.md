@@ -3,6 +3,9 @@
 A theme for TYPO3 and its design system: components and tokens for the Kumano Kodo sitepackage. **Figma is the design
 source**; this repository turns it into a Storybook of plain HTML components.
 
+This README is for those who build Kumano Kodo. Who uses the TYPO3 packages reads the manual in
+`typo3/packages/kumano_kodo/Documentation/`.
+
 - Figma: https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm (pages Foundations, Components, Pages)
 - Storybook: https://hahnmg.github.io/kumano-kodo/ (deployed from `develop`)
 
@@ -73,75 +76,41 @@ nowhere.
 
 ## TYPO3
 
-`typo3/` holds a TYPO3 v14 installation with the sitepackage (`packages/kumano_kodo`) and the trail journal as demo
-content (`packages/kumano_kodo_demo`). Why it is built this way: `docs/adr/2026-09-30-typo3-sitepackage.md`.
+`typo3/` is a TYPO3 v14 installation for developing the packages users install; what they do for users is in the
+manual, `typo3/packages/kumano_kodo/Documentation/` (docs.typo3.org format). Why it is built this way:
+`docs/adr/2026-09-30-typo3-sitepackage.md`, `docs/adr/2026-09-30-typo3-content-model.md`,
+`docs/adr/2026-09-30-typo3-content-form.md`.
+
+| Package                                       | Is                                                                         |
+| --------------------------------------------- | -------------------------------------------------------------------------- |
+| `kumano-kodo/sitepackage` (`kumano_kodo`)     | The theme. Generated parts come from Storybook via `npm run build:typo3`   |
+| `kumano-kodo/demo` (`kumano_kodo_demo`)       | The trail journal, built from the Storybook content, and the build command |
+| `kumano-kodo/starter` (`kumano_kodo_starter`) | Five placeholder pages; excludes the demo                                  |
 
 ```
 ddev start               # installs TYPO3 and imports the demo on the first start
 ```
 
 The site answers at https://kumano-kodo.ddev.site in EN, `/de/` and `/ja/`; the backend at `/typo3` with user `admin`
-and the password the first start prints (also in `typo3/var/admin-password`). The demo holds every Storybook site page,
-the previous home (`/home-v3`) and a page with the remaining components (`/components`).
+and the password in `typo3/var/admin-password` (generated once, kept across reinstalls). The demo holds every Storybook
+site page, the previous home (`/home-v3`) and a page with the remaining components (`/components`); the log-in takes the
+published walker account `pilgrim` (`stories/content/demo-login.ts`). Set `KUMANO_DEMO=starter` before the first start
+(`ddev config --web-environment-add=KUMANO_DEMO=starter`) to build the starter pages instead.
 
-To start a site of your own instead, take the **starter set**: the package `kumano-kodo/starter` with five pages and
-placeholder texts (home, about us, contact, imprint, privacy) in EN, DE and JA, the footer and the theme's contact
-form. Require it instead of `kumano-kodo/demo`; the two exclude each other. In this DDEV setup:
+| Command                                                                                                        | Does                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `npm run build:typo3`                                                                                          | CSS, scripts, generated partials, labels and the manual's settings page |
+| `npm run export:demo`, `npm run export:starter`                                                                | Demo and starter pages and texts from the Storybook content as JSON     |
+| `ddev exec -d /var/www/html/typo3 composer demo:export`                                                        | Rebuilds the demo records and exports them as the demo's `data.xml`     |
+| `ddev exec -d /var/www/html/typo3 composer starter:export`                                                     | The same for the starter package, then puts the demo back               |
+| `docker run --rm -v "$(pwd)":/project ghcr.io/typo3-documentation/render-guides:latest --config=Documentation` | Renders the manual, run in `typo3/packages/kumano_kodo`                 |
 
-```
-ddev config --web-environment-add=KUMANO_DEMO=starter   # before the first start: builds the starter pages
-vendor/bin/typo3 kumano:demo:build --replace --starter  # or later, with the demo installed; replaces its pages
-composer starter:export                                 # after changing scripts/export-starter.mjs
-```
-
-- **Site settings** (Sites › Setup › Settings): theme, colour mode, dark mode toggle, contact, the 18 palette
-  colours, three typefaces (Google Fonts, served from this server), display weight, spacing unit, page margin, section
-  spacing, content width and radii, the upright name beside the journal title, the newsletter form target. Empty fields
-  and colours left at their default keep the theme's value. The site name is the site's website title.
-- **Own files** (same settings, category Own files): a stylesheet and a script loaded after the theme, and a template
-  folder ahead of the theme's. It mirrors `Resources/Private/Templates/` (`Pages/`, `Layouts/`, `Partials/`,
-  `Content/`); a file there replaces the theme's file of the same name. A path that cannot be resolved is skipped.
-- **Search, login, forms**: `indexed_search`, `felogin` and `form` render in the theme's markup when they are installed
-  (`Resources/Private/Extensions/`, form markup in `Configuration/Form/KumanoKodo`). The header shows the search once a
-  page of the site holds the search plugin, or the page set in the setting Search page. The demo has a search page, a
-  contact form shipped in the demo package and a log-in page with a published walker account (`pilgrim`) that leads to
-  the travel papers, a page only logged-in visitors see. Entries of a list take an access group like content elements.
-- **Error pages**: the demo answers unknown addresses with its page "Page not found" (404) and protected pages with the
-  log-in (403). The import keeps both: `RemapErrorPagesOnPackageInitialization` points them at the imported pages.
-- **Without fluid_styled_content**: the theme renders every element itself but, like any sitepackage, defines
-  `lib.contentElement`. Its set loads fluid_styled_content first where installed, so a set depending on it cannot
-  replace ours ([#109670](https://forge.typo3.org/issues/109670)). If another set replaces it anyway, each of the
-  theme's elements shows TYPO3's "Oops, an error occurred!" instead of falling back silently.
-- **Sitemap**: with `typo3/cms-seo` installed the site set loads its sitemap at `/sitemap.xml`; pages with "No index"
-  (in the demo search and page-not-found) stay out.
-- **Caching**: like every TYPO3 site, pages go out as `private, no-store`. For client and proxy caching set
-  `config.sendCacheHeaders = 1` in the site's TypoScript; logged-in visitors and pages with uncached plugins (search,
-  log-in) still go out uncached.
-- **Manual**: `typo3/packages/kumano_kodo/Documentation/` in the docs.typo3.org format; the site settings page is
-  generated by `npm run build:typo3`. Render it locally with
-  `docker run --rm -v "$(pwd)":/project ghcr.io/typo3-documentation/render-guides:latest --config=Documentation` in
-  the package folder.
-- **Lessons from the core theme**: every problem reported for TYPO3's core theme Camino, with the solution here, in
+- **Imports keep their links**: impexp remaps only the root page of an imported site; the demo's
+  `RemapErrorPagesOnPackageInitialization` points its error pages at the imported pages.
+- **Lessons from the core theme**: every problem reported for TYPO3's core theme Camino and the solution here, in
   Storybook under "Core theme issues" (data: `docs/core-theme-issues.json`).
-- **Icons**: every element and record type has its own icon (`Resources/Public/Icons/Content/`), drawn to the
-  [TYPO3 Icons](https://typo3.github.io/TYPO3.Icons/guide/drawing.html) grid and palette.
-- **Own content elements**: register the CType in your own extension as `Configuration/TCA/Overrides` does here, with
-  the `kumanoHeading_*` palettes and the tab order General, Images, Appearance; put its template in your template folder
-  under `Content/` and render it through the `Kumano/Section` partial so it gets the section frame.
-- **Logo**: a site without a logo of its own shows its website title; the setting Logo switches to the Kumano Kodo
-  mark (the demo does), Caramel with the classic mark, the other themes the modern one. An editor uploads an own logo
-  on the home page (page properties, tab Appearance); an SVG takes the theme colours when its groups are named `bird`
-  and `text`.
-- **Content**: containers **Section** and **Columns** for layout, 13 content elements with a display option each
-  (Cards, List, Facts, Images …), one form order for all (General, Images, Appearance), one entry table for cards,
-  lists, links and chips. Spacing comes from the design, not from fields. Top bar and footer texts are content elements
-  on the home page. Why: `docs/adr/2026-09-30-typo3-content-model.md`, `docs/adr/2026-09-30-typo3-content-form.md`.
-
-| Command                                                 | Does                                                                    |
-| ------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `npm run build:typo3`                                   | CSS, scripts, generated partials and labels into the sitepackage        |
-| `npm run export:demo`                                   | Demo pages and texts from the Storybook content into `typo3/Build/Demo` |
-| `ddev exec -d /var/www/html/typo3 composer demo:export` | Rebuilds the demo records and exports them as the demo's `data.xml`     |
+- **Icons**: drawn to the [TYPO3 Icons](https://typo3.github.io/TYPO3.Icons/guide/drawing.html) grid; the source
+  script is not kept, edit the SVGs in `Resources/Public/Icons/Content/`.
 
 ## Photos
 

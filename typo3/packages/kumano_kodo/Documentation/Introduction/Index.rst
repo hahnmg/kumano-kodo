@@ -15,9 +15,6 @@ Kumano Kodo is a theme for a travel journal: calm pages, large photos, one accen
 `kumano-kodo/starter`
     Five pages with placeholder texts, to start a site of your own.
 
-The components, their states and the tokens behind them are documented in the design system's Storybook; Figma is
-the design source.
-
 What it covers
 ==============
 
