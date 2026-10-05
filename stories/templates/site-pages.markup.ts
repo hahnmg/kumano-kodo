@@ -26,6 +26,8 @@ import { subNav } from '../molecules/sub-nav.markup';
 import { teaserCard, type TeaserCardProps } from '../molecules/teaser-card.markup';
 import { bleedPhoto } from '../molecules/bleed-photo.markup';
 import { chapter } from '../organisms/chapter.markup';
+import { slider } from '../organisms/slider.markup';
+import { stageCard } from '../molecules/stage-card.markup';
 import { heroSplit } from '../organisms/hero-split.markup';
 import { pageHeader } from '../organisms/page-header.markup';
 import { routeMap } from '../organisms/route-map.markup';
@@ -151,7 +153,15 @@ export const daysPage = (c: Content = content()): string => {
             ],
         ) +
             section({ content: richText({ html: `<p>${esc(site.days.intro)}</p>` }) }) +
-            group('days', g.days, dayTeasers(c)) +
+            section({
+                id: 'days',
+                bleed: true,
+                content: slider({
+                    heading: { title: g.days },
+                    items: kumano.stages.map(stageCard),
+                    labels: { previous: c.ui.previous, next: c.ui.next, item: c.ui.card },
+                }),
+            }) +
             group('places', g.places, guide.entries.slice(4, 7)) +
             group('stays', g.stays, stays),
     );

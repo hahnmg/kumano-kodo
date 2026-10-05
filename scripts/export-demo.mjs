@@ -274,10 +274,22 @@ const stays = (x) => {
         { image: x.photos['ryokan-room'], title: x.guide.entries[7].title, meta: x.kumano.days[3].date, href: paths.day(4) },
     ];
 };
+const stageCards = () =>
+    list(
+        (x) => x.kumano.stages,
+        (st) => ({
+            image: photo(st(c.en).image),
+            label: t((x) => st(x).stage),
+            meta: t((x) => st(x).stats),
+            title: t((x) => st(x).title),
+            text: t((x) => st(x).description),
+            link: link(st(c.en).href),
+        }),
+    );
 const group = (id, pickTitle, pickItems) => cards('teaser', 4, { tx_kumanokodo_anchor: id, header: t(pickTitle) }, teasers(pickItems));
 const daysContent = [
     text(t((x) => `<p>${esc(x.site.days.intro)}</p>`)),
-    group('days', (x) => g(x).days, dayTeasers),
+    cards('stage', 'slider', { tx_kumanokodo_anchor: 'days', header: t((x) => g(x).days) }, stageCards()),
     group(
         'places',
         (x) => g(x).places,
@@ -358,7 +370,7 @@ const placeContent = (slug) => {
 const practicalContent = [
     text(t((x) => `<p>${esc(x.site.practical.intro)}</p>`)),
     tiles({ space_before_class: 'flush-top' }),
-    questions({ ...sunk, header: t((x) => x.home.practical.title) }),
+    columns('heading-content', sunk, [el('header', { header: t((x) => x.home.practical.title) })], [questions({})]),
 ];
 
 const practicalSubContent = (slug) => [
@@ -475,16 +487,7 @@ const v3 = [
             header: t((x) => x.home.stages.title),
             subheader: t((x) => x.home.stages.eyebrow),
         },
-        list(
-            (x) => x.kumano.stages,
-            (st) => ({
-                image: photo(st(c.en).image),
-                label: t((x) => st(x).stage),
-                meta: t((x) => st(x).stats),
-                title: t((x) => st(x).title),
-                text: t((x) => st(x).description),
-            }),
-        ),
+        stageCards(),
     ),
     routeMap(heading((x) => x.home.map)),
     section({ space_before_class: 'flush-top', ...heading((x) => x.home.places) }, [

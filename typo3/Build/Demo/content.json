@@ -1872,8 +1872,8 @@
                 {
                     "type": "kumano_cards",
                     "fields": {
-                        "tx_kumanokodo_variant": "teaser",
-                        "tx_kumanokodo_columns": "4",
+                        "tx_kumanokodo_variant": "stage",
+                        "tx_kumanokodo_columns": "slider",
                         "tx_kumanokodo_anchor": "days",
                         "header": {
                             "en": "Days",
@@ -1885,77 +1885,121 @@
                         "tx_kumanokodo_entries": [
                             {
                                 "image": "signpost",
+                                "label": {
+                                    "en": "Day 1",
+                                    "de": "Tag 1",
+                                    "ja": "1日目"
+                                },
+                                "meta": {
+                                    "en": "3.7 km",
+                                    "de": "3,7 km",
+                                    "ja": "3.7 km"
+                                },
                                 "title": {
                                     "en": "Takijiri → Takahara",
                                     "de": "Takijiri → Takahara",
                                     "ja": "滝尻 → 高原"
                                 },
                                 "text": {
-                                    "en": "3.7 km",
-                                    "de": "3,7 km",
-                                    "ja": "3.7 km"
-                                },
-                                "meta": {
-                                    "en": "Day 1 · 20 April · from 15:40",
-                                    "de": "Tag 1 · 20. April · ab 15:40",
-                                    "ja": "1日目 · 4月20日 · 15:40から"
+                                    "en": "On the trail at a quarter to four. The first hour climbs the whole way.",
+                                    "de": "Um Viertel vor vier auf dem Weg. Die erste Stunde geht nur bergauf.",
+                                    "ja": "15時45分に歩き始めた。最初の一時間はひたすら登り。"
                                 },
                                 "link": "page:day-1"
                             },
                             {
-                                "image": "roadside-markers",
+                                "image": "stone-path-walkers",
+                                "label": {
+                                    "en": "Day 2",
+                                    "de": "Tag 2",
+                                    "ja": "2日目"
+                                },
+                                "meta": {
+                                    "en": "9.8 km",
+                                    "de": "9,8 km",
+                                    "ja": "9.8 km"
+                                },
                                 "title": {
                                     "en": "Takahara → Chikatsuyu",
                                     "de": "Takahara → Chikatsuyu",
                                     "ja": "高原 → 近露"
                                 },
                                 "text": {
-                                    "en": "9.8 km",
-                                    "de": "9,8 km",
-                                    "ja": "9.8 km"
-                                },
-                                "meta": {
-                                    "en": "Day 2 · 21 April · 07:02–17:28",
-                                    "de": "Tag 2 · 21. April · 07:02–17:28",
-                                    "ja": "2日目 · 4月21日 · 07:02–17:28"
+                                    "en": "Clouds below the village at seven, stone paving, a stream, the lantern gate of Chikatsuyu at half past five.",
+                                    "de": "Um sieben Wolken unter dem Dorf, Steinpflaster, ein Bach, um halb sechs das Laternentor von Chikatsuyu.",
+                                    "ja": "朝7時は集落の下に雲、石畳、沢、17時半に近露の提灯の門。"
                                 },
                                 "link": "page:day-2"
                             },
                             {
-                                "image": "cedar-canopy",
-                                "title": {
-                                    "en": "Chikatsuyu → Hongu → Yunomine",
-                                    "de": "Chikatsuyu → Hongu → Yunomine",
-                                    "ja": "近露 → 本宮 → 湯の峰"
+                                "image": "walker-in-mist",
+                                "label": {
+                                    "en": "Day 3",
+                                    "de": "Tag 3",
+                                    "ja": "3日目"
                                 },
-                                "text": {
+                                "meta": {
                                     "en": "about 25 km",
                                     "de": "rund 25 km",
                                     "ja": "約25 km"
                                 },
-                                "meta": {
-                                    "en": "Day 3 · 22 April · 07:18–16:05",
-                                    "de": "Tag 3 · 22. April · 07:18–16:05",
-                                    "ja": "3日目 · 4月22日 · 07:18–16:05"
+                                "title": {
+                                    "en": "Chikatsuyu → Hongu",
+                                    "de": "Chikatsuyu → Hongu",
+                                    "ja": "近露 → 本宮"
+                                },
+                                "text": {
+                                    "en": "The longest day, through the cedars and past a small oji shrine, and on to Yunomine for the night.",
+                                    "de": "Der längste Tag, durch die Zedern und an einem kleinen Oji-Schrein vorbei, weiter nach Yunomine zum Übernachten.",
+                                    "ja": "いちばん長い日。杉林を抜け、小さな王子の社を過ぎて、湯の峰で泊まった。"
                                 },
                                 "link": "page:day-3"
                             },
                             {
-                                "image": "nachi-pagoda",
-                                "title": {
-                                    "en": "Yunomine → Nachi",
-                                    "de": "Yunomine → Nachi",
-                                    "ja": "湯の峰 → 那智"
-                                },
-                                "text": {
-                                    "en": "about 27.5 km",
-                                    "de": "rund 27,5 km",
-                                    "ja": "約27.5 km"
+                                "image": "fern-frond",
+                                "label": {
+                                    "en": "Day 4",
+                                    "de": "Tag 4",
+                                    "ja": "4日目"
                                 },
                                 "meta": {
-                                    "en": "Day 4 · 23 April · 10:55–15:48",
-                                    "de": "Tag 4 · 23. April · 10:55–15:48",
-                                    "ja": "4日目 · 4月23日 · 10:55–15:48"
+                                    "en": "about 13 km",
+                                    "de": "rund 13 km",
+                                    "ja": "約13 km"
+                                },
+                                "title": {
+                                    "en": "Kogumotori-goe",
+                                    "de": "Kogumotori-goe",
+                                    "ja": "小雲取越"
+                                },
+                                "text": {
+                                    "en": "From the hot springs over the first of the two passes that lead to the coast.",
+                                    "de": "Von den heißen Quellen über den ersten der beiden Pässe, die zur Küste führen.",
+                                    "ja": "温泉から、海へ向かう二つの峠のうち最初の峠へ。"
+                                },
+                                "link": "page:day-4"
+                            },
+                            {
+                                "image": "nachi-pagoda",
+                                "label": {
+                                    "en": "Day 4",
+                                    "de": "Tag 4",
+                                    "ja": "4日目"
+                                },
+                                "meta": {
+                                    "en": "about 14.5 km",
+                                    "de": "rund 14,5 km",
+                                    "ja": "約14.5 km"
+                                },
+                                "title": {
+                                    "en": "Ogumotori-goe → Nachi",
+                                    "de": "Ogumotori-goe → Nachi",
+                                    "ja": "大雲取越 → 那智"
+                                },
+                                "text": {
+                                    "en": "The second pass, and at the end the pagoda standing in front of the falls.",
+                                    "de": "Der zweite Pass, und am Ende die Pagode vor dem Wasserfall.",
+                                    "ja": "二つ目の峠を越え、最後は滝の前に立つ三重塔。"
                                 },
                                 "link": "page:day-4"
                             }
@@ -3454,68 +3498,84 @@
                     }
                 },
                 {
-                    "type": "kumano_questions",
+                    "type": "kumano_columns",
                     "fields": {
-                        "frame_class": "sunk",
-                        "header": {
-                            "en": "Questions we were asked afterwards",
-                            "de": "Was man uns danach gefragt hat",
-                            "ja": "帰ってから聞かれたこと"
-                        }
+                        "tx_kumanokodo_layout": "heading-content",
+                        "frame_class": "sunk"
                     },
-                    "items": {
-                        "tx_kumanokodo_questions": [
+                    "children": {
+                        "201": [
                             {
-                                "question": {
-                                    "en": "Do I need to book accommodation in advance?",
-                                    "de": "Muss ich die Unterkünfte im Voraus buchen?",
-                                    "ja": "宿は事前に予約が必要ですか？"
-                                },
-                                "answer": {
-                                    "en": "Yes, and early. Takahara and Chikatsuyu each have a handful of minshuku, and in spring and autumn they are full months ahead. The Tanabe tourism office reservation service books in English.",
-                                    "de": "Ja, und früh. Takahara und Chikatsuyu haben je eine Handvoll Minshuku, und im Frühling und Herbst sind sie Monate vorher voll. Der Reservierungsdienst des Tourismusbüros in Tanabe bucht auf Englisch.",
-                                    "ja": "はい、早めに。高原と近露には民宿が数軒ずつしかなく、春と秋は数か月前に満室になります。田辺市観光協会の予約サービスは英語でも対応しています。"
-                                },
-                                "open": 1
-                            },
+                                "type": "header",
+                                "fields": {
+                                    "header": {
+                                        "en": "Questions we were asked afterwards",
+                                        "de": "Was man uns danach gefragt hat",
+                                        "ja": "帰ってから聞かれたこと"
+                                    }
+                                }
+                            }
+                        ],
+                        "202": [
                             {
-                                "question": {
-                                    "en": "How much rain should I expect?",
-                                    "de": "Mit wie viel Regen muss man rechnen?",
-                                    "ja": "雨はどのくらい降りますか？"
-                                },
-                                "answer": {
-                                    "en": "The Kii peninsula is one of the wettest regions of Japan. Waterproof boots and gaiters help less than you hope; a dry change of clothes in a sealed bag helps more.",
-                                    "de": "Die Kii-Halbinsel gehört zu den regenreichsten Gegenden Japans. Wasserdichte Schuhe und Gamaschen helfen weniger als erhofft; trockene Wechselkleidung in einem dichten Beutel hilft mehr.",
-                                    "ja": "紀伊半島は日本でも特に雨の多い地域です。防水の靴やスパッツは思ったほど役に立たず、密封袋に入れた乾いた着替えのほうが助かります。"
-                                },
-                                "open": 0
-                            },
-                            {
-                                "question": {
-                                    "en": "Can you get around by bus?",
-                                    "de": "Kommt man mit dem Bus voran?",
-                                    "ja": "バスで移動できますか？"
-                                },
-                                "answer": {
-                                    "en": "Yes. Buses link the villages along the route several times a day, which makes it easy to shorten a day or to get back to the start.",
-                                    "de": "Ja. Busse verbinden die Orte entlang der Route mehrmals am Tag. So lässt sich ein Tag verkürzen oder man kommt zum Start zurück.",
-                                    "ja": "はい。ルート沿いの集落を一日に何本かバスが結んでいるので、一日を短くしたり出発地へ戻ったりしやすいです。"
-                                },
-                                "open": 0
-                            },
-                            {
-                                "question": {
-                                    "en": "Is there a luggage transfer?",
-                                    "de": "Gibt es einen Gepäcktransport?",
-                                    "ja": "荷物の配送はありますか？"
-                                },
-                                "answer": {
-                                    "en": "Yes, between the main villages, booked through the Tanabe tourism office one day ahead.",
-                                    "de": "Ja, zwischen den größeren Orten, einen Tag vorher über das Tourismusbüro in Tanabe gebucht.",
-                                    "ja": "はい、主な集落の間で利用でき、前日までに田辺市観光協会で予約します。"
-                                },
-                                "open": 0
+                                "type": "kumano_questions",
+                                "fields": {},
+                                "items": {
+                                    "tx_kumanokodo_questions": [
+                                        {
+                                            "question": {
+                                                "en": "Do I need to book accommodation in advance?",
+                                                "de": "Muss ich die Unterkünfte im Voraus buchen?",
+                                                "ja": "宿は事前に予約が必要ですか？"
+                                            },
+                                            "answer": {
+                                                "en": "Yes, and early. Takahara and Chikatsuyu each have a handful of minshuku, and in spring and autumn they are full months ahead. The Tanabe tourism office reservation service books in English.",
+                                                "de": "Ja, und früh. Takahara und Chikatsuyu haben je eine Handvoll Minshuku, und im Frühling und Herbst sind sie Monate vorher voll. Der Reservierungsdienst des Tourismusbüros in Tanabe bucht auf Englisch.",
+                                                "ja": "はい、早めに。高原と近露には民宿が数軒ずつしかなく、春と秋は数か月前に満室になります。田辺市観光協会の予約サービスは英語でも対応しています。"
+                                            },
+                                            "open": 1
+                                        },
+                                        {
+                                            "question": {
+                                                "en": "How much rain should I expect?",
+                                                "de": "Mit wie viel Regen muss man rechnen?",
+                                                "ja": "雨はどのくらい降りますか？"
+                                            },
+                                            "answer": {
+                                                "en": "The Kii peninsula is one of the wettest regions of Japan. Waterproof boots and gaiters help less than you hope; a dry change of clothes in a sealed bag helps more.",
+                                                "de": "Die Kii-Halbinsel gehört zu den regenreichsten Gegenden Japans. Wasserdichte Schuhe und Gamaschen helfen weniger als erhofft; trockene Wechselkleidung in einem dichten Beutel hilft mehr.",
+                                                "ja": "紀伊半島は日本でも特に雨の多い地域です。防水の靴やスパッツは思ったほど役に立たず、密封袋に入れた乾いた着替えのほうが助かります。"
+                                            },
+                                            "open": 0
+                                        },
+                                        {
+                                            "question": {
+                                                "en": "Can you get around by bus?",
+                                                "de": "Kommt man mit dem Bus voran?",
+                                                "ja": "バスで移動できますか？"
+                                            },
+                                            "answer": {
+                                                "en": "Yes. Buses link the villages along the route several times a day, which makes it easy to shorten a day or to get back to the start.",
+                                                "de": "Ja. Busse verbinden die Orte entlang der Route mehrmals am Tag. So lässt sich ein Tag verkürzen oder man kommt zum Start zurück.",
+                                                "ja": "はい。ルート沿いの集落を一日に何本かバスが結んでいるので、一日を短くしたり出発地へ戻ったりしやすいです。"
+                                            },
+                                            "open": 0
+                                        },
+                                        {
+                                            "question": {
+                                                "en": "Is there a luggage transfer?",
+                                                "de": "Gibt es einen Gepäcktransport?",
+                                                "ja": "荷物の配送はありますか？"
+                                            },
+                                            "answer": {
+                                                "en": "Yes, between the main villages, booked through the Tanabe tourism office one day ahead.",
+                                                "de": "Ja, zwischen den größeren Orten, einen Tag vorher über das Tourismusbüro in Tanabe gebucht.",
+                                                "ja": "はい、主な集落の間で利用でき、前日までに田辺市観光協会で予約します。"
+                                            },
+                                            "open": 0
+                                        }
+                                    ]
+                                }
                             }
                         ]
                     }
@@ -5141,7 +5201,8 @@
                                     "en": "On the trail at a quarter to four. The first hour climbs the whole way.",
                                     "de": "Um Viertel vor vier auf dem Weg. Die erste Stunde geht nur bergauf.",
                                     "ja": "15時45分に歩き始めた。最初の一時間はひたすら登り。"
-                                }
+                                },
+                                "link": "page:day-1"
                             },
                             {
                                 "image": "stone-path-walkers",
@@ -5164,7 +5225,8 @@
                                     "en": "Clouds below the village at seven, stone paving, a stream, the lantern gate of Chikatsuyu at half past five.",
                                     "de": "Um sieben Wolken unter dem Dorf, Steinpflaster, ein Bach, um halb sechs das Laternentor von Chikatsuyu.",
                                     "ja": "朝7時は集落の下に雲、石畳、沢、17時半に近露の提灯の門。"
-                                }
+                                },
+                                "link": "page:day-2"
                             },
                             {
                                 "image": "walker-in-mist",
@@ -5187,7 +5249,8 @@
                                     "en": "The longest day, through the cedars and past a small oji shrine, and on to Yunomine for the night.",
                                     "de": "Der längste Tag, durch die Zedern und an einem kleinen Oji-Schrein vorbei, weiter nach Yunomine zum Übernachten.",
                                     "ja": "いちばん長い日。杉林を抜け、小さな王子の社を過ぎて、湯の峰で泊まった。"
-                                }
+                                },
+                                "link": "page:day-3"
                             },
                             {
                                 "image": "fern-frond",
@@ -5210,7 +5273,8 @@
                                     "en": "From the hot springs over the first of the two passes that lead to the coast.",
                                     "de": "Von den heißen Quellen über den ersten der beiden Pässe, die zur Küste führen.",
                                     "ja": "温泉から、海へ向かう二つの峠のうち最初の峠へ。"
-                                }
+                                },
+                                "link": "page:day-4"
                             },
                             {
                                 "image": "nachi-pagoda",
@@ -5233,7 +5297,8 @@
                                     "en": "The second pass, and at the end the pagoda standing in front of the falls.",
                                     "de": "Der zweite Pass, und am Ende die Pagode vor dem Wasserfall.",
                                     "ja": "二つ目の峠を越え、最後は滝の前に立つ三重塔。"
-                                }
+                                },
+                                "link": "page:day-4"
                             }
                         ]
                     }

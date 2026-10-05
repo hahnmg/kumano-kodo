@@ -10,5 +10,11 @@ describe('stage-card', () => {
         expect(el.querySelector('.stage-card__stage')?.textContent).toBe(kumano.stages[0].stage);
         expect(el.querySelector('h3')?.textContent).toBe(kumano.stages[0].title);
     });
+    it('links the title to its day, and stays plain without a target', () => {
+        const el = mount(stageCard(kumano.stages[0]));
+        expect(el.querySelector('h3 a')?.getAttribute('href')).toBe(kumano.stages[0].href);
+        expect(stageCard({ ...kumano.stages[0], href: undefined })).not.toContain('<a ');
+    });
     it('passes axe', () => expectAccessible(stageCard(kumano.stages[0])));
+    it('passes axe without a link', () => expectAccessible(stageCard({ ...kumano.stages[0], href: undefined })));
 });

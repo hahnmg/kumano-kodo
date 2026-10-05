@@ -2,11 +2,12 @@
 
 Figma: Stage Card (7:7). Markup: `stories/molecules/stage-card.markup.ts`.
 
-Stage in the carousel, image 4:5.
+Stage in the carousel, image 4:5. Used on the days overview, where each stage leads to its day.
 
 | Prop | Values |
 |---|---|
 | `image` | `{ src, alt }` |
 | `stage`, `stats`, `title`, `description` | text |
+| `href` | optional; the title's link then covers the card, as on the Teaser Card |
 
 Tokens: `--color-hair`, `--color-accent`, `--color-muted`, `--space-12`, `--space-14`, `--space-20`.
