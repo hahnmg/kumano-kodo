@@ -128,6 +128,12 @@
             "solution": "Every label key the previews use exists."
         },
         {
+            "status": "solved",
+            "issues": [109789],
+            "problem": "Command line setup prints a warning.",
+            "solution": "The first DDEV start runs TYPO3 setup on the command line and imports the demo without a warning."
+        },
+        {
             "status": "partly",
             "issues": [],
             "problem": "Unclear whether the theme is a starting point or a demo.",
@@ -138,12 +144,6 @@
             "issues": [108672, 108777, 108681],
             "problem": "Documentation is missing.",
             "solution": "README and this Storybook. Open: documentation in the docs.typo3.org format."
-        },
-        {
-            "status": "check",
-            "issues": [109789],
-            "problem": "Command line setup prints a warning.",
-            "solution": "Setup here runs through DDEV; the command line route is untested."
         },
         {
             "status": "irrelevant",
