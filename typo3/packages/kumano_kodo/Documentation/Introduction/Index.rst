@@ -4,14 +4,16 @@
 Introduction
 ============
 
-Kumano Kodo is a theme for a travel journal: calm pages, large photos, one accent colour. It comes as two packages.
+Kumano Kodo is a theme for a travel journal: calm pages, large photos, one accent colour. It comes as a theme and two content packages.
 
 `kumano-kodo/sitepackage`
     The theme. It ships no content and installs empty.
 
 `kumano-kodo/demo`
-    Content to look at or to start from: the full trail journal in English, German and Japanese, or a five-page
-    starter set with placeholder texts.
+    The full trail journal in English, German and Japanese, to look at.
+
+`kumano-kodo/starter`
+    Five pages with placeholder texts, to start a site of your own.
 
 The components, their states and the tokens behind them are documented in the design system's Storybook; Figma is
 the design source.

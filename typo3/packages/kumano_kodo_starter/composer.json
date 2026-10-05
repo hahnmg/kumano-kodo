@@ -1,0 +1,24 @@
+{
+    "name": "kumano-kodo/starter",
+    "description": "Kumano Kodo for TYPO3: five pages with placeholder texts to start a site of your own",
+    "type": "typo3-cms-extension",
+    "license": "proprietary",
+    "version": "0.1.0",
+    "require": {
+        "kumano-kodo/sitepackage": "@dev",
+        "typo3/cms-core": "^14.3",
+        "typo3/cms-form": "^14.3",
+        "typo3/cms-impexp": "^14.3"
+    },
+    "conflict": {
+        "kumano-kodo/demo": "*"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "kumano_kodo_starter",
+            "Package": {
+                "providesPackages": {}
+            }
+        }
+    }
+}

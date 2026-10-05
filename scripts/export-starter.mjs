@@ -34,7 +34,7 @@ const titles = {
 };
 const formFlexform =
     '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data><sheet index="sDEF"><language index="lDEF">' +
-    '<field index="settings.persistenceIdentifier"><value index="vDEF">EXT:kumano_kodo_demo/Resources/Private/Forms/contact.form.yaml</value></field>' +
+    '<field index="settings.persistenceIdentifier"><value index="vDEF">EXT:kumano_kodo/Resources/Private/Forms/contact.form.yaml</value></field>' +
     '<field index="settings.overrideFinishers"><value index="vDEF">0</value></field></language></sheet></data></T3FlexForms>';
 
 // The frame's texts live on the root page and slide down to every page, as in the full demo.
@@ -125,6 +125,6 @@ const pages = [
     }),
 ];
 
-const site = { websiteTitle: 'Your site', settings: {} };
+const site = { websiteTitle: 'Your site', package: 'kumano_kodo_starter', settings: {} };
 await writeFile(out, `${JSON.stringify({ site, photos: {}, files: {}, pages, frontendUsers: [] }, null, 4)}\n`);
 console.log(`Starter: ${pages.length} pages → ${out}`);

@@ -20,12 +20,17 @@ as layout for the subpages; a page without layout falls back to Default.
 Demo or starter set
 ===================
 
-Installing the demo package imports the full journal. To begin with five pages to replace instead (home, about us,
-contact, imprint, privacy):
+Content comes from one of two packages; they exclude each other.
+
+`kumano-kodo/demo`
+    The full trail journal.
+
+`kumano-kodo/starter`
+    Five pages with placeholder texts to replace (home, about us, contact, imprint, privacy), the footer and the
+    theme's contact form.
 
 ..  code-block:: bash
 
-    vendor/bin/typo3 kumano:demo:build --replace --starter
+    composer require kumano-kodo/starter
 
-In the DDEV setup of the repository, set `KUMANO_DEMO=starter` before the first `ddev start` to get the starter set
-right away.
+Both are TYPO3 distributions: without Composer, the installer offers them as content to import during setup.

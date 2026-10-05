@@ -84,12 +84,14 @@ The site answers at https://kumano-kodo.ddev.site in EN, `/de/` and `/ja/`; the 
 and the password the first start prints (also in `typo3/var/admin-password`). The demo holds every Storybook site page,
 the previous home (`/home-v3`) and a page with the remaining components (`/components`).
 
-To start a site of your own instead, take the **starter set**: five pages with placeholder texts (home, about us,
-contact, imprint, privacy) in EN, DE and JA, with the footer and the contact form.
+To start a site of your own instead, take the **starter set**: the package `kumano-kodo/starter` with five pages and
+placeholder texts (home, about us, contact, imprint, privacy) in EN, DE and JA, the footer and the theme's contact
+form. Require it instead of `kumano-kodo/demo`; the two exclude each other. In this DDEV setup:
 
 ```
-ddev config --web-environment-add=KUMANO_DEMO=starter   # before the first start
-vendor/bin/typo3 kumano:demo:build --replace --starter  # or later; replaces the demo pages
+ddev config --web-environment-add=KUMANO_DEMO=starter   # before the first start: builds the starter pages
+vendor/bin/typo3 kumano:demo:build --replace --starter  # or later, with the demo installed; replaces its pages
+composer starter:export                                 # after changing scripts/export-starter.mjs
 ```
 
 - **Site settings** (Sites › Setup › Settings): theme, colour mode, dark mode toggle, contact, the 18 palette

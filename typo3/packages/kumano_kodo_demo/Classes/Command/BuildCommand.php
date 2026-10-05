@@ -103,7 +103,7 @@ final class BuildCommand extends Command
         }
         $this->applyOrder();
         // This instance holds the records the export ships, so its own setup must not import them again.
-        $this->registry->set('extensionDataImport', 'kumano_kodo_demo:Initialisation/dataImported', 1);
+        $this->registry->set('extensionDataImport', ($demo['site']['package'] ?? 'kumano_kodo_demo') . ':Initialisation/dataImported', 1);
         $this->registry->set('siteConfigImport', self::SITE, 1);
 
         $output->writeln(sprintf('Built %d pages and %d content elements, root page %d.', count($this->pages), $elements, $this->pages['home']));
