@@ -20,12 +20,18 @@ fi
 
 vendor/bin/typo3 cache:flush
 
-# The first page request downloads the web fonts to this server; do it now rather than for the first visitor.
-curl -s -o /dev/null http://localhost/ || true
-
-# indexed_search fills its index from pages as they are rendered; with an empty index, render every page once.
+# indexed_search fills its index from pages as they are rendered. Checked before the first request below, which
+# already indexes the home page.
 db() { mysql --host=db --user=db --password=db db --batch --skip-column-names -e "$1" 2>/dev/null; }
-if [ "$(db 'SELECT COUNT(*) FROM index_phash' || echo skip)" = "0" ]; then
+empty_index="$(db 'SELECT COUNT(*) FROM index_phash' || echo skip)"
+
+# The first page request downloads the web fonts to this server; do it now rather than for the first visitor.
+# The demo site answers on the project URL in DDEV (its base variant), so requests go there rather than to localhost.
+url="${DDEV_PRIMARY_URL:-http://localhost}"
+curl -sk -o /dev/null "$url/" || true
+
+# With an empty index, render every page once.
+if [ "$empty_index" = "0" ]; then
     db "SELECT CONCAT(CASE sys_language_uid WHEN 1 THEN '/de' WHEN 2 THEN '/ja' ELSE '' END, slug) FROM pages WHERE deleted = 0 AND hidden = 0 AND doktype = 1" |
-        while read -r path; do curl -s -o /dev/null "http://localhost$path" || true; done
+        while read -r path; do curl -sk -o /dev/null "$url$path" || true; done
 fi
