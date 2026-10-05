@@ -36,6 +36,13 @@ settings:
     type: string
     default: '熊野古道'
     category: kumanoKodo.appearance
+  kumanoKodo.brand.logo:
+    type: string
+    default: 'title'
+    category: kumanoKodo.appearance
+    enum:
+      - 'title'
+      - 'kumano'
   kumanoKodo.scheme:
     type: string
     default: 'light'

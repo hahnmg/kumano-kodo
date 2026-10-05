@@ -1,4 +1,4 @@
-import { attrs } from '../../src/lib/html';
+import { attrs, esc } from '../../src/lib/html';
 import logos from '../../docs/figma-export/logos.json';
 
 export type LogoMark = 'classic' | 'modern';
@@ -22,8 +22,12 @@ export const logoBird = (className = 'logo__bird'): string =>
 export interface LogoProps {
     href?: string;
     label?: string;
+    /** `title` sets the site name in type, for a site without a logo of its own. */
+    variant?: 'mark' | 'title';
 }
 
 // Caramel shows the classic mark, every other theme the modern one; CSS picks by data-theme.
-export const logo = ({ href = '/', label = 'Kumano Kodo' }: LogoProps = {}): string =>
-    `<a class="logo"${attrs({ href, 'aria-label': label })}>${mark('classic')}${mark('modern')}</a>`;
+export const logo = ({ href = '/', label = 'Kumano Kodo', variant = 'mark' }: LogoProps = {}): string =>
+    variant === 'title'
+        ? `<a class="logo logo--title type-logo"${attrs({ href })}>${esc(label)}</a>`
+        : `<a class="logo"${attrs({ href, 'aria-label': label })}>${mark('classic')}${mark('modern')}</a>`;

@@ -5,6 +5,10 @@
     text-decoration: none;
 }
 
+.logo--title {
+    color: var(--color-ink);
+}
+
 .logo__mark {
     display: block;
     max-width: 100%;

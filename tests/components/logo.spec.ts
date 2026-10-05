@@ -22,5 +22,11 @@ describe('logo', () => {
     it('keeps the classic bird as the emblem', () => {
         expect(mount(logoBird('x')).querySelectorAll('svg.x path')).toHaveLength(logos.classic.bird.length);
     });
+    it('sets the site name in type without a mark', () => {
+        const html = logo({ variant: 'title', label: 'Your site' });
+        expect(html).toContain('>Your site</a>');
+        expect(html).not.toContain('<svg');
+    });
     it('passes axe', () => expectAccessible(logo()));
+    it('passes axe as title', () => expectAccessible(logo({ variant: 'title', label: 'Your site' })));
 });

@@ -1,6 +1,6 @@
 import { attrs, cx, esc } from '../../src/lib/html';
 import { icon } from '../atoms/icon.markup';
-import { logo } from '../atoms/logo.markup';
+import { logo, type LogoProps } from '../atoms/logo.markup';
 import { menuButton } from '../atoms/menu-button.markup';
 import { schemeToggle } from '../atoms/scheme-toggle.markup';
 import { navFlyout, type NavMenu } from '../molecules/nav-flyout.markup';
@@ -36,6 +36,7 @@ export interface SiteHeaderProps {
     languages?: LanguageLink[];
     labels?: Partial<SiteHeaderLabels>;
     search?: SearchFormProps & { open?: boolean };
+    logo?: LogoProps;
 }
 
 const defaultLabels: SiteHeaderLabels = { nav: 'Main navigation', languages: 'Language', scheme: 'Dark mode', menu: 'Menu' };
@@ -57,10 +58,10 @@ const searchItem = ({ open = false, ...form }: SearchFormProps & { open?: boolea
     `<div class="nav-flyout nav-flyout--search">${searchForm(form)}</div></div>`;
 
 // The scheme button starts unpressed; src/scripts/scheme-toggle.ts keeps aria-pressed in step with the page.
-export const siteHeader = ({ nav, languages = [], labels = {}, search }: SiteHeaderProps): string => {
+export const siteHeader = ({ nav, languages = [], labels = {}, search, logo: brand }: SiteHeaderProps): string => {
     const l = { ...defaultLabels, ...labels };
     return (
-        `<header class="site-header">${logo()}` +
+        `<header class="site-header">${logo(brand)}` +
         menuButton({ label: l.menu }) +
         // Below 900px the panel collapses behind the menu button; above it, display: contents keeps the one-row header.
         `<div class="site-header__panel">` +

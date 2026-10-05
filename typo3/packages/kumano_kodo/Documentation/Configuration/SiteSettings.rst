@@ -26,6 +26,15 @@ Appearance
 
     Upright name. Set vertically beside the journal title; decorative, hidden from screen readers. Empty: none.
 
+.. confval:: kumanoKodo.brand.logo
+    :name: kumanokodo-brand-logo
+    :type: string
+    :Default: `title`
+
+    Logo. Shown while the home page has no logo of its own (page properties, tab Appearance).
+
+    One of `title`, `kumano`.
+
 .. confval:: kumanoKodo.scheme
     :name: kumanokodo-scheme
     :type: string

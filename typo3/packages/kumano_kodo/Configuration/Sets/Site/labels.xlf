@@ -62,6 +62,18 @@
             <trans-unit id="settings.description.kumanoKodo.brand.upright">
                 <source>Set vertically beside the journal title; decorative, hidden from screen readers. Empty: none.</source>
             </trans-unit>
+            <trans-unit id="settings.kumanoKodo.brand.logo">
+                <source>Logo</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.brand.logo">
+                <source>Shown while the home page has no logo of its own (page properties, tab Appearance).</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.brand.logo.enum.title">
+                <source>Website title</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.brand.logo.enum.kumano">
+                <source>Kumano Kodo mark</source>
+            </trans-unit>
             <trans-unit id="settings.kumanoKodo.scheme">
                 <source>Colour mode on load</source>
             </trans-unit>

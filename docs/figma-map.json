@@ -441,6 +441,10 @@
             "component": "form",
             "node": "66:393",
             "variants": ["State=Default", "State=Invalid"]
+        },
+        {
+            "name": "Logo · Title",
+            "node": "78:358"
         }
     ],
     "pages": [

@@ -268,6 +268,15 @@ const buildSettings = async (themes) => {
         'Upright name',
         'Set vertically beside the journal title; decorative, hidden from screen readers. Empty: none.',
     );
+    add(
+        'brand.logo',
+        'appearance',
+        'string',
+        'title',
+        'Logo',
+        'Shown while the home page has no logo of its own (page properties, tab Appearance).',
+        { enum: { title: 'Website title', kumano: 'Kumano Kodo mark' } },
+    );
     add('scheme', 'appearance', 'string', 'light', 'Colour mode on load', '', { enum: { light: 'Light', dark: 'Dark' } });
     add('schemeToggle', 'appearance', 'bool', true, 'Show the dark mode toggle');
     for (const scheme of ['light', 'dark']) {

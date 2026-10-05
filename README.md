@@ -128,8 +128,10 @@ composer starter:export                                 # after changing scripts
 - **Own content elements**: register the CType in your own extension as `Configuration/TCA/Overrides` does here, with
   the `kumanoHeading_*` palettes and the tab order General, Images, Appearance; put its template in your template folder
   under `Content/` and render it through the `Kumano/Section` partial so it gets the section frame.
-- **Logo**: Caramel shows the classic mark, the other themes the modern one; an editor can upload another on the home
-  page (tab Appearance). An SVG takes the theme colours when its groups are named `bird` and `text`.
+- **Logo**: a site without a logo of its own shows its website title; the setting Logo switches to the Kumano Kodo
+  mark (the demo does), Caramel with the classic mark, the other themes the modern one. An editor uploads an own logo
+  on the home page (page properties, tab Appearance); an SVG takes the theme colours when its groups are named `bird`
+  and `text`.
 - **Content**: containers **Section** and **Columns** for layout, 13 content elements with a display option each
   (Cards, List, Facts, Images …), one form order for all (General, Images, Appearance), one entry table for cards,
   lists, links and chips. Spacing comes from the design, not from fields. Top bar and footer texts are content elements

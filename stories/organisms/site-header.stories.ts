@@ -10,6 +10,18 @@ export default meta;
 export const Kumano: StoryObj<SiteHeaderProps> = {
     render: localized(siteHeader, (c) => ({ nav: c.kumano.nav, languages: c.languages, labels: labels(c) })),
 };
+// Without a logo of its own the header sets the site name, as the starter set does.
+export const SiteTitle: StoryObj<SiteHeaderProps> = {
+    render: localized(siteHeader, (c) => ({
+        nav: [
+            { label: 'About us', href: '#' },
+            { label: 'Contact', href: '#' },
+        ],
+        languages: c.languages,
+        labels: labels(c),
+        logo: { variant: 'title', label: 'Your site', href: '#' },
+    })),
+};
 export const Standard: StoryObj<SiteHeaderProps> = {
     render: localized(siteHeader, (c) => ({ nav: c.guide.nav, languages: c.languages, labels: labels(c) })),
 };

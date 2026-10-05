@@ -21,5 +21,7 @@ render it through the `Kumano/Section` partial so it gets the section frame.
 Logo
 ====
 
-Caramel shows the classic mark, the other themes the modern one. An editor can upload another on the home page (tab
-Appearance); an SVG takes the theme colours when its groups are named `bird` and `text`.
+Without a logo of its own the header shows the website title. The site setting Logo switches to the Kumano Kodo mark:
+Caramel shows the classic mark, the other themes the modern one. An editor uploads an own logo in the page properties
+of the home page (tab Appearance); it wins over both. An SVG takes the theme colours when its groups are named `bird`
+and `text`.
