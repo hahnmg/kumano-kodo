@@ -1,4 +1,9 @@
+import { fill } from '../../src/lib/html';
+import { checkbox } from '../atoms/checkbox.markup';
 import { link } from '../atoms/link.markup';
+import { select } from '../atoms/select.markup';
+import { textField } from '../atoms/text-field.markup';
+import { textarea } from '../atoms/textarea.markup';
 import { paths, practicalSlugs, type LegalSlug, type PlaceSlug, type PracticalSlug } from '../content/paths';
 import { cluster, grid, section, split, stack } from '../layout/layout.markup';
 import { ctaCard } from '../molecules/cta-card.markup';
@@ -6,12 +11,16 @@ import { downloadList } from '../molecules/download-list.markup';
 import { factList } from '../molecules/fact-list.markup';
 import { faqList } from '../molecules/faq-item.markup';
 import { figure } from '../molecules/figure.markup';
+import { form } from '../molecules/form.markup';
 import { gallery } from '../molecules/gallery.markup';
 import { iconFact } from '../molecules/icon-fact.markup';
 import { infoBox } from '../molecules/info-box.markup';
 import { linkTile } from '../molecules/link-tile.markup';
+import { loginForm } from '../molecules/login-form.markup';
 import { newsletterForm } from '../molecules/newsletter-form.markup';
 import { richText } from '../molecules/rich-text.markup';
+import { searchForm } from '../molecules/search-form.markup';
+import { searchResults } from '../molecules/search-results.markup';
 import { sectionHeading } from '../molecules/section-heading.markup';
 import { subNav } from '../molecules/sub-nav.markup';
 import { teaserCard, type TeaserCardProps } from '../molecules/teaser-card.markup';
@@ -26,6 +35,7 @@ import { topbar } from '../organisms/topbar.markup';
 import { content, type Content } from './content';
 import { dayPhotos } from './journal-photos';
 import { kumanoJournal } from './kumano-journal.markup';
+import { searchSample } from './search-sample';
 
 // Which top-level nav item a page belongs to: 0 the route, 1 practical, 2 photos, -1 none.
 type Section = -1 | 0 | 1 | 2;
@@ -40,6 +50,7 @@ const chrome = (c: Content, active: Section, main: string): string =>
         nav: c.kumano.nav.map((n, i) => ({ ...n, active: i === active })),
         languages: c.languages,
         labels: { nav: c.ui.mainNav, languages: c.ui.language, scheme: c.ui.darkMode, menu: c.ui.menu },
+        search: { action: paths.search, label: c.ui.search, submit: c.ui.search, placeholder: c.ui.searchPlaceholder },
     }) +
     `<main>${main}</main>` +
     siteFooter(c.guide.footer);
@@ -354,3 +365,94 @@ export const kohechiPage = (c: Content = content()): string =>
 
 export const legalPage = (slug: LegalSlug, c: Content = content()): string =>
     textPage(c, -1, c.site.legal[slug].title, c.site.legal[slug].text);
+
+// The sample query per language; the results are what the journal's own texts answer to it.
+const sampleQuery: Record<string, string> = { en: 'bus', de: 'Bus', ja: 'バス' };
+
+export const searchPage = (c: Content = content()): string => {
+    const query = sampleQuery[c.locale] ?? 'bus';
+    const items = searchSample(c, query);
+    const summary =
+        items.length === 1
+            ? fill(c.ui.searchSummaryOne, query)
+            : items.length
+              ? fill(c.ui.searchSummary, items.length, query)
+              : fill(c.ui.searchEmpty, query);
+    return chrome(
+        c,
+        -1,
+        header(c, c.ui.search, []) +
+            section({
+                content: stack(
+                    [
+                        searchForm({
+                            action: paths.search,
+                            label: c.ui.search,
+                            submit: c.ui.search,
+                            placeholder: c.ui.searchPlaceholder,
+                            value: query,
+                            landmark: c.ui.searchResults,
+                        }),
+                        searchResults({ label: c.ui.searchResults, summary, items }),
+                    ],
+                    'heading',
+                ),
+            }),
+    );
+};
+
+const loginLabels = ({ ui }: Content) => ({
+    username: ui.username,
+    password: ui.password,
+    stayLoggedIn: ui.stayLoggedIn,
+    logIn: ui.logIn,
+    forgotPassword: ui.forgotPassword,
+    loginFailed: ui.loginFailed,
+    loginFailedText: ui.loginFailedText,
+    loggedInAs: ui.loggedInAs,
+    logOut: ui.logOut,
+});
+
+export const loginPage = (c: Content = content()): string =>
+    chrome(
+        c,
+        -1,
+        header(c, c.ui.logIn, []) +
+            section({ content: loginForm({ action: paths.login, labels: loginLabels(c), forgotHref: `${paths.login}#forgot` }) }),
+    );
+
+export const contactPage = (c: Content = content()): string => {
+    const { ui, site } = c;
+    const contact = c.guide.footer.columns[c.guide.footer.columns.length - 1];
+    const topics = practicalSlugs.map((slug) => site.practical.pages[slug].title);
+    return chrome(
+        c,
+        -1,
+        header(c, contact.title, []) +
+            section({
+                content: split(
+                    richText({ html: `<p>${esc(contact.links[1].label)}</p>` }),
+                    form({
+                        action: paths.contact,
+                        fields: [
+                            textField({ label: `${ui.name} *`, name: 'name', autocomplete: 'name', required: true }),
+                            textField({
+                                label: `${ui.emailAddress} *`,
+                                name: 'email',
+                                type: 'email',
+                                autocomplete: 'email',
+                                placeholder: ui.emailPlaceholder,
+                                required: true,
+                            }),
+                            select({ label: ui.topic, name: 'topic', options: topics }),
+                            textarea({ label: `${ui.message} *`, name: 'message', rows: 6, required: true }),
+                            checkbox({ label: `${ui.contactConsent} *`, name: 'consent', required: true }),
+                        ],
+                        note: ui.requiredNote,
+                        submit: ui.send,
+                    }),
+                    'text-media',
+                ),
+            }),
+    );
+};

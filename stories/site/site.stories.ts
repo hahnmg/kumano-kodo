@@ -12,6 +12,9 @@ import {
     practicalPage,
     practicalSubPage,
     routePage,
+    searchPage,
+    loginPage,
+    contactPage,
 } from '../templates/site-pages.markup';
 
 const page =
@@ -53,3 +56,6 @@ export const Kohechi: StoryObj = { render: page(kohechiPage) };
 export const Imprint: StoryObj = { render: page((c) => legalPage('imprint', c)) };
 export const Privacy: StoryObj = { render: page((c) => legalPage('privacy', c)) };
 export const Accessibility: StoryObj = { render: page((c) => legalPage('accessibility', c)) };
+export const Search: StoryObj = { render: page(searchPage) };
+export const Login: StoryObj = { name: 'Log in', render: page(loginPage) };
+export const Contact: StoryObj = { render: page(contactPage) };

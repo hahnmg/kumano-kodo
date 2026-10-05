@@ -11,5 +11,6 @@ switches `data-scheme` on `<html>` and keeps `aria-pressed` in step. Language li
 | `nav`       | `{ label, href, active?, menu?, open? }[]`; `menu` is `{ kind: 'dropdown', links }` or `{ kind: 'mega', columns, text?, teaser?, overview? }`                                 |
 | `languages` | optional `{ code, locale, href, active? }[]`                               |
 | `labels`    | optional `{ nav, languages, scheme, menu }` accessible names, English by default |
+| `search`    | optional Search Form props: a search button before the languages opens it in a panel across the header; folded behind the menu button the form stands open at the top |
 
 Tokens: `--color-paper`, `--color-line`, `--color-ink`, `--color-accent`, `--gutter`, `--motion-fast`.

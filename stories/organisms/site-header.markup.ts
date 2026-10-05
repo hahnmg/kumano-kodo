@@ -4,6 +4,7 @@ import { logo } from '../atoms/logo.markup';
 import { menuButton } from '../atoms/menu-button.markup';
 import { schemeToggle } from '../atoms/scheme-toggle.markup';
 import { navFlyout, type NavMenu } from '../molecules/nav-flyout.markup';
+import { searchForm, type SearchFormProps } from '../molecules/search-form.markup';
 
 export type { NavLink, NavMenu } from '../molecules/nav-flyout.markup';
 
@@ -34,6 +35,7 @@ export interface SiteHeaderProps {
     nav: NavItem[];
     languages?: LanguageLink[];
     labels?: Partial<SiteHeaderLabels>;
+    search?: SearchFormProps & { open?: boolean };
 }
 
 const defaultLabels: SiteHeaderLabels = { nav: 'Main navigation', languages: 'Language', scheme: 'Dark mode', menu: 'Menu' };
@@ -48,14 +50,21 @@ export const navItem = ({ label, href, active, hasChildren, menu, open = false }
           (hasChildren ? icon({ name: 'chevron-down', size: 14 }) : '') +
           `</a></li>`;
 
+// The search is a disclosure like the nav flyouts; folded behind the menu button its form stands open at the top.
+const searchItem = ({ open = false, ...form }: SearchFormProps & { open?: boolean }): string =>
+    `<div${attrs({ class: 'site-header__item site-header__item--search', 'data-open': open })}>` +
+    `<button${attrs({ class: 'site-header__toggle site-header__search-toggle', type: 'button', 'aria-expanded': String(open), 'aria-label': form.label })}>${icon({ name: 'search', size: 16 })}</button>` +
+    `<div class="nav-flyout nav-flyout--search">${searchForm(form)}</div></div>`;
+
 // The scheme button starts unpressed; src/scripts/scheme-toggle.ts keeps aria-pressed in step with the page.
-export const siteHeader = ({ nav, languages = [], labels = {} }: SiteHeaderProps): string => {
+export const siteHeader = ({ nav, languages = [], labels = {}, search }: SiteHeaderProps): string => {
     const l = { ...defaultLabels, ...labels };
     return (
         `<header class="site-header">${logo()}` +
         menuButton({ label: l.menu }) +
         // Below 900px the panel collapses behind the menu button; above it, display: contents keeps the one-row header.
         `<div class="site-header__panel">` +
+        (search ? searchItem(search) : '') +
         `<nav class="site-header__nav" aria-label="${esc(l.nav)}"><ul class="site-header__list">${nav.map(navItem).join('')}</ul></nav>` +
         `<div class="site-header__tools">` +
         (languages.length

@@ -20,6 +20,8 @@ export const bindNavFlyouts = (doc: Document = document): (() => void) => {
             const open = !li.hasAttribute('data-open');
             closeAll(doc, li);
             setOpen(li, open);
+            // A panel that holds a form, such as the search, takes the focus straight into its field.
+            if (open) li.querySelector<HTMLElement>('.nav-flyout input')?.focus();
             return;
         }
         if (!target?.closest(`${item}[data-open]`)) closeAll(doc);

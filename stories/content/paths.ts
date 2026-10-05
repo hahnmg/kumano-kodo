@@ -19,6 +19,9 @@ export const paths = {
     photos: '/photos',
     newsletter: '/newsletter',
     kohechi: '/kohechi',
+    search: '/search',
+    login: '/login',
+    contact: '/contact',
     legal: (slug: LegalSlug) => `/${slug}`,
 };
 
@@ -34,6 +37,9 @@ export const routes: Record<string, string> = {
     '/photos': 'site--photos',
     '/newsletter': 'site--newsletter',
     '/kohechi': 'site--kohechi',
+    '/search': 'site--search',
+    '/login': 'site--login',
+    '/contact': 'site--contact',
     ...Object.fromEntries(legalSlugs.map((s) => [paths.legal(s), `site--${s}`])),
 };
 

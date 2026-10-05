@@ -34,3 +34,7 @@ export const img = (image: Image, className: string, sizes = '(width <= 900px) 1
         loading: eager ? 'eager' : 'lazy',
         decoding: 'async',
     })}>`;
+
+// Fills %1$s-style placeholders, the format TYPO3's f:translate reads from the same strings.
+export const fill = (template: string, ...values: (string | number)[]): string =>
+    template.replace(/%(\d+)\$s/g, (_, n: string) => String(values[Number(n) - 1] ?? ''));

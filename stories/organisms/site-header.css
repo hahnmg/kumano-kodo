@@ -148,6 +148,7 @@
     display: flex;
     gap: var(--space-12);
     align-items: center;
+    order: 2;
 }
 
 .site-header__languages a {
@@ -177,6 +178,42 @@
 .site-header__languages a:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
+}
+
+/* The search sits before the tools; its panel spans the header like the mega panel. */
+.site-header__item--search {
+    position: static;
+    order: 1;
+}
+
+.site-header__search-toggle {
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: var(--border-hairline) solid var(--color-line);
+    border-radius: var(--radius-full);
+    color: var(--color-ink);
+    transition: border-color var(--motion-fast) var(--ease-out);
+}
+
+.site-header__search-toggle:hover,
+.site-header__item--search[data-open] .site-header__search-toggle {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.site-header__item--search[data-open] .site-header__toggle .icon {
+    transform: none;
+}
+
+.site-header .nav-flyout--search {
+    top: calc(100% + var(--border-hairline));
+    right: 0;
+    left: 0;
+    padding: var(--space-32) max(var(--gutter), (100% - var(--container-page)) / 2) var(--space-40);
+    border-top: var(--border-hairline) solid var(--color-accent);
+    border-bottom: var(--border-hairline) solid var(--color-line);
 }
 
 /* Provisional until a mobile reference exists (open question 4): nav, languages and scheme fold behind the menu button. */
@@ -253,6 +290,22 @@
 
     .site-header__item[data-open] > .nav-flyout {
         display: block;
+    }
+
+    /* Folded, the search form stands open at the top of the menu; the toggle is not needed there. */
+    .site-header__item--search {
+        order: -1;
+    }
+
+    .site-header__search-toggle {
+        display: none;
+    }
+
+    .site-header .nav-flyout--search {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: 0;
     }
 
     .site-header .nav-flyout__grid {

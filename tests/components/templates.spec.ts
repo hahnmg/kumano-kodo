@@ -1,4 +1,3 @@
-import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { legalSlugs, placeSlugs, practicalSlugs, storyFor } from '../../stories/content/paths';
 import { content, locales, type Content, type Locale } from '../../stories/templates/content';
@@ -15,8 +14,14 @@ import {
     practicalPage,
     practicalSubPage,
     routePage,
+    searchPage,
+    loginPage,
+    contactPage,
 } from '../../stories/templates/site-pages.markup';
 import { expectAccessible } from '../support/accessibility';
+
+// Files the pages may link to, as Storybook serves them under /files/.
+const files = new Set(Object.keys(import.meta.glob('../../files/**/*')).map((path) => path.replace('../../files/', '/files/')));
 
 const pages: Record<string, (c: Content) => string> = {
     home: homePage,
@@ -31,6 +36,9 @@ const pages: Record<string, (c: Content) => string> = {
     kohechi: kohechiPage,
     ...Object.fromEntries(legalSlugs.map((s) => [s, (c: Content) => legalPage(s, c)])),
     'home v3': kumanoHome,
+    search: searchPage,
+    login: loginPage,
+    contact: contactPage,
 };
 
 describe('site pages', () => {
@@ -50,7 +58,7 @@ describe('site pages', () => {
                     .map((a) => a.getAttribute('href') ?? '')
                     .filter((href) =>
                         href.startsWith('/files/')
-                            ? !existsSync(`files/${href.slice('/files/'.length)}`)
+                            ? !files.has(href)
                             : href.startsWith('/')
                               ? !storyFor(href)
                               : href.startsWith('#') && href.length > 1 && !document.getElementById(href.slice(1)),
