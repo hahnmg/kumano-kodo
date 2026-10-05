@@ -1,24 +1,19 @@
 import { create } from 'storybook/theming/create';
-import logos from '../docs/figma-export/logos.json';
 import variables from '../docs/figma-export/variables.json';
 
-// Storybook's chrome cannot read the theme's custom properties, so it takes Caramel's values from the Figma export.
+// Storybook's chrome cannot read the theme's custom properties, so it takes Mono's values from the Figma export.
 const vars = variables.collections.Theme.vars as Record<string, { v: Record<string, string | number> }>;
-const token = (name: string) => vars[name].v.Caramel;
-
-const paths = (list: string[], fill: string) => list.map((d) => `<path fill="${fill}" d="${d}"/>`).join('');
+const token = (name: string) => vars[name].v.Mono;
 
 export const brandTheme = (scheme: 'light' | 'dark') => {
     const colour = (name: string) => String(token(`palette/${scheme}/${name}`));
-    const { width, height, bird, text } = logos.classic;
-    const mark =
-        `<svg viewBox="0 0 ${width} ${height}" width="160" role="img" aria-label="Kumano Kodo">` +
-        `${paths(bird, colour('accent'))}${paths(text, colour('ink'))}</svg>`;
     return create({
         base: scheme,
         brandTitle:
-            `<span style="display:flex;flex-direction:column;gap:6px">${mark}` +
-            `<span style="font:500 12px/1 Inter,sans-serif;letter-spacing:.06em;color:${colour('muted')}">for TYPO3</span></span>`,
+            `<span style="display:flex;flex-direction:column;gap:6px;color:${colour('ink')}">` +
+            `<span style="font:600 17px/1 Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase">Kumano Kodo</span>` +
+            `<span style="display:flex;align-items:center;gap:6px;font:500 12px/1 Inter,sans-serif;color:${colour('muted')}">for ` +
+            `<img src="./typo3-logo.svg" alt="TYPO3" height="16" style="display:block"></span></span>`,
         brandUrl: './',
         brandTarget: '_self',
         colorPrimary: colour('accent'),

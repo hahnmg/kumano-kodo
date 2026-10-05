@@ -8,6 +8,7 @@ const config: StorybookConfig = {
         { from: '../img', to: '/img' },
         { from: '../files', to: '/files' },
         { from: './favicon.svg', to: '/favicon.svg' },
+        { from: './typo3-logo.svg', to: '/typo3-logo.svg' },
     ],
 };
 

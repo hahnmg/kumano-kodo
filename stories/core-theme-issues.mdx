@@ -13,13 +13,13 @@ export const itemsOf = (status) => data.items.filter((item) => item.status === s
 
 # Lessons from the core theme
 
-<p className="issue-lede">
+<p className="issue-lede" data-theme="mono">
     {
         "Every problem reported for TYPO3's core theme Camino, and what Kumano Kodo does about it. Each row is one problem and its solution here; the numbers link to the reports."
     }
 </p>
 
-<ul className="issue-summary">
+<ul className="issue-summary" data-theme="mono">
     {groups
         .filter((group) => itemsOf(group.status).length)
         .map((group) => (
@@ -31,7 +31,7 @@ export const itemsOf = (status) => data.items.filter((item) => item.status === s
 
 {groups.filter((group) => itemsOf(group.status).length).map((group) => (
 
-<section key={group.status} className={`issue-group issue--${group.status}`}>
+<section key={group.status} className={`issue-group issue--${group.status}`} data-theme="mono">
 <h2 className="issue-group__title">{group.label}</h2>
 <ul className="issue-list">
 <li className="issue issue--head" aria-hidden="true">
@@ -58,4 +58,6 @@ export const itemsOf = (status) => data.items.filter((item) => item.status === s
 </section>
 ))}
 
-<p className="issue-source">{data.source}</p>
+<p className="issue-source" data-theme="mono">
+    {data.source}
+</p>

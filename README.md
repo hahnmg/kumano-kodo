@@ -18,6 +18,9 @@ npm ci
 npm run storybook        # http://localhost:6006
 ```
 
+Storybook's own look is the theme Mono. Its sidebar shows the official TYPO3 logo
+(`.storybook/typo3-logo.svg`, from `typo3/cms-core`), used with the TYPO3 Association's permission.
+
 The toolbar switches **language** (日本語, Deutsch, English) and **scheme** (light, dark). The JA · DE · EN links and the
 dark mode button in the site header do the same and keep the toolbar in step. Themes are shown as templates
 (Kumano Home · Caramel, Forest, Ocean, Violet, Mono, and the starter set in Mono); components render in Caramel.

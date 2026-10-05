@@ -11,7 +11,7 @@
 .sbdocs h1,
 .sbdocs h2,
 .sbdocs h3 {
-    font-family: var(--font-display);
+    font-family: var(--font-meta);
     font-weight: 600;
 }
 
@@ -153,4 +153,20 @@
     .sbdocs .issue__refs {
         justify-content: flex-start;
     }
+}
+
+/* Docs extras set their own theme. Colour tokens are resolved where they are declared, so they are declared again
+   here; the docs pages stay light. */
+.sbdocs [data-theme] {
+    --color-paper: var(--palette-light-paper);
+    --color-surface: var(--palette-light-surface);
+    --color-sunk: var(--palette-light-sunk);
+    --color-ink: var(--palette-light-ink);
+    --color-muted: var(--palette-light-muted);
+    --color-line: var(--palette-light-line);
+    --color-hair: var(--palette-light-hair);
+    --color-moss: var(--palette-light-moss);
+    --color-accent: var(--palette-light-accent);
+
+    font-family: var(--font-meta);
 }
