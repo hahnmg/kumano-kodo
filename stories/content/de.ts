@@ -40,6 +40,13 @@ const build = (p: Photos): LocaleContent => {
         logOut: 'Abmelden',
         demoAccess: 'Demo-Zugang',
         demoAccessText: 'Benutzername %1$s · Passwort %2$s',
+        notFoundTitle: 'Seite nicht gefunden',
+        notFoundText:
+            'Dieser Weg steht auf keiner Karte: Die Seite ist umgezogen, oder in der Adresse steckt ein Tippfehler. Durchsuchen Sie das Tagebuch oben, oder beginnen Sie hier neu.',
+        papersTitle: 'Reiseunterlagen',
+        papersText:
+            'Willkommen zurück. Hier liegen die Unterlagen unserer Wanderung: die Etappenkarte, die Anreise und die Packliste für Regen. Die Tage darunter führen zurück zu jeder Etappe.',
+        papersLink: 'Ihre Reiseunterlagen',
         requiredNote: 'Mit * markierte Felder sind Pflichtfelder.',
         fieldRequired: 'Bitte füllen Sie dieses Feld aus.',
         emailInvalid: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',

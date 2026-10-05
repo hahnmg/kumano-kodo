@@ -567,11 +567,22 @@ const page = (key, parent, title, extra = {}) => ({
 });
 
 const contact = (x) => x.guide.footer.columns[x.guide.footer.columns.length - 1];
+// The core's access values: shown only to logged-in visitors, or hidden from them.
+const anyLogin = '-2';
+const hideAtLogin = '-1';
 const fillIn = (template, ...values) => template.replace(/%(\d+)\$s/g, (_, n) => values[Number(n) - 1]);
 // The build replaces page:<key> with the uid of that demo page.
-const loginFlexform = (folder) =>
+const loginFlexform = (folder, redirect = {}) =>
     '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data><sheet index="sDEF"><language index="lDEF">' +
     `<field index="settings.pages"><value index="vDEF">page:${folder}</value></field>` +
+    '</language></sheet><sheet index="s_redirect"><language index="lDEF">' +
+    `<field index="settings.redirectMode"><value index="vDEF">${Object.keys(redirect).join(',')}</value></field>` +
+    Object.entries(redirect)
+        .map(
+            ([mode, key]) =>
+                `<field index="settings.redirectPage${mode[0].toUpperCase()}${mode.slice(1)}"><value index="vDEF">page:${key}</value></field>`,
+        )
+        .join('') +
     '</language></sheet></data></T3FlexForms>';
 const formFlexform = (identifier) =>
     '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data><sheet index="sDEF"><language index="lDEF">' +
@@ -698,15 +709,59 @@ const pages = [
                 columns(
                     'content-sidebar',
                     {},
-                    [el('felogin_login', { pi_flexform: loginFlexform('walkers') })],
+                    [el('felogin_login', { pi_flexform: loginFlexform('walkers', { login: 'papers' }) })],
                     [
                         el('kumano_callout', {
                             tx_kumanokodo_variant: 'infobox',
                             header: t((x) => x.ui.demoAccess),
                             bodytext: t((x) => fillIn(x.ui.demoAccessText, demoLogin.username, demoLogin.password)),
+                            fe_group: hideAtLogin,
                         }),
                     ],
                 ),
+            ],
+        },
+    ),
+    page(
+        'papers',
+        'home',
+        t((x) => x.ui.papersTitle),
+        {
+            navHide: true,
+            feGroup: anyLogin,
+            content: [
+                columns(
+                    'content-sidebar',
+                    {},
+                    [
+                        text(t((x) => `<p>${esc(x.ui.papersText)}</p>`)),
+                        el(
+                            'kumano_list',
+                            { tx_kumanokodo_variant: 'downloads' },
+                            { media: t((x) => x.pages.detail.downloads.map((d) => fileSlug(d.href))) },
+                        ),
+                    ],
+                    [el('felogin_login', { pi_flexform: loginFlexform('walkers', { logout: 'login' }) })],
+                ),
+                cards('teaser', 4, { header: t((x) => x.site.days.groups.days) }, teasers(dayTeasers)),
+            ],
+        },
+    ),
+    page(
+        'not-found',
+        'home',
+        t((x) => x.ui.notFoundTitle),
+        {
+            navHide: true,
+            content: [
+                section({}, [
+                    text(t((x) => `<p>${esc(x.ui.notFoundText)}</p>`)),
+                    listEl('links', {}, [
+                        { title: t((x) => x.site.home), link: 'page:home' },
+                        { title: t((x) => x.site.route.title), link: 'page:route' },
+                        { title: t((x) => x.site.practical.title), link: 'page:practical' },
+                    ]),
+                ]),
             ],
         },
     ),
@@ -785,7 +840,15 @@ const frame = [
         ...listEl(
             'links',
             { header: t((x) => footer(x).columns[i].title) },
-            linkItems((x) => footer(x).columns[i].links),
+            // Logged in, the walkers' column offers their papers instead of the log-in.
+            linkItems((x) => footer(x).columns[i].links).flatMap((item, j) =>
+                footer(c.en).columns[i].links[j].href === paths.login
+                    ? [
+                          { ...item, fe_group: hideAtLogin },
+                          { title: t((x) => x.ui.papersLink), link: 'page:papers', fe_group: anyLogin },
+                      ]
+                    : [item],
+            ),
         ),
         colPos: 20,
     })),
@@ -814,6 +877,7 @@ const site = {
         'kumanoKodo.contact.email': c.en.guide.topbar.email,
         'felogin.showPermaLogin': true,
     },
+    errorHandling: { 404: 'not-found', 403: 'login' },
 };
 
 const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.values(e.children ?? {}).flat()), 0);

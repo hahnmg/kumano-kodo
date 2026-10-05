@@ -40,6 +40,13 @@ const build = (p: Photos): LocaleContent => {
         logOut: 'ログアウト',
         demoAccess: 'デモ用アカウント',
         demoAccessText: 'ユーザー名 %1$s・パスワード %2$s',
+        notFoundTitle: 'ページが見つかりません',
+        notFoundText:
+            'この道は地図に載っていません。ページが移動したか、アドレスが間違っている可能性があります。上の検索を使うか、ここからもう一度始めてください。',
+        papersTitle: '旅の資料',
+        papersText:
+            'おかえりなさい。私たちの旅の資料はこちらです。区間地図、アクセス、雨の日の持ち物リスト。下の各日から、それぞれの行程に戻れます。',
+        papersLink: 'あなたの旅の資料',
         requiredNote: '* の項目は必須です。',
         fieldRequired: 'この項目を入力してください。',
         emailInvalid: '有効なメールアドレスを入力してください。',

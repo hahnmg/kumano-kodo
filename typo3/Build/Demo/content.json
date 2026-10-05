@@ -5,6 +5,10 @@
             "kumanoKodo.contact.phone": "+81 00 0000 0000",
             "kumanoKodo.contact.email": "post@kumano-kodo.example",
             "felogin.showPermaLogin": true
+        },
+        "errorHandling": {
+            "403": "login",
+            "404": "not-found"
         }
     },
     "photos": {
@@ -554,7 +558,17 @@
                                     "de": "Mitgewandert? Anmelden",
                                     "ja": "一緒に歩いた方はログイン"
                                 },
-                                "link": "page:login"
+                                "link": "page:login",
+                                "fe_group": "-1"
+                            },
+                            {
+                                "title": {
+                                    "en": "Your travel papers",
+                                    "de": "Ihre Reiseunterlagen",
+                                    "ja": "あなたの旅の資料"
+                                },
+                                "link": "page:papers",
+                                "fe_group": "-2"
                             }
                         ],
                         "tx_kumanokodo_links": []
@@ -4403,7 +4417,7 @@
                             {
                                 "type": "felogin_login",
                                 "fields": {
-                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.pages\"><value index=\"vDEF\">page:walkers</value></field></language></sheet></data></T3FlexForms>"
+                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.pages\"><value index=\"vDEF\">page:walkers</value></field></language></sheet><sheet index=\"s_redirect\"><language index=\"lDEF\"><field index=\"settings.redirectMode\"><value index=\"vDEF\">login</value></field><field index=\"settings.redirectPageLogin\"><value index=\"vDEF\">page:papers</value></field></language></sheet></data></T3FlexForms>"
                                 }
                             }
                         ],
@@ -4421,7 +4435,233 @@
                                         "en": "<p>Username pilgrim · password Kumano-Kodo-2024</p>",
                                         "de": "<p>Benutzername pilgrim · Passwort Kumano-Kodo-2024</p>",
                                         "ja": "<p>ユーザー名 pilgrim・パスワード Kumano-Kodo-2024</p>"
+                                    },
+                                    "fe_group": "-1"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "key": "papers",
+            "parent": "home",
+            "slug": "/travel-papers",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Travel papers",
+                "de": "Reiseunterlagen",
+                "ja": "旅の資料"
+            },
+            "content": [
+                {
+                    "type": "kumano_columns",
+                    "fields": {
+                        "tx_kumanokodo_layout": "content-sidebar"
+                    },
+                    "children": {
+                        "201": [
+                            {
+                                "type": "text",
+                                "fields": {
+                                    "bodytext": {
+                                        "en": "<p>Welcome back. Here are the papers from our walk: the stage map, how we got there, and what to pack for rain. The days below lead back to each stage.</p>",
+                                        "de": "<p>Willkommen zurück. Hier liegen die Unterlagen unserer Wanderung: die Etappenkarte, die Anreise und die Packliste für Regen. Die Tage darunter führen zurück zu jeder Etappe.</p>",
+                                        "ja": "<p>おかえりなさい。私たちの旅の資料はこちらです。区間地図、アクセス、雨の日の持ち物リスト。下の各日から、それぞれの行程に戻れます。</p>"
                                     }
+                                }
+                            },
+                            {
+                                "type": "kumano_list",
+                                "fields": {
+                                    "tx_kumanokodo_variant": "downloads"
+                                },
+                                "media": {
+                                    "en": [
+                                        "stage-map-takahara-chikatsuyu-en",
+                                        "getting-there-and-buses-en",
+                                        "packing-list-for-rain-en"
+                                    ],
+                                    "de": [
+                                        "stage-map-takahara-chikatsuyu-de",
+                                        "getting-there-and-buses-de",
+                                        "packing-list-for-rain-de"
+                                    ],
+                                    "ja": [
+                                        "stage-map-takahara-chikatsuyu-ja",
+                                        "getting-there-and-buses-ja",
+                                        "packing-list-for-rain-ja"
+                                    ]
+                                }
+                            }
+                        ],
+                        "202": [
+                            {
+                                "type": "felogin_login",
+                                "fields": {
+                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.pages\"><value index=\"vDEF\">page:walkers</value></field></language></sheet><sheet index=\"s_redirect\"><language index=\"lDEF\"><field index=\"settings.redirectMode\"><value index=\"vDEF\">logout</value></field><field index=\"settings.redirectPageLogout\"><value index=\"vDEF\">page:login</value></field></language></sheet></data></T3FlexForms>"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "kumano_cards",
+                    "fields": {
+                        "tx_kumanokodo_variant": "teaser",
+                        "tx_kumanokodo_columns": "4",
+                        "header": {
+                            "en": "Days",
+                            "de": "Tage",
+                            "ja": "日程"
+                        }
+                    },
+                    "items": {
+                        "tx_kumanokodo_entries": [
+                            {
+                                "image": "signpost",
+                                "title": {
+                                    "en": "Takijiri → Takahara",
+                                    "de": "Takijiri → Takahara",
+                                    "ja": "滝尻 → 高原"
+                                },
+                                "text": {
+                                    "en": "3.7 km",
+                                    "de": "3,7 km",
+                                    "ja": "3.7 km"
+                                },
+                                "meta": {
+                                    "en": "Day 1 · 20 April · from 15:40",
+                                    "de": "Tag 1 · 20. April · ab 15:40",
+                                    "ja": "1日目 · 4月20日 · 15:40から"
+                                },
+                                "link": "page:day-1"
+                            },
+                            {
+                                "image": "roadside-markers",
+                                "title": {
+                                    "en": "Takahara → Chikatsuyu",
+                                    "de": "Takahara → Chikatsuyu",
+                                    "ja": "高原 → 近露"
+                                },
+                                "text": {
+                                    "en": "9.8 km",
+                                    "de": "9,8 km",
+                                    "ja": "9.8 km"
+                                },
+                                "meta": {
+                                    "en": "Day 2 · 21 April · 07:02–17:28",
+                                    "de": "Tag 2 · 21. April · 07:02–17:28",
+                                    "ja": "2日目 · 4月21日 · 07:02–17:28"
+                                },
+                                "link": "page:day-2"
+                            },
+                            {
+                                "image": "cedar-canopy",
+                                "title": {
+                                    "en": "Chikatsuyu → Hongu → Yunomine",
+                                    "de": "Chikatsuyu → Hongu → Yunomine",
+                                    "ja": "近露 → 本宮 → 湯の峰"
+                                },
+                                "text": {
+                                    "en": "about 25 km",
+                                    "de": "rund 25 km",
+                                    "ja": "約25 km"
+                                },
+                                "meta": {
+                                    "en": "Day 3 · 22 April · 07:18–16:05",
+                                    "de": "Tag 3 · 22. April · 07:18–16:05",
+                                    "ja": "3日目 · 4月22日 · 07:18–16:05"
+                                },
+                                "link": "page:day-3"
+                            },
+                            {
+                                "image": "nachi-pagoda",
+                                "title": {
+                                    "en": "Yunomine → Nachi",
+                                    "de": "Yunomine → Nachi",
+                                    "ja": "湯の峰 → 那智"
+                                },
+                                "text": {
+                                    "en": "about 27.5 km",
+                                    "de": "rund 27,5 km",
+                                    "ja": "約27.5 km"
+                                },
+                                "meta": {
+                                    "en": "Day 4 · 23 April · 10:55–15:48",
+                                    "de": "Tag 4 · 23. April · 10:55–15:48",
+                                    "ja": "4日目 · 4月23日 · 10:55–15:48"
+                                },
+                                "link": "page:day-4"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "feGroup": "-2"
+        },
+        {
+            "key": "not-found",
+            "parent": "home",
+            "slug": "/page-not-found",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Page not found",
+                "de": "Seite nicht gefunden",
+                "ja": "ページが見つかりません"
+            },
+            "content": [
+                {
+                    "type": "kumano_section",
+                    "fields": {},
+                    "children": {
+                        "201": [
+                            {
+                                "type": "text",
+                                "fields": {
+                                    "bodytext": {
+                                        "en": "<p>This path is not on the map: the page may have moved, or the address has a typo. Search the journal above, or start again from here.</p>",
+                                        "de": "<p>Dieser Weg steht auf keiner Karte: Die Seite ist umgezogen, oder in der Adresse steckt ein Tippfehler. Durchsuchen Sie das Tagebuch oben, oder beginnen Sie hier neu.</p>",
+                                        "ja": "<p>この道は地図に載っていません。ページが移動したか、アドレスが間違っている可能性があります。上の検索を使うか、ここからもう一度始めてください。</p>"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "kumano_list",
+                                "fields": {
+                                    "tx_kumanokodo_variant": "links"
+                                },
+                                "items": {
+                                    "tx_kumanokodo_entries": [
+                                        {
+                                            "title": {
+                                                "en": "Home",
+                                                "de": "Start",
+                                                "ja": "ホーム"
+                                            },
+                                            "link": "page:home"
+                                        },
+                                        {
+                                            "title": {
+                                                "en": "The route",
+                                                "de": "Die Route",
+                                                "ja": "ルート"
+                                            },
+                                            "link": "page:route"
+                                        },
+                                        {
+                                            "title": {
+                                                "en": "Practical",
+                                                "de": "Praktisches",
+                                                "ja": "実用情報"
+                                            },
+                                            "link": "page:practical"
+                                        }
+                                    ],
+                                    "tx_kumanokodo_links": []
                                 }
                             }
                         ]

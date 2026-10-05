@@ -15,6 +15,8 @@ import {
     searchPage,
     loginPage,
     contactPage,
+    notFoundPage,
+    papersPage,
 } from '../templates/site-pages.markup';
 
 const page =
@@ -59,3 +61,5 @@ export const Accessibility: StoryObj = { render: page((c) => legalPage('accessib
 export const Search: StoryObj = { render: page(searchPage) };
 export const Login: StoryObj = { name: 'Log in', render: page(loginPage) };
 export const Contact: StoryObj = { render: page(contactPage) };
+export const NotFound: StoryObj = { name: 'Page not found', render: page(notFoundPage) };
+export const Papers: StoryObj = { name: 'Travel papers', render: page(papersPage) };

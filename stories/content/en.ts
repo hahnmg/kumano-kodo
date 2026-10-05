@@ -40,6 +40,13 @@ const build = (p: Photos) => {
         logOut: 'Log out',
         demoAccess: 'Demo access',
         demoAccessText: 'Username %1$s · password %2$s',
+        notFoundTitle: 'Page not found',
+        notFoundText:
+            'This path is not on the map: the page may have moved, or the address has a typo. Search the journal above, or start again from here.',
+        papersTitle: 'Travel papers',
+        papersText:
+            'Welcome back. Here are the papers from our walk: the stage map, how we got there, and what to pack for rain. The days below lead back to each stage.',
+        papersLink: 'Your travel papers',
         requiredNote: 'Fields marked * are required.',
         fieldRequired: 'Please fill in this field.',
         emailInvalid: 'Please enter a valid email address.',

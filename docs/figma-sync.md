@@ -33,7 +33,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-09-30 Spacing rule as variables: `layout/heading-gap` (56), `layout/element-gap` (96), `layout/column-gap` (40)
 - [x] 2026-10-05 Text Field and Checkbox with an Invalid state; Search Toggle in the header, Search Panel, Search Form (row and stacked, open at the top of the mobile menu), Search Results, Login Form, Form
 - [x] 2026-10-05 Site Footer: "Walked with us? Log in" in the contact column leads to the log-in page
-- [ ] Pages: search, log-in and contact page frames
+- [ ] Pages: search, log-in, contact, travel papers and page-not-found frames
 - [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the page frames
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components

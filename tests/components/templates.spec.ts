@@ -17,6 +17,8 @@ import {
     searchPage,
     loginPage,
     contactPage,
+    notFoundPage,
+    papersPage,
 } from '../../stories/templates/site-pages.markup';
 import { expectAccessible } from '../support/accessibility';
 
@@ -39,6 +41,8 @@ const pages: Record<string, (c: Content) => string> = {
     search: searchPage,
     login: loginPage,
     contact: contactPage,
+    'not found': notFoundPage,
+    papers: papersPage,
 };
 
 describe('site pages', () => {

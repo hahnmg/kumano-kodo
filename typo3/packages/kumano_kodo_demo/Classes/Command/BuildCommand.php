@@ -87,6 +87,7 @@ final class BuildCommand extends Command
                 $this->addFlyout($page);
             }
         }
+        $this->writeErrorHandling($demo['site']['errorHandling'] ?? []);
         $this->createFrontendUsers($demo['frontendUsers'] ?? []);
         $elements = 0;
         foreach ($demo['pages'] as $page) {
@@ -172,6 +173,7 @@ final class BuildCommand extends Command
             'slug' => $page['slug'],
             'nav_hide' => (int)$page['navHide'],
             'doktype' => $page['doktype'] ?? 1,
+            'fe_group' => $page['feGroup'] ?? '',
             'backend_layout' => 'pagets__' . $page['layout'],
             'backend_layout_next_level' => isset($page['nextLayout']) ? 'pagets__' . $page['nextLayout'] : '',
             'is_siteroot' => (int)($page['parent'] === null),
@@ -477,15 +479,27 @@ final class BuildCommand extends Command
             ['languageId' => 1, 'title' => 'Deutsch', 'navigationTitle' => 'DE', 'locale' => 'de_DE.UTF-8', 'hreflang' => 'de', 'base' => '/de/', 'flag' => 'de', 'fallbackType' => 'strict'],
             ['languageId' => 2, 'title' => '日本語', 'navigationTitle' => 'JA', 'locale' => 'ja_JP.UTF-8', 'hreflang' => 'ja', 'base' => '/ja/', 'flag' => 'jp', 'fallbackType' => 'strict'],
         ];
-        $this->siteWriter->write(self::SITE, [
+        $this->siteConfiguration = [
             'rootPageId' => $this->pages['home'],
             'base' => '/',
             'websiteTitle' => $site['websiteTitle'],
             'dependencies' => ['kumano-kodo/site'],
             'languages' => $languages,
-        ]);
+        ];
+        $this->siteWriter->write(self::SITE, $this->siteConfiguration);
         $this->siteWriter->writeSettings(self::SITE, $site['settings']);
     }
+
+    // Error pages are named by page key, so they can only be set once the pages exist.
+    private function writeErrorHandling(array $pages): void
+    {
+        foreach ($pages as $code => $key) {
+            $this->siteConfiguration['errorHandling'][] = ['errorCode' => (int)$code, 'errorHandler' => 'Page', 'errorContentSource' => 't3://page?uid=' . $this->pages[$key]];
+        }
+        $this->siteWriter->write(self::SITE, $this->siteConfiguration);
+    }
+
+    private array $siteConfiguration = [];
 
     private function link(string $link): string
     {

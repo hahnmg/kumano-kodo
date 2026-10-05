@@ -17,6 +17,7 @@ return [
         'translationSource' => 'l10n_source',
         'enablecolumns' => [
             'disabled' => 'hidden',
+            'fe_group' => 'fe_group',
         ],
         'typeicon_classes' => [
             'default' => 'content-card',

@@ -463,3 +463,46 @@ export const contactPage = (c: Content = content()): string => {
             }),
     );
 };
+
+// What an unknown address answers: where you are not, and three ways back onto the trail.
+export const notFoundPage = (c: Content = content()): string =>
+    chrome(
+        c,
+        -1,
+        header(c, c.ui.notFoundTitle, []) +
+            section({
+                content: stack(
+                    [
+                        richText({ html: `<p>${esc(c.ui.notFoundText)}</p>` }),
+                        cluster([
+                            link({ label: c.site.home, href: paths.home }),
+                            link({ label: c.site.route.title, href: paths.route }),
+                            link({ label: c.site.practical.title, href: paths.practical }),
+                        ]),
+                    ],
+                    'elements',
+                ),
+            }),
+    );
+
+// Behind the log-in: the walk's papers and the way back to each day; the footer offers this page instead of the log-in.
+export const papersPage = (c: Content = content()): string => {
+    const { ui, site, pages, guide } = c;
+    const columns = guide.footer.columns.map((col) => ({
+        ...col,
+        links: col.links.map((l) => (l.href === paths.login ? { label: ui.papersLink, href: paths.papers } : l)),
+    }));
+    return chrome(
+        { ...c, guide: { ...guide, footer: { ...guide.footer, columns } } },
+        -1,
+        header(c, ui.papersTitle, []) +
+            section({
+                content: split(
+                    stack([richText({ html: `<p>${esc(ui.papersText)}</p>` }), downloadList({ items: pages.detail.downloads })], 'column'),
+                    loginForm({ action: paths.login, labels: loginLabels(c), user: demoLogin.username }),
+                    'content-sidebar',
+                ),
+            }) +
+            section({ content: stack([sectionHeading({ title: site.days.groups.days }), grid(teasers(dayTeasers(c), 3), 4)], 'heading') }),
+    );
+};

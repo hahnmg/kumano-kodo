@@ -1,6 +1,15 @@
 base: /
 dependencies:
   - kumano-kodo/site
+errorHandling:
+  -
+    errorCode: 403
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=718'
+  -
+    errorCode: 404
+    errorHandler: Page
+    errorContentSource: 't3://page?uid=724'
 languages:
   -
     languageId: 0
@@ -28,5 +37,5 @@ languages:
     base: /ja/
     flag: jp
     fallbackType: strict
-rootPageId: 397
+rootPageId: 652
 websiteTitle: 'Kumano Kodo'
