@@ -46,6 +46,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
-        "demo:export": "Build/Scripts/demo-export.sh"
+        "demo:export": "Build/Scripts/demo-export.sh",
+        "starter:export": "Build/Scripts/starter-export.sh"
     }
 }
