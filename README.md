@@ -107,6 +107,8 @@ the previous home (`/home-v3`) and a page with the remaining components (`/compo
 - **Caching**: like every TYPO3 site, pages go out as `private, no-store`. For client and proxy caching set
   `config.sendCacheHeaders = 1` in the site's TypoScript; logged-in visitors and pages with uncached plugins (search,
   log-in) still go out uncached.
+- **Lessons from the core theme**: every Forge issue about TYPO3's core theme Camino, and what it means here, with
+  status and where it is handled: `docs/core-theme-issues.md`.
 - **Icons**: every element and record type has its own icon (`Resources/Public/Icons/Content/`), drawn to the
   [TYPO3 Icons](https://typo3.github.io/TYPO3.Icons/guide/drawing.html) grid and palette.
 - **Own content elements**: register the CType in your own extension as `Configuration/TCA/Overrides` does here, with

@@ -6,7 +6,9 @@ sitemap; Storybook, Figma, TYPO3), 4 (load order, documented failure, uploads fr
 for every element and record type), 7 (caching documented, slider focus). Open: 1, and from 7 the docs.typo3.org
 documentation.
 
-Sources: feedback by Benjamin Kott (2026-09-30) and every Forge issue about Camino: the 33 issues of the category
+Overview of every issue and how it is handled: `docs/core-theme-issues.md`.
+
+Sources: feedback from the core team (2026-09-30) and every Forge issue about Camino: the 33 issues of the category
 "Themes" and the full-text matches for "camino" and "theme_camino" (checked 2026-10-05). Each point names its issue.
 
 ## Already covered
@@ -23,14 +25,14 @@ Sources: feedback by Benjamin Kott (2026-09-30) and every Forge issue about Cami
 
 ## Proposed changes
 
-### 1. Say what the package is for (Benjamin: "starting point or demo?")
+### 1. Say what the package is for (feedback: "starting point or demo?")
 
 - Keep the split: `kumano-kodo/sitepackage` is the theme and installs empty; `kumano-kodo/demo` is the showcase.
 - Add a **starter** content set of five pages (home, about, contact, imprint, privacy) next to the full demo, so a
   new site starts from something it can keep instead of wiping 23 pages.
 - State both in the README and the setup choice. *Effort: M.*
 
-### 2. Decide what can be customised (Benjamin)
+### 2. Decide what can be customised (feedback)
 
 Today: colours, typefaces, spacing, radii and logo per site. Missing:
 
@@ -39,13 +41,13 @@ Today: colours, typefaces, spacing, radii and logo per site. Missing:
   content). Today only `EXT:kumano_kodo` is on the path. *S.*
 - **Own content elements**: a documented recipe (own set, own CType, the shared partials) rather than a feature. *S.*
 
-### 3. Support the core extensions (Benjamin; [#108673](https://forge.typo3.org/issues/108673), [#108674](https://forge.typo3.org/issues/108674), [#108675](https://forge.typo3.org/issues/108675))
+### 3. Support the core extensions (feedback; [#108673](https://forge.typo3.org/issues/108673), [#108674](https://forge.typo3.org/issues/108674), [#108675](https://forge.typo3.org/issues/108675))
 
 Templates and styles for `felogin`, `indexed_search` and `form`, built from the existing form atoms (text field,
 select, checkbox, button), and `seo` sitemap. Load them as optional dependencies of the site set, so a site without
 the extension does not break. *L.*
 
-### 4. Stay independent of fluid_styled_content (Benjamin; [#109670](https://forge.typo3.org/issues/109670))
+### 4. Stay independent of fluid_styled_content (feedback; [#109670](https://forge.typo3.org/issues/109670))
 
 - We render without FSC, but like Camino we define `lib.contentElement`. A third-party set that depends on FSC
   replaces it and breaks every element. Watch #109670 for the core fix; until then add a check that fails loudly when
