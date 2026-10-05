@@ -1,6 +1,7 @@
 mod.web_layout.BackendLayouts {
   Landing {
     title = LLL:kumano_kodo.backend_layouts:layout.landing
+    icon = EXT:kumano_kodo/Resources/Public/Images/BackendLayouts/landing.png
     config {
       backend_layout {
         colCount = 2

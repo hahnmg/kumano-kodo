@@ -1,6 +1,7 @@
 mod.web_layout.BackendLayouts {
   Journal {
     title = LLL:kumano_kodo.backend_layouts:layout.journal
+    icon = EXT:kumano_kodo/Resources/Public/Images/BackendLayouts/journal.png
     config {
       backend_layout {
         colCount = 2
