@@ -110,6 +110,24 @@
             "solution": "Templates read records and render content areas the current way."
         },
         {
+            "status": "solved",
+            "issues": [109395],
+            "problem": "A page without a backend layout fails.",
+            "solution": "Such a page falls back to the Default template; top bar and footer texts then stay empty."
+        },
+        {
+            "status": "solved",
+            "issues": [108677, 108680],
+            "problem": "Focus rings are clipped or too round.",
+            "solution": "Square rings with offset, whole and visible on cards, tiles and in the slider."
+        },
+        {
+            "status": "solved",
+            "issues": [110384],
+            "problem": "Labels are missing in backend previews.",
+            "solution": "Every label key the previews use exists."
+        },
+        {
             "status": "partly",
             "issues": [],
             "problem": "Unclear whether the theme is a starting point or a demo.",
@@ -120,24 +138,6 @@
             "issues": [108672, 108777, 108681],
             "problem": "Documentation is missing.",
             "solution": "README and this Storybook. Open: documentation in the docs.typo3.org format."
-        },
-        {
-            "status": "partly",
-            "issues": [109395],
-            "problem": "A page without a backend layout fails.",
-            "solution": "The demo sets layouts. Open: a test with an empty site."
-        },
-        {
-            "status": "check",
-            "issues": [108677, 108680],
-            "problem": "Focus rings are clipped or too round.",
-            "solution": "Rings are plain outlines with offset; not yet tested on every card."
-        },
-        {
-            "status": "check",
-            "issues": [110384],
-            "problem": "Labels missing in backend previews.",
-            "solution": "Not yet checked label by label."
         },
         {
             "status": "check",
