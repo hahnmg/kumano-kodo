@@ -882,6 +882,8 @@ const site = {
         'kumanoKodo.contact.email': c.en.guide.topbar.email,
         'felogin.showPermaLogin': true,
         'kumanoKodo.brand.logo': 'kumano',
+        'kumanoKodo.brand.upright': '熊野古道',
+        'kumanoKodo.brand.footerWordmark': true,
     },
     errorHandling: { 404: 'not-found', 403: 'login' },
 };

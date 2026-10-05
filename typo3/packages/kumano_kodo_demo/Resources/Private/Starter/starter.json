@@ -2,7 +2,9 @@
     "site": {
         "websiteTitle": "Your site",
         "package": "kumano_kodo_starter",
-        "settings": {}
+        "settings": {
+            "kumanoKodo.theme": "mono"
+        }
     },
     "photos": {},
     "files": {},

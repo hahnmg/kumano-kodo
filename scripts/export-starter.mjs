@@ -125,6 +125,6 @@ const pages = [
     }),
 ];
 
-const site = { websiteTitle: 'Your site', package: 'kumano_kodo_starter', settings: {} };
+const site = { websiteTitle: 'Your site', package: 'kumano_kodo_starter', settings: { 'kumanoKodo.theme': 'mono' } };
 await writeFile(out, `${JSON.stringify({ site, photos: {}, files: {}, pages, frontendUsers: [] }, null, 4)}\n`);
 console.log(`Starter: ${pages.length} pages → ${out}`);

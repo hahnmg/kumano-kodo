@@ -32,5 +32,5 @@ languages:
     base: /ja/
     flag: jp
     fallbackType: strict
-rootPageId: 190
+rootPageId: 394
 websiteTitle: 'Your site'
