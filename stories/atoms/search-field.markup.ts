@@ -5,11 +5,12 @@ export interface SearchFieldProps {
     label: string;
     name: string;
     placeholder?: string;
+    value?: string;
 }
 
-export const searchField = ({ label, name, placeholder }: SearchFieldProps): string =>
+export const searchField = ({ label, name, placeholder, value }: SearchFieldProps): string =>
     `<label class="field">` +
     `<span class="field__label type-label">${esc(label)}</span>` +
     `<span class="field__box">${icon({ name: 'search', size: 18 })}` +
-    `<input${attrs({ class: 'field__control type-small', type: 'search', name, placeholder })}>` +
+    `<input${attrs({ class: 'field__control type-small', type: 'search', name, placeholder, value })}>` +
     `</span></label>`;

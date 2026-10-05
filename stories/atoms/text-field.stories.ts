@@ -13,3 +13,10 @@ const meta: Meta<TextFieldProps> = {
 export default meta;
 
 export const TextField: StoryObj<TextFieldProps> = {};
+
+export const Invalid: StoryObj<TextFieldProps> = {
+    render: localized(
+        (p: TextFieldProps) => `<div style="max-width:539px">${textField(p)}</div>`,
+        (c) => ({ label: `${c.ui.emailAddress} *`, value: 'name@', error: c.ui.emailInvalid, required: true }),
+    ),
+};

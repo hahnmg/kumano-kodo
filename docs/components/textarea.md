@@ -8,5 +8,6 @@ Multi-line input in the underlined field style, at least 120px high.
 |---|---|
 | `label`, `name` | text |
 | `placeholder`, `rows` | optional, rows default 4 |
+| `required`, `error` | optional, as Text Field |
 
 Tokens: as Text Field, plus `.type-small`.

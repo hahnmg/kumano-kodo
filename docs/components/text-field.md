@@ -7,7 +7,10 @@ Label above an underlined input.
 | Prop | Values |
 |---|---|
 | `label`, `name` | text |
-| `type` | `text`, `email`, `tel` |
-| `value`, `placeholder`, `required` | optional |
+| `type` | `text`, `email`, `tel`, `password` |
+| `value`, `placeholder`, `required`, `autocomplete` | optional |
+| `error` | message; marks the field invalid, ties the message to the control with `aria-describedby` |
+
+An invalid field (also Select, Textarea, Checkbox) keeps its rule in `--color-accent` and shows the message with the alert icon below.
 
 Tokens: `--color-muted`, `--color-hair`, `--color-ink`, `--space-10`, `.type-label`, `.type-lead`.

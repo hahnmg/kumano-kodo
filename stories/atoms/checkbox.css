@@ -21,3 +21,9 @@
 .choice:hover .choice__label {
     color: var(--color-ink);
 }
+
+.choice-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+}

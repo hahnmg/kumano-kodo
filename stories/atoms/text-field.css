@@ -50,3 +50,20 @@
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
+
+/* An invalid field keeps its rule in the accent and names the problem below it. */
+.field--invalid .field__control,
+.field--invalid .field__box {
+    border-bottom-color: var(--color-accent);
+}
+
+.field__error {
+    display: flex;
+    gap: var(--space-6);
+    align-items: center;
+    color: var(--color-accent);
+}
+
+.field__error .icon {
+    flex-shrink: 0;
+}

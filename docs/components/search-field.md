@@ -7,6 +7,6 @@ Search input with a leading search icon in the underlined field style.
 | Prop | Values |
 |---|---|
 | `label`, `name` | text |
-| `placeholder` | optional |
+| `placeholder`, `value` | optional |
 
 Tokens: as Text Field, plus `.type-small`.

@@ -9,5 +9,6 @@ Native select in the underlined field style with a chevron.
 | `label`, `name` | text |
 | `options` | list of labels |
 | `value` | selected option |
+| `required`, `error` | optional, as Text Field |
 
 Tokens: as Text Field, plus `.type-small`.

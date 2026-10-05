@@ -10,3 +10,7 @@ const meta: Meta<CheckboxProps> = {
 export default meta;
 
 export const Checkbox: StoryObj<CheckboxProps> = {};
+
+export const Invalid: StoryObj<CheckboxProps> = {
+    render: localized(checkbox, (c) => ({ label: `${c.ui.contactConsent} *`, required: true, error: c.ui.fieldRequired })),
+};
