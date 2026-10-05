@@ -21,6 +21,11 @@
     background: var(--color-muted);
 }
 
+.slider-dots__dot:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
 .slider-dots__dot--active {
     background: var(--color-accent);
 }
