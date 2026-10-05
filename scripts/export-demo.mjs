@@ -14,6 +14,7 @@ const server = await createServer({ configFile: false, logLevel: 'silent', serve
 const { content, locales } = await server.ssrLoadModule('/stories/templates/content.ts');
 const { routes, paths, placeSlugs, practicalSlugs, legalSlugs } = await server.ssrLoadModule('/stories/content/paths.ts');
 const { dayPhotos } = await server.ssrLoadModule('/stories/templates/journal-photos.ts');
+const { demoLogin } = await server.ssrLoadModule('/stories/content/demo-login.ts');
 await server.close();
 
 const langs = ['en', 'de', 'ja'].filter((l) => l in locales);
@@ -566,6 +567,12 @@ const page = (key, parent, title, extra = {}) => ({
 });
 
 const contact = (x) => x.guide.footer.columns[x.guide.footer.columns.length - 1];
+const fillIn = (template, ...values) => template.replace(/%(\d+)\$s/g, (_, n) => values[Number(n) - 1]);
+// The build replaces page:<key> with the uid of that demo page.
+const loginFlexform = (folder) =>
+    '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data><sheet index="sDEF"><language index="lDEF">' +
+    `<field index="settings.pages"><value index="vDEF">page:${folder}</value></field>` +
+    '</language></sheet></data></T3FlexForms>';
 const formFlexform = (identifier) =>
     '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data><sheet index="sDEF"><language index="lDEF">' +
     `<field index="settings.persistenceIdentifier"><value index="vDEF">${identifier}</value></field>` +
@@ -685,7 +692,30 @@ const pages = [
         'login',
         'home',
         t((x) => x.ui.logIn),
-        { navHide: true, content: [el('felogin_login')] },
+        {
+            navHide: true,
+            content: [
+                columns(
+                    'content-sidebar',
+                    {},
+                    [el('felogin_login', { pi_flexform: loginFlexform('walkers') })],
+                    [
+                        el('kumano_callout', {
+                            tx_kumanokodo_variant: 'infobox',
+                            header: t((x) => x.ui.demoAccess),
+                            bodytext: t((x) => fillIn(x.ui.demoAccessText, demoLogin.username, demoLogin.password)),
+                        }),
+                    ],
+                ),
+            ],
+        },
+    ),
+    // The walkers' accounts; a folder, so it shows in no menu.
+    page(
+        'walkers',
+        'home',
+        t(() => 'Fellow walkers'),
+        { navHide: true, doktype: 254 },
     ),
     page(
         'contact',
@@ -775,16 +805,19 @@ const frame = [
 ];
 pages[0].content = [...frame, ...pages[0].content];
 
+const frontendUsers = [{ folder: 'walkers', group: 'Fellow walkers', ...demoLogin }];
+
 const site = {
     websiteTitle: 'Kumano Kodo',
     settings: {
         'kumanoKodo.contact.phone': c.en.guide.topbar.phone,
         'kumanoKodo.contact.email': c.en.guide.topbar.email,
+        'felogin.showPermaLogin': true,
     },
 };
 
 const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.values(e.children ?? {}).flat()), 0);
-await writeFile(out, `${JSON.stringify({ site, photos, files, pages }, null, 4)}\n`);
+await writeFile(out, `${JSON.stringify({ site, photos, files, pages, frontendUsers }, null, 4)}\n`);
 console.log(
     `Demo: ${pages.length} pages, ${count(pages.flatMap((p) => p.content))} content elements, ${Object.keys(photos).length} photos → ${out}`,
 );

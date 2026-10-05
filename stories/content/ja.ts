@@ -38,6 +38,8 @@ const build = (p: Photos): LocaleContent => {
         loginFailedText: 'ユーザー名またはパスワードが正しくありません。',
         loggedInAs: '%1$s としてログイン中',
         logOut: 'ログアウト',
+        demoAccess: 'デモ用アカウント',
+        demoAccessText: 'ユーザー名 %1$s・パスワード %2$s',
         requiredNote: '* の項目は必須です。',
         fieldRequired: 'この項目を入力してください。',
         emailInvalid: '有効なメールアドレスを入力してください。',

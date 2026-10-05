@@ -38,6 +38,8 @@ const build = (p: Photos) => {
         loginFailedText: 'Username or password were not accepted.',
         loggedInAs: 'Logged in as %1$s',
         logOut: 'Log out',
+        demoAccess: 'Demo access',
+        demoAccessText: 'Username %1$s · password %2$s',
         requiredNote: 'Fields marked * are required.',
         fieldRequired: 'Please fill in this field.',
         emailInvalid: 'Please enter a valid email address.',

@@ -138,6 +138,14 @@
                 <source>Log out</source>
                 <target>Abmelden</target>
             </trans-unit>
+            <trans-unit id="demoAccess">
+                <source>Demo access</source>
+                <target>Demo-Zugang</target>
+            </trans-unit>
+            <trans-unit id="demoAccessText">
+                <source>Username %1$s · password %2$s</source>
+                <target>Benutzername %1$s · Passwort %2$s</target>
+            </trans-unit>
             <trans-unit id="requiredNote">
                 <source>Fields marked * are required.</source>
                 <target>Mit * markierte Felder sind Pflichtfelder.</target>

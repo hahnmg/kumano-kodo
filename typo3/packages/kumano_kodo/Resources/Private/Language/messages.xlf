@@ -104,6 +104,12 @@
             <trans-unit id="logOut">
                 <source>Log out</source>
             </trans-unit>
+            <trans-unit id="demoAccess">
+                <source>Demo access</source>
+            </trans-unit>
+            <trans-unit id="demoAccessText">
+                <source>Username %1$s · password %2$s</source>
+            </trans-unit>
             <trans-unit id="requiredNote">
                 <source>Fields marked * are required.</source>
             </trans-unit>

@@ -138,6 +138,14 @@
                 <source>Log out</source>
                 <target>ログアウト</target>
             </trans-unit>
+            <trans-unit id="demoAccess">
+                <source>Demo access</source>
+                <target>デモ用アカウント</target>
+            </trans-unit>
+            <trans-unit id="demoAccessText">
+                <source>Username %1$s · password %2$s</source>
+                <target>ユーザー名 %1$s・パスワード %2$s</target>
+            </trans-unit>
             <trans-unit id="requiredNote">
                 <source>Fields marked * are required.</source>
                 <target>* の項目は必須です。</target>

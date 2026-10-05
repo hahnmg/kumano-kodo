@@ -34,6 +34,7 @@ import { siteHeader } from '../organisms/site-header.markup';
 import { topbar } from '../organisms/topbar.markup';
 import { content, type Content } from './content';
 import { dayPhotos } from './journal-photos';
+import { demoLogin } from '../content/demo-login';
 import { kumanoJournal } from './kumano-journal.markup';
 import { searchSample } from './search-sample';
 
@@ -418,7 +419,13 @@ export const loginPage = (c: Content = content()): string =>
         c,
         -1,
         header(c, c.ui.logIn, []) +
-            section({ content: loginForm({ action: paths.login, labels: loginLabels(c), forgotHref: `${paths.login}#forgot` }) }),
+            section({
+                content: split(
+                    loginForm({ action: paths.login, labels: loginLabels(c), forgotHref: `${paths.login}#forgot` }),
+                    infoBox({ title: c.ui.demoAccess, text: fill(c.ui.demoAccessText, demoLogin.username, demoLogin.password) }),
+                    'content-sidebar',
+                ),
+            }),
     );
 
 export const contactPage = (c: Content = content()): string => {

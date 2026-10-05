@@ -38,6 +38,8 @@ const build = (p: Photos): LocaleContent => {
         loginFailedText: 'Benutzername oder Passwort wurden nicht akzeptiert.',
         loggedInAs: 'Angemeldet als %1$s',
         logOut: 'Abmelden',
+        demoAccess: 'Demo-Zugang',
+        demoAccessText: 'Benutzername %1$s · Passwort %2$s',
         requiredNote: 'Mit * markierte Felder sind Pflichtfelder.',
         fieldRequired: 'Bitte füllen Sie dieses Feld aus.',
         emailInvalid: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',

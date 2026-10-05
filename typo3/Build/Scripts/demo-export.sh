@@ -13,6 +13,7 @@ $typo3 impexp:export data --type=xml --pid="$root" --levels=999 \
     --table=tt_content --table=tx_kumanokodo_link --table=tx_kumanokodo_nav_column \
     --table=tx_kumanokodo_entry --table=tx_kumanokodo_fact --table=tx_kumanokodo_question \
     --table=tx_kumanokodo_station --table=tx_kumanokodo_day_mark --table=sys_file_reference \
+    --table=fe_groups --table=fe_users \
     --include-related=sys_file --include-related=sys_file_metadata \
     --save-files-outside-export-file --title="Kumano Kodo demo" --dependency=kumano_kodo
 

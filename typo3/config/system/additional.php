@@ -16,6 +16,10 @@ if (getenv('IS_DDEV_PROJECT') == 'true') {
             'transport_smtp_encrypt' => false,
             'transport_smtp_server' => 'localhost:1025',
         ],
+        // A week-long session lets felogin offer "stay logged in" to the demo's walkers.
+        'FE' => [
+            'lifetime' => 604800,
+        ],
         'SYS' => [
             'trustedHostsPattern' => '.*.*',
             'devIPmask' => '*',

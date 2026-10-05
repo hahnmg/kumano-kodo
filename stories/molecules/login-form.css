@@ -11,3 +11,8 @@
     gap: var(--space-24);
     align-items: center;
 }
+
+/* Extbase renders its hidden fields in a div of their own, which would take a gap in the column. */
+.login-form > div:not(:has(> :not(input[type='hidden']))) {
+    display: none;
+}

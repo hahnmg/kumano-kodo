@@ -87,6 +87,7 @@ final class BuildCommand extends Command
                 $this->addFlyout($page);
             }
         }
+        $this->createFrontendUsers($demo['frontendUsers'] ?? []);
         $elements = 0;
         foreach ($demo['pages'] as $page) {
             $uid = $this->pages[$page['key']];
@@ -125,6 +126,16 @@ final class BuildCommand extends Command
         }
     }
 
+    // Users and their group live in a folder; the DataHandler hashes the password.
+    private function createFrontendUsers(array $users): void
+    {
+        foreach ($users as $user) {
+            $folder = $this->pages[$user['folder']];
+            $group = $this->create('fe_groups', ['pid' => $folder, 'title' => $user['group']]);
+            $this->create('fe_users', ['pid' => $folder, 'username' => $user['username'], 'password' => $user['password'], 'usergroup' => (string)$group]);
+        }
+    }
+
     private function importPhotos(array $photos): void
     {
         $storage = $this->storageRepository->getDefaultStorage();
@@ -160,6 +171,7 @@ final class BuildCommand extends Command
             'description' => $page['description']['en'] ?? '',
             'slug' => $page['slug'],
             'nav_hide' => (int)$page['navHide'],
+            'doktype' => $page['doktype'] ?? 1,
             'backend_layout' => 'pagets__' . $page['layout'],
             'backend_layout_next_level' => isset($page['nextLayout']) ? 'pagets__' . $page['nextLayout'] : '',
             'is_siteroot' => (int)($page['parent'] === null),
@@ -275,7 +287,9 @@ final class BuildCommand extends Command
     {
         $fields = ['pid' => $pid, 'colPos' => $colPos, 'CType' => $element['type'], 'hidden' => 0];
         foreach ($element['fields'] ?? [] as $field => $value) {
-            $fields[$field] = $field === 'tx_kumanokodo_link' || $field === 'tx_kumanokodo_link2' ? $this->link((string)$value) : $this->value($value, 'en');
+            $fields[$field] = $field === 'pi_flexform'
+                ? preg_replace_callback('/page:([a-z0-9-]+)/', fn (array $m): string => (string)$this->pages[$m[1]], (string)$value)
+                : $this->value($value, 'en');
         }
         if ($container > 0) {
             $fields['tx_container_parent'] = $container;
