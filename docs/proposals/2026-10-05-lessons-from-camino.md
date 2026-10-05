@@ -1,8 +1,10 @@
 # Proposal: what Camino taught us
 
 Status: accepted 2026-10-05 with these answers: starter set later (as a choice inside the demo); all three core
-extensions; our own guard against fluid_styled_content now. Built: 2, 3 (search in the header, results, login, forms; Storybook, Figma, TYPO3), 4 (load
-order, uploads from file references), 5, 6 (element icons from the core set). Open: 1, 7.
+extensions; our own guard against fluid_styled_content now. Built: 2, 3 (search in the header, results, login, forms,
+sitemap; Storybook, Figma, TYPO3), 4 (load order, documented failure, uploads from file references), 5, 6 (own icons
+for every element and record type), 7 (caching documented, slider focus). Open: 1, and from 7 the docs.typo3.org
+documentation.
 
 Sources: feedback by Benjamin Kott (2026-09-30) and every Forge issue about Camino: the 33 issues of the category
 "Themes" and the full-text matches for "camino" and "theme_camino" (checked 2026-10-05). Each point names its issue.

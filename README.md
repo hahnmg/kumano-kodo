@@ -98,6 +98,17 @@ the previous home (`/home-v3`) and a page with the remaining components (`/compo
   the travel papers, a page only logged-in visitors see. Entries of a list take an access group like content elements.
 - **Error pages**: the demo answers unknown addresses with its page "Page not found" (404) and protected pages with the
   log-in (403). The import keeps both: `RemapErrorPagesOnPackageInitialization` points them at the imported pages.
+- **Without fluid_styled_content**: the theme renders every element itself but, like any sitepackage, defines
+  `lib.contentElement`. Its set loads fluid_styled_content first where installed, so a set depending on it cannot
+  replace ours ([#109670](https://forge.typo3.org/issues/109670)). If another set replaces it anyway, each of the
+  theme's elements shows TYPO3's "Oops, an error occurred!" instead of falling back silently.
+- **Sitemap**: with `typo3/cms-seo` installed the site set loads its sitemap at `/sitemap.xml`; pages with "No index"
+  (in the demo search and page-not-found) stay out.
+- **Caching**: like every TYPO3 site, pages go out as `private, no-store`. For client and proxy caching set
+  `config.sendCacheHeaders = 1` in the site's TypoScript; logged-in visitors and pages with uncached plugins (search,
+  log-in) still go out uncached.
+- **Icons**: every element and record type has its own icon (`Resources/Public/Icons/Content/`), drawn to the
+  [TYPO3 Icons](https://typo3.github.io/TYPO3.Icons/guide/drawing.html) grid and palette.
 - **Own content elements**: register the CType in your own extension as `Configuration/TCA/Overrides` does here, with
   the `kumanoHeading_*` palettes and the tab order General, Images, Appearance; put its template in your template folder
   under `Content/` and render it through the `Kumano/Section` partial so it gets the section frame.
