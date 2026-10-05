@@ -1,6 +1,6 @@
 # Form
 
-Figma: not yet drawn. Markup: `stories/molecules/form.markup.ts`.
+Figma: Form (66:393), states Default and Invalid. Markup: `stories/molecules/form.markup.ts`.
 
 The frame EXT:form renders into: the fields in one column, the note on required fields, the submit button. Fields are the field atoms; an invalid one keeps its rule in the accent and names the problem below it (`error` prop). At most 640px wide.
 

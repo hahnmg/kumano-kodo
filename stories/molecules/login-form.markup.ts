@@ -29,7 +29,7 @@ export interface LoginFormProps {
 export const loginForm = ({ action, labels: l, forgotHref, failed = false, user }: LoginFormProps): string =>
     user
         ? `<form${attrs({ class: 'login-form login-form--status', action, method: 'post' })}><p class="type-body">${esc(fill(l.loggedInAs, user))}</p>` +
-          `<div>${button({ label: l.logOut, type: 'submit', variant: 'outline' })}</div></form>`
+          `<div>${button({ label: l.logOut, type: 'submit' })}</div></form>`
         : `<form${attrs({ class: 'login-form', action, method: 'post' })}>` +
           (failed ? notice({ title: l.loginFailed, text: l.loginFailedText }) : '') +
           textField({ label: l.username, name: 'user', autocomplete: 'username', required: true }) +

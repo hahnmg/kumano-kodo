@@ -1,6 +1,6 @@
 # Checkbox
 
-Figma: `Checkbox` (5:27). Markup: `stories/atoms/checkbox.markup.ts`. Defines the shared `.choice` styles used by Radio.
+Figma: `Checkbox` (65:227), variants Default and Invalid. Markup: `stories/atoms/checkbox.markup.ts`. Defines the shared `.choice` styles used by Radio.
 
 Native checkbox in the accent colour with a muted caption label.
 

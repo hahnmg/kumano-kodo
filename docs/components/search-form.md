@@ -1,6 +1,6 @@
 # Search Form
 
-Figma: not yet drawn. Markup: `stories/molecules/search-form.markup.ts`.
+Figma: Search Form (66:3404), layouts Row and Stacked. Markup: `stories/molecules/search-form.markup.ts`.
 
 The search as a form landmark: Search Field and a submit button in one row, stacked on phones. Sends `q` with GET. Used in the header's search panel and on the results page.
 

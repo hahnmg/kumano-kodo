@@ -1,6 +1,6 @@
 # Text Field
 
-Figma: `Text Field` (5:23). Markup: `stories/atoms/text-field.markup.ts`. Defines the shared `.field` styles used by Select, Search Field and Textarea.
+Figma: `Text Field` (65:214), variants Default and Invalid. Markup: `stories/atoms/text-field.markup.ts`. Defines the shared `.field` styles used by Select, Search Field and Textarea.
 
 Label above an underlined input.
 

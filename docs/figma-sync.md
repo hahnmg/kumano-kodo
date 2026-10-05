@@ -31,6 +31,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 
 - [ ] Slider dots: only as many as reachable positions (three on desktop, five on phones)
 - [x] 2026-09-30 Spacing rule as variables: `layout/heading-gap` (56), `layout/element-gap` (96), `layout/column-gap` (40)
+- [x] 2026-10-05 Text Field and Checkbox with an Invalid state; Search Toggle in the header, Search Panel, Search Form (row and stacked, open at the top of the mobile menu), Search Results, Login Form, Form
+- [ ] Pages: search, log-in and contact page frames
 - [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the page frames
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
