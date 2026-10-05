@@ -1,9 +1,9 @@
 # Proposal: what Camino taught us
 
 Status: accepted 2026-10-05 with these answers: starter set later (as a choice inside the demo); all three core
-extensions; our own guard against fluid_styled_content now. Built: 2, 3 (search in the header, results, login, forms,
+extensions; our own guard against fluid_styled_content now. Built: 1 (starter set as a choice in the demo), 2, 3 (search in the header, results, login, forms,
 sitemap; Storybook, Figma, TYPO3), 4 (load order, documented failure, uploads from file references), 5, 6 (own icons
-for every element and record type), 7 (caching documented, slider focus). Open: 1, and from 7 the docs.typo3.org
+for every element and record type), 7 (caching documented, slider focus). Open: from 7 the docs.typo3.org
 documentation.
 
 Overview of every issue and how it is handled: Storybook › Core theme issues (`docs/core-theme-issues.json`).

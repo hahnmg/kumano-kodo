@@ -134,10 +134,10 @@
             "solution": "The first DDEV start runs TYPO3 setup on the command line and imports the demo without a warning."
         },
         {
-            "status": "partly",
+            "status": "solved",
             "issues": [],
             "problem": "Unclear whether the theme is a starting point or a demo.",
-            "solution": "Theme and demo are separate. Open: a small starter set to choose in the demo."
+            "solution": "Theme and demo are separate; the demo installs either the full journal or a five-page starter set."
         },
         {
             "status": "partly",
