@@ -708,6 +708,7 @@ const pages = [
         t((x) => x.ui.logIn),
         {
             navHide: true,
+            noIndex: true,
             content: [
                 columns(
                     'content-sidebar',
@@ -760,7 +761,7 @@ const pages = [
             content: [
                 section({}, [
                     text(t((x) => `<p>${esc(x.ui.notFoundText)}</p>`)),
-                    listEl('links', {}, [
+                    listEl('links-stacked', {}, [
                         { title: t((x) => x.site.home), link: 'page:home' },
                         { title: t((x) => x.site.route.title), link: 'page:route' },
                         { title: t((x) => x.site.practical.title), link: 'page:practical' },
@@ -800,13 +801,13 @@ const pages = [
         'home-v3',
         'home',
         t(() => 'Home v3'),
-        { navHide: true, layout: 'Classic', content: v3 },
+        { navHide: true, noIndex: true, layout: 'Classic', content: v3 },
     ),
     page(
         'components',
         'home',
         t(() => 'Components'),
-        { navHide: true, content: components },
+        { navHide: true, noIndex: true, content: components },
     ),
 ];
 

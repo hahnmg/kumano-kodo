@@ -483,6 +483,8 @@ final class BuildCommand extends Command
         $this->siteConfiguration = [
             'rootPageId' => $this->pages['home'],
             'base' => '/',
+            // Absolute links (sitemap, canonical) need a host; DDEV knows its own, any other server keeps "/".
+            'baseVariants' => [['base' => '%env(DDEV_PRIMARY_URL)%/', 'condition' => 'getenv("IS_DDEV_PROJECT") == "true"']],
             'websiteTitle' => $site['websiteTitle'],
             'dependencies' => ['kumano-kodo/site'],
             'languages' => $languages,

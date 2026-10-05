@@ -1,15 +1,19 @@
 base: /
+baseVariants:
+  -
+    base: '%env(DDEV_PRIMARY_URL)%/'
+    condition: 'getenv("IS_DDEV_PROJECT") == "true"'
 dependencies:
   - kumano-kodo/site
 errorHandling:
   -
     errorCode: 403
     errorHandler: Page
-    errorContentSource: 't3://page?uid=979'
+    errorContentSource: 't3://page?uid=1066'
   -
     errorCode: 404
     errorHandler: Page
-    errorContentSource: 't3://page?uid=985'
+    errorContentSource: 't3://page?uid=1072'
 languages:
   -
     languageId: 0
@@ -37,5 +41,5 @@ languages:
     base: /ja/
     flag: jp
     fallbackType: strict
-rootPageId: 913
+rootPageId: 1000
 websiteTitle: 'Kumano Kodo'

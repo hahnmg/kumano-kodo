@@ -4503,7 +4503,8 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "noIndex": true
         },
         {
             "key": "papers",
@@ -4693,7 +4694,7 @@
                             {
                                 "type": "kumano_list",
                                 "fields": {
-                                    "tx_kumanokodo_variant": "links"
+                                    "tx_kumanokodo_variant": "links-stacked"
                                 },
                                 "items": {
                                     "tx_kumanokodo_entries": [
@@ -5675,6 +5676,7 @@
                     }
                 }
             ],
+            "noIndex": true,
             "description": {
                 "en": "The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines.",
                 "de": "Der Kumano Kodo ist kein einzelner Fernwanderweg, sondern ein Netz alter Pilgerpfade zu drei Schreinen.",
@@ -5852,7 +5854,8 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "noIndex": true
         }
     ],
     "frontendUsers": [

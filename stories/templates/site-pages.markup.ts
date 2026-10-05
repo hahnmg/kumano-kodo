@@ -484,7 +484,7 @@ export const notFoundPage = (c: Content = content()): string =>
                 content: stack(
                     [
                         richText({ html: `<p>${esc(c.ui.notFoundText)}</p>` }),
-                        cluster([
+                        stack([
                             link({ label: c.site.home, href: paths.home }),
                             link({ label: c.site.route.title, href: paths.route }),
                             link({ label: c.site.practical.title, href: paths.practical }),
