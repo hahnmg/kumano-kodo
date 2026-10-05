@@ -22,3 +22,10 @@ vendor/bin/typo3 cache:flush
 
 # The first page request downloads the web fonts to this server; do it now rather than for the first visitor.
 curl -s -o /dev/null http://localhost/ || true
+
+# indexed_search fills its index from pages as they are rendered; with an empty index, render every page once.
+db() { mysql --host=db --user=db --password=db db --batch --skip-column-names -e "$1" 2>/dev/null; }
+if [ "$(db 'SELECT COUNT(*) FROM index_phash' || echo skip)" = "0" ]; then
+    db "SELECT CONCAT(CASE sys_language_uid WHEN 1 THEN '/de' WHEN 2 THEN '/ja' ELSE '' END, slug) FROM pages WHERE deleted = 0 AND hidden = 0 AND doktype = 1" |
+        while read -r path; do curl -s -o /dev/null "http://localhost$path" || true; done
+fi

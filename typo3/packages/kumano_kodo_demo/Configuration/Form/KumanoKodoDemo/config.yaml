@@ -1,0 +1,7 @@
+name: kumano-kodo/demo-forms
+label: 'Kumano Kodo demo — forms'
+priority: 60
+
+persistenceManager:
+  allowedExtensionPaths:
+    10: 'EXT:kumano_kodo_demo/Resources/Private/Forms/'

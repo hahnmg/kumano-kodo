@@ -4355,6 +4355,89 @@
             }
         },
         {
+            "key": "search",
+            "parent": "home",
+            "slug": "/search",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Search",
+                "de": "Suche",
+                "ja": "検索"
+            },
+            "content": [
+                {
+                    "type": "indexedsearch_pi2",
+                    "fields": {}
+                }
+            ]
+        },
+        {
+            "key": "login",
+            "parent": "home",
+            "slug": "/login",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Log in",
+                "de": "Anmelden",
+                "ja": "ログイン"
+            },
+            "content": [
+                {
+                    "type": "felogin_login",
+                    "fields": {}
+                }
+            ]
+        },
+        {
+            "key": "contact",
+            "parent": "home",
+            "slug": "/contact",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Contact",
+                "de": "Kontakt",
+                "ja": "お問い合わせ"
+            },
+            "content": [
+                {
+                    "type": "kumano_columns",
+                    "fields": {
+                        "tx_kumanokodo_layout": "text-media"
+                    },
+                    "children": {
+                        "201": [
+                            {
+                                "type": "text",
+                                "fields": {
+                                    "bodytext": {
+                                        "en": "<p>Usually answered within a week</p>",
+                                        "de": "<p>Antwort meist innerhalb einer Woche</p>",
+                                        "ja": "<p>通常一週間以内に返信します</p>"
+                                    }
+                                }
+                            }
+                        ],
+                        "202": [
+                            {
+                                "type": "form_formframework",
+                                "fields": {
+                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:kumano_kodo_demo/Resources/Private/Forms/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "description": {
+                "en": "Usually answered within a week",
+                "de": "Antwort meist innerhalb einer Woche",
+                "ja": "通常一週間以内に返信します"
+            }
+        },
+        {
             "key": "home-v3",
             "parent": "home",
             "slug": "/home-v3",

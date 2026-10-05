@@ -565,6 +565,12 @@ const page = (key, parent, title, extra = {}) => ({
     ...extra,
 });
 
+const contact = (x) => x.guide.footer.columns[x.guide.footer.columns.length - 1];
+const formFlexform = (identifier) =>
+    '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data><sheet index="sDEF"><language index="lDEF">' +
+    `<field index="settings.persistenceIdentifier"><value index="vDEF">${identifier}</value></field>` +
+    '<field index="settings.overrideFinishers"><value index="vDEF">0</value></field></language></sheet></data></T3FlexForms>';
+
 const pages = [
     page(
         'home',
@@ -670,6 +676,38 @@ const pages = [
         ),
     ),
     page(
+        'search',
+        'home',
+        t((x) => x.ui.search),
+        { navHide: true, content: [el('indexedsearch_pi2')] },
+    ),
+    page(
+        'login',
+        'home',
+        t((x) => x.ui.logIn),
+        { navHide: true, content: [el('felogin_login')] },
+    ),
+    page(
+        'contact',
+        'home',
+        t((x) => contact(x).title),
+        {
+            navHide: true,
+            content: [
+                columns(
+                    'text-media',
+                    {},
+                    [text(t((x) => `<p>${esc(contact(x).links[1].label)}</p>`))],
+                    [
+                        el('form_formframework', {
+                            pi_flexform: formFlexform('EXT:kumano_kodo_demo/Resources/Private/Forms/contact.form.yaml'),
+                        }),
+                    ],
+                ),
+            ],
+        },
+    ),
+    page(
         'home-v3',
         'home',
         t(() => 'Home v3'),
@@ -704,6 +742,7 @@ const intros = {
     newsletter: (x) => x.site.newsletter.intro,
     ...Object.fromEntries(legalSlugs.map((slug) => [slug, (x) => x.site.legal[slug].text])),
     'home-v3': (x) => x.kumano.hero.teaser,
+    contact: (x) => contact(x).links[1].label,
 };
 for (const p of pages) if (intros[p.key]) p.description = t((x) => summary(intros[p.key](x)));
 
