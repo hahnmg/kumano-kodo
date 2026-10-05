@@ -56,11 +56,20 @@
             <trans-unit id="settings.kumanoKodo.theme.enum.violet">
                 <source>Violet</source>
             </trans-unit>
+            <trans-unit id="settings.kumanoKodo.theme.enum.mono">
+                <source>Mono</source>
+            </trans-unit>
             <trans-unit id="settings.kumanoKodo.brand.upright">
                 <source>Upright name</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.brand.upright">
                 <source>Set vertically beside the journal title; decorative, hidden from screen readers. Empty: none.</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.brand.footerWordmark">
+                <source>Website title large in the footer</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.brand.footerWordmark">
+                <source>Decorative, hidden from screen readers.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.brand.logo">
                 <source>Logo</source>
@@ -90,133 +99,133 @@
                 <source>Paper</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.paper">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #fbf7f1, Forest #f5f7f4, Ocean #f4f8fb, Violet #f7f3fb.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #fbf7f1, Forest #f5f7f4, Ocean #f4f8fb, Violet #f7f3fb, Mono #ffffff.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.surface">
                 <source>Surface</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.surface">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #ffffff, Forest #ffffff, Ocean #ffffff, Violet #ffffff.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #ffffff, Forest #ffffff, Ocean #ffffff, Violet #ffffff, Mono #ffffff.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.sunk">
                 <source>Sunk</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.sunk">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #f3ece1, Forest #e9eee9, Ocean #e7f0f7, Violet #efe8f7.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #f3ece1, Forest #e9eee9, Ocean #e7f0f7, Violet #efe8f7, Mono #f4f4f4.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.ink">
                 <source>Ink</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.ink">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #241a12, Forest #13201a, Ocean #0f1e2b, Violet #1a0f26.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #241a12, Forest #13201a, Ocean #0f1e2b, Violet #1a0f26, Mono #111111.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.muted">
                 <source>Muted</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.muted">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #665445, Forest #55665c, Ocean #4b6173, Violet #5c4b70.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #665445, Forest #55665c, Ocean #4b6173, Violet #5c4b70, Mono #5e5e5e.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.line">
                 <source>Line</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.line">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #e3d8c9, Forest #d8e0d8, Ocean #dbe8f1, Violet #e1d6ee.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #e3d8c9, Forest #d8e0d8, Ocean #dbe8f1, Violet #e1d6ee, Mono #e5e5e5.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.hair">
                 <source>Hair</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.hair">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #cfc0ab, Forest #bcc7bd, Ocean #b6cbdc, Violet #c6b4da.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #cfc0ab, Forest #bcc7bd, Ocean #b6cbdc, Violet #c6b4da, Mono #cfcfcf.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.moss">
                 <source>Moss</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.moss">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #4a6350, Forest #2f6b4f, Ocean #0f6e93, Violet #7a2fd4.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #4a6350, Forest #2f6b4f, Ocean #0f6e93, Violet #7a2fd4, Mono #111111.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.accent">
                 <source>Accent</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.light.accent">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #96481f, Forest #27614a, Ocean #0c6183, Violet #b0155f.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #96481f, Forest #27614a, Ocean #0c6183, Violet #b0155f, Mono #c83e00.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.paper">
                 <source>Paper</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.paper">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #171310, Forest #0f1412, Ocean #0b1319, Violet #0d0916.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #171310, Forest #0f1412, Ocean #0b1319, Violet #0d0916, Mono #0e0e0e.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.surface">
                 <source>Surface</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.surface">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #1f1a16, Forest #161c19, Ocean #101a22, Violet #150f22.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #1f1a16, Forest #161c19, Ocean #101a22, Violet #150f22, Mono #141414.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.sunk">
                 <source>Sunk</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.sunk">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #241d18, Forest #1b221e, Ocean #142129, Violet #1b1329.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #241d18, Forest #1b221e, Ocean #142129, Violet #1b1329, Mono #1a1a1a.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.ink">
                 <source>Ink</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.ink">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #f5ede3, Forest #e9efe9, Ocean #e6f1f7, Violet #f3edff.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #f5ede3, Forest #e9efe9, Ocean #e6f1f7, Violet #f3edff, Mono #f2f2f2.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.muted">
                 <source>Muted</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.muted">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #b3a393, Forest #a3b3a9, Ocean #9fb6c5, Violet #b3a6ca.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #b3a393, Forest #a3b3a9, Ocean #9fb6c5, Violet #b3a6ca, Mono #a3a3a3.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.line">
                 <source>Line</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.line">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #322a23, Forest #263029, Ocean #1e2e39, Violet #2a2040.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #322a23, Forest #263029, Ocean #1e2e39, Violet #2a2040, Mono #262626.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.hair">
                 <source>Hair</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.hair">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #463c32, Forest #364136, Ocean #2b4150, Violet #3b2d56.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #463c32, Forest #364136, Ocean #2b4150, Violet #3b2d56, Mono #3a3a3a.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.moss">
                 <source>Moss</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.moss">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #a9c2ae, Forest #8fd0a8, Ocean #63c8e6, Violet #ffd166.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #a9c2ae, Forest #8fd0a8, Ocean #63c8e6, Violet #ffd166, Mono #f2f2f2.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.accent">
                 <source>Accent</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.color.dark.accent">
-                <source>Left at its default, the chosen theme's colour applies: Caramel #e6a173, Forest #8ccfa5, Ocean #63c8e6, Violet #ff3e8a.</source>
+                <source>Left at its default, the chosen theme's colour applies: Caramel #e6a173, Forest #8ccfa5, Ocean #63c8e6, Violet #ff3e8a, Mono #ff7a3d.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.font.display">
                 <source>Display typeface</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.font.display">
-                <source>Headings, hero, quote and wordmark. A Google Fonts family name, loaded from this server. Empty: Caramel Fraunces, Forest Instrument Sans, Ocean Sora, Violet Space Grotesk.</source>
+                <source>Headings, hero, quote and wordmark. A Google Fonts family name, loaded from this server. Empty: Caramel Fraunces, Forest Instrument Sans, Ocean Sora, Violet Space Grotesk, Mono Inter.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.font.body">
                 <source>Text typeface</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.font.body">
-                <source>Body text, captions, buttons. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Inter.</source>
+                <source>Body text, captions, buttons. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Inter, Mono Inter.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.font.meta">
                 <source>Label typeface</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.font.meta">
-                <source>Small uppercase labels. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Space Mono.</source>
+                <source>Small uppercase labels. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Space Mono, Mono Inter.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.font.displayWeight">
                 <source>Display weight</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.font.displayWeight">
-                <source>Empty: Caramel 600, Forest 600, Ocean 600, Violet 700.</source>
+                <source>Empty: Caramel 600, Forest 600, Ocean 600, Violet 700, Mono 600.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.font.displayWeight.enum.400">
                 <source>400</source>
@@ -240,43 +249,43 @@
                 <source>Spacing unit</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.spacing.unit">
-                <source>Scales every gap, padding and margin; 8 is the design grid. Pixels. Empty: Caramel 8px, Forest 6px, Ocean 10px, Violet 8px.</source>
+                <source>Scales every gap, padding and margin; 8 is the design grid. Pixels. Empty: Caramel 8px, Forest 6px, Ocean 10px, Violet 8px, Mono 8px.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.spacing.gutter">
                 <source>Page margin</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.spacing.gutter">
-                <source>Above 900px; narrower screens keep their own margin. Pixels. Empty: Caramel 56px, Forest 42px, Ocean 57.6px, Violet 56px.</source>
+                <source>Above 900px; narrower screens keep their own margin. Pixels. Empty: Caramel 56px, Forest 42px, Ocean 57.6px, Violet 56px, Mono 56px.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.spacing.sectionLarge">
                 <source>Large section spacing</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.spacing.sectionLarge">
-                <source>Above 900px. Pixels. Empty: Caramel 128px, Forest 96px, Ocean 160px, Violet 112px.</source>
+                <source>Above 900px. Pixels. Empty: Caramel 128px, Forest 96px, Ocean 160px, Violet 112px, Mono 128px.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.spacing.sectionSmall">
                 <source>Section spacing</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.spacing.sectionSmall">
-                <source>Above 900px. Pixels. Empty: Caramel 96px, Forest 72px, Ocean 120px, Violet 88px.</source>
+                <source>Above 900px. Pixels. Empty: Caramel 96px, Forest 72px, Ocean 120px, Violet 88px, Mono 96px.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.spacing.container">
                 <source>Content width</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.spacing.container">
-                <source>Pixels. Empty: Caramel 1328px, Forest 1328px, Ocean 1328px, Violet 1328px.</source>
+                <source>Pixels. Empty: Caramel 1328px, Forest 1328px, Ocean 1328px, Violet 1328px, Mono 1328px.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.radius.button">
                 <source>Corner radius</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.radius.button">
-                <source>Buttons, fields and cards. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px, Violet 0px.</source>
+                <source>Buttons, fields and cards. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px, Violet 0px, Mono 0px.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.radius.pill">
                 <source>Pill radius</source>
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.radius.pill">
-                <source>Chips and badges. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 999px, Violet 0px.</source>
+                <source>Chips and badges. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 999px, Violet 0px, Mono 0px.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.contact.phone">
                 <source>Phone</source>

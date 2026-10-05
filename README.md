@@ -20,12 +20,12 @@ npm run storybook        # http://localhost:6006
 
 The toolbar switches **language** (日本語, Deutsch, English) and **scheme** (light, dark). The JA · DE · EN links and the
 dark mode button in the site header do the same and keep the toolbar in step. Themes are shown as templates
-(Kumano Home · Caramel, Forest, Ocean, Violet); components render in Caramel.
+(Kumano Home · Caramel, Forest, Ocean, Violet, Mono, and the starter set in Mono); components render in Caramel.
 
 Sample content lives in `stories/content/en.ts`, `de.ts` and `ja.ts`, one object each with the same shape; TypeScript
 fails the build if a language misses a key. The Japanese text has not been checked by a native speaker.
 
-The sidebar runs from whole pages to parts: **Site** (every page), **Templates** (the home page in four themes and the v3 home it replaced),
+The sidebar runs from whole pages to parts: **Site** (every page), **Templates** (the home page in five themes, the starter set and the v3 home it replaced),
 **Organisms**, **Molecules**, **Atoms** ("Atoms/Overview" shows all atoms on one page) and **Layout**. Every component
 is one Docs page with all its variants and the controls; single stories are not listed.
 

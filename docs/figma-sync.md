@@ -33,6 +33,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-05 Form state Sent (the confirmation as Info Box); page not found with the links stacked
 - [x] 2026-10-05 Logo · Title: the website title in Heading/Logo for sites without a logo of their own
 - [x] 2026-10-05 Text Field state Focus (frame over the box); Search Field box as tall as the button
+- [x] 2026-10-05 Theme mode Mono (Inter, radii 0, black and white, signal orange)
+- [ ] Site Footer without wordmark and a starter page frame in Mono
 - [x] 2026-09-30 Spacing rule as variables: `layout/heading-gap` (56), `layout/element-gap` (96), `layout/column-gap` (40)
 - [x] 2026-10-05 Text Field and Checkbox with an Invalid state; Search Toggle in the header, Search Panel, Search Form (row and stacked, open at the top of the mobile menu), Search Results, Login Form, Form
 - [x] 2026-10-05 Site Footer: "Walked with us? Log in" in the contact column leads to the log-in page

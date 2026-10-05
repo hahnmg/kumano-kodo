@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Contrast gate: every text/background pair the components use must reach WCAG AA in all eight theme × scheme combinations.
+// Contrast gate: every text/background pair the components use must reach WCAG AA in every theme × scheme combination.
 
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -45,4 +45,4 @@ if (failures.length) {
     console.error(`Contrast gate failed:\n  ${failures.join('\n  ')}`);
     process.exit(1);
 }
-console.log(`Contrast gate: ${pairs.length} pairs × 8 combinations pass`);
+console.log(`Contrast gate: ${pairs.length} pairs × ${theme.modes.length * 2} combinations pass`);

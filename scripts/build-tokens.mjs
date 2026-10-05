@@ -21,7 +21,7 @@ const fontStacks = {
     'Space Grotesk': '"Space Grotesk", "Noto Sans JP", system-ui, sans-serif',
     'Space Mono': '"Space Mono", "Noto Sans JP", monospace',
 };
-const weights = { Regular: 400, Medium: 500, SemiBold: 600, Bold: 700 };
+const weights = { Regular: 400, Medium: 500, SemiBold: 600, 'Semi Bold': 600, Bold: 700 };
 
 const value = (def, raw) => {
     if (raw && typeof raw === 'object' && raw.alias) return aliasTarget(raw.alias);

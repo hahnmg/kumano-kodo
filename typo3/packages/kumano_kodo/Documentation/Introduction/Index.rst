@@ -18,7 +18,7 @@ Kumano Kodo is a theme for a travel journal: calm pages, large photos, one accen
 What it covers
 ==============
 
-*   Four themes (Caramel, Forest, Ocean, Violet), light and dark mode, all colours, typefaces and spacing as site
+*   Five themes (Caramel, Forest, Ocean, Violet, and the reduced Mono), light and dark mode, all colours, typefaces and spacing as site
     settings.
 *   Containers Section and Columns, and 13 content elements with a display option each.
 *   Templates for indexed_search, felogin and form, and the sitemap of seo.

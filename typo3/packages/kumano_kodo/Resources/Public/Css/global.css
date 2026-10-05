@@ -283,6 +283,74 @@
     --palette-dark-accent: #ff3e8a;
 }
 
+[data-theme='mono'] {
+    --space-1: 1px;
+    --space-2: 2px;
+    --space-4: 4px;
+    --space-5: 5px;
+    --space-6: 6px;
+    --space-8: 8px;
+    --space-9: 9px;
+    --space-10: 10px;
+    --space-12: 12px;
+    --space-14: 14px;
+    --space-16: 16px;
+    --space-18: 18px;
+    --space-20: 20px;
+    --space-22: 22px;
+    --space-24: 24px;
+    --space-26: 26px;
+    --space-28: 28px;
+    --space-30: 30px;
+    --space-32: 32px;
+    --space-36: 36px;
+    --space-40: 40px;
+    --space-44: 44px;
+    --space-56: 56px;
+    --space-64: 64px;
+    --space-96: 96px;
+    --space-128: 128px;
+    --gutter: 56px;
+    --section-lg: 128px;
+    --section-sm: 96px;
+    --section-heading-gap: var(--space-56);
+    --section-element-gap: var(--space-96);
+    --column-element-gap: var(--space-40);
+    --spacing-grid-gap: var(--space-24);
+    --container-page: 1328px;
+    --radius: 0px;
+    --radius-pill: 0px;
+    --radius-checkbox: 0px;
+    --radius-full: 9999px;
+    --border-hairline: 1px;
+    --font-display: "Inter", "Noto Sans JP", system-ui, sans-serif;
+    --display-weight: 600;
+    --display-weight-regular: 400;
+    --font-meta: "Inter", "Noto Sans JP", system-ui, sans-serif;
+    --lh-caption: 22.95px;
+    --lh-small: 26.35px;
+    --lh-body: 28.9px;
+    --lh-lead: 32.3px;
+    --palette-light-paper: #ffffff;
+    --palette-light-surface: #ffffff;
+    --palette-light-sunk: #f4f4f4;
+    --palette-light-ink: #111111;
+    --palette-light-muted: #5e5e5e;
+    --palette-light-line: #e5e5e5;
+    --palette-light-hair: #cfcfcf;
+    --palette-light-moss: #111111;
+    --palette-light-accent: #c83e00;
+    --palette-dark-paper: #0e0e0e;
+    --palette-dark-surface: #141414;
+    --palette-dark-sunk: #1a1a1a;
+    --palette-dark-ink: #f2f2f2;
+    --palette-dark-muted: #a3a3a3;
+    --palette-dark-line: #262626;
+    --palette-dark-hair: #3a3a3a;
+    --palette-dark-moss: #f2f2f2;
+    --palette-dark-accent: #ff7a3d;
+}
+
 :root,
 [data-scheme='light'] {
     --color-paper: var(--palette-light-paper);

@@ -2,7 +2,8 @@ import { attrs, esc } from '../../src/lib/html';
 import { notice, type NoticeProps } from '../molecules/notice.markup';
 
 export interface SiteFooterProps {
-    wordmark: string;
+    /** The website title set large; decorative, so left out where empty. */
+    wordmark?: string;
     about: string;
     columns: { title: string; links: { label: string; href?: string }[] }[];
     notice?: NoticeProps;
@@ -11,7 +12,7 @@ export interface SiteFooterProps {
 }
 
 export const siteFooter = ({ wordmark, about, columns, notice: note, copyright, legal }: SiteFooterProps): string =>
-    `<footer class="site-footer"><p class="site-footer__wordmark type-wordmark" aria-hidden="true">${esc(wordmark)}</p>` +
+    `<footer class="site-footer">${wordmark ? `<p class="site-footer__wordmark type-wordmark" aria-hidden="true">${esc(wordmark)}</p>` : ''}` +
     `<div class="site-footer__columns"><p class="site-footer__about type-small">${esc(about)}</p>` +
     columns
         .map(

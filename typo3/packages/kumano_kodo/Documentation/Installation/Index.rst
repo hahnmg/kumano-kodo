@@ -29,7 +29,7 @@ Content comes from one of two packages; they exclude each other.
 
 `kumano-kodo/starter`
     Five pages with placeholder texts to replace (home, about us, contact, imprint, privacy), the footer and the
-    theme's contact form.
+    theme's contact form, in the reduced theme Mono.
 
 ..  code-block:: bash
 

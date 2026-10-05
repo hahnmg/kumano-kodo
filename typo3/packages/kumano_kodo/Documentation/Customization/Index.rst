@@ -25,3 +25,9 @@ Without a logo of its own the header shows the website title. The site setting L
 Caramel shows the classic mark, the other themes the modern one. An editor uploads an own logo in the page properties
 of the home page (tab Appearance); it wins over both. An SVG takes the theme colours when its groups are named `bird`
 and `text`.
+
+Decoration
+==========
+
+Two elements of the trail journal are off until a site switches them on in the site settings: the upright name
+beside the journal title, and the website title set large in the footer.

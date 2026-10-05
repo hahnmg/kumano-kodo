@@ -32,9 +32,14 @@ settings:
       - 'forest'
       - 'ocean'
       - 'violet'
+      - 'mono'
   kumanoKodo.brand.upright:
     type: string
-    default: '熊野古道'
+    default: ''
+    category: kumanoKodo.appearance
+  kumanoKodo.brand.footerWordmark:
+    type: bool
+    default: false
     category: kumanoKodo.appearance
   kumanoKodo.brand.logo:
     type: string

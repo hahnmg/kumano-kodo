@@ -180,6 +180,49 @@
                 "button": 0,
                 "pill": 0
             }
+        },
+        "mono": {
+            "font": {
+                "display": "Inter",
+                "meta": "Inter",
+                "body": "Inter",
+                "displayWeight": 600
+            },
+            "color": {
+                "light": {
+                    "paper": "#ffffff",
+                    "surface": "#ffffff",
+                    "sunk": "#f4f4f4",
+                    "ink": "#111111",
+                    "muted": "#5e5e5e",
+                    "line": "#e5e5e5",
+                    "hair": "#cfcfcf",
+                    "moss": "#111111",
+                    "accent": "#c83e00"
+                },
+                "dark": {
+                    "paper": "#0e0e0e",
+                    "surface": "#141414",
+                    "sunk": "#1a1a1a",
+                    "ink": "#f2f2f2",
+                    "muted": "#a3a3a3",
+                    "line": "#262626",
+                    "hair": "#3a3a3a",
+                    "moss": "#f2f2f2",
+                    "accent": "#ff7a3d"
+                }
+            },
+            "spacing": {
+                "unit": 8,
+                "gutter": 56,
+                "sectionLarge": 128,
+                "sectionSmall": 96,
+                "container": 1328
+            },
+            "radius": {
+                "button": 0,
+                "pill": 0
+            }
         }
     }
 }

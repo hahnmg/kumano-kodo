@@ -209,7 +209,7 @@ const buildThemes = async () => {
             return [family.replaceAll('+', ' '), axes];
         }),
     );
-    const weights = { Regular: 400, Medium: 500, SemiBold: 600, Bold: 700 };
+    const weights = { Regular: 400, Medium: 500, SemiBold: 600, 'Semi Bold': 600, Bold: 700 };
     const roles = ['paper', 'surface', 'sunk', 'ink', 'muted', 'line', 'hair', 'moss', 'accent'];
     const body = data.textStyles.find((s) => s.name === 'Text/Body').family;
     const themes = Object.fromEntries(
@@ -264,9 +264,17 @@ const buildSettings = async (themes) => {
         'brand.upright',
         'appearance',
         'string',
-        '熊野古道',
+        '',
         'Upright name',
         'Set vertically beside the journal title; decorative, hidden from screen readers. Empty: none.',
+    );
+    add(
+        'brand.footerWordmark',
+        'appearance',
+        'bool',
+        false,
+        'Website title large in the footer',
+        'Decorative, hidden from screen readers.',
     );
     add(
         'brand.logo',

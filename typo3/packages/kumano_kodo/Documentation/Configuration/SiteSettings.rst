@@ -17,14 +17,21 @@ Appearance
 
     Theme. Colours, typefaces and spacing of the whole site; the settings below override single values.
 
-    One of `caramel`, `forest`, `ocean`, `violet`.
+    One of `caramel`, `forest`, `ocean`, `violet`, `mono`.
 
 .. confval:: kumanoKodo.brand.upright
     :name: kumanokodo-brand-upright
     :type: string
-    :Default: `熊野古道`
+    :Default: (empty)
 
     Upright name. Set vertically beside the journal title; decorative, hidden from screen readers. Empty: none.
+
+.. confval:: kumanoKodo.brand.footerWordmark
+    :name: kumanokodo-brand-footerwordmark
+    :type: bool
+    :Default: `false`
+
+    Website title large in the footer. Decorative, hidden from screen readers.
 
 .. confval:: kumanoKodo.brand.logo
     :name: kumanokodo-brand-logo
@@ -59,63 +66,63 @@ Light mode
     :type: color
     :Default: `#fbf7f1`
 
-    Paper. Left at its default, the chosen theme's colour applies: Caramel #fbf7f1, Forest #f5f7f4, Ocean #f4f8fb, Violet #f7f3fb.
+    Paper. Left at its default, the chosen theme's colour applies: Caramel #fbf7f1, Forest #f5f7f4, Ocean #f4f8fb, Violet #f7f3fb, Mono #ffffff.
 
 .. confval:: kumanoKodo.color.light.surface
     :name: kumanokodo-color-light-surface
     :type: color
     :Default: `#ffffff`
 
-    Surface. Left at its default, the chosen theme's colour applies: Caramel #ffffff, Forest #ffffff, Ocean #ffffff, Violet #ffffff.
+    Surface. Left at its default, the chosen theme's colour applies: Caramel #ffffff, Forest #ffffff, Ocean #ffffff, Violet #ffffff, Mono #ffffff.
 
 .. confval:: kumanoKodo.color.light.sunk
     :name: kumanokodo-color-light-sunk
     :type: color
     :Default: `#f3ece1`
 
-    Sunk. Left at its default, the chosen theme's colour applies: Caramel #f3ece1, Forest #e9eee9, Ocean #e7f0f7, Violet #efe8f7.
+    Sunk. Left at its default, the chosen theme's colour applies: Caramel #f3ece1, Forest #e9eee9, Ocean #e7f0f7, Violet #efe8f7, Mono #f4f4f4.
 
 .. confval:: kumanoKodo.color.light.ink
     :name: kumanokodo-color-light-ink
     :type: color
     :Default: `#241a12`
 
-    Ink. Left at its default, the chosen theme's colour applies: Caramel #241a12, Forest #13201a, Ocean #0f1e2b, Violet #1a0f26.
+    Ink. Left at its default, the chosen theme's colour applies: Caramel #241a12, Forest #13201a, Ocean #0f1e2b, Violet #1a0f26, Mono #111111.
 
 .. confval:: kumanoKodo.color.light.muted
     :name: kumanokodo-color-light-muted
     :type: color
     :Default: `#665445`
 
-    Muted. Left at its default, the chosen theme's colour applies: Caramel #665445, Forest #55665c, Ocean #4b6173, Violet #5c4b70.
+    Muted. Left at its default, the chosen theme's colour applies: Caramel #665445, Forest #55665c, Ocean #4b6173, Violet #5c4b70, Mono #5e5e5e.
 
 .. confval:: kumanoKodo.color.light.line
     :name: kumanokodo-color-light-line
     :type: color
     :Default: `#e3d8c9`
 
-    Line. Left at its default, the chosen theme's colour applies: Caramel #e3d8c9, Forest #d8e0d8, Ocean #dbe8f1, Violet #e1d6ee.
+    Line. Left at its default, the chosen theme's colour applies: Caramel #e3d8c9, Forest #d8e0d8, Ocean #dbe8f1, Violet #e1d6ee, Mono #e5e5e5.
 
 .. confval:: kumanoKodo.color.light.hair
     :name: kumanokodo-color-light-hair
     :type: color
     :Default: `#cfc0ab`
 
-    Hair. Left at its default, the chosen theme's colour applies: Caramel #cfc0ab, Forest #bcc7bd, Ocean #b6cbdc, Violet #c6b4da.
+    Hair. Left at its default, the chosen theme's colour applies: Caramel #cfc0ab, Forest #bcc7bd, Ocean #b6cbdc, Violet #c6b4da, Mono #cfcfcf.
 
 .. confval:: kumanoKodo.color.light.moss
     :name: kumanokodo-color-light-moss
     :type: color
     :Default: `#4a6350`
 
-    Moss. Left at its default, the chosen theme's colour applies: Caramel #4a6350, Forest #2f6b4f, Ocean #0f6e93, Violet #7a2fd4.
+    Moss. Left at its default, the chosen theme's colour applies: Caramel #4a6350, Forest #2f6b4f, Ocean #0f6e93, Violet #7a2fd4, Mono #111111.
 
 .. confval:: kumanoKodo.color.light.accent
     :name: kumanokodo-color-light-accent
     :type: color
     :Default: `#96481f`
 
-    Accent. Left at its default, the chosen theme's colour applies: Caramel #96481f, Forest #27614a, Ocean #0c6183, Violet #b0155f.
+    Accent. Left at its default, the chosen theme's colour applies: Caramel #96481f, Forest #27614a, Ocean #0c6183, Violet #b0155f, Mono #c83e00.
 
 Dark mode
 =========
@@ -125,63 +132,63 @@ Dark mode
     :type: color
     :Default: `#171310`
 
-    Paper. Left at its default, the chosen theme's colour applies: Caramel #171310, Forest #0f1412, Ocean #0b1319, Violet #0d0916.
+    Paper. Left at its default, the chosen theme's colour applies: Caramel #171310, Forest #0f1412, Ocean #0b1319, Violet #0d0916, Mono #0e0e0e.
 
 .. confval:: kumanoKodo.color.dark.surface
     :name: kumanokodo-color-dark-surface
     :type: color
     :Default: `#1f1a16`
 
-    Surface. Left at its default, the chosen theme's colour applies: Caramel #1f1a16, Forest #161c19, Ocean #101a22, Violet #150f22.
+    Surface. Left at its default, the chosen theme's colour applies: Caramel #1f1a16, Forest #161c19, Ocean #101a22, Violet #150f22, Mono #141414.
 
 .. confval:: kumanoKodo.color.dark.sunk
     :name: kumanokodo-color-dark-sunk
     :type: color
     :Default: `#241d18`
 
-    Sunk. Left at its default, the chosen theme's colour applies: Caramel #241d18, Forest #1b221e, Ocean #142129, Violet #1b1329.
+    Sunk. Left at its default, the chosen theme's colour applies: Caramel #241d18, Forest #1b221e, Ocean #142129, Violet #1b1329, Mono #1a1a1a.
 
 .. confval:: kumanoKodo.color.dark.ink
     :name: kumanokodo-color-dark-ink
     :type: color
     :Default: `#f5ede3`
 
-    Ink. Left at its default, the chosen theme's colour applies: Caramel #f5ede3, Forest #e9efe9, Ocean #e6f1f7, Violet #f3edff.
+    Ink. Left at its default, the chosen theme's colour applies: Caramel #f5ede3, Forest #e9efe9, Ocean #e6f1f7, Violet #f3edff, Mono #f2f2f2.
 
 .. confval:: kumanoKodo.color.dark.muted
     :name: kumanokodo-color-dark-muted
     :type: color
     :Default: `#b3a393`
 
-    Muted. Left at its default, the chosen theme's colour applies: Caramel #b3a393, Forest #a3b3a9, Ocean #9fb6c5, Violet #b3a6ca.
+    Muted. Left at its default, the chosen theme's colour applies: Caramel #b3a393, Forest #a3b3a9, Ocean #9fb6c5, Violet #b3a6ca, Mono #a3a3a3.
 
 .. confval:: kumanoKodo.color.dark.line
     :name: kumanokodo-color-dark-line
     :type: color
     :Default: `#322a23`
 
-    Line. Left at its default, the chosen theme's colour applies: Caramel #322a23, Forest #263029, Ocean #1e2e39, Violet #2a2040.
+    Line. Left at its default, the chosen theme's colour applies: Caramel #322a23, Forest #263029, Ocean #1e2e39, Violet #2a2040, Mono #262626.
 
 .. confval:: kumanoKodo.color.dark.hair
     :name: kumanokodo-color-dark-hair
     :type: color
     :Default: `#463c32`
 
-    Hair. Left at its default, the chosen theme's colour applies: Caramel #463c32, Forest #364136, Ocean #2b4150, Violet #3b2d56.
+    Hair. Left at its default, the chosen theme's colour applies: Caramel #463c32, Forest #364136, Ocean #2b4150, Violet #3b2d56, Mono #3a3a3a.
 
 .. confval:: kumanoKodo.color.dark.moss
     :name: kumanokodo-color-dark-moss
     :type: color
     :Default: `#a9c2ae`
 
-    Moss. Left at its default, the chosen theme's colour applies: Caramel #a9c2ae, Forest #8fd0a8, Ocean #63c8e6, Violet #ffd166.
+    Moss. Left at its default, the chosen theme's colour applies: Caramel #a9c2ae, Forest #8fd0a8, Ocean #63c8e6, Violet #ffd166, Mono #f2f2f2.
 
 .. confval:: kumanoKodo.color.dark.accent
     :name: kumanokodo-color-dark-accent
     :type: color
     :Default: `#e6a173`
 
-    Accent. Left at its default, the chosen theme's colour applies: Caramel #e6a173, Forest #8ccfa5, Ocean #63c8e6, Violet #ff3e8a.
+    Accent. Left at its default, the chosen theme's colour applies: Caramel #e6a173, Forest #8ccfa5, Ocean #63c8e6, Violet #ff3e8a, Mono #ff7a3d.
 
 Typefaces
 =========
@@ -191,28 +198,28 @@ Typefaces
     :type: string
     :Default: (empty)
 
-    Display typeface. Headings, hero, quote and wordmark. A Google Fonts family name, loaded from this server. Empty: Caramel Fraunces, Forest Instrument Sans, Ocean Sora, Violet Space Grotesk.
+    Display typeface. Headings, hero, quote and wordmark. A Google Fonts family name, loaded from this server. Empty: Caramel Fraunces, Forest Instrument Sans, Ocean Sora, Violet Space Grotesk, Mono Inter.
 
 .. confval:: kumanoKodo.font.body
     :name: kumanokodo-font-body
     :type: string
     :Default: (empty)
 
-    Text typeface. Body text, captions, buttons. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Inter.
+    Text typeface. Body text, captions, buttons. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Inter, Mono Inter.
 
 .. confval:: kumanoKodo.font.meta
     :name: kumanokodo-font-meta
     :type: string
     :Default: (empty)
 
-    Label typeface. Small uppercase labels. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Space Mono.
+    Label typeface. Small uppercase labels. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Space Mono, Mono Inter.
 
 .. confval:: kumanoKodo.font.displayWeight
     :name: kumanokodo-font-displayweight
     :type: string
     :Default: (empty)
 
-    Display weight. Empty: Caramel 600, Forest 600, Ocean 600, Violet 700.
+    Display weight. Empty: Caramel 600, Forest 600, Ocean 600, Violet 700, Mono 600.
 
     One of `400`, `500`, `600`, `700`, `800`, ``.
 
@@ -224,49 +231,49 @@ Spacing and shape
     :type: string
     :Default: (empty)
 
-    Spacing unit. Scales every gap, padding and margin; 8 is the design grid. Pixels. Empty: Caramel 8px, Forest 6px, Ocean 10px, Violet 8px.
+    Spacing unit. Scales every gap, padding and margin; 8 is the design grid. Pixels. Empty: Caramel 8px, Forest 6px, Ocean 10px, Violet 8px, Mono 8px.
 
 .. confval:: kumanoKodo.spacing.gutter
     :name: kumanokodo-spacing-gutter
     :type: string
     :Default: (empty)
 
-    Page margin. Above 900px; narrower screens keep their own margin. Pixels. Empty: Caramel 56px, Forest 42px, Ocean 57.6px, Violet 56px.
+    Page margin. Above 900px; narrower screens keep their own margin. Pixels. Empty: Caramel 56px, Forest 42px, Ocean 57.6px, Violet 56px, Mono 56px.
 
 .. confval:: kumanoKodo.spacing.sectionLarge
     :name: kumanokodo-spacing-sectionlarge
     :type: string
     :Default: (empty)
 
-    Large section spacing. Above 900px. Pixels. Empty: Caramel 128px, Forest 96px, Ocean 160px, Violet 112px.
+    Large section spacing. Above 900px. Pixels. Empty: Caramel 128px, Forest 96px, Ocean 160px, Violet 112px, Mono 128px.
 
 .. confval:: kumanoKodo.spacing.sectionSmall
     :name: kumanokodo-spacing-sectionsmall
     :type: string
     :Default: (empty)
 
-    Section spacing. Above 900px. Pixels. Empty: Caramel 96px, Forest 72px, Ocean 120px, Violet 88px.
+    Section spacing. Above 900px. Pixels. Empty: Caramel 96px, Forest 72px, Ocean 120px, Violet 88px, Mono 96px.
 
 .. confval:: kumanoKodo.spacing.container
     :name: kumanokodo-spacing-container
     :type: string
     :Default: (empty)
 
-    Content width. Pixels. Empty: Caramel 1328px, Forest 1328px, Ocean 1328px, Violet 1328px.
+    Content width. Pixels. Empty: Caramel 1328px, Forest 1328px, Ocean 1328px, Violet 1328px, Mono 1328px.
 
 .. confval:: kumanoKodo.radius.button
     :name: kumanokodo-radius-button
     :type: string
     :Default: (empty)
 
-    Corner radius. Buttons, fields and cards. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px, Violet 0px.
+    Corner radius. Buttons, fields and cards. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px, Violet 0px, Mono 0px.
 
 .. confval:: kumanoKodo.radius.pill
     :name: kumanokodo-radius-pill
     :type: string
     :Default: (empty)
 
-    Pill radius. Chips and badges. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 999px, Violet 0px.
+    Pill radius. Chips and badges. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 999px, Violet 0px, Mono 0px.
 
 Contact in the top bar
 ======================

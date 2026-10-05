@@ -7,3 +7,7 @@ export default meta;
 
 export const Kumano: StoryObj<SiteFooterProps> = { render: localized(siteFooter, (c) => c.kumano.footer) };
 export const WithNotice: StoryObj<SiteFooterProps> = { render: localized(siteFooter, (c) => c.guide.footer) };
+// A site that has not switched the wordmark on, as the starter set.
+export const WithoutWordmark: StoryObj<SiteFooterProps> = {
+    render: localized(siteFooter, (c) => ({ ...c.kumano.footer, wordmark: undefined })),
+};
