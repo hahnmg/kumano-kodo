@@ -91,6 +91,10 @@ the previous home (`/home-v3`) and a page with the remaining components (`/compo
 - **Own files** (same settings, category Own files): a stylesheet and a script loaded after the theme, and a template
   folder ahead of the theme's. It mirrors `Resources/Private/Templates/` (`Pages/`, `Layouts/`, `Partials/`,
   `Content/`); a file there replaces the theme's file of the same name. A path that cannot be resolved is skipped.
+- **Search, login, forms**: `indexed_search`, `felogin` and `form` render in the theme's markup when they are installed
+  (`Resources/Private/Extensions/`, form markup in `Configuration/Form/KumanoKodo`). The header shows the search once a
+  page of the site holds the search plugin, or the page set in the setting Search page. The demo has a search page, a
+  log-in page without users and a contact form shipped in the demo package.
 - **Own content elements**: register the CType in your own extension as `Configuration/TCA/Overrides` does here, with
   the `kumanoHeading_*` palettes and the tab order General, Images, Appearance; put its template in your template folder
   under `Content/` and render it through the `Kumano/Section` partial so it gets the section frame.

@@ -1,8 +1,8 @@
 # Proposal: what Camino taught us
 
 Status: accepted 2026-10-05 with these answers: starter set later (as a choice inside the demo); all three core
-extensions; our own guard against fluid_styled_content now. Built: 2 (own files and templates), 4 (load order), 5, and
-6 except the element icons. Open: 3, the uploads part of 4, element icons, 7.
+extensions; our own guard against fluid_styled_content now. Built: 2, 3 (search in the header, results, login, forms; Storybook, Figma, TYPO3), 4 (load
+order, uploads from file references), 5, 6 (element icons from the core set). Open: 1, 7.
 
 Sources: feedback by Benjamin Kott (2026-09-30) and every Forge issue about Camino: the 33 issues of the category
 "Themes" and the full-text matches for "camino" and "theme_camino" (checked 2026-10-05). Each point names its issue.
