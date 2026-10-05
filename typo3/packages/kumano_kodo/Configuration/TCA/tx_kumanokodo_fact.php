@@ -19,7 +19,7 @@ return [
             'disabled' => 'hidden',
         ],
         'typeicon_classes' => [
-            'default' => 'content-table',
+            'default' => 'kumano-fact',
         ],
         'security' => [
             'ignoreWebMountRestriction' => true,

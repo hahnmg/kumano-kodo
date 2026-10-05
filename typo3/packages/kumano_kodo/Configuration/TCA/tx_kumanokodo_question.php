@@ -19,7 +19,7 @@ return [
             'disabled' => 'hidden',
         ],
         'typeicon_classes' => [
-            'default' => 'content-bullets',
+            'default' => 'kumano-question',
         ],
         'security' => [
             'ignoreWebMountRestriction' => true,

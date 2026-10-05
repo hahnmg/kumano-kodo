@@ -26,7 +26,7 @@ GeneralUtility::makeInstance(Registry::class)->configureContainer(
             ],
         ]
     ))
-        ->setIcon('container-2col')
+        ->setIcon('EXT:kumano_kodo/Resources/Public/Icons/Content/kumano-columns.svg')
         ->setGroup('kumano_layout')
 );
 

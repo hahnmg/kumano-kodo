@@ -11,7 +11,7 @@ ExtensionManagementUtility::addRecordType(
         'label' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_questions',
         'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_questions.description',
         'value' => 'kumano_questions',
-        'icon' => 'content-accordion',
+        'icon' => 'kumano-questions',
         'group' => 'kumano_text',
     ],
     '--palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_questions, --div--;core.form.tabs:appearance, --palette--;;frames',

@@ -11,7 +11,7 @@ ExtensionManagementUtility::addRecordType(
         'label' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_facts',
         'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_facts.description',
         'value' => 'kumano_facts',
-        'icon' => 'content-table',
+        'icon' => 'kumano-facts',
         'group' => 'kumano_lists',
     ],
     'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, tx_kumanokodo_facts, --div--;core.form.tabs:appearance, --palette--;;frames, tx_kumanokodo_columns',

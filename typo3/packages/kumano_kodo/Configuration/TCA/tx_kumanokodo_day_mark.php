@@ -19,7 +19,7 @@ return [
             'disabled' => 'hidden',
         ],
         'typeicon_classes' => [
-            'default' => 'content-map',
+            'default' => 'kumano-day-mark',
         ],
         'security' => [
             'ignoreWebMountRestriction' => true,

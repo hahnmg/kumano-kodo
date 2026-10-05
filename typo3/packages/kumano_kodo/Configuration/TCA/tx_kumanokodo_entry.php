@@ -20,7 +20,7 @@ return [
             'fe_group' => 'fe_group',
         ],
         'typeicon_classes' => [
-            'default' => 'content-card',
+            'default' => 'kumano-entry',
         ],
         'security' => [
             'ignoreWebMountRestriction' => true,

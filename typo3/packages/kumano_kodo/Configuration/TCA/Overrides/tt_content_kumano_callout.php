@@ -11,7 +11,7 @@ ExtensionManagementUtility::addRecordType(
         'label' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_callout',
         'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_callout.description',
         'value' => 'kumano_callout',
-        'icon' => 'content-info',
+        'icon' => 'kumano-callout',
         'group' => 'kumano_text',
     ],
     'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_links, --div--;core.form.tabs:appearance, --palette--;;frames',

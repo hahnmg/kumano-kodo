@@ -16,7 +16,7 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
-        'typeicon_classes' => ['default' => 'actions-link'],
+        'typeicon_classes' => ['default' => 'kumano-link'],
         'security' => [
             'ignoreWebMountRestriction' => true,
             'ignoreRootLevelRestriction' => true,

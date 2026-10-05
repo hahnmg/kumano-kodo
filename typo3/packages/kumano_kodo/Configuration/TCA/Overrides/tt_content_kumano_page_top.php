@@ -11,7 +11,7 @@ ExtensionManagementUtility::addRecordType(
         'label' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_page_top',
         'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_page_top.description',
         'value' => 'kumano_page_top',
-        'icon' => 'content-header',
+        'icon' => 'kumano-page-top',
         'group' => 'kumano_text',
     ],
     'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_meta, tx_kumanokodo_facts, tx_kumanokodo_links, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames',

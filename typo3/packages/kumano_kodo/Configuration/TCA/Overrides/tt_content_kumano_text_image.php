@@ -11,7 +11,7 @@ ExtensionManagementUtility::addRecordType(
         'label' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_text_image',
         'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_text_image.description',
         'value' => 'kumano_text_image',
-        'icon' => 'content-textpic',
+        'icon' => 'kumano-text-image',
         'group' => 'kumano_text',
     ],
     '--palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_plain, bodytext, tx_kumanokodo_links, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames, imageorient',
