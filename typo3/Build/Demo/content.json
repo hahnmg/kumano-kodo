@@ -4393,7 +4393,8 @@
                     "type": "indexedsearch_pi2",
                     "fields": {}
                 }
-            ]
+            ],
+            "noIndex": true
         },
         {
             "key": "login",
@@ -4667,7 +4668,8 @@
                         ]
                     }
                 }
-            ]
+            ],
+            "noIndex": true
         },
         {
             "key": "walkers",

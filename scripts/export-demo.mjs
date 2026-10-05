@@ -697,7 +697,7 @@ const pages = [
         'search',
         'home',
         t((x) => x.ui.search),
-        { navHide: true, content: [el('indexedsearch_pi2')] },
+        { navHide: true, noIndex: true, content: [el('indexedsearch_pi2')] },
     ),
     page(
         'login',
@@ -753,6 +753,7 @@ const pages = [
         t((x) => x.ui.notFoundTitle),
         {
             navHide: true,
+            noIndex: true,
             content: [
                 section({}, [
                     text(t((x) => `<p>${esc(x.ui.notFoundText)}</p>`)),

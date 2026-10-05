@@ -174,6 +174,7 @@ final class BuildCommand extends Command
             'nav_hide' => (int)$page['navHide'],
             'doktype' => $page['doktype'] ?? 1,
             'fe_group' => $page['feGroup'] ?? '',
+            'no_index' => (int)($page['noIndex'] ?? false),
             'backend_layout' => 'pagets__' . $page['layout'],
             'backend_layout_next_level' => isset($page['nextLayout']) ? 'pagets__' . $page['nextLayout'] : '',
             'is_siteroot' => (int)($page['parent'] === null),
