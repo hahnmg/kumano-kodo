@@ -428,9 +428,13 @@ const build = (p: Photos): LocaleContent => {
             crumbs: ['Start', 'Die Route', 'Tage'],
             caption: p['misty-valley'].caption ?? '',
             downloads: [
-                { title: 'Etappenkarte Takahara → Chikatsuyu', meta: 'PDF · 1,2 MB', href: '#' },
-                { title: 'Busfahrplan entlang der Route', meta: 'PDF · 96 KB', href: '#' },
-                { title: 'Packliste für Regen', meta: 'PDF · 240 KB', href: '#' },
+                {
+                    title: 'Etappenkarte Takahara → Chikatsuyu',
+                    meta: 'PDF · 122 KB',
+                    href: '/files/downloads/stage-map-takahara-chikatsuyu-de.pdf',
+                },
+                { title: 'Anreise und Busse', meta: 'PDF · 58 KB', href: '/files/downloads/getting-there-and-buses-de.pdf' },
+                { title: 'Packliste für Regen', meta: 'PDF · 81 KB', href: '/files/downloads/packing-list-for-rain-de.pdf' },
             ],
             factsTitle: 'Der Tag in Zahlen',
             facts: [

@@ -416,9 +416,9 @@ const build = (p: Photos): LocaleContent => {
             crumbs: ['ホーム', 'ルート', '日程'],
             caption: p['misty-valley'].caption ?? '',
             downloads: [
-                { title: '区間地図 高原 → 近露', meta: 'PDF · 1.2 MB', href: '#' },
-                { title: 'ルート沿いのバス時刻表', meta: 'PDF · 96 KB', href: '#' },
-                { title: '雨の日の持ち物リスト', meta: 'PDF · 240 KB', href: '#' },
+                { title: '区間地図 高原 → 近露', meta: 'PDF · 255 KB', href: '/files/downloads/stage-map-takahara-chikatsuyu-ja.pdf' },
+                { title: 'アクセスとバス', meta: 'PDF · 210 KB', href: '/files/downloads/getting-there-and-buses-ja.pdf' },
+                { title: '雨の日の持ち物リスト', meta: 'PDF · 202 KB', href: '/files/downloads/packing-list-for-rain-ja.pdf' },
             ],
             factsTitle: 'この日の数字',
             facts: [

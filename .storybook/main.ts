@@ -4,7 +4,10 @@ const config: StorybookConfig = {
     stories: ['../stories/**/*.stories.ts'],
     addons: ['@storybook/addon-docs'],
     framework: { name: '@storybook/html-vite', options: {} },
-    staticDirs: [{ from: '../img', to: '/img' }],
+    staticDirs: [
+        { from: '../img', to: '/img' },
+        { from: '../files', to: '/files' },
+    ],
 };
 
 export default config;

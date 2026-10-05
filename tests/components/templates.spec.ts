@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { legalSlugs, placeSlugs, practicalSlugs, storyFor } from '../../stories/content/paths';
 import { content, locales, type Content, type Locale } from '../../stories/templates/content';
@@ -43,14 +44,16 @@ describe('site pages', () => {
                 expect(document.querySelectorAll('h1')).toHaveLength(1);
                 expect(document.querySelectorAll('footer.site-footer')).toHaveLength(1);
             });
-            it(`${name} (${locale}) only links to pages and anchors that exist`, () => {
+            it(`${name} (${locale}) only links to pages, anchors and files that exist`, () => {
                 document.body.innerHTML = html();
                 const broken = [...document.querySelectorAll('a[href]')]
                     .map((a) => a.getAttribute('href') ?? '')
                     .filter((href) =>
-                        href.startsWith('/')
-                            ? !storyFor(href)
-                            : href.startsWith('#') && href.length > 1 && !document.getElementById(href.slice(1)),
+                        href.startsWith('/files/')
+                            ? !existsSync(`files/${href.slice('/files/'.length)}`)
+                            : href.startsWith('/')
+                              ? !storyFor(href)
+                              : href.startsWith('#') && href.length > 1 && !document.getElementById(href.slice(1)),
                     );
                 expect(broken).toEqual([]);
             });
