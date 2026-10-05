@@ -20,14 +20,16 @@ export const itemsOf = (status) => data.items.filter((item) => item.status === s
 </p>
 
 <ul className="issue-summary">
-    {groups.map((group) => (
-        <li key={group.status} className={`issue-summary__item issue--${group.status}`}>
-            <strong>{itemsOf(group.status).length}</strong> {group.label}
-        </li>
-    ))}
+    {groups
+        .filter((group) => itemsOf(group.status).length)
+        .map((group) => (
+            <li key={group.status} className={`issue-summary__item issue--${group.status}`}>
+                <strong>{itemsOf(group.status).length}</strong> {group.label}
+            </li>
+        ))}
 </ul>
 
-{groups.map((group) => (
+{groups.filter((group) => itemsOf(group.status).length).map((group) => (
 
 <section key={group.status} className={`issue-group issue--${group.status}`}>
 <h2 className="issue-group__title">{group.label}</h2>
