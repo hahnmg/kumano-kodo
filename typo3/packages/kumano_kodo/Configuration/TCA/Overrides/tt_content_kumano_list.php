@@ -14,7 +14,7 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'content-bullets',
         'group' => 'kumano_lists',
     ],
-    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, tx_kumanokodo_entries, tx_kumanokodo_links, --div--;core.form.tabs:appearance, --palette--;;frames',
+    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, tx_kumanokodo_entries, media, tx_kumanokodo_links, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
             'tx_kumanokodo_variant' => [
@@ -47,6 +47,17 @@ ExtensionManagementUtility::addRecordType(
                         ],
                     ],
                     'default' => 'media',
+                ],
+            ],
+            'tx_kumanokodo_entries' => [
+                'displayCond' => 'FIELD:tx_kumanokodo_variant:!=:downloads',
+            ],
+            'media' => [
+                'label' => 'kumano_kodo.backend_fields:tt_content.media.files',
+                'description' => 'kumano_kodo.backend_fields:tt_content.media.files.description',
+                'displayCond' => 'FIELD:tx_kumanokodo_variant:=:downloads',
+                'config' => [
+                    'minitems' => 1,
                 ],
             ],
             'tx_kumanokodo_links' => [

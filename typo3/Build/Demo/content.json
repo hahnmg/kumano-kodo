@@ -359,6 +359,44 @@
             }
         }
     },
+    "files": {
+        "stage-map-takahara-chikatsuyu-en": {
+            "file": "files/downloads/stage-map-takahara-chikatsuyu-en.pdf",
+            "title": "Stage map Takahara → Chikatsuyu"
+        },
+        "getting-there-and-buses-en": {
+            "file": "files/downloads/getting-there-and-buses-en.pdf",
+            "title": "Getting there and buses"
+        },
+        "packing-list-for-rain-en": {
+            "file": "files/downloads/packing-list-for-rain-en.pdf",
+            "title": "Packing list for rain"
+        },
+        "stage-map-takahara-chikatsuyu-de": {
+            "file": "files/downloads/stage-map-takahara-chikatsuyu-de.pdf",
+            "title": "Etappenkarte Takahara → Chikatsuyu"
+        },
+        "getting-there-and-buses-de": {
+            "file": "files/downloads/getting-there-and-buses-de.pdf",
+            "title": "Anreise und Busse"
+        },
+        "packing-list-for-rain-de": {
+            "file": "files/downloads/packing-list-for-rain-de.pdf",
+            "title": "Packliste für Regen"
+        },
+        "stage-map-takahara-chikatsuyu-ja": {
+            "file": "files/downloads/stage-map-takahara-chikatsuyu-ja.pdf",
+            "title": "区間地図 高原 → 近露"
+        },
+        "getting-there-and-buses-ja": {
+            "file": "files/downloads/getting-there-and-buses-ja.pdf",
+            "title": "アクセスとバス"
+        },
+        "packing-list-for-rain-ja": {
+            "file": "files/downloads/packing-list-for-rain-ja.pdf",
+            "title": "雨の日の持ち物リスト"
+        }
+    },
     "pages": [
         {
             "key": "home",
@@ -3829,49 +3867,22 @@
                                 "fields": {
                                     "tx_kumanokodo_variant": "downloads"
                                 },
-                                "items": {
-                                    "tx_kumanokodo_entries": [
-                                        {
-                                            "title": {
-                                                "en": "Stage map Takahara → Chikatsuyu",
-                                                "de": "Etappenkarte Takahara → Chikatsuyu",
-                                                "ja": "区間地図 高原 → 近露"
-                                            },
-                                            "meta": {
-                                                "en": "PDF · 1.2 MB",
-                                                "de": "PDF · 1,2 MB",
-                                                "ja": "PDF · 1.2 MB"
-                                            },
-                                            "link": ""
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Bus timetable along the route",
-                                                "de": "Busfahrplan entlang der Route",
-                                                "ja": "ルート沿いのバス時刻表"
-                                            },
-                                            "meta": {
-                                                "en": "PDF · 96 KB",
-                                                "de": "PDF · 96 KB",
-                                                "ja": "PDF · 96 KB"
-                                            },
-                                            "link": ""
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Packing list for rain",
-                                                "de": "Packliste für Regen",
-                                                "ja": "雨の日の持ち物リスト"
-                                            },
-                                            "meta": {
-                                                "en": "PDF · 240 KB",
-                                                "de": "PDF · 240 KB",
-                                                "ja": "PDF · 240 KB"
-                                            },
-                                            "link": ""
-                                        }
+                                "media": {
+                                    "en": [
+                                        "stage-map-takahara-chikatsuyu-en",
+                                        "getting-there-and-buses-en",
+                                        "packing-list-for-rain-en"
                                     ],
-                                    "tx_kumanokodo_links": []
+                                    "de": [
+                                        "stage-map-takahara-chikatsuyu-de",
+                                        "getting-there-and-buses-de",
+                                        "packing-list-for-rain-de"
+                                    ],
+                                    "ja": [
+                                        "stage-map-takahara-chikatsuyu-ja",
+                                        "getting-there-and-buses-ja",
+                                        "packing-list-for-rain-ja"
+                                    ]
                                 }
                             }
                         ],

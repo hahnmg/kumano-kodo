@@ -40,6 +40,16 @@ const link = (href, here = '') => {
 };
 const photo = (image) => image?.src.match(/img\/photos\/(.+)-\d+\.jpg$/)?.[1] ?? '';
 
+// Downloads are files of their own language; title, type and size come from the file in TYPO3.
+const fileSlug = (href) =>
+    href
+        .split('/')
+        .pop()
+        .replace(/\.pdf$/, '');
+const files = Object.fromEntries(
+    langs.flatMap((l) => c[l].pages.detail.downloads.map((d) => [fileSlug(d.href), { file: d.href.slice(1), title: d.title }])),
+);
+
 const photos = Object.fromEntries(
     Object.keys(c.en.photos).map((slug) => [
         slug,
@@ -358,13 +368,10 @@ const practicalSubContent = (slug) => [
             text(paragraphs((x) => x.site.practical.pages[slug].text)),
             ...(slug === 'maps'
                 ? [
-                      listEl(
-                          'downloads',
-                          {},
-                          list(
-                              (x) => x.pages.detail.downloads,
-                              (d) => ({ title: t((x) => d(x).title), meta: t((x) => d(x).meta), link: link(d(c.en).href) }),
-                          ),
+                      el(
+                          'kumano_list',
+                          { tx_kumanokodo_variant: 'downloads' },
+                          { media: t((x) => x.pages.detail.downloads.map((d) => fileSlug(d.href))) },
                       ),
                   ]
                 : []),
@@ -738,7 +745,7 @@ const site = {
 };
 
 const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.values(e.children ?? {}).flat()), 0);
-await writeFile(out, `${JSON.stringify({ site, photos, pages }, null, 4)}\n`);
+await writeFile(out, `${JSON.stringify({ site, photos, files, pages }, null, 4)}\n`);
 console.log(
     `Demo: ${pages.length} pages, ${count(pages.flatMap((p) => p.content))} content elements, ${Object.keys(photos).length} photos → ${out}`,
 );

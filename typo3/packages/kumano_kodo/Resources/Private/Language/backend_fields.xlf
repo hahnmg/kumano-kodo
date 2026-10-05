@@ -764,6 +764,12 @@
             <trans-unit id="tx_kumanokodo_station.y">
                 <source>Down (0–250)</source>
             </trans-unit>
+            <trans-unit id="tt_content.media.files">
+                <source>Files</source>
+            </trans-unit>
+            <trans-unit id="tt_content.media.files.description">
+                <source>Title, type and size come from the file; a title set here replaces the file’s.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

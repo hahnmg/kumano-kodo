@@ -36,6 +36,9 @@ final class BuildCommand extends Command
     /** @var array<string, int> photo slug => sys_file uid */
     private array $photos = [];
 
+    /** @var array<string, int> download slug => sys_file uid */
+    private array $files = [];
+
     public function __construct(
         private readonly ConnectionPool $connectionPool,
         private readonly SiteFinder $siteFinder,
@@ -75,6 +78,7 @@ final class BuildCommand extends Command
         $this->writeSite($demo['site']);
         $this->translatePage($home);
         $this->importPhotos($demo['photos']);
+        $this->importFiles($demo['files'] ?? []);
         foreach ($pages as $page) {
             $this->createPage($page);
         }
@@ -100,6 +104,25 @@ final class BuildCommand extends Command
 
         $output->writeln(sprintf('Built %d pages and %d content elements, root page %d.', count($this->pages), $elements, $this->pages['home']));
         return Command::SUCCESS;
+    }
+
+    // Downloads exist once per language; each file carries its title in its own language.
+    private function importFiles(array $files): void
+    {
+        $storage = $this->storageRepository->getDefaultStorage();
+        $folder = $storage->hasFolder('/kumano-kodo/downloads/')
+            ? $storage->getFolder('/kumano-kodo/downloads/')
+            : $storage->createFolder('downloads', $storage->getFolder('/kumano-kodo/'));
+        $source = dirname(Environment::getProjectPath());
+        foreach ($files as $slug => $entry) {
+            $name = basename($entry['file']);
+            $file = $storage->hasFileInFolder($name, $folder)
+                ? $storage->getFileInFolder($name, $folder)
+                : $storage->addFile($source . '/' . $entry['file'], $folder, $name, DuplicationBehavior::REPLACE, false);
+            assert($file instanceof File);
+            $file->getMetaData()->add(['title' => $entry['title']])->save();
+            $this->files[$slug] = $file->getUid();
+        }
     }
 
     private function importPhotos(array $photos): void
@@ -266,6 +289,12 @@ final class BuildCommand extends Command
         if ($element['image'] ?? []) {
             $data['tt_content']['NEWce']['image'] = $this->references($data, $element['image'], $pid);
         }
+        foreach ($element['media']['en'] ?? [] as $i => $slug) {
+            $data['sys_file_reference']['NEWfile' . $i] = ['pid' => $pid, 'uid_local' => $this->files[$slug]];
+        }
+        if ($element['media'] ?? []) {
+            $data['tt_content']['NEWce']['media'] = implode(',', array_map(static fn (int $i): string => 'NEWfile' . $i, array_keys($element['media']['en'])));
+        }
         $uid = $this->create('tt_content', $fields, $data);
         $this->lastContent[$slot] = $uid;
         $this->order[$slot][] = $uid;
@@ -299,6 +328,10 @@ final class BuildCommand extends Command
         $this->translate('tt_content', $uid, $language, $fields);
         if ($element['image'] ?? []) {
             $this->syncInline('tt_content', $uid, 'image', $language);
+        }
+        if ($element['media'] ?? []) {
+            $this->syncInline('tt_content', $uid, 'media', $language);
+            $this->relinkFiles($uid, $element['media'][$code], $language);
         }
         foreach ($element['items'] ?? [] as $field => $items) {
             $this->translateItems('tt_content', $uid, $field, $items, $language, $code);
@@ -354,6 +387,24 @@ final class BuildCommand extends Command
                 $this->syncInline($itemTable, $itemUid, 'image', $language);
             }
         }
+    }
+
+    // A translated download points to the file of its language instead of the default one.
+    private function relinkFiles(int $uid, array $slugs, int $language): void
+    {
+        $query = $this->connectionPool->getQueryBuilderForTable('sys_file_reference');
+        $query->getRestrictions()->removeAll()->add(GeneralUtility::makeInstance(DeletedRestriction::class));
+        $references = $query->select('uid')->from('sys_file_reference')->where(
+            $query->expr()->eq('uid_foreign', $query->createNamedParameter($uid, \Doctrine\DBAL\ParameterType::INTEGER)),
+            $query->expr()->eq('tablenames', $query->createNamedParameter('tt_content')),
+            $query->expr()->eq('fieldname', $query->createNamedParameter('media')),
+            $query->expr()->eq('sys_language_uid', 0),
+        )->orderBy('sorting_foreign')->executeQuery()->fetchFirstColumn();
+        $data = [];
+        foreach ($references as $i => $reference) {
+            $data['sys_file_reference'][$this->translationOf('sys_file_reference', (int)$reference, $language)] = ['uid_local' => $this->files[$slugs[$i]]];
+        }
+        $this->process($data);
     }
 
     // A photo is a slug, or a slug with reference fields such as the chapter's width and step.
