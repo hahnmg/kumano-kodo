@@ -13,6 +13,10 @@ if [ ! -f config/system/settings.php ]; then
     TYPO3_SETUP_ADMIN_EMAIL=admin@kumano-kodo.ddev.site TYPO3_PROJECT_NAME="Kumano Kodo" \
     TYPO3_SERVER_TYPE=other vendor/bin/typo3 setup --no-interaction
     mkdir -p var && printf '%s\n' "$password" > var/admin-password
+    # Setup imports the full demo; KUMANO_DEMO=starter swaps it for five placeholder pages to build on.
+    if [ "${KUMANO_DEMO:-full}" = "starter" ]; then
+        vendor/bin/typo3 kumano:demo:build --replace --starter
+    fi
     echo "Backend: https://kumano-kodo.ddev.site/typo3 · admin / $password (also in typo3/var/admin-password)"
 else
     vendor/bin/typo3 extension:setup

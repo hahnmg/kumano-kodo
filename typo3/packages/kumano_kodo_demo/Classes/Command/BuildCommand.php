@@ -53,13 +53,15 @@ final class BuildCommand extends Command
     {
         $this
             ->addOption('json', null, InputOption::VALUE_REQUIRED, 'Demo definition', Environment::getProjectPath() . '/Build/Demo/content.json')
-            ->addOption('replace', null, InputOption::VALUE_NONE, 'Delete an existing demo site and its page tree first');
+            ->addOption('replace', null, InputOption::VALUE_NONE, 'Delete an existing demo site and its page tree first')
+            ->addOption('starter', null, InputOption::VALUE_NONE, 'Build the five-page starter set instead of the full demo');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         Bootstrap::initializeBackendAuthentication();
-        $demo = json_decode((string)file_get_contents($input->getOption('json')), true, 512, JSON_THROW_ON_ERROR);
+        $json = $input->getOption('starter') ? dirname(__DIR__, 2) . '/Resources/Private/Starter/starter.json' : $input->getOption('json');
+        $demo = json_decode((string)file_get_contents($json), true, 512, JSON_THROW_ON_ERROR);
 
         try {
             $site = $this->siteFinder->getSiteByIdentifier(self::SITE);

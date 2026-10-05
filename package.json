@@ -8,6 +8,7 @@
         "build": "npm run tokens && node scripts/check-contrast.mjs && storybook build -o storybook-static --quiet",
         "build:typo3": "npm run tokens && node scripts/build-typo3.mjs",
         "export:demo": "node scripts/export-demo.mjs",
+        "export:starter": "node scripts/export-starter.mjs",
         "lint": "eslint . && stylelint \"stories/**/*.css\" \"src/**/*.css\" && node scripts/check-filenames.mjs && prettier --check \"**/*.{ts,mjs,css,json}\"",
         "size": "node scripts/check-size.mjs",
         "test": "npm run tokens && vitest run",
