@@ -6,7 +6,9 @@ cd "$(dirname "$0")/../.."
 composer install --no-interaction --no-progress
 
 if [ ! -f config/system/settings.php ]; then
-    password="${TYPO3_SETUP_ADMIN_PASSWORD:-$(openssl rand -base64 18 | tr -d '/+=')Aa1!}"
+    # A reinstall keeps the password of the last one (var/ is outside Git); only a first install generates one.
+    password="${TYPO3_SETUP_ADMIN_PASSWORD:-$(cat var/admin-password 2>/dev/null || true)}"
+    password="${password:-$(openssl rand -base64 18 | tr -d '/+=')Aa1!}"
     TYPO3_DB_DRIVER=mysqli TYPO3_DB_HOST=db TYPO3_DB_PORT=3306 TYPO3_DB_DBNAME=db \
     TYPO3_DB_USERNAME=db TYPO3_DB_PASSWORD=db \
     TYPO3_SETUP_ADMIN_USERNAME=admin TYPO3_SETUP_ADMIN_PASSWORD="$password" \
