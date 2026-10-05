@@ -160,6 +160,16 @@ const formLabelsOf = (c) => ({
     ),
     'validation.error.1221559976': c.ui.emailInvalid,
 });
+// Labels of the theme's own contact form, keyed as EXT:form looks them up.
+const contactFormLabelsOf = ({ ui }) => ({
+    'kumano-contact.renderingOptions.submitButtonLabel': ui.send,
+    'kumano-contact.element.name.properties.label': ui.name,
+    'kumano-contact.element.email.properties.label': ui.emailAddress,
+    'kumano-contact.element.email.properties.placeholder': ui.emailPlaceholder,
+    'kumano-contact.element.message.properties.label': ui.message,
+    'kumano-contact.element.consent.properties.label': ui.contactConsent,
+    'kumano-contact.finisher.Confirmation.message': ui.formSentText,
+});
 const writeXliff = async (language, name, pick, { content, locales }) => {
     const source = pick(content('en'));
     for (const locale of Object.keys(locales)) {
@@ -184,6 +194,7 @@ const buildLabels = async (sources) => {
     await mkdir(language, { recursive: true });
     await writeXliff(language, 'messages', labelsOf, sources);
     await writeXliff(language, 'form', formLabelsOf, sources);
+    await writeXliff(language, 'form_contact', contactFormLabelsOf, sources);
 };
 
 // Theme presets for the site settings: what an empty setting falls back to, and which fonts a theme loads.

@@ -1,0 +1,62 @@
+# A plain contact form the theme ships, for sites that start without the demo. Labels: form_contact.xlf.
+identifier: kumano-contact
+label: Contact
+type: Form
+prototypeName: standard
+renderingOptions:
+  submitButtonLabel: 'Send'
+  translation:
+    translationFiles:
+      20: 'EXT:kumano_kodo/Resources/Private/Language/form_contact.xlf'
+finishers:
+  -
+    identifier: Confirmation
+    options:
+      message: 'Thank you. Your message has arrived.'
+renderables:
+  -
+    identifier: page-1
+    type: Page
+    renderables:
+      -
+        identifier: name
+        type: Text
+        label: 'Name'
+        properties:
+          fluidAdditionalAttributes:
+            autocomplete: name
+            required: required
+        validators:
+          - identifier: NotEmpty
+      -
+        identifier: email
+        type: Email
+        label: 'Email address'
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'name@example.com'
+            autocomplete: email
+            required: required
+        validators:
+          - identifier: NotEmpty
+          - identifier: EmailAddress
+      -
+        identifier: message
+        type: Textarea
+        label: 'Message'
+        properties:
+          fluidAdditionalAttributes:
+            rows: 6
+            required: required
+        validators:
+          - identifier: NotEmpty
+      -
+        identifier: consent
+        type: Checkbox
+        label: 'I agree that my details are used to answer my message.'
+        properties:
+          value: 1
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: NotEmpty

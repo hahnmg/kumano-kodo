@@ -2,6 +2,10 @@ name: kumano-kodo/form
 label: 'Kumano Kodo — form markup'
 priority: 50
 
+persistenceManager:
+  allowedExtensionPaths:
+    20: 'EXT:kumano_kodo/Resources/Private/Forms/'
+
 prototypes:
   standard:
     finishersDefinition:

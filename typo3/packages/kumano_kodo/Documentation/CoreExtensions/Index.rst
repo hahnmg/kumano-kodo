@@ -16,7 +16,8 @@ Login (felogin)
 
 Forms (form)
     Fields, errors and the button from the theme's atoms; the confirmation shows as an Info Box. Validation messages
-    come in the site's language.
+    come in the site's language. The theme ships a plain contact form (name, email, message, consent) to pick in the
+    form plugin.
 
 Sitemap (seo)
     `/sitemap.xml`. Pages with "No index" stay out. Absolute URLs need a site base with a host.
