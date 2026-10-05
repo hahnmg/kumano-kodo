@@ -7,7 +7,11 @@ namespace KumanoKodo\Sitepackage\DataProcessing;
 use KumanoKodo\Sitepackage\Theme\SiteLogo;
 use KumanoKodo\Sitepackage\Theme\ThemePresets;
 use KumanoKodo\Sitepackage\Theme\WebFontService;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
+use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Site\Entity\Site;
+use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\SystemResource\SystemResourceFactory;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
@@ -25,6 +29,8 @@ final class ThemeProcessor implements DataProcessorInterface
         private readonly WebFontService $webFonts,
         private readonly SiteLogo $logo,
         private readonly SystemResourceFactory $resources,
+        private readonly ConnectionPool $connectionPool,
+        private readonly SiteFinder $siteFinder,
     ) {}
 
     public function process(ContentObjectRenderer $cObj, array $contentObjectConfiguration, array $processorConfiguration, array $processedData): array
@@ -111,11 +117,32 @@ final class ThemeProcessor implements DataProcessorInterface
             'name' => $this->websiteTitle($cObj, $site),
             'ownCss' => $this->publicFile($setting('custom.css')),
             'ownJs' => $this->publicFile($setting('custom.js')),
+            'searchPage' => (int)$setting('search.page') ?: $this->searchPage($site),
         ];
         return $processedData;
     }
 
     /** @param array<string, list<int>> $fonts family => weights */
+    // Without a setting, the search lives on the first page of the site that holds the search plugin.
+    private function searchPage(Site $site): int
+    {
+        $query = $this->connectionPool->getQueryBuilderForTable('tt_content');
+        $query->setRestrictions(new FrontendRestrictionContainer());
+        $pages = $query->select('pid')->from('tt_content')->where(
+            $query->expr()->eq('CType', $query->createNamedParameter('indexedsearch_pi2')),
+            $query->expr()->in('sys_language_uid', [0, -1]),
+        )->orderBy('pid')->executeQuery()->fetchFirstColumn();
+        foreach ($pages as $pid) {
+            try {
+                if ($this->siteFinder->getSiteByPageId((int)$pid)->getIdentifier() === $site->getIdentifier()) {
+                    return (int)$pid;
+                }
+            } catch (SiteNotFoundException) {
+            }
+        }
+        return 0;
+    }
+
     // A mistyped path is left out rather than ending the page with an exception.
     private function publicFile(string $path): string
     {

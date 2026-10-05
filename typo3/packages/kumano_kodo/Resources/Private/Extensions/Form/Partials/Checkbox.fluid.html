@@ -1,0 +1,10 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<formvh:renderRenderable renderable="{element}">
+<f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
+<f:if condition="{validationResults.errors}"><f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}"/></f:if>
+<f:render partial="Field/Field" arguments="{element: element, doNotShowLabel: 1}" contentAs="elementContent">
+<label class="choice choice--checkbox{f:if(condition: validationResults.errors, then: ' choice--invalid')}"><f:form.checkbox property="{element.identifier}" id="{element.uniqueIdentifier}" class="{element.properties.elementClassAttribute}" value="{element.properties.value}" additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}" aria="{aria}"/><span class="choice__label type-caption">{formvh:translateElementProperty(element: element, property: 'label') -> f:sanitize.html() -> f:transform.html() -> f:format.stripTags(allowedTags: '<a><br><i><strong>')}<f:if condition="{element.required}"><f:render partial="Field/Required" arguments="{element: element}"/></f:if></span></label>
+</f:render>
+</f:form.validationResults>
+</formvh:renderRenderable>
+</html>

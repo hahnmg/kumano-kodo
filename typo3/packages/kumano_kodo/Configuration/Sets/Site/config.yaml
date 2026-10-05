@@ -1,6 +1,9 @@
 name: kumano-kodo/site
 label: 'Kumano Kodo'
-# Renders without fluid_styled_content. Where it is installed, it loads first, so a set depending on it cannot reset
-# lib.contentElement after ours (forge.typo3.org/issues/109670).
+# Loaded first where installed: the core plugins the theme styles, and fluid_styled_content, so a set depending on
+# it cannot reset lib.contentElement after ours (forge.typo3.org/issues/109670).
 optionalDependencies:
   - typo3/fluid-styled-content
+  - typo3/felogin
+  - typo3/indexed-search
+  - typo3/form

@@ -9,3 +9,8 @@
     margin: 0;
     color: var(--color-muted);
 }
+
+/* Extbase renders its hidden fields in a div of their own, which would take a gap in the column. */
+.form > div:not(:has(> :not(input[type='hidden']))) {
+    display: none;
+}

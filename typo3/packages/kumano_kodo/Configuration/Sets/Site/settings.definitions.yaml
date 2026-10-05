@@ -17,6 +17,8 @@ categories:
     parent: kumanoKodo
   kumanoKodo.newsletter:
     parent: kumanoKodo
+  kumanoKodo.search:
+    parent: kumanoKodo
   kumanoKodo.custom:
     parent: kumanoKodo
 
@@ -180,6 +182,10 @@ settings:
     type: page
     default: 0
     category: kumanoKodo.newsletter
+  kumanoKodo.search.page:
+    type: page
+    default: 0
+    category: kumanoKodo.search
   kumanoKodo.custom.css:
     type: string
     default: ''

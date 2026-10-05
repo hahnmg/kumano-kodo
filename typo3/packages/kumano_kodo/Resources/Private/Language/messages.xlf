@@ -59,6 +59,75 @@
             <trans-unit id="subscribe">
                 <source>Subscribe</source>
             </trans-unit>
+            <trans-unit id="search">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="searchPlaceholder">
+                <source>Search days, places and tips</source>
+            </trans-unit>
+            <trans-unit id="searchSummary">
+                <source>%1$s results for “%2$s”</source>
+            </trans-unit>
+            <trans-unit id="searchSummaryOne">
+                <source>1 result for “%1$s”</source>
+            </trans-unit>
+            <trans-unit id="searchEmpty">
+                <source>Nothing found for “%1$s”. A place or a day works best, for example Hongu.</source>
+            </trans-unit>
+            <trans-unit id="searchResults">
+                <source>Search results</source>
+            </trans-unit>
+            <trans-unit id="logIn">
+                <source>Log in</source>
+            </trans-unit>
+            <trans-unit id="username">
+                <source>Username</source>
+            </trans-unit>
+            <trans-unit id="password">
+                <source>Password</source>
+            </trans-unit>
+            <trans-unit id="stayLoggedIn">
+                <source>Stay logged in</source>
+            </trans-unit>
+            <trans-unit id="forgotPassword">
+                <source>Forgot your password?</source>
+            </trans-unit>
+            <trans-unit id="loginFailed">
+                <source>Login failed</source>
+            </trans-unit>
+            <trans-unit id="loginFailedText">
+                <source>Username or password were not accepted.</source>
+            </trans-unit>
+            <trans-unit id="loggedInAs">
+                <source>Logged in as %1$s</source>
+            </trans-unit>
+            <trans-unit id="logOut">
+                <source>Log out</source>
+            </trans-unit>
+            <trans-unit id="requiredNote">
+                <source>Fields marked * are required.</source>
+            </trans-unit>
+            <trans-unit id="fieldRequired">
+                <source>Please fill in this field.</source>
+            </trans-unit>
+            <trans-unit id="emailInvalid">
+                <source>Please enter a valid email address.</source>
+            </trans-unit>
+            <trans-unit id="send">
+                <source>Send</source>
+            </trans-unit>
+            <trans-unit id="name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="topic">
+                <source>Topic</source>
+            </trans-unit>
+            <trans-unit id="message">
+                <source>Message</source>
+            </trans-unit>
+            <trans-unit id="contactConsent">
+                <source>I agree that my details are used to answer my message.</source>
+            </trans-unit>
             <trans-unit id="mapWalked">
                 <source>Walked section</source>
             </trans-unit>

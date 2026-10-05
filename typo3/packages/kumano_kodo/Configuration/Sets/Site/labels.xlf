@@ -32,6 +32,9 @@
             <trans-unit id="categories.kumanoKodo.newsletter">
                 <source>Newsletter</source>
             </trans-unit>
+            <trans-unit id="categories.kumanoKodo.search">
+                <source>Search</source>
+            </trans-unit>
             <trans-unit id="categories.kumanoKodo.custom">
                 <source>Own files</source>
             </trans-unit>
@@ -274,6 +277,12 @@
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.newsletter.target">
                 <source>The page that receives the newsletter sign-up.</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.search.page">
+                <source>Search page</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.search.page">
+                <source>Where the header search sends to. Empty: the first page of the site with the search plugin; without one, the header shows no search.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.custom.css">
                 <source>Own stylesheet</source>

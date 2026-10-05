@@ -289,6 +289,14 @@ const buildSettings = async (themes) => {
     add('contact.email', 'contact', 'string', '', 'Email');
     add('newsletter.target', 'newsletter', 'page', 0, 'Form target', 'The page that receives the newsletter sign-up.');
     add(
+        'search.page',
+        'search',
+        'page',
+        0,
+        'Search page',
+        'Where the header search sends to. Empty: the first page of the site with the search plugin; without one, the header shows no search.',
+    );
+    add(
         'custom.css',
         'custom',
         'string',
@@ -322,6 +330,7 @@ const buildSettings = async (themes) => {
         spacing: 'Spacing and shape',
         contact: 'Contact in the top bar',
         newsletter: 'Newsletter',
+        search: 'Search',
         custom: 'Own files',
     };
     const q = (v) => (typeof v === 'string' ? `'${v.replaceAll("'", "''")}'` : String(v));

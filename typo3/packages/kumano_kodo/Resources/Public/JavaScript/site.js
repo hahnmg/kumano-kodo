@@ -20,7 +20,7 @@ var e = ".menu-button", t = (t, n) => {
 		let n = t.target instanceof Element ? t.target : null, s = (n?.closest(i))?.closest(r);
 		if (s) {
 			let t = !s.hasAttribute("data-open");
-			o(e, s), a(s, t);
+			o(e, s), a(s, t), t && s.querySelector(".nav-flyout input")?.focus();
 			return;
 		}
 		n?.closest(`${r}[data-open]`) || o(e);

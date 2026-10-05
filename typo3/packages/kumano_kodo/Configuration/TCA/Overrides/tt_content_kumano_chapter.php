@@ -11,7 +11,7 @@ ExtensionManagementUtility::addRecordType(
         'label' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_chapter',
         'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_chapter.description',
         'value' => 'kumano_chapter',
-        'icon' => 'content-textpic',
+        'icon' => 'content-book',
         'group' => 'kumano_journal',
     ],
     '--palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames',

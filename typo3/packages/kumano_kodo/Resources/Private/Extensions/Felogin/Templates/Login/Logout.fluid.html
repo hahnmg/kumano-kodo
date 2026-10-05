@@ -1,0 +1,9 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>Logged in, the Login Form molecule becomes the logout.</f:comment>
+<f:form class="login-form login-form--status" action="login" target="_top" fieldNamePrefix="">
+<p class="type-body">{f:translate(key: 'loggedInAs', domain: 'kumano_kodo.messages', arguments: {0: user.username})}</p>
+<div><button class="button type-button button--primary" type="submit" name="submit" value="1">{f:translate(key: 'logOut', domain: 'kumano_kodo.messages')}</button></div>
+<f:form.hidden name="logintype" value="logout"/>
+<f:if condition="{noRedirect}!=''"><f:form.hidden name="noredirect" value="1"/></f:if>
+</f:form>
+</html>

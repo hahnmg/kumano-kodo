@@ -19,7 +19,7 @@ return [
             'disabled' => 'hidden',
         ],
         'typeicon_classes' => [
-            'default' => 'content-special-html',
+            'default' => 'content-map',
         ],
         'security' => [
             'ignoreWebMountRestriction' => true,

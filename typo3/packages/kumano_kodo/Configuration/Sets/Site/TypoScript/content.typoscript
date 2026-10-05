@@ -4,9 +4,9 @@ lib.contentElement {
   partialRootPaths.10 = EXT:kumano_kodo/Resources/Private/Templates/Partials/
   templateRootPaths.10 = EXT:kumano_kodo/Resources/Private/Templates/Content/
 
-  # kumano_link_list renders Content/KumanoLinkList.fluid.html.
-  templateName.cObject = TEXT
-  templateName.cObject {
+  # kumano_list renders Content/KumanoList.fluid.html; plugins set templateName = Generic themselves.
+  templateName.ifEmpty.cObject = TEXT
+  templateName.ifEmpty.cObject {
     field = CType
     required = 1
     case = uppercamelcase
@@ -32,3 +32,14 @@ tt_content.kumano_columns < tt_content.kumano_section
 
 tt_content.kumano_chapter < lib.contentElement
 tt_content.kumano_chapter.dataProcessing.20 = kumano-chapter-number
+
+# The core plugins render with the theme's markup.
+plugin.tx_indexedsearch.view {
+  templateRootPaths.20 = EXT:kumano_kodo/Resources/Private/Extensions/IndexedSearch/Templates/
+  partialRootPaths.20 = EXT:kumano_kodo/Resources/Private/Extensions/IndexedSearch/Partials/
+  partialRootPaths.30 = EXT:kumano_kodo/Resources/Private/Templates/Partials/
+}
+plugin.tx_felogin_login.view {
+  templateRootPaths.20 = EXT:kumano_kodo/Resources/Private/Extensions/Felogin/Templates/
+  partialRootPaths.30 = EXT:kumano_kodo/Resources/Private/Templates/Partials/
+}

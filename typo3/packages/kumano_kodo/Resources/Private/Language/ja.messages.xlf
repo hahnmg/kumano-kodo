@@ -78,6 +78,98 @@
                 <source>Subscribe</source>
                 <target>登録する</target>
             </trans-unit>
+            <trans-unit id="search">
+                <source>Search</source>
+                <target>検索</target>
+            </trans-unit>
+            <trans-unit id="searchPlaceholder">
+                <source>Search days, places and tips</source>
+                <target>日程・場所・ヒントを検索</target>
+            </trans-unit>
+            <trans-unit id="searchSummary">
+                <source>%1$s results for “%2$s”</source>
+                <target>「%2$s」の検索結果 %1$s 件</target>
+            </trans-unit>
+            <trans-unit id="searchSummaryOne">
+                <source>1 result for “%1$s”</source>
+                <target>「%1$s」の検索結果 1 件</target>
+            </trans-unit>
+            <trans-unit id="searchEmpty">
+                <source>Nothing found for “%1$s”. A place or a day works best, for example Hongu.</source>
+                <target>「%1$s」に一致する結果はありません。本宮など、場所や日程で検索してください。</target>
+            </trans-unit>
+            <trans-unit id="searchResults">
+                <source>Search results</source>
+                <target>検索結果</target>
+            </trans-unit>
+            <trans-unit id="logIn">
+                <source>Log in</source>
+                <target>ログイン</target>
+            </trans-unit>
+            <trans-unit id="username">
+                <source>Username</source>
+                <target>ユーザー名</target>
+            </trans-unit>
+            <trans-unit id="password">
+                <source>Password</source>
+                <target>パスワード</target>
+            </trans-unit>
+            <trans-unit id="stayLoggedIn">
+                <source>Stay logged in</source>
+                <target>ログインしたままにする</target>
+            </trans-unit>
+            <trans-unit id="forgotPassword">
+                <source>Forgot your password?</source>
+                <target>パスワードをお忘れですか？</target>
+            </trans-unit>
+            <trans-unit id="loginFailed">
+                <source>Login failed</source>
+                <target>ログインできませんでした</target>
+            </trans-unit>
+            <trans-unit id="loginFailedText">
+                <source>Username or password were not accepted.</source>
+                <target>ユーザー名またはパスワードが正しくありません。</target>
+            </trans-unit>
+            <trans-unit id="loggedInAs">
+                <source>Logged in as %1$s</source>
+                <target>%1$s としてログイン中</target>
+            </trans-unit>
+            <trans-unit id="logOut">
+                <source>Log out</source>
+                <target>ログアウト</target>
+            </trans-unit>
+            <trans-unit id="requiredNote">
+                <source>Fields marked * are required.</source>
+                <target>* の項目は必須です。</target>
+            </trans-unit>
+            <trans-unit id="fieldRequired">
+                <source>Please fill in this field.</source>
+                <target>この項目を入力してください。</target>
+            </trans-unit>
+            <trans-unit id="emailInvalid">
+                <source>Please enter a valid email address.</source>
+                <target>有効なメールアドレスを入力してください。</target>
+            </trans-unit>
+            <trans-unit id="send">
+                <source>Send</source>
+                <target>送信</target>
+            </trans-unit>
+            <trans-unit id="name">
+                <source>Name</source>
+                <target>名前</target>
+            </trans-unit>
+            <trans-unit id="topic">
+                <source>Topic</source>
+                <target>テーマ</target>
+            </trans-unit>
+            <trans-unit id="message">
+                <source>Message</source>
+                <target>メッセージ</target>
+            </trans-unit>
+            <trans-unit id="contactConsent">
+                <source>I agree that my details are used to answer my message.</source>
+                <target>メッセージへの返信のために入力内容が使われることに同意します。</target>
+            </trans-unit>
             <trans-unit id="mapWalked">
                 <source>Walked section</source>
                 <target>歩いた区間</target>

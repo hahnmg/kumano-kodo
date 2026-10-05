@@ -1,0 +1,26 @@
+.search-results__summary {
+    margin: 0;
+    padding: var(--space-16) 0;
+    border-bottom: var(--border-hairline) solid var(--color-line);
+    color: var(--color-muted);
+}
+
+.search-results__items {
+    margin: 0 0 var(--space-40);
+    padding: 0;
+    list-style: none;
+}
+
+.search-results__text {
+    gap: var(--space-4);
+}
+
+.search-results__excerpt {
+    color: var(--color-ink);
+}
+
+.search-results__excerpt mark {
+    background: var(--color-sunk);
+    color: inherit;
+    font-weight: 600;
+}
