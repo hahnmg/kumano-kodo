@@ -84,10 +84,16 @@ The site answers at https://kumano-kodo.ddev.site in EN, `/de/` and `/ja/`; the 
 and the password the first start prints (also in `typo3/var/admin-password`). The demo holds every Storybook site page,
 the previous home (`/home-v3`) and a page with the remaining components (`/components`).
 
-- **Site settings** (Sites › Setup › Settings): theme, colour mode, dark mode toggle, site name, contact, the 18 palette
+- **Site settings** (Sites › Setup › Settings): theme, colour mode, dark mode toggle, contact, the 18 palette
   colours, three typefaces (Google Fonts, served from this server), display weight, spacing unit, page margin, section
   spacing, content width and radii, the upright name beside the journal title, the newsletter form target. Empty fields
-  and colours left at their default keep the theme's value.
+  and colours left at their default keep the theme's value. The site name is the site's website title.
+- **Own files** (same settings, category Own files): a stylesheet and a script loaded after the theme, and a template
+  folder ahead of the theme's. It mirrors `Resources/Private/Templates/` (`Pages/`, `Layouts/`, `Partials/`,
+  `Content/`); a file there replaces the theme's file of the same name. A path that cannot be resolved is skipped.
+- **Own content elements**: register the CType in your own extension as `Configuration/TCA/Overrides` does here, with
+  the `kumanoHeading_*` palettes and the tab order General, Images, Appearance; put its template in your template folder
+  under `Content/` and render it through the `Kumano/Section` partial so it gets the section frame.
 - **Logo**: Caramel shows the classic mark, the other themes the modern one; an editor can upload another on the home
   page (tab Appearance). An SVG takes the theme colours when its groups are named `bird` and `text`.
 - **Content**: containers **Section** and **Columns** for layout, 13 content elements with a display option each
