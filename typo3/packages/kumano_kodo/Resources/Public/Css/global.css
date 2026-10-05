@@ -1034,6 +1034,7 @@ body {
 }
 
 .field__box {
+    position: relative;
     display: flex;
     gap: var(--space-10);
     align-items: center;
@@ -1091,6 +1092,19 @@ body {
 
 .field__error .icon {
     flex-shrink: 0;
+}
+
+/* The focus frame wraps the box: flush with its line and as tall as a button beside it, wider than the text. */
+.field__box .field__control:focus-visible {
+    outline: 0;
+}
+
+.field__box:has(.field__control:focus-visible)::after {
+    position: absolute;
+    inset: calc(-1 * var(--border-hairline)) calc(-1 * var(--space-12));
+    border: 2px solid var(--color-accent);
+    content: '';
+    pointer-events: none;
 }
 
 /* stories/atoms/textarea.css */

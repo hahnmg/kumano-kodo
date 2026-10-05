@@ -13,6 +13,6 @@ export interface TextareaProps {
 export const textarea = ({ label, name, placeholder, rows = 4, required, error }: TextareaProps): string =>
     `<label${attrs({ class: cx('field', error && 'field--invalid') })}>` +
     `<span class="field__label type-label">${esc(label)}</span>` +
-    `<textarea${attrs({ class: 'field__control field__control--textarea type-small', name, placeholder, rows, required, ...invalidAttrs(name, error) })}></textarea>` +
+    `<span class="field__box"><textarea${attrs({ class: 'field__control field__control--textarea type-small', name, placeholder, rows, required, ...invalidAttrs(name, error) })}></textarea></span>` +
     fieldError(name, error) +
     `</label>`;
