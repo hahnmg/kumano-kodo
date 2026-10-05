@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { stat, type StatProps } from './stat.markup';
+import { choice } from '../templates/controls';
 
 const onImage = (html: string) => `<div style="padding:40px;background:url(img/photos/sea-of-clouds-1200.jpg) center/cover">${html}</div>`;
 
 const meta: Meta<StatProps> = {
     title: 'Molecules/Stat',
-    argTypes: { variant: { control: 'inline-radio', options: ['large', 'on-image'] } },
+    argTypes: { variant: choice<NonNullable<StatProps['variant']>>()('large', 'on-image') },
 };
 export default meta;
 

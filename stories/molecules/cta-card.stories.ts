@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { ctaCard, type CtaCardProps } from './cta-card.markup';
+import { choice } from '../templates/controls';
 
 const card = (p: CtaCardProps) => `<div style="max-width:426px">${ctaCard(p)}</div>`;
 
 const meta: Meta<CtaCardProps> = {
     title: 'Molecules/CTA Card',
-    argTypes: { variant: { control: 'inline-radio', options: ['default', 'featured'] } },
+    argTypes: { variant: choice<NonNullable<CtaCardProps['variant']>>()('default', 'featured') },
     args: { href: '#' },
 };
 export default meta;

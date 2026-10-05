@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { textField, type TextFieldProps } from './text-field.markup';
+import { choice } from '../templates/controls';
 
 const meta: Meta<TextFieldProps> = {
     title: 'Atoms/Text Field',
+    argTypes: { type: choice<NonNullable<TextFieldProps['type']>>()('text', 'email', 'tel', 'password') },
     render: localized(
         (p: TextFieldProps) => `<div style="max-width:539px">${textField(p)}</div>`,
         (c) => ({ label: c.ui.emailAddress, placeholder: c.ui.emailPlaceholder }),

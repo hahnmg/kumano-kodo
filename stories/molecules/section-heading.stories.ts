@@ -1,10 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { sectionHeading, type SectionHeadingProps } from './section-heading.markup';
+import { choice } from '../templates/controls';
 
 const meta: Meta<SectionHeadingProps> = {
     title: 'Molecules/Section Heading',
-    argTypes: { variant: { control: 'inline-radio', options: ['default', 'with-aside', 'with-controls'] } },
+    argTypes: {
+        variant: choice<NonNullable<SectionHeadingProps['variant']>>()('default', 'with-aside', 'with-controls'),
+        level: choice<NonNullable<SectionHeadingProps['level']>>()(1, 2),
+    },
 };
 export default meta;
 

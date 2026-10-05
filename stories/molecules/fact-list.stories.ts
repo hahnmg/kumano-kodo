@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { factList, type FactListProps } from './fact-list.markup';
+import { choice } from '../templates/controls';
 
 const meta: Meta<FactListProps> = {
     title: 'Molecules/Fact List',
@@ -8,7 +9,7 @@ const meta: Meta<FactListProps> = {
         (p: FactListProps) => `<div style="max-width:427px">${factList(p)}</div>`,
         (c) => ({ title: c.pages.detail.factsTitle, facts: c.pages.detail.facts }),
     ),
-    argTypes: { layout: { control: 'inline-radio', options: ['inline', 'stacked'] } },
+    argTypes: { layout: choice<NonNullable<FactListProps['layout']>>()('inline', 'stacked') },
 };
 export default meta;
 

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { button, type ButtonProps } from './button.markup';
+import { choice } from '../templates/controls';
 
 const onImage = { backgrounds: { disable: true } };
 const photo = (html: string) =>
@@ -9,7 +10,10 @@ const photo = (html: string) =>
 const meta: Meta<ButtonProps> = {
     title: 'Atoms/Button',
     render: localized(button, (c) => ({ label: c.ui.subscribe })),
-    argTypes: { variant: { control: 'inline-radio', options: ['primary', 'light', 'outline'] } },
+    argTypes: {
+        variant: choice<NonNullable<ButtonProps['variant']>>()('primary', 'light', 'outline'),
+        type: choice<NonNullable<ButtonProps['type']>>()('button', 'submit'),
+    },
 };
 export default meta;
 

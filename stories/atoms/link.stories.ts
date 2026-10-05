@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { link, type LinkProps } from './link.markup';
+import { choice } from '../templates/controls';
 
 const meta: Meta<LinkProps> = {
     title: 'Atoms/Link',
-    argTypes: { direction: { control: 'inline-radio', options: ['forward', 'back'] } },
+    argTypes: { direction: choice<NonNullable<LinkProps['direction']>>()('forward', 'back') },
     args: { href: '#' },
 };
 export default meta;

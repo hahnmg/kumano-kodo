@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { textMedia, type TextMediaProps } from './text-media.markup';
+import { choice } from '../templates/controls';
 
 const meta: Meta<TextMediaProps> = {
     title: 'Molecules/Text & Media',
+    argTypes: { imageSide: choice<NonNullable<TextMediaProps['imageSide']>>()('left', 'right') },
     render: localized(textMedia, (c) => ({
         image: c.kumano.places[1].image,
         title: c.kumano.places[1].title,
