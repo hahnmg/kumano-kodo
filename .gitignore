@@ -4,3 +4,6 @@ storybook-static/
 .DS_Store
 src/tokens/tokens.css
 img/original/
+
+# Local render of the docs.typo3.org manual
+Documentation-GENERATED-temp/

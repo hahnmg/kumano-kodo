@@ -1,6 +1,6 @@
 {
     "name": "kumano-kodo/sitepackage",
-    "description": "Kumano Kodo - Sitepackage built from the Kumano Kodo design system",
+    "description": "Kumano Kodo for TYPO3: a theme built from the Kumano Kodo design system",
     "type": "typo3-cms-extension",
     "license": "proprietary",
     "version": "0.1.0",
