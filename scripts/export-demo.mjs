@@ -881,6 +881,7 @@ const site = {
         'kumanoKodo.contact.phone': c.en.guide.topbar.phone,
         'kumanoKodo.contact.email': c.en.guide.topbar.email,
         'felogin.showPermaLogin': true,
+        'kumanoKodo.brand.logo': 'kumano',
     },
     errorHandling: { 404: 'not-found', 403: 'login' },
 };

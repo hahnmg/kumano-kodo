@@ -4,7 +4,8 @@
         "settings": {
             "kumanoKodo.contact.phone": "+81 00 0000 0000",
             "kumanoKodo.contact.email": "post@kumano-kodo.example",
-            "felogin.showPermaLogin": true
+            "felogin.showPermaLogin": true,
+            "kumanoKodo.brand.logo": "kumano"
         },
         "errorHandling": {
             "403": "login",
