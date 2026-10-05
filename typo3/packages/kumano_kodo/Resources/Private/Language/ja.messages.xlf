@@ -182,6 +182,14 @@
                 <source>Send</source>
                 <target>送信</target>
             </trans-unit>
+            <trans-unit id="formSent">
+                <source>Message sent</source>
+                <target>送信しました</target>
+            </trans-unit>
+            <trans-unit id="formSentText">
+                <source>Thank you. Your message has arrived.</source>
+                <target>ありがとうございます。メッセージを受け取りました。</target>
+            </trans-unit>
             <trans-unit id="name">
                 <source>Name</source>
                 <target>名前</target>

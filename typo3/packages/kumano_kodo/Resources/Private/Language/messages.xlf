@@ -137,6 +137,12 @@
             <trans-unit id="send">
                 <source>Send</source>
             </trans-unit>
+            <trans-unit id="formSent">
+                <source>Message sent</source>
+            </trans-unit>
+            <trans-unit id="formSentText">
+                <source>Thank you. Your message has arrived.</source>
+            </trans-unit>
             <trans-unit id="name">
                 <source>Name</source>
             </trans-unit>

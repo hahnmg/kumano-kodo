@@ -4,6 +4,7 @@ import { textField } from '../atoms/text-field.markup';
 import { textarea } from '../atoms/textarea.markup';
 import { content } from '../templates/content';
 import { form } from './form.markup';
+import { infoBox } from './info-box.markup';
 
 const meta: Meta = { title: 'Molecules/Form' };
 export default meta;
@@ -39,3 +40,10 @@ const contact =
 
 export const Form: StoryObj = { render: contact(false) };
 export const Invalid: StoryObj = { render: contact(true) };
+// After sending, EXT:form replaces the form by its confirmation, shown as an Info Box.
+export const Sent: StoryObj = {
+    render: (_, { globals }) => {
+        const { ui } = content(globals.locale);
+        return infoBox({ title: ui.formSent, text: ui.formSentText });
+    },
+};

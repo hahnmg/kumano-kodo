@@ -51,6 +51,8 @@ const build = (p: Photos) => {
         fieldRequired: 'Please fill in this field.',
         emailInvalid: 'Please enter a valid email address.',
         send: 'Send',
+        formSent: 'Message sent',
+        formSentText: 'Thank you. Your message has arrived.',
         name: 'Name',
         topic: 'Topic',
         message: 'Message',

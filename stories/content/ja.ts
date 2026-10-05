@@ -51,6 +51,8 @@ const build = (p: Photos): LocaleContent => {
         fieldRequired: 'この項目を入力してください。',
         emailInvalid: '有効なメールアドレスを入力してください。',
         send: '送信',
+        formSent: '送信しました',
+        formSentText: 'ありがとうございます。メッセージを受け取りました。',
         name: '名前',
         topic: 'テーマ',
         message: 'メッセージ',

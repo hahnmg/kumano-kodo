@@ -51,6 +51,8 @@ const build = (p: Photos): LocaleContent => {
         fieldRequired: 'Bitte füllen Sie dieses Feld aus.',
         emailInvalid: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
         send: 'Senden',
+        formSent: 'Nachricht gesendet',
+        formSentText: 'Danke. Ihre Nachricht ist angekommen.',
         name: 'Name',
         topic: 'Thema',
         message: 'Nachricht',
