@@ -140,10 +140,10 @@
             "solution": "Theme and demo are separate; the demo installs either the full journal or a five-page starter set."
         },
         {
-            "status": "partly",
+            "status": "solved",
             "issues": [108672, 108777, 108681],
             "problem": "Documentation is missing.",
-            "solution": "README and this Storybook. Open: documentation in the docs.typo3.org format."
+            "solution": "A manual in the docs.typo3.org format, with the site settings generated from the set; README and this Storybook."
         },
         {
             "status": "irrelevant",
