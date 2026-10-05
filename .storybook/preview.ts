@@ -3,6 +3,7 @@ import { SELECT_STORY, UPDATE_GLOBALS } from 'storybook/internal/core-events';
 import { addons } from 'storybook/preview-api';
 import '../src/tokens/tokens.css';
 import '../src/styles/base.css';
+import { brandTheme } from './brand';
 import './docs.css';
 import { bindLightbox } from '../src/scripts/lightbox';
 import { bindMenuToggle } from '../src/scripts/menu-toggle';
@@ -89,8 +90,8 @@ const preview: Preview = {
     ],
     parameters: {
         layout: 'padded',
-        docs: { source: { language: 'html', transform: (code: string) => formatSource(code) } },
-        options: { storySort: { order: ['Site', 'Templates', 'Organisms', 'Molecules', 'Atoms', 'Layout'] } },
+        docs: { theme: brandTheme('light'), source: { language: 'html', transform: (code: string) => formatSource(code) } },
+        options: { storySort: { order: ['Introduction', 'Site', 'Templates', 'Organisms', 'Molecules', 'Atoms', 'Layout'] } },
     },
 };
 

@@ -1,7 +1,7 @@
-# Kumano Kodo design system
+# Kumano Kodo for TYPO3
 
-Components and tokens for the Kumano Kodo sitepackage. **Figma is the design source**; this repository turns it into a
-Storybook of plain HTML components.
+A theme for TYPO3 and its design system: components and tokens for the Kumano Kodo sitepackage. **Figma is the design
+source**; this repository turns it into a Storybook of plain HTML components.
 
 - Figma: https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm (pages Foundations, Components, Pages)
 - Storybook: https://hahnmg.github.io/kumano-kodo/ (deployed from `develop`)

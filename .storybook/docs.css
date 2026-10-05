@@ -7,3 +7,10 @@
 .docs-story .site-header {
     position: relative;
 }
+
+.sbdocs h1,
+.sbdocs h2,
+.sbdocs h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+}
