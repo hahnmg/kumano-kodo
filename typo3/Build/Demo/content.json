@@ -3171,37 +3171,36 @@
                                 ]
                             }
                         ],
-                        "202": [
+                        "202": []
+                    }
+                },
+                {
+                    "type": "kumano_list",
+                    "fields": {
+                        "tx_kumanokodo_variant": "links"
+                    },
+                    "items": {
+                        "tx_kumanokodo_entries": [
                             {
-                                "type": "kumano_list",
-                                "fields": {
-                                    "tx_kumanokodo_variant": "links-stacked"
+                                "title": {
+                                    "en": "Days and places",
+                                    "de": "Tage und Orte",
+                                    "ja": "日程と見どころ"
                                 },
-                                "items": {
-                                    "tx_kumanokodo_entries": [
-                                        {
-                                            "title": {
-                                                "en": "Day 2 · 21 April: Takahara → Chikatsuyu",
-                                                "de": "Tag 2 · 21. April: Takahara → Chikatsuyu",
-                                                "ja": "2日目 · 4月21日: 高原 → 近露"
-                                            },
-                                            "link": "page:day-2",
-                                            "direction": "forward"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Days and places",
-                                                "de": "Tage und Orte",
-                                                "ja": "日程と見どころ"
-                                            },
-                                            "link": "page:days",
-                                            "direction": "back"
-                                        }
-                                    ],
-                                    "tx_kumanokodo_links": []
-                                }
+                                "link": "page:days",
+                                "direction": "back"
+                            },
+                            {
+                                "title": {
+                                    "en": "Day 2 · 21 April: Takahara → Chikatsuyu",
+                                    "de": "Tag 2 · 21. April: Takahara → Chikatsuyu",
+                                    "ja": "2日目 · 4月21日: 高原 → 近露"
+                                },
+                                "link": "page:day-2",
+                                "direction": "forward"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     }
                 }
             ],
@@ -3252,37 +3251,36 @@
                                 ]
                             }
                         ],
-                        "202": [
+                        "202": []
+                    }
+                },
+                {
+                    "type": "kumano_list",
+                    "fields": {
+                        "tx_kumanokodo_variant": "links"
+                    },
+                    "items": {
+                        "tx_kumanokodo_entries": [
                             {
-                                "type": "kumano_list",
-                                "fields": {
-                                    "tx_kumanokodo_variant": "links-stacked"
+                                "title": {
+                                    "en": "Days and places",
+                                    "de": "Tage und Orte",
+                                    "ja": "日程と見どころ"
                                 },
-                                "items": {
-                                    "tx_kumanokodo_entries": [
-                                        {
-                                            "title": {
-                                                "en": "Day 3 · 22 April: Chikatsuyu → Hongu → Yunomine",
-                                                "de": "Tag 3 · 22. April: Chikatsuyu → Hongu → Yunomine",
-                                                "ja": "3日目 · 4月22日: 近露 → 本宮 → 湯の峰"
-                                            },
-                                            "link": "page:day-3",
-                                            "direction": "forward"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Days and places",
-                                                "de": "Tage und Orte",
-                                                "ja": "日程と見どころ"
-                                            },
-                                            "link": "page:days",
-                                            "direction": "back"
-                                        }
-                                    ],
-                                    "tx_kumanokodo_links": []
-                                }
+                                "link": "page:days",
+                                "direction": "back"
+                            },
+                            {
+                                "title": {
+                                    "en": "Day 3 · 22 April: Chikatsuyu → Hongu → Yunomine",
+                                    "de": "Tag 3 · 22. April: Chikatsuyu → Hongu → Yunomine",
+                                    "ja": "3日目 · 4月22日: 近露 → 本宮 → 湯の峰"
+                                },
+                                "link": "page:day-3",
+                                "direction": "forward"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     }
                 }
             ],
@@ -3333,37 +3331,36 @@
                                 ]
                             }
                         ],
-                        "202": [
+                        "202": []
+                    }
+                },
+                {
+                    "type": "kumano_list",
+                    "fields": {
+                        "tx_kumanokodo_variant": "links"
+                    },
+                    "items": {
+                        "tx_kumanokodo_entries": [
                             {
-                                "type": "kumano_list",
-                                "fields": {
-                                    "tx_kumanokodo_variant": "links-stacked"
+                                "title": {
+                                    "en": "Days and places",
+                                    "de": "Tage und Orte",
+                                    "ja": "日程と見どころ"
                                 },
-                                "items": {
-                                    "tx_kumanokodo_entries": [
-                                        {
-                                            "title": {
-                                                "en": "Day 4 · 23 April: Yunomine → Nachi",
-                                                "de": "Tag 4 · 23. April: Yunomine → Nachi",
-                                                "ja": "4日目 · 4月23日: 湯の峰 → 那智"
-                                            },
-                                            "link": "page:day-4",
-                                            "direction": "forward"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Days and places",
-                                                "de": "Tage und Orte",
-                                                "ja": "日程と見どころ"
-                                            },
-                                            "link": "page:days",
-                                            "direction": "back"
-                                        }
-                                    ],
-                                    "tx_kumanokodo_links": []
-                                }
+                                "link": "page:days",
+                                "direction": "back"
+                            },
+                            {
+                                "title": {
+                                    "en": "Day 4 · 23 April: Yunomine → Nachi",
+                                    "de": "Tag 4 · 23. April: Yunomine → Nachi",
+                                    "ja": "4日目 · 4月23日: 湯の峰 → 那智"
+                                },
+                                "link": "page:day-4",
+                                "direction": "forward"
                             }
-                        ]
+                        ],
+                        "tx_kumanokodo_links": []
                     }
                 }
             ],
@@ -4764,10 +4761,18 @@
                 {
                     "type": "kumano_columns",
                     "fields": {
-                        "tx_kumanokodo_layout": "text-media"
+                        "tx_kumanokodo_layout": "content-sidebar"
                     },
                     "children": {
                         "201": [
+                            {
+                                "type": "form_formframework",
+                                "fields": {
+                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:kumano_kodo_demo/Resources/Private/Forms/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
+                                }
+                            }
+                        ],
+                        "202": [
                             {
                                 "type": "text",
                                 "fields": {
@@ -4776,14 +4781,6 @@
                                         "de": "<p>Antwort meist innerhalb einer Woche</p>",
                                         "ja": "<p>通常一週間以内に返信します</p>"
                                     }
-                                }
-                            }
-                        ],
-                        "202": [
-                            {
-                                "type": "form_formframework",
-                                "fields": {
-                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:kumano_kodo_demo/Resources/Private/Forms/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
                                 }
                             }
                         ]

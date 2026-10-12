@@ -87,13 +87,13 @@ const pages = [
         content: [
             el(
                 'kumano_columns',
-                { tx_kumanokodo_layout: 'text-media' },
+                { tx_kumanokodo_layout: 'content-sidebar' },
                 {
                     children: {
-                        201: [
+                        201: [el('form_formframework', { pi_flexform: formFlexform })],
+                        202: [
                             text(t('Write to us using the form.', 'Schreiben Sie uns über das Formular.', 'フォームからご連絡ください。')),
                         ],
-                        202: [el('form_formframework', { pi_flexform: formFlexform })],
                     },
                 },
             ),

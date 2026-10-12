@@ -56,7 +56,7 @@ const chrome = (c: Content, active: Section, main: string): string =>
         search: { action: paths.search, label: c.ui.search, submit: c.ui.search, placeholder: c.ui.searchPlaceholder },
     }) +
     `<main>${main}</main>` +
-    siteFooter(c.guide.footer);
+    siteFooter({ ...c.guide.footer, backToTop: c.ui.backToTop });
 
 const crumbs = (c: Content, trail: [string, string][], current: string) => [
     { label: c.site.home, href: paths.home },
@@ -260,12 +260,15 @@ export const placePage = (slug: PlaceSlug, c: Content = content()): string => {
                         ],
                         'column',
                     ),
-                    stack([
-                        link({ label: `${kumano.days[p.day - 1].date}: ${kumano.days[p.day - 1].route}`, href: paths.day(p.day) }),
-                        link({ label: site.days.title, href: paths.days, direction: 'back' }),
-                    ]),
+                    '',
                     'content-sidebar',
                 ),
+            }) +
+            section({
+                content: cluster([
+                    link({ label: site.days.title, href: paths.days, direction: 'back' }),
+                    link({ label: `${kumano.days[p.day - 1].date}: ${kumano.days[p.day - 1].route}`, href: paths.day(p.day) }),
+                ]),
             }),
     );
 };
@@ -448,7 +451,6 @@ export const contactPage = (c: Content = content()): string => {
         header(c, contact.title, []) +
             section({
                 content: split(
-                    richText({ html: `<p>${esc(contact.links[1].label)}</p>` }),
                     form({
                         action: paths.contact,
                         fields: [
@@ -468,7 +470,8 @@ export const contactPage = (c: Content = content()): string => {
                         note: ui.requiredNote,
                         submit: ui.send,
                     }),
-                    'text-media',
+                    richText({ html: `<p>${esc(contact.links[1].label)}</p>` }),
+                    'content-sidebar',
                 ),
             }),
     );

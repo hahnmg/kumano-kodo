@@ -148,10 +148,18 @@
                 {
                     "type": "kumano_columns",
                     "fields": {
-                        "tx_kumanokodo_layout": "text-media"
+                        "tx_kumanokodo_layout": "content-sidebar"
                     },
                     "children": {
                         "201": [
+                            {
+                                "type": "form_formframework",
+                                "fields": {
+                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:kumano_kodo/Resources/Private/Forms/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
+                                }
+                            }
+                        ],
+                        "202": [
                             {
                                 "type": "text",
                                 "fields": {
@@ -160,14 +168,6 @@
                                         "de": "<p>Schreiben Sie uns über das Formular.</p>",
                                         "ja": "<p>フォームからご連絡ください。</p>"
                                     }
-                                }
-                            }
-                        ],
-                        "202": [
-                            {
-                                "type": "form_formframework",
-                                "fields": {
-                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:kumano_kodo/Resources/Private/Forms/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
                                 }
                             }
                         ]

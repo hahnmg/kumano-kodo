@@ -349,21 +349,15 @@ const placeContent = (slug) => {
     const p = (x) => x.site.places[slug];
     const day = c.en.site.places[slug].day;
     return [
-        columns(
-            'content-sidebar',
-            {},
-            [text(paragraphs((x) => p(x).text)), images('gallery', [...c.en.site.places[slug].photos])],
-            [
-                listEl('links-stacked', {}, [
-                    {
-                        title: t((x) => `${x.kumano.days[day - 1].date}: ${x.kumano.days[day - 1].route}`),
-                        link: `page:day-${day}`,
-                        direction: 'forward',
-                    },
-                    { title: t((x) => x.site.days.title), link: 'page:days', direction: 'back' },
-                ]),
-            ],
-        ),
+        columns('content-sidebar', {}, [text(paragraphs((x) => p(x).text)), images('gallery', [...c.en.site.places[slug].photos])], []),
+        listEl('links', {}, [
+            { title: t((x) => x.site.days.title), link: 'page:days', direction: 'back' },
+            {
+                title: t((x) => `${x.kumano.days[day - 1].date}: ${x.kumano.days[day - 1].route}`),
+                link: `page:day-${day}`,
+                direction: 'forward',
+            },
+        ]),
     ];
 };
 
@@ -785,14 +779,14 @@ const pages = [
             navHide: true,
             content: [
                 columns(
-                    'text-media',
+                    'content-sidebar',
                     {},
-                    [text(t((x) => `<p>${esc(contact(x).links[1].label)}</p>`))],
                     [
                         el('form_formframework', {
                             pi_flexform: formFlexform('EXT:kumano_kodo_demo/Resources/Private/Forms/contact.form.yaml'),
                         }),
                     ],
+                    [text(t((x) => `<p>${esc(contact(x).links[1].label)}</p>`))],
                 ),
             ],
         },

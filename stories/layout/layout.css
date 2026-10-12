@@ -121,7 +121,8 @@
     flex: 0 1 320px;
 }
 
-.cluster > :last-child:not(:first-child) {
+.cluster > :last-child:not(:first-child),
+.cluster > .link-forward:only-child {
     flex: 0 0 auto;
     margin-left: auto;
 }
@@ -159,7 +160,8 @@
     }
 
     .cluster > *,
-    .cluster > :last-child:not(:first-child) {
+    .cluster > :last-child:not(:first-child),
+    .cluster > .link-forward:only-child {
         flex: 1 1 100%;
         margin-left: 0;
     }
