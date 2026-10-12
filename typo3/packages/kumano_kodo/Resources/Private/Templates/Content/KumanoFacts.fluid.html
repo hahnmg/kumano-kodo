@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:render partial="Kumano/Css" arguments="{names: 'icon-fact,stat,fact-list,section-heading'}"/>
@@ -35,7 +35,7 @@
             <f:variable name="body">
                 <div class="grid grid-{data.tx_kumanokodo_columns}">
                     <f:for each="{record.tx_kumanokodo_facts}" as="fact">
-                        <div class="icon-fact"><span class="icon-circle"><f:render partial="Kumano/Icon" arguments="{name: fact.icon, size: 24}"/></span><div class="icon-fact-text"><p class="icon-fact-label type-label">{fact.label}</p><p class="icon-fact-value type-button">{fact.value}</p><f:if condition="{fact.note}"><p class="icon-fact-note type-caption">{fact.note}</p></f:if></div></div>
+                        <div class="icon-fact"><span class="icon-circle"><kk:icon name="{fact.icon}" size="24"/></span><div class="icon-fact-text"><p class="icon-fact-label type-label">{fact.label}</p><p class="icon-fact-value type-button">{fact.value}</p><f:if condition="{fact.note}"><p class="icon-fact-note type-caption">{fact.note}</p></f:if></div></div>
                     </f:for>
                 </div>
             </f:variable>

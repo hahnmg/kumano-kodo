@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:render partial="Kumano/Css" arguments="{names: 'page-intro,hero,stat'}"/>
@@ -26,14 +26,14 @@
                 <p class="type-lead">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p>
                 <f:for each="{record.tx_kumanokodo_links}" as="link" iteration="li">
                     <f:if condition="{li.isFirst}">
-                        <div><f:render partial="Kumano/Button" arguments="{label: link.title, href: '{f:uri.typolink(parameter: link.link)}', variant: 'primary'}"/></div>
+                        <div><kk:button label="{link.title}" href="{f:uri.typolink(parameter: link.link)}" variant="primary"/></div>
                     </f:if>
                 </f:for>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:case>
         <f:defaultCase>
-            <section class="hero"><f:for each="{record.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'hero-image', sizes: '100vw', eager: 1}"/></f:if></f:for><div class="hero-shade"></div><div class="hero-content"><p class="hero-eyebrow type-label">{record.subheader}</p><h1 class="hero-title type-hero">{record.header}</h1><div class="hero-teaser"><p class="type-lead">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p><div class="hero-actions"><f:for each="{record.tx_kumanokodo_links}" as="action" iteration="i"><f:render partial="Kumano/Button" arguments="{label: action.title, href: '{f:uri.typolink(parameter: action.link)}', variant: '{f:if(condition: i.isFirst, then: \'light\', else: \'outline\')}'}"/></f:for></div></div><div class="hero-stats"><f:for each="{record.tx_kumanokodo_facts}" as="stat"><div class="stat stat-on-image"><p class="stat-label type-label">{stat.label}</p><p class="stat-value type-h3-regular">{stat.value}</p></div></f:for></div></div></section>
+            <section class="hero"><f:for each="{record.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'hero-image', sizes: '100vw', eager: 1}"/></f:if></f:for><div class="hero-shade"></div><div class="hero-content"><p class="hero-eyebrow type-label">{record.subheader}</p><h1 class="hero-title type-hero">{record.header}</h1><div class="hero-teaser"><p class="type-lead">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p><div class="hero-actions"><f:for each="{record.tx_kumanokodo_links}" as="action" iteration="i"><kk:button label="{action.title}" href="{f:uri.typolink(parameter: action.link)}" variant="{f:if(condition: i.isFirst, then: 'light', else: 'outline')}"/></f:for></div></div><div class="hero-stats"><f:for each="{record.tx_kumanokodo_facts}" as="stat"><div class="stat stat-on-image"><p class="stat-label type-label">{stat.label}</p><p class="stat-value type-h3-regular">{stat.value}</p></div></f:for></div></div></section>
         </f:defaultCase>
     </f:switch>
 </f:section>

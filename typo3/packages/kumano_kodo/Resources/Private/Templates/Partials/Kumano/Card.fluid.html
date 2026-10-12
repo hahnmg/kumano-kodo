@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:variable name="readMore">{f:translate(key: 'readMore', domain: 'kumano_kodo.messages')}</f:variable>
 <f:switch expression="{data.tx_kumanokodo_variant}">
     <f:case value="place">
@@ -12,10 +12,10 @@
         <article class="cta-card cta-card-{f:if(condition: '{card.emphasis} == featured', then: 'featured', else: 'default')}">
             <h3 class="cta-card-title type-h4">{card.title}</h3>
             <p class="cta-card-text type-small">{card.text}</p>
-            <div class="cta-card-link"><f:render partial="Kumano/Link" arguments="{label: label, href: '{f:uri.typolink(parameter: card.link)}'}"/></div>
+            <div class="cta-card-link"><kk:link label="{label}" href="{f:uri.typolink(parameter: card.link)}"/></div>
         </article>
     </f:case>
-    <f:case value="tile"><a class="link-tile" href="{f:uri.typolink(parameter: card.link)}"><span class="icon-circle"><f:render partial="Kumano/Icon" arguments="{name: card.icon, size: 24}"/></span><span class="link-tile-title type-h4">{card.title}</span><f:render partial="Kumano/Icon" arguments="{name: 'arrow-right', size: 24}"/></a></f:case>
+    <f:case value="tile"><a class="link-tile" href="{f:uri.typolink(parameter: card.link)}"><span class="icon-circle"><kk:icon name="{card.icon}" size="24"/></span><span class="link-tile-title type-h4">{card.title}</span><kk:icon name="arrow-right" size="24"/></a></f:case>
     <f:case value="stage">
         <article class="portrait-card"><f:for each="{card.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'portrait-card-image', sizes: '(width <= 600px) 80vw, 420px'}"/></f:if></f:for><div class="portrait-card-meta"><p class="portrait-card-label type-label">{card.label}</p><p class="portrait-card-stats type-caption">{card.meta}</p></div><h3 class="portrait-card-title type-h4"><f:if condition="{card.link}"><f:then><a href="{f:uri.typolink(parameter: card.link)}">{card.title}</a></f:then><f:else>{card.title}</f:else></f:if></h3><p class="portrait-card-text type-small">{card.text}</p></article>
     </f:case>

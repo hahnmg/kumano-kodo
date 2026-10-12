@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:variable name="variant">default</f:variable>
 <f:if condition="{aside}">
     <f:variable name="variant">with-aside</f:variable>
@@ -24,7 +24,7 @@
         <p class="section-heading-aside type-small">{aside}</p>
     </f:if>
     <f:if condition="{variant} == 'with-controls'">
-        <div class="section-heading-controls"><f:render partial="Kumano/IconButton" arguments="{direction: 'previous', label: '{f:translate(key: \'previous\', domain: \'kumano_kodo.messages\')}'}"/><f:render partial="Kumano/IconButton" arguments="{direction: 'next', label: '{f:translate(key: \'next\', domain: \'kumano_kodo.messages\')}'}"/></div>
+        <div class="section-heading-controls"><kk:iconButton direction="previous" label="{f:translate(key: 'previous', domain: 'kumano_kodo.messages')}"/><kk:iconButton direction="next" label="{f:translate(key: 'next', domain: 'kumano_kodo.messages')}"/></div>
     </f:if>
 </header>
 </html>

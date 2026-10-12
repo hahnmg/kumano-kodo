@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:render partial="Kumano/Css" arguments="{names: 'timeline-item,download-list,sub-nav,media-list,section-heading'}"/>
@@ -42,7 +42,7 @@
                     <f:variable name="body">
                         <ul class="download-list">
                             <f:for each="{record.media}" as="file">
-                                <li><a class="download-list-row" href="{file.publicUrl}" download><f:render partial="Kumano/Icon" arguments="{name: 'file', size: 24}"/><span class="download-list-text"><span class="type-button">{f:if(condition: file.title, then: file.title, else: file.name)}</span><span class="download-list-meta type-caption">{file.extension -> f:format.case(mode: 'upper')} · {file.size -> f:format.bytes(units: 'B,KB,MB,GB')}</span></span><f:render partial="Kumano/Icon" arguments="{name: 'download', size: 24}"/></a></li>
+                                <li><a class="download-list-row" href="{file.publicUrl}" download><kk:icon name="file" size="24"/><span class="download-list-text"><span class="type-button">{f:if(condition: file.title, then: file.title, else: file.name)}</span><span class="download-list-meta type-caption">{file.extension -> f:format.case(mode: 'upper')} · {file.size -> f:format.bytes(units: 'B,KB,MB,GB')}</span></span><kk:icon name="download" size="24"/></a></li>
                             </f:for>
                         </ul>
                     </f:variable>
@@ -50,13 +50,13 @@
                 </f:case>
                 <f:case value="links">
                     <f:variable name="body">
-                        <div class="cluster"><f:for each="{record.tx_kumanokodo_entries}" as="entry"><f:render partial="Kumano/Link" arguments="{label: entry.title, href: '{f:uri.typolink(parameter: entry.link)}', direction: entry.direction}"/></f:for></div>
+                        <div class="cluster"><f:for each="{record.tx_kumanokodo_entries}" as="entry"><kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/></f:for></div>
                     </f:variable>
                     <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
                 </f:case>
                 <f:case value="links-stacked">
                     <f:variable name="body">
-                        <div class="stack" style="--stack-gap: var(--space-40)"><f:for each="{record.tx_kumanokodo_entries}" as="entry"><f:render partial="Kumano/Link" arguments="{label: entry.title, href: '{f:uri.typolink(parameter: entry.link)}', direction: entry.direction}"/></f:for></div>
+                        <div class="stack" style="--stack-gap: var(--space-40)"><f:for each="{record.tx_kumanokodo_entries}" as="entry"><kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/></f:for></div>
                     </f:variable>
                     <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
                 </f:case>

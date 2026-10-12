@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <footer class="site-footer">
     <f:if condition="{settings.kumanoKodo.brand.footerWordmark}"><p class="site-footer-wordmark type-wordmark" aria-hidden="true">{theme.name}</p></f:if>
     <div class="site-footer-columns"><f:if condition="{content.footer}"><f:render.contentArea contentArea="{content.footer}"/></f:if></div>
@@ -6,6 +6,6 @@
         <div class="site-footer-notice"><f:render.contentArea contentArea="{content.footerNotice}"/></div>
     </f:if>
     <div class="site-footer-legal type-caption"><f:if condition="{content.footerLegal}"><f:render.contentArea contentArea="{content.footerLegal}"/></f:if></div>
-    <button class="back-to-top" type="button" aria-label="{f:translate(key: 'backToTop', domain: 'kumano_kodo.messages')}"><f:render partial="Kumano/Icon" arguments="{name: 'arrow-right', size: 20}"/></button>
+    <button class="back-to-top" type="button" aria-label="{f:translate(key: 'backToTop', domain: 'kumano_kodo.messages')}"><kk:icon name="arrow-right" size="20"/></button>
 </footer>
 </html>

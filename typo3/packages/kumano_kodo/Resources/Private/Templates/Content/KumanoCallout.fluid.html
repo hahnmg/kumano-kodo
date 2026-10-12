@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:render partial="Kumano/Css" arguments="{names: 'highlight,quote,info-box'}"/>
@@ -32,7 +32,7 @@
         </f:case>
         <f:case value="notice">
             <f:variable name="body">
-                <div class="notice" role="note"><f:render partial="Kumano/Icon" arguments="{name: 'alert', size: 24}"/><p class="notice-body"><strong class="notice-title type-label">{record.header}</strong> <span class="type-small">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</span></p></div>
+                <div class="notice" role="note"><kk:icon name="alert" size="24"/><p class="notice-body"><strong class="notice-title type-label">{record.header}</strong> <span class="type-small">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</span></p></div>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:case>

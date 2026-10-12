@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:comment>Mirrors teaserCard() in stories/molecules/teaser-card.markup.ts; level is 2, 3 (default) or none.</f:comment>
 <article class="teaser-card">
     <div class="teaser-card-media"><f:if condition="{image}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'teaser-card-image', sizes: '(width <= 600px) 100vw, (width <= 900px) 50vw, 320px'}"/></f:if></div>
@@ -18,7 +18,7 @@
             <p class="teaser-card-subtitle type-small">{subtitle}</p>
         </f:if>
         <f:if condition="{meta} || {badge}">
-            <div class="teaser-card-meta"><f:if condition="{meta}"><p class="type-caption">{meta}</p></f:if><f:if condition="{badge}"><f:render partial="Kumano/Badge" arguments="{label: badge}"/></f:if></div>
+            <div class="teaser-card-meta"><f:if condition="{meta}"><p class="type-caption">{meta}</p></f:if><f:if condition="{badge}"><kk:badge label="{badge}"/></f:if></div>
         </f:if>
     </div>
 </article>

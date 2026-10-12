@@ -12,6 +12,7 @@ const pkg = join(root, 'typo3/packages/kumano_kodo');
 const css = join(pkg, 'Resources/Public/Css');
 const js = join(pkg, 'Resources/Public/JavaScript');
 const partials = join(pkg, 'Resources/Private/Templates/Partials/Kumano');
+const components = join(pkg, 'Resources/Private/Components');
 
 // Every page carries the frame, so its parts and all atoms ship in one file; the rest loads with its element.
 const frame = [
@@ -80,6 +81,17 @@ const buildPartials = async () => {
         const fluid = (body) =>
             // No whitespace around the body: every newline would become a text node in the rendered markup.
             `<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">${body.replaceAll('\n', '')}</html>`;
+        // Public atoms become Fluid components; their arguments are declared so extensions get a checked API.
+        const argument = (name, type, description, fallback) =>
+            `<f:argument name="${name}" type="${type}"${fallback === undefined ? '' : ` optional="{true}"${fallback === null ? '' : ` default="${fallback}"`}`} description="${description}"/>`;
+        // No newline after </html> either: Fluid renders it as a space beside the component.
+        const component = async (name, comment, args, body) => {
+            await mkdir(join(components, name), { recursive: true });
+            await writeFile(
+                join(components, name, `${name}.fluid.html`),
+                fluid(`<f:comment>${comment}</f:comment>${args.join('')}${body}`),
+            );
+        };
         const sized = (svg) => svg.replaceAll('"9999"', '"{size}"').replaceAll('__LABEL__', '{label}');
         const cases = iconNames
             .map(
@@ -89,7 +101,16 @@ const buildPartials = async () => {
             )
             .join('\n');
         await mkdir(partials, { recursive: true });
-        await writeFile(join(partials, 'Icon.fluid.html'), fluid(`<f:switch expression="{name}">\n${cases}\n</f:switch>`));
+        await component(
+            'Icon',
+            'An icon of the theme set, drawn to the TYPO3 icon grid.',
+            [
+                argument('name', 'string', `One of: ${iconNames.join(', ')}.`),
+                argument('size', 'string|int', 'Width and height in pixels.', '24'),
+                argument('label', 'string', 'Accessible name; without it the icon is decorative.', null),
+            ],
+            `<f:switch expression="{name}">${cases.replaceAll('\n', '')}</f:switch>`,
+        );
         await writeFile(
             join(partials, 'Logo.fluid.html'),
             fluid(logo({ href: '__HREF__', label: '__LABEL__' }).replace('__HREF__', '{href}').replace('__LABEL__', '{label}')),
@@ -102,27 +123,62 @@ const buildPartials = async () => {
         const { chip } = await atom('chip');
         const { badge } = await atom('badge');
         const fill = (html) => html.replaceAll('__LABEL__', '{label}').replaceAll('__HREF__', '{href}');
+        // The frame's own parts stay partials; they are not part of the public API.
         const atoms = {
             MenuButton: fill(menuButton({ label: '__LABEL__' })),
             SchemeToggle: fill(schemeToggle({ label: '__LABEL__' })),
-            Badge: fill(badge({ label: '__LABEL__' })),
-            Link:
-                `<f:if condition="{direction} == 'back'"><f:then>${fill(link({ label: '__LABEL__', href: '__HREF__', direction: 'back' }))}</f:then>` +
-                `<f:else>${fill(link({ label: '__LABEL__', href: '__HREF__' }))}</f:else></f:if>`,
-            Chip:
-                `<f:if condition="{active}"><f:then>${fill(chip({ label: '__LABEL__', href: '__HREF__', active: true }))}</f:then>` +
-                `<f:else>${fill(chip({ label: '__LABEL__', href: '__HREF__' }))}</f:else></f:if>`,
         };
+        await component(
+            'Badge',
+            'A short label on a filled ground, such as a status.',
+            [argument('label', 'string', 'The text.')],
+            fill(badge({ label: '__LABEL__' })),
+        );
+        await component(
+            'Link',
+            'A text link in the accent with an arrow: forward by default, back with direction back.',
+            [
+                argument('label', 'string', 'The text.'),
+                argument('href', 'string', 'The target.'),
+                argument('direction', 'string', 'forward or back.', 'forward'),
+            ],
+            `<f:if condition="{direction} == 'back'"><f:then>${fill(link({ label: '__LABEL__', href: '__HREF__', direction: 'back' }))}</f:then>` +
+                `<f:else>${fill(link({ label: '__LABEL__', href: '__HREF__' }))}</f:else></f:if>`,
+        );
+        await component(
+            'Chip',
+            'A filter link; the active one marks the current page.',
+            [
+                argument('label', 'string', 'The text.'),
+                argument('href', 'string', 'The target.'),
+                argument('active', 'bool|int', 'Marks the current filter.', '{false}'),
+            ],
+            `<f:if condition="{active}"><f:then>${fill(chip({ label: '__LABEL__', href: '__HREF__', active: true }))}</f:then>` +
+                `<f:else>${fill(chip({ label: '__LABEL__', href: '__HREF__' }))}</f:else></f:if>`,
+        );
         const { button } = await atom('button');
         const { iconButton } = await atom('icon-button');
         const { newsletterForm } = await server.ssrLoadModule('/stories/molecules/newsletter-form.markup.ts');
         const variant = (html) => fill(html).replaceAll('button-primary', 'button-{variant}');
-        atoms.Button =
+        await component(
+            'Button',
+            'The call to action of a section: a link with href, a button without.',
+            [
+                argument('label', 'string', 'The text.'),
+                argument('href', 'string', 'Turns the button into a link.', null),
+                argument('variant', 'string', 'primary or secondary on the page ground, light or outline on photos.', 'primary'),
+                argument('type', 'string', 'button or submit, without href.', 'button'),
+            ],
             `<f:if condition="{href}"><f:then>${variant(button({ label: '__LABEL__', href: '__HREF__' }))}</f:then>` +
-            `<f:else>${variant(button({ label: '__LABEL__' })).replace('type="button"', 'type="{type}"')}</f:else></f:if>`;
-        atoms.IconButton =
+                `<f:else>${variant(button({ label: '__LABEL__' })).replace('type="button"', 'type="{type}"')}</f:else></f:if>`,
+        );
+        await component(
+            'IconButton',
+            'A round arrow button, as the slider uses.',
+            [argument('direction', 'string', 'previous or next.'), argument('label', 'string', 'Accessible name.')],
             `<f:if condition="{direction} == 'previous'"><f:then>${fill(iconButton({ direction: 'previous', label: '__LABEL__' }))}</f:then>` +
-            `<f:else>${fill(iconButton({ direction: 'next', label: '__LABEL__' }))}</f:else></f:if>`;
+                `<f:else>${fill(iconButton({ direction: 'next', label: '__LABEL__' }))}</f:else></f:if>`,
+        );
         atoms.NewsletterForm = newsletterForm({
             action: '__HREF__',
             emailLabel: '__EMAIL__',

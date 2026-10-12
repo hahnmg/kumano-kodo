@@ -1,10 +1,10 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:render partial="Kumano/Css" arguments="{names: 'section-heading'}"/>
     <f:if condition="{data.colPos} == 30">
         <f:then>
-            <p class="topbar-hours"><f:render partial="Kumano/Icon" arguments="{name: 'clock', size: 16}"/><strong class="type-button">{record.header}</strong> <span class="type-small">{record.subheader}</span></p>
+            <p class="topbar-hours"><kk:icon name="clock" size="16"/><strong class="type-button">{record.header}</strong> <span class="type-small">{record.subheader}</span></p>
         </f:then>
         <f:else>
             <f:variable name="body">

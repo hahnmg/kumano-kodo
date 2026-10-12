@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <div class="page-header">
     <div class="page-header-inner">
         <nav class="breadcrumb" aria-label="{f:translate(key: 'breadcrumb', domain: 'kumano_kodo.messages')}">
@@ -17,7 +17,7 @@
         </nav>
         <h1 class="page-header-title type-h2">{page.pageRecord.title}</h1>
         <f:if condition="{currentPage.0.record.tx_kumanokodo_chips}">
-            <nav class="page-header-chips" aria-label="{f:translate(key: 'categories', domain: 'kumano_kodo.messages')}"><f:for each="{currentPage.0.record.tx_kumanokodo_chips}" as="chip"><f:render partial="Kumano/Chip" arguments="{label: chip.title, href: '{f:uri.typolink(parameter: chip.link)}', active: chip.active}"/></f:for></nav>
+            <nav class="page-header-chips" aria-label="{f:translate(key: 'categories', domain: 'kumano_kodo.messages')}"><f:for each="{currentPage.0.record.tx_kumanokodo_chips}" as="chip"><kk:chip label="{chip.title}" href="{f:uri.typolink(parameter: chip.link)}" active="{chip.active}"/></f:for></nav>
         </f:if>
     </div>
 </div>
