@@ -3,6 +3,7 @@ import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
+import { format, resolveConfig } from 'prettier';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const set = join(root, 'typo3/packages/kumano_kodo/Configuration/Sets/Site');
@@ -74,7 +75,9 @@ for (const name of (await readdir(componentsDir)).sort()) {
         slots: [...new Set([...source.matchAll(/<f:slot(?:\s+name="([^"]+)")?\s*\/>/g)].map(([, slot]) => slot ?? 'default'))],
     });
 }
-await writeFile(join(root, 'docs/fluid-components.json'), `${JSON.stringify(components, null, 4)}\n`);
+// Formatted as the lint expects it, so a build leaves the file unchanged when the components are.
+const jsonPath = join(root, 'docs/fluid-components.json');
+await writeFile(jsonPath, await format(JSON.stringify(components, null, 4), { ...(await resolveConfig(jsonPath)), filepath: jsonPath }));
 
 const rst = (s = '') => s.replaceAll('*', '\\*');
 const code = (s) => '``' + s + '``';
