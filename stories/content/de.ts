@@ -310,7 +310,12 @@ const build = (p: Photos): LocaleContent => {
                 { label: 'Tag 4 · 13 km', x: 705 },
                 { label: 'Tag 4 · 14,5 km', x: 880 },
             ],
-            legend: { walked: 'Gegangener Abschnitt', end: 'Ende der Wanderung', boundary: 'Tagesgrenze mit Übernachtung' },
+            legend: {
+                walked: 'Gegangener Abschnitt',
+                end: 'Ende der Wanderung',
+                boundary: 'Tagesgrenze mit Übernachtung',
+                day: 'Dieser Tag',
+            },
         },
         places,
         faq: [
@@ -538,6 +543,7 @@ const build = (p: Photos): LocaleContent => {
             previous: 'Vorheriger Tag',
             next: 'Nächster Tag',
             photos: 'Der Tag in Fotos',
+            mapTitle: 'Der Tag auf der Strecke',
             factsTitle: 'Der Tag in Zahlen',
             facts: { date: 'Datum', route: 'Route', distance: 'Zu Fuß', photos: 'Fotos' },
             distances: ['3,7 km', '9,8 km', 'rund 25 km', 'rund 27,5 km'],

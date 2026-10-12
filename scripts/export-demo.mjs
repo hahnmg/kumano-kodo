@@ -13,7 +13,8 @@ const out = join(root, 'typo3/Build/Demo/content.json');
 
 const server = await createServer({ configFile: false, logLevel: 'silent', server: { middlewareMode: true } });
 const { content, locales } = await server.ssrLoadModule('/stories/templates/content.ts');
-const { routes, paths, placeSlugs, practicalSlugs, legalSlugs } = await server.ssrLoadModule('/stories/content/paths.ts');
+const { routes, paths, placeSlugs, practicalSlugs, legalSlugs, routeLinks, dayStations } =
+    await server.ssrLoadModule('/stories/content/paths.ts');
 const { dayPhotos } = await server.ssrLoadModule('/stories/templates/journal-photos.ts');
 const { demoLogin } = await server.ssrLoadModule('/stories/content/demo-login.ts');
 await server.close();
@@ -124,7 +125,8 @@ const dayTeasers = (x) =>
         href: paths.day(i + 1),
     }));
 
-const routeMap = (fields) =>
+// A day page passes its day: that day's stations are highlighted.
+const routeMap = (fields, day) =>
     el(
         'kumano_route_map',
         {
@@ -136,18 +138,20 @@ const routeMap = (fields) =>
             items: {
                 tx_kumanokodo_stations: list(
                     (x) => x.kumano.route.stations,
-                    (s) => ({
+                    (s, i) => ({
                         name: t((x) => s(x).name),
                         x: s(c.en).x,
                         y: s(c.en).y,
                         label_y: s(c.en).labelY,
                         anchor: s(c.en).anchor ?? 'middle',
                         boundary: s(c.en).boundary ? 1 : 0,
+                        highlight: day && i >= dayStations[day - 1][0] && i <= dayStations[day - 1][1] ? 1 : 0,
+                        link: link(routeLinks.stations[i]),
                     }),
                 ),
                 tx_kumanokodo_day_marks: list(
                     (x) => x.kumano.route.days,
-                    (d) => ({ label: t((x) => d(x).label), x: d(c.en).x }),
+                    (d, i) => ({ label: t((x) => d(x).label), x: d(c.en).x, link: link(routeLinks.days[i]) }),
                 ),
             },
         },
@@ -330,6 +334,7 @@ const dayContent = (n) => {
                 ),
             ],
         ),
+        routeMap({ header: t((x) => sd(x).mapTitle) }, n),
         images('gallery', names.slice(1), { ...sunk, header: t((x) => sd(x).photos) }),
         listEl('links', {}, [
             ...(n > 1 ? [{ title: t((x) => sd(x).previous), link: `page:day-${n - 1}`, direction: 'back' }] : []),

@@ -215,6 +215,9 @@
             <trans-unit id="mapBoundary">
                 <source>Day boundary with overnight stay</source>
             </trans-unit>
+            <trans-unit id="mapDay">
+                <source>This day</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

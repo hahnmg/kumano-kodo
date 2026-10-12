@@ -894,7 +894,7 @@
     },
     {
         "name": "routeMap",
-        "description": "A schematic map of a route: a path, stations with names, day marks below and a legend.",
+        "description": "A schematic map of a route: a path, stations with names, day marks below and a legend. Stations and day marks with\n    a link lead there; the stretch between the first and last highlighted station is drawn in accent.",
         "arguments": [
             {
                 "name": "label",
@@ -912,13 +912,13 @@
                 "name": "stations",
                 "type": "iterable",
                 "required": true,
-                "description": "Entries with x, y, name, label_y, anchor and boundary; the last is the end."
+                "description": "Entries with x, y, name, label_y, anchor, boundary, highlight and link; the last is the end."
             },
             {
                 "name": "days",
                 "type": "iterable",
                 "required": false,
-                "description": "Entries with x and label, set below the map."
+                "description": "Entries with x, label and link, set below the map."
             }
         ],
         "slots": []

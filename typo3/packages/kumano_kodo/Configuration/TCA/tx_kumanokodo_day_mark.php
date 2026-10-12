@@ -52,6 +52,15 @@ return [
                 ],
             ],
         ],
+
+        'link' => [
+            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_day_mark.link',
+            'config' => [
+                'type' => 'link',
+                'size' => 40,
+                'allowedTypes' => ['page', 'url', 'record'],
+            ],
+        ],
     ],
     'types' => [
         '0' => [
@@ -60,7 +69,7 @@ return [
     ],
     'palettes' => [
         'mark' => [
-            'showitem' => 'label, x',
+            'showitem' => 'label, x, --linebreak--, link',
         ],
     ],
 ];

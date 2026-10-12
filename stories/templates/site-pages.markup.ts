@@ -11,7 +11,7 @@ import { link } from '../atoms/link.markup';
 import { select } from '../atoms/select.markup';
 import { textField } from '../atoms/text-field.markup';
 import { textarea } from '../atoms/textarea.markup';
-import { paths, practicalSlugs, type LegalSlug, type PlaceSlug, type PracticalSlug } from '../content/paths';
+import { linkRoute, paths, practicalSlugs, type LegalSlug, type PlaceSlug, type PracticalSlug } from '../content/paths';
 import { cluster, grid, section, split, stack } from '../layout/layout.markup';
 import { ctaCard } from '../molecules/cta-card.markup';
 import { downloadList } from '../molecules/download-list.markup';
@@ -112,7 +112,10 @@ export const routePage = (c: Content = content()): string => {
             section({
                 id: 'map',
                 content: stack(
-                    [sectionHeading({ title: home.map.title, variant: 'with-aside', aside: home.map.aside }), routeMap(kumano.route)],
+                    [
+                        sectionHeading({ title: home.map.title, variant: 'with-aside', aside: home.map.aside }),
+                        routeMap(linkRoute(kumano.route)),
+                    ],
                     'heading',
                 ),
             }) +
@@ -239,6 +242,7 @@ export const dayPage = (n: number, c: Content = content()): string => {
                     'content-sidebar',
                 ),
             }) +
+            section({ content: stack([sectionHeading({ title: s.mapTitle }), routeMap(linkRoute(kumano.route, n))], 'heading') }) +
             section({
                 tone: 'sunk',
                 content: stack(

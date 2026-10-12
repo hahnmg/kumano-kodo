@@ -1023,7 +1023,9 @@
                                 "y": 200,
                                 "label_y": 228,
                                 "anchor": "start",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-1"
                             },
                             {
                                 "name": {
@@ -1035,7 +1037,9 @@
                                 "y": 100,
                                 "label_y": 82,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-1"
                             },
                             {
                                 "name": {
@@ -1047,7 +1051,9 @@
                                 "y": 140,
                                 "label_y": 122,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:place-chikatsuyu"
                             },
                             {
                                 "name": {
@@ -1059,7 +1065,9 @@
                                 "y": 70,
                                 "label_y": 52,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-3"
                             },
                             {
                                 "name": {
@@ -1071,7 +1079,9 @@
                                 "y": 120,
                                 "label_y": 102,
                                 "anchor": "middle",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-4"
                             },
                             {
                                 "name": {
@@ -1083,7 +1093,9 @@
                                 "y": 86,
                                 "label_y": 68,
                                 "anchor": "end",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:place-nachi"
                             }
                         ],
                         "tx_kumanokodo_day_marks": [
@@ -1093,7 +1105,8 @@
                                     "de": "Tag 1 · 3,7 km",
                                     "ja": "1日目 · 3.7 km"
                                 },
-                                "x": 145
+                                "x": 145,
+                                "link": "page:day-1"
                             },
                             {
                                 "label": {
@@ -1101,7 +1114,8 @@
                                     "de": "Tag 2 · 9,8 km",
                                     "ja": "2日目 · 9.8 km"
                                 },
-                                "x": 340
+                                "x": 340,
+                                "link": "page:day-2"
                             },
                             {
                                 "label": {
@@ -1109,7 +1123,8 @@
                                     "de": "Tag 3 · 25 km",
                                     "ja": "3日目 · 25 km"
                                 },
-                                "x": 520
+                                "x": 520,
+                                "link": "page:day-3"
                             },
                             {
                                 "label": {
@@ -1117,7 +1132,8 @@
                                     "de": "Tag 4 · 13 km",
                                     "ja": "4日目 · 13 km"
                                 },
-                                "x": 705
+                                "x": 705,
+                                "link": "page:day-4"
                             },
                             {
                                 "label": {
@@ -1125,7 +1141,8 @@
                                     "de": "Tag 4 · 14,5 km",
                                     "ja": "4日目 · 14.5 km"
                                 },
-                                "x": 880
+                                "x": 880,
+                                "link": "page:day-4"
                             }
                         ]
                     }
@@ -1554,7 +1571,9 @@
                                 "y": 200,
                                 "label_y": 228,
                                 "anchor": "start",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-1"
                             },
                             {
                                 "name": {
@@ -1566,7 +1585,9 @@
                                 "y": 100,
                                 "label_y": 82,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-1"
                             },
                             {
                                 "name": {
@@ -1578,7 +1599,9 @@
                                 "y": 140,
                                 "label_y": 122,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:place-chikatsuyu"
                             },
                             {
                                 "name": {
@@ -1590,7 +1613,9 @@
                                 "y": 70,
                                 "label_y": 52,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-3"
                             },
                             {
                                 "name": {
@@ -1602,7 +1627,9 @@
                                 "y": 120,
                                 "label_y": 102,
                                 "anchor": "middle",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-4"
                             },
                             {
                                 "name": {
@@ -1614,7 +1641,9 @@
                                 "y": 86,
                                 "label_y": 68,
                                 "anchor": "end",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:place-nachi"
                             }
                         ],
                         "tx_kumanokodo_day_marks": [
@@ -1624,7 +1653,8 @@
                                     "de": "Tag 1 · 3,7 km",
                                     "ja": "1日目 · 3.7 km"
                                 },
-                                "x": 145
+                                "x": 145,
+                                "link": "page:day-1"
                             },
                             {
                                 "label": {
@@ -1632,7 +1662,8 @@
                                     "de": "Tag 2 · 9,8 km",
                                     "ja": "2日目 · 9.8 km"
                                 },
-                                "x": 340
+                                "x": 340,
+                                "link": "page:day-2"
                             },
                             {
                                 "label": {
@@ -1640,7 +1671,8 @@
                                     "de": "Tag 3 · 25 km",
                                     "ja": "3日目 · 25 km"
                                 },
-                                "x": 520
+                                "x": 520,
+                                "link": "page:day-3"
                             },
                             {
                                 "label": {
@@ -1648,7 +1680,8 @@
                                     "de": "Tag 4 · 13 km",
                                     "ja": "4日目 · 13 km"
                                 },
-                                "x": 705
+                                "x": 705,
+                                "link": "page:day-4"
                             },
                             {
                                 "label": {
@@ -1656,7 +1689,8 @@
                                     "de": "Tag 4 · 14,5 km",
                                     "ja": "4日目 · 14.5 km"
                                 },
-                                "x": 880
+                                "x": 880,
+                                "link": "page:day-4"
                             }
                         ]
                     }
@@ -2408,6 +2442,157 @@
                     }
                 },
                 {
+                    "type": "kumano_route_map",
+                    "fields": {
+                        "header": {
+                            "en": "The day on the route",
+                            "de": "Der Tag auf der Strecke",
+                            "ja": "ルート上のこの日"
+                        },
+                        "bodytext": {
+                            "en": "<p>Schematic map of the route with six stations</p>",
+                            "de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
+                            "ja": "<p>六つの地点を結ぶルートの概略図</p>"
+                        },
+                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+                    },
+                    "items": {
+                        "tx_kumanokodo_stations": [
+                            {
+                                "name": {
+                                    "en": "Takijiri",
+                                    "de": "Takijiri",
+                                    "ja": "滝尻"
+                                },
+                                "x": 40,
+                                "y": 200,
+                                "label_y": 228,
+                                "anchor": "start",
+                                "boundary": 0,
+                                "highlight": 1,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "name": {
+                                    "en": "Takahara",
+                                    "de": "Takahara",
+                                    "ja": "高原"
+                                },
+                                "x": 250,
+                                "y": 100,
+                                "label_y": 82,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 1,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "name": {
+                                    "en": "Chikatsuyu",
+                                    "de": "Chikatsuyu",
+                                    "ja": "近露"
+                                },
+                                "x": 430,
+                                "y": 140,
+                                "label_y": 122,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:place-chikatsuyu"
+                            },
+                            {
+                                "name": {
+                                    "en": "Hongu",
+                                    "de": "Hongu",
+                                    "ja": "本宮"
+                                },
+                                "x": 610,
+                                "y": 70,
+                                "label_y": 52,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-3"
+                            },
+                            {
+                                "name": {
+                                    "en": "Koguchi",
+                                    "de": "Koguchi",
+                                    "ja": "小口"
+                                },
+                                "x": 800,
+                                "y": 120,
+                                "label_y": 102,
+                                "anchor": "middle",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-4"
+                            },
+                            {
+                                "name": {
+                                    "en": "Nachi",
+                                    "de": "Nachi",
+                                    "ja": "那智"
+                                },
+                                "x": 960,
+                                "y": 86,
+                                "label_y": 68,
+                                "anchor": "end",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:place-nachi"
+                            }
+                        ],
+                        "tx_kumanokodo_day_marks": [
+                            {
+                                "label": {
+                                    "en": "Day 1 · 3.7 km",
+                                    "de": "Tag 1 · 3,7 km",
+                                    "ja": "1日目 · 3.7 km"
+                                },
+                                "x": 145,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 2 · 9.8 km",
+                                    "de": "Tag 2 · 9,8 km",
+                                    "ja": "2日目 · 9.8 km"
+                                },
+                                "x": 340,
+                                "link": "page:day-2"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 3 · 25 km",
+                                    "de": "Tag 3 · 25 km",
+                                    "ja": "3日目 · 25 km"
+                                },
+                                "x": 520,
+                                "link": "page:day-3"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · 13 km",
+                                    "de": "Tag 4 · 13 km",
+                                    "ja": "4日目 · 13 km"
+                                },
+                                "x": 705,
+                                "link": "page:day-4"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · 14.5 km",
+                                    "de": "Tag 4 · 14,5 km",
+                                    "ja": "4日目 · 14.5 km"
+                                },
+                                "x": 880,
+                                "link": "page:day-4"
+                            }
+                        ]
+                    }
+                },
+                {
                     "type": "kumano_images",
                     "fields": {
                         "tx_kumanokodo_variant": "gallery",
@@ -2614,6 +2799,157 @@
                                         }
                                     ]
                                 }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "kumano_route_map",
+                    "fields": {
+                        "header": {
+                            "en": "The day on the route",
+                            "de": "Der Tag auf der Strecke",
+                            "ja": "ルート上のこの日"
+                        },
+                        "bodytext": {
+                            "en": "<p>Schematic map of the route with six stations</p>",
+                            "de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
+                            "ja": "<p>六つの地点を結ぶルートの概略図</p>"
+                        },
+                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+                    },
+                    "items": {
+                        "tx_kumanokodo_stations": [
+                            {
+                                "name": {
+                                    "en": "Takijiri",
+                                    "de": "Takijiri",
+                                    "ja": "滝尻"
+                                },
+                                "x": 40,
+                                "y": 200,
+                                "label_y": 228,
+                                "anchor": "start",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "name": {
+                                    "en": "Takahara",
+                                    "de": "Takahara",
+                                    "ja": "高原"
+                                },
+                                "x": 250,
+                                "y": 100,
+                                "label_y": 82,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 1,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "name": {
+                                    "en": "Chikatsuyu",
+                                    "de": "Chikatsuyu",
+                                    "ja": "近露"
+                                },
+                                "x": 430,
+                                "y": 140,
+                                "label_y": 122,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 1,
+                                "link": "page:place-chikatsuyu"
+                            },
+                            {
+                                "name": {
+                                    "en": "Hongu",
+                                    "de": "Hongu",
+                                    "ja": "本宮"
+                                },
+                                "x": 610,
+                                "y": 70,
+                                "label_y": 52,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-3"
+                            },
+                            {
+                                "name": {
+                                    "en": "Koguchi",
+                                    "de": "Koguchi",
+                                    "ja": "小口"
+                                },
+                                "x": 800,
+                                "y": 120,
+                                "label_y": 102,
+                                "anchor": "middle",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-4"
+                            },
+                            {
+                                "name": {
+                                    "en": "Nachi",
+                                    "de": "Nachi",
+                                    "ja": "那智"
+                                },
+                                "x": 960,
+                                "y": 86,
+                                "label_y": 68,
+                                "anchor": "end",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:place-nachi"
+                            }
+                        ],
+                        "tx_kumanokodo_day_marks": [
+                            {
+                                "label": {
+                                    "en": "Day 1 · 3.7 km",
+                                    "de": "Tag 1 · 3,7 km",
+                                    "ja": "1日目 · 3.7 km"
+                                },
+                                "x": 145,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 2 · 9.8 km",
+                                    "de": "Tag 2 · 9,8 km",
+                                    "ja": "2日目 · 9.8 km"
+                                },
+                                "x": 340,
+                                "link": "page:day-2"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 3 · 25 km",
+                                    "de": "Tag 3 · 25 km",
+                                    "ja": "3日目 · 25 km"
+                                },
+                                "x": 520,
+                                "link": "page:day-3"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · 13 km",
+                                    "de": "Tag 4 · 13 km",
+                                    "ja": "4日目 · 13 km"
+                                },
+                                "x": 705,
+                                "link": "page:day-4"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · 14.5 km",
+                                    "de": "Tag 4 · 14,5 km",
+                                    "ja": "4日目 · 14.5 km"
+                                },
+                                "x": 880,
+                                "link": "page:day-4"
                             }
                         ]
                     }
@@ -2845,6 +3181,157 @@
                     }
                 },
                 {
+                    "type": "kumano_route_map",
+                    "fields": {
+                        "header": {
+                            "en": "The day on the route",
+                            "de": "Der Tag auf der Strecke",
+                            "ja": "ルート上のこの日"
+                        },
+                        "bodytext": {
+                            "en": "<p>Schematic map of the route with six stations</p>",
+                            "de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
+                            "ja": "<p>六つの地点を結ぶルートの概略図</p>"
+                        },
+                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+                    },
+                    "items": {
+                        "tx_kumanokodo_stations": [
+                            {
+                                "name": {
+                                    "en": "Takijiri",
+                                    "de": "Takijiri",
+                                    "ja": "滝尻"
+                                },
+                                "x": 40,
+                                "y": 200,
+                                "label_y": 228,
+                                "anchor": "start",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "name": {
+                                    "en": "Takahara",
+                                    "de": "Takahara",
+                                    "ja": "高原"
+                                },
+                                "x": 250,
+                                "y": 100,
+                                "label_y": 82,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "name": {
+                                    "en": "Chikatsuyu",
+                                    "de": "Chikatsuyu",
+                                    "ja": "近露"
+                                },
+                                "x": 430,
+                                "y": 140,
+                                "label_y": 122,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 1,
+                                "link": "page:place-chikatsuyu"
+                            },
+                            {
+                                "name": {
+                                    "en": "Hongu",
+                                    "de": "Hongu",
+                                    "ja": "本宮"
+                                },
+                                "x": 610,
+                                "y": 70,
+                                "label_y": 52,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 1,
+                                "link": "page:day-3"
+                            },
+                            {
+                                "name": {
+                                    "en": "Koguchi",
+                                    "de": "Koguchi",
+                                    "ja": "小口"
+                                },
+                                "x": 800,
+                                "y": 120,
+                                "label_y": 102,
+                                "anchor": "middle",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-4"
+                            },
+                            {
+                                "name": {
+                                    "en": "Nachi",
+                                    "de": "Nachi",
+                                    "ja": "那智"
+                                },
+                                "x": 960,
+                                "y": 86,
+                                "label_y": 68,
+                                "anchor": "end",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:place-nachi"
+                            }
+                        ],
+                        "tx_kumanokodo_day_marks": [
+                            {
+                                "label": {
+                                    "en": "Day 1 · 3.7 km",
+                                    "de": "Tag 1 · 3,7 km",
+                                    "ja": "1日目 · 3.7 km"
+                                },
+                                "x": 145,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 2 · 9.8 km",
+                                    "de": "Tag 2 · 9,8 km",
+                                    "ja": "2日目 · 9.8 km"
+                                },
+                                "x": 340,
+                                "link": "page:day-2"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 3 · 25 km",
+                                    "de": "Tag 3 · 25 km",
+                                    "ja": "3日目 · 25 km"
+                                },
+                                "x": 520,
+                                "link": "page:day-3"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · 13 km",
+                                    "de": "Tag 4 · 13 km",
+                                    "ja": "4日目 · 13 km"
+                                },
+                                "x": 705,
+                                "link": "page:day-4"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · 14.5 km",
+                                    "de": "Tag 4 · 14,5 km",
+                                    "ja": "4日目 · 14.5 km"
+                                },
+                                "x": 880,
+                                "link": "page:day-4"
+                            }
+                        ]
+                    }
+                },
+                {
                     "type": "kumano_images",
                     "fields": {
                         "tx_kumanokodo_variant": "gallery",
@@ -3070,6 +3557,157 @@
                                         }
                                     ]
                                 }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "kumano_route_map",
+                    "fields": {
+                        "header": {
+                            "en": "The day on the route",
+                            "de": "Der Tag auf der Strecke",
+                            "ja": "ルート上のこの日"
+                        },
+                        "bodytext": {
+                            "en": "<p>Schematic map of the route with six stations</p>",
+                            "de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
+                            "ja": "<p>六つの地点を結ぶルートの概略図</p>"
+                        },
+                        "tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+                    },
+                    "items": {
+                        "tx_kumanokodo_stations": [
+                            {
+                                "name": {
+                                    "en": "Takijiri",
+                                    "de": "Takijiri",
+                                    "ja": "滝尻"
+                                },
+                                "x": 40,
+                                "y": 200,
+                                "label_y": 228,
+                                "anchor": "start",
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "name": {
+                                    "en": "Takahara",
+                                    "de": "Takahara",
+                                    "ja": "高原"
+                                },
+                                "x": 250,
+                                "y": 100,
+                                "label_y": 82,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "name": {
+                                    "en": "Chikatsuyu",
+                                    "de": "Chikatsuyu",
+                                    "ja": "近露"
+                                },
+                                "x": 430,
+                                "y": 140,
+                                "label_y": 122,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:place-chikatsuyu"
+                            },
+                            {
+                                "name": {
+                                    "en": "Hongu",
+                                    "de": "Hongu",
+                                    "ja": "本宮"
+                                },
+                                "x": 610,
+                                "y": 70,
+                                "label_y": 52,
+                                "anchor": "middle",
+                                "boundary": 1,
+                                "highlight": 1,
+                                "link": "page:day-3"
+                            },
+                            {
+                                "name": {
+                                    "en": "Koguchi",
+                                    "de": "Koguchi",
+                                    "ja": "小口"
+                                },
+                                "x": 800,
+                                "y": 120,
+                                "label_y": 102,
+                                "anchor": "middle",
+                                "boundary": 0,
+                                "highlight": 1,
+                                "link": "page:day-4"
+                            },
+                            {
+                                "name": {
+                                    "en": "Nachi",
+                                    "de": "Nachi",
+                                    "ja": "那智"
+                                },
+                                "x": 960,
+                                "y": 86,
+                                "label_y": 68,
+                                "anchor": "end",
+                                "boundary": 0,
+                                "highlight": 1,
+                                "link": "page:place-nachi"
+                            }
+                        ],
+                        "tx_kumanokodo_day_marks": [
+                            {
+                                "label": {
+                                    "en": "Day 1 · 3.7 km",
+                                    "de": "Tag 1 · 3,7 km",
+                                    "ja": "1日目 · 3.7 km"
+                                },
+                                "x": 145,
+                                "link": "page:day-1"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 2 · 9.8 km",
+                                    "de": "Tag 2 · 9,8 km",
+                                    "ja": "2日目 · 9.8 km"
+                                },
+                                "x": 340,
+                                "link": "page:day-2"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 3 · 25 km",
+                                    "de": "Tag 3 · 25 km",
+                                    "ja": "3日目 · 25 km"
+                                },
+                                "x": 520,
+                                "link": "page:day-3"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · 13 km",
+                                    "de": "Tag 4 · 13 km",
+                                    "ja": "4日目 · 13 km"
+                                },
+                                "x": 705,
+                                "link": "page:day-4"
+                            },
+                            {
+                                "label": {
+                                    "en": "Day 4 · 14.5 km",
+                                    "de": "Tag 4 · 14,5 km",
+                                    "ja": "4日目 · 14.5 km"
+                                },
+                                "x": 880,
+                                "link": "page:day-4"
                             }
                         ]
                     }
@@ -5468,7 +6106,9 @@
                                 "y": 200,
                                 "label_y": 228,
                                 "anchor": "start",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-1"
                             },
                             {
                                 "name": {
@@ -5480,7 +6120,9 @@
                                 "y": 100,
                                 "label_y": 82,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-1"
                             },
                             {
                                 "name": {
@@ -5492,7 +6134,9 @@
                                 "y": 140,
                                 "label_y": 122,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:place-chikatsuyu"
                             },
                             {
                                 "name": {
@@ -5504,7 +6148,9 @@
                                 "y": 70,
                                 "label_y": 52,
                                 "anchor": "middle",
-                                "boundary": 1
+                                "boundary": 1,
+                                "highlight": 0,
+                                "link": "page:day-3"
                             },
                             {
                                 "name": {
@@ -5516,7 +6162,9 @@
                                 "y": 120,
                                 "label_y": 102,
                                 "anchor": "middle",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:day-4"
                             },
                             {
                                 "name": {
@@ -5528,7 +6176,9 @@
                                 "y": 86,
                                 "label_y": 68,
                                 "anchor": "end",
-                                "boundary": 0
+                                "boundary": 0,
+                                "highlight": 0,
+                                "link": "page:place-nachi"
                             }
                         ],
                         "tx_kumanokodo_day_marks": [
@@ -5538,7 +6188,8 @@
                                     "de": "Tag 1 · 3,7 km",
                                     "ja": "1日目 · 3.7 km"
                                 },
-                                "x": 145
+                                "x": 145,
+                                "link": "page:day-1"
                             },
                             {
                                 "label": {
@@ -5546,7 +6197,8 @@
                                     "de": "Tag 2 · 9,8 km",
                                     "ja": "2日目 · 9.8 km"
                                 },
-                                "x": 340
+                                "x": 340,
+                                "link": "page:day-2"
                             },
                             {
                                 "label": {
@@ -5554,7 +6206,8 @@
                                     "de": "Tag 3 · 25 km",
                                     "ja": "3日目 · 25 km"
                                 },
-                                "x": 520
+                                "x": 520,
+                                "link": "page:day-3"
                             },
                             {
                                 "label": {
@@ -5562,7 +6215,8 @@
                                     "de": "Tag 4 · 13 km",
                                     "ja": "4日目 · 13 km"
                                 },
-                                "x": 705
+                                "x": 705,
+                                "link": "page:day-4"
                             },
                             {
                                 "label": {
@@ -5570,7 +6224,8 @@
                                     "de": "Tag 4 · 14,5 km",
                                     "ja": "4日目 · 14.5 km"
                                 },
-                                "x": 880
+                                "x": 880,
+                                "link": "page:day-4"
                             }
                         ]
                     }

@@ -306,7 +306,7 @@ const build = (p: Photos): LocaleContent => {
                 { label: '4日目 · 13 km', x: 705 },
                 { label: '4日目 · 14.5 km', x: 880 },
             ],
-            legend: { walked: '歩いた区間', end: 'ウォークの終点', boundary: '宿泊を伴う日の区切り' },
+            legend: { walked: '歩いた区間', end: 'ウォークの終点', boundary: '宿泊を伴う日の区切り', day: 'この日' },
         },
         places,
         faq: [
@@ -522,6 +522,7 @@ const build = (p: Photos): LocaleContent => {
             previous: '前の日',
             next: '次の日',
             photos: 'この日の写真',
+            mapTitle: 'ルート上のこの日',
             factsTitle: 'この日の数字',
             facts: { date: '日付', route: 'ルート', distance: '徒歩', photos: '撮影' },
             distances: ['3.7 km', '9.8 km', '約25 km', '約27.5 km'],

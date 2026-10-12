@@ -235,6 +235,7 @@ const labelsOf = (c) => ({
     mapWalked: c.kumano.route.legend.walked,
     mapEnd: c.kumano.route.legend.end,
     mapBoundary: c.kumano.route.legend.boundary,
+    mapDay: c.kumano.route.legend.day,
 });
 // EXT:form looks its messages up by validator code; the theme answers the ones its forms raise with its own words.
 const formLabelsOf = (c) => ({

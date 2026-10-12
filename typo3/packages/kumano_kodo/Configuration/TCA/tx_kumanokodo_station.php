@@ -101,10 +101,26 @@ return [
                 'renderType' => 'checkboxToggle',
             ],
         ],
+        'highlight' => [
+            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.highlight',
+            'description' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.highlight.description',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+            ],
+        ],
+        'link' => [
+            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.link',
+            'config' => [
+                'type' => 'link',
+                'size' => 40,
+                'allowedTypes' => ['page', 'url', 'record'],
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'name, --palette--;;position, --palette--;;label, boundary',
+            'showitem' => 'name, link, --palette--;;position, --palette--;;label, boundary, highlight',
         ],
     ],
     'palettes' => [

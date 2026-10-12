@@ -1,4 +1,5 @@
 import { skipLink } from '../atoms/skip-link.markup';
+import { linkRoute } from '../content/paths';
 import { section, split, stack } from '../layout/layout.markup';
 import { faqList } from '../molecules/faq-item.markup';
 import { highlight } from '../molecules/highlight.markup';
@@ -53,7 +54,7 @@ export const kumanoJournal = ({ kumano, photos, home, ui, languages }: Content =
         bleedImage(photos['evening-rooftops'], `${d.coda} ${photos['evening-rooftops'].caption ?? ''}`, labels) +
         section({
             content: stack(
-                [sectionHeading({ title: d.mapTitle, variant: 'with-aside', aside: home.map.aside }), routeMap(kumano.route)],
+                [sectionHeading({ title: d.mapTitle, variant: 'with-aside', aside: home.map.aside }), routeMap(linkRoute(kumano.route))],
                 'heading',
             ),
         }) +

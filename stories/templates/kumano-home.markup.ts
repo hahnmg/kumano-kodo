@@ -1,4 +1,5 @@
 import { skipLink } from '../atoms/skip-link.markup';
+import { linkRoute } from '../content/paths';
 import { section, split, stack } from '../layout/layout.markup';
 import { timeline } from '../molecules/timeline-item.markup';
 import { faqList } from '../molecules/faq-item.markup';
@@ -66,7 +67,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
             }),
         }) +
         section({
-            content: stack([sectionHeading({ ...home.map, variant: 'with-aside' }), routeMap(kumano.route)], 'heading'),
+            content: stack([sectionHeading({ ...home.map, variant: 'with-aside' }), routeMap(linkRoute(kumano.route))], 'heading'),
         }) +
         section({
             space: 'flush-top',

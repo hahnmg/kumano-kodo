@@ -286,6 +286,10 @@
                 <source>Day boundary with overnight stay</source>
                 <target>宿泊を伴う日の区切り</target>
             </trans-unit>
+            <trans-unit id="mapDay">
+                <source>This day</source>
+                <target>この日</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

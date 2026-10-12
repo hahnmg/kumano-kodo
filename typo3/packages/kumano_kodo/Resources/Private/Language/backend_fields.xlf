@@ -509,6 +509,9 @@
             <trans-unit id="tx_kumanokodo_day_mark.label">
                 <source>Label</source>
             </trans-unit>
+            <trans-unit id="tx_kumanokodo_day_mark.link">
+                <source>Links to</source>
+            </trans-unit>
             <trans-unit id="tx_kumanokodo_day_mark.x">
                 <source>Across (0–1000)</source>
             </trans-unit>
@@ -752,8 +755,17 @@
             <trans-unit id="tx_kumanokodo_station.boundary">
                 <source>Marks the end of a day</source>
             </trans-unit>
+            <trans-unit id="tx_kumanokodo_station.highlight">
+                <source>Part of the highlighted stretch</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_station.highlight.description">
+                <source>The stretch from the first to the last station switched on is drawn in accent, the rest of the route steps back. For a day page: switch on the stations of that day.</source>
+            </trans-unit>
             <trans-unit id="tx_kumanokodo_station.label_y">
                 <source>Name at (0–250)</source>
+            </trans-unit>
+            <trans-unit id="tx_kumanokodo_station.link">
+                <source>Links to</source>
             </trans-unit>
             <trans-unit id="tx_kumanokodo_station.name">
                 <source>Name</source>

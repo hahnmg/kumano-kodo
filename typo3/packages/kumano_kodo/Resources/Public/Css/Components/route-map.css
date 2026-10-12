@@ -18,6 +18,18 @@
     stroke-linecap: round;
 }
 
+/* A day page shows its own stretch in accent; the rest of the route steps back to the line colour. */
+.route-map-highlighted .route-map-path {
+    stroke: var(--color-line);
+}
+
+.route-map-path-day {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
 .route-map-boundary {
     stroke: var(--color-line);
     stroke-dasharray: 3 7;
@@ -32,6 +44,48 @@
 .route-map-station-end {
     fill: var(--color-accent);
     stroke: var(--color-paper);
+}
+
+.route-map-station-muted {
+    stroke: var(--color-line);
+}
+
+/* An invisible ring around a linked station: a target of 32 px at full width. */
+.route-map-target {
+    fill: transparent;
+}
+
+.route-map-link .route-map-label,
+.route-map-day-link {
+    transition:
+        fill var(--motion-fast) var(--ease-out),
+        color var(--motion-fast) var(--ease-out);
+}
+
+.route-map-link:hover .route-map-label {
+    fill: var(--color-accent);
+}
+
+.route-map-link:hover .route-map-station {
+    stroke: var(--color-accent);
+}
+
+.route-map-link:focus-visible,
+.route-map-day-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.route-map-day-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--color-line);
+    text-underline-offset: 3px;
+}
+
+.route-map-day-link:hover {
+    color: var(--color-accent);
+    text-decoration-color: currentcolor;
 }
 
 .route-map-label {
@@ -80,6 +134,16 @@
     width: 24px;
     height: 2px;
     background: var(--color-secondary);
+}
+
+.route-map-key-day {
+    width: 24px;
+    height: 3px;
+    background: var(--color-accent);
+}
+
+.route-map-highlighted .route-map-key-completed {
+    background: var(--color-line);
 }
 
 .route-map-key-end {

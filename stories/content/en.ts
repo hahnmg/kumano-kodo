@@ -312,7 +312,7 @@ const build = (p: Photos) => {
                 { label: 'Day 4 · 13 km', x: 705 },
                 { label: 'Day 4 · 14.5 km', x: 880 },
             ],
-            legend: { walked: 'Walked section', end: 'End of the walk', boundary: 'Day boundary with overnight stay' },
+            legend: { walked: 'Walked section', end: 'End of the walk', boundary: 'Day boundary with overnight stay', day: 'This day' },
         },
         places,
         faq: [
@@ -543,6 +543,7 @@ const build = (p: Photos) => {
             previous: 'Previous day',
             next: 'Next day',
             photos: 'The day in photos',
+            mapTitle: 'The day on the route',
             factsTitle: 'The day in figures',
             facts: { date: 'Date', route: 'Route', distance: 'On foot', photos: 'Photos taken' },
             distances: ['3.7 km', '9.8 km', 'about 25 km', 'about 27.5 km'],

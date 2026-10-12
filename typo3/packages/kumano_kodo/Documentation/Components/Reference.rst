@@ -811,7 +811,8 @@ Slots: ``default``.
 kk:routeMap
 ===========
 
-A schematic map of a route: a path, stations with names, day marks below and a legend.
+A schematic map of a route: a path, stations with names, day marks below and a legend. Stations and day marks with
+    a link lead there; the stretch between the first and last highlighted station is drawn in accent.
 
 ..  list-table::
     :header-rows: 1
@@ -827,10 +828,10 @@ A schematic map of a route: a path, stations with names, day marks below and a l
         - SVG path data of the route in a 1000 × 250 box.
     *   - ``stations``
         - iterable, required
-        - Entries with x, y, name, label_y, anchor and boundary; the last is the end.
+        - Entries with x, y, name, label_y, anchor, boundary, highlight and link; the last is the end.
     *   - ``days``
         - iterable
-        - Entries with x and label, set below the map.
+        - Entries with x, label and link, set below the map.
 
 kk:section
 ==========

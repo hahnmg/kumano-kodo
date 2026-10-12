@@ -286,6 +286,10 @@
                 <source>Day boundary with overnight stay</source>
                 <target>Tagesgrenze mit Übernachtung</target>
             </trans-unit>
+            <trans-unit id="mapDay">
+                <source>This day</source>
+                <target>Dieser Tag</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
