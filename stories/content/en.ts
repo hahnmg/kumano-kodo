@@ -27,7 +27,7 @@ const build = (p: Photos) => {
         newsDatePattern: 'd MMMM y',
         newsListSeparator: ', ',
         trailStatus: 'Trail status and contact',
-        categories: 'Categories',
+        inSection: 'In this section',
         breadcrumb: 'Breadcrumb',
         pages: 'Pages',
         previousPage: 'Previous page',

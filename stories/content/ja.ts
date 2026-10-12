@@ -27,7 +27,7 @@ const build = (p: Photos): LocaleContent => {
         newsDatePattern: 'y年M月d日',
         newsListSeparator: '、',
         trailStatus: '道の状況と連絡先',
-        categories: 'カテゴリー',
+        inSection: 'このセクション',
         breadcrumb: 'パンくずリスト',
         pages: 'ページ',
         previousPage: '前のページ',

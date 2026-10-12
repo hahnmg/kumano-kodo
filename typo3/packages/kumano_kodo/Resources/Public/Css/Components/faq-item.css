@@ -1,5 +1,5 @@
 .faq-list {
-    border-top: var(--border-hairline) solid var(--color-ink);
+    border-top: var(--border-rule) solid var(--color-ink);
 }
 
 .faq-item {
@@ -7,7 +7,7 @@
 }
 
 .faq-item:last-child {
-    border-bottom-color: var(--color-ink);
+    border-bottom: var(--border-rule) solid var(--color-ink);
 }
 
 .faq-item-question {

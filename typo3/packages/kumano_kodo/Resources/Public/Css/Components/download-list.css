@@ -1,18 +1,21 @@
 .download-list {
     margin: 0;
     padding: 0;
-    border-top: var(--border-hairline) solid var(--color-line);
+    border-top: var(--border-rule) solid var(--color-ink);
     list-style: none;
 }
 
 .download-list-row {
+    --row-rule: var(--border-hairline);
+    --row-rule-color: var(--color-line);
+
     display: flex;
     gap: var(--space-12);
     align-items: center;
     padding: var(--space-16) 0;
     background:
-        linear-gradient(var(--color-accent), var(--color-accent)) left bottom / 0 var(--border-hairline) no-repeat,
-        linear-gradient(var(--color-line), var(--color-line)) left bottom / 100% var(--border-hairline) no-repeat;
+        linear-gradient(var(--color-accent), var(--color-accent)) left bottom / 0 var(--row-rule) no-repeat,
+        linear-gradient(var(--row-rule-color), var(--row-rule-color)) left bottom / 100% var(--row-rule) no-repeat;
     transition: background-size var(--motion-base) var(--ease-out);
     color: var(--color-ink);
     text-decoration: none;
@@ -29,8 +32,13 @@
 .download-list-row:hover,
 .download-list-row:focus-visible {
     background-size:
-        100% var(--border-hairline),
-        100% var(--border-hairline);
+        100% var(--row-rule),
+        100% var(--row-rule);
+}
+
+.download-list > :last-child .download-list-row {
+    --row-rule: var(--border-rule);
+    --row-rule-color: var(--color-ink);
 }
 
 .download-list-row:hover .type-button {

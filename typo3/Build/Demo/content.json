@@ -2403,54 +2403,6 @@
                                         }
                                     ]
                                 }
-                            },
-                            {
-                                "type": "kumano_list",
-                                "fields": {
-                                    "tx_kumanokodo_variant": "subnav",
-                                    "header": {
-                                        "en": "Days",
-                                        "de": "Tage",
-                                        "ja": "日程"
-                                    }
-                                },
-                                "items": {
-                                    "tx_kumanokodo_entries": [
-                                        {
-                                            "title": {
-                                                "en": "Day 1 · Takijiri → Takahara",
-                                                "de": "Tag 1 · Takijiri → Takahara",
-                                                "ja": "1日目 · 滝尻 → 高原"
-                                            },
-                                            "link": "page:day-1"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 2 · Takahara → Chikatsuyu",
-                                                "de": "Tag 2 · Takahara → Chikatsuyu",
-                                                "ja": "2日目 · 高原 → 近露"
-                                            },
-                                            "link": "page:day-2"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 3 · Chikatsuyu → Hongu → Yunomine",
-                                                "de": "Tag 3 · Chikatsuyu → Hongu → Yunomine",
-                                                "ja": "3日目 · 近露 → 本宮 → 湯の峰"
-                                            },
-                                            "link": "page:day-3"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 4 · Yunomine → Nachi",
-                                                "de": "Tag 4 · Yunomine → Nachi",
-                                                "ja": "4日目 · 湯の峰 → 那智"
-                                            },
-                                            "link": "page:day-4"
-                                        }
-                                    ],
-                                    "tx_kumanokodo_links": []
-                                }
                             }
                         ]
                     }
@@ -2489,6 +2441,41 @@
                         ],
                         "tx_kumanokodo_links": []
                     }
+                }
+            ],
+            "chips": [
+                {
+                    "title": {
+                        "en": "Day 1",
+                        "de": "Tag 1",
+                        "ja": "1日目"
+                    },
+                    "link": "page:day-1",
+                    "active": 1
+                },
+                {
+                    "title": {
+                        "en": "Day 2",
+                        "de": "Tag 2",
+                        "ja": "2日目"
+                    },
+                    "link": "page:day-2"
+                },
+                {
+                    "title": {
+                        "en": "Day 3",
+                        "de": "Tag 3",
+                        "ja": "3日目"
+                    },
+                    "link": "page:day-3"
+                },
+                {
+                    "title": {
+                        "en": "Day 4",
+                        "de": "Tag 4",
+                        "ja": "4日目"
+                    },
+                    "link": "page:day-4"
                 }
             ],
             "description": {
@@ -2627,54 +2614,6 @@
                                         }
                                     ]
                                 }
-                            },
-                            {
-                                "type": "kumano_list",
-                                "fields": {
-                                    "tx_kumanokodo_variant": "subnav",
-                                    "header": {
-                                        "en": "Days",
-                                        "de": "Tage",
-                                        "ja": "日程"
-                                    }
-                                },
-                                "items": {
-                                    "tx_kumanokodo_entries": [
-                                        {
-                                            "title": {
-                                                "en": "Day 1 · Takijiri → Takahara",
-                                                "de": "Tag 1 · Takijiri → Takahara",
-                                                "ja": "1日目 · 滝尻 → 高原"
-                                            },
-                                            "link": "page:day-1"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 2 · Takahara → Chikatsuyu",
-                                                "de": "Tag 2 · Takahara → Chikatsuyu",
-                                                "ja": "2日目 · 高原 → 近露"
-                                            },
-                                            "link": "page:day-2"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 3 · Chikatsuyu → Hongu → Yunomine",
-                                                "de": "Tag 3 · Chikatsuyu → Hongu → Yunomine",
-                                                "ja": "3日目 · 近露 → 本宮 → 湯の峰"
-                                            },
-                                            "link": "page:day-3"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 4 · Yunomine → Nachi",
-                                                "de": "Tag 4 · Yunomine → Nachi",
-                                                "ja": "4日目 · 湯の峰 → 那智"
-                                            },
-                                            "link": "page:day-4"
-                                        }
-                                    ],
-                                    "tx_kumanokodo_links": []
-                                }
                             }
                         ]
                     }
@@ -2728,6 +2667,41 @@
                         ],
                         "tx_kumanokodo_links": []
                     }
+                }
+            ],
+            "chips": [
+                {
+                    "title": {
+                        "en": "Day 1",
+                        "de": "Tag 1",
+                        "ja": "1日目"
+                    },
+                    "link": "page:day-1"
+                },
+                {
+                    "title": {
+                        "en": "Day 2",
+                        "de": "Tag 2",
+                        "ja": "2日目"
+                    },
+                    "link": "page:day-2",
+                    "active": 1
+                },
+                {
+                    "title": {
+                        "en": "Day 3",
+                        "de": "Tag 3",
+                        "ja": "3日目"
+                    },
+                    "link": "page:day-3"
+                },
+                {
+                    "title": {
+                        "en": "Day 4",
+                        "de": "Tag 4",
+                        "ja": "4日目"
+                    },
+                    "link": "page:day-4"
                 }
             ],
             "description": {
@@ -2866,54 +2840,6 @@
                                         }
                                     ]
                                 }
-                            },
-                            {
-                                "type": "kumano_list",
-                                "fields": {
-                                    "tx_kumanokodo_variant": "subnav",
-                                    "header": {
-                                        "en": "Days",
-                                        "de": "Tage",
-                                        "ja": "日程"
-                                    }
-                                },
-                                "items": {
-                                    "tx_kumanokodo_entries": [
-                                        {
-                                            "title": {
-                                                "en": "Day 1 · Takijiri → Takahara",
-                                                "de": "Tag 1 · Takijiri → Takahara",
-                                                "ja": "1日目 · 滝尻 → 高原"
-                                            },
-                                            "link": "page:day-1"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 2 · Takahara → Chikatsuyu",
-                                                "de": "Tag 2 · Takahara → Chikatsuyu",
-                                                "ja": "2日目 · 高原 → 近露"
-                                            },
-                                            "link": "page:day-2"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 3 · Chikatsuyu → Hongu → Yunomine",
-                                                "de": "Tag 3 · Chikatsuyu → Hongu → Yunomine",
-                                                "ja": "3日目 · 近露 → 本宮 → 湯の峰"
-                                            },
-                                            "link": "page:day-3"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 4 · Yunomine → Nachi",
-                                                "de": "Tag 4 · Yunomine → Nachi",
-                                                "ja": "4日目 · 湯の峰 → 那智"
-                                            },
-                                            "link": "page:day-4"
-                                        }
-                                    ],
-                                    "tx_kumanokodo_links": []
-                                }
                             }
                         ]
                     }
@@ -2971,6 +2897,41 @@
                         ],
                         "tx_kumanokodo_links": []
                     }
+                }
+            ],
+            "chips": [
+                {
+                    "title": {
+                        "en": "Day 1",
+                        "de": "Tag 1",
+                        "ja": "1日目"
+                    },
+                    "link": "page:day-1"
+                },
+                {
+                    "title": {
+                        "en": "Day 2",
+                        "de": "Tag 2",
+                        "ja": "2日目"
+                    },
+                    "link": "page:day-2"
+                },
+                {
+                    "title": {
+                        "en": "Day 3",
+                        "de": "Tag 3",
+                        "ja": "3日目"
+                    },
+                    "link": "page:day-3",
+                    "active": 1
+                },
+                {
+                    "title": {
+                        "en": "Day 4",
+                        "de": "Tag 4",
+                        "ja": "4日目"
+                    },
+                    "link": "page:day-4"
                 }
             ],
             "description": {
@@ -3109,54 +3070,6 @@
                                         }
                                     ]
                                 }
-                            },
-                            {
-                                "type": "kumano_list",
-                                "fields": {
-                                    "tx_kumanokodo_variant": "subnav",
-                                    "header": {
-                                        "en": "Days",
-                                        "de": "Tage",
-                                        "ja": "日程"
-                                    }
-                                },
-                                "items": {
-                                    "tx_kumanokodo_entries": [
-                                        {
-                                            "title": {
-                                                "en": "Day 1 · Takijiri → Takahara",
-                                                "de": "Tag 1 · Takijiri → Takahara",
-                                                "ja": "1日目 · 滝尻 → 高原"
-                                            },
-                                            "link": "page:day-1"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 2 · Takahara → Chikatsuyu",
-                                                "de": "Tag 2 · Takahara → Chikatsuyu",
-                                                "ja": "2日目 · 高原 → 近露"
-                                            },
-                                            "link": "page:day-2"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 3 · Chikatsuyu → Hongu → Yunomine",
-                                                "de": "Tag 3 · Chikatsuyu → Hongu → Yunomine",
-                                                "ja": "3日目 · 近露 → 本宮 → 湯の峰"
-                                            },
-                                            "link": "page:day-3"
-                                        },
-                                        {
-                                            "title": {
-                                                "en": "Day 4 · Yunomine → Nachi",
-                                                "de": "Tag 4 · Yunomine → Nachi",
-                                                "ja": "4日目 · 湯の峰 → 那智"
-                                            },
-                                            "link": "page:day-4"
-                                        }
-                                    ],
-                                    "tx_kumanokodo_links": []
-                                }
                             }
                         ]
                     }
@@ -3199,6 +3112,41 @@
                     }
                 }
             ],
+            "chips": [
+                {
+                    "title": {
+                        "en": "Day 1",
+                        "de": "Tag 1",
+                        "ja": "1日目"
+                    },
+                    "link": "page:day-1"
+                },
+                {
+                    "title": {
+                        "en": "Day 2",
+                        "de": "Tag 2",
+                        "ja": "2日目"
+                    },
+                    "link": "page:day-2"
+                },
+                {
+                    "title": {
+                        "en": "Day 3",
+                        "de": "Tag 3",
+                        "ja": "3日目"
+                    },
+                    "link": "page:day-3"
+                },
+                {
+                    "title": {
+                        "en": "Day 4",
+                        "de": "Tag 4",
+                        "ja": "4日目"
+                    },
+                    "link": "page:day-4",
+                    "active": 1
+                }
+            ],
             "description": {
                 "en": "Over the Kogumotori-goe and the Ogumotori-goe to Nachi and the pagoda in front of the falls. In Katsuura a ferry to the ryokan.",
                 "de": "Über den Kogumotori-goe und den Ogumotori-goe nach Nachi zur Pagode vor dem Wasserfall. In Katsuura eine Fähre zum Ryokan.",
@@ -3217,6 +3165,15 @@
                 "ja": "近露"
             },
             "content": [
+                {
+                    "type": "kumano_images",
+                    "fields": {
+                        "tx_kumanokodo_variant": "fullwidth"
+                    },
+                    "image": [
+                        "vending-machines"
+                    ]
+                },
                 {
                     "type": "kumano_columns",
                     "fields": {
@@ -3240,7 +3197,6 @@
                                     "tx_kumanokodo_variant": "gallery"
                                 },
                                 "image": [
-                                    "vending-machines",
                                     "chikatsuyu-gate",
                                     "morning-bus"
                                 ]
@@ -3298,6 +3254,15 @@
             },
             "content": [
                 {
+                    "type": "kumano_images",
+                    "fields": {
+                        "tx_kumanokodo_variant": "fullwidth"
+                    },
+                    "image": [
+                        "yunomine-street"
+                    ]
+                },
+                {
                     "type": "kumano_columns",
                     "fields": {
                         "tx_kumanokodo_layout": "content-sidebar"
@@ -3320,7 +3285,6 @@
                                     "tx_kumanokodo_variant": "gallery"
                                 },
                                 "image": [
-                                    "yunomine-street",
                                     "river-bridge",
                                     "outdoor-bath"
                                 ]
@@ -3378,6 +3342,15 @@
             },
             "content": [
                 {
+                    "type": "kumano_images",
+                    "fields": {
+                        "tx_kumanokodo_variant": "fullwidth"
+                    },
+                    "image": [
+                        "nachi-pagoda"
+                    ]
+                },
+                {
                     "type": "kumano_columns",
                     "fields": {
                         "tx_kumanokodo_layout": "content-sidebar"
@@ -3400,7 +3373,6 @@
                                     "tx_kumanokodo_variant": "gallery"
                                 },
                                 "image": [
-                                    "nachi-pagoda",
                                     "harbour-ferry",
                                     "ryokan-room"
                                 ]

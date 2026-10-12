@@ -5,7 +5,7 @@
 .table {
     width: 100%;
     border-collapse: collapse;
-    border-top: var(--border-hairline) solid var(--color-line);
+    border-top: var(--border-rule) solid var(--color-ink);
 }
 
 .table th,

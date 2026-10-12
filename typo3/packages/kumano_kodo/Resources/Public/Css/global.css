@@ -51,6 +51,7 @@
     --radius-checkbox: 3px;
     --radius-full: 9999px;
     --border-hairline: 1px;
+    --border-rule: 2px;
     --font-display: "Fraunces", "Noto Sans JP", Georgia, serif;
     --display-weight: 600;
     --display-weight-regular: 400;
@@ -119,6 +120,7 @@
     --radius-checkbox: 3px;
     --radius-full: 9999px;
     --border-hairline: 1px;
+    --border-rule: 2px;
     --font-display: "Instrument Sans", "Noto Sans JP", system-ui, sans-serif;
     --display-weight: 600;
     --display-weight-regular: 400;
@@ -187,6 +189,7 @@
     --radius-checkbox: 3px;
     --radius-full: 9999px;
     --border-hairline: 1px;
+    --border-rule: 2px;
     --font-display: "Sora", "Noto Sans JP", system-ui, sans-serif;
     --display-weight: 600;
     --display-weight-regular: 400;
@@ -255,6 +258,7 @@
     --radius-checkbox: 3px;
     --radius-full: 9999px;
     --border-hairline: 1px;
+    --border-rule: 2px;
     --font-display: "Space Grotesk", "Noto Sans JP", system-ui, sans-serif;
     --display-weight: 700;
     --display-weight-regular: 400;
@@ -323,6 +327,7 @@
     --radius-checkbox: 0px;
     --radius-full: 9999px;
     --border-hairline: 1px;
+    --border-rule: 2px;
     --font-display: "Inter", "Noto Sans JP", system-ui, sans-serif;
     --display-weight: 600;
     --display-weight-regular: 400;
@@ -645,8 +650,8 @@
     --type-hero-case: var(--display-case);
     --type-wordmark-family: var(--font-display);
     --type-wordmark-weight: var(--display-weight-regular);
-    --type-wordmark-size: 144px;
-    --type-wordmark-line-height: 132px;
+    --type-wordmark-size: 60px;
+    --type-wordmark-line-height: 64px;
     --type-wordmark-tracking: calc(-0.04em + var(--display-tracking));
     --type-wordmark-case: uppercase;
 }
@@ -661,8 +666,8 @@
     --type-quote-line-height: 46px;
     --type-stat-size: 52px;
     --type-stat-line-height: 52px;
-    --type-wordmark-size: calc((100vw - 2 * var(--gutter)) / 8);
-    --type-wordmark-line-height: 1;
+    --type-wordmark-size: 48px;
+    --type-wordmark-line-height: 52px;
 }
 :root,
 [data-theme] {
@@ -678,6 +683,8 @@
     --type-hero-line-height: 56px;
     --type-h2-size: 36px;
     --type-h2-line-height: 40px;
+    --type-wordmark-size: 36px;
+    --type-wordmark-line-height: 40px;
     --type-h3-size: 28px;
     --type-h3-line-height: 32px;
     --type-h3-regular-size: 26px;
@@ -1976,7 +1983,7 @@ body {
 /* stories/organisms/site-footer.css */
 .site-footer {
     padding: var(--space-96) var(--gutter) var(--space-28);
-    border-top: var(--border-hairline) solid var(--color-ink);
+    border-top: var(--border-rule) solid var(--color-ink);
     background: var(--color-paper);
 }
 
@@ -2216,21 +2223,23 @@ body {
 }
 
 /* stories/molecules/notice.css */
+/* Paper on accent: the contrast gate checks the pair, so the notice reads in every theme and scheme. */
 .notice {
     display: flex;
-    gap: var(--space-8);
+    gap: var(--space-12);
     align-items: center;
-    padding: var(--space-16) 0;
-    border-block: var(--border-hairline) solid var(--color-line);
+    padding: var(--space-16) var(--space-20);
+    background: var(--color-accent);
+    color: var(--color-paper);
+}
+
+.notice .icon {
+    flex-shrink: 0;
+    color: currentcolor;
 }
 
 .notice-body {
     margin: 0;
-    color: var(--color-ink);
-}
-
-.notice-title {
-    color: var(--color-accent);
 }
 
 /* stories/molecules/rich-text.css */

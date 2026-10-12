@@ -1185,7 +1185,7 @@
     },
     {
         "name": "textMedia",
-        "description": "An image beside a heading, the text in the slot and an optional link.",
+        "description": "An image beside a heading, the text in the slot as paragraphs and an optional link.",
         "arguments": [
             {
                 "name": "title",

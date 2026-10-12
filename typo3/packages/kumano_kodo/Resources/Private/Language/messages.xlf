@@ -68,8 +68,8 @@
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
             </trans-unit>
-            <trans-unit id="categories">
-                <source>Categories</source>
+            <trans-unit id="inSection">
+                <source>In this section</source>
             </trans-unit>
             <trans-unit id="breadcrumb">
                 <source>Breadcrumb</source>

@@ -90,9 +90,9 @@
                 <source>Trail status and contact</source>
                 <target>Wegzustand und Kontakt</target>
             </trans-unit>
-            <trans-unit id="categories">
-                <source>Categories</source>
-                <target>Kategorien</target>
+            <trans-unit id="inSection">
+                <source>In this section</source>
+                <target>In diesem Bereich</target>
             </trans-unit>
             <trans-unit id="breadcrumb">
                 <source>Breadcrumb</source>

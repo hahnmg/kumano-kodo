@@ -12,7 +12,7 @@ export const WithChips: StoryObj<PageHeaderProps> = {
         title: c.pages.list.title,
         breadcrumb: [...c.pages.list.crumbs.map((label) => ({ label, href: '#' })), { label: c.pages.list.title }],
         chips: c.pages.list.chips.map((label, i) => ({ label, href: '#', active: i === 0 })),
-        chipsLabel: c.ui.categories,
+        chipsLabel: c.ui.inSection,
         breadcrumbLabel: c.ui.breadcrumb,
     })),
 };

@@ -1,7 +1,7 @@
 .timeline {
     margin: 0;
     padding: 0;
-    border-bottom: var(--border-hairline) solid var(--color-ink);
+    border-bottom: var(--border-rule) solid var(--color-ink);
     list-style: none;
 }
 
@@ -12,6 +12,10 @@
     align-items: baseline;
     padding: var(--space-26) 0;
     border-top: var(--border-hairline) solid var(--color-line);
+}
+
+.timeline-item:first-child {
+    border-top: var(--border-rule) solid var(--color-ink);
 }
 
 .timeline-item p,

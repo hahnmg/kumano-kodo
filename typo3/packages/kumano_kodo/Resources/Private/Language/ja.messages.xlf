@@ -90,9 +90,9 @@
                 <source>Trail status and contact</source>
                 <target>道の状況と連絡先</target>
             </trans-unit>
-            <trans-unit id="categories">
-                <source>Categories</source>
-                <target>カテゴリー</target>
+            <trans-unit id="inSection">
+                <source>In this section</source>
+                <target>このセクション</target>
             </trans-unit>
             <trans-unit id="breadcrumb">
                 <source>Breadcrumb</source>

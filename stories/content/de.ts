@@ -27,7 +27,7 @@ const build = (p: Photos): LocaleContent => {
         newsDatePattern: 'd. MMMM y',
         newsListSeparator: ', ',
         trailStatus: 'Wegzustand und Kontakt',
-        categories: 'Kategorien',
+        inSection: 'In diesem Bereich',
         breadcrumb: 'Brotkrumen',
         pages: 'Seiten',
         previousPage: 'Vorherige Seite',

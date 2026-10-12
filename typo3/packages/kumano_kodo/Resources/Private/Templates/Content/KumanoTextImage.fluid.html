@@ -9,7 +9,9 @@
             imageSide="{f:if(condition: '{data.imageorient} == 25', then: 'right', else: 'left')}"
             linkLabel="{link.title}"
             href="{f:if(condition: link, then: '{f:uri.typolink(parameter: link.link)}')}"
-        >{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</kk:textMedia>
+        >
+            <f:format.html>{record.bodytext}</f:format.html>
+        </kk:textMedia>
     </f:variable>
     <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
 </f:section>

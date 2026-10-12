@@ -72,13 +72,8 @@ const crumbs = (c: Content, trail: [string, string][], current: string) => [
     { label: current },
 ];
 
-const header = (
-    c: Content,
-    title: string,
-    trail: [string, string][],
-    chips?: { label: string; href: string; active?: boolean }[],
-    chipsLabel = c.ui.categories,
-) => pageHeader({ title, breadcrumb: crumbs(c, trail, title), breadcrumbLabel: c.ui.breadcrumb, chips, chipsLabel });
+const header = (c: Content, title: string, trail: [string, string][], chips?: { label: string; href: string; active?: boolean }[]) =>
+    pageHeader({ title, breadcrumb: crumbs(c, trail, title), breadcrumbLabel: c.ui.breadcrumb, chips, chipsLabel: c.ui.inSection });
 
 const teasers = (items: TeaserCardProps[], level: 2 | 3 = 3) => items.map((e) => teaserCard({ ...e, level }));
 
@@ -207,7 +202,6 @@ export const dayPage = (n: number, c: Content = content()): string => {
                 [site.days.title, paths.days],
             ],
             dayChips,
-            site.days.groups.days,
         ) +
             section({
                 content: split(

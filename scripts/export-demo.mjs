@@ -328,14 +328,6 @@ const dayContent = (n) => {
                     { tx_kumanokodo_variant: 'infobox', header: t((x) => sd(x).tipTitle), bodytext: t((x) => sd(x).tips[i]) },
                     { items: links({ title: t((x) => x.site.practical.title), link: link(paths.practical) }) },
                 ),
-                listEl(
-                    'subnav',
-                    { header: t((x) => g(x).days) },
-                    [0, 1, 2, 3].map((k) => ({
-                        title: t((x) => `${x.kumano.days[k].date.split(' · ')[0]} · ${x.kumano.days[k].route}`),
-                        link: `page:day-${k + 1}`,
-                    })),
-                ),
             ],
         ),
         images('gallery', names.slice(1), { ...sunk, header: t((x) => sd(x).photos) }),
@@ -346,11 +338,20 @@ const dayContent = (n) => {
     ];
 };
 
+const dayChips = (n) =>
+    [1, 2, 3, 4].map((k) => ({
+        title: t((x) => x.kumano.days[k - 1].date.split(' · ')[0]),
+        link: `page:day-${k}`,
+        ...(k === n ? { active: 1 } : {}),
+    }));
+
 const placeContent = (slug) => {
     const p = (x) => x.site.places[slug];
     const day = c.en.site.places[slug].day;
+    const [lead, ...more] = c.en.site.places[slug].photos;
     return [
-        columns('content-sidebar', {}, [text(paragraphs((x) => p(x).text)), images('gallery', [...c.en.site.places[slug].photos])], []),
+        images('fullwidth', [lead]),
+        columns('content-sidebar', {}, [text(paragraphs((x) => p(x).text)), images('gallery', more)], []),
         listEl('links', {}, [
             { title: t((x) => x.site.days.title), link: 'page:days', direction: 'back' },
             {
@@ -645,7 +646,7 @@ const pages = [
             `day-${n}`,
             'days',
             t((x) => x.kumano.days[n - 1].route),
-            { content: dayContent(n) },
+            { content: dayContent(n), chips: dayChips(n) },
         ),
     ),
     ...placeSlugs.map((slug) =>

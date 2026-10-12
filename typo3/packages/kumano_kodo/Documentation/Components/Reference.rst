@@ -1050,7 +1050,7 @@ A card that links to a page: image, title, subtitle and a meta line with an opti
 kk:textMedia
 ============
 
-An image beside a heading, the text in the slot and an optional link.
+An image beside a heading, the text in the slot as paragraphs and an optional link.
 
 ..  list-table::
     :header-rows: 1
