@@ -1,0 +1,65 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>
+    A news item on a page without page header (layout Landing): its own header, the teaser, the preview images and
+    the text with its facts beside, the other images as a gallery below, then the way back and on.
+</f:comment>
+<f:if condition="{newsItem}">
+    <f:then>
+        <n:titleTag>{f:if(condition: newsItem.alternativeTitle, then: newsItem.alternativeTitle, else: newsItem.title) -> f:format.htmlentitiesDecode()}</n:titleTag>
+        <f:variable name="separator">{f:translate(key: 'newsListSeparator', domain: 'kumano_kodo.messages')}</f:variable>
+        <f:variable name="categories"><f:for each="{newsItem.categories}" as="category" iteration="i">{category.title}<f:if condition="!{i.isLast}">{separator}</f:if></f:for></f:variable>
+        <f:variable name="tags"><f:for each="{newsItem.tags}" as="tag" iteration="i">{tag.title}<f:if condition="!{i.isLast}">{separator}</f:if></f:for></f:variable>
+        <f:variable name="preview" value="{newsItem.mediaPreviews -> f:first()}"/>
+        <f:variable name="date">{f:format.date(date: newsItem.datetime, pattern: '{f:translate(key: \'newsDatePattern\', domain: \'kumano_kodo.messages\')}')}</f:variable>
+        <f:variable name="dateLabel">{f:translate(key: 'newsDate', domain: 'kumano_kodo.messages')}</f:variable>
+        <f:variable name="categoryLabel">{f:translate(key: 'newsCategory', domain: 'kumano_kodo.messages')}</f:variable>
+        <f:variable name="tagsLabel">{f:translate(key: 'newsTags', domain: 'kumano_kodo.messages')}</f:variable>
+
+        <kk:pageHeader title="{newsItem.title}" breadcrumb="{k:breadcrumb(last: newsItem.title)}"/>
+        <kk:section>
+            <kk:split ratio="content-sidebar">
+                <f:fragment name="first">
+                    <kk:stack>
+                        <f:if condition="{newsItem.teaser}">
+                            <p class="type-lead">{newsItem.teaser -> f:format.stripTags()}</p>
+                        </f:if>
+                        <f:if condition="{preview}">
+                            <kk:figure images="{newsItem.mediaPreviews}">{preview.description}</kk:figure>
+                        </f:if>
+                        <kk:richText><f:format.html>{newsItem.bodytext}</f:format.html></kk:richText>
+                    </kk:stack>
+                </f:fragment>
+                <f:fragment name="second">
+                    <kk:factList facts="{0: {label: dateLabel, value: date}, 1: {label: categoryLabel, value: categories}, 2: {label: tagsLabel, value: tags}}"/>
+                </f:fragment>
+            </kk:split>
+        </kk:section>
+        <f:comment>The detail images after those shown above: EXT:news lists the list-and-detail images first.</f:comment>
+        <f:if condition="{newsItem.mediaNonPreviews -> f:count()} > {newsItem.mediaPreviews -> f:count()}">
+            <kk:section tone="sunk">
+                <kk:stack gap="heading">
+                    <kk:sectionHeading title="{f:translate(key: 'newsPhotos', domain: 'kumano_kodo.messages')}"/>
+                    <kk:gallery images="{newsItem.mediaNonPreviews}" skip="{newsItem.mediaPreviews -> f:count()}"/>
+                </kk:stack>
+            </kk:section>
+        </f:if>
+        <kk:section>
+            <kk:cluster>
+                <f:if condition="{settings.backPid}">
+                    <kk:link label="{f:translate(key: 'newsAll', domain: 'kumano_kodo.messages')}" href="{f:uri.page(pageUid: settings.backPid)}" direction="back"/>
+                </f:if>
+                <n:simplePrevNext pidList="{newsItem.pid}" news="{newsItem}" as="paginated" sortField="datetime">
+                    <f:if condition="{paginated.prev}">
+                        <kk:link label="{f:translate(key: 'newsNext', domain: 'kumano_kodo.messages')}: {paginated.prev.title}" href="{n:link(newsItem: paginated.prev, settings: settings, uriOnly: 1)}"/>
+                    </f:if>
+                </n:simplePrevNext>
+            </kk:cluster>
+        </kk:section>
+    </f:then>
+    <f:else>
+        <kk:section>
+            <p class="type-body">{f:translate(key: 'detail_notfound', extensionName: 'news')}</p>
+        </kk:section>
+    </f:else>
+</f:if>
+</html>

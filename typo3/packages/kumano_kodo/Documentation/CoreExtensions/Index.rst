@@ -23,5 +23,12 @@ Forms (form)
     The element "Date picker" works as a text field for a date in the form's format: its calendar needs jQuery UI, which
     the theme does not load. For a calendar, use the element "Date", which shows the browser's own.
 
+News (georgringer/news)
+    Not a core extension, but the most common one. Add the site set **Kumano Kodo · News** to the site: the list shows
+    the news as teaser cards with pages below, a news item shows its preview images and text with date, category and
+    tags beside, and its other images as a gallery below. Put the detail plugin on a page with the layout
+    **Landing**, so the news item brings its own page header and breadcrumb. Readable URLs need the route enhancers of
+    the news manual's quick start, limited to the list and the detail page.
+
 Sitemap (seo)
     `/sitemap.xml`. Pages with "No index" stay out. Absolute URLs need a site base with a host.

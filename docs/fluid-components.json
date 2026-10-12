@@ -303,6 +303,13 @@
                 "type": "iterable",
                 "required": true,
                 "description": "Files or file references."
+            },
+            {
+                "name": "skip",
+                "type": "int",
+                "required": false,
+                "default": "0",
+                "description": "Leaves out the first images, for example one already shown above."
             }
         ],
         "slots": ["default"]
@@ -740,6 +747,51 @@
             }
         ],
         "slots": ["default"]
+    },
+    {
+        "name": "pagination",
+        "description": "Numbered pages of a list; the entries are paginationItem components.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "Name of the navigation, such as Pages."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "paginationItem",
+        "description": "A page number, an arrow to the previous or next page, or a gap: without href it renders as a gap.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string|int",
+                "required": true,
+                "description": "The number, an arrow such as ← or →, or … for a gap."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": false,
+                "description": "The target; left out for a gap."
+            },
+            {
+                "name": "current",
+                "type": "bool|int",
+                "required": false,
+                "default": "{false}",
+                "description": "Marks the page shown."
+            },
+            {
+                "name": "ariaLabel",
+                "type": "string",
+                "required": false,
+                "description": "Accessible name, for the arrows."
+            }
+        ],
+        "slots": []
     },
     {
         "name": "personCard",

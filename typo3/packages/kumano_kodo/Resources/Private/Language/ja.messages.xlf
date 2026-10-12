@@ -38,6 +38,54 @@
                 <source>Steps</source>
                 <target>ステップ</target>
             </trans-unit>
+            <trans-unit id="newsAll">
+                <source>All reports</source>
+                <target>すべての記録</target>
+            </trans-unit>
+            <trans-unit id="newsPrevious">
+                <source>Previous report</source>
+                <target>前の記録</target>
+            </trans-unit>
+            <trans-unit id="newsNext">
+                <source>Next report</source>
+                <target>次の記録</target>
+            </trans-unit>
+            <trans-unit id="newsPhotos">
+                <source>Photos from this report</source>
+                <target>この記録の写真</target>
+            </trans-unit>
+            <trans-unit id="newsDate">
+                <source>Date</source>
+                <target>日付</target>
+            </trans-unit>
+            <trans-unit id="newsCategory">
+                <source>Category</source>
+                <target>カテゴリー</target>
+            </trans-unit>
+            <trans-unit id="newsTags">
+                <source>Tags</source>
+                <target>タグ</target>
+            </trans-unit>
+            <trans-unit id="newsPages">
+                <source>Pages</source>
+                <target>ページ</target>
+            </trans-unit>
+            <trans-unit id="newsPreviousPage">
+                <source>Previous page</source>
+                <target>前のページ</target>
+            </trans-unit>
+            <trans-unit id="newsNextPage">
+                <source>Next page</source>
+                <target>次のページ</target>
+            </trans-unit>
+            <trans-unit id="newsDatePattern">
+                <source>d MMMM y</source>
+                <target>y年M月d日</target>
+            </trans-unit>
+            <trans-unit id="newsListSeparator">
+                <source>, </source>
+                <target>、</target>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
                 <target>道の状況と連絡先</target>

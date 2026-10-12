@@ -279,6 +279,9 @@ A grid of images that open in the lightbox; an optional caption in the slot.
     *   - ``images``
         - iterable, required
         - Files or file references.
+    *   - ``skip``
+        - int, default ``0``
+        - Leaves out the first images, for example one already shown above.
 
 Slots: ``default``.
 
@@ -678,6 +681,47 @@ The opening of a journal page: eyebrow, title, the lede in the slot, a meta line
         - A name set upright at the edge; decorative.
 
 Slots: ``default``.
+
+kk:pagination
+=============
+
+Numbered pages of a list; the entries are paginationItem components.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``label``
+        - string, required
+        - Name of the navigation, such as Pages.
+
+Slots: ``default``.
+
+kk:paginationItem
+=================
+
+A page number, an arrow to the previous or next page, or a gap: without href it renders as a gap.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``label``
+        - string|int, required
+        - The number, an arrow such as ← or →, or … for a gap.
+    *   - ``href``
+        - string
+        - The target; left out for a gap.
+    *   - ``current``
+        - bool|int, default ``{false}``
+        - Marks the page shown.
+    *   - ``ariaLabel``
+        - string
+        - Accessible name, for the arrows.
 
 kk:personCard
 =============

@@ -29,6 +29,42 @@
             <trans-unit id="formSteps">
                 <source>Steps</source>
             </trans-unit>
+            <trans-unit id="newsAll">
+                <source>All reports</source>
+            </trans-unit>
+            <trans-unit id="newsPrevious">
+                <source>Previous report</source>
+            </trans-unit>
+            <trans-unit id="newsNext">
+                <source>Next report</source>
+            </trans-unit>
+            <trans-unit id="newsPhotos">
+                <source>Photos from this report</source>
+            </trans-unit>
+            <trans-unit id="newsDate">
+                <source>Date</source>
+            </trans-unit>
+            <trans-unit id="newsCategory">
+                <source>Category</source>
+            </trans-unit>
+            <trans-unit id="newsTags">
+                <source>Tags</source>
+            </trans-unit>
+            <trans-unit id="newsPages">
+                <source>Pages</source>
+            </trans-unit>
+            <trans-unit id="newsPreviousPage">
+                <source>Previous page</source>
+            </trans-unit>
+            <trans-unit id="newsNextPage">
+                <source>Next page</source>
+            </trans-unit>
+            <trans-unit id="newsDatePattern">
+                <source>d MMMM y</source>
+            </trans-unit>
+            <trans-unit id="newsListSeparator">
+                <source>, </source>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
             </trans-unit>

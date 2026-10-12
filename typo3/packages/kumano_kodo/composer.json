@@ -23,5 +23,8 @@
                 "providesPackages": {}
             }
         }
+    },
+    "suggest": {
+        "georgringer/news": "News and blog posts with the theme's components: the site set kumano-kodo/news"
     }
 }

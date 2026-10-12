@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>A page number, an arrow to the previous or next page, or a gap: without href it renders as a gap.</f:comment>
+<f:argument name="label" type="string|int" description="The number, an arrow such as ← or →, or … for a gap."/>
+<f:argument name="href" type="string" optional="{true}" description="The target; left out for a gap."/>
+<f:argument name="current" type="bool|int" optional="{true}" default="{false}" description="Marks the page shown."/>
+<f:argument name="ariaLabel" type="string" optional="{true}" description="Accessible name, for the arrows."/>
+
+<li>
+    <f:if condition="{href}">
+        <f:then>
+            <k:element tag="a" attributes="{class: 'pagination-item type-button', href: href, aria-label: ariaLabel, aria-current: '{f:if(condition: current, then: \'page\')}'}">{label}</k:element>
+        </f:then>
+        <f:else>
+            <span class="pagination-item type-button" aria-hidden="true">{label}</span>
+        </f:else>
+    </f:if>
+</li>
+</html>

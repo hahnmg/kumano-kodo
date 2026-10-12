@@ -38,6 +38,54 @@
                 <source>Steps</source>
                 <target>Schritte</target>
             </trans-unit>
+            <trans-unit id="newsAll">
+                <source>All reports</source>
+                <target>Alle Berichte</target>
+            </trans-unit>
+            <trans-unit id="newsPrevious">
+                <source>Previous report</source>
+                <target>Vorheriger Bericht</target>
+            </trans-unit>
+            <trans-unit id="newsNext">
+                <source>Next report</source>
+                <target>Nächster Bericht</target>
+            </trans-unit>
+            <trans-unit id="newsPhotos">
+                <source>Photos from this report</source>
+                <target>Fotos zu diesem Bericht</target>
+            </trans-unit>
+            <trans-unit id="newsDate">
+                <source>Date</source>
+                <target>Datum</target>
+            </trans-unit>
+            <trans-unit id="newsCategory">
+                <source>Category</source>
+                <target>Kategorie</target>
+            </trans-unit>
+            <trans-unit id="newsTags">
+                <source>Tags</source>
+                <target>Schlagwörter</target>
+            </trans-unit>
+            <trans-unit id="newsPages">
+                <source>Pages</source>
+                <target>Seiten</target>
+            </trans-unit>
+            <trans-unit id="newsPreviousPage">
+                <source>Previous page</source>
+                <target>Vorherige Seite</target>
+            </trans-unit>
+            <trans-unit id="newsNextPage">
+                <source>Next page</source>
+                <target>Nächste Seite</target>
+            </trans-unit>
+            <trans-unit id="newsDatePattern">
+                <source>d MMMM y</source>
+                <target>d. MMMM y</target>
+            </trans-unit>
+            <trans-unit id="newsListSeparator">
+                <source>, </source>
+                <target>, </target>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
                 <target>Wegzustand und Kontakt</target>

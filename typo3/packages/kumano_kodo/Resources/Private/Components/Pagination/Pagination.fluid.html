@@ -1,0 +1,11 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>Numbered pages of a list; the entries are paginationItem components.</f:comment>
+<f:argument name="label" type="string" description="Name of the navigation, such as Pages."/>
+
+<f:asset.css identifier="kumano-pagination" href="EXT:kumano_kodo/Resources/Public/Css/Components/pagination.css"/>
+<nav class="pagination" aria-label="{label}">
+    <ol class="pagination-list">
+        <f:slot/>
+    </ol>
+</nav>
+</html>
