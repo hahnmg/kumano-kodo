@@ -1,6 +1,6 @@
 # File Upload
 
-Figma: not yet drawn. Markup: `stories/atoms/file-upload.markup.ts`. Script: `src/scripts/file-upload.ts`.
+Figma: File Upload (84:4564), states Default, Hover, Uploaded and Invalid. Markup: `stories/atoms/file-upload.markup.ts`. Script: `src/scripts/file-upload.ts`.
 
 FileUpload and ImageUpload of EXT:form as a drop zone: a dashed face with "Drag a file here or choose one". The file
 input lies invisibly in the same grid cell, so a click or a drop on the face reaches it without a script; the script

@@ -1,6 +1,6 @@
 # Form
 
-Figma: Form (66:393), states Default, Invalid and Sent; the parts below are not yet drawn. Markup:
+Figma: Form (66:393), states Default, Invalid, Sent, Step (page 2 of the demo's form) and Summary. Markup:
 `stories/molecules/form.markup.ts`, the demo's form with every element type in `stories/templates/walk-form.ts`.
 
 The frame EXT:form renders into: the fields in one column, the note on required fields, the buttons. Fields are the

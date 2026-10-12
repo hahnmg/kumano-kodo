@@ -20,7 +20,9 @@
                 "Style=Outline, State=Default",
                 "Style=Primary, State=Hover",
                 "Style=Light, State=Hover",
-                "Style=Outline, State=Hover"
+                "Style=Outline, State=Hover",
+                "Style=Secondary, State=Default",
+                "Style=Secondary, State=Hover"
             ]
         },
         {
@@ -54,6 +56,13 @@
             "component": "checkbox",
             "node": "65:227",
             "variants": ["State=Default", "State=Invalid"]
+        },
+        {
+            "name": "File Upload",
+            "group": "atoms",
+            "component": "file-upload",
+            "node": "84:4564",
+            "variants": ["State=Default", "State=Hover", "State=Uploaded", "State=Invalid"]
         },
         {
             "name": "Stat",
@@ -167,7 +176,8 @@
             "name": "Select",
             "group": "atoms",
             "component": "select",
-            "node": "17:184"
+            "node": "84:4583",
+            "variants": ["Multiple=No", "Multiple=Yes"]
         },
         {
             "name": "Search Field",
@@ -440,7 +450,19 @@
             "group": "molecules",
             "component": "form",
             "node": "66:393",
-            "variants": ["State=Default", "State=Invalid"]
+            "variants": ["State=Default", "State=Invalid", "State=Sent", "State=Step", "State=Summary"]
+        },
+        {
+            "name": "Choice Group",
+            "group": "molecules",
+            "component": "choice-group",
+            "node": "84:4516",
+            "variants": [
+                "Type=Radio, State=Default",
+                "Type=Radio, State=Invalid",
+                "Type=Checkbox, State=Default",
+                "Type=Checkbox, State=Invalid"
+            ]
         },
         {
             "name": "Logo · Title",
