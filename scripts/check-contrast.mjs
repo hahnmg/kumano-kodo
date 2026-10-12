@@ -28,6 +28,7 @@ const pairs = [
     ['muted', 'sunk', 4.5],
     ['accent', 'sunk', 4.5],
     ['paper', 'ink', 4.5],
+    ['paper', 'accent', 4.5],
 ];
 
 const failures = [];

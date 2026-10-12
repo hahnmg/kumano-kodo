@@ -6,6 +6,16 @@
     margin: 0 auto;
 }
 
+/* An ornament, not punctuation: the text carries its own marks in the page language, so this one is fixed and silent. */
+.quote::before {
+    content: '\201C' / '';
+    height: 0.45em;
+    color: var(--color-accent);
+    font-family: var(--type-quote-family);
+    font-size: calc(2 * var(--type-quote-size));
+    line-height: 1;
+}
+
 .quote-text {
     margin: 0;
     color: var(--color-ink);

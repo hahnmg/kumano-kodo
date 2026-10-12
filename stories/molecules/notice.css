@@ -1,16 +1,18 @@
+/* Paper on accent: the contrast gate checks the pair, so the notice reads in every theme and scheme. */
 .notice {
     display: flex;
-    gap: var(--space-8);
+    gap: var(--space-12);
     align-items: center;
-    padding: var(--space-16) 0;
-    border-block: var(--border-hairline) solid var(--color-line);
+    padding: var(--space-16) var(--space-20);
+    background: var(--color-accent);
+    color: var(--color-paper);
+}
+
+.notice .icon {
+    flex-shrink: 0;
+    color: currentcolor;
 }
 
 .notice-body {
     margin: 0;
-    color: var(--color-ink);
-}
-
-.notice-title {
-    color: var(--color-accent);
 }

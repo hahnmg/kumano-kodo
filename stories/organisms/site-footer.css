@@ -1,6 +1,6 @@
 .site-footer {
     padding: var(--space-96) var(--gutter) var(--space-28);
-    border-top: var(--border-hairline) solid var(--color-ink);
+    border-top: var(--border-rule) solid var(--color-ink);
     background: var(--color-paper);
 }
 

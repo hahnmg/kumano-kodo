@@ -1,7 +1,7 @@
 .route-map {
     margin: 0;
     padding-top: var(--space-40);
-    border-top: var(--border-hairline) solid var(--color-ink);
+    border-top: var(--border-rule) solid var(--color-ink);
 }
 
 .route-map-svg {

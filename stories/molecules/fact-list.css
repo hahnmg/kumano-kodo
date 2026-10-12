@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: var(--space-16);
     padding-top: var(--space-20);
-    border-top: var(--border-hairline) solid var(--color-line);
+    border-top: var(--border-rule) solid var(--color-ink);
 }
 
 .fact-list-title,

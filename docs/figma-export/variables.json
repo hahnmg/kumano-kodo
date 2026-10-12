@@ -279,6 +279,11 @@
                     "css": "--border-hairline",
                     "v": { "Caramel": 1, "Forest": 1, "Ocean": 1, "Violet": 1, "Mono": 1 }
                 },
+                "border/rule": {
+                    "type": "FLOAT",
+                    "css": "--border-rule",
+                    "v": { "Caramel": 2, "Forest": 2, "Ocean": 2, "Violet": 2, "Mono": 2 }
+                },
                 "font/display": {
                     "type": "STRING",
                     "css": "--font-display",
@@ -468,8 +473,8 @@
             "name": "Display/Wordmark",
             "family": "font/display",
             "weight": "font/display-regular",
-            "size": 144,
-            "lineHeight": 132,
+            "size": 60,
+            "lineHeight": 64,
             "tracking": -4,
             "case": "UPPER"
         }

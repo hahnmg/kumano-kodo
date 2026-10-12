@@ -103,13 +103,12 @@ for (const s of data.textStyles) {
 out.push(block(':root', typeVars));
 
 // No mobile reference exists (open question 4): large styles and page spacing step down in code only.
-// The wordmark is sized to the content width; measured across the four themes it needs up to 7.8 em.
-const fit = 'calc((100vw - 2 * var(--gutter)) / 8)';
 const steps = {
-    900: { hero: [88, 92], h2: [48, 52], quote: [40, 46], stat: [52, 52], wordmark: [fit, '1'] },
+    900: { hero: [88, 92], h2: [48, 52], quote: [40, 46], stat: [52, 52], wordmark: [48, 52] },
     600: {
         hero: [52, 56],
         h2: [36, 40],
+        wordmark: [36, 40],
         h3: [28, 32],
         'h3-regular': [26, 32],
         h4: [22, 26],
