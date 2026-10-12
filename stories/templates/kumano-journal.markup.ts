@@ -1,3 +1,4 @@
+import { skipLink } from '../atoms/skip-link.markup';
 import { section, split, stack } from '../layout/layout.markup';
 import { faqList } from '../molecules/faq-item.markup';
 import { highlight } from '../molecules/highlight.markup';
@@ -29,12 +30,13 @@ export const kumanoJournal = ({ kumano, photos, home, ui, languages }: Content =
         }),
     );
     return (
+        skipLink({ label: ui.skipToContent }) +
         siteHeader({
             nav: kumano.nav.map((n) => ({ ...n, active: false })),
             languages,
             labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu },
         }) +
-        `<main class="journal">` +
+        `<main id="main" class="journal">` +
         pageIntro({
             kicker: d.kicker,
             title: d.title,

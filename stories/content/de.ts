@@ -9,6 +9,7 @@ const build = (p: Photos): LocaleContent => {
         menu: 'Menü',
         darkMode: 'Dunkler Modus',
         backToTop: 'Nach oben',
+        skipToContent: 'Zum Inhalt springen',
         trailStatus: 'Wegzustand und Kontakt',
         categories: 'Kategorien',
         breadcrumb: 'Brotkrumen',

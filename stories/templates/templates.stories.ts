@@ -1,3 +1,4 @@
+import { skipLink } from '../atoms/skip-link.markup';
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { content, type Content } from './content';
 import { kumanoHome } from './kumano-home.markup';
@@ -25,6 +26,7 @@ export const HomeMono: StoryObj = { name: 'Home · Mono', render: page(kumanoJou
 
 // The starter set: Mono, the website title as logo, no upright name and no wordmark in the footer.
 const starter = ({ languages, ui }: Content) =>
+    skipLink({ label: ui.skipToContent }) +
     siteHeader({
         nav: [
             { label: 'About us', href: '#' },
@@ -34,7 +36,7 @@ const starter = ({ languages, ui }: Content) =>
         labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu },
         logo: { variant: 'title', label: 'Your site', href: '#' },
     }) +
-    `<main>${pageHeader({ title: 'Home', breadcrumb: [{ label: 'Home' }] })}` +
+    `<main id="main">${pageHeader({ title: 'Home', breadcrumb: [{ label: 'Home' }] })}` +
     section({ content: richText({ html: '<p>This is your home page. Replace this text with an introduction to your site.</p>' }) }) +
     `</main>` +
     siteFooter({

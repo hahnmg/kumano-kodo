@@ -9,6 +9,7 @@ const build = (p: Photos) => {
         menu: 'Menu',
         darkMode: 'Dark mode',
         backToTop: 'Back to top',
+        skipToContent: 'Skip to content',
         trailStatus: 'Trail status and contact',
         categories: 'Categories',
         breadcrumb: 'Breadcrumb',

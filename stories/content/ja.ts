@@ -9,6 +9,7 @@ const build = (p: Photos): LocaleContent => {
         menu: 'メニュー',
         darkMode: 'ダークモード',
         backToTop: 'ページの先頭へ',
+        skipToContent: '本文へ移動',
         trailStatus: '道の状況と連絡先',
         categories: 'カテゴリー',
         breadcrumb: 'パンくずリスト',

@@ -17,6 +17,9 @@
             <trans-unit id="backToTop">
                 <source>Back to top</source>
             </trans-unit>
+            <trans-unit id="skipToContent">
+                <source>Skip to content</source>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
             </trans-unit>

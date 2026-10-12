@@ -14,6 +14,7 @@
 <f:if condition="{theme.ownJs}">
     <f:asset.script identifier="kumano-own" src="{theme.ownJs}" type="module"/>
 </f:if>
+<a class="skip-link type-button" href="#main">{f:translate(key: 'skipToContent', domain: 'kumano_kodo.messages')}</a>
 <f:render section="Topbar" optional="true">
     <f:if condition="{content.topbar.records}">
         <f:render partial="Page/Topbar" arguments="{_all}"/>

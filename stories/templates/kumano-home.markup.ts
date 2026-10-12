@@ -1,3 +1,4 @@
+import { skipLink } from '../atoms/skip-link.markup';
 import { section, split, stack } from '../layout/layout.markup';
 import { timeline } from '../molecules/timeline-item.markup';
 import { faqList } from '../molecules/faq-item.markup';
@@ -20,12 +21,13 @@ import { content, type Content } from './content';
 export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = content()): string => {
     const lightbox = { close: ui.close, previous: ui.previous, next: ui.next };
     return (
+        skipLink({ label: ui.skipToContent }) +
         siteHeader({
             nav: kumano.nav,
             languages,
             labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu },
         }) +
-        `<main>` +
+        `<main id="main">` +
         hero(kumano.hero) +
         section({
             content: stack(

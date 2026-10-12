@@ -1,3 +1,4 @@
+import { skipLink } from '../atoms/skip-link.markup';
 import { fill } from '../../src/lib/html';
 import { checkbox } from '../atoms/checkbox.markup';
 import { link } from '../atoms/link.markup';
@@ -48,6 +49,7 @@ const paragraphs = (texts: readonly string[]) => texts.map((t) => `<p>${esc(t)}<
 const lightbox = ({ ui }: Content) => ({ close: ui.close, previous: ui.previous, next: ui.next });
 
 const chrome = (c: Content, active: Section, main: string): string =>
+    skipLink({ label: c.ui.skipToContent }) +
     topbar({ ...c.guide.topbar, ariaLabel: c.ui.trailStatus }) +
     siteHeader({
         nav: c.kumano.nav.map((n, i) => ({ ...n, active: i === active })),
@@ -55,7 +57,7 @@ const chrome = (c: Content, active: Section, main: string): string =>
         labels: { nav: c.ui.mainNav, languages: c.ui.language, scheme: c.ui.darkMode, menu: c.ui.menu },
         search: { action: paths.search, label: c.ui.search, submit: c.ui.search, placeholder: c.ui.searchPlaceholder },
     }) +
-    `<main>${main}</main>` +
+    `<main id="main">${main}</main>` +
     siteFooter({ ...c.guide.footer, backToTop: c.ui.backToTop });
 
 const crumbs = (c: Content, trail: [string, string][], current: string) => [

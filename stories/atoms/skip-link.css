@@ -1,0 +1,17 @@
+.skip-link {
+    position: absolute;
+    top: var(--space-8);
+    left: var(--space-8);
+    z-index: 100;
+    padding: var(--space-12) var(--space-20);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    text-decoration: none;
+    transform: translateY(calc(-100% - var(--space-8)));
+}
+
+.skip-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    transform: none;
+}
