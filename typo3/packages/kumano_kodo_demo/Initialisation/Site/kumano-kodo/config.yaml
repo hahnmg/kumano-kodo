@@ -5,15 +5,16 @@ baseVariants:
     condition: 'getenv("IS_DDEV_PROJECT") == "true"'
 dependencies:
   - kumano-kodo/site
+  - kumano-kodo/news
 errorHandling:
   -
     errorCode: 403
     errorHandler: Page
-    errorContentSource: 't3://page?uid=1669'
+    errorContentSource: 't3://page?uid=1975'
   -
     errorCode: 404
     errorHandler: Page
-    errorContentSource: 't3://page?uid=1675'
+    errorContentSource: 't3://page?uid=1981'
 languages:
   -
     languageId: 0
@@ -41,5 +42,43 @@ languages:
     base: /ja/
     flag: jp
     fallbackType: strict
-rootPageId: 1603
+rootPageId: 1900
+routeEnhancers:
+  NewsDetail:
+    type: Extbase
+    limitToPages:
+      - 1954
+    extension: News
+    plugin: Pi1
+    routes:
+      -
+        routePath: '/{news-title}'
+        _controller: 'News::detail'
+        _arguments:
+          news-title: news
+    aspects:
+      news-title:
+        type: NewsTitle
+  NewsList:
+    type: Extbase
+    limitToPages:
+      - 1951
+    extension: News
+    plugin: Pi1
+    routes:
+      -
+        routePath: '/page-{page}'
+        _controller: 'News::list'
+        _arguments:
+          page: currentPage
+    defaultController: 'News::list'
+    defaults:
+      page: ''
+    requirements:
+      page: \d+
+    aspects:
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '100'
 websiteTitle: 'Kumano Kodo'

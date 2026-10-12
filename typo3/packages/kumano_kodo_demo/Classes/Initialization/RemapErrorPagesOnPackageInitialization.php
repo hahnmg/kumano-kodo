@@ -12,7 +12,8 @@ use TYPO3\CMS\Impexp\Import;
 use TYPO3\CMS\Impexp\Initialization\ImportContentOnPackageInitialization;
 use TYPO3\CMS\Impexp\Initialization\ImportSiteConfigurationsOnPackageInitialization;
 
-// The core remaps only the root page of an imported site; its error pages would still point at the exported uids.
+// The core remaps only the root page of an imported site; its error pages and the pages its route enhancers are
+// limited to would still point at the exported uids.
 final readonly class RemapErrorPagesOnPackageInitialization
 {
     public function __construct(
@@ -38,6 +39,14 @@ final readonly class RemapErrorPagesOnPackageInitialization
                     static fn (array $m): string => 't3://page?uid=' . ($pages[(int)$m[1]] ?? $m[1]),
                     (string)($handler['errorContentSource'] ?? '')
                 );
+            }
+            foreach ($configuration['routeEnhancers'] ?? [] as $name => $enhancer) {
+                if (isset($enhancer['limitToPages'])) {
+                    $configuration['routeEnhancers'][$name]['limitToPages'] = array_map(
+                        static fn (int|string $uid): int => (int)($pages[(int)$uid] ?? $uid),
+                        $enhancer['limitToPages']
+                    );
+                }
             }
             $this->siteWriter->write($identifier, $configuration);
         }

@@ -586,6 +586,21 @@ const formFlexform = (identifier) =>
 // The form with every element type; KumanoKodo\\Demo\\Form\\WalkForm writes it there with its ContentElement's uid.
 const walkFormTarget = '1:/form_definitions/walk.form.yaml';
 
+// FlexForm values of the news plugins, sheet by sheet; page:<key> becomes the uid of that page in the build.
+const newsFlexform = (sheets) =>
+    '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data>' +
+    Object.entries(sheets)
+        .map(
+            ([sheet, fields]) =>
+                `<sheet index="${sheet}"><language index="lDEF">` +
+                Object.entries(fields)
+                    .map(([name, value]) => `<field index="settings.${name}"><value index="vDEF">${value}</value></field>`)
+                    .join('') +
+                '</language></sheet>',
+        )
+        .join('') +
+    '</data></T3FlexForms>';
+
 const pages = [
     page(
         'home',
@@ -675,6 +690,43 @@ const pages = [
         'home',
         t((x) => x.kumano.nav[2].label),
         { content: photosContent },
+    ),
+    page(
+        'reports',
+        'home',
+        t((x) => x.reports.title),
+        {
+            content: [
+                text(t((x) => `<p>${esc(x.reports.intro)}</p>`)),
+                el('news_pi1', {
+                    pi_flexform: newsFlexform({
+                        sDEF: { orderBy: 'datetime', orderDirection: 'desc', startingpoint: 'page:news-records' },
+                        additional: { detailPid: 'page:report', 'list.paginate.itemsPerPage': 3, hidePagination: 0 },
+                    }),
+                }),
+            ],
+        },
+    ),
+    // EXT:news shows a report here; the layout without page header lets the report bring its own.
+    page(
+        'report',
+        'reports',
+        t((x) => x.reports.title),
+        {
+            navHide: true,
+            layout: 'Landing',
+            content: [
+                el('news_newsdetail', {
+                    pi_flexform: newsFlexform({ sDEF: { startingpoint: 'page:news-records' }, additional: { backPid: 'page:reports' } }),
+                }),
+            ],
+        },
+    ),
+    page(
+        'news-records',
+        'home',
+        t(() => 'Trail reports (records)'),
+        { navHide: true, doktype: 254 },
     ),
     page(
         'newsletter',
@@ -914,6 +966,57 @@ const site = {
         'kumanoKodo.brand.footerWordmark': true,
     },
     errorHandling: { 404: 'not-found', 403: 'login' },
+    sets: ['kumano-kodo/site', 'kumano-kodo/news'],
+    // As the news manual's quick start: readable report and page URLs, each limited to its page.
+    routeEnhancers: {
+        NewsDetail: {
+            type: 'Extbase',
+            limitToPages: ['report'],
+            extension: 'News',
+            plugin: 'Pi1',
+            routes: [{ routePath: '/{news-title}', _controller: 'News::detail', _arguments: { 'news-title': 'news' } }],
+            aspects: { 'news-title': { type: 'NewsTitle' } },
+        },
+        NewsList: {
+            type: 'Extbase',
+            limitToPages: ['reports'],
+            extension: 'News',
+            plugin: 'Pi1',
+            routes: [{ routePath: '/page-{page}', _controller: 'News::list', _arguments: { page: 'currentPage' } }],
+            defaultController: 'News::list',
+            defaults: { page: '' },
+            requirements: { page: '\\d+' },
+            aspects: { page: { type: 'StaticRangeMapper', start: '1', end: '100' } },
+        },
+    },
+};
+
+// The trail reports as EXT:news records: the first photo is the preview, the others the gallery below.
+const reportOf = (x, i) => x.reports.items[i];
+const tagKeys = [...new Set(c.en.reports.items.flatMap((r) => r.tags))];
+const news = {
+    folder: 'news-records',
+    categories: Object.fromEntries(Object.keys(c.en.reports.categories).map((key) => [key, t((x) => x.reports.categories[key])])),
+    tags: Object.fromEntries(
+        tagKeys.map((tag) => {
+            const [i, j] = c.en.reports.items.flatMap((r, ri) => r.tags.map((tt, ti) => (tt === tag ? [ri, ti] : null))).find(Boolean);
+            return [tag, t((x) => reportOf(x, i).tags[j])];
+        }),
+    ),
+    items: c.en.reports.items.map((r, i) => ({
+        slug: r.slug,
+        datetime: r.date,
+        title: t((x) => reportOf(x, i).title),
+        teaser: t((x) => reportOf(x, i).teaser),
+        bodytext: t((x) =>
+            reportOf(x, i)
+                .text.map((p) => `<p>${esc(p)}</p>`)
+                .join(''),
+        ),
+        categories: [r.category],
+        tags: r.tags,
+        images: r.photos.map((name, n) => ({ photo: name, showinpreview: n === 0 ? 1 : 0 })),
+    })),
 };
 
 // The walk form: English in the definition, every language in its XLIFF, all from the Storybook content.
@@ -1099,7 +1202,7 @@ for (const lang of langs)
     await writeFile(join(demoPackage, `Resources/Private/Language/${lang === 'en' ? '' : `${lang}.`}form_walk.xlf`), xliff(lang));
 
 const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.values(e.children ?? {}).flat()), 0);
-await writeFile(out, `${JSON.stringify({ site, photos, files, pages, frontendUsers }, null, 4)}\n`);
+await writeFile(out, `${JSON.stringify({ site, photos, files, pages, frontendUsers, news }, null, 4)}\n`);
 console.log(
     `Demo: ${pages.length} pages, ${count(pages.flatMap((p) => p.content))} content elements, ${Object.keys(photos).length} photos → ${out}`,
 );

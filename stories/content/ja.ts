@@ -13,6 +13,19 @@ const build = (p: Photos): LocaleContent => {
         uploadDrop: 'ここにファイルをドラッグするか',
         uploadChoose: '選択',
         formSteps: 'ステップ',
+        newsAll: 'すべての記録',
+        newsPrevious: '前の記録',
+        newsNext: '次の記録',
+        newsPhotos: 'この記録の写真',
+        newsDate: '日付',
+        newsCategory: 'カテゴリー',
+        newsTags: 'タグ',
+        newsPages: 'ページ',
+        newsPreviousPage: '前のページ',
+        newsNextPage: '次のページ',
+        // ICU pattern of the long date, as Intl writes it in the stories.
+        newsDatePattern: 'y年M月d日',
+        newsListSeparator: '、',
         trailStatus: '道の状況と連絡先',
         categories: 'カテゴリー',
         breadcrumb: 'パンくずリスト',
@@ -220,6 +233,7 @@ const build = (p: Photos): LocaleContent => {
             { label: 'ルート', href: paths.route, active: true, menu: routeMenu },
             { label: '実用情報', href: paths.practical, menu: practicalMenu },
             { label: '写真', href: paths.photos },
+            { label: '道中記', href: paths.reports },
         ],
         hero: {
             image: p['sea-of-clouds'],
@@ -667,7 +681,85 @@ const build = (p: Photos): LocaleContent => {
         sentText: 'ありがとうございます。1週間以内にご連絡します。',
     };
 
-    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm };
+    // Invented trail reports, the demo's news.
+    const reports = {
+        title: '道中記',
+        intro: '4日間の短い記録。天気、場所、バス、そして持ち物について。',
+        categories: {
+            trail: '道',
+            places: '場所',
+            practical: '実用',
+        },
+        items: [
+            {
+                slug: 'what-we-packed',
+                date: '2024-04-25T10:00',
+                category: 'practical',
+                photos: ['vending-machines', 'ryokan-room', 'signpost', 'roadside-markers'],
+                title: '持って行ったもの、置いてきたもの',
+                teaser: '4日間の歩きに小さなリュックが2つ。次はもう一つ減らす。',
+                tags: ['荷造り'],
+                text: [
+                    '荷物は宿から宿へ運んでもらえたので、デイパックで歩いた。雨具、乾いた着替え、水、現金、そして紙のバス時刻表。',
+                    '要らなかったもの：2足目の靴。欲しかったもの：温泉用の小さなタオルと、自動販売機用の小銭。',
+                ],
+            },
+            {
+                slug: 'the-last-bus',
+                date: '2024-04-23T16:05',
+                category: 'practical',
+                photos: ['seaside-station', 'morning-bus', 'nachi-pagoda', 'harbour-ferry'],
+                title: '那智からの最終バス',
+                teaser: '思っているより早く出る。私たちは4分前に間に合った。',
+                tags: ['バス', '那智'],
+                text: [
+                    '二つの峠を越えると道は塔で終わり、滝はその少し下にある。そこから海岸へバスが出ているが、遅い便はない。',
+                    '最終便は到着してからではなく、朝出発する前に確かめること。紀伊勝浦からはフェリーで数分で旅館に渡れる。',
+                ],
+            },
+            {
+                slug: 'the-oldest-bath',
+                date: '2024-04-22T18:30',
+                category: 'places',
+                photos: ['outdoor-bath', 'yunomine-street', 'river-bridge', 'evening-rooftops'],
+                title: '道沿いでいちばん古い湯',
+                teaser: '湯の峰は熱い川を囲む一本の通り。予定より長く滞在した。',
+                tags: ['温泉', '湯の峰'],
+                text: [
+                    '宿の間の川から湯気が立ちのぼる。橋のたもとの源泉で卵をゆで、隣の小さな湯小屋の順番を待つ。',
+                    '一番長い日を歩いて疲れて着き、翌朝は予定より遅く出発した。そのぶん那智までの道は長くなった。',
+                ],
+            },
+            {
+                slug: 'a-land-crab',
+                date: '2024-04-21T12:03',
+                category: 'trail',
+                photos: ['land-crab', 'fern-frond', 'forest-stream', 'stone-path-walkers'],
+                title: 'カニと、ほかの道連れ',
+                teaser: '一日のほとんど誰にも会わなかった。そしてカニが道をふさいだ。',
+                tags: ['生き物'],
+                text: [
+                    '高原と近露の間の森は静かだ。ときどきグループに追い越され、また石とシダだけになる。',
+                    '昼過ぎ、道の真ん中にカニがいて動かなかった。私たちはよけて通った。',
+                ],
+            },
+            {
+                slug: 'fog-on-the-pass',
+                date: '2024-04-21T07:02',
+                category: 'trail',
+                photos: ['sea-of-clouds', 'walker-in-mist', 'misty-valley', 'cedar-canopy'],
+                title: '近露への道の霧',
+                teaser: '7時、谷が消えていた。最初の1時間は雲の中を歩いた。',
+                tags: ['霧', '2日目'],
+                text: [
+                    '高原からは雲が湖のように集落の下にたまっていた。30分後にはその中にいて、杉が白の中に立っていた。',
+                    '石畳は濡れても滑りにくいが、その間の木の根は滑る。10時ごろ日が差し、谷が戻ってきた。',
+                ],
+            },
+        ],
+    };
+
+    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm, reports };
 };
 
 export const ja: LocaleModule<LocaleContent> = {

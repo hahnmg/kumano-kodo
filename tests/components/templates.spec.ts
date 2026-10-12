@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { legalSlugs, placeSlugs, practicalSlugs, storyFor } from '../../stories/content/paths';
+import { legalSlugs, placeSlugs, practicalSlugs, reportSlugs, storyFor } from '../../stories/content/paths';
 import { content, locales, type Content, type Locale } from '../../stories/templates/content';
 import { kumanoHome } from '../../stories/templates/kumano-home.markup';
 import {
@@ -19,6 +19,10 @@ import {
     contactPage,
     notFoundPage,
     papersPage,
+    registerPage,
+    waysPage,
+    reportsPage,
+    reportPage,
 } from '../../stories/templates/site-pages.markup';
 import { expectAccessible } from '../support/accessibility';
 
@@ -43,6 +47,11 @@ const pages: Record<string, (c: Content) => string> = {
     contact: contactPage,
     'not found': notFoundPage,
     papers: papersPage,
+    register: registerPage,
+    ways: waysPage,
+    reports: (c: Content) => reportsPage(1, c),
+    'reports page 2': (c: Content) => reportsPage(2, c),
+    ...Object.fromEntries(reportSlugs.map((s) => [`report ${s}`, (c: Content) => reportPage(s, c)])),
 };
 
 describe('site pages', () => {

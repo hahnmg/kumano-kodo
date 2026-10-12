@@ -12,6 +12,65 @@
         "errorHandling": {
             "403": "login",
             "404": "not-found"
+        },
+        "sets": [
+            "kumano-kodo/site",
+            "kumano-kodo/news"
+        ],
+        "routeEnhancers": {
+            "NewsDetail": {
+                "type": "Extbase",
+                "limitToPages": [
+                    "report"
+                ],
+                "extension": "News",
+                "plugin": "Pi1",
+                "routes": [
+                    {
+                        "routePath": "/{news-title}",
+                        "_controller": "News::detail",
+                        "_arguments": {
+                            "news-title": "news"
+                        }
+                    }
+                ],
+                "aspects": {
+                    "news-title": {
+                        "type": "NewsTitle"
+                    }
+                }
+            },
+            "NewsList": {
+                "type": "Extbase",
+                "limitToPages": [
+                    "reports"
+                ],
+                "extension": "News",
+                "plugin": "Pi1",
+                "routes": [
+                    {
+                        "routePath": "/page-{page}",
+                        "_controller": "News::list",
+                        "_arguments": {
+                            "page": "currentPage"
+                        }
+                    }
+                ],
+                "defaultController": "News::list",
+                "defaults": {
+                    "page": ""
+                },
+                "requirements": {
+                    "page": "\\d+"
+                },
+                "aspects": {
+                    "page": {
+                        "type": "StaticRangeMapper",
+                        "start": "1",
+                        "end": "100"
+                    }
+                }
+            }
         }
     },
     "photos": {
@@ -4330,6 +4389,70 @@
             }
         },
         {
+            "key": "reports",
+            "parent": "home",
+            "slug": "/reports",
+            "layout": "Default",
+            "navHide": false,
+            "title": {
+                "en": "Trail reports",
+                "de": "Wegberichte",
+                "ja": "道中記"
+            },
+            "content": [
+                {
+                    "type": "text",
+                    "fields": {
+                        "bodytext": {
+                            "en": "<p>Short reports from the four days: weather, places, buses and what we carried.</p>",
+                            "de": "<p>Kurze Berichte von den vier Tagen: Wetter, Orte, Busse und was wir dabeihatten.</p>",
+                            "ja": "<p>4日間の短い記録。天気、場所、バス、そして持ち物について。</p>"
+                        }
+                    }
+                },
+                {
+                    "type": "news_pi1",
+                    "fields": {
+                        "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.orderBy\"><value index=\"vDEF\">datetime</value></field><field index=\"settings.orderDirection\"><value index=\"vDEF\">desc</value></field><field index=\"settings.startingpoint\"><value index=\"vDEF\">page:news-records</value></field></language></sheet><sheet index=\"additional\"><language index=\"lDEF\"><field index=\"settings.detailPid\"><value index=\"vDEF\">page:report</value></field><field index=\"settings.list.paginate.itemsPerPage\"><value index=\"vDEF\">3</value></field><field index=\"settings.hidePagination\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "report",
+            "parent": "reports",
+            "slug": "/report",
+            "layout": "Landing",
+            "navHide": true,
+            "title": {
+                "en": "Trail reports",
+                "de": "Wegberichte",
+                "ja": "道中記"
+            },
+            "content": [
+                {
+                    "type": "news_newsdetail",
+                    "fields": {
+                        "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.startingpoint\"><value index=\"vDEF\">page:news-records</value></field></language></sheet><sheet index=\"additional\"><language index=\"lDEF\"><field index=\"settings.backPid\"><value index=\"vDEF\">page:reports</value></field></language></sheet></data></T3FlexForms>"
+                    }
+                }
+            ]
+        },
+        {
+            "key": "news-records",
+            "parent": "home",
+            "slug": "/news-records",
+            "layout": "Default",
+            "navHide": true,
+            "title": {
+                "en": "Trail reports (records)",
+                "de": "Trail reports (records)",
+                "ja": "Trail reports (records)"
+            },
+            "content": [],
+            "doktype": 254
+        },
+        {
             "key": "newsletter",
             "parent": "home",
             "slug": "/newsletter",
@@ -5948,5 +6071,287 @@
             "username": "pilgrim",
             "password": "Kumano-Kodo-2024"
         }
-    ]
+    ],
+    "news": {
+        "folder": "news-records",
+        "categories": {
+            "trail": {
+                "en": "Trail",
+                "de": "Weg",
+                "ja": "道"
+            },
+            "places": {
+                "en": "Places",
+                "de": "Orte",
+                "ja": "場所"
+            },
+            "practical": {
+                "en": "Practical",
+                "de": "Praktisches",
+                "ja": "実用"
+            }
+        },
+        "tags": {
+            "Packing": {
+                "en": "Packing",
+                "de": "Packen",
+                "ja": "荷造り"
+            },
+            "Bus": {
+                "en": "Bus",
+                "de": "Bus",
+                "ja": "バス"
+            },
+            "Nachi": {
+                "en": "Nachi",
+                "de": "Nachi",
+                "ja": "那智"
+            },
+            "Onsen": {
+                "en": "Onsen",
+                "de": "Onsen",
+                "ja": "温泉"
+            },
+            "Yunomine": {
+                "en": "Yunomine",
+                "de": "Yunomine",
+                "ja": "湯の峰"
+            },
+            "Animals": {
+                "en": "Animals",
+                "de": "Tiere",
+                "ja": "生き物"
+            },
+            "Fog": {
+                "en": "Fog",
+                "de": "Nebel",
+                "ja": "霧"
+            },
+            "Day 2": {
+                "en": "Day 2",
+                "de": "Tag 2",
+                "ja": "2日目"
+            }
+        },
+        "items": [
+            {
+                "slug": "what-we-packed",
+                "datetime": "2024-04-25T10:00",
+                "title": {
+                    "en": "What we packed, and what we left at home",
+                    "de": "Was wir eingepackt haben und was zu Hause blieb",
+                    "ja": "持って行ったもの、置いてきたもの"
+                },
+                "teaser": {
+                    "en": "Two small rucksacks for four days of walking. Next time, one thing less.",
+                    "de": "Zwei kleine Rucksäcke für vier Tage Gehen. Nächstes Mal ein Teil weniger.",
+                    "ja": "4日間の歩きに小さなリュックが2つ。次はもう一つ減らす。"
+                },
+                "bodytext": {
+                    "en": "<p>The luggage service carried a bag from inn to inn, so we walked with day packs: rain jacket, a dry layer, water, cash and the bus timetable on paper.</p><p>What we did not need: the second pair of shoes. What we missed: a small towel for the onsen and coins for the vending machines.</p>",
+                    "de": "<p>Der Gepäckservice brachte eine Tasche von Herberge zu Herberge, also gingen wir mit Tagesrucksäcken: Regenjacke, eine trockene Schicht, Wasser, Bargeld und den Busfahrplan auf Papier.</p><p>Nicht gebraucht: das zweite Paar Schuhe. Gefehlt: ein kleines Handtuch für das Onsen und Münzen für die Automaten.</p>",
+                    "ja": "<p>荷物は宿から宿へ運んでもらえたので、デイパックで歩いた。雨具、乾いた着替え、水、現金、そして紙のバス時刻表。</p><p>要らなかったもの：2足目の靴。欲しかったもの：温泉用の小さなタオルと、自動販売機用の小銭。</p>"
+                },
+                "categories": [
+                    "practical"
+                ],
+                "tags": [
+                    "Packing"
+                ],
+                "images": [
+                    {
+                        "photo": "vending-machines",
+                        "showinpreview": 1
+                    },
+                    {
+                        "photo": "ryokan-room",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "signpost",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "roadside-markers",
+                        "showinpreview": 0
+                    }
+                ]
+            },
+            {
+                "slug": "the-last-bus",
+                "datetime": "2024-04-23T16:05",
+                "title": {
+                    "en": "The last bus from Nachi",
+                    "de": "Der letzte Bus ab Nachi",
+                    "ja": "那智からの最終バス"
+                },
+                "teaser": {
+                    "en": "It leaves earlier than you think. We made it with four minutes to spare.",
+                    "de": "Er fährt früher, als man denkt. Wir hatten vier Minuten Luft.",
+                    "ja": "思っているより早く出る。私たちは4分前に間に合った。"
+                },
+                "bodytext": {
+                    "en": "<p>After the two passes the path ends at the pagoda, and the falls are a short walk below. From there the buses run down to the coast, but not late.</p><p>Check the last departure before you set out in the morning, not when you arrive. From Kii-Katsuura the ferry crosses to the ryokan in a few minutes.</p>",
+                    "de": "<p>Nach den zwei Pässen endet der Weg an der Pagode, der Wasserfall liegt ein kurzes Stück darunter. Von dort fahren Busse hinunter zur Küste, aber nicht spät.</p><p>Die letzte Abfahrt am Morgen prüfen, nicht erst bei der Ankunft. Von Kii-Katsuura setzt die Fähre in wenigen Minuten zum Ryokan über.</p>",
+                    "ja": "<p>二つの峠を越えると道は塔で終わり、滝はその少し下にある。そこから海岸へバスが出ているが、遅い便はない。</p><p>最終便は到着してからではなく、朝出発する前に確かめること。紀伊勝浦からはフェリーで数分で旅館に渡れる。</p>"
+                },
+                "categories": [
+                    "practical"
+                ],
+                "tags": [
+                    "Bus",
+                    "Nachi"
+                ],
+                "images": [
+                    {
+                        "photo": "seaside-station",
+                        "showinpreview": 1
+                    },
+                    {
+                        "photo": "morning-bus",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "nachi-pagoda",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "harbour-ferry",
+                        "showinpreview": 0
+                    }
+                ]
+            },
+            {
+                "slug": "the-oldest-bath",
+                "datetime": "2024-04-22T18:30",
+                "title": {
+                    "en": "The oldest bath on the route",
+                    "de": "Das älteste Bad am Weg",
+                    "ja": "道沿いでいちばん古い湯"
+                },
+                "teaser": {
+                    "en": "Yunomine is a single street around a hot river. We stayed longer than we had planned.",
+                    "de": "Yunomine ist eine einzige Straße um einen heißen Fluss. Wir blieben länger als geplant.",
+                    "ja": "湯の峰は熱い川を囲む一本の通り。予定より長く滞在した。"
+                },
+                "bodytext": {
+                    "en": "<p>Steam rises from the river between the inns. Guests cook eggs in the spring at the bridge and wait their turn for the small bath hut beside it.</p><p>We arrived tired from the longest day and left the next morning later than planned, which made the walk to Nachi a long one.</p>",
+                    "de": "<p>Zwischen den Herbergen steigt Dampf aus dem Fluss. Gäste kochen an der Brücke Eier in der Quelle und warten auf ihren Platz in der kleinen Badehütte daneben.</p><p>Wir kamen müde vom längsten Tag an und brachen am nächsten Morgen später auf als geplant. Der Weg nach Nachi wurde entsprechend lang.</p>",
+                    "ja": "<p>宿の間の川から湯気が立ちのぼる。橋のたもとの源泉で卵をゆで、隣の小さな湯小屋の順番を待つ。</p><p>一番長い日を歩いて疲れて着き、翌朝は予定より遅く出発した。そのぶん那智までの道は長くなった。</p>"
+                },
+                "categories": [
+                    "places"
+                ],
+                "tags": [
+                    "Onsen",
+                    "Yunomine"
+                ],
+                "images": [
+                    {
+                        "photo": "outdoor-bath",
+                        "showinpreview": 1
+                    },
+                    {
+                        "photo": "yunomine-street",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "river-bridge",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "evening-rooftops",
+                        "showinpreview": 0
+                    }
+                ]
+            },
+            {
+                "slug": "a-land-crab",
+                "datetime": "2024-04-21T12:03",
+                "title": {
+                    "en": "A land crab, and other company",
+                    "de": "Eine Landkrabbe und andere Gesellschaft",
+                    "ja": "カニと、ほかの道連れ"
+                },
+                "teaser": {
+                    "en": "For most of the day we met nobody. Then a crab blocked the path.",
+                    "de": "Den größten Teil des Tages trafen wir niemanden. Dann versperrte eine Krabbe den Weg.",
+                    "ja": "一日のほとんど誰にも会わなかった。そしてカニが道をふさいだ。"
+                },
+                "bodytext": {
+                    "en": "<p>Between Takahara and Chikatsuyu the forest is quiet. Now and then a group passed us, then we were alone again with the stones and the ferns.</p><p>Shortly after noon a land crab sat in the middle of the path and did not move. We went around it.</p>",
+                    "de": "<p>Zwischen Takahara und Chikatsuyu ist der Wald still. Hin und wieder überholte uns eine Gruppe, dann waren wir wieder allein mit den Steinen und den Farnen.</p><p>Kurz nach Mittag saß eine Landkrabbe mitten auf dem Weg und rührte sich nicht. Wir gingen um sie herum.</p>",
+                    "ja": "<p>高原と近露の間の森は静かだ。ときどきグループに追い越され、また石とシダだけになる。</p><p>昼過ぎ、道の真ん中にカニがいて動かなかった。私たちはよけて通った。</p>"
+                },
+                "categories": [
+                    "trail"
+                ],
+                "tags": [
+                    "Animals"
+                ],
+                "images": [
+                    {
+                        "photo": "land-crab",
+                        "showinpreview": 1
+                    },
+                    {
+                        "photo": "fern-frond",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "forest-stream",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "stone-path-walkers",
+                        "showinpreview": 0
+                    }
+                ]
+            },
+            {
+                "slug": "fog-on-the-pass",
+                "datetime": "2024-04-21T07:02",
+                "title": {
+                    "en": "Fog on the way to Chikatsuyu",
+                    "de": "Nebel auf dem Weg nach Chikatsuyu",
+                    "ja": "近露への道の霧"
+                },
+                "teaser": {
+                    "en": "At seven the valley was gone. We walked the first hour inside a cloud.",
+                    "de": "Um sieben war das Tal verschwunden. Die erste Stunde gingen wir in einer Wolke.",
+                    "ja": "7時、谷が消えていた。最初の1時間は雲の中を歩いた。"
+                },
+                "bodytext": {
+                    "en": "<p>From Takahara the clouds lay below the village like a lake. Half an hour later we were in them, and the cedars stood in white.</p><p>The stone paving is safe in the wet, the roots between the stones are not. By ten the sun came through and the valley returned.</p>",
+                    "de": "<p>Von Takahara aus lagen die Wolken wie ein See unter dem Dorf. Eine halbe Stunde später waren wir mittendrin, und die Zedern standen im Weiß.</p><p>Das Steinpflaster hält bei Nässe, die Wurzeln dazwischen nicht. Gegen zehn kam die Sonne durch und das Tal war wieder da.</p>",
+                    "ja": "<p>高原からは雲が湖のように集落の下にたまっていた。30分後にはその中にいて、杉が白の中に立っていた。</p><p>石畳は濡れても滑りにくいが、その間の木の根は滑る。10時ごろ日が差し、谷が戻ってきた。</p>"
+                },
+                "categories": [
+                    "trail"
+                ],
+                "tags": [
+                    "Fog",
+                    "Day 2"
+                ],
+                "images": [
+                    {
+                        "photo": "sea-of-clouds",
+                        "showinpreview": 1
+                    },
+                    {
+                        "photo": "walker-in-mist",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "misty-valley",
+                        "showinpreview": 0
+                    },
+                    {
+                        "photo": "cedar-canopy",
+                        "showinpreview": 0
+                    }
+                ]
+            }
+        ]
+    }
 }

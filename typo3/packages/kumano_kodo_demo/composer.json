@@ -7,7 +7,8 @@
     "require": {
         "kumano-kodo/sitepackage": "@dev",
         "typo3/cms-core": "^14.3",
-        "typo3/cms-impexp": "^14.3"
+        "typo3/cms-impexp": "^14.3",
+        "georgringer/news": "^14.1"
     },
     "autoload": {
         "psr-4": {

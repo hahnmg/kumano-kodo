@@ -17,6 +17,9 @@ export const paths = {
     practical: '/practical',
     practicalPage: (slug: PracticalSlug) => `/practical/${slug}`,
     photos: '/photos',
+    reports: '/reports',
+    reportsPage: (n: number) => (n === 1 ? '/reports' : `/reports/page/${n}`),
+    report: (slug: string) => `/reports/${slug}`,
     newsletter: '/newsletter',
     kohechi: '/kohechi',
     search: '/search',
@@ -40,6 +43,8 @@ export const routes: Record<string, string> = {
     '/practical': 'site--practical',
     ...Object.fromEntries(practicalSlugs.map((s) => [paths.practicalPage(s), `site--practical-${s}`])),
     '/photos': 'site--photos',
+    '/reports': 'site--reports',
+    '/reports/page/2': 'site--reports-page-2',
     '/newsletter': 'site--newsletter',
     '/kohechi': 'site--kohechi',
     '/search': 'site--search',
@@ -52,5 +57,9 @@ export const routes: Record<string, string> = {
     '/at-a-glance': 'site--at-a-glance',
     ...Object.fromEntries(legalSlugs.map((s) => [paths.legal(s), `site--${s}`])),
 };
+
+// One story per trail report, keyed by its slug.
+export const reportSlugs = ['what-we-packed', 'the-last-bus', 'the-oldest-bath', 'a-land-crab', 'fog-on-the-pass'] as const;
+for (const slug of reportSlugs) routes[paths.report(slug)] = `site--report-${slug}`;
 
 export const storyFor = (href: string): string | undefined => routes[href.split('#')[0].split('?')[0] || '/'];

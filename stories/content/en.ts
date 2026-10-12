@@ -13,6 +13,19 @@ const build = (p: Photos) => {
         uploadDrop: 'Drag a file here or',
         uploadChoose: 'choose one',
         formSteps: 'Steps',
+        newsAll: 'All reports',
+        newsPrevious: 'Previous report',
+        newsNext: 'Next report',
+        newsPhotos: 'Photos from this report',
+        newsDate: 'Date',
+        newsCategory: 'Category',
+        newsTags: 'Tags',
+        newsPages: 'Pages',
+        newsPreviousPage: 'Previous page',
+        newsNextPage: 'Next page',
+        // ICU pattern of the long date, as Intl writes it in the stories.
+        newsDatePattern: 'd MMMM y',
+        newsListSeparator: ', ',
         trailStatus: 'Trail status and contact',
         categories: 'Categories',
         breadcrumb: 'Breadcrumb',
@@ -223,6 +236,7 @@ const build = (p: Photos) => {
             { label: 'The route', href: paths.route, active: true, menu: routeMenu },
             { label: 'Practical', href: paths.practical, menu: practicalMenu },
             { label: 'Photos', href: paths.photos },
+            { label: 'Trail reports', href: paths.reports },
         ],
         hero: {
             image: p['sea-of-clouds'],
@@ -685,7 +699,85 @@ const build = (p: Photos) => {
         sentText: 'Thank you. We will write to you within a week.',
     };
 
-    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm };
+    // Invented trail reports, the demo's news.
+    const reports = {
+        title: 'Trail reports',
+        intro: 'Short reports from the four days: weather, places, buses and what we carried.',
+        categories: {
+            trail: 'Trail',
+            places: 'Places',
+            practical: 'Practical',
+        },
+        items: [
+            {
+                slug: 'what-we-packed',
+                date: '2024-04-25T10:00',
+                category: 'practical',
+                tags: ['Packing'],
+                title: 'What we packed, and what we left at home',
+                teaser: 'Two small rucksacks for four days of walking. Next time, one thing less.',
+                text: [
+                    'The luggage service carried a bag from inn to inn, so we walked with day packs: rain jacket, a dry layer, water, cash and the bus timetable on paper.',
+                    'What we did not need: the second pair of shoes. What we missed: a small towel for the onsen and coins for the vending machines.',
+                ],
+                photos: ['vending-machines', 'ryokan-room', 'signpost', 'roadside-markers'],
+            },
+            {
+                slug: 'the-last-bus',
+                date: '2024-04-23T16:05',
+                category: 'practical',
+                tags: ['Bus', 'Nachi'],
+                title: 'The last bus from Nachi',
+                teaser: 'It leaves earlier than you think. We made it with four minutes to spare.',
+                text: [
+                    'After the two passes the path ends at the pagoda, and the falls are a short walk below. From there the buses run down to the coast, but not late.',
+                    'Check the last departure before you set out in the morning, not when you arrive. From Kii-Katsuura the ferry crosses to the ryokan in a few minutes.',
+                ],
+                photos: ['seaside-station', 'morning-bus', 'nachi-pagoda', 'harbour-ferry'],
+            },
+            {
+                slug: 'the-oldest-bath',
+                date: '2024-04-22T18:30',
+                category: 'places',
+                tags: ['Onsen', 'Yunomine'],
+                title: 'The oldest bath on the route',
+                teaser: 'Yunomine is a single street around a hot river. We stayed longer than we had planned.',
+                text: [
+                    'Steam rises from the river between the inns. Guests cook eggs in the spring at the bridge and wait their turn for the small bath hut beside it.',
+                    'We arrived tired from the longest day and left the next morning later than planned, which made the walk to Nachi a long one.',
+                ],
+                photos: ['outdoor-bath', 'yunomine-street', 'river-bridge', 'evening-rooftops'],
+            },
+            {
+                slug: 'a-land-crab',
+                date: '2024-04-21T12:03',
+                category: 'trail',
+                tags: ['Animals'],
+                title: 'A land crab, and other company',
+                teaser: 'For most of the day we met nobody. Then a crab blocked the path.',
+                text: [
+                    'Between Takahara and Chikatsuyu the forest is quiet. Now and then a group passed us, then we were alone again with the stones and the ferns.',
+                    'Shortly after noon a land crab sat in the middle of the path and did not move. We went around it.',
+                ],
+                photos: ['land-crab', 'fern-frond', 'forest-stream', 'stone-path-walkers'],
+            },
+            {
+                slug: 'fog-on-the-pass',
+                date: '2024-04-21T07:02',
+                category: 'trail',
+                tags: ['Fog', 'Day 2'],
+                title: 'Fog on the way to Chikatsuyu',
+                teaser: 'At seven the valley was gone. We walked the first hour inside a cloud.',
+                text: [
+                    'From Takahara the clouds lay below the village like a lake. Half an hour later we were in them, and the cedars stood in white.',
+                    'The stone paving is safe in the wet, the roots between the stones are not. By ten the sun came through and the valley returned.',
+                ],
+                photos: ['sea-of-clouds', 'walker-in-mist', 'misty-valley', 'cedar-canopy'],
+            },
+        ],
+    };
+
+    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm, reports };
 };
 
 export const en: LocaleModule<ReturnType<typeof build>> = {

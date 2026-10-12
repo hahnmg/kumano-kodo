@@ -43,6 +43,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-12 Functional names: Stage Card → Portrait Card, Day Row → Timeline Item, Place Card → Feature Card, Bleed Photo → Bleed Image, Journal Opener → Page Intro; `color/moss` → `color/secondary`
 - [x] 2026-10-12 Forms: Button Style=Secondary; Select Multiple=Yes; File Upload; Choice Group; Form states Step and Summary
 - [ ] Pages: frames for Register a walk (`/register`, the walk form over three steps) and Routes and hosts (`/ways-to-walk-it`); menus with their new links
+- [ ] News (2026-10-12): Pagination as component; page frames Trail reports (list) and Report (detail with gallery); main menu with Trail reports
 - [ ] Block 2 (2026-10-12): Back To Top atom; rich text list markers and ↗ on external links; place pages and contact with links/form moved (links to the page end, form in the main column); FAQ chevron on the first line
 - [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the older page frames; the Site pages use it
 

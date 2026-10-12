@@ -14,8 +14,9 @@ $typo3 impexp:export data --type=xml --pid="$root" --levels=999 \
     --table=tx_kumanokodo_entry --table=tx_kumanokodo_fact --table=tx_kumanokodo_question \
     --table=tx_kumanokodo_station --table=tx_kumanokodo_day_mark --table=sys_file_reference \
     --table=fe_groups --table=fe_users \
+    --table=tx_news_domain_model_news --table=tx_news_domain_model_tag --table=sys_category \
     --include-related=sys_file --include-related=sys_file_metadata \
-    --save-files-outside-export-file --title="Kumano Kodo demo" --dependency=kumano_kodo
+    --save-files-outside-export-file --title="Kumano Kodo demo" --dependency=kumano_kodo --dependency=news
 
 rm -rf "$target/data.xml" "$target/data.xml.files" "$target/Site"
 mv public/fileadmin/user_upload/_temp_/importexport/data.xml public/fileadmin/user_upload/_temp_/importexport/data.xml.files "$target/"

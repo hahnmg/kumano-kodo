@@ -1,3 +1,4 @@
+import { reportSlugs } from '../content/paths';
 import { kumanoHome } from '../templates/kumano-home.markup';
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { content, type Content } from '../templates/content';
@@ -19,6 +20,8 @@ import {
     notFoundPage,
     papersPage,
     registerPage,
+    reportsPage,
+    reportPage,
     waysPage,
 } from '../templates/site-pages.markup';
 
@@ -70,3 +73,10 @@ export const Register: StoryObj = { name: 'Register a walk', render: page(regist
 export const Ways: StoryObj = { name: 'Ways to walk it', render: page(waysPage) };
 // The previous home, kept as an overview of the whole trip.
 export const AtAGlance: StoryObj = { name: 'At a glance', render: page(kumanoHome) };
+export const Reports: StoryObj = { name: 'Trail reports', render: page((c) => reportsPage(1, c)) };
+export const ReportsPage2: StoryObj = { name: 'Trail reports · Page 2', render: page((c) => reportsPage(2, c)) };
+export const ReportWhatWePacked: StoryObj = { name: 'Report · What we packed', render: page((c) => reportPage(reportSlugs[0], c)) };
+export const ReportTheLastBus: StoryObj = { name: 'Report · The last bus', render: page((c) => reportPage(reportSlugs[1], c)) };
+export const ReportTheOldestBath: StoryObj = { name: 'Report · The oldest bath', render: page((c) => reportPage(reportSlugs[2], c)) };
+export const ReportALandCrab: StoryObj = { name: 'Report · A land crab', render: page((c) => reportPage(reportSlugs[3], c)) };
+export const ReportFogOnThePass: StoryObj = { name: 'Report · Fog on the pass', render: page((c) => reportPage(reportSlugs[4], c)) };

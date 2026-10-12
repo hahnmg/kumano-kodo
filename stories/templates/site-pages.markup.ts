@@ -1,3 +1,5 @@
+import { pagination } from '../molecules/pagination.markup';
+import type { PhotoName } from './content';
 import { mediaList } from '../molecules/media-list.markup';
 import { personCard } from '../molecules/person-card.markup';
 import { textMedia } from '../molecules/text-media.markup';
@@ -46,7 +48,7 @@ import { kumanoJournal } from './kumano-journal.markup';
 import { searchSample } from './search-sample';
 
 // Which top-level nav item a page belongs to: 0 the route, 1 practical, 2 photos, -1 none.
-type Section = -1 | 0 | 1 | 2;
+type Section = -1 | 0 | 1 | 2 | 3;
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const paragraphs = (texts: readonly string[]) => texts.map((t) => `<p>${esc(t)}</p>`).join('');
@@ -432,6 +434,97 @@ const loginLabels = ({ ui }: Content) => ({
     loggedInAs: ui.loggedInAs,
     logOut: ui.logOut,
 });
+
+// The demo's news, from EXT:news in TYPO3: three reports a page, newest first.
+const reportsPerPage = 3;
+const longDate = (c: Content, iso: string) =>
+    new Intl.DateTimeFormat(c.locale === 'en' ? 'en-GB' : c.locale, { dateStyle: 'long' }).format(new Date(iso));
+
+export const reportsPage = (page: number, c: Content = content()): string => {
+    const { reports, photos, ui } = c;
+    const pages = Math.ceil(reports.items.length / reportsPerPage);
+    const items = reports.items.slice((page - 1) * reportsPerPage, page * reportsPerPage);
+    return chrome(
+        c,
+        3,
+        header(c, reports.title, []) +
+            // In TYPO3 the intro is a text element of its own, the list the news plugin.
+            section({ content: richText({ html: `<p>${esc(reports.intro)}</p>` }) }) +
+            section({
+                content: stack(
+                    [
+                        grid(
+                            items.map((r) =>
+                                teaserCard({
+                                    image: photos[r.photos[0] as PhotoName],
+                                    title: r.title,
+                                    href: paths.report(r.slug),
+                                    subtitle: r.teaser,
+                                    meta: longDate(c, r.date),
+                                    badge: reports.categories[r.category as keyof typeof reports.categories],
+                                    level: 2,
+                                }),
+                            ),
+                            3,
+                        ),
+                        pagination({
+                            current: page,
+                            total: pages,
+                            href: paths.reportsPage,
+                            label: ui.newsPages,
+                            previousLabel: ui.newsPreviousPage,
+                            nextLabel: ui.newsNextPage,
+                        }),
+                    ],
+                    'elements',
+                ),
+            }),
+    );
+};
+
+// A report: lead, first photo and text with its facts beside, the other photos below, then the way on.
+export const reportPage = (slug: string, c: Content = content()): string => {
+    const { reports, photos, ui } = c;
+    const i = reports.items.findIndex((r) => r.slug === slug);
+    const r = reports.items[i];
+    const older = reports.items[i + 1];
+    const [first, ...rest] = r.photos.map((name) => photos[name as PhotoName]);
+    return chrome(
+        c,
+        3,
+        header(c, r.title, [[reports.title, paths.reports]]) +
+            section({
+                content: split(
+                    stack(
+                        [
+                            `<p class="type-lead">${esc(r.teaser)}</p>`,
+                            figure({ images: [first], caption: first.caption ?? '', labels: lightbox(c) }),
+                            richText({ html: paragraphs(r.text) }),
+                        ],
+                        'column',
+                    ),
+                    factList({
+                        facts: [
+                            { label: ui.newsDate, value: longDate(c, r.date) },
+                            { label: ui.newsCategory, value: reports.categories[r.category as keyof typeof reports.categories] },
+                            { label: ui.newsTags, value: r.tags.join(ui.newsListSeparator) },
+                        ],
+                    }),
+                    'content-sidebar',
+                ),
+            }) +
+            section({
+                tone: 'sunk',
+                content: stack([sectionHeading({ title: ui.newsPhotos }), gallery({ images: rest, labels: lightbox(c) })], 'heading'),
+            }) +
+            section({
+                content: cluster([
+                    link({ label: ui.newsAll, href: paths.reports, direction: 'back' }),
+                    ...(older ? [link({ label: `${ui.newsNext}: ${older.title}`, href: paths.report(older.slug) })] : []),
+                ]),
+            }),
+    );
+};
 
 // The demo's form with every EXT:form element type; the other steps are in Molecules/Form.
 export const registerPage = (c: Content = content()): string =>

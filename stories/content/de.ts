@@ -13,6 +13,19 @@ const build = (p: Photos): LocaleContent => {
         uploadDrop: 'Datei hierher ziehen oder',
         uploadChoose: 'auswählen',
         formSteps: 'Schritte',
+        newsAll: 'Alle Berichte',
+        newsPrevious: 'Vorheriger Bericht',
+        newsNext: 'Nächster Bericht',
+        newsPhotos: 'Fotos zu diesem Bericht',
+        newsDate: 'Datum',
+        newsCategory: 'Kategorie',
+        newsTags: 'Schlagwörter',
+        newsPages: 'Seiten',
+        newsPreviousPage: 'Vorherige Seite',
+        newsNextPage: 'Nächste Seite',
+        // ICU pattern of the long date, as Intl writes it in the stories.
+        newsDatePattern: 'd. MMMM y',
+        newsListSeparator: ', ',
         trailStatus: 'Wegzustand und Kontakt',
         categories: 'Kategorien',
         breadcrumb: 'Brotkrumen',
@@ -221,6 +234,7 @@ const build = (p: Photos): LocaleContent => {
             { label: 'Die Route', href: paths.route, active: true, menu: routeMenu },
             { label: 'Praktisches', href: paths.practical, menu: practicalMenu },
             { label: 'Fotos', href: paths.photos },
+            { label: 'Wegberichte', href: paths.reports },
         ],
         hero: {
             image: p['sea-of-clouds'],
@@ -683,7 +697,85 @@ const build = (p: Photos): LocaleContent => {
         sentText: 'Danke. Wir schreiben dir innerhalb einer Woche.',
     };
 
-    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm };
+    // Invented trail reports, the demo's news.
+    const reports = {
+        title: 'Wegberichte',
+        intro: 'Kurze Berichte von den vier Tagen: Wetter, Orte, Busse und was wir dabeihatten.',
+        categories: {
+            trail: 'Weg',
+            places: 'Orte',
+            practical: 'Praktisches',
+        },
+        items: [
+            {
+                slug: 'what-we-packed',
+                date: '2024-04-25T10:00',
+                category: 'practical',
+                photos: ['vending-machines', 'ryokan-room', 'signpost', 'roadside-markers'],
+                title: 'Was wir eingepackt haben und was zu Hause blieb',
+                teaser: 'Zwei kleine Rucksäcke für vier Tage Gehen. Nächstes Mal ein Teil weniger.',
+                tags: ['Packen'],
+                text: [
+                    'Der Gepäckservice brachte eine Tasche von Herberge zu Herberge, also gingen wir mit Tagesrucksäcken: Regenjacke, eine trockene Schicht, Wasser, Bargeld und den Busfahrplan auf Papier.',
+                    'Nicht gebraucht: das zweite Paar Schuhe. Gefehlt: ein kleines Handtuch für das Onsen und Münzen für die Automaten.',
+                ],
+            },
+            {
+                slug: 'the-last-bus',
+                date: '2024-04-23T16:05',
+                category: 'practical',
+                photos: ['seaside-station', 'morning-bus', 'nachi-pagoda', 'harbour-ferry'],
+                title: 'Der letzte Bus ab Nachi',
+                teaser: 'Er fährt früher, als man denkt. Wir hatten vier Minuten Luft.',
+                tags: ['Bus', 'Nachi'],
+                text: [
+                    'Nach den zwei Pässen endet der Weg an der Pagode, der Wasserfall liegt ein kurzes Stück darunter. Von dort fahren Busse hinunter zur Küste, aber nicht spät.',
+                    'Die letzte Abfahrt am Morgen prüfen, nicht erst bei der Ankunft. Von Kii-Katsuura setzt die Fähre in wenigen Minuten zum Ryokan über.',
+                ],
+            },
+            {
+                slug: 'the-oldest-bath',
+                date: '2024-04-22T18:30',
+                category: 'places',
+                photos: ['outdoor-bath', 'yunomine-street', 'river-bridge', 'evening-rooftops'],
+                title: 'Das älteste Bad am Weg',
+                teaser: 'Yunomine ist eine einzige Straße um einen heißen Fluss. Wir blieben länger als geplant.',
+                tags: ['Onsen', 'Yunomine'],
+                text: [
+                    'Zwischen den Herbergen steigt Dampf aus dem Fluss. Gäste kochen an der Brücke Eier in der Quelle und warten auf ihren Platz in der kleinen Badehütte daneben.',
+                    'Wir kamen müde vom längsten Tag an und brachen am nächsten Morgen später auf als geplant. Der Weg nach Nachi wurde entsprechend lang.',
+                ],
+            },
+            {
+                slug: 'a-land-crab',
+                date: '2024-04-21T12:03',
+                category: 'trail',
+                photos: ['land-crab', 'fern-frond', 'forest-stream', 'stone-path-walkers'],
+                title: 'Eine Landkrabbe und andere Gesellschaft',
+                teaser: 'Den größten Teil des Tages trafen wir niemanden. Dann versperrte eine Krabbe den Weg.',
+                tags: ['Tiere'],
+                text: [
+                    'Zwischen Takahara und Chikatsuyu ist der Wald still. Hin und wieder überholte uns eine Gruppe, dann waren wir wieder allein mit den Steinen und den Farnen.',
+                    'Kurz nach Mittag saß eine Landkrabbe mitten auf dem Weg und rührte sich nicht. Wir gingen um sie herum.',
+                ],
+            },
+            {
+                slug: 'fog-on-the-pass',
+                date: '2024-04-21T07:02',
+                category: 'trail',
+                photos: ['sea-of-clouds', 'walker-in-mist', 'misty-valley', 'cedar-canopy'],
+                title: 'Nebel auf dem Weg nach Chikatsuyu',
+                teaser: 'Um sieben war das Tal verschwunden. Die erste Stunde gingen wir in einer Wolke.',
+                tags: ['Nebel', 'Tag 2'],
+                text: [
+                    'Von Takahara aus lagen die Wolken wie ein See unter dem Dorf. Eine halbe Stunde später waren wir mittendrin, und die Zedern standen im Weiß.',
+                    'Das Steinpflaster hält bei Nässe, die Wurzeln dazwischen nicht. Gegen zehn kam die Sonne durch und das Tal war wieder da.',
+                ],
+            },
+        ],
+    };
+
+    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm, reports };
 };
 
 export const de: LocaleModule<LocaleContent> = {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6e19c0fad859b39cf4be0cbd07d8a01",
+    "content-hash": "d0d4591458c7c108a2558fb6dc674168",
     "packages": [
         {
             "name": "b13/container",
@@ -944,6 +944,115 @@
             "time": "2026-09-28T17:51:46+00:00"
         },
         {
+            "name": "georgringer/news",
+            "version": "14.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/georgringer/news.git",
+                "reference": "36a5a983022f5648352975142d9daef6f77a657d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/georgringer/news/zipball/36a5a983022f5648352975142d9daef6f77a657d",
+                "reference": "36a5a983022f5648352975142d9daef6f77a657d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 8.2 < 8.6",
+                "symfony/console": "^5.4 || ^6.4 || ^7.0",
+                "typo3/cms-backend": "^13.4.29 || ^14.3",
+                "typo3/cms-core": "^13.4.29 || ^14.3",
+                "typo3/cms-extbase": "^13.4.29 || ^14.3",
+                "typo3/cms-fluid": "^13.4.29 || ^14.3",
+                "typo3/cms-frontend": "^13.4.29 || ^14.3",
+                "typo3/cms-install": "^13.4.29 || ^14.3"
+            },
+            "conflict": {
+                "sebastian/recursion-context": "6.0.0 || 6.0.1 || 6.0.2"
+            },
+            "replace": {
+                "typo3-ter/news": "self.version"
+            },
+            "require-dev": {
+                "a9f/fractor": "~1.0.0",
+                "a9f/fractor-xliff": "~1.0.0",
+                "a9f/fractor-xml": "~1.0.0",
+                "a9f/typo3-fractor": "@dev",
+                "friendsofphp/php-cs-fixer": "^3.89.2",
+                "phpstan/phpdoc-parser": "^1.33.0",
+                "phpunit/phpunit": "^10.5.58",
+                "ssch/typo3-rector": "^3.7",
+                "typo3/cms-fluid-styled-content": "^13.4.29 || ^14.3",
+                "typo3/cms-seo": "^13.4.29 || ^14.3",
+                "typo3/coding-standards": "^0.8.0",
+                "typo3/testing-framework": "^8.3.1",
+                "webmozart/assert": "^1.12.1"
+            },
+            "suggest": {
+                "georgringer/news-tagsuggest": "On the fly creation of tag records within a news record",
+                "georgringer/numbered-pagination": "Improved pagination API",
+                "reelworx/rx-shariff": "GDPR compliant social sharing",
+                "typo3/cms-scheduler": "XML and ICS import",
+                "typo3/cms-seo": "Sitemaps"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "app-dir": ".Build",
+                    "web-dir": ".Build/Web",
+                    "extension-key": "news"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeorgRinger\\News\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Georg Ringer",
+                    "homepage": "https://ringer.it",
+                    "role": "Developer"
+                }
+            ],
+            "description": "News system - Versatile news system based on Extbase & Fluid and using the latest technologies provided by TYPO3 CMS.",
+            "homepage": "https://extensions.typo3.org/extension/news",
+            "keywords": [
+                "article",
+                "extension",
+                "news",
+                "typo3"
+            ],
+            "support": {
+                "docs": "https://docs.typo3.org/p/georgringer/news/main/en-us/",
+                "issues": "https://github.com/georgringer/news/issues",
+                "source": "https://github.com/georgringer/news"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/GeorgRinger/10",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.amazon.de/hz/wishlist/ls/8F573K08TSDG",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/georgringer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/georgringer",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2026-10-12T08:22:46+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "8.2.0",
             "source": {
@@ -1277,9 +1386,10 @@
             "dist": {
                 "type": "path",
                 "url": "packages/kumano_kodo_demo",
-                "reference": "25c87a68d3a2a0e3b97d9b2c80e3427a310a1b41"
+                "reference": "c61a279d4aa35d8f4c9c463226ebd97907f32ca4"
             },
             "require": {
+                "georgringer/news": "^14.1",
                 "kumano-kodo/sitepackage": "@dev",
                 "typo3/cms-core": "^14.3",
                 "typo3/cms-impexp": "^14.3"
@@ -1312,7 +1422,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/kumano_kodo",
-                "reference": "a4dc25f46ad97452a68b27ec45eb6b025cdef677"
+                "reference": "dd80adb34c970b636c65e93cedc83a03bbf7a897"
             },
             "require": {
                 "b13/container": "^4.1",
@@ -1320,6 +1430,9 @@
                 "typo3/cms-fluid": "^14.3",
                 "typo3/cms-frontend": "^14.3",
                 "typo3/cms-rte-ckeditor": "^14.3"
+            },
+            "suggest": {
+                "georgringer/news": "News and blog posts with the theme's components: the site set kumano-kodo/news"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -1338,7 +1451,7 @@
             "license": [
                 "proprietary"
             ],
-            "description": "Kumano Kodo - Sitepackage built from the Kumano Kodo design system",
+            "description": "Kumano Kodo for TYPO3: a theme built from the Kumano Kodo design system",
             "transport-options": {
                 "relative": true
             }

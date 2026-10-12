@@ -95,6 +95,10 @@ final class BuildCommand extends Command
         }
         $this->writeErrorHandling($demo['site']['errorHandling'] ?? []);
         $this->createFrontendUsers($demo['frontendUsers'] ?? []);
+        $this->writeRouteEnhancers($demo['site']['routeEnhancers'] ?? []);
+        if (isset($demo['news'])) {
+            $this->createNews($demo['news']);
+        }
         $elements = 0;
         foreach ($demo['pages'] as $page) {
             $uid = $this->pages[$page['key']];
@@ -499,7 +503,7 @@ final class BuildCommand extends Command
             // Absolute links (sitemap, canonical) need a host; DDEV knows its own, any other server keeps "/".
             'baseVariants' => [['base' => '%env(DDEV_PRIMARY_URL)%/', 'condition' => 'getenv("IS_DDEV_PROJECT") == "true"']],
             'websiteTitle' => $site['websiteTitle'],
-            'dependencies' => ['kumano-kodo/site'],
+            'dependencies' => $site['sets'] ?? ['kumano-kodo/site'],
             'languages' => $languages,
         ];
         $this->siteWriter->write(self::SITE, $this->siteConfiguration);
@@ -516,6 +520,66 @@ final class BuildCommand extends Command
     }
 
     private array $siteConfiguration = [];
+
+    // limitToPages names page keys; they become uids once the pages exist.
+    private function writeRouteEnhancers(array $enhancers): void
+    {
+        if ($enhancers === []) {
+            return;
+        }
+        foreach ($enhancers as $name => $enhancer) {
+            if (isset($enhancer['limitToPages'])) {
+                $enhancers[$name]['limitToPages'] = array_map(fn (string $key): int => $this->pages[$key], $enhancer['limitToPages']);
+            }
+        }
+        $this->siteConfiguration['routeEnhancers'] = $enhancers;
+        $this->siteWriter->write(self::SITE, $this->siteConfiguration);
+    }
+
+    // EXT:news records in their folder: categories and tags first, then the news with their images, each translated.
+    private function createNews(array $news): void
+    {
+        $folder = $this->pages[$news['folder']];
+        $categories = [];
+        foreach ($news['categories'] as $key => $title) {
+            $categories[$key] = $this->create('sys_category', ['pid' => $folder, 'title' => $title['en']]);
+            foreach (self::LANGUAGES as $code => $language) {
+                $this->translate('sys_category', $categories[$key], $language, ['title' => $title[$code]]);
+            }
+        }
+        $tags = [];
+        foreach ($news['tags'] as $key => $title) {
+            $tags[$key] = $this->create('tx_news_domain_model_tag', ['pid' => $folder, 'title' => $title['en']]);
+            foreach (self::LANGUAGES as $code => $language) {
+                $this->translate('tx_news_domain_model_tag', $tags[$key], $language, ['title' => $title[$code]]);
+            }
+        }
+        foreach ($news['items'] as $item) {
+            $fields = [
+                'pid' => $folder,
+                'title' => $item['title']['en'],
+                'teaser' => $item['teaser']['en'],
+                'bodytext' => $item['bodytext']['en'],
+                'datetime' => (new \DateTimeImmutable($item['datetime']))->getTimestamp(),
+                'path_segment' => $item['slug'],
+                'categories' => implode(',', array_map(static fn (string $key): int => $categories[$key], $item['categories'])),
+                'tags' => implode(',', array_map(static fn (string $key): int => $tags[$key], $item['tags'])),
+            ];
+            $data = ['tx_news_domain_model_news' => ['NEWnews' => $fields]];
+            $data['tx_news_domain_model_news']['NEWnews']['fal_media'] = $this->references($data, $item['images'], $folder);
+            $uid = $this->create('tx_news_domain_model_news', $fields, $data);
+            foreach (self::LANGUAGES as $code => $language) {
+                $this->translate('tx_news_domain_model_news', $uid, $language, [
+                    'title' => $item['title'][$code],
+                    'teaser' => $item['teaser'][$code],
+                    'bodytext' => $item['bodytext'][$code],
+                    'path_segment' => $item['slug'],
+                    // EXT:news hides a record while it is localized; the demo's translations are done.
+                    'hidden' => 0,
+                ]);
+            }
+        }
+    }
 
     private function link(string $link): string
     {
