@@ -154,6 +154,7 @@ const build = (p: Photos) => {
                 links: [
                     { label: 'post@kumano-kodo.example' },
                     { label: 'Usually answered within a week' },
+                    { label: 'Write to us', href: paths.contact },
                     { label: 'Walked with us? Log in', href: paths.login },
                 ],
             },
@@ -172,10 +173,13 @@ const build = (p: Photos) => {
         columns: [
             {
                 title: 'Days',
-                links: [1, 2, 3, 4].map((n) => ({
-                    label: `Day ${n} · ${['Takijiri → Takahara', 'Takahara → Chikatsuyu', 'Chikatsuyu → Hongu', 'Yunomine → Nachi'][n - 1]}`,
-                    href: paths.day(n),
-                })),
+                links: [
+                    ...[1, 2, 3, 4].map((n) => ({
+                        label: `Day ${n} · ${['Takijiri → Takahara', 'Takahara → Chikatsuyu', 'Chikatsuyu → Hongu', 'Yunomine → Nachi'][n - 1]}`,
+                        href: paths.day(n),
+                    })),
+                    { label: 'All four days at a glance', href: paths.glance },
+                ],
             },
             {
                 title: 'Places',
@@ -208,6 +212,8 @@ const build = (p: Photos) => {
             { label: 'Accommodation', href: paths.practicalPage('accommodation') },
             { label: 'Trail markers and safety', href: paths.practicalPage('trail-markers') },
             { label: 'Maps and timetables', href: paths.practicalPage('maps') },
+            { label: 'Routes and hosts', href: paths.ways },
+            { label: 'Register a walk', href: paths.register },
             { label: 'Newsletter', href: paths.newsletter },
         ],
     };
@@ -509,6 +515,8 @@ const build = (p: Photos) => {
 
     // Texts of the pages behind the links.
     const site = {
+        glance: { title: 'At a glance' },
+        ways: { title: 'Routes and hosts' },
         home: 'Home',
         route: { title: 'The route', lede: pages.start.text },
         days: {

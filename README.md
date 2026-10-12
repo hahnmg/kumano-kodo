@@ -98,7 +98,8 @@ ddev start               # installs TYPO3 and imports the demo on the first star
 
 The site answers at https://kumano-kodo.ddev.site in EN, `/de/` and `/ja/`; the backend at `/typo3` with user `admin`
 and the password in `typo3/var/admin-password` (generated once, kept across reinstalls). The demo holds every Storybook
-site page, the previous home (`/home-v3`) and a page with the remaining components (`/components`); the log-in takes the
+site page, reachable from its menus: the previous home as an overview (`/at-a-glance`), the remaining components
+(`/ways-to-walk-it`) and a form with every EXT:form element type (`/register`). The log-in takes the
 published walker account `pilgrim` (`stories/content/demo-login.ts`). Set `KUMANO_DEMO=starter` before the first start
 (`ddev config --web-environment-add=KUMANO_DEMO=starter`) to build the starter pages instead.
 

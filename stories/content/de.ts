@@ -153,6 +153,7 @@ const build = (p: Photos): LocaleContent => {
                 links: [
                     { label: 'post@kumano-kodo.example' },
                     { label: 'Antwort meist innerhalb einer Woche' },
+                    { label: 'Schreib uns', href: paths.contact },
                     { label: 'Mitgewandert? Anmelden', href: paths.login },
                 ],
             },
@@ -170,10 +171,13 @@ const build = (p: Photos): LocaleContent => {
         columns: [
             {
                 title: 'Tage',
-                links: [1, 2, 3, 4].map((n) => ({
-                    label: `Tag ${n} · ${['Takijiri → Takahara', 'Takahara → Chikatsuyu', 'Chikatsuyu → Hongu', 'Yunomine → Nachi'][n - 1]}`,
-                    href: paths.day(n),
-                })),
+                links: [
+                    ...[1, 2, 3, 4].map((n) => ({
+                        label: `Tag ${n} · ${['Takijiri → Takahara', 'Takahara → Chikatsuyu', 'Chikatsuyu → Hongu', 'Yunomine → Nachi'][n - 1]}`,
+                        href: paths.day(n),
+                    })),
+                    { label: 'Alle vier Tage auf einen Blick', href: paths.glance },
+                ],
             },
             {
                 title: 'Orte',
@@ -206,6 +210,8 @@ const build = (p: Photos): LocaleContent => {
             { label: 'Unterkunft', href: paths.practicalPage('accommodation') },
             { label: 'Wegmarken und Sicherheit', href: paths.practicalPage('trail-markers') },
             { label: 'Karten und Fahrpläne', href: paths.practicalPage('maps') },
+            { label: 'Wege und Gastgeber', href: paths.ways },
+            { label: 'Wanderung anmelden', href: paths.register },
             { label: 'Newsletter', href: paths.newsletter },
         ],
     };
@@ -504,6 +510,8 @@ const build = (p: Photos): LocaleContent => {
     };
 
     const site = {
+        glance: { title: 'Auf einen Blick' },
+        ways: { title: 'Wege und Gastgeber' },
         home: 'Start',
         route: { title: 'Die Route', lede: pages.start.text },
         days: {

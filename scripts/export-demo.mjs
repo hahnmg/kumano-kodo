@@ -428,7 +428,7 @@ const v3 = [
             items: {
                 tx_kumanokodo_links: list(
                     (x) => x.kumano.hero.actions,
-                    (a) => ({ title: t((x) => a(x).label), link: link(a(c.en).href, 'home-v3') }),
+                    (a) => ({ title: t((x) => a(x).label), link: link(a(c.en).href, 'at-a-glance') }),
                 ),
                 tx_kumanokodo_facts: list(
                     (x) => x.kumano.hero.stats,
@@ -504,12 +504,8 @@ const v3 = [
     el('kumano_newsletter', { header: t((x) => x.home.newsletter.title), bodytext: t((x) => x.home.newsletter.text) }),
 ];
 
-// Components no page uses, with the sample data of their stories, so every element and style is in the demo.
+// Components no other page uses, with the sample data of their stories: a place, the ways to walk the route, the hosts.
 const components = [
-    el(
-        'header',
-        heading((x) => x.home.map),
-    ),
     el(
         'kumano_text_image',
         {
@@ -795,25 +791,26 @@ const pages = [
             ],
         },
     ),
+    // The previous home, kept as an overview of the whole trip; linked from the route's menu.
     page(
-        'home-v3',
-        'home',
-        t(() => 'Home v3'),
-        { navHide: true, noIndex: true, layout: 'Classic', content: v3 },
+        'at-a-glance',
+        'route',
+        t((x) => x.site.glance.title),
+        { navHide: true, layout: 'Classic', content: v3 },
+    ),
+    // Linked from the practical menu, as is the form below.
+    page(
+        'ways',
+        'practical',
+        t((x) => x.site.ways.title),
+        { navHide: true, content: components },
     ),
     page(
-        'components',
-        'home',
-        t(() => 'Components'),
-        { navHide: true, noIndex: true, content: components },
-    ),
-    page(
-        'form-elements',
-        'home',
+        'register',
+        'practical',
         t((x) => x.walkForm.title),
         {
             navHide: true,
-            noIndex: true,
             content: [columns('content-sidebar', {}, [el('form_formframework', { pi_flexform: formFlexform(walkFormTarget) })], [])],
         },
     ),
@@ -860,7 +857,9 @@ const intros = {
     photos: (x) => x.site.photos.intro,
     newsletter: (x) => x.site.newsletter.intro,
     ...Object.fromEntries(legalSlugs.map((slug) => [slug, (x) => x.site.legal[slug].text])),
-    'home-v3': (x) => x.kumano.hero.teaser,
+    'at-a-glance': (x) => x.kumano.hero.teaser,
+    ways: (x) => x.kumano.places[1].description,
+    register: (x) => x.walkForm.introText,
     contact: (x) => contact(x).links[1].label,
 };
 for (const p of pages) if (intros[p.key]) p.description = t((x) => summary(intros[p.key](x)));

@@ -1,3 +1,4 @@
+import { kumanoHome } from '../templates/kumano-home.markup';
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { content, type Content } from '../templates/content';
 import {
@@ -17,7 +18,8 @@ import {
     contactPage,
     notFoundPage,
     papersPage,
-    formElementsPage,
+    registerPage,
+    waysPage,
 } from '../templates/site-pages.markup';
 
 const page =
@@ -64,4 +66,7 @@ export const Login: StoryObj = { name: 'Log in', render: page(loginPage) };
 export const Contact: StoryObj = { render: page(contactPage) };
 export const NotFound: StoryObj = { name: 'Page not found', render: page(notFoundPage) };
 export const Papers: StoryObj = { name: 'Travel papers', render: page(papersPage) };
-export const FormElements: StoryObj = { name: 'Form elements', render: page(formElementsPage) };
+export const Register: StoryObj = { name: 'Register a walk', render: page(registerPage) };
+export const Ways: StoryObj = { name: 'Ways to walk it', render: page(waysPage) };
+// The previous home, kept as an overview of the whole trip.
+export const AtAGlance: StoryObj = { name: 'At a glance', render: page(kumanoHome) };

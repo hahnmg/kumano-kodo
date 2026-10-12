@@ -1,3 +1,6 @@
+import { mediaList } from '../molecules/media-list.markup';
+import { personCard } from '../molecules/person-card.markup';
+import { textMedia } from '../molecules/text-media.markup';
 import { walkForm } from './walk-form';
 import { skipLink } from '../atoms/skip-link.markup';
 import { fill } from '../../src/lib/html';
@@ -431,8 +434,43 @@ const loginLabels = ({ ui }: Content) => ({
 });
 
 // The demo's form with every EXT:form element type; the other steps are in Molecules/Form.
-export const formElementsPage = (c: Content = content()): string =>
-    chrome(c, -1, header(c, c.walkForm.title, []) + section({ content: split(walkForm(c), '', 'content-sidebar') }));
+export const registerPage = (c: Content = content()): string =>
+    chrome(
+        c,
+        1,
+        header(c, c.walkForm.title, [[c.site.practical.title, paths.practical]]) +
+            section({ content: split(walkForm(c), '', 'content-sidebar') }),
+    );
+
+// The components no other page uses, given a place of their own: a place, the ways to walk the route and the hosts.
+export const waysPage = (c: Content = content()): string => {
+    const { kumano, guide, pages, ui, site } = c;
+    const yunomine = kumano.places[1];
+    return chrome(
+        c,
+        1,
+        header(c, site.ways.title, [[site.practical.title, paths.practical]]) +
+            section({
+                content: textMedia({
+                    image: yunomine.image,
+                    title: yunomine.title,
+                    text: yunomine.description,
+                    link: { label: ui.readMore, href: paths.route },
+                }),
+            }) +
+            section({
+                content: split(
+                    mediaList({
+                        title: pages.start.panelTitle,
+                        items: guide.routes,
+                        more: { label: pages.start.panelMore, href: paths.days },
+                    }),
+                    grid(guide.hosts.map(personCard), 2),
+                    'even',
+                ),
+            }),
+    );
+};
 
 export const loginPage = (c: Content = content()): string =>
     chrome(

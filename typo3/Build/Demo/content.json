@@ -557,6 +557,14 @@
                             },
                             {
                                 "title": {
+                                    "en": "Write to us",
+                                    "de": "Schreib uns",
+                                    "ja": "フォームから連絡する"
+                                },
+                                "link": "page:contact"
+                            },
+                            {
+                                "title": {
                                     "en": "Walked with us? Log in",
                                     "de": "Mitgewandert? Anmelden",
                                     "ja": "一緒に歩いた方はログイン"
@@ -1762,6 +1770,14 @@
                                     "ja": "4日目 · 湯の峰 → 那智"
                                 },
                                 "link": "page:day-4"
+                            },
+                            {
+                                "label": {
+                                    "en": "All four days at a glance",
+                                    "de": "Alle vier Tage auf einen Blick",
+                                    "ja": "4日間を一覧で見る"
+                                },
+                                "link": "page:at-a-glance"
                             }
                         ]
                     },
@@ -3633,6 +3649,22 @@
                             },
                             {
                                 "label": {
+                                    "en": "Routes and hosts",
+                                    "de": "Wege und Gastgeber",
+                                    "ja": "ルートと宿の人々"
+                                },
+                                "link": "page:ways"
+                            },
+                            {
+                                "label": {
+                                    "en": "Register a walk",
+                                    "de": "Wanderung anmelden",
+                                    "ja": "ウォークの申し込み"
+                                },
+                                "link": "page:register"
+                            },
+                            {
+                                "label": {
                                     "en": "Newsletter",
                                     "de": "Newsletter",
                                     "ja": "ニュースレター"
@@ -4794,15 +4826,15 @@
             }
         },
         {
-            "key": "home-v3",
-            "parent": "home",
-            "slug": "/home-v3",
+            "key": "at-a-glance",
+            "parent": "route",
+            "slug": "/at-a-glance",
             "layout": "Classic",
             "navHide": true,
             "title": {
-                "en": "Home v3",
-                "de": "Home v3",
-                "ja": "Home v3"
+                "en": "At a glance",
+                "de": "Auf einen Blick",
+                "ja": "一覧で見る"
             },
             "content": [
                 {
@@ -4836,7 +4868,7 @@
                                     "de": "Zu den Tagen",
                                     "ja": "日程を見る"
                                 },
-                                "link": "page:home-v3#stages"
+                                "link": "page:at-a-glance#stages"
                             },
                             {
                                 "title": {
@@ -4844,7 +4876,7 @@
                                     "de": "Praktische Fragen",
                                     "ja": "よくある質問"
                                 },
-                                "link": "page:home-v3#faq"
+                                "link": "page:at-a-glance#faq"
                             }
                         ],
                         "tx_kumanokodo_facts": [
@@ -5676,7 +5708,6 @@
                     }
                 }
             ],
-            "noIndex": true,
             "description": {
                 "en": "The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines.",
                 "de": "Der Kumano Kodo ist kein einzelner Fernwanderweg, sondern ein Netz alter Pilgerpfade zu drei Schreinen.",
@@ -5684,37 +5715,17 @@
             }
         },
         {
-            "key": "components",
-            "parent": "home",
-            "slug": "/components",
+            "key": "ways",
+            "parent": "practical",
+            "slug": "/ways-to-walk-it",
             "layout": "Default",
             "navHide": true,
             "title": {
-                "en": "Components",
-                "de": "Components",
-                "ja": "Components"
+                "en": "Routes and hosts",
+                "de": "Wege und Gastgeber",
+                "ja": "ルートと宿の人々"
             },
             "content": [
-                {
-                    "type": "header",
-                    "fields": {
-                        "header": {
-                            "en": "Schematic, not to scale",
-                            "de": "Schematisch, nicht maßstäblich",
-                            "ja": "概略図、縮尺なし"
-                        },
-                        "subheader": {
-                            "en": "Trail map",
-                            "de": "Wegekarte",
-                            "ja": "ルートマップ"
-                        },
-                        "tx_kumanokodo_aside": {
-                            "en": "The order of the stations and the day boundaries are right, the geometry is not. For navigation you need the tourism office map.",
-                            "de": "Die Reihenfolge der Stationen und die Tagesgrenzen stimmen, die Geometrie nicht. Zum Navigieren braucht man die Karte des Tourismusbüros.",
-                            "ja": "地点の順序と日の区切りは正確だが、形は正確ではない。道案内には観光協会の地図が必要。"
-                        }
-                    }
-                },
                 {
                     "type": "kumano_text_image",
                     "fields": {
@@ -5855,12 +5866,16 @@
                     }
                 }
             ],
-            "noIndex": true
+            "description": {
+                "en": "A narrow valley with the bath houses along the stream. Carp streamers hung across it for Children’s Day.",
+                "de": "Ein enges Tal, die Badehäuser am Bach entlang. Zum Kindertag hingen Karpfenfahnen quer darüber.",
+                "ja": "狭い谷の沢沿いに湯屋が並ぶ。こどもの日を前に、鯉のぼりが川をまたいで泳いでいた。"
+            }
         },
         {
-            "key": "form-elements",
-            "parent": "home",
-            "slug": "/form-elements",
+            "key": "register",
+            "parent": "practical",
+            "slug": "/register",
             "layout": "Default",
             "navHide": true,
             "title": {
@@ -5887,7 +5902,11 @@
                     }
                 }
             ],
-            "noIndex": true
+            "description": {
+                "en": "Tell us who walks, which route and when. We answer within a week.",
+                "de": "Sag uns, wer wandert, auf welcher Route und wann. Wir antworten innerhalb einer Woche.",
+                "ja": "歩く人、ルート、日程を教えてください。1週間以内にお返事します。"
+            }
         },
         {
             "key": "form-content",

@@ -152,6 +152,7 @@ const build = (p: Photos): LocaleContent => {
                 links: [
                     { label: 'post@kumano-kodo.example' },
                     { label: '通常一週間以内に返信します' },
+                    { label: 'フォームから連絡する', href: paths.contact },
                     { label: '一緒に歩いた方はログイン', href: paths.login },
                 ],
             },
@@ -169,10 +170,13 @@ const build = (p: Photos): LocaleContent => {
         columns: [
             {
                 title: '日程',
-                links: [1, 2, 3, 4].map((n) => ({
-                    label: `${n}日目 · ${['滝尻 → 高原', '高原 → 近露', '近露 → 本宮', '湯の峰 → 那智'][n - 1]}`,
-                    href: paths.day(n),
-                })),
+                links: [
+                    ...[1, 2, 3, 4].map((n) => ({
+                        label: `${n}日目 · ${['滝尻 → 高原', '高原 → 近露', '近露 → 本宮', '湯の峰 → 那智'][n - 1]}`,
+                        href: paths.day(n),
+                    })),
+                    { label: '4日間を一覧で見る', href: paths.glance },
+                ],
             },
             {
                 title: '見どころ',
@@ -205,6 +209,8 @@ const build = (p: Photos): LocaleContent => {
             { label: '宿泊', href: paths.practicalPage('accommodation') },
             { label: '道標と安全', href: paths.practicalPage('trail-markers') },
             { label: '地図と時刻表', href: paths.practicalPage('maps') },
+            { label: 'ルートと宿の人々', href: paths.ways },
+            { label: 'ウォークの申し込み', href: paths.register },
             { label: 'ニュースレター', href: paths.newsletter },
         ],
     };
@@ -488,6 +494,8 @@ const build = (p: Photos): LocaleContent => {
     };
 
     const site = {
+        glance: { title: '一覧で見る' },
+        ways: { title: 'ルートと宿の人々' },
         home: 'ホーム',
         route: { title: 'ルート', lede: pages.start.text },
         days: {
