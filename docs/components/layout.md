@@ -10,5 +10,8 @@ Section bands and arrangements that templates compose: `section` (tone, space, b
 | `split` | ratio content-sidebar, text-media, heading-content, wide-narrow, narrow-wide, even |
 | `stack` | gap `heading` (section heading to its content, 56), `elements` (elements in one section, 96), `column` (elements in one column, 40, the default); 16 and 24 only inside a component |
 
+Two sections on the same ground follow each other with one inner space between them: the second drops its top
+padding.
+
 Tokens: `--section-sm`, `--section-lg`, `--gutter`, `--container-page`, `--section-heading-gap`, `--section-element-gap`,
 `--column-element-gap`, `--space-*`.

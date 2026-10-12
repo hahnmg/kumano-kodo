@@ -1401,6 +1401,12 @@ body {
     padding-block: 0;
 }
 
+/* Two sections on the same ground read as one band: one inner space between them, not two. */
+.section-paper + .section-paper,
+.section-sunk + .section-sunk {
+    padding-top: 0;
+}
+
 .section-inner {
     max-width: var(--container-page);
     margin-inline: auto;
