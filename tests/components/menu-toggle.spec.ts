@@ -28,4 +28,15 @@ describe('menu-toggle', () => {
         expect(document.querySelector('.site-header')?.hasAttribute('data-menu-open')).toBe(false);
         expect(document.activeElement).toBe(button);
     });
+    it('closes when focus moves past it into the page', () => {
+        document.body.innerHTML = `${siteHeader({ nav: kumano.nav })}<main><a href="#">Page</a></main>`;
+        unbind = bindMenuToggle(document);
+        const header = document.querySelector('.site-header');
+        const button = document.querySelector<HTMLButtonElement>('.menu-button');
+        button?.click();
+        button?.dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: header?.querySelector('a') }));
+        expect(header?.hasAttribute('data-menu-open')).toBe(true);
+        button?.dispatchEvent(new FocusEvent('focusout', { bubbles: true, relatedTarget: document.querySelector('main a') }));
+        expect(header?.hasAttribute('data-menu-open')).toBe(false);
+    });
 });

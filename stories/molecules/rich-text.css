@@ -41,6 +41,23 @@
     padding-left: 1.25em;
 }
 
+.rich-text li + li,
+.rich-text li > ul,
+.rich-text li > ol {
+    margin-top: var(--space-8);
+}
+
+/* Markers via ::marker: list-style: none would cost the list its semantics in Safari. */
+.rich-text ul > li::marker {
+    color: var(--color-accent);
+    content: '– ';
+}
+
+.rich-text ol > li::marker {
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
+}
+
 .rich-text a {
     color: var(--color-accent);
     text-decoration-thickness: var(--border-hairline);
@@ -53,4 +70,19 @@
 .rich-text a:hover {
     text-decoration-thickness: 2px;
     text-underline-offset: 0.3em;
+}
+
+/* Links that leave the site carry an arrow; internal links render as relative paths. */
+.rich-text a[href^='http']:not(:has(img))::after {
+    display: inline-block;
+    margin-left: 0.15em;
+    content: '↗' / ' (external link)';
+}
+
+.rich-text a[href^='http']:not(:has(img)):lang(de)::after {
+    content: '↗' / ' (externer Link)';
+}
+
+.rich-text a[href^='http']:not(:has(img)):lang(ja)::after {
+    content: '↗' / '（外部リンク）';
 }

@@ -6,5 +6,6 @@
         <div class="site-footer-notice"><f:render.contentArea contentArea="{content.footerNotice}"/></div>
     </f:if>
     <div class="site-footer-legal type-caption"><f:if condition="{content.footerLegal}"><f:render.contentArea contentArea="{content.footerLegal}"/></f:if></div>
+    <button class="back-to-top" type="button" aria-label="{f:translate(key: 'backToTop', domain: 'kumano_kodo.messages')}"><f:render partial="Kumano/Icon" arguments="{name: 'arrow-right', size: 20}"/></button>
 </footer>
 </html>

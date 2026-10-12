@@ -43,7 +43,7 @@ describe('slider', () => {
         expect(stops(track)).toEqual([0, 444, 868]);
         syncSliders();
         expect(dots().filter((d) => !d.hidden)).toHaveLength(3);
-        expect(button('previous').disabled).toBe(true);
+        expect(button('previous').getAttribute('aria-disabled')).toBe('true');
     });
     it('steps back from the end and adds up quick clicks', () => {
         document.body.innerHTML = html();
@@ -54,7 +54,8 @@ describe('slider', () => {
         expect(calls).toEqual([444, 868]);
         land(868);
         syncSliders();
-        expect(button('next').disabled).toBe(true);
+        expect(button('next').getAttribute('aria-disabled')).toBe('true');
+        expect(button('next').disabled).toBe(false);
         button('previous').click();
         expect(calls.at(-1)).toBe(444);
     });

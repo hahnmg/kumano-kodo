@@ -119,6 +119,6 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
             ),
         }) +
         `</main>` +
-        siteFooter(kumano.footer)
+        siteFooter({ ...kumano.footer, backToTop: ui.backToTop })
     );
 };

@@ -49,6 +49,7 @@ const starter = ({ languages, ui }: Content) =>
             },
         ],
         copyright: '© Your name',
+        backToTop: ui.backToTop,
         legal: [
             { label: 'Imprint', href: '#' },
             { label: 'Privacy', href: '#' },

@@ -8,6 +8,7 @@ const build = (p: Photos) => {
         language: 'Language',
         menu: 'Menu',
         darkMode: 'Dark mode',
+        backToTop: 'Back to top',
         trailStatus: 'Trail status and contact',
         categories: 'Categories',
         breadcrumb: 'Breadcrumb',
@@ -404,7 +405,8 @@ const build = (p: Photos) => {
         '<h2>The day to Chikatsuyu</h2>' +
         '<p>9.8 km from Takahara to Chikatsuyu. At seven the clouds lay in the valley below the village. The stone paving holds up in the wet, the roots between it do not. Buses run along the <a href="/practical/getting-there">main road</a> if the day has to end early.</p>' +
         '<ul><li>07:02 · Takahara: clouds below the village</li><li>09:05 · stone paving between the cedars</li><li>12:03 · a land crab on the path</li><li>17:28 · the lantern gate of Chikatsuyu</li></ul>' +
-        '<h3>Where to sleep</h3><p>Chikatsuyu has a handful of minshuku along the river. Book months ahead for spring and autumn.</p>';
+        '<h3>Where to sleep</h3><p>Chikatsuyu has a handful of minshuku along the river. Book months ahead for spring and autumn.</p>' +
+        '<ol><li>Ask the <a href="https://www.tb-kumano.jp/en/">Tanabe tourism bureau</a></li><li>Note the check-in time</li><li>Send the luggage ahead</li></ol>';
 
     const home = {
         crow: {

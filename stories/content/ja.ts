@@ -8,6 +8,7 @@ const build = (p: Photos): LocaleContent => {
         language: '言語',
         menu: 'メニュー',
         darkMode: 'ダークモード',
+        backToTop: 'ページの先頭へ',
         trailStatus: '道の状況と連絡先',
         categories: 'カテゴリー',
         breadcrumb: 'パンくずリスト',
@@ -391,7 +392,8 @@ const build = (p: Photos): LocaleContent => {
         '<h2>近露までの一日</h2>' +
         '<p>高原から近露まで9.8 km。朝7時、集落の下の谷に雲が溜まっていた。石畳は濡れても滑りにくいが、その間の木の根は滑る。早めに切り上げるなら<a href="/practical/getting-there">幹線道路</a>にバスが走っている。</p>' +
         '<ul><li>07:02 · 高原：集落の下の雲</li><li>09:05 · 杉の間の石畳</li><li>12:03 · 道の上のカニ</li><li>17:28 · 近露の提灯の門</li></ul>' +
-        '<h3>泊まる場所</h3><p>近露には川沿いに民宿が数軒ある。春と秋は数か月前に予約を。</p>';
+        '<h3>泊まる場所</h3><p>近露には川沿いに民宿が数軒ある。春と秋は数か月前に予約を。</p>' +
+        '<ol><li><a href="https://www.tb-kumano.jp/en/">田辺市熊野ツーリズムビューロー</a>に問い合わせる</li><li>チェックイン時刻を確認する</li><li>荷物を先に送る</li></ol>';
 
     const home = {
         crow: {

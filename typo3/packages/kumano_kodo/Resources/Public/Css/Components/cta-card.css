@@ -1,4 +1,5 @@
 .cta-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--space-12);
@@ -10,7 +11,8 @@
 }
 
 .cta-card-featured,
-.cta-card:has(.link:hover) {
+.cta-card:hover,
+.cta-card:focus-within {
     background-size:
         100% var(--border-hairline),
         100% var(--border-hairline);
@@ -31,4 +33,19 @@
 
 .cta-card-link {
     padding-top: var(--space-12);
+}
+
+/* The whole card is the link's target, as on the teaser card. */
+.cta-card-link .link::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+}
+
+.cta-card:hover .link-label {
+    background-size: 100% var(--border-hairline);
+}
+
+.cta-card:hover .link-arrow {
+    transform: translateX(4px);
 }

@@ -18,6 +18,10 @@
                 <source>Dark mode</source>
                 <target>ダークモード</target>
             </trans-unit>
+            <trans-unit id="backToTop">
+                <source>Back to top</source>
+                <target>ページの先頭へ</target>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
                 <target>道の状況と連絡先</target>

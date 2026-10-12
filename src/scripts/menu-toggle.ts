@@ -20,10 +20,17 @@ export const bindMenuToggle = (doc: Document = document): (() => void) => {
             header.querySelector<HTMLElement>(button)?.focus();
         });
     };
+    // Tabbing past the open menu closes it, as the flyouts do, so focus never lands on the page beneath it.
+    const focusout = (event: FocusEvent): void => {
+        const header = event.target instanceof Element ? event.target.closest('.site-header[data-menu-open]') : null;
+        if (header && event.relatedTarget instanceof Node && !header.contains(event.relatedTarget)) setOpen(header, false);
+    };
     doc.addEventListener('click', click);
     doc.addEventListener('keydown', key);
+    doc.addEventListener('focusout', focusout);
     return () => {
         doc.removeEventListener('click', click);
         doc.removeEventListener('keydown', key);
+        doc.removeEventListener('focusout', focusout);
     };
 };

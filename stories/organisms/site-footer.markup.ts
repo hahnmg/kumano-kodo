@@ -1,4 +1,5 @@
 import { attrs, esc } from '../../src/lib/html';
+import { backToTop as backToTopButton } from '../atoms/back-to-top.markup';
 import { notice, type NoticeProps } from '../molecules/notice.markup';
 
 export interface SiteFooterProps {
@@ -9,9 +10,11 @@ export interface SiteFooterProps {
     notice?: NoticeProps;
     copyright: string;
     legal: { label: string; href: string }[];
+    /** Label of the back-to-top button; left out where empty. */
+    backToTop?: string;
 }
 
-export const siteFooter = ({ wordmark, about, columns, notice: note, copyright, legal }: SiteFooterProps): string =>
+export const siteFooter = ({ wordmark, about, columns, notice: note, copyright, legal, backToTop }: SiteFooterProps): string =>
     `<footer class="site-footer">${wordmark ? `<p class="site-footer-wordmark type-wordmark" aria-hidden="true">${esc(wordmark)}</p>` : ''}` +
     `<div class="site-footer-columns"><p class="site-footer-about type-small">${esc(about)}</p>` +
     columns
@@ -27,4 +30,4 @@ export const siteFooter = ({ wordmark, about, columns, notice: note, copyright, 
     `</div>${note ? `<div class="site-footer-notice">${notice(note)}</div>` : ''}` +
     `<div class="site-footer-legal type-caption"><p>${esc(copyright)}</p><ul>` +
     legal.map((l) => `<li><a${attrs({ href: l.href })}>${esc(l.label)}</a></li>`).join('') +
-    `</ul></div></footer>`;
+    `</ul></div>${backToTop ? backToTopButton({ label: backToTop }) : ''}</footer>`;

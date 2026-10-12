@@ -733,6 +733,49 @@ body {
     object-fit: cover;
 }
 
+/* stories/atoms/back-to-top.css */
+.back-to-top {
+    position: fixed;
+    right: var(--gutter);
+    bottom: var(--space-24);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: var(--border-hairline) solid var(--color-line);
+    border-radius: var(--radius-full);
+    background: var(--color-paper);
+    color: var(--color-ink);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity var(--motion-base) var(--ease-out),
+        visibility var(--motion-base) var(--ease-out),
+        border-color var(--motion-fast) var(--ease-out);
+}
+
+.back-to-top[data-visible] {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    border-color: var(--color-ink);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.back-to-top .icon {
+    transform: rotate(-90deg);
+}
+
 /* stories/atoms/badge.css */
 .badge {
     display: inline-block;
@@ -1064,29 +1107,41 @@ body {
     align-items: center;
 }
 
+/* A 24px target (WCAG 2.5.8) around the 6px bar, without making the row taller. */
 .slider-dots-dot {
+    position: relative;
     width: 24px;
-    height: 6px;
+    height: 24px;
+    margin-block: -9px;
     padding: 0;
     border: 0;
-    border-radius: var(--radius);
-    background: var(--color-hair);
+    background: transparent;
     cursor: pointer;
-    transition:
-        background-color var(--motion-fast) var(--ease-out),
-        width var(--motion-base) var(--ease-out);
 }
 
-.slider-dots-dot:hover {
+.slider-dots-dot::before {
+    position: absolute;
+    inset: 9px 0;
+    border-radius: var(--radius);
+    background: var(--color-hair);
+    content: '';
+    transition: background-color var(--motion-fast) var(--ease-out);
+}
+
+.slider-dots-dot:hover::before {
     background: var(--color-muted);
 }
 
 .slider-dots-dot:focus-visible {
+    outline: 0;
+}
+
+.slider-dots-dot:focus-visible::before {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
-.slider-dots-dot[aria-current] {
+.slider-dots-dot[aria-current]::before {
     background: var(--color-accent);
 }
 
@@ -1146,8 +1201,8 @@ body {
 }
 
 /* An invalid field keeps its rule in the accent and names the problem below it. */
-.field:has([aria-invalid="true"]) .field-control,
-.field:has([aria-invalid="true"]) .field-box {
+.field:has([aria-invalid='true']) .field-control,
+.field:has([aria-invalid='true']) .field-box {
     border-bottom-color: var(--color-accent);
 }
 
@@ -1305,7 +1360,8 @@ body {
     flex: 0 1 320px;
 }
 
-.cluster > :last-child:not(:first-child) {
+.cluster > :last-child:not(:first-child),
+.cluster > .link-forward:only-child {
     flex: 0 0 auto;
     margin-left: auto;
 }
@@ -1343,7 +1399,8 @@ body {
     }
 
     .cluster > *,
-    .cluster > :last-child:not(:first-child) {
+    .cluster > :last-child:not(:first-child),
+    .cluster > .link-forward:only-child {
         flex: 1 1 100%;
         margin-left: 0;
     }
@@ -2068,6 +2125,23 @@ body {
     padding-left: 1.25em;
 }
 
+.rich-text li + li,
+.rich-text li > ul,
+.rich-text li > ol {
+    margin-top: var(--space-8);
+}
+
+/* Markers via ::marker: list-style: none would cost the list its semantics in Safari. */
+.rich-text ul > li::marker {
+    color: var(--color-accent);
+    content: '– ';
+}
+
+.rich-text ol > li::marker {
+    color: var(--color-accent);
+    font-variant-numeric: tabular-nums;
+}
+
 .rich-text a {
     color: var(--color-accent);
     text-decoration-thickness: var(--border-hairline);
@@ -2080,6 +2154,21 @@ body {
 .rich-text a:hover {
     text-decoration-thickness: 2px;
     text-underline-offset: 0.3em;
+}
+
+/* Links that leave the site carry an arrow; internal links render as relative paths. */
+.rich-text a[href^='http']:not(:has(img))::after {
+    display: inline-block;
+    margin-left: 0.15em;
+    content: '↗' / ' (external link)';
+}
+
+.rich-text a[href^='http']:not(:has(img)):lang(de)::after {
+    content: '↗' / ' (externer Link)';
+}
+
+.rich-text a[href^='http']:not(:has(img)):lang(ja)::after {
+    content: '↗' / '（外部リンク）';
 }
 
 /* stories/molecules/teaser-card.css */

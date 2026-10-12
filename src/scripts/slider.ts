@@ -61,8 +61,9 @@ export const syncSliders = (root: ParentNode = document): void => {
             if (i === active) dot.setAttribute('aria-current', 'true');
             else dot.removeAttribute('aria-current');
         });
-        if (previous) previous.disabled = active === 0;
-        if (next) next.disabled = active >= count - 1;
+        // aria-disabled, not disabled: a disabled button drops the keyboard focus that just pressed it.
+        previous?.setAttribute('aria-disabled', String(active === 0));
+        next?.setAttribute('aria-disabled', String(active >= count - 1));
     });
 };
 

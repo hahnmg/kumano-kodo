@@ -30,7 +30,7 @@ var e = "[data-slider]", t = ".slider-track", n = (e) => ({
 		let c = a(t).length, l = s(t);
 		o.forEach((e, t) => {
 			e.hidden = t >= c, t === l ? e.setAttribute("aria-current", "true") : e.removeAttribute("aria-current");
-		}), r && (r.disabled = l === 0), i && (i.disabled = l >= c - 1);
+		}), r?.setAttribute("aria-disabled", String(l === 0)), i?.setAttribute("aria-disabled", String(l >= c - 1));
 	});
 }, u = (e, t) => c(e, s(e) + t);
 ((r = document) => {

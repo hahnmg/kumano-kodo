@@ -5,6 +5,7 @@ import '../src/tokens/tokens.css';
 import '../src/styles/base.css';
 import { brandTheme } from './brand';
 import './docs.css';
+import { bindBackToTop } from '../src/scripts/back-to-top';
 import { bindLightbox } from '../src/scripts/lightbox';
 import { bindMenuToggle } from '../src/scripts/menu-toggle';
 import { bindNavFlyouts } from '../src/scripts/nav-flyout';
@@ -27,6 +28,7 @@ bindNavFlyouts(document);
 bindSliders(document);
 bindLightbox(document);
 bindStickyHeader(window);
+bindBackToTop(window);
 document.addEventListener('click', (event) => {
     const link = event.target instanceof Element ? event.target.closest('a[data-locale]') : null;
     const locale = link?.getAttribute('data-locale');

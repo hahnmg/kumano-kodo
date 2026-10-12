@@ -35,7 +35,7 @@
     padding-inline: max(var(--gutter), (100% - var(--container-page)) / 2);
 }
 
-.icon-button:disabled {
+.icon-button[aria-disabled='true'] {
     opacity: 0.35;
     cursor: default;
 }

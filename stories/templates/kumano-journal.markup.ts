@@ -70,6 +70,6 @@ export const kumanoJournal = ({ kumano, photos, home, ui, languages }: Content =
             ),
         }) +
         `</main>` +
-        siteFooter(kumano.footer)
+        siteFooter({ ...kumano.footer, backToTop: ui.backToTop })
     );
 };

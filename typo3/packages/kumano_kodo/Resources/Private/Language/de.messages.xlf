@@ -18,6 +18,10 @@
                 <source>Dark mode</source>
                 <target>Dunkler Modus</target>
             </trans-unit>
+            <trans-unit id="backToTop">
+                <source>Back to top</source>
+                <target>Nach oben</target>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
                 <target>Wegzustand und Kontakt</target>

@@ -2,7 +2,8 @@
 
 Figma: CTA Card (18:76). Markup: `stories/molecules/cta-card.markup.ts`.
 
-Title, text and link under a top rule; `featured` draws the rule in the accent colour.
+Title, text and link under a top rule; `featured` draws the rule in the accent colour. The whole card takes the link's
+click, as on the teaser card.
 
 | Prop | Values |
 |---|---|

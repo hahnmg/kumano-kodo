@@ -41,6 +41,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-05 Pages: search, log-in, contact, travel papers and page-not-found frames (section Site pages)
 - [x] 2026-10-05 Days overview with the days as Slider of Stage Cards (state Hover: title in accent); Practical with the FAQ in "heading-content"
 - [x] 2026-10-12 Functional names: Stage Card → Portrait Card, Day Row → Timeline Item, Place Card → Feature Card, Bleed Photo → Bleed Image, Journal Opener → Page Intro; `color/moss` → `color/secondary`
+- [ ] Block 2 (2026-10-12): Back To Top atom; rich text list markers and ↗ on external links; place pages and contact with links/form moved (links to the page end, form in the main column); FAQ chevron on the first line
 - [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the older page frames; the Site pages use it
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components

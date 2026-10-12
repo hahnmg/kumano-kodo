@@ -4,28 +4,40 @@
     align-items: center;
 }
 
+/* A 24px target (WCAG 2.5.8) around the 6px bar, without making the row taller. */
 .slider-dots-dot {
+    position: relative;
     width: 24px;
-    height: 6px;
+    height: 24px;
+    margin-block: -9px;
     padding: 0;
     border: 0;
-    border-radius: var(--radius);
-    background: var(--color-hair);
+    background: transparent;
     cursor: pointer;
-    transition:
-        background-color var(--motion-fast) var(--ease-out),
-        width var(--motion-base) var(--ease-out);
 }
 
-.slider-dots-dot:hover {
+.slider-dots-dot::before {
+    position: absolute;
+    inset: 9px 0;
+    border-radius: var(--radius);
+    background: var(--color-hair);
+    content: '';
+    transition: background-color var(--motion-fast) var(--ease-out);
+}
+
+.slider-dots-dot:hover::before {
     background: var(--color-muted);
 }
 
 .slider-dots-dot:focus-visible {
+    outline: 0;
+}
+
+.slider-dots-dot:focus-visible::before {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
-.slider-dots-dot[aria-current] {
+.slider-dots-dot[aria-current]::before {
     background: var(--color-accent);
 }

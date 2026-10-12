@@ -8,6 +8,7 @@ const build = (p: Photos): LocaleContent => {
         language: 'Sprache',
         menu: 'Menü',
         darkMode: 'Dunkler Modus',
+        backToTop: 'Nach oben',
         trailStatus: 'Wegzustand und Kontakt',
         categories: 'Kategorien',
         breadcrumb: 'Brotkrumen',
@@ -403,7 +404,8 @@ const build = (p: Photos): LocaleContent => {
         '<h2>Der Tag nach Chikatsuyu</h2>' +
         '<p>9,8 km von Takahara nach Chikatsuyu. Um sieben lagen die Wolken im Tal unter dem Dorf. Das Steinpflaster hält bei Nässe, die Wurzeln dazwischen nicht. Wenn der Tag früher enden muss, fahren Busse an der <a href="/practical/getting-there">Hauptstraße</a>.</p>' +
         '<ul><li>07:02 · Takahara: Wolken unter dem Dorf</li><li>09:05 · Steinpflaster zwischen den Zedern</li><li>12:03 · eine Landkrabbe auf dem Weg</li><li>17:28 · das Laternentor von Chikatsuyu</li></ul>' +
-        '<h3>Wo übernachten</h3><p>Chikatsuyu hat eine Handvoll Minshuku am Fluss. Für Frühling und Herbst Monate vorher buchen.</p>';
+        '<h3>Wo übernachten</h3><p>Chikatsuyu hat eine Handvoll Minshuku am Fluss. Für Frühling und Herbst Monate vorher buchen.</p>' +
+        '<ol><li>Beim <a href="https://www.tb-kumano.jp/en/">Tourismusbüro Tanabe</a> anfragen</li><li>Die Check-in-Zeit notieren</li><li>Das Gepäck vorausschicken</li></ol>';
 
     const home = {
         crow: {
