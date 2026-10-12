@@ -17,6 +17,12 @@
             <trans-unit id="backToTop">
                 <source>Back to top</source>
             </trans-unit>
+            <trans-unit id="playVideo">
+                <source>Play video</source>
+            </trans-unit>
+            <trans-unit id="closeVideo">
+                <source>Close video</source>
+            </trans-unit>
             <trans-unit id="skipToContent">
                 <source>Skip to content</source>
             </trans-unit>

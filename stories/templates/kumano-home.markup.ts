@@ -29,7 +29,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
             labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu },
         }) +
         `<main id="main">` +
-        hero(kumano.hero) +
+        hero({ ...kumano.hero, video: { src: '/img/video/trail.mp4', type: 'video/mp4', play: ui.playVideo, close: ui.closeVideo } }) +
         section({
             content: stack(
                 [

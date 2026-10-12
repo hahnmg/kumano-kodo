@@ -1,17 +1,46 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
-<f:comment>The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat components in the fragment stats.</f:comment>
+<f:comment>
+    The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat
+    components in the fragment stats. With a video, the photo is its poster and a play button loads the player.
+</f:comment>
 <f:argument name="title" type="string" description="The title, the page heading."/>
 <f:argument name="image" type="object" description="A file or file reference."/>
 <f:argument name="eyebrow" type="string" optional="{true}" description="Short line above the title."/>
+<f:argument name="video" type="object" optional="{true}" description="A video file or reference: MP4, WebM, YouTube or Vimeo."/>
 
 <f:asset.css identifier="kumano-hero" href="EXT:kumano_kodo/Resources/Public/Css/Components/hero.css"/>
 <f:asset.css identifier="kumano-stat" href="EXT:kumano_kodo/Resources/Public/Css/Components/stat.css"/>
-<section class="hero">
+<f:if condition="{video}">
+    <f:asset.script identifier="kumano-hero-video" src="EXT:kumano_kodo/Resources/Public/JavaScript/hero-video.js" type="module"/>
+</f:if>
+<section class="hero"{f:if(condition: video, then: ' data-video')}>
     <kk:image image="{image}" class="hero-image" sizes="100vw" eager="{true}"/>
     <div class="hero-shade"></div>
+    <f:if condition="{video}">
+        <div class="hero-player"></div>
+        <f:comment>A template's content is not fetched: the player, even YouTube's, loads on the click.</f:comment>
+        <template class="hero-player-source">
+            <f:media file="{video}" class="hero-video"/>
+        </template>
+        <button class="hero-close" type="button" aria-label="{f:translate(key: 'closeVideo', domain: 'kumano_kodo.messages')}">
+            <kk:icon name="close"/>
+        </button>
+    </f:if>
     <div class="hero-content">
         <p class="hero-eyebrow type-label">{eyebrow}</p>
-        <h1 class="hero-title type-hero">{title}</h1>
+        <f:if condition="{video}">
+            <f:then>
+                <div class="hero-head">
+                    <h1 class="hero-title type-hero">{title}</h1>
+                    <button class="hero-play" type="button" aria-label="{f:translate(key: 'playVideo', domain: 'kumano_kodo.messages')}">
+                        <kk:icon name="play" size="28"/>
+                    </button>
+                </div>
+            </f:then>
+            <f:else>
+                <h1 class="hero-title type-hero">{title}</h1>
+            </f:else>
+        </f:if>
         <div class="hero-teaser">
             <p class="type-lead"><f:slot/></p>
             <div class="hero-actions">

@@ -79,6 +79,16 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
             'max' => 255,
         ],
     ],
+    // The core's online media (YouTube, Vimeo) and local MP4/WebM; the player loads on request only.
+    'tx_kumanokodo_video' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_video',
+        'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_video.description',
+        'config' => [
+            'type' => 'file',
+            'allowed' => 'mp4,webm,youtube,vimeo',
+            'maxitems' => 1,
+        ],
+    ],
     'tx_kumanokodo_path' => [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_path',
         'config' => [

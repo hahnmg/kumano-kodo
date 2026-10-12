@@ -305,7 +305,8 @@ Slots: ``default``.
 kk:hero
 =======
 
-The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat components in the fragment stats.
+The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat
+    components in the fragment stats. With a video, the photo is its poster and a play button loads the player.
 
 ..  list-table::
     :header-rows: 1
@@ -322,6 +323,9 @@ The opening photo of a page: eyebrow and title, the teaser in the slot, buttons 
     *   - ``eyebrow``
         - string
         - Short line above the title.
+    *   - ``video``
+        - object
+        - A video file or reference: MP4, WebM, YouTube or Vimeo.
 
 Slots: ``default``, ``actions``, ``stats``.
 
@@ -365,7 +369,7 @@ An icon of the theme set, drawn to the TYPO3 icon grid.
         - Meaning
     *   - ``name``
         - string, required
-        - One of: clock, phone, mail, map-pin, home, file, search, chevron-down, alert, arrow-right, sun, close, download.
+        - One of: clock, phone, mail, map-pin, home, file, search, chevron-down, alert, arrow-right, sun, close, play, download.
     *   - ``size``
         - string|int, default ``24``
         - Width and height in pixels.

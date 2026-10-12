@@ -9,6 +9,8 @@ const build = (p: Photos) => {
         menu: 'Menu',
         darkMode: 'Dark mode',
         backToTop: 'Back to top',
+        playVideo: 'Play video',
+        closeVideo: 'Close video',
         skipToContent: 'Skip to content',
         uploadDrop: 'Drag a file here or',
         uploadChoose: 'choose one',
