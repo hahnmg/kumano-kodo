@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>An opening in two halves: fill the fragments text and panel.</f:comment>
+
+<f:asset.css identifier="kumano-hero-split" href="EXT:kumano_kodo/Resources/Public/Css/Components/hero-split.css"/>
+<section class="hero-split">
+    <div class="hero-split-inner">
+        <div class="hero-split-text">
+            <f:slot name="text"/>
+        </div>
+        <div class="hero-split-panel">
+            <f:slot name="panel"/>
+        </div>
+    </div>
+</section>
+</html>

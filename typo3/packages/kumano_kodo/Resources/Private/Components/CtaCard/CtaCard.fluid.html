@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>A call to action under a line: title, text and a link; the whole card is the target.</f:comment>
+<f:argument name="title" type="string" description="The title."/>
+<f:argument name="linkLabel" type="string" description="The link text."/>
+<f:argument name="href" type="string" description="The target."/>
+<f:argument name="text" type="string" optional="{true}" description="A short text."/>
+<f:argument name="variant" type="string" optional="{true}" default="default" description="default, or featured to draw the line in the accent."/>
+
+<f:asset.css identifier="kumano-cta-card" href="EXT:kumano_kodo/Resources/Public/Css/Components/cta-card.css"/>
+<article class="cta-card cta-card-{variant}">
+    <h3 class="cta-card-title type-h4">{title}</h3>
+    <p class="cta-card-text type-small">{text}</p>
+    <div class="cta-card-link"><kk:link label="{linkLabel}" href="{href}"/></div>
+</article>
+</html>

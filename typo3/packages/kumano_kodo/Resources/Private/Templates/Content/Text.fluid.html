@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:if condition="{data.colPos} == 20">
@@ -7,7 +7,7 @@
         </f:then>
         <f:else>
             <f:variable name="body">
-                <div class="rich-text"><f:format.html>{record.bodytext}</f:format.html></div>
+                <kk:richText><f:format.html>{record.bodytext}</f:format.html></kk:richText>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
         </f:else>

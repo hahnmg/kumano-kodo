@@ -1,9 +1,15 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
-    <f:render partial="Kumano/Css" arguments="{names: 'text-media'}"/>
+    <f:variable name="link" value="{record.tx_kumanokodo_links -> f:first()}"/>
     <f:variable name="body">
-        <div class="text-media text-media-image-{f:if(condition: '{data.imageorient} == 25', then: 'right', else: 'left')}"><f:for each="{record.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'text-media-image'}"/></f:if></f:for><div class="text-media-text"><h2 class="type-h3">{record.header}</h2><p class="text-media-body type-body">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</p><f:for each="{record.tx_kumanokodo_links}" as="link" iteration="li"><f:if condition="{li.isFirst}"><p><kk:link label="{link.title}" href="{f:uri.typolink(parameter: link.link)}"/></p></f:if></f:for></div></div>
+        <kk:textMedia
+            title="{record.header}"
+            image="{record.image -> f:first()}"
+            imageSide="{f:if(condition: '{data.imageorient} == 25', then: 'right', else: 'left')}"
+            linkLabel="{link.title}"
+            href="{f:if(condition: link, then: '{f:uri.typolink(parameter: link.link)}')}"
+        >{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</kk:textMedia>
     </f:variable>
     <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
 </f:section>

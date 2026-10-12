@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>The images in it page through one lightbox; it loads the lightbox script.</f:comment>
+<f:argument name="tag" type="string" optional="{true}" default="div" description="Element name, for example figure."/>
+<f:argument name="class" type="string" optional="{true}" description="Class of the element."/>
+
+<f:asset.css identifier="kumano-lightbox" href="EXT:kumano_kodo/Resources/Public/Css/Components/lightbox.css"/>
+<f:asset.script identifier="kumano-lightbox" src="EXT:kumano_kodo/Resources/Public/JavaScript/lightbox.js" type="module"/>
+<k:element
+    tag="{tag}"
+    attributes="{
+        class: class,
+        data-label-close: '{f:translate(key: \'close\', domain: \'kumano_kodo.messages\')}',
+        data-label-previous: '{f:translate(key: \'previous\', domain: \'kumano_kodo.messages\')}',
+        data-label-next: '{f:translate(key: \'next\', domain: \'kumano_kodo.messages\')}'
+    }"
+    flags="data-lightbox-group">
+    <f:slot/>
+</k:element>
+</html>

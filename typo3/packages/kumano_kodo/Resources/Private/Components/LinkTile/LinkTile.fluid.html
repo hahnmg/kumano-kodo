@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>A large link with an icon in a circle and an arrow.</f:comment>
+<f:argument name="title" type="string" description="The link text."/>
+<f:argument name="href" type="string" description="The target."/>
+<f:argument name="icon" type="string" description="Name of an icon, as for icon."/>
+
+<f:asset.css identifier="kumano-link-tile" href="EXT:kumano_kodo/Resources/Public/Css/Components/link-tile.css"/>
+<a class="link-tile" href="{href}">
+    <span class="icon-circle"><kk:icon name="{icon}" size="24"/></span>
+    <span class="link-tile-title type-h4">{title}</span>
+    <kk:icon name="arrow-right" size="24"/>
+</a>
+</html>

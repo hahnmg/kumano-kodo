@@ -1,0 +1,8 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>An image that opens large in the lightbox; place it inside a lightboxGroup.</f:comment>
+<f:argument name="image" type="object" description="A file or file reference."/>
+<f:argument name="class" type="string" optional="{true}" description="Class of the img element."/>
+<f:argument name="sizes" type="string" optional="{true}" default="(width <= 900px) 100vw, 50vw" description="As for image."/>
+
+<a class="lightbox-link" href="{image.publicUrl}" data-lightbox aria-haspopup="dialog"><kk:image image="{image}" class="{class}" sizes="{sizes}"/></a>
+</html>

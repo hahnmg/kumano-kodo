@@ -1,43 +1,30 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
-    <f:render partial="Kumano/Css" arguments="{names: 'icon-fact,stat,fact-list,section-heading'}"/>
     <f:switch expression="{data.tx_kumanokodo_variant}">
         <f:case value="figures">
             <f:variable name="body">
-                <div class="stat-row">
+                <kk:statRow>
                     <f:for each="{record.tx_kumanokodo_facts}" as="fact">
-                        <div class="stat stat-large">
-                            <p class="stat-value type-stat">{fact.value}</p>
-                            <p class="stat-label type-caption">{fact.label}</p>
-                        </div>
+                        <kk:stat value="{fact.value}" label="{fact.label}"/>
                     </f:for>
-                </div>
+                </kk:statRow>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
         </f:case>
         <f:case value="pairs">
             <f:variable name="body">
-                <div class="fact-list fact-list-inline">
-                    <f:if condition="{record.header}">
-                        <h2 class="fact-list-title type-h4">{record.header}</h2>
-                    </f:if>
-                    <dl class="fact-list-items">
-                        <f:for each="{record.tx_kumanokodo_facts}" as="fact">
-                            <div class="fact-list-row"><dt class="type-caption">{fact.label}</dt><dd class="type-small">{fact.value}</dd></div>
-                        </f:for>
-                    </dl>
-                </div>
+                <kk:factList title="{record.header}" facts="{record.tx_kumanokodo_facts}"/>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:case>
         <f:defaultCase>
             <f:variable name="body">
-                <div class="grid grid-{data.tx_kumanokodo_columns}">
+                <kk:grid columns="{data.tx_kumanokodo_columns}">
                     <f:for each="{record.tx_kumanokodo_facts}" as="fact">
-                        <div class="icon-fact"><span class="icon-circle"><kk:icon name="{fact.icon}" size="24"/></span><div class="icon-fact-text"><p class="icon-fact-label type-label">{fact.label}</p><p class="icon-fact-value type-button">{fact.value}</p><f:if condition="{fact.note}"><p class="icon-fact-note type-caption">{fact.note}</p></f:if></div></div>
+                        <kk:iconFact icon="{fact.icon}" label="{fact.label}" value="{fact.value}" note="{fact.note}"/>
                     </f:for>
-                </div>
+                </kk:grid>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
         </f:defaultCase>

@@ -1,32 +1,30 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
-<f:variable name="readMore">{f:translate(key: 'readMore', domain: 'kumano_kodo.messages')}</f:variable>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>One entry of the Cards element, as the card of its variant.</f:comment>
+<f:variable name="href">{f:uri.typolink(parameter: card.link)}</f:variable>
 <f:switch expression="{data.tx_kumanokodo_variant}">
     <f:case value="place">
-        <article class="feature-card feature-card-{card.emphasis}"><f:for each="{card.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'feature-card-image'}"/></f:if></f:for><h3 class="feature-card-title {f:if(condition: '{card.emphasis} == featured', then: 'type-h3', else: 'type-h4')}">{card.title}</h3><p class="feature-card-text type-small">{card.text}</p></article>
+        <kk:featureCard image="{card.image -> f:first()}" title="{card.title}" text="{card.text}" emphasis="{card.emphasis}"/>
     </f:case>
     <f:case value="person">
-        <article class="person-card"><f:for each="{card.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'avatar avatar-large', sizes: '136px', width: 136, height: 136}"/></f:if></f:for><h3 class="person-card-name type-h4">{card.title}</h3><p class="person-card-role type-small">{card.meta}</p><f:if condition="{card.text}"><p class="person-card-focus type-small">{card.text}</p></f:if></article>
+        <kk:personCard image="{card.image -> f:first()}" name="{card.title}" role="{card.meta}" focus="{card.text}"/>
     </f:case>
     <f:case value="cta">
-        <f:variable name="label">{f:if(condition: card.link_label, then: card.link_label, else: readMore)}</f:variable>
-        <article class="cta-card cta-card-{f:if(condition: '{card.emphasis} == featured', then: 'featured', else: 'default')}">
-            <h3 class="cta-card-title type-h4">{card.title}</h3>
-            <p class="cta-card-text type-small">{card.text}</p>
-            <div class="cta-card-link"><kk:link label="{label}" href="{f:uri.typolink(parameter: card.link)}"/></div>
-        </article>
+        <kk:ctaCard
+            title="{card.title}"
+            text="{card.text}"
+            linkLabel="{f:if(condition: card.link_label, then: card.link_label, else: '{f:translate(key: \'readMore\', domain: \'kumano_kodo.messages\')}')}"
+            href="{href}"
+            variant="{f:if(condition: '{card.emphasis} == featured', then: 'featured', else: 'default')}"
+        />
     </f:case>
-    <f:case value="tile"><a class="link-tile" href="{f:uri.typolink(parameter: card.link)}"><span class="icon-circle"><kk:icon name="{card.icon}" size="24"/></span><span class="link-tile-title type-h4">{card.title}</span><kk:icon name="arrow-right" size="24"/></a></f:case>
+    <f:case value="tile">
+        <kk:linkTile title="{card.title}" href="{href}" icon="{card.icon}"/>
+    </f:case>
     <f:case value="stage">
-        <article class="portrait-card"><f:for each="{card.image}" as="image" iteration="i"><f:if condition="{i.isFirst}"><f:render partial="Kumano/Image" arguments="{image: image, class: 'portrait-card-image', sizes: '(width <= 600px) 80vw, 420px'}"/></f:if></f:for><div class="portrait-card-meta"><p class="portrait-card-label type-label">{card.label}</p><p class="portrait-card-stats type-caption">{card.meta}</p></div><h3 class="portrait-card-title type-h4"><f:if condition="{card.link}"><f:then><a href="{f:uri.typolink(parameter: card.link)}">{card.title}</a></f:then><f:else>{card.title}</f:else></f:if></h3><p class="portrait-card-text type-small">{card.text}</p></article>
+        <kk:portraitCard image="{card.image -> f:first()}" label="{card.label}" meta="{card.meta}" title="{card.title}" href="{href}" text="{card.text}"/>
     </f:case>
     <f:defaultCase>
-        <f:for each="{card.image}" as="img" iteration="i">
-            <f:if condition="{i.isFirst}">
-                <f:variable name="cardImage" value="{img}"/>
-            </f:if>
-        </f:for>
-        <f:render partial="Kumano/TeaserCard" arguments="{image: cardImage, title: card.title, subtitle: card.text, meta: card.meta, badge: card.badge, href: '{f:uri.typolink(parameter: card.link)}', level: 3}"/>
-        <f:variable name="cardImage" value=""/>
+        <kk:teaserCard image="{card.image -> f:first()}" title="{card.title}" subtitle="{card.text}" meta="{card.meta}" badge="{card.badge}" href="{href}"/>
     </f:defaultCase>
 </f:switch>
 </html>

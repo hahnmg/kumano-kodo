@@ -1,39 +1,36 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
-    <f:render partial="Kumano/Css" arguments="{names: 'bleed-image,gallery,figure,lightbox,section-heading'}"/>
-    <f:asset.script identifier="kumano-lightbox" src="EXT:kumano_kodo/Resources/Public/JavaScript/lightbox.js" type="module"/>
+    <f:variable name="first" value="{record.image -> f:first()}"/>
+    <f:comment>The element's text is the caption; without it the first image's description.</f:comment>
+    <f:if condition="{record.bodytext}">
+        <f:then>
+            <f:variable name="caption">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:variable>
+        </f:then>
+        <f:else>
+            <f:variable name="caption">{first.description}</f:variable>
+        </f:else>
+    </f:if>
     <f:switch expression="{data.tx_kumanokodo_variant}">
         <f:case value="fullwidth">
-            <f:for each="{record.image}" as="image" iteration="i">
-                <f:if condition="{i.isFirst}">
-                    <f:variable name="caption"><f:if condition="{record.bodytext}"><f:then>{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:then><f:else>{image.description}</f:else></f:if></f:variable>
-                    <f:variable name="body"><a class="lightbox-link" href="{image.publicUrl}" data-lightbox aria-haspopup="dialog"><f:render partial="Kumano/Image" arguments="{image: image, class: 'bleed-image-image', sizes: '100vw'}"/></a><f:if condition="{caption}"><figcaption class="bleed-image-caption type-caption">{caption -> f:format.raw()}</figcaption></f:if></f:variable>
-                    <f:render partial="Kumano/Group" arguments="{tag: 'figure', class: 'bleed-image', body: body}"/>
-                </f:if>
-            </f:for>
+            <kk:bleedImage image="{first}">{caption -> f:format.raw()}</kk:bleedImage>
         </f:case>
         <f:case value="gallery">
             <f:variable name="body">
-                <f:variable name="images">
-                    <div class="gallery-grid"><f:for each="{record.image}" as="image"><f:render partial="Kumano/LightboxLink" arguments="{image: image, class: 'gallery-image'}"/></f:for></div>
-                    <f:if condition="{record.bodytext}">
-                        <figcaption class="gallery-caption type-caption">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</figcaption>
-                    </f:if>
-                </f:variable>
-                <f:render partial="Kumano/Group" arguments="{tag: 'figure', class: 'gallery', body: images}"/>
+                <f:if condition="{record.bodytext}">
+                    <f:then>
+                        <kk:gallery images="{record.image}">{caption -> f:format.raw()}</kk:gallery>
+                    </f:then>
+                    <f:else>
+                        <kk:gallery images="{record.image}"/>
+                    </f:else>
+                </f:if>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
         </f:case>
         <f:defaultCase>
             <f:variable name="body">
-                <f:variable name="class">figure figure-{f:if(condition: '{record.image -> f:count()} == 2', then: 'pair', else: 'default')}<f:if condition="{data.tx_kumanokodo_variant} == 'figure-plain'"> figure-unruled</f:if></f:variable>
-                <f:variable name="caption"><f:if condition="{record.bodytext}"><f:then>{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:then><f:else><f:for each="{record.image}" as="first" iteration="i"><f:if condition="{i.isFirst}">{first.description}</f:if></f:for></f:else></f:if></f:variable>
-                <f:variable name="body">
-                    <div class="figure-images"><f:for each="{record.image}" as="image"><f:render partial="Kumano/LightboxLink" arguments="{image: image, class: 'figure-image'}"/></f:for></div>
-                    <figcaption class="figure-caption type-caption">{caption -> f:format.raw()}</figcaption>
-                </f:variable>
-                <f:render partial="Kumano/Group" arguments="{tag: 'figure', class: class, body: body}"/>
+                <kk:figure images="{record.image}" ruled="{f:if(condition: '{data.tx_kumanokodo_variant} == figure-plain', then: 0, else: 1)}">{caption -> f:format.raw()}</kk:figure>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:defaultCase>

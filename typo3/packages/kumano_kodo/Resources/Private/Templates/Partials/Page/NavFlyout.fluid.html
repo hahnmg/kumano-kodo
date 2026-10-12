@@ -24,7 +24,15 @@
                 </f:if>
                 <f:if condition="{navPage.tx_kumanokodo_flyout_teaser_title}">
                     <div class="nav-flyout-teaser">
-                        <f:render partial="Kumano/TeaserCard" arguments="{image: '{navPage.tx_kumanokodo_flyout_teaser_image -> f:first()}', title: navPage.tx_kumanokodo_flyout_teaser_title, subtitle: navPage.tx_kumanokodo_flyout_teaser_subtitle, meta: navPage.tx_kumanokodo_flyout_teaser_meta, badge: navPage.tx_kumanokodo_flyout_teaser_badge, href: '{f:uri.typolink(parameter: navPage.tx_kumanokodo_flyout_teaser_link)}', level: 'none'}"/>
+                        <kk:teaserCard
+                            image="{navPage.tx_kumanokodo_flyout_teaser_image -> f:first()}"
+                            title="{navPage.tx_kumanokodo_flyout_teaser_title}"
+                            subtitle="{navPage.tx_kumanokodo_flyout_teaser_subtitle}"
+                            meta="{navPage.tx_kumanokodo_flyout_teaser_meta}"
+                            badge="{navPage.tx_kumanokodo_flyout_teaser_badge}"
+                            href="{f:uri.typolink(parameter: navPage.tx_kumanokodo_flyout_teaser_link)}"
+                            level="none"
+                        />
                     </div>
                 </f:if>
             </div>

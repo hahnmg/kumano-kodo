@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>A grid of images that open in the lightbox; an optional caption in the slot.</f:comment>
+<f:argument name="images" type="iterable" description="Files or file references."/>
+
+<f:asset.css identifier="kumano-gallery" href="EXT:kumano_kodo/Resources/Public/Css/Components/gallery.css"/>
+<f:variable name="caption"><f:slot/></f:variable>
+<kk:lightboxGroup tag="figure" class="gallery">
+    <div class="gallery-grid">
+        <f:for each="{images}" as="image">
+            <kk:lightboxLink image="{image}" class="gallery-image"/>
+        </f:for>
+    </div>
+    <f:if condition="{caption -> f:format.trim()}">
+        <figcaption class="gallery-caption type-caption">{caption -> f:format.raw()}</figcaption>
+    </f:if>
+</kk:lightboxGroup>
+</html>

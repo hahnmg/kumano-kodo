@@ -1,17 +1,33 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
+    <f:variable name="column">
+        <f:if condition="{columns.201}">
+            <f:if condition="{columns.201.records -> f:count()} == 1">
+                <f:then>
+                    <f:render.contentArea contentArea="{columns.201}"/>
+                </f:then>
+                <f:else>
+                    <kk:stack gap="elements">
+                        <f:render.contentArea contentArea="{columns.201}"/>
+                    </kk:stack>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:variable>
     <f:if condition="{record.header} && {data.header_layout} != 100">
         <f:then>
             <f:variable name="body">
-                <div class="stack" style="--stack-gap: var(--section-heading-gap)"><f:render partial="Kumano/SectionHeading" arguments="{title: record.header, eyebrow: record.subheader, aside: data.tx_kumanokodo_aside}"/><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--section-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></div>
+                <kk:stack gap="heading">
+                    <kk:sectionHeading title="{record.header}" eyebrow="{record.subheader}" aside="{data.tx_kumanokodo_aside}"/>
+                    {column -> f:format.raw()}
+                </kk:stack>
             </f:variable>
-            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:then>
         <f:else>
-            <f:variable name="body"><f:if condition="{columns.201}"><f:if condition="{columns.201.records -> f:count()} == 1"><f:then><f:render.contentArea contentArea="{columns.201}"/></f:then><f:else><div class="stack" style="--stack-gap: var(--section-element-gap)"><f:render.contentArea contentArea="{columns.201}"/></div></f:else></f:if></f:if></f:variable>
-            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+            <f:variable name="body">{column -> f:format.raw()}</f:variable>
         </f:else>
     </f:if>
+    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
 </f:section>
 </html>

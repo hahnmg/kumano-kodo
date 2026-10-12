@@ -82,15 +82,37 @@ const buildPartials = async () => {
             // No whitespace around the body: every newline would become a text node in the rendered markup.
             `<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">${body.replaceAll('\n', '')}</html>`;
         // Public atoms become Fluid components; their arguments are declared so extensions get a checked API.
+        // One tag per line, as the hand-written components; TrimComponentOutput trims the line breaks around them.
         const argument = (name, type, description, fallback) =>
             `<f:argument name="${name}" type="${type}"${fallback === undefined ? '' : ` optional="{true}"${fallback === null ? '' : ` default="${fallback}"`}`} description="${description}"/>`;
-        // No newline after </html> either: Fluid renders it as a space beside the component.
+        const indent = (body) => {
+            const control = /(<\/?f:(?:if|then|else|switch|case|defaultCase)\b[^>]*>)/;
+            let depth = 0;
+            return body
+                .split(control)
+                .filter((part) => part.trim() !== '')
+                .map((part) => {
+                    const closing = part.startsWith('</f:');
+                    const opening = control.test(part) && !closing && !part.endsWith('/>');
+                    if (closing) depth -= 1;
+                    const line = `${'    '.repeat(depth)}${part}`;
+                    if (opening) depth += 1;
+                    return line;
+                })
+                .join('\n');
+        };
         const component = async (name, comment, args, body) => {
             await mkdir(join(components, name), { recursive: true });
-            await writeFile(
-                join(components, name, `${name}.fluid.html`),
-                fluid(`<f:comment>${comment}</f:comment>${args.join('')}${body}`),
-            );
+            const lines = [
+                '<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">',
+                `<f:comment>${comment}</f:comment>`,
+                ...args,
+                '',
+                indent(body),
+                '</html>',
+                '',
+            ];
+            await writeFile(join(components, name, `${name}.fluid.html`), lines.join('\n'));
         };
         const sized = (svg) => svg.replaceAll('"9999"', '"{size}"').replaceAll('__LABEL__', '{label}');
         const cases = iconNames
@@ -115,7 +137,12 @@ const buildPartials = async () => {
             join(partials, 'Logo.fluid.html'),
             fluid(logo({ href: '__HREF__', label: '__LABEL__' }).replace('__HREF__', '{href}').replace('__LABEL__', '{label}')),
         );
-        await writeFile(join(partials, 'LogoBird.fluid.html'), fluid(logoBird('{class}')));
+        await component(
+            'LogoBird',
+            "The theme's emblem, the three-legged crow, as the highlight shows it.",
+            [argument('class', 'string', 'Class of the svg element.', null)],
+            logoBird('{class}'),
+        );
         const atom = async (file) => server.ssrLoadModule(`/stories/atoms/${file}.markup.ts`);
         const { menuButton } = await atom('menu-button');
         const { schemeToggle } = await atom('scheme-toggle');

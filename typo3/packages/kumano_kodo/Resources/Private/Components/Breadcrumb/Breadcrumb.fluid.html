@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>The path to the page; the last item is the page itself and has no link.</f:comment>
+<f:argument name="items" type="iterable" description="Entries with title and link (a URL); the last is the current page."/>
+
+<nav class="breadcrumb" aria-label="{f:translate(key: 'breadcrumb', domain: 'kumano_kodo.messages')}">
+    <ol class="breadcrumb-list type-small">
+        <f:for each="{items}" as="crumb" iteration="i">
+            <f:if condition="{i.isLast}">
+                <f:then><li class="breadcrumb-item" aria-current="page">{crumb.title}</li></f:then>
+                <f:else><li class="breadcrumb-item"><a href="{crumb.link}">{crumb.title}</a></li></f:else>
+            </f:if>
+        </f:for>
+    </ol>
+</nav>
+</html>

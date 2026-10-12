@@ -1,13 +1,13 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
-    <f:render partial="Kumano/Css" arguments="{names: 'route-map,section-heading'}"/>
     <f:variable name="body">
-        <f:variable name="label">{record.bodytext -> f:format.stripTags() -> f:format.trim()}</f:variable>
-        <figure class="route-map">
-            <div class="route-map-scroll" tabindex="0" role="group" aria-label="{label}"><svg class="route-map-svg" viewBox="0 0 1000 250" role="img" aria-label="{label}"><path class="route-map-path" d="{record.tx_kumanokodo_path}"/><f:for each="{record.tx_kumanokodo_stations}" as="station"><f:if condition="{station.boundary}"><line class="route-map-boundary" x1="{station.x}" y1="{station.y}" x2="{station.x}" y2="228"/></f:if></f:for><f:for each="{record.tx_kumanokodo_stations}" as="station" iteration="i"><f:if condition="{i.isLast}"><f:then><circle class="route-map-station route-map-station-end" cx="{station.x}" cy="{station.y}" r="8"/></f:then><f:else><circle class="route-map-station" cx="{station.x}" cy="{station.y}" r="7"/></f:else></f:if><text class="route-map-label" x="{station.x}" y="{station.label_y}" text-anchor="{station.anchor}">{station.name}</text></f:for></svg><ol class="route-map-segments type-caption"><f:for each="{record.tx_kumanokodo_day_marks}" as="day"><li style="left:{day.x / 10}%">{day.label}</li></f:for></ol></div>
-            <figcaption class="route-map-legend type-caption"><span><i class="route-map-key route-map-key-completed"></i>{f:translate(key: 'mapWalked', domain: 'kumano_kodo.messages')}</span><span><i class="route-map-key route-map-key-end"></i>{f:translate(key: 'mapEnd', domain: 'kumano_kodo.messages')}</span><span><i class="route-map-key route-map-key-boundary"></i>{f:translate(key: 'mapBoundary', domain: 'kumano_kodo.messages')}</span></figcaption>
-        </figure>
+        <kk:routeMap
+            label="{record.bodytext -> f:format.stripTags() -> f:format.trim()}"
+            path="{record.tx_kumanokodo_path}"
+            stations="{record.tx_kumanokodo_stations}"
+            days="{record.tx_kumanokodo_day_marks}"
+        />
     </f:variable>
     <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
 </f:section>
