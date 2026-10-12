@@ -3,6 +3,7 @@
 // and a page of the remaining components. `typo3 kumano:demo:build` turns it into records.
 
 import { writeFile } from 'node:fs/promises';
+import yaml from 'js-yaml';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createServer } from 'vite';
@@ -586,6 +587,9 @@ const formFlexform = (identifier) =>
     `<field index="settings.persistenceIdentifier"><value index="vDEF">${identifier}</value></field>` +
     '<field index="settings.overrideFinishers"><value index="vDEF">0</value></field></language></sheet></data></T3FlexForms>';
 
+// The form with every element type; KumanoKodo\\Demo\\Form\\WalkForm writes it there with its ContentElement's uid.
+const walkFormTarget = '1:/form_definitions/walk.form.yaml';
+
 const pages = [
     page(
         'home',
@@ -803,6 +807,37 @@ const pages = [
         t(() => 'Components'),
         { navHide: true, noIndex: true, content: components },
     ),
+    page(
+        'form-elements',
+        'home',
+        t((x) => x.walkForm.title),
+        {
+            navHide: true,
+            noIndex: true,
+            content: [columns('content-sidebar', {}, [el('form_formframework', { pi_flexform: formFlexform(walkFormTarget) })], [])],
+        },
+    ),
+    // The element the form's ContentElement shows; kept in a folder so it does not render on a page of its own.
+    page(
+        'form-content',
+        'home',
+        t(() => 'Form content'),
+        {
+            navHide: true,
+            doktype: 254,
+            content: [
+                el(
+                    'kumano_callout',
+                    {
+                        tx_kumanokodo_variant: 'infobox',
+                        header: t((x) => x.walkForm.luggageTitle),
+                        bodytext: t((x) => x.walkForm.luggageText),
+                    },
+                    { key: 'walk-luggage' },
+                ),
+            ],
+        },
+    ),
 ];
 
 // Meta descriptions come from each page's own intro; a long one ends at its last full sentence within 160 characters.
@@ -881,6 +916,188 @@ const site = {
     },
     errorHandling: { 404: 'not-found', 403: 'login' },
 };
+
+// The walk form: English in the definition, every language in its XLIFF, all from the Storybook content.
+const walkForm = () => {
+    const w = (x) => x.walkForm;
+    // Keys start at 1: Fluid takes "0" for empty, and the summary would skip the answer.
+    const options = (pick) => Object.fromEntries(pick(c.en).map((label, i) => [String(i + 1), label]));
+    const required = { properties: { fluidAdditionalAttributes: { required: 'required' } }, validators: [{ identifier: 'NotEmpty' }] };
+    const field = (identifier, type, label, extra = {}) => ({ identifier, type, label, ...extra });
+    const nav = { renderingOptions: { previousButtonLabel: w(c.en).previous, nextButtonLabel: w(c.en).next } };
+    const definition = {
+        identifier: 'walk',
+        label: w(c.en).title,
+        type: 'Form',
+        prototypeName: 'standard',
+        renderingOptions: {
+            submitButtonLabel: w(c.en).submit,
+            translation: { translationFiles: { 20: 'EXT:kumano_kodo_demo/Resources/Private/Language/form_walk.xlf' } },
+        },
+        finishers: [{ identifier: 'Confirmation', options: { message: w(c.en).sentText } }],
+        renderables: [
+            field('about', 'Page', w(c.en).steps[0], {
+                ...nav,
+                renderables: [
+                    field('intro', 'StaticText', w(c.en).introTitle, { properties: { text: w(c.en).introText } }),
+                    field('name', 'Text', w(c.en).name, {
+                        ...required,
+                        properties: { fluidAdditionalAttributes: { required: 'required', autocomplete: 'name' } },
+                    }),
+                    field('email', 'Email', w(c.en).email, {
+                        properties: { fluidAdditionalAttributes: { required: 'required', autocomplete: 'email' } },
+                        validators: [{ identifier: 'NotEmpty' }, { identifier: 'EmailAddress' }],
+                    }),
+                    field('phone', 'Telephone', w(c.en).phone, { properties: { fluidAdditionalAttributes: { autocomplete: 'tel' } } }),
+                    field('website', 'Url', w(c.en).website, { properties: { elementDescription: w(c.en).websiteHint } }),
+                    field('group', 'Number', w(c.en).groupSize, {
+                        defaultValue: 2,
+                        properties: { fluidAdditionalAttributes: { min: 1, max: 12 } },
+                    }),
+                    field('dates', 'GridRow', '', {
+                        renderables: [
+                            field('arrival-column', 'GridColumn', '', { renderables: [field('arrival', 'Date', w(c.en).arrival)] }),
+                            field('departure-column', 'GridColumn', '', {
+                                renderables: [
+                                    field('departure', 'DatePicker', w(c.en).departure, {
+                                        properties: { dateFormat: 'd.m.Y', elementDescription: w(c.en).departureHint },
+                                    }),
+                                ],
+                            }),
+                        ],
+                    }),
+                    field('account', 'Fieldset', w(c.en).account, {
+                        renderables: [
+                            field('password', 'Password', w(c.en).password, {
+                                properties: { fluidAdditionalAttributes: { autocomplete: 'current-password' } },
+                            }),
+                            field('new-password', 'AdvancedPassword', w(c.en).newPassword, {
+                                properties: {
+                                    confirmationLabel: w(c.en).confirmPassword,
+                                    fluidAdditionalAttributes: { autocomplete: 'new-password' },
+                                },
+                            }),
+                        ],
+                    }),
+                    field('source', 'Hidden', '', { defaultValue: 'demo' }),
+                ],
+            }),
+            field('walk', 'Page', w(c.en).steps[1], {
+                ...nav,
+                renderables: [
+                    field('route', 'RadioButton', w(c.en).route, {
+                        defaultValue: '1',
+                        properties: { options: options((x) => w(x).routes) },
+                    }),
+                    field('pace', 'SingleSelect', w(c.en).pace, { properties: { options: options((x) => w(x).paces) } }),
+                    field('interests', 'MultiCheckbox', w(c.en).interests, {
+                        properties: { options: options((x) => w(x).interestOptions) },
+                    }),
+                    field('languages', 'MultiSelect', w(c.en).languages, { properties: { options: options((x) => w(x).languageOptions) } }),
+                    field('country', 'CountrySelect', w(c.en).country, { properties: { prioritizedCountries: ['DE', 'JP'] } }),
+                    field('luggage', 'ContentElement', '', { properties: { contentElementUid: 0 } }),
+                    field('notes', 'Textarea', w(c.en).notes, { properties: { fluidAdditionalAttributes: { rows: 4 } } }),
+                    field('consent', 'Checkbox', w(c.en).consent, {
+                        ...required,
+                        properties: { value: 1, fluidAdditionalAttributes: { required: 'required' } },
+                    }),
+                ],
+            }),
+            field('photos', 'Page', w(c.en).steps[2], {
+                ...nav,
+                renderables: [
+                    field('photo', 'ImageUpload', w(c.en).photo, {
+                        properties: {
+                            saveToFileMount: '1:/user_upload/',
+                            allowedMimeTypes: ['image/jpeg', 'image/png'],
+                            allowRemoval: true,
+                            elementDescription: w(c.en).photoHint,
+                        },
+                    }),
+                    field('route-file', 'FileUpload', w(c.en).routeFile, {
+                        properties: {
+                            saveToFileMount: '1:/user_upload/',
+                            allowedMimeTypes: ['application/pdf'],
+                            allowRemoval: true,
+                            elementDescription: w(c.en).fileHint,
+                        },
+                    }),
+                ],
+            }),
+            field('summary', 'SummaryPage', w(c.en).summaryTitle, nav),
+        ],
+    };
+    // Every translatable property of the definition, keyed as EXT:form looks it up.
+    const units = (x) => {
+        const v = w(x);
+        const u = { 'walk.renderingOptions.submitButtonLabel': v.submit, 'walk.finisher.Confirmation.message': v.sentText };
+        const label = (id, text) => (u[`walk.element.${id}.properties.label`] = text);
+        ['about', 'walk', 'photos'].forEach((id, i) => label(id, v.steps[i]));
+        label('summary', v.summaryTitle);
+        for (const id of ['about', 'walk', 'photos', 'summary']) {
+            u[`walk.element.${id}.renderingOptions.previousButtonLabel`] = v.previous;
+            u[`walk.element.${id}.renderingOptions.nextButtonLabel`] = v.next;
+        }
+        label('intro', v.introTitle);
+        u['walk.element.intro.properties.text'] = v.introText;
+        Object.entries({
+            name: v.name,
+            email: v.email,
+            phone: v.phone,
+            website: v.website,
+            group: v.groupSize,
+            arrival: v.arrival,
+            departure: v.departure,
+            account: v.account,
+            password: v.password,
+            'new-password': v.newPassword,
+            route: v.route,
+            pace: v.pace,
+            interests: v.interests,
+            languages: v.languages,
+            country: v.country,
+            notes: v.notes,
+            consent: v.consent,
+            photo: v.photo,
+            'route-file': v.routeFile,
+        }).forEach(([id, text]) => label(id, text));
+        u['walk.element.new-password.properties.confirmationLabel'] = v.confirmPassword;
+        Object.entries({ website: v.websiteHint, departure: v.departureHint, photo: v.photoHint, 'route-file': v.fileHint }).forEach(
+            ([id, text]) => (u[`walk.element.${id}.properties.elementDescription`] = text),
+        );
+        Object.entries({ route: v.routes, pace: v.paces, interests: v.interestOptions, languages: v.languageOptions }).forEach(
+            ([id, list]) => list.forEach((text, i) => (u[`walk.element.${id}.properties.options.${i + 1}`] = text)),
+        );
+        return u;
+    };
+    const xml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const xliff = (lang) => {
+        const source = units(c.en);
+        const target = units(c[lang]);
+        const body = Object.keys(source)
+            .map(
+                (id) =>
+                    `            <trans-unit id="${id}">\n                <source>${xml(source[id])}</source>\n` +
+                    (lang === 'en' ? '' : `                <target>${xml(target[id])}</target>\n`) +
+                    `            </trans-unit>`,
+            )
+            .join('\n');
+        return (
+            `<?xml version="1.0" encoding="UTF-8"?>\n<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n` +
+            `    <file source-language="en"${lang === 'en' ? '' : ` target-language="${lang}"`} datatype="plaintext" original="form_walk" product-name="kumano_kodo_demo">\n        <body>\n${body}\n        </body>\n    </file>\n</xliff>\n`
+        );
+    };
+    return { definition, xliff };
+};
+
+const demoPackage = join(root, 'typo3/packages/kumano_kodo_demo');
+const { definition, xliff } = walkForm();
+await writeFile(
+    join(demoPackage, 'Resources/Private/Forms/walk.form.yaml'),
+    `# Generated by scripts/export-demo.mjs. kumano:demo:build fills in contentElementUid and copies it to ${walkFormTarget}.\n${yaml.dump(definition, { lineWidth: -1, noRefs: true })}`,
+);
+for (const lang of langs)
+    await writeFile(join(demoPackage, `Resources/Private/Language/${lang === 'en' ? '' : `${lang}.`}form_walk.xlf`), xliff(lang));
 
 const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.values(e.children ?? {}).flat()), 0);
 await writeFile(out, `${JSON.stringify({ site, photos, files, pages, frontendUsers }, null, 4)}\n`);

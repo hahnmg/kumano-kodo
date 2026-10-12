@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace KumanoKodo\Demo\Command;
 
+use KumanoKodo\Demo\Form\WalkForm;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -35,6 +36,8 @@ final class BuildCommand extends Command
     private array $pages = [];
     /** @var array<string, int> photo slug => sys_file uid */
     private array $photos = [];
+    /** @var array<string, int> element key => tt_content uid */
+    private array $elements = [];
 
     /** @var array<string, int> download slug => sys_file uid */
     private array $files = [];
@@ -45,6 +48,7 @@ final class BuildCommand extends Command
         private readonly SiteWriter $siteWriter,
         private readonly StorageRepository $storageRepository,
         private readonly Registry $registry,
+        private readonly WalkForm $walkForm,
     ) {
         parent::__construct();
     }
@@ -102,6 +106,10 @@ final class BuildCommand extends Command
             }
         }
         $this->applyOrder();
+        if (isset($this->elements[WalkForm::CONTENT_KEY])) {
+            $this->walkForm->setTemplateUid($this->elements[WalkForm::CONTENT_KEY]);
+            $this->walkForm->write($this->elements[WalkForm::CONTENT_KEY]);
+        }
         // This instance holds the records the export ships, so its own setup must not import them again.
         $this->registry->set('extensionDataImport', ($demo['site']['package'] ?? 'kumano_kodo_demo') . ':Initialisation/dataImported', 1);
         $this->registry->set('siteConfigImport', self::SITE, 1);
@@ -315,6 +323,9 @@ final class BuildCommand extends Command
             $data['tt_content']['NEWce']['media'] = implode(',', array_map(static fn (int $i): string => 'NEWfile' . $i, array_keys($element['media']['en'])));
         }
         $uid = $this->create('tt_content', $fields, $data);
+        if (isset($element['key'])) {
+            $this->elements[$element['key']] = $uid;
+        }
         $this->lastContent[$slot] = $uid;
         $this->order[$slot][] = $uid;
 

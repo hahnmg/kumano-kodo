@@ -24,6 +24,7 @@ export const paths = {
     contact: '/contact',
     notFound: '/page-not-found',
     papers: '/travel-papers',
+    formElements: '/form-elements',
     legal: (slug: LegalSlug) => `/${slug}`,
 };
 
@@ -44,6 +45,7 @@ export const routes: Record<string, string> = {
     '/contact': 'site--contact',
     '/page-not-found': 'site--not-found',
     '/travel-papers': 'site--papers',
+    '/form-elements': 'site--form-elements',
     ...Object.fromEntries(legalSlugs.map((s) => [paths.legal(s), `site--${s}`])),
 };
 

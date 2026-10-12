@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="form_walk" product-name="kumano_kodo_demo">
+        <body>
+            <trans-unit id="walk.renderingOptions.submitButtonLabel">
+                <source>Send registration</source>
+            </trans-unit>
+            <trans-unit id="walk.finisher.Confirmation.message">
+                <source>Thank you. We will write to you within a week.</source>
+            </trans-unit>
+            <trans-unit id="walk.element.about.properties.label">
+                <source>About you</source>
+            </trans-unit>
+            <trans-unit id="walk.element.walk.properties.label">
+                <source>Your walk</source>
+            </trans-unit>
+            <trans-unit id="walk.element.photos.properties.label">
+                <source>Photos</source>
+            </trans-unit>
+            <trans-unit id="walk.element.summary.properties.label">
+                <source>Check your details</source>
+            </trans-unit>
+            <trans-unit id="walk.element.about.renderingOptions.previousButtonLabel">
+                <source>Back</source>
+            </trans-unit>
+            <trans-unit id="walk.element.about.renderingOptions.nextButtonLabel">
+                <source>Next</source>
+            </trans-unit>
+            <trans-unit id="walk.element.walk.renderingOptions.previousButtonLabel">
+                <source>Back</source>
+            </trans-unit>
+            <trans-unit id="walk.element.walk.renderingOptions.nextButtonLabel">
+                <source>Next</source>
+            </trans-unit>
+            <trans-unit id="walk.element.photos.renderingOptions.previousButtonLabel">
+                <source>Back</source>
+            </trans-unit>
+            <trans-unit id="walk.element.photos.renderingOptions.nextButtonLabel">
+                <source>Next</source>
+            </trans-unit>
+            <trans-unit id="walk.element.summary.renderingOptions.previousButtonLabel">
+                <source>Back</source>
+            </trans-unit>
+            <trans-unit id="walk.element.summary.renderingOptions.nextButtonLabel">
+                <source>Next</source>
+            </trans-unit>
+            <trans-unit id="walk.element.intro.properties.label">
+                <source>Before you set out</source>
+            </trans-unit>
+            <trans-unit id="walk.element.intro.properties.text">
+                <source>Tell us who walks, which route and when. We answer within a week.</source>
+            </trans-unit>
+            <trans-unit id="walk.element.name.properties.label">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="walk.element.email.properties.label">
+                <source>Email address</source>
+            </trans-unit>
+            <trans-unit id="walk.element.phone.properties.label">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="walk.element.website.properties.label">
+                <source>Blog or website</source>
+            </trans-unit>
+            <trans-unit id="walk.element.group.properties.label">
+                <source>Walkers in your group</source>
+            </trans-unit>
+            <trans-unit id="walk.element.arrival.properties.label">
+                <source>Arrival</source>
+            </trans-unit>
+            <trans-unit id="walk.element.departure.properties.label">
+                <source>Departure</source>
+            </trans-unit>
+            <trans-unit id="walk.element.account.properties.label">
+                <source>Your account</source>
+            </trans-unit>
+            <trans-unit id="walk.element.password.properties.label">
+                <source>Password</source>
+            </trans-unit>
+            <trans-unit id="walk.element.new-password.properties.label">
+                <source>New password</source>
+            </trans-unit>
+            <trans-unit id="walk.element.route.properties.label">
+                <source>Route</source>
+            </trans-unit>
+            <trans-unit id="walk.element.pace.properties.label">
+                <source>Pace</source>
+            </trans-unit>
+            <trans-unit id="walk.element.interests.properties.label">
+                <source>What draws you</source>
+            </trans-unit>
+            <trans-unit id="walk.element.languages.properties.label">
+                <source>Languages you speak</source>
+            </trans-unit>
+            <trans-unit id="walk.element.country.properties.label">
+                <source>Country you live in</source>
+            </trans-unit>
+            <trans-unit id="walk.element.notes.properties.label">
+                <source>Anything else</source>
+            </trans-unit>
+            <trans-unit id="walk.element.consent.properties.label">
+                <source>I agree that my details are used to plan the walk.</source>
+            </trans-unit>
+            <trans-unit id="walk.element.photo.properties.label">
+                <source>A photo of you</source>
+            </trans-unit>
+            <trans-unit id="walk.element.route-file.properties.label">
+                <source>Your route as PDF</source>
+            </trans-unit>
+            <trans-unit id="walk.element.new-password.properties.confirmationLabel">
+                <source>Repeat the password</source>
+            </trans-unit>
+            <trans-unit id="walk.element.website.properties.elementDescription">
+                <source>Where you write about the walk, if anywhere.</source>
+            </trans-unit>
+            <trans-unit id="walk.element.departure.properties.elementDescription">
+                <source>As day.month.year, for example 25.04.2024.</source>
+            </trans-unit>
+            <trans-unit id="walk.element.photo.properties.elementDescription">
+                <source>JPG or PNG.</source>
+            </trans-unit>
+            <trans-unit id="walk.element.route-file.properties.elementDescription">
+                <source>A PDF of your planned stages.</source>
+            </trans-unit>
+            <trans-unit id="walk.element.route.properties.options.1">
+                <source>Nakahechi</source>
+            </trans-unit>
+            <trans-unit id="walk.element.route.properties.options.2">
+                <source>Kohechi</source>
+            </trans-unit>
+            <trans-unit id="walk.element.route.properties.options.3">
+                <source>Iseji</source>
+            </trans-unit>
+            <trans-unit id="walk.element.route.properties.options.4">
+                <source>Ohechi</source>
+            </trans-unit>
+            <trans-unit id="walk.element.pace.properties.options.1">
+                <source>Slow</source>
+            </trans-unit>
+            <trans-unit id="walk.element.pace.properties.options.2">
+                <source>Steady</source>
+            </trans-unit>
+            <trans-unit id="walk.element.pace.properties.options.3">
+                <source>Brisk</source>
+            </trans-unit>
+            <trans-unit id="walk.element.interests.properties.options.1">
+                <source>Shrines</source>
+            </trans-unit>
+            <trans-unit id="walk.element.interests.properties.options.2">
+                <source>Hot springs</source>
+            </trans-unit>
+            <trans-unit id="walk.element.interests.properties.options.3">
+                <source>The forest</source>
+            </trans-unit>
+            <trans-unit id="walk.element.interests.properties.options.4">
+                <source>The food</source>
+            </trans-unit>
+            <trans-unit id="walk.element.languages.properties.options.1">
+                <source>English</source>
+            </trans-unit>
+            <trans-unit id="walk.element.languages.properties.options.2">
+                <source>German</source>
+            </trans-unit>
+            <trans-unit id="walk.element.languages.properties.options.3">
+                <source>Japanese</source>
+            </trans-unit>
+            <trans-unit id="walk.element.languages.properties.options.4">
+                <source>French</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

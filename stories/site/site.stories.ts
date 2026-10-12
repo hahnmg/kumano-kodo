@@ -17,6 +17,7 @@ import {
     contactPage,
     notFoundPage,
     papersPage,
+    formElementsPage,
 } from '../templates/site-pages.markup';
 
 const page =
@@ -63,3 +64,4 @@ export const Login: StoryObj = { name: 'Log in', render: page(loginPage) };
 export const Contact: StoryObj = { render: page(contactPage) };
 export const NotFound: StoryObj = { name: 'Page not found', render: page(notFoundPage) };
 export const Papers: StoryObj = { name: 'Travel papers', render: page(papersPage) };
+export const FormElements: StoryObj = { name: 'Form elements', render: page(formElementsPage) };

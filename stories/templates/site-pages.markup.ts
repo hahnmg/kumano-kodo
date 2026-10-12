@@ -1,3 +1,4 @@
+import { walkForm } from './walk-form';
 import { skipLink } from '../atoms/skip-link.markup';
 import { fill } from '../../src/lib/html';
 import { checkbox } from '../atoms/checkbox.markup';
@@ -428,6 +429,10 @@ const loginLabels = ({ ui }: Content) => ({
     loggedInAs: ui.loggedInAs,
     logOut: ui.logOut,
 });
+
+// The demo's form with every EXT:form element type; the other steps are in Molecules/Form.
+export const formElementsPage = (c: Content = content()): string =>
+    chrome(c, -1, header(c, c.walkForm.title, []) + section({ content: split(walkForm(c), '', 'content-sidebar') }));
 
 export const loginPage = (c: Content = content()): string =>
     chrome(
