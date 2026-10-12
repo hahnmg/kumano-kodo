@@ -50,9 +50,23 @@
     stroke: var(--color-line);
 }
 
+.route-map-label {
+    fill: var(--color-ink);
+    font-family: var(--type-lead-family);
+    font-size: 15px;
+    font-weight: 500;
+}
+
 /* An invisible ring around a linked station: a target of 32 px at full width. */
 .route-map-target {
     fill: transparent;
+}
+
+.route-map-day-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--color-line);
+    text-underline-offset: 3px;
 }
 
 .route-map-link .route-map-label,
@@ -70,29 +84,15 @@
     stroke: var(--color-accent);
 }
 
-.route-map-link:focus-visible,
-.route-map-day-link:focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
-}
-
-.route-map-day-link {
-    color: inherit;
-    text-decoration: underline;
-    text-decoration-color: var(--color-line);
-    text-underline-offset: 3px;
-}
-
 .route-map-day-link:hover {
     color: var(--color-accent);
     text-decoration-color: currentcolor;
 }
 
-.route-map-label {
-    fill: var(--color-ink);
-    font-family: var(--type-lead-family);
-    font-size: 15px;
-    font-weight: 500;
+.route-map-link:focus-visible,
+.route-map-day-link:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
 }
 
 .route-map-segments {
