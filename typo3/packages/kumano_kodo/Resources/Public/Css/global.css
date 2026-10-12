@@ -1902,7 +1902,8 @@ body {
         width: 100%;
     }
 
-    /* In the folded menu, flyouts open inline like an accordion; an accent rule marks the second level. */
+    /* In the folded menu, flyouts open inline like an accordion; an accent rule marks the second level. They take
+       the header's ground: their own would stand out once the header turns translucent. */
     .site-header .nav-flyout {
         position: static;
         display: none;
@@ -1911,6 +1912,7 @@ body {
         padding: 0 0 0 var(--space-20);
         border: 0;
         border-left: var(--border-hairline) solid var(--color-accent);
+        background: none;
         opacity: 1;
         transform: none;
         visibility: visible;
