@@ -55,6 +55,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [ ] All 27 trip photos (web versions in img/photos) replace the earlier set
 - [ ] Contents: the walk Takijiri → Nachi, 20–23 April 2024, in EN, DE, JA
 - [x] 2026-09-30 Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
+- [x] 2026-10-12 Design feedback, components: `border/rule` (2) opens and closes Media List, Download List, Table, Fact List, Route Map and Site Footer in ink; Notice on accent with paper text; Quote with an accent “ above; Display/Wordmark 60/64
+- [ ] Design feedback, pages: FAQ lists and timelines opening and closing on `border/rule`; day pages with Day 1–4 chips in the page header instead of the sidebar list; place pages led by a Bleed Image; Text & Media with several paragraphs (image held beside long text)
 
 ## Known differences between Figma and code
 
