@@ -27,3 +27,7 @@ everything the core renders. TYPO3 14.1 registers Fluid component collections by
 
 - Names and arguments are a public interface: within a major version they only grow.
 - A cross-theme contract (the same names in every theme) is a topic for the core team; these names can be a proposal.
+- Should the theme be renamed, the old namespace can stay for a major version: a second key in
+  `ComponentCollections.php` with the same template paths renders the same components (tried on 2026-10-12).
+  `TrimComponentOutput` then has to accept both namespaces.
+- Extensions do not call the components in the templates they ship; a set of this theme replaces their templates.

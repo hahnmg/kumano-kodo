@@ -38,6 +38,13 @@ Declare the namespace and call a component by its name:
 
 Every component and its arguments are listed in the :ref:`component-reference`.
 
+Where to use them
+=================
+
+In the templates of a site, its site package, and in a set that brings an extension's templates for this theme. An
+extension should not call them in the templates it ships: on a site with another theme they would not exist. The
+extension keeps its own templates; a theme set replaces them where the theme is installed.
+
 Rules
 =====
 
