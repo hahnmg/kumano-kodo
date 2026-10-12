@@ -72,8 +72,13 @@ const crumbs = (c: Content, trail: [string, string][], current: string) => [
     { label: current },
 ];
 
-const header = (c: Content, title: string, trail: [string, string][], chips?: { label: string; href: string; active?: boolean }[]) =>
-    pageHeader({ title, breadcrumb: crumbs(c, trail, title), breadcrumbLabel: c.ui.breadcrumb, chips, chipsLabel: c.ui.categories });
+const header = (
+    c: Content,
+    title: string,
+    trail: [string, string][],
+    chips?: { label: string; href: string; active?: boolean }[],
+    chipsLabel = c.ui.categories,
+) => pageHeader({ title, breadcrumb: crumbs(c, trail, title), breadcrumbLabel: c.ui.breadcrumb, chips, chipsLabel });
 
 const teasers = (items: TeaserCardProps[], level: 2 | 3 = 3) => items.map((e) => teaserCard({ ...e, level }));
 
@@ -182,8 +187,8 @@ export const dayPage = (n: number, c: Content = content()): string => {
     const d = kumano.days[i];
     const s = site.day;
     const names = photosOfDay(i);
-    const dayNav = kumano.days.map((day, k) => ({
-        label: `${day.date.split(' · ')[0]} · ${day.route}`,
+    const dayChips = kumano.days.map((day, k) => ({
+        label: day.date.split(' · ')[0],
         href: paths.day(k + 1),
         active: k === i,
     }));
@@ -194,10 +199,16 @@ export const dayPage = (n: number, c: Content = content()): string => {
     return chrome(
         c,
         0,
-        header(c, d.route, [
-            [site.route.title, paths.route],
-            [site.days.title, paths.days],
-        ]) +
+        header(
+            c,
+            d.route,
+            [
+                [site.route.title, paths.route],
+                [site.days.title, paths.days],
+            ],
+            dayChips,
+            site.days.groups.days,
+        ) +
             section({
                 content: split(
                     stack(
@@ -228,7 +239,6 @@ export const dayPage = (n: number, c: Content = content()): string => {
                                 text: s.tips[i],
                                 links: [{ label: site.practical.title, href: paths.practical }],
                             }),
-                            subNav({ title: site.days.groups.days, items: dayNav }),
                         ],
                         'column',
                     ),
@@ -252,6 +262,7 @@ export const dayPage = (n: number, c: Content = content()): string => {
 export const placePage = (slug: PlaceSlug, c: Content = content()): string => {
     const { site, photos, kumano } = c;
     const p = site.places[slug];
+    const [lead, ...more] = p.photos.map((name) => photos[name]);
     return chrome(
         c,
         0,
@@ -259,13 +270,11 @@ export const placePage = (slug: PlaceSlug, c: Content = content()): string => {
             [site.route.title, paths.route],
             [site.days.title, paths.days],
         ]) +
+            bleedImage(lead, undefined, lightbox(c)) +
             section({
                 content: split(
                     stack(
-                        [
-                            richText({ html: paragraphs(p.text) }),
-                            gallery({ images: p.photos.map((name) => photos[name]), labels: lightbox(c) }),
-                        ],
+                        [richText({ html: paragraphs(p.text) }), more.length ? gallery({ images: more, labels: lightbox(c) }) : ''],
                         'column',
                     ),
                     '',

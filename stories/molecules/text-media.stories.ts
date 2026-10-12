@@ -17,3 +17,14 @@ export default meta;
 
 export const ImageLeft: StoryObj<TextMediaProps> = { args: { imageSide: 'left' } };
 export const ImageRight: StoryObj<TextMediaProps> = { args: { imageSide: 'right' } };
+
+// Several paragraphs: the image stays beside the text while it scrolls.
+export const LongText: StoryObj<TextMediaProps> = {
+    args: { imageSide: 'left' },
+    render: localized(textMedia, (c) => ({
+        image: c.kumano.places[1].image,
+        title: c.home.draft.title,
+        text: c.home.draft.chapters,
+        link: { label: c.ui.readMore, href: '#' },
+    })),
+};
