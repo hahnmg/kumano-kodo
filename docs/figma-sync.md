@@ -45,7 +45,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [ ] Pages: frames for Register a walk (`/register`, the walk form over three steps) and Routes and hosts (`/ways-to-walk-it`); menus with their new links
 - [ ] Pages: two sections on the same ground share one inner space (the second without top padding), as in code since 2026-10-12
 - [ ] News (2026-10-12): Pagination as component; page frames Trail reports (list) and Report (detail with gallery); main menu with Trail reports
-- [ ] Block 2 (2026-10-12): Back To Top atom; rich text list markers and ↗ on external links; place pages and contact with links/form moved (links to the page end, form in the main column); FAQ chevron on the first line
+- [x] 2026-10-12 Block 2, components: Back To Top atom (Default, Hover); Rich Text with accent list markers and ↗ on an external link; FAQ chevron on the question's first line
+- [ ] Block 2, pages: place pages and contact with links/form moved (links to the page end, form in the main column)
 - [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the older page frames; the Site pages use it
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
@@ -57,6 +58,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-09-30 Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
 - [x] 2026-10-12 Design feedback, components: `border/rule` (2) opens and closes Media List, Download List, Table, Fact List, Route Map and Site Footer in ink; Notice on accent with paper text; Quote with an accent “ above; Display/Wordmark 60/64
 - [ ] Design feedback, pages: FAQ lists and timelines opening and closing on `border/rule`; day pages with Day 1–4 chips in the page header instead of the sidebar list; place pages led by a Bleed Image; Text & Media with several paragraphs (image held beside long text)
+- [x] 2026-10-12 Hero as set `Video=No/Yes/Playing` (play button on the title line; playing: video full, close button); `Icon/Play`; Route Map as set `Highlight=None/Day` with underlined day links
+- [ ] Route Map: day labels and legend still carry the older content ("Day 1 · 4 km", "Bus", "End of the pilgrimage")
 
 ## Known differences between Figma and code
 
