@@ -27,6 +27,12 @@
     color: var(--color-paper);
 }
 
+.button-secondary {
+    background: transparent;
+    border-color: var(--color-ink);
+    color: var(--color-ink);
+}
+
 .button-light {
     background: var(--color-on-image);
     color: var(--color-on-image-ink);
@@ -40,6 +46,10 @@
 
 .button-primary:hover {
     background: color-mix(in oklab, var(--color-ink) 82%, var(--color-paper));
+}
+
+.button-secondary:hover {
+    background: var(--color-sunk);
 }
 
 .button-light:hover {

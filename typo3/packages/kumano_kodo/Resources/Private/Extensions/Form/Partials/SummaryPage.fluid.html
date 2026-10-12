@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>The answers page by page: each page's label opens a section, a fieldset's label a subsection, every value is a row of label and value.</f:comment>
+<formvh:renderRenderable renderable="{page}">
+    <div class="form-summary">
+        <f:for each="{page.rootForm.pages}" as="step">
+        <f:if condition="{step.type} != 'SummaryPage'">
+        <h2 class="form-summary-section type-h4">{formvh:translateElementProperty(element: step, property: 'label')}</h2>
+        <formvh:renderAllFormValues renderable="{step}" as="formValue">
+            <f:if condition="{formValue.isSection}">
+                <f:then><f:if condition="{formValue.element.label}"><h3 class="form-summary-subsection type-label">{formvh:translateElementProperty(element: formValue.element, property: 'label')}</h3></f:if></f:then>
+                <f:else>
+                    <dl class="form-summary-row">
+                        <dt class="type-caption">{formvh:translateElementProperty(element: formValue.element, property: 'label') -> f:sanitize.html() -> f:transform.html()}</dt>
+                        <dd class="type-small">
+                            <f:if condition="{formValue.value}">
+                                <f:if condition="{0: formValue.element.type} == {0: 'ImageUpload'}">
+                                    <f:then><f:for each="{f:if(condition: formValue.isMultiValue, then: formValue.value, else: '{0: formValue.value}')}" as="image"><f:image image="{image}" maxWidth="96" alt="{image.originalResource.originalFile.name}"/></f:for></f:then>
+                                    <f:else if="{0: formValue.element.type} == {0: 'FileUpload'}"><f:for each="{f:if(condition: formValue.isMultiValue, then: formValue.value, else: '{0: formValue.value}')}" as="file" iteration="i">{file.originalResource.originalFile.name}<f:if condition="!{i.isLast}">, </f:if></f:for></f:else>
+                                    <f:else if="{formValue.isMultiValue}"><f:for each="{formValue.processedValue}" as="value" iteration="i">{value}<f:if condition="!{i.isLast}">, </f:if></f:for></f:else>
+                                    <f:else><f:format.nl2br>{formValue.processedValue}</f:format.nl2br></f:else>
+                                </f:if>
+                            </f:if>
+                        </dd>
+                    </dl>
+                </f:else>
+            </f:if>
+        </formvh:renderAllFormValues>
+        </f:if>
+        </f:for>
+    </div>
+</formvh:renderRenderable>
+</html>

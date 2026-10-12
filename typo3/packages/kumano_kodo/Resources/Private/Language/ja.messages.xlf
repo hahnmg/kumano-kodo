@@ -26,6 +26,18 @@
                 <source>Skip to content</source>
                 <target>本文へ移動</target>
             </trans-unit>
+            <trans-unit id="uploadDrop">
+                <source>Drag a file here or</source>
+                <target>ここにファイルをドラッグするか</target>
+            </trans-unit>
+            <trans-unit id="uploadChoose">
+                <source>choose one</source>
+                <target>選択</target>
+            </trans-unit>
+            <trans-unit id="formSteps">
+                <source>Steps</source>
+                <target>ステップ</target>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
                 <target>道の状況と連絡先</target>

@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>The File Upload atom: the invisible input over a dashed face takes clicks and drops; uploaded files follow as a list with a box to remove each. The view helper renders its children (the list) only once a file is there, so the face comes after it.</f:comment>
+<formvh:renderRenderable renderable="{element}">
+    <f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
+        <f:if condition="{element.properties.elementDescription}"><f:variable name="aria" value="{describedby: '{element.uniqueIdentifier}-desc'}"/></f:if>
+        <f:if condition="{validationResults.errors}"><f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}"/></f:if>
+        <f:variable name="remove"><f:translate key="upload.remove" domain="form" default="Remove"/></f:variable>
+        <f:render partial="Field/Field" arguments="{element: element, ownBox: 1}" contentAs="elementContent">
+            <div class="file-upload-zone" data-file-upload>
+                <formvh:form.uploadedResource property="{element.identifier}" as="resource" id="{element.uniqueIdentifier}" class="file-upload-input" additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}" accept="{element.properties.allowedMimeTypes}" aria="{aria}" multiple="{element.properties.multiple}">
+                    <f:if condition="{resource}">
+                        <ul class="file-upload-list type-small">
+                            <f:if condition="{element.properties.multiple}">
+                                <f:then>
+                                    <f:for each="{resource}" as="file" iteration="iterator">
+                                        <li class="file-upload-item"><span class="file-upload-name">{file.originalResource.originalFile.name}</span><f:if condition="{element.properties.allowRemoval}"><label class="choice choice-checkbox"><formvh:form.uploadDeleteCheckbox property="{element.identifier}" fileReference="{file}" fileIndex="{iterator.index}" class="choice-input"/><span class="choice-label type-caption">{remove}<span class="visually-hidden"> {file.originalResource.originalFile.name}</span></span></label></f:if></li>
+                                    </f:for>
+                                </f:then>
+                                <f:else>
+                                    <li class="file-upload-item"><span class="file-upload-name">{resource.originalResource.originalFile.name}</span><f:if condition="{element.properties.allowRemoval}"><label class="choice choice-checkbox"><formvh:form.uploadDeleteCheckbox property="{element.identifier}" fileReference="{resource}" fileIndex="0" class="choice-input"/><span class="choice-label type-caption">{remove}<span class="visually-hidden"> {resource.originalResource.originalFile.name}</span></span></label></f:if></li>
+                                </f:else>
+                            </f:if>
+                        </ul>
+                    </f:if>
+                </formvh:form.uploadedResource>
+                    <span class="file-upload-face"><f:render partial="Kumano/Icon" arguments="{name: 'download', size: 20}"/><span class="file-upload-prompt type-small">{f:translate(key: 'uploadDrop', domain: 'kumano_kodo.messages')} <span class="file-upload-choose">{f:translate(key: 'uploadChoose', domain: 'kumano_kodo.messages')}</span></span><span class="file-upload-chosen type-caption" aria-live="polite"></span></span>
+            </div>
+        </f:render>
+    </f:form.validationResults>
+</formvh:renderRenderable>
+</html>

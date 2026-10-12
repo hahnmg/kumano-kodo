@@ -10,6 +10,9 @@ const build = (p: Photos) => {
         darkMode: 'Dark mode',
         backToTop: 'Back to top',
         skipToContent: 'Skip to content',
+        uploadDrop: 'Drag a file here or',
+        uploadChoose: 'choose one',
+        formSteps: 'Steps',
         trailStatus: 'Trail status and contact',
         categories: 'Categories',
         breadcrumb: 'Breadcrumb',
@@ -630,7 +633,51 @@ const build = (p: Photos) => {
         },
     };
 
-    return { ui, kumano, guide, richTextSample, home, pages, site, samples };
+    // The demo's form with every EXT:form element type.
+    const walkForm = {
+        title: 'Register a walk',
+        steps: ['About you', 'Your walk', 'Photos'],
+        summaryTitle: 'Check your details',
+        previous: 'Back',
+        next: 'Next',
+        submit: 'Send registration',
+        introTitle: 'Before you set out',
+        introText: 'Tell us who walks, which route and when. We answer within a week.',
+        name: 'Name',
+        email: 'Email address',
+        phone: 'Phone',
+        website: 'Blog or website',
+        websiteHint: 'Where you write about the walk, if anywhere.',
+        groupSize: 'Walkers in your group',
+        arrival: 'Arrival',
+        departure: 'Departure',
+        departureHint: 'As day.month.year, for example 25.04.2024.',
+        account: 'Your account',
+        password: 'Password',
+        newPassword: 'New password',
+        confirmPassword: 'Repeat the password',
+        route: 'Route',
+        routes: ['Nakahechi', 'Kohechi', 'Iseji', 'Ohechi'],
+        pace: 'Pace',
+        paces: ['Slow', 'Steady', 'Brisk'],
+        interests: 'What draws you',
+        interestOptions: ['Shrines', 'Hot springs', 'The forest', 'The food'],
+        languages: 'Languages you speak',
+        languageOptions: ['English', 'German', 'Japanese', 'French'],
+        country: 'Country you live in',
+        notes: 'Anything else',
+        consent: 'I agree that my details are used to plan the walk.',
+        luggageTitle: 'Luggage',
+        luggageText: 'Bags can travel ahead from inn to inn; we book it with the stays.',
+        photo: 'A photo of you',
+        routeFile: 'Your route as PDF',
+        remove: 'Remove',
+        photoHint: 'JPG or PNG.',
+        fileHint: 'A PDF of your planned stages.',
+        sentText: 'Thank you. We will write to you within a week.',
+    };
+
+    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm };
 };
 
 export const en: LocaleModule<ReturnType<typeof build>> = {

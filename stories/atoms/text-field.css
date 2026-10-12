@@ -65,6 +65,10 @@
     color: var(--color-accent);
 }
 
+.field-description {
+    color: var(--color-muted);
+}
+
 .field-error .icon {
     flex-shrink: 0;
 }

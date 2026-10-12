@@ -2,3 +2,23 @@
     appearance: none;
     cursor: pointer;
 }
+
+/* A list box shows its options at once; the frame marks them as one control. */
+.field-box:has(.field-control-multiple) {
+    padding-inline: var(--space-12);
+    border: var(--border-hairline) solid var(--color-line);
+}
+
+.field-control-multiple {
+    padding-block: var(--space-6);
+}
+
+.field-control-multiple option {
+    padding: var(--space-6) 0;
+}
+
+/* A gradient, because browsers ignore a plain background colour on a chosen option. */
+.field-control-multiple option:checked {
+    background: linear-gradient(var(--color-sunk), var(--color-sunk));
+    color: var(--color-accent);
+}

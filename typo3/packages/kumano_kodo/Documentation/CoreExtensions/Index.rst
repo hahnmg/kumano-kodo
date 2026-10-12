@@ -15,9 +15,13 @@ Login (felogin)
     redirect settings; the logout goes straight to the logout target.
 
 Forms (form)
-    Fields, errors and the button from the theme's atoms; the confirmation shows as an Info Box. Validation messages
-    come in the site's language. The theme ships a plain contact form (name, email, message, consent) to pick in the
-    form plugin.
+    Every element type of the form framework is styled, from text fields to file uploads, fieldsets, columns and forms
+    over several pages with numbered steps and a summary. Errors and descriptions show below each field; the
+    confirmation shows as an Info Box. Validation messages come in the site's language. The theme ships a plain contact
+    form (name, email, message, consent) to pick in the form plugin.
+
+    The element "Date picker" works as a text field for a date in the form's format: its calendar needs jQuery UI, which
+    the theme does not load. For a calendar, use the element "Date", which shows the browser's own.
 
 Sitemap (seo)
     `/sitemap.xml`. Pages with "No index" stay out. Absolute URLs need a site base with a host.

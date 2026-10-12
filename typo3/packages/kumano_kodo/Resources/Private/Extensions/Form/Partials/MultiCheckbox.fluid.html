@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>The Choice Group molecule: a fieldset whose legend names the group; the first box carries the error.</f:comment>
+<formvh:renderRenderable renderable="{element}">
+    <f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
+        <f:render partial="Field/Field" arguments="{element: element, renderFieldset: 1}" contentAs="elementContent">
+            <div class="choice-group-options">
+                <f:for each="{element.properties.options}" as="label" key="value" iteration="i">
+                    <f:variable name="aria" value="{}"/>
+                    <f:if condition="{element.properties.elementDescription}"><f:variable name="aria" value="{describedby: '{element.uniqueIdentifier}-desc'}"/></f:if>
+                    <f:if condition="{validationResults.errors} && {i.isFirst}"><f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}"/></f:if>
+                    <label class="choice choice-checkbox"><f:form.checkbox property="{element.identifier}" multiple="1" id="{element.uniqueIdentifier}-{i.index}" class="choice-input" value="{value}" additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}" aria="{aria}"/><span class="choice-label type-small">{formvh:translateElementProperty(element: element, property: '{0: \'options\', 1: value}')}</span></label>
+                </f:for>
+            </div>
+        </f:render>
+    </f:form.validationResults>
+</formvh:renderRenderable>
+</html>

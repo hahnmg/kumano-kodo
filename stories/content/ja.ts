@@ -10,6 +10,9 @@ const build = (p: Photos): LocaleContent => {
         darkMode: 'ダークモード',
         backToTop: 'ページの先頭へ',
         skipToContent: '本文へ移動',
+        uploadDrop: 'ここにファイルをドラッグするか',
+        uploadChoose: '選択',
+        formSteps: 'ステップ',
         trailStatus: '道の状況と連絡先',
         categories: 'カテゴリー',
         breadcrumb: 'パンくずリスト',
@@ -612,7 +615,51 @@ const build = (p: Photos): LocaleContent => {
         },
     };
 
-    return { ui, kumano, guide, richTextSample, home, pages, site, samples };
+    // The demo's form with every EXT:form element type.
+    const walkForm = {
+        title: 'ウォークの申し込み',
+        steps: ['あなたについて', 'ウォークについて', '写真'],
+        summaryTitle: '入力内容の確認',
+        previous: '戻る',
+        next: '次へ',
+        submit: '申し込みを送信',
+        introTitle: '出発の前に',
+        introText: '歩く人、ルート、日程を教えてください。1週間以内にお返事します。',
+        name: 'お名前',
+        email: 'メールアドレス',
+        phone: '電話番号',
+        website: 'ブログまたはウェブサイト',
+        websiteHint: 'ウォークについて書いている場所があれば。',
+        groupSize: 'グループの人数',
+        arrival: '到着日',
+        departure: '出発日',
+        departureHint: '日.月.年の形式で。例：25.04.2024',
+        account: 'アカウント',
+        password: 'パスワード',
+        newPassword: '新しいパスワード',
+        confirmPassword: 'パスワード（確認）',
+        route: 'ルート',
+        routes: ['中辺路', '小辺路', '伊勢路', '大辺路'],
+        pace: 'ペース',
+        paces: ['ゆっくり', '一定', '速め'],
+        interests: '興味のあること',
+        interestOptions: ['神社', '温泉', '森', '食'],
+        languages: '話せる言語',
+        languageOptions: ['英語', 'ドイツ語', '日本語', 'フランス語'],
+        country: 'お住まいの国',
+        notes: 'その他',
+        consent: 'ウォークの計画のために個人情報が使われることに同意します。',
+        luggageTitle: '荷物',
+        luggageText: '荷物は宿から宿へ先に送れます。宿の予約と一緒に手配します。',
+        photo: 'あなたの写真',
+        routeFile: 'ルート（PDF）',
+        remove: '削除',
+        photoHint: 'JPGまたはPNG。',
+        fileHint: '予定している区間のPDF。',
+        sentText: 'ありがとうございます。1週間以内にご連絡します。',
+    };
+
+    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm };
 };
 
 export const ja: LocaleModule<LocaleContent> = {

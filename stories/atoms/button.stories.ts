@@ -11,13 +11,14 @@ const meta: Meta<ButtonProps> = {
     title: 'Atoms/Button',
     render: localized(button, (c) => ({ label: c.ui.subscribe })),
     argTypes: {
-        variant: choice<NonNullable<ButtonProps['variant']>>()('primary', 'light', 'outline'),
+        variant: choice<NonNullable<ButtonProps['variant']>>()('primary', 'secondary', 'light', 'outline'),
         type: choice<NonNullable<ButtonProps['type']>>()('button', 'submit'),
     },
 };
 export default meta;
 
 export const Primary: StoryObj<ButtonProps> = { args: { variant: 'primary' } };
+export const Secondary: StoryObj<ButtonProps> = { args: { variant: 'secondary' } };
 export const Light: StoryObj<ButtonProps> = {
     args: { variant: 'light' },
     render: localized(

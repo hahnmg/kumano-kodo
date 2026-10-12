@@ -1,6 +1,6 @@
 import { attrs, cx, esc } from '../../src/lib/html';
 
-export type ButtonVariant = 'primary' | 'light' | 'outline';
+export type ButtonVariant = 'primary' | 'secondary' | 'light' | 'outline';
 
 export interface ButtonProps {
     label: string;

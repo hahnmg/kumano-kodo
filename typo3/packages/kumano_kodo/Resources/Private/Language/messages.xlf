@@ -20,6 +20,15 @@
             <trans-unit id="skipToContent">
                 <source>Skip to content</source>
             </trans-unit>
+            <trans-unit id="uploadDrop">
+                <source>Drag a file here or</source>
+            </trans-unit>
+            <trans-unit id="uploadChoose">
+                <source>choose one</source>
+            </trans-unit>
+            <trans-unit id="formSteps">
+                <source>Steps</source>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
             </trans-unit>

@@ -26,6 +26,18 @@
                 <source>Skip to content</source>
                 <target>Zum Inhalt springen</target>
             </trans-unit>
+            <trans-unit id="uploadDrop">
+                <source>Drag a file here or</source>
+                <target>Datei hierher ziehen oder</target>
+            </trans-unit>
+            <trans-unit id="uploadChoose">
+                <source>choose one</source>
+                <target>auswählen</target>
+            </trans-unit>
+            <trans-unit id="formSteps">
+                <source>Steps</source>
+                <target>Schritte</target>
+            </trans-unit>
             <trans-unit id="trailStatus">
                 <source>Trail status and contact</source>
                 <target>Wegzustand und Kontakt</target>

@@ -10,6 +10,9 @@ const build = (p: Photos): LocaleContent => {
         darkMode: 'Dunkler Modus',
         backToTop: 'Nach oben',
         skipToContent: 'Zum Inhalt springen',
+        uploadDrop: 'Datei hierher ziehen oder',
+        uploadChoose: 'auswählen',
+        formSteps: 'Schritte',
         trailStatus: 'Wegzustand und Kontakt',
         categories: 'Kategorien',
         breadcrumb: 'Brotkrumen',
@@ -628,7 +631,51 @@ const build = (p: Photos): LocaleContent => {
         },
     };
 
-    return { ui, kumano, guide, richTextSample, home, pages, site, samples };
+    // The demo's form with every EXT:form element type.
+    const walkForm = {
+        title: 'Wanderung anmelden',
+        steps: ['Über dich', 'Deine Wanderung', 'Fotos'],
+        summaryTitle: 'Angaben prüfen',
+        previous: 'Zurück',
+        next: 'Weiter',
+        submit: 'Anmeldung senden',
+        introTitle: 'Bevor es losgeht',
+        introText: 'Sag uns, wer wandert, auf welcher Route und wann. Wir antworten innerhalb einer Woche.',
+        name: 'Name',
+        email: 'E-Mail-Adresse',
+        phone: 'Telefon',
+        website: 'Blog oder Website',
+        websiteHint: 'Wo du über die Wanderung schreibst, falls irgendwo.',
+        groupSize: 'Wandernde in deiner Gruppe',
+        arrival: 'Anreise',
+        departure: 'Abreise',
+        departureHint: 'Als Tag.Monat.Jahr, zum Beispiel 25.04.2024.',
+        account: 'Dein Konto',
+        password: 'Passwort',
+        newPassword: 'Neues Passwort',
+        confirmPassword: 'Passwort wiederholen',
+        route: 'Route',
+        routes: ['Nakahechi', 'Kohechi', 'Iseji', 'Ohechi'],
+        pace: 'Tempo',
+        paces: ['Gemächlich', 'Gleichmäßig', 'Zügig'],
+        interests: 'Was dich reizt',
+        interestOptions: ['Schreine', 'Heiße Quellen', 'Der Wald', 'Das Essen'],
+        languages: 'Sprachen, die du sprichst',
+        languageOptions: ['Englisch', 'Deutsch', 'Japanisch', 'Französisch'],
+        country: 'Land, in dem du lebst',
+        notes: 'Sonst noch etwas',
+        consent: 'Ich bin einverstanden, dass meine Angaben zur Planung der Wanderung verwendet werden.',
+        luggageTitle: 'Gepäck',
+        luggageText: 'Taschen können von Herberge zu Herberge vorausreisen; wir buchen das mit den Unterkünften.',
+        photo: 'Ein Foto von dir',
+        routeFile: 'Deine Route als PDF',
+        remove: 'Entfernen',
+        photoHint: 'JPG oder PNG.',
+        fileHint: 'Ein PDF deiner geplanten Etappen.',
+        sentText: 'Danke. Wir schreiben dir innerhalb einer Woche.',
+    };
+
+    return { ui, kumano, guide, richTextSample, home, pages, site, samples, walkForm };
 };
 
 export const de: LocaleModule<LocaleContent> = {

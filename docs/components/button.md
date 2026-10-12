@@ -7,7 +7,7 @@ The one call to action of a section. Renders a `button`, or a link when `href` i
 | Prop | Values |
 |---|---|
 | `label` | text |
-| `variant` | `primary` (default, on page ground), `light` and `outline` (on photos only) |
+| `variant` | `primary` (default) and `secondary` (an outline, for example a form's way back) on page ground, `light` and `outline` on photos only |
 | `href` | optional; switches to a link |
 | `type` | `button` (default), `submit` |
 
