@@ -1,6 +1,6 @@
 # Hero
 
-Figma: Hero (10:13). Markup: `stories/organisms/hero.markup.ts`.
+Figma: Hero (10:13). Markup: `stories/organisms/hero.markup.ts`. Fluid: `<kk:hero>`.
 
 Full-bleed photo with the page H1, teaser, a light and an outline action and on-image stats. The shade gradient is the one colour outside the tokens (open question 6).
 

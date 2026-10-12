@@ -1,6 +1,6 @@
 # Download List
 
-Figma: Download List (19:144). Markup: `stories/molecules/download-list.markup.ts`.
+Figma: Download List (19:144). Markup: `stories/molecules/download-list.markup.ts`. Fluid: `<kk:downloadList>`.
 
 File rows with type and size.
 

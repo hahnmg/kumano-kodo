@@ -1,6 +1,6 @@
 # Fact List
 
-Figma: Fact List (18:97). Markup: `stories/molecules/fact-list.markup.ts`.
+Figma: Fact List (18:97). Markup: `stories/molecules/fact-list.markup.ts`. Fluid: `<kk:factList>`.
 
 Label and value pairs as a description list.
 

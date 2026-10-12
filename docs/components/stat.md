@@ -1,6 +1,6 @@
 # Stat
 
-Figma: Stat (6:9). Markup: `stories/molecules/stat.markup.ts`.
+Figma: Stat (6:9). Markup: `stories/molecules/stat.markup.ts`. Fluid: `<kk:stat>`.
 
 A number with its label. `statRow` lines four up between an ink and a line rule.
 

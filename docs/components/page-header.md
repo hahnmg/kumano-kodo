@@ -1,6 +1,6 @@
 # Page Header
 
-Figma: Page Header (21:399). Markup: `stories/organisms/page-header.markup.ts`.
+Figma: Page Header (21:399). Markup: `stories/organisms/page-header.markup.ts`. Fluid: `<kk:pageHeader>`.
 
 Breadcrumb, page H1 and optional category chips on the sunk ground.
 

@@ -15,8 +15,9 @@ Own content elements
 ====================
 
 Register the CType in your own extension as `Configuration/TCA/Overrides` does here, with the `kumanoHeading_*`
-palettes and the tab order General, Images, Appearance. Put its template in your template folder under `Content/` and
-render it through the `Kumano/Section` partial so it gets the section frame.
+palettes and the tab order General, Images, Appearance. Put its template in your template folder under `Content/`,
+build it from the theme's :ref:`components <components>` and render it through the `Kumano/Section` partial so it
+gets the section frame.
 
 Logo
 ====

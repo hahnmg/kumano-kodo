@@ -1,6 +1,6 @@
 # Icon Fact
 
-Figma: Icon Fact (19:48). Markup: `stories/molecules/icon-fact.markup.ts`.
+Figma: Icon Fact (19:48). Markup: `stories/molecules/icon-fact.markup.ts`. Fluid: `<kk:iconFact>`.
 
 Icon in a ring with label, value and optional note.
 

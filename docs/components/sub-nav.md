@@ -1,6 +1,6 @@
 # Sub Nav
 
-Figma: Sub Navigation (19:66), items (19:65). Markup: `stories/molecules/sub-nav.markup.ts`.
+Figma: Sub Navigation (19:66), items (19:65). Markup: `stories/molecules/sub-nav.markup.ts`. Fluid: `<kk:subNav>`.
 
 Section navigation as a hairline list; the current page in the accent colour.
 

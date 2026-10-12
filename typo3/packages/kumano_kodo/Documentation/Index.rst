@@ -37,5 +37,6 @@ login and forms. It renders without fluid_styled_content.
     Configuration/Index
     Editors/Index
     CoreExtensions/Index
+    Components/Index
     Customization/Index
     KnownProblems/Index

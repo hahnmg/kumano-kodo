@@ -1,6 +1,6 @@
 # Breadcrumb
 
-Figma: Breadcrumb (18:32). Markup: `stories/molecules/breadcrumb.markup.ts`.
+Figma: Breadcrumb (18:32). Markup: `stories/molecules/breadcrumb.markup.ts`. Fluid: `<kk:breadcrumb>`.
 
 Path to the current page; the last item is the current page.
 

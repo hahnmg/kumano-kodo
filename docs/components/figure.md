@@ -1,6 +1,6 @@
 # Figure
 
-Figma: Figure (7:40). Markup: `stories/molecules/figure.markup.ts`.
+Figma: Figure (7:40). Markup: `stories/molecules/figure.markup.ts`. Fluid: `<kk:figure>`.
 
 One or two images with a caption under a top rule. `rule: false` drops the rule where the figure opens a content column (detail page).
 

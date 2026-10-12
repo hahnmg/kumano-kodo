@@ -1,6 +1,6 @@
 # Chip
 
-Figma: `Chip` (17:146). Markup: `stories/atoms/chip.markup.ts`.
+Figma: `Chip` (17:146). Markup: `stories/atoms/chip.markup.ts`. Fluid: `<kk:chip>`.
 
 Text tab for filtering a list. The active chip is marked as current page and set in the accent colour.
 

@@ -115,6 +115,9 @@ published walker account `pilgrim` (`stories/content/demo-login.ts`). Set `KUMAN
   `RemapErrorPagesOnPackageInitialization` points its error pages at the imported pages.
 - **Lessons from the core theme**: every problem reported for TYPO3's core theme Camino and the solution here, in
   Storybook under "Core theme issues" (data: `docs/core-theme-issues.json`).
+- **Fluid components**: everything the theme renders is a component in `Resources/Private/Components`, namespace
+  `KumanoKodo\Sitepackage\Components`, so other extensions can use them; `TrimComponentOutput` trims the line breaks
+  around each. `npm run build:typo3` writes the reference for the manual and Storybook (`docs/fluid-components.json`).
 - **Icons**: drawn to the [TYPO3 Icons](https://typo3.github.io/TYPO3.Icons/guide/drawing.html) grid; the source
   script is not kept, edit the SVGs in `Resources/Public/Icons/Content/`.
 

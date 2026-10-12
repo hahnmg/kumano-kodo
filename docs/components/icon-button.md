@@ -1,6 +1,6 @@
 # Icon Button
 
-Figma: `Icon Button` (5:16). Markup: `stories/atoms/icon-button.markup.ts`.
+Figma: `Icon Button` (5:16). Markup: `stories/atoms/icon-button.markup.ts`. Fluid: `<kk:iconButton>`.
 
 Round carousel control with an arrow.
 

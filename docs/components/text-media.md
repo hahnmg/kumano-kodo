@@ -1,6 +1,6 @@
 # Text & Media
 
-Figma: Text & Media (19:200). Markup: `stories/molecules/text-media.markup.ts`.
+Figma: Text & Media (19:200). Markup: `stories/molecules/text-media.markup.ts`. Fluid: `<kk:textMedia>`.
 
 Image beside a heading, text and optional link.
 

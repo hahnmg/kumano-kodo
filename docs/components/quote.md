@@ -1,6 +1,6 @@
 # Quote
 
-Figma: Quote (6:10). Markup: `stories/molecules/quote.markup.ts`.
+Figma: Quote (6:10). Markup: `stories/molecules/quote.markup.ts`. Fluid: `<kk:quote>`.
 
 Pull quote with its source.
 

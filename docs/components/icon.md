@@ -1,6 +1,6 @@
 # Icon
 
-Figma: `Icon/*` components on the page "Components". Markup: `stories/atoms/icon.markup.ts`.
+Figma: `Icon/*` components on the page "Components". Markup: `stories/atoms/icon.markup.ts`. Fluid: `<kk:icon>`.
 
 24px stroke icons in the accent colour. Decorative unless `label` is given.
 

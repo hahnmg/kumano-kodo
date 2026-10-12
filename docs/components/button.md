@@ -1,6 +1,6 @@
 # Button
 
-Figma: `Button` (5:9), Style Primary, Secondary, Light and Outline. Markup: `stories/atoms/button.markup.ts`.
+Figma: `Button` (5:9), Style Primary, Secondary, Light and Outline. Markup: `stories/atoms/button.markup.ts`. Fluid: `<kk:button>`.
 
 The one call to action of a section. Renders a `button`, or a link when `href` is set.
 

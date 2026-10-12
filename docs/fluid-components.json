@@ -1,0 +1,1209 @@
+[
+    {
+        "name": "badge",
+        "description": "A short label on a filled ground, such as a status.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "The text."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "bleedImage",
+        "description": "One image across the full width; an optional caption in the slot.",
+        "arguments": [
+            {
+                "name": "image",
+                "type": "object",
+                "required": true,
+                "description": "A file or file reference."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "breadcrumb",
+        "description": "The path to the page; the last item is the page itself and has no link.",
+        "arguments": [
+            {
+                "name": "items",
+                "type": "iterable",
+                "required": true,
+                "description": "Entries with title and link (a URL); the last is the current page."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "button",
+        "description": "The call to action of a section: a link with href, a button without.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "The text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": false,
+                "description": "Turns the button into a link."
+            },
+            {
+                "name": "variant",
+                "type": "string",
+                "required": false,
+                "default": "primary",
+                "description": "primary or secondary on the page ground, light or outline on photos."
+            },
+            {
+                "name": "type",
+                "type": "string",
+                "required": false,
+                "default": "button",
+                "description": "button or submit, without href."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "chapter",
+        "description": "A chapter of the journal: a large number, date, title, the text in the slot and its photos, which open in the lightbox.",
+        "arguments": [
+            {
+                "name": "id",
+                "type": "string",
+                "required": true,
+                "description": "Anchor, also ties the title to the chapter."
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The heading."
+            },
+            {
+                "name": "number",
+                "type": "string|int",
+                "required": false,
+                "description": "The large number; decorative."
+            },
+            {
+                "name": "date",
+                "type": "string",
+                "required": false,
+                "description": "A line above the title."
+            },
+            {
+                "name": "images",
+                "type": "iterable",
+                "required": false,
+                "description": "File references; their span (1 to 12) and shift set the layout."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "chip",
+        "description": "A filter link; the active one marks the current page.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "The text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The target."
+            },
+            {
+                "name": "active",
+                "type": "bool|int",
+                "required": false,
+                "default": "{false}",
+                "description": "Marks the current filter."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "cluster",
+        "description": "Children in a row that wraps; the last one moves to the right end.",
+        "arguments": [],
+        "slots": ["default"]
+    },
+    {
+        "name": "ctaCard",
+        "description": "A call to action under a line: title, text and a link; the whole card is the target.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title."
+            },
+            {
+                "name": "linkLabel",
+                "type": "string",
+                "required": true,
+                "description": "The link text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The target."
+            },
+            {
+                "name": "text",
+                "type": "string",
+                "required": false,
+                "description": "A short text."
+            },
+            {
+                "name": "variant",
+                "type": "string",
+                "required": false,
+                "default": "default",
+                "description": "default, or featured to draw the line in the accent."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "downloadList",
+        "description": "Files to download, each with type and size read from the file.",
+        "arguments": [
+            {
+                "name": "files",
+                "type": "iterable",
+                "required": true,
+                "description": "Files or file references; a reference title wins over the file name."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "factList",
+        "description": "Pairs of label and value under an optional heading.",
+        "arguments": [
+            {
+                "name": "facts",
+                "type": "iterable",
+                "required": true,
+                "description": "Entries with label and value."
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "required": false,
+                "description": "The heading."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "faqItem",
+        "description": "One question of a faqList; open shows its answer from the start.",
+        "arguments": [
+            {
+                "name": "question",
+                "type": "string",
+                "required": true,
+                "description": "The question."
+            },
+            {
+                "name": "answer",
+                "type": "string",
+                "required": true,
+                "description": "The answer."
+            },
+            {
+                "name": "open",
+                "type": "bool|int",
+                "required": false,
+                "default": "{false}",
+                "description": "Shows the answer from the start."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "faqList",
+        "description": "Questions and answers that open one at a time; the entries are faqItem components.",
+        "arguments": [],
+        "slots": ["default"]
+    },
+    {
+        "name": "featureCard",
+        "description": "A card that shows a place: image, title and text; featured sets it larger.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title."
+            },
+            {
+                "name": "text",
+                "type": "string",
+                "required": false,
+                "description": "A short description."
+            },
+            {
+                "name": "image",
+                "type": "object",
+                "required": false,
+                "description": "A file or file reference."
+            },
+            {
+                "name": "emphasis",
+                "type": "string",
+                "required": false,
+                "default": "default",
+                "description": "default, featured or ruled."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "figure",
+        "description": "One image, or two side by side, with a caption in the slot; they open in the lightbox.",
+        "arguments": [
+            {
+                "name": "images",
+                "type": "iterable",
+                "required": true,
+                "description": "One or two files or file references."
+            },
+            {
+                "name": "ruled",
+                "type": "bool|int",
+                "required": false,
+                "default": "{true}",
+                "description": "Draws the line above the caption."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "gallery",
+        "description": "A grid of images that open in the lightbox; an optional caption in the slot.",
+        "arguments": [
+            {
+                "name": "images",
+                "type": "iterable",
+                "required": true,
+                "description": "Files or file references."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "grid",
+        "description": "Children in equal columns: 2, 3 or 4, fewer on narrow screens.",
+        "arguments": [
+            {
+                "name": "columns",
+                "type": "string|int",
+                "required": false,
+                "default": "3",
+                "description": "Number of columns: 2, 3 or 4."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "hero",
+        "description": "The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat components in the fragment stats.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title, the page heading."
+            },
+            {
+                "name": "image",
+                "type": "object",
+                "required": true,
+                "description": "A file or file reference."
+            },
+            {
+                "name": "eyebrow",
+                "type": "string",
+                "required": false,
+                "description": "Short line above the title."
+            }
+        ],
+        "slots": ["default", "actions", "stats"]
+    },
+    {
+        "name": "heroSplit",
+        "description": "An opening in two halves: fill the fragments text and panel.",
+        "arguments": [],
+        "slots": ["text", "panel"]
+    },
+    {
+        "name": "highlight",
+        "description": "A statement with the theme emblem: eyebrow, title and the text in the slot.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The statement."
+            },
+            {
+                "name": "eyebrow",
+                "type": "string",
+                "required": false,
+                "description": "Short line above."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "icon",
+        "description": "An icon of the theme set, drawn to the TYPO3 icon grid.",
+        "arguments": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": true,
+                "description": "One of: clock, phone, mail, map-pin, home, file, search, chevron-down, alert, arrow-right, sun, close, download."
+            },
+            {
+                "name": "size",
+                "type": "string|int",
+                "required": false,
+                "default": "24",
+                "description": "Width and height in pixels."
+            },
+            {
+                "name": "label",
+                "type": "string",
+                "required": false,
+                "description": "Accessible name; without it the icon is decorative."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "iconButton",
+        "description": "A round arrow button, as the slider uses.",
+        "arguments": [
+            {
+                "name": "direction",
+                "type": "string",
+                "required": true,
+                "description": "previous or next."
+            },
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "Accessible name."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "iconFact",
+        "description": "A fact with an icon in a circle: label, value and an optional note.",
+        "arguments": [
+            {
+                "name": "icon",
+                "type": "string",
+                "required": true,
+                "description": "Name of an icon, as for icon."
+            },
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "What the fact is about."
+            },
+            {
+                "name": "value",
+                "type": "string|int",
+                "required": true,
+                "description": "The fact."
+            },
+            {
+                "name": "note",
+                "type": "string",
+                "required": false,
+                "description": "A short addition below."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "image",
+        "description": "A responsive image: 1200px wide as src, 640, 1200 and 2400 in srcset.",
+        "arguments": [
+            {
+                "name": "image",
+                "type": "object",
+                "required": true,
+                "description": "A file or file reference."
+            },
+            {
+                "name": "class",
+                "type": "string",
+                "required": false,
+                "description": "Class of the img element."
+            },
+            {
+                "name": "sizes",
+                "type": "string",
+                "required": false,
+                "default": "(width <= 900px) 100vw, 50vw",
+                "description": "How wide the image is shown, so the browser picks the smallest sharp file."
+            },
+            {
+                "name": "width",
+                "type": "string|int",
+                "required": false,
+                "description": "Width attribute; default 1200."
+            },
+            {
+                "name": "height",
+                "type": "string|int",
+                "required": false,
+                "description": "Height attribute; default the scaled height."
+            },
+            {
+                "name": "eager",
+                "type": "bool|int",
+                "required": false,
+                "default": "{false}",
+                "description": "Loads at once, for the first image of a page."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "infoBox",
+        "description": "A box with a title, the text in the slot and infoBoxLink components in the fragment links.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title."
+            }
+        ],
+        "slots": ["links", "default"]
+    },
+    {
+        "name": "infoBoxLink",
+        "description": "A link at the foot of an infoBox.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "The text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The target."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "lightboxGroup",
+        "description": "The images in it page through one lightbox; it loads the lightbox script.",
+        "arguments": [
+            {
+                "name": "tag",
+                "type": "string",
+                "required": false,
+                "default": "div",
+                "description": "Element name, for example figure."
+            },
+            {
+                "name": "class",
+                "type": "string",
+                "required": false,
+                "description": "Class of the element."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "lightboxLink",
+        "description": "An image that opens large in the lightbox; place it inside a lightboxGroup.",
+        "arguments": [
+            {
+                "name": "image",
+                "type": "object",
+                "required": true,
+                "description": "A file or file reference."
+            },
+            {
+                "name": "class",
+                "type": "string",
+                "required": false,
+                "description": "Class of the img element."
+            },
+            {
+                "name": "sizes",
+                "type": "string",
+                "required": false,
+                "default": "(width <= 900px) 100vw, 50vw",
+                "description": "As for image."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "link",
+        "description": "A text link in the accent with an arrow: forward by default, back with direction back.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "The text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The target."
+            },
+            {
+                "name": "direction",
+                "type": "string",
+                "required": false,
+                "default": "forward",
+                "description": "forward or back."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "linkTile",
+        "description": "A large link with an icon in a circle and an arrow.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The link text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The target."
+            },
+            {
+                "name": "icon",
+                "type": "string",
+                "required": true,
+                "description": "Name of an icon, as for icon."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "logoBird",
+        "description": "The theme's emblem, the three-legged crow, as the highlight shows it.",
+        "arguments": [
+            {
+                "name": "class",
+                "type": "string",
+                "required": false,
+                "description": "Class of the svg element."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "mediaList",
+        "description": "Rows with a small round image, a title and a meta line; the rows are mediaListItem components, a link to more in the fragment more.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The heading of the list."
+            }
+        ],
+        "slots": ["more", "default"]
+    },
+    {
+        "name": "mediaListItem",
+        "description": "One row of a mediaList.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The heading of the row."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The target."
+            },
+            {
+                "name": "meta",
+                "type": "string",
+                "required": false,
+                "description": "A short line below."
+            },
+            {
+                "name": "image",
+                "type": "object",
+                "required": false,
+                "description": "A file or file reference, shown round."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "notice",
+        "description": "A short warning with an icon; the title as an argument, the text in the slot.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title, set before the text."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "pageHeader",
+        "description": "The head of a content page: breadcrumb, title and chip components in the fragment chips.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title, the page heading."
+            },
+            {
+                "name": "breadcrumb",
+                "type": "iterable",
+                "required": false,
+                "description": "Entries for the breadcrumb, as there."
+            }
+        ],
+        "slots": ["chips"]
+    },
+    {
+        "name": "pageIntro",
+        "description": "The opening of a journal page: eyebrow, title, the lede in the slot, a meta line and an optional upright name.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title, the page heading."
+            },
+            {
+                "name": "eyebrow",
+                "type": "string",
+                "required": false,
+                "description": "Short line above the title."
+            },
+            {
+                "name": "meta",
+                "type": "string",
+                "required": false,
+                "description": "A small line below the lede."
+            },
+            {
+                "name": "upright",
+                "type": "string",
+                "required": false,
+                "description": "A name set upright at the edge; decorative."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "personCard",
+        "description": "A person with a round photo, role and focus.",
+        "arguments": [
+            {
+                "name": "name",
+                "type": "string",
+                "required": true,
+                "description": "The name."
+            },
+            {
+                "name": "role",
+                "type": "string",
+                "required": false,
+                "description": "What the person does."
+            },
+            {
+                "name": "focus",
+                "type": "string",
+                "required": false,
+                "description": "A line about the person."
+            },
+            {
+                "name": "image",
+                "type": "object",
+                "required": false,
+                "description": "A file or file reference, shown round."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "portraitCard",
+        "description": "A tall card for a stage: image, label, figures, title and text.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": false,
+                "description": "Links the title; the whole card is then the target."
+            },
+            {
+                "name": "image",
+                "type": "object",
+                "required": false,
+                "description": "A file or file reference."
+            },
+            {
+                "name": "label",
+                "type": "string",
+                "required": false,
+                "description": "A label above, such as Day 2."
+            },
+            {
+                "name": "meta",
+                "type": "string",
+                "required": false,
+                "description": "Figures beside the label, such as the distance."
+            },
+            {
+                "name": "text",
+                "type": "string",
+                "required": false,
+                "description": "A short description."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "quote",
+        "description": "A quotation set large; the quote in the slot, its source as an argument.",
+        "arguments": [
+            {
+                "name": "source",
+                "type": "string",
+                "required": true,
+                "description": "Who said it, or where."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "rail",
+        "description": "Children in a row that scrolls sideways and snaps.",
+        "arguments": [],
+        "slots": ["default"]
+    },
+    {
+        "name": "richText",
+        "description": "Editorial HTML from the editor, in the slot: headings, paragraphs, lists and links.",
+        "arguments": [],
+        "slots": ["default"]
+    },
+    {
+        "name": "routeMap",
+        "description": "A schematic map of a route: a path, stations with names, day marks below and a legend.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "Describes the map for screen readers."
+            },
+            {
+                "name": "path",
+                "type": "string",
+                "required": true,
+                "description": "SVG path data of the route in a 1000 × 250 box."
+            },
+            {
+                "name": "stations",
+                "type": "iterable",
+                "required": true,
+                "description": "Entries with x, y, name, label_y, anchor and boundary; the last is the end."
+            },
+            {
+                "name": "days",
+                "type": "iterable",
+                "required": false,
+                "description": "Entries with x and label, set below the map."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "section",
+        "description": "A band of the page: its ground and the space around it; the content goes in the slot.",
+        "arguments": [
+            {
+                "name": "tone",
+                "type": "string",
+                "required": false,
+                "default": "paper",
+                "description": "Ground: paper or sunk."
+            },
+            {
+                "name": "space",
+                "type": "string",
+                "required": false,
+                "default": "default",
+                "description": "Space above and below: default, large, flush-top or none."
+            },
+            {
+                "name": "bleed",
+                "type": "bool|int",
+                "required": false,
+                "default": "{false}",
+                "description": "Lets a rail run to the edge of the viewport."
+            },
+            {
+                "name": "label",
+                "type": "string",
+                "required": false,
+                "description": "Accessible name, when the section has no visible heading."
+            },
+            {
+                "name": "id",
+                "type": "string",
+                "required": false,
+                "description": "Anchor to link to the section."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "sectionHeading",
+        "description": "The heading of a section: an optional eyebrow above, an aside or the slider arrows beside it.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The heading."
+            },
+            {
+                "name": "eyebrow",
+                "type": "string",
+                "required": false,
+                "description": "Short line above the heading."
+            },
+            {
+                "name": "aside",
+                "type": "string",
+                "required": false,
+                "description": "Short text beside the heading."
+            },
+            {
+                "name": "level",
+                "type": "string|int",
+                "required": false,
+                "default": "2",
+                "description": "Heading level: 1 or 2."
+            },
+            {
+                "name": "controls",
+                "type": "bool|int",
+                "required": false,
+                "default": "{false}",
+                "description": "Shows the previous and next arrows of a slider."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "slider",
+        "description": "Cards in a row that scrolls, with arrows beside the heading and dots below; the cards go in the slot.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The heading, also the name of the card row."
+            },
+            {
+                "name": "count",
+                "type": "string|int",
+                "required": true,
+                "description": "Number of cards, for the dots."
+            },
+            {
+                "name": "eyebrow",
+                "type": "string",
+                "required": false,
+                "description": "Short line above the heading."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "split",
+        "description": "Two columns side by side, stacked on narrow screens: fill the fragments first and second.",
+        "arguments": [
+            {
+                "name": "ratio",
+                "type": "string",
+                "required": false,
+                "default": "even",
+                "description": "content-sidebar, text-media, heading-content, wide-narrow, narrow-wide or even."
+            },
+            {
+                "name": "align",
+                "type": "string",
+                "required": false,
+                "default": "start",
+                "description": "Vertical alignment: start, center or end."
+            }
+        ],
+        "slots": ["first", "second"]
+    },
+    {
+        "name": "stack",
+        "description": "Children one below the other at a set gap.",
+        "arguments": [
+            {
+                "name": "gap",
+                "type": "string|int",
+                "required": false,
+                "default": "column",
+                "description": "heading (heading to content), elements (between the elements of a section), column (in a column), or a spacing step such as 16 or 24."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "stat",
+        "description": "A figure with its label: large on the page ground, on-image over a photo.",
+        "arguments": [
+            {
+                "name": "value",
+                "type": "string|int",
+                "required": true,
+                "description": "The figure."
+            },
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "What it counts."
+            },
+            {
+                "name": "variant",
+                "type": "string",
+                "required": false,
+                "default": "large",
+                "description": "large or on-image."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "statRow",
+        "description": "Large figures side by side; the figures are stat components.",
+        "arguments": [],
+        "slots": ["default"]
+    },
+    {
+        "name": "subNav",
+        "description": "Navigation between sibling pages under a heading; the items are subNavItem components.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "Heading, also the name of the navigation."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "subNavItem",
+        "description": "A link in a subNav; the current page is marked.",
+        "arguments": [
+            {
+                "name": "label",
+                "type": "string",
+                "required": true,
+                "description": "The text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The target."
+            },
+            {
+                "name": "current",
+                "type": "bool|int",
+                "required": false,
+                "default": "{false}",
+                "description": "Marks the page shown."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "teaserCard",
+        "description": "A card that links to a page: image, title, subtitle and a meta line with an optional badge.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The title, also the link text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": true,
+                "description": "The target."
+            },
+            {
+                "name": "image",
+                "type": "object",
+                "required": false,
+                "description": "A file or file reference."
+            },
+            {
+                "name": "subtitle",
+                "type": "string",
+                "required": false,
+                "description": "A line below the title."
+            },
+            {
+                "name": "meta",
+                "type": "string",
+                "required": false,
+                "description": "A small line at the foot, such as a date."
+            },
+            {
+                "name": "badge",
+                "type": "string",
+                "required": false,
+                "description": "A short label beside the meta line."
+            },
+            {
+                "name": "level",
+                "type": "string|int",
+                "required": false,
+                "default": "3",
+                "description": "Heading level: 2, 3 or none."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "textMedia",
+        "description": "An image beside a heading, the text in the slot and an optional link.",
+        "arguments": [
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The heading."
+            },
+            {
+                "name": "image",
+                "type": "object",
+                "required": false,
+                "description": "A file or file reference."
+            },
+            {
+                "name": "imageSide",
+                "type": "string",
+                "required": false,
+                "default": "left",
+                "description": "left or right."
+            },
+            {
+                "name": "linkLabel",
+                "type": "string",
+                "required": false,
+                "description": "The link text."
+            },
+            {
+                "name": "href",
+                "type": "string",
+                "required": false,
+                "description": "The link target."
+            }
+        ],
+        "slots": ["default"]
+    },
+    {
+        "name": "timeline",
+        "description": "An ordered list of timelineItem components.",
+        "arguments": [],
+        "slots": ["default"]
+    },
+    {
+        "name": "timelineItem",
+        "description": "One entry of a timeline: date, title, text and time.",
+        "arguments": [
+            {
+                "name": "date",
+                "type": "string",
+                "required": true,
+                "description": "Label above, such as Day 1 · 20 April."
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "required": true,
+                "description": "The heading."
+            },
+            {
+                "name": "text",
+                "type": "string",
+                "required": false,
+                "description": "A short description."
+            },
+            {
+                "name": "time",
+                "type": "string",
+                "required": false,
+                "description": "A note below, such as a time span."
+            }
+        ],
+        "slots": []
+    }
+]

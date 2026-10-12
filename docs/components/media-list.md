@@ -1,6 +1,6 @@
 # Media List
 
-Figma: Media List (19:79). Markup: `stories/molecules/media-list.markup.ts`.
+Figma: Media List (19:79). Markup: `stories/molecules/media-list.markup.ts`. Fluid: `<kk:mediaList>`.
 
 Linked rows with a small round photo, title, meta and arrow.
 

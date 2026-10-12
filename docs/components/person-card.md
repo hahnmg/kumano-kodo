@@ -1,6 +1,6 @@
 # Person Card
 
-Figma: Person Card (18:47). Markup: `stories/molecules/person-card.markup.ts`.
+Figma: Person Card (18:47). Markup: `stories/molecules/person-card.markup.ts`. Fluid: `<kk:personCard>`.
 
 Round photo, name, role and focus.
 

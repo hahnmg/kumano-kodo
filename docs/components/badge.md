@@ -1,6 +1,6 @@
 # Badge
 
-Figma: `Badge` (17:103). Markup: `stories/atoms/badge.markup.ts`.
+Figma: `Badge` (17:103). Markup: `stories/atoms/badge.markup.ts`. Fluid: `<kk:badge>`.
 
 Short status label on a card, for example "Longest stage".
 

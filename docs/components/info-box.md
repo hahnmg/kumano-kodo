@@ -1,6 +1,6 @@
 # Info Box
 
-Figma: Info Box (18:77). Markup: `stories/molecules/info-box.markup.ts`.
+Figma: Info Box (18:77). Markup: `stories/molecules/info-box.markup.ts`. Fluid: `<kk:infoBox>`.
 
 Sidebar note with an eyebrow title, text and contact links.
 

@@ -1,6 +1,6 @@
 # Rich Text
 
-Figma: Rich Text (19:178). Markup: `stories/molecules/rich-text.markup.ts`.
+Figma: Rich Text (19:178). Markup: `stories/molecules/rich-text.markup.ts`. Fluid: `<kk:richText>`.
 
 Editorial HTML from the CMS (h2, h3, p, lists, links). The content is trusted and not escaped; styles use the `--type-*` variables because CMS markup carries no classes.
 

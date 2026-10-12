@@ -1,6 +1,6 @@
 # Gallery
 
-Figma: Gallery (19:201). Markup: `stories/molecules/gallery.markup.ts`.
+Figma: Gallery (19:201). Markup: `stories/molecules/gallery.markup.ts`. Fluid: `<kk:gallery>`.
 
 Three-column image grid with optional caption.
 

@@ -96,7 +96,19 @@ const preview: Preview = {
         layout: 'padded',
         docs: { theme: brandTheme('light'), source: { language: 'html', transform: (code: string) => formatSource(code) } },
         options: {
-            storySort: { order: ['Introduction', 'Core theme issues', 'Site', 'Templates', 'Organisms', 'Molecules', 'Atoms', 'Layout'] },
+            storySort: {
+                order: [
+                    'Introduction',
+                    'Core theme issues',
+                    'Fluid components',
+                    'Site',
+                    'Templates',
+                    'Organisms',
+                    'Molecules',
+                    'Atoms',
+                    'Layout',
+                ],
+            },
         },
     },
 };

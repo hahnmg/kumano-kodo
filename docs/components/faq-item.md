@@ -1,6 +1,6 @@
 # FAQ Item
 
-Figma: FAQ Item (8:19). Markup: `stories/molecules/faq-item.markup.ts`.
+Figma: FAQ Item (8:19). Markup: `stories/molecules/faq-item.markup.ts`. Fluid: `<kk:faqItem>`.
 
 Question and answer as native `details`; `faqList` adds the ink rules at top and bottom.
 

@@ -1,6 +1,6 @@
 # Place Card
 
-Figma: Place Card (7:31). Markup: `stories/molecules/feature-card.markup.ts`.
+Figma: Place Card (7:31). Markup: `stories/molecules/feature-card.markup.ts`. Fluid: `<kk:featureCard>`.
 
 Photo, title and text for a place.
 

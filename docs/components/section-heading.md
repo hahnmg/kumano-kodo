@@ -1,6 +1,6 @@
 # Section Heading
 
-Figma: Section Heading (6:33). Markup: `stories/molecules/section-heading.markup.ts`.
+Figma: Section Heading (6:33). Markup: `stories/molecules/section-heading.markup.ts`. Fluid: `<kk:sectionHeading>`.
 
 Optional eyebrow above an H2; the single heading pattern for every section.
 

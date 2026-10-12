@@ -1,6 +1,6 @@
 # Slider
 
-Figma: Section Heading with controls, Stage Card, Slider Dots. Markup: `stories/organisms/slider.markup.ts`.
+Figma: Section Heading with controls, Stage Card, Slider Dots. Markup: `stories/organisms/slider.markup.ts`. Fluid: `<kk:slider>`.
 Script: `src/scripts/slider.ts`.
 
 Section heading with arrows, a scrolling track and dots. The script works with the positions the track can actually
