@@ -21,3 +21,8 @@ body {
     clip-path: inset(50%);
     white-space: nowrap;
 }
+
+/* Japanese titles break between phrases, not inside a word; browsers without auto-phrase keep breaking anywhere. */
+:lang(ja) :is(h1, h2, h3, h4) {
+    word-break: auto-phrase;
+}

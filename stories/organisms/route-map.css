@@ -65,7 +65,7 @@
 .route-map-day-link {
     color: inherit;
     text-decoration: underline;
-    text-decoration-color: var(--color-line);
+    text-decoration-color: currentcolor;
     text-underline-offset: 3px;
 }
 
