@@ -12,7 +12,7 @@ export interface CtaCardProps {
 }
 
 export const ctaCard = ({ title, text, linkLabel, href, variant = 'default' }: CtaCardProps): string =>
-    `<article class="cta-card cta-card--${variant}">` +
-    `<h3 class="cta-card__title type-h4">${esc(title)}</h3>` +
-    `<p class="cta-card__text type-small">${esc(text)}</p>` +
-    `<div class="cta-card__link">${link({ label: linkLabel, href })}</div></article>`;
+    `<article class="cta-card cta-card-${variant}">` +
+    `<h3 class="cta-card-title type-h4">${esc(title)}</h3>` +
+    `<p class="cta-card-text type-small">${esc(text)}</p>` +
+    `<div class="cta-card-link">${link({ label: linkLabel, href })}</div></article>`;

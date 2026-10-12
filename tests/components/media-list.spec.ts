@@ -7,7 +7,7 @@ const props = { title: 'Ways to walk it', items: guide.routes, more: { label: 'C
 
 describe('media-list', () => {
     it('renders one link row per item', () => {
-        expect(mount(mediaList(props)).querySelectorAll('.media-list__row')).toHaveLength(3);
+        expect(mount(mediaList(props)).querySelectorAll('.media-list-row')).toHaveLength(3);
     });
     it('passes axe', () => expectAccessible(mediaList(props)));
 });

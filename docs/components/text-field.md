@@ -15,4 +15,4 @@ An invalid field (also Select, Textarea, Checkbox) keeps its rule in `--color-ac
 
 Tokens: `--color-muted`, `--color-hair`, `--color-ink`, `--space-10`, `.type-label`, `.type-lead`.
 
-Focus: a 2px accent frame over the field box (`.field__box`), flush with its line and 12px wider than the text on both sides; every text field, textarea and select sits in such a box.
+Focus: a 2px accent frame over the field box (`.field-box`), flush with its line and 12px wider than the text on both sides; every text field, textarea and select sits in such a box.

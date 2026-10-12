@@ -9,16 +9,16 @@
 }
 
 /* Field and button share one height, so the focus frame lines up with the button. */
-.search-form .field__box {
+.search-form .field-box {
     border-top: var(--border-hairline) solid transparent;
 }
 
-.search-form .field__control {
+.search-form .field-control {
     padding-block: var(--space-14);
 }
 
 /* The browser's clear button would add a second, foreign control. */
-.search-form .field__control::-webkit-search-cancel-button {
+.search-form .field-control::-webkit-search-cancel-button {
     appearance: none;
 }
 

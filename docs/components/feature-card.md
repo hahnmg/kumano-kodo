@@ -1,6 +1,6 @@
 # Place Card
 
-Figma: Place Card (7:31). Markup: `stories/molecules/place-card.markup.ts`.
+Figma: Place Card (7:31). Markup: `stories/molecules/feature-card.markup.ts`.
 
 Photo, title and text for a place.
 

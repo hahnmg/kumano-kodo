@@ -8,19 +8,19 @@
     margin: 0;
 }
 
-.stat--large .stat__value {
+.stat-large .stat-value {
     color: var(--color-ink);
 }
 
-.stat--large .stat__label {
+.stat-large .stat-label {
     color: var(--color-muted);
 }
 
-.stat--on-image {
+.stat-on-image {
     color: var(--color-on-image);
 }
 
-.stat--on-image .stat__label {
+.stat-on-image .stat-label {
     opacity: 0.82;
 }
 

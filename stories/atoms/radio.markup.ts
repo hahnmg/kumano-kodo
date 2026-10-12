@@ -8,7 +8,7 @@ export interface RadioProps {
 }
 
 export const radio = ({ label, name, value, checked }: RadioProps): string =>
-    `<label class="choice choice--radio">` +
-    `<input${attrs({ class: 'choice__input', type: 'radio', name, value, checked })}>` +
-    `<span class="choice__label type-small">${esc(label)}</span>` +
+    `<label class="choice choice-radio">` +
+    `<input${attrs({ class: 'choice-input', type: 'radio', name, value, checked })}>` +
+    `<span class="choice-label type-small">${esc(label)}</span>` +
     `</label>`;

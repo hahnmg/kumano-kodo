@@ -2,10 +2,10 @@
 <f:variable name="flyout" value="{item.data.tx_kumanokodo_flyout}"/>
 <f:if condition="{flyout}">
     <f:then>
-        <li class="site-header__item site-header__item--{flyout}"><f:if condition="{item.active}"><f:then><button class="site-header__link site-header__toggle type-small" type="button" aria-expanded="false" aria-current="true"></f:then><f:else><button class="site-header__link site-header__toggle type-small" type="button" aria-expanded="false"></f:else></f:if>{item.title}<f:render partial="Kumano/Icon" arguments="{name: 'chevron-down', size: 14}"/></button><f:render partial="Page/NavFlyout" arguments="{item: item, flyout: flyout}"/></li>
+        <li class="site-header-item site-header-item-{flyout}"><f:if condition="{item.active}"><f:then><button class="site-header-link site-header-toggle type-small" type="button" aria-expanded="false" aria-current="true"></f:then><f:else><button class="site-header-link site-header-toggle type-small" type="button" aria-expanded="false"></f:else></f:if>{item.title}<f:render partial="Kumano/Icon" arguments="{name: 'chevron-down', size: 14}"/></button><f:render partial="Page/NavFlyout" arguments="{item: item, flyout: flyout}"/></li>
     </f:then>
     <f:else>
-        <li class="site-header__item"><f:link.typolink parameter="{item.link}" class="site-header__link type-small" additionalAttributes="{f:if(condition: item.active, then: {aria-current: 'page'})}">{item.title}</f:link.typolink></li>
+        <li class="site-header-item"><f:link.typolink parameter="{item.link}" class="site-header-link type-small" additionalAttributes="{f:if(condition: item.active, then: {aria-current: 'page'})}">{item.title}</f:link.typolink></li>
     </f:else>
 </f:if>
 </html>

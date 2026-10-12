@@ -7,32 +7,32 @@
     border-top: var(--border-hairline) solid var(--color-accent);
 }
 
-.highlight__emblem {
+.highlight-emblem {
     width: 144px;
     height: auto;
     color: var(--color-accent);
 }
 
-.highlight__body {
+.highlight-body {
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
     max-width: 652px;
 }
 
-.highlight__body > * {
+.highlight-body > * {
     margin: 0;
 }
 
-.highlight__eyebrow {
+.highlight-eyebrow {
     color: var(--color-accent);
 }
 
-.highlight__title {
+.highlight-title {
     color: var(--color-ink);
 }
 
-.highlight__text {
+.highlight-text {
     color: var(--color-muted);
 }
 
@@ -41,7 +41,7 @@
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .highlight__emblem {
+    .highlight-emblem {
         width: 88px;
     }
 }

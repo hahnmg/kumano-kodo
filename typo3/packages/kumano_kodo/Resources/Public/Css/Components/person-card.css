@@ -11,15 +11,15 @@
     margin: 0;
 }
 
-.person-card__name {
+.person-card-name {
     padding-top: var(--space-12);
     color: var(--color-ink);
 }
 
-.person-card__role {
+.person-card-role {
     color: var(--color-ink);
 }
 
-.person-card__focus {
+.person-card-focus {
     color: var(--color-muted);
 }

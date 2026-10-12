@@ -20,7 +20,7 @@
     color: var(--color-ink);
 }
 
-.topbar .topbar__contact {
+.topbar .topbar-contact {
     gap: var(--space-32);
 }
 
@@ -44,17 +44,17 @@
         gap: var(--space-6);
     }
 
-    .topbar .topbar__hours {
+    .topbar .topbar-hours {
         display: block;
     }
 
-    .topbar__hours .icon {
+    .topbar-hours .icon {
         display: inline-block;
         margin-right: var(--space-6);
         vertical-align: -2px;
     }
 
-    .topbar .topbar__contact {
+    .topbar .topbar-contact {
         flex-wrap: wrap;
         gap: var(--space-6) var(--space-20);
     }

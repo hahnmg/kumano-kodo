@@ -27,7 +27,7 @@ describe('scheme-toggle', () => {
         document.documentElement.dataset.scheme = 'light';
         document.body.innerHTML = siteHeader({ nav: kumano.nav });
         unbind = bindSchemeToggle(document);
-        document.querySelector<HTMLAnchorElement>('.site-header__link')?.click();
+        document.querySelector<HTMLAnchorElement>('.site-header-link')?.click();
         expect(currentScheme()).toBe('light');
     });
     it('renders a labelled pressed-state button', () => {

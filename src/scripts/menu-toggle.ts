@@ -14,7 +14,7 @@ export const bindMenuToggle = (doc: Document = document): (() => void) => {
     };
     const key = (event: KeyboardEvent): void => {
         // An open flyout takes the first Escape; the menu closes on the next one.
-        if (event.key !== 'Escape' || doc.querySelector('.site-header__item[data-open]')) return;
+        if (event.key !== 'Escape' || doc.querySelector('.site-header-item[data-open]')) return;
         doc.querySelectorAll('.site-header[data-menu-open]').forEach((header) => {
             setOpen(header, false);
             header.querySelector<HTMLElement>(button)?.focus();

@@ -11,7 +11,7 @@ use TYPO3\CMS\Core\Resource\Security\SvgSanitizer;
 // The logo uploaded on the site's root page, as inline markup; '' when none is set.
 final class SiteLogo
 {
-    private const GROUPS = ['bird' => 'logo__bird', 'text' => 'logo__text'];
+    private const GROUPS = ['bird' => 'logo-bird', 'text' => 'logo-text'];
 
     public function __construct(
         private readonly FileRepository $fileRepository,
@@ -25,7 +25,7 @@ final class SiteLogo
             return '';
         }
         if (strtolower($reference->getExtension()) !== 'svg') {
-            return '<img class="logo__mark logo__mark--custom" src="' . htmlspecialchars((string)$reference->getPublicUrl()) . '" alt="">';
+            return '<img class="logo-mark logo-mark-custom" src="' . htmlspecialchars((string)$reference->getPublicUrl()) . '" alt="">';
         }
         return $this->inline($this->svgSanitizer->sanitizeContent($reference->getContents()));
     }
@@ -51,7 +51,7 @@ final class SiteLogo
         if (!$root->hasAttribute('viewBox') && $root->hasAttribute('width') && $root->hasAttribute('height')) {
             $root->setAttribute('viewBox', '0 0 ' . (float)$root->getAttribute('width') . ' ' . (float)$root->getAttribute('height'));
         }
-        $root->setAttribute('class', 'logo__mark logo__mark--custom');
+        $root->setAttribute('class', 'logo-mark logo-mark-custom');
         $root->setAttribute('aria-hidden', 'true');
         $root->setAttribute('focusable', 'false');
         return (string)$document->saveXML($root);

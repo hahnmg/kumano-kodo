@@ -4,10 +4,10 @@ import { expectAccessible, mount } from '../support/accessibility';
 
 describe('button', () => {
     it('renders a button, or a link when href is set', () => {
-        expect(mount(button({ label: 'Subscribe' })).querySelector('button.button--primary')?.textContent).toBe('Subscribe');
+        expect(mount(button({ label: 'Subscribe' })).querySelector('button.button-primary')?.textContent).toBe('Subscribe');
         expect(
             mount(button({ label: 'Go', href: '/x', variant: 'light' }))
-                .querySelector('a.button--light')
+                .querySelector('a.button-light')
                 ?.getAttribute('href'),
         ).toBe('/x');
     });

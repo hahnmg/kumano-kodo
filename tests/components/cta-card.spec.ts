@@ -11,7 +11,7 @@ const props = {
 
 describe('cta-card', () => {
     it('marks the featured variant', () => {
-        expect(mount(ctaCard({ ...props, variant: 'featured' })).querySelector('.cta-card--featured')).not.toBeNull();
+        expect(mount(ctaCard({ ...props, variant: 'featured' })).querySelector('.cta-card-featured')).not.toBeNull();
         expect(mount(ctaCard(props)).querySelector('a')?.textContent).toBe('Read more →');
     });
     it('passes axe', () => expectAccessible(ctaCard(props)));

@@ -87,7 +87,7 @@ settings:
     type: color
     default: '#cfc0ab'
     category: kumanoKodo.colors.light
-  kumanoKodo.color.light.moss:
+  kumanoKodo.color.light.secondary:
     type: color
     default: '#4a6350'
     category: kumanoKodo.colors.light
@@ -123,7 +123,7 @@ settings:
     type: color
     default: '#463c32'
     category: kumanoKodo.colors.dark
-  kumanoKodo.color.dark.moss:
+  kumanoKodo.color.dark.secondary:
     type: color
     default: '#a9c2ae'
     category: kumanoKodo.colors.dark

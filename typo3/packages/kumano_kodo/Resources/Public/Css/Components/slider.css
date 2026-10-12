@@ -5,7 +5,7 @@
 }
 
 /* The first card lines up with the page container, while the track itself still runs to the viewport edge. */
-.slider__track {
+.slider-track {
     --slider-edge: max(var(--gutter), (100% - var(--container-page)) / 2);
 
     position: relative;
@@ -15,23 +15,23 @@
     scrollbar-width: none;
 }
 
-.slider__track::-webkit-scrollbar {
+.slider-track::-webkit-scrollbar {
     display: none;
 }
 
 /* Inset: the track runs to the viewport edge, where an outer outline is cut off (forge.typo3.org/issues/109507). */
-.slider__track:focus-visible {
+.slider-track:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: -2px;
 }
 
-.slider__dots {
+.slider-indicator {
     display: flex;
     justify-content: center;
 }
 
 /* In a bleed section the heading and dots keep to the container edge the track starts at. */
-.section--bleed .slider > :not(.slider__track) {
+.section-bleed .slider > :not(.slider-track) {
     padding-inline: max(var(--gutter), (100% - var(--container-page)) / 2);
 }
 
@@ -41,7 +41,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .slider__track {
+    .slider-track {
         scroll-behavior: auto;
     }
 }

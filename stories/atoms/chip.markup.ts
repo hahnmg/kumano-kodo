@@ -7,4 +7,4 @@ export interface ChipProps {
 }
 
 export const chip = ({ label, href, active = false }: ChipProps): string =>
-    `<a${attrs({ class: cx('chip', 'type-button', active && 'chip--active'), href, 'aria-current': active ? 'page' : undefined })}>${esc(label)}</a>`;
+    `<a${attrs({ class: cx('chip', 'type-button'), href, 'aria-current': active ? 'page' : undefined })}>${esc(label)}</a>`;

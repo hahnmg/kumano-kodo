@@ -5,40 +5,40 @@
     text-decoration: none;
 }
 
-.logo--title {
+.logo-title {
     color: var(--color-ink);
 }
 
-.logo__mark {
+.logo-mark {
     display: block;
     max-width: 100%;
     height: auto;
 }
 
-.logo__bird {
+.logo-bird {
     fill: var(--color-accent);
 }
 
-.logo__text {
+.logo-text {
     fill: var(--color-ink);
 }
 
 /* An uploaded SVG may colour its shapes itself; inside the named groups the theme wins. */
-.logo__bird *,
-.logo__text * {
+.logo-bird *,
+.logo-text * {
     fill: inherit;
 }
 
-.logo__mark--modern {
+.logo-mark-modern {
     width: auto;
     height: 30px;
 }
 
-.logo__mark--modern,
-[data-theme]:not([data-theme='caramel']) .logo__mark--classic {
+.logo-mark-modern,
+[data-theme]:not([data-theme='caramel']) .logo-mark-classic {
     display: none;
 }
 
-[data-theme]:not([data-theme='caramel']) .logo__mark--modern {
+[data-theme]:not([data-theme='caramel']) .logo-mark-modern {
     display: block;
 }

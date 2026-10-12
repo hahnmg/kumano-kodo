@@ -5,7 +5,7 @@
     cursor: pointer;
 }
 
-.choice__input {
+.choice-input {
     flex-shrink: 0;
     width: 17px;
     height: 17px;
@@ -13,12 +13,12 @@
     accent-color: var(--color-accent);
 }
 
-.choice--checkbox .choice__label {
+.choice-checkbox .choice-label {
     color: var(--color-muted);
     transition: color var(--motion-fast) var(--ease-out);
 }
 
-.choice:hover .choice__label {
+.choice:hover .choice-label {
     color: var(--color-ink);
 }
 

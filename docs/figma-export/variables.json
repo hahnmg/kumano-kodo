@@ -51,10 +51,10 @@
                     "css": "--color-hair",
                     "v": { "Light": { "alias": "palette/light/hair" }, "Dark": { "alias": "palette/dark/hair" } }
                 },
-                "color/moss": {
+                "color/secondary": {
                     "type": "COLOR",
-                    "css": "--color-moss",
-                    "v": { "Light": { "alias": "palette/light/moss" }, "Dark": { "alias": "palette/dark/moss" } }
+                    "css": "--color-secondary",
+                    "v": { "Light": { "alias": "palette/light/secondary" }, "Dark": { "alias": "palette/dark/secondary" } }
                 },
                 "color/accent": {
                     "type": "COLOR",
@@ -354,9 +354,9 @@
                     "css": "--palette-light-hair",
                     "v": { "Caramel": "#cfc0ab", "Forest": "#bcc7bd", "Ocean": "#b6cbdc", "Violet": "#c6b4da", "Mono": "#cfcfcf" }
                 },
-                "palette/light/moss": {
+                "palette/light/secondary": {
                     "type": "COLOR",
-                    "css": "--palette-light-moss",
+                    "css": "--palette-light-secondary",
                     "v": { "Caramel": "#4a6350", "Forest": "#2f6b4f", "Ocean": "#0f6e93", "Violet": "#7a2fd4", "Mono": "#111111" }
                 },
                 "palette/light/accent": {
@@ -399,9 +399,9 @@
                     "css": "--palette-dark-hair",
                     "v": { "Caramel": "#463c32", "Forest": "#364136", "Ocean": "#2b4150", "Violet": "#3b2d56", "Mono": "#3a3a3a" }
                 },
-                "palette/dark/moss": {
+                "palette/dark/secondary": {
                     "type": "COLOR",
-                    "css": "--palette-dark-moss",
+                    "css": "--palette-dark-secondary",
                     "v": { "Caramel": "#a9c2ae", "Forest": "#8fd0a8", "Ocean": "#63c8e6", "Violet": "#ffd166", "Mono": "#f2f2f2" }
                 },
                 "palette/dark/accent": {

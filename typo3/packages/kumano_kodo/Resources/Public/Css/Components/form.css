@@ -5,7 +5,7 @@
     max-width: 640px;
 }
 
-.form__note {
+.form-note {
     margin: 0;
     color: var(--color-muted);
 }

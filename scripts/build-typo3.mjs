@@ -116,7 +116,7 @@ const buildPartials = async () => {
         const { button } = await atom('button');
         const { iconButton } = await atom('icon-button');
         const { newsletterForm } = await server.ssrLoadModule('/stories/molecules/newsletter-form.markup.ts');
-        const variant = (html) => fill(html).replaceAll('button--primary', 'button--{variant}');
+        const variant = (html) => fill(html).replaceAll('button-primary', 'button-{variant}');
         atoms.Button =
             `<f:if condition="{href}"><f:then>${variant(button({ label: '__LABEL__', href: '__HREF__' }))}</f:then>` +
             `<f:else>${variant(button({ label: '__LABEL__' })).replace('type="button"', 'type="{type}"')}</f:else></f:if>`;
@@ -210,7 +210,7 @@ const buildThemes = async () => {
         }),
     );
     const weights = { Regular: 400, Medium: 500, SemiBold: 600, 'Semi Bold': 600, Bold: 700 };
-    const roles = ['paper', 'surface', 'sunk', 'ink', 'muted', 'line', 'hair', 'moss', 'accent'];
+    const roles = ['paper', 'surface', 'sunk', 'ink', 'muted', 'line', 'hair', 'secondary', 'accent'];
     const body = data.textStyles.find((s) => s.name === 'Text/Body').family;
     const themes = Object.fromEntries(
         theme.modes.map((mode) => {

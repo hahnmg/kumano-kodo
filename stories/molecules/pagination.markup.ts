@@ -24,10 +24,10 @@ export const pagination = ({
 }: PaginationProps): string => {
     const item = (content: string, target?: number, extra: Record<string, string> = {}) =>
         target
-            ? `<li><a${attrs({ class: 'pagination__item type-button', href: href(target), ...extra })}>${content}</a></li>`
-            : `<li><span class="pagination__item type-button" aria-hidden="true">${content}</span></li>`;
+            ? `<li><a${attrs({ class: 'pagination-item type-button', href: href(target), ...extra })}>${content}</a></li>`
+            : `<li><span class="pagination-item type-button" aria-hidden="true">${content}</span></li>`;
     return (
-        `<nav${attrs({ class: 'pagination', 'aria-label': label })}><ol class="pagination__list">` +
+        `<nav${attrs({ class: 'pagination', 'aria-label': label })}><ol class="pagination-list">` +
         (current > 1 ? item('←', current - 1, { 'aria-label': previousLabel }) : '') +
         pages(current, total)
             .map((p) => (p === '…' ? item('…') : item(esc(p), p, p === current ? { 'aria-current': 'page' } : {})))

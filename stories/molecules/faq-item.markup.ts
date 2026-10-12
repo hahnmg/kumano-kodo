@@ -9,7 +9,7 @@ export interface FaqItemProps {
 
 export const faqItem = ({ question, answer, open = false }: FaqItemProps): string =>
     `<details${attrs({ class: 'faq-item', open })}>` +
-    `<summary class="faq-item__question"><span class="type-h4-regular">${esc(question)}</span>${icon({ name: 'chevron-down', size: 20 })}</summary>` +
-    `<p class="faq-item__answer type-body">${esc(answer)}</p></details>`;
+    `<summary class="faq-item-question"><span class="type-h4-regular">${esc(question)}</span>${icon({ name: 'chevron-down', size: 20 })}</summary>` +
+    `<p class="faq-item-answer type-body">${esc(answer)}</p></details>`;
 
 export const faqList = (items: FaqItemProps[]): string => `<div class="faq-list">${items.map(faqItem).join('')}</div>`;

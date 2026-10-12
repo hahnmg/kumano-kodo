@@ -20,10 +20,10 @@
         {inner -> f:format.raw()}
     </f:then>
     <f:else>
-        <f:variable name="class">section section--{f:if(condition: '{data.frame_class} == sunk', then: 'sunk', else: 'paper')} section--space-{f:if(condition: data.space_before_class, then: data.space_before_class, else: 'default')}<f:if condition="{bleed}"> section--bleed</f:if></f:variable>
+        <f:variable name="class">section section-{f:if(condition: '{data.frame_class} == sunk', then: 'sunk', else: 'paper')} section-space-{f:if(condition: data.space_before_class, then: data.space_before_class, else: 'default')}<f:if condition="{bleed}"> section-bleed</f:if></f:variable>
         <f:variable name="label">{f:if(condition: '{data.header_layout} == 100', then: record.header)}</f:variable>
         <k:element tag="section" attributes="{class: class, aria-label: label, id: data.tx_kumanokodo_anchor}">
-            <div class="section__inner">
+            <div class="section-inner">
                 {inner -> f:format.raw()}
             </div>
         </k:element>

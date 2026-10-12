@@ -76,21 +76,21 @@
             "variants": ["Variant=Default", "Variant=With Aside", "Variant=With Controls"]
         },
         {
-            "name": "Day Row",
+            "name": "Timeline Item",
             "group": "molecules",
-            "component": "day-row",
+            "component": "timeline-item",
             "node": "6:34"
         },
         {
-            "name": "Stage Card",
+            "name": "Portrait Card",
             "group": "molecules",
-            "component": "stage-card",
+            "component": "portrait-card",
             "node": "70:3346"
         },
         {
-            "name": "Place Card",
+            "name": "Feature Card",
             "group": "molecules",
-            "component": "place-card",
+            "component": "feature-card",
             "node": "7:31",
             "variants": ["Variant=Featured", "Variant=Default", "Variant=Ruled"]
         },
@@ -385,15 +385,15 @@
             "node": "36:217"
         },
         {
-            "name": "Bleed Photo",
+            "name": "Bleed Image",
             "group": "molecules",
-            "component": "bleed-photo",
+            "component": "bleed-image",
             "node": "61:227"
         },
         {
-            "name": "Journal Opener",
+            "name": "Page Intro",
             "group": "organisms",
-            "component": "journal-opener",
+            "component": "page-intro",
             "node": "61:218"
         },
         {

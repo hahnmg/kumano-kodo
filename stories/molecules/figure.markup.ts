@@ -10,6 +10,6 @@ export interface FigureProps {
 }
 
 export const figure = ({ images, caption, rule = true, labels }: FigureProps): string =>
-    `<figure${attrs({ class: cx('figure', `figure--${images.length === 2 ? 'pair' : 'default'}`, !rule && 'figure--unruled'), ...lightboxGroupAttrs(labels) })}>` +
-    `<div class="figure__images">${images.map((i) => lightboxLink(i, 'figure__image')).join('')}</div>` +
-    `<figcaption class="figure__caption type-caption">${esc(caption)}</figcaption></figure>`;
+    `<figure${attrs({ class: cx('figure', `figure-${images.length === 2 ? 'pair' : 'default'}`, !rule && 'figure-unruled'), ...lightboxGroupAttrs(labels) })}>` +
+    `<div class="figure-images">${images.map((i) => lightboxLink(i, 'figure-image')).join('')}</div>` +
+    `<figcaption class="figure-caption type-caption">${esc(caption)}</figcaption></figure>`;

@@ -7,7 +7,7 @@ describe('menu-button', () => {
         const button = mount(menuButton({ label: 'Menü', expanded: true })).querySelector('button');
         expect(button?.getAttribute('aria-label')).toBe('Menü');
         expect(button?.getAttribute('aria-expanded')).toBe('true');
-        expect(button?.querySelectorAll('.menu-button__bar')).toHaveLength(2);
+        expect(button?.querySelectorAll('.menu-button-bar')).toHaveLength(2);
     });
     it('passes axe', () => expectAccessible(menuButton()));
 });

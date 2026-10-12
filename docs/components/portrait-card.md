@@ -1,6 +1,6 @@
 # Stage Card
 
-Figma: Stage Card (70:3346), states Default and Hover. Markup: `stories/molecules/stage-card.markup.ts`.
+Figma: Stage Card (70:3346), states Default and Hover. Markup: `stories/molecules/portrait-card.markup.ts`.
 
 Stage in the carousel, image 4:5. Used on the days overview, where each stage leads to its day.
 

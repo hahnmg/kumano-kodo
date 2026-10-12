@@ -11,4 +11,4 @@ Schematic route as SVG with stations, day boundaries, day labels and legend.
 | `days` | `{ label, x }[]` |
 | `legend`, `label` | texts |
 
-Tokens: `--color-moss`, `--color-accent`, `--color-line`, `--color-hair`, `--color-paper`.
+Tokens: `--color-secondary`, `--color-accent`, `--color-line`, `--color-hair`, `--color-paper`.

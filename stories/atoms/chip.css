@@ -11,7 +11,7 @@
     color: var(--color-ink);
 }
 
-.chip--active,
-.chip--active:hover {
+.chip[aria-current],
+.chip[aria-current]:hover {
     color: var(--color-accent);
 }

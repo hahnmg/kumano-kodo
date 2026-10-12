@@ -1,11 +1,11 @@
 const slider = '[data-slider]';
-const track = '.slider__track';
+const track = '.slider-track';
 
 const parts = (root: Element) => ({
     track: root.querySelector<HTMLElement>(track),
     previous: root.querySelector<HTMLButtonElement>('[data-direction="previous"]'),
     next: root.querySelector<HTMLButtonElement>('[data-direction="next"]'),
-    dots: [...root.querySelectorAll<HTMLButtonElement>('.slider-dots__dot')],
+    dots: [...root.querySelectorAll<HTMLButtonElement>('.slider-dots-dot')],
 });
 
 const items = (el: HTMLElement): HTMLElement[] => [...el.children].filter((c): c is HTMLElement => c instanceof HTMLElement);
@@ -58,7 +58,6 @@ export const syncSliders = (root: ParentNode = document): void => {
         const active = activeStop(t);
         dots.forEach((dot, i) => {
             dot.hidden = i >= count;
-            dot.classList.toggle('slider-dots__dot--active', i === active);
             if (i === active) dot.setAttribute('aria-current', 'true');
             else dot.removeAttribute('aria-current');
         });
@@ -76,7 +75,7 @@ export const bindSliders = (doc: Document = document): (() => void) => {
         const t = root?.querySelector<HTMLElement>(track);
         if (!root || !t) return;
         const arrow = event.target.closest<HTMLElement>('[data-direction]');
-        const dot = event.target.closest('.slider-dots__dot');
+        const dot = event.target.closest('.slider-dots-dot');
         if (arrow) step(t, arrow.dataset.direction === 'next' ? 1 : -1);
         else if (dot) scrollToStop(t, parts(root).dots.indexOf(dot as HTMLButtonElement));
         syncSliders(doc);

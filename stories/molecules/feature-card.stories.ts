@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
-import { placeCard, type PlaceCardProps } from './place-card.markup';
+import { featureCard, type PlaceCardProps } from './feature-card.markup';
 import { choice } from '../templates/controls';
 
-const card = (p: PlaceCardProps) => `<div style="max-width:765px">${placeCard(p)}</div>`;
+const card = (p: PlaceCardProps) => `<div style="max-width:765px">${featureCard(p)}</div>`;
 
 const meta: Meta<PlaceCardProps> = {
-    title: 'Molecules/Place Card',
+    title: 'Molecules/Feature Card',
     argTypes: { variant: choice<NonNullable<PlaceCardProps['variant']>>()('featured', 'default', 'ruled') },
 };
 export default meta;

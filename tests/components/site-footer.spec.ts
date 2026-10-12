@@ -5,7 +5,7 @@ import { expectAccessible, mount } from '../support/accessibility';
 
 describe('site-footer', () => {
     it('renders columns, optional notice and legal links', () => {
-        expect(mount(siteFooter(kumano.footer)).querySelectorAll('.site-footer__column')).toHaveLength(3);
+        expect(mount(siteFooter(kumano.footer)).querySelectorAll('.site-footer-column')).toHaveLength(3);
         expect(mount(siteFooter(kumano.footer)).querySelector('.notice')).toBeNull();
         expect(mount(siteFooter(guide.footer)).querySelector('.notice')).not.toBeNull();
     });

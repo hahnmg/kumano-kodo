@@ -4,7 +4,7 @@
     <f:render partial="Kumano/Css" arguments="{names: 'section-heading'}"/>
     <f:if condition="{data.colPos} == 30">
         <f:then>
-            <p class="topbar__hours"><f:render partial="Kumano/Icon" arguments="{name: 'clock', size: 16}"/><strong class="type-button">{record.header}</strong> <span class="type-small">{record.subheader}</span></p>
+            <p class="topbar-hours"><f:render partial="Kumano/Icon" arguments="{name: 'clock', size: 16}"/><strong class="type-button">{record.header}</strong> <span class="type-small">{record.subheader}</span></p>
         </f:then>
         <f:else>
             <f:variable name="body">

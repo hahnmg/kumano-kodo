@@ -1,9 +1,9 @@
 //#region src/scripts/slider.ts
-var e = "[data-slider]", t = ".slider__track", n = (e) => ({
+var e = "[data-slider]", t = ".slider-track", n = (e) => ({
 	track: e.querySelector(t),
 	previous: e.querySelector("[data-direction=\"previous\"]"),
 	next: e.querySelector("[data-direction=\"next\"]"),
-	dots: [...e.querySelectorAll(".slider-dots__dot")]
+	dots: [...e.querySelectorAll(".slider-dots-dot")]
 }), r = (e) => [...e.children].filter((e) => e instanceof HTMLElement), i = (e) => Math.max(0, e.scrollWidth - e.clientWidth), a = (e) => {
 	let t = r(e), n = t[0]?.offsetLeft ?? 0, a = i(e), o = [];
 	for (let e of t) {
@@ -29,7 +29,7 @@ var e = "[data-slider]", t = ".slider__track", n = (e) => ({
 		t.dataset.sliderTarget !== void 0 && Math.abs(Number(t.dataset.sliderTarget) - t.scrollLeft) <= 2 && delete t.dataset.sliderTarget;
 		let c = a(t).length, l = s(t);
 		o.forEach((e, t) => {
-			e.hidden = t >= c, e.classList.toggle("slider-dots__dot--active", t === l), t === l ? e.setAttribute("aria-current", "true") : e.removeAttribute("aria-current");
+			e.hidden = t >= c, t === l ? e.setAttribute("aria-current", "true") : e.removeAttribute("aria-current");
 		}), r && (r.disabled = l === 0), i && (i.disabled = l >= c - 1);
 	});
 }, u = (e, t) => c(e, s(e) + t);
@@ -38,7 +38,7 @@ var e = "[data-slider]", t = ".slider__track", n = (e) => ({
 		if (!(i.target instanceof Element)) return;
 		let a = i.target.closest(e), o = a?.querySelector(t);
 		if (!a || !o) return;
-		let s = i.target.closest("[data-direction]"), d = i.target.closest(".slider-dots__dot");
+		let s = i.target.closest("[data-direction]"), d = i.target.closest(".slider-dots-dot");
 		s ? u(o, s.dataset.direction === "next" ? 1 : -1) : d && c(o, n(a).dots.indexOf(d)), l(r);
 	}, a = (e) => {
 		let n = e.target instanceof HTMLElement && e.target.matches(t) ? e.target : null;

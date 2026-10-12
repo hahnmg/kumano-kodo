@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { bindSliders, stops, syncSliders } from '../../src/scripts/slider';
-import { stageCard } from '../../stories/molecules/stage-card.markup';
+import { portraitCard } from '../../stories/molecules/portrait-card.markup';
 import { slider } from '../../stories/organisms/slider.markup';
 import { kumano } from '../../stories/templates/content';
 import { expectAccessible } from '../support/accessibility';
@@ -8,13 +8,13 @@ import { expectAccessible } from '../support/accessibility';
 const html = () =>
     slider({
         heading: { title: 'Stages', eyebrow: 'Stages' },
-        items: kumano.stages.map(stageCard),
+        items: kumano.stages.map(portraitCard),
         labels: { previous: 'Zurück', next: 'Weiter' },
     });
 
 // jsdom has no layout: give the track the geometry measured at 1440px (five 420px cards, 24px gap, 868px to scroll).
 const layout = () => {
-    const track = document.querySelector<HTMLElement>('.slider__track')!;
+    const track = document.querySelector<HTMLElement>('.slider-track')!;
     [...track.children].forEach((c, i) => Object.defineProperty(c, 'offsetLeft', { value: 56 + i * 444, configurable: true }));
     Object.defineProperty(track, 'clientWidth', { value: 1440, configurable: true });
     Object.defineProperty(track, 'scrollWidth', { value: 2308, configurable: true });
@@ -24,7 +24,7 @@ const layout = () => {
     track.scrollTo = ((o: ScrollToOptions) => calls.push(o.left ?? 0)) as typeof track.scrollTo;
     return { track, calls, land: (v: number) => (left = v) };
 };
-const dots = () => [...document.querySelectorAll<HTMLButtonElement>('.slider-dots__dot')];
+const dots = () => [...document.querySelectorAll<HTMLButtonElement>('.slider-dots-dot')];
 const button = (d: string) => document.querySelector<HTMLButtonElement>(`[data-direction="${d}"]`)!;
 
 describe('slider', () => {
@@ -34,7 +34,7 @@ describe('slider', () => {
     it('renders arrows, a focusable track and one dot per item', () => {
         document.body.innerHTML = html();
         expect(button('next').getAttribute('aria-label')).toBe('Weiter');
-        expect(document.querySelector('.slider__track')?.getAttribute('tabindex')).toBe('0');
+        expect(document.querySelector('.slider-track')?.getAttribute('tabindex')).toBe('0');
         expect(dots()).toHaveLength(kumano.stages.length);
     });
     it('only offers stops the track can reach', () => {

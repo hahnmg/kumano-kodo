@@ -1,40 +1,40 @@
-.journal-opener {
+.page-intro {
     padding: var(--section-lg) max(var(--gutter), (100% - var(--container-page)) / 2) var(--section-sm);
 }
 
-.journal-opener__inner {
+.page-intro-inner {
     display: grid;
     grid-template-columns: minmax(0, 8fr) minmax(0, 3fr) minmax(0, 1fr);
     gap: var(--space-40) var(--space-24);
     align-items: end;
 }
 
-.journal-opener p,
-.journal-opener h1 {
+.page-intro p,
+.page-intro h1 {
     margin: 0;
 }
 
-.journal-opener__kicker {
+.page-intro-eyebrow {
     padding-bottom: var(--space-24);
     color: var(--color-muted);
 }
 
-.journal-opener__title h1 {
+.page-intro-title h1 {
     color: var(--color-ink);
 }
 
-.journal-opener__lede {
+.page-intro-lede {
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
     color: var(--color-ink);
 }
 
-.journal-opener__meta {
+.page-intro-meta {
     color: var(--color-muted);
 }
 
-.journal-opener__vertical {
+.page-intro-upright {
     place-self: start end;
     color: var(--color-accent);
     font-family: var(--type-quote-family);
@@ -44,15 +44,15 @@
 }
 
 @media (width <= 900px) {
-    .journal-opener__inner {
+    .page-intro-inner {
         grid-template-columns: minmax(0, 1fr) auto;
     }
 
-    .journal-opener__lede {
+    .page-intro-lede {
         grid-row: 2;
     }
 
-    .journal-opener__vertical {
+    .page-intro-upright {
         grid-row: 1 / span 2;
         grid-column: 2;
     }

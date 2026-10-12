@@ -6,8 +6,8 @@ import { expectAccessible, mount } from '../support/accessibility';
 describe('site-header', () => {
     it('marks the active nav item and language, without a theme picker', () => {
         const el = mount(siteHeader({ nav: kumano.nav, languages }));
-        expect(el.querySelector('.site-header__list > li > [aria-current]')?.textContent).toBe('The route');
-        expect(el.querySelector('.site-header__languages [aria-current="true"]')?.getAttribute('data-locale')).toBe('en');
+        expect(el.querySelector('.site-header-list > li > [aria-current]')?.textContent).toBe('The route');
+        expect(el.querySelector('.site-header-languages [aria-current="true"]')?.getAttribute('data-locale')).toBe('en');
         expect(el.querySelector('[data-theme-value]')).toBeNull();
     });
     it('offers the scheme toggle as a pressed-state button', () => {
@@ -24,8 +24,8 @@ describe('site-header', () => {
                 labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu },
             }),
         );
-        expect(el.querySelector('.site-header__nav')?.getAttribute('aria-label')).toBe(ui.mainNav);
-        expect(el.querySelector('.site-header__languages [aria-current="true"]')?.getAttribute('lang')).toBe('ja');
+        expect(el.querySelector('.site-header-nav')?.getAttribute('aria-label')).toBe(ui.mainNav);
+        expect(el.querySelector('.site-header-languages [aria-current="true"]')?.getAttribute('lang')).toBe('ja');
     });
     it('passes axe', () => expectAccessible(siteHeader({ nav: kumano.nav, languages })));
 });

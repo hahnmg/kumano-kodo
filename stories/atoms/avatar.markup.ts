@@ -9,4 +9,4 @@ export interface AvatarProps extends Image {
 const px: Record<AvatarSize, number> = { large: 136, small: 56 };
 
 export const avatar = ({ size = 'large', ...image }: AvatarProps): string =>
-    img({ ...image, width: px[size], height: px[size] }, `avatar avatar--${size}`, `${px[size]}px`);
+    img({ ...image, width: px[size], height: px[size] }, `avatar avatar-${size}`, `${px[size]}px`);

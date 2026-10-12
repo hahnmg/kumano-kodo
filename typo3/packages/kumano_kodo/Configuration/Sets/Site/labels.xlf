@@ -137,10 +137,10 @@
             <trans-unit id="settings.description.kumanoKodo.color.light.hair">
                 <source>Left at its default, the chosen theme's colour applies: Caramel #cfc0ab, Forest #bcc7bd, Ocean #b6cbdc, Violet #c6b4da, Mono #cfcfcf.</source>
             </trans-unit>
-            <trans-unit id="settings.kumanoKodo.color.light.moss">
-                <source>Moss</source>
+            <trans-unit id="settings.kumanoKodo.color.light.secondary">
+                <source>Secondary</source>
             </trans-unit>
-            <trans-unit id="settings.description.kumanoKodo.color.light.moss">
+            <trans-unit id="settings.description.kumanoKodo.color.light.secondary">
                 <source>Left at its default, the chosen theme's colour applies: Caramel #4a6350, Forest #2f6b4f, Ocean #0f6e93, Violet #7a2fd4, Mono #111111.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.light.accent">
@@ -191,10 +191,10 @@
             <trans-unit id="settings.description.kumanoKodo.color.dark.hair">
                 <source>Left at its default, the chosen theme's colour applies: Caramel #463c32, Forest #364136, Ocean #2b4150, Violet #3b2d56, Mono #3a3a3a.</source>
             </trans-unit>
-            <trans-unit id="settings.kumanoKodo.color.dark.moss">
-                <source>Moss</source>
+            <trans-unit id="settings.kumanoKodo.color.dark.secondary">
+                <source>Secondary</source>
             </trans-unit>
-            <trans-unit id="settings.description.kumanoKodo.color.dark.moss">
+            <trans-unit id="settings.description.kumanoKodo.color.dark.secondary">
                 <source>Left at its default, the chosen theme's colour applies: Caramel #a9c2ae, Forest #8fd0a8, Ocean #63c8e6, Violet #ffd166, Mono #f2f2f2.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.color.dark.accent">

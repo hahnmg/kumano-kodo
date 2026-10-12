@@ -9,7 +9,7 @@ export interface HighlightProps {
 }
 
 export const highlight = ({ eyebrow, title, text, level = 2 }: HighlightProps): string =>
-    `<div class="highlight">${logoBird('highlight__emblem')}<div class="highlight__body">` +
-    (eyebrow ? `<p class="highlight__eyebrow type-label">${esc(eyebrow)}</p>` : '') +
-    `<h${level} class="highlight__title type-h3">${esc(title)}</h${level}>` +
-    `<p class="highlight__text type-lead">${esc(text)}</p></div></div>`;
+    `<div class="highlight">${logoBird('highlight-emblem')}<div class="highlight-body">` +
+    (eyebrow ? `<p class="highlight-eyebrow type-label">${esc(eyebrow)}</p>` : '') +
+    `<h${level} class="highlight-title type-h3">${esc(title)}</h${level}>` +
+    `<p class="highlight-text type-lead">${esc(text)}</p></div></div>`;

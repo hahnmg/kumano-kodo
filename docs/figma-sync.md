@@ -40,6 +40,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-05 Site Footer: "Walked with us? Log in" in the contact column leads to the log-in page
 - [x] 2026-10-05 Pages: search, log-in, contact, travel papers and page-not-found frames (section Site pages)
 - [x] 2026-10-05 Days overview with the days as Slider of Stage Cards (state Hover: title in accent); Practical with the FAQ in "heading-content"
+- [x] 2026-10-12 Functional names: Stage Card → Portrait Card, Day Row → Timeline Item, Place Card → Feature Card, Bleed Photo → Bleed Image, Journal Opener → Page Intro; `color/moss` → `color/secondary`
 - [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the older page frames; the Site pages use it
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
@@ -60,4 +61,4 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - Detail page fact list shows two of the four facts (the component has two rows); the figure has no caption; the breadcrumb has three levels instead of four.
 - Hover movement (arrow nudge, download icon) and the drawn accent line are shown as their end state, not as motion.
 - CTA Card: both variants share one default text.
-- Journal Opener: the upright site name breaks after each character; Figma has no vertical writing mode.
+- Page Intro: the upright site name breaks after each character; Figma has no vertical writing mode.

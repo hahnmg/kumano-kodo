@@ -10,4 +10,4 @@ export interface LinkTileProps {
 
 export const linkTile = ({ title, href, icon: iconName }: LinkTileProps): string =>
     `<a${attrs({ class: 'link-tile', href })}>${iconCircle({ name: iconName })}` +
-    `<span class="link-tile__title type-h4">${esc(title)}</span>${icon({ name: 'arrow-right' })}</a>`;
+    `<span class="link-tile-title type-h4">${esc(title)}</span>${icon({ name: 'arrow-right' })}</a>`;

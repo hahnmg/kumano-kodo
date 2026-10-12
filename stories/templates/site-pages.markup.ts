@@ -24,10 +24,10 @@ import { searchResults } from '../molecules/search-results.markup';
 import { sectionHeading } from '../molecules/section-heading.markup';
 import { subNav } from '../molecules/sub-nav.markup';
 import { teaserCard, type TeaserCardProps } from '../molecules/teaser-card.markup';
-import { bleedPhoto } from '../molecules/bleed-photo.markup';
+import { bleedImage } from '../molecules/bleed-image.markup';
 import { chapter } from '../organisms/chapter.markup';
 import { slider } from '../organisms/slider.markup';
-import { stageCard } from '../molecules/stage-card.markup';
+import { portraitCard } from '../molecules/portrait-card.markup';
 import { heroSplit } from '../organisms/hero-split.markup';
 import { pageHeader } from '../organisms/page-header.markup';
 import { routeMap } from '../organisms/route-map.markup';
@@ -158,7 +158,7 @@ export const daysPage = (c: Content = content()): string => {
                 bleed: true,
                 content: slider({
                     heading: { title: g.days },
-                    items: kumano.stages.map(stageCard),
+                    items: kumano.stages.map(portraitCard),
                     labels: { previous: c.ui.previous, next: c.ui.next, item: c.ui.card },
                 }),
             }) +
@@ -330,8 +330,8 @@ export const photosPage = (c: Content = content()): string => {
                     }),
                 )
                 .join('') +
-            bleedPhoto(photos['sea-of-clouds'], undefined, lightbox(c)) +
-            bleedPhoto(photos['evening-rooftops'], `${home.draft.coda} ${photos['evening-rooftops'].caption ?? ''}`, lightbox(c)),
+            bleedImage(photos['sea-of-clouds'], undefined, lightbox(c)) +
+            bleedImage(photos['evening-rooftops'], `${home.draft.coda} ${photos['evening-rooftops'].caption ?? ''}`, lightbox(c)),
     );
 };
 

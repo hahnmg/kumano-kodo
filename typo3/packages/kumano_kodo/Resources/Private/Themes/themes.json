@@ -25,7 +25,7 @@
                     "muted": "#665445",
                     "line": "#e3d8c9",
                     "hair": "#cfc0ab",
-                    "moss": "#4a6350",
+                    "secondary": "#4a6350",
                     "accent": "#96481f"
                 },
                 "dark": {
@@ -36,7 +36,7 @@
                     "muted": "#b3a393",
                     "line": "#322a23",
                     "hair": "#463c32",
-                    "moss": "#a9c2ae",
+                    "secondary": "#a9c2ae",
                     "accent": "#e6a173"
                 }
             },
@@ -68,7 +68,7 @@
                     "muted": "#55665c",
                     "line": "#d8e0d8",
                     "hair": "#bcc7bd",
-                    "moss": "#2f6b4f",
+                    "secondary": "#2f6b4f",
                     "accent": "#27614a"
                 },
                 "dark": {
@@ -79,7 +79,7 @@
                     "muted": "#a3b3a9",
                     "line": "#263029",
                     "hair": "#364136",
-                    "moss": "#8fd0a8",
+                    "secondary": "#8fd0a8",
                     "accent": "#8ccfa5"
                 }
             },
@@ -111,7 +111,7 @@
                     "muted": "#4b6173",
                     "line": "#dbe8f1",
                     "hair": "#b6cbdc",
-                    "moss": "#0f6e93",
+                    "secondary": "#0f6e93",
                     "accent": "#0c6183"
                 },
                 "dark": {
@@ -122,7 +122,7 @@
                     "muted": "#9fb6c5",
                     "line": "#1e2e39",
                     "hair": "#2b4150",
-                    "moss": "#63c8e6",
+                    "secondary": "#63c8e6",
                     "accent": "#63c8e6"
                 }
             },
@@ -154,7 +154,7 @@
                     "muted": "#5c4b70",
                     "line": "#e1d6ee",
                     "hair": "#c6b4da",
-                    "moss": "#7a2fd4",
+                    "secondary": "#7a2fd4",
                     "accent": "#b0155f"
                 },
                 "dark": {
@@ -165,7 +165,7 @@
                     "muted": "#b3a6ca",
                     "line": "#2a2040",
                     "hair": "#3b2d56",
-                    "moss": "#ffd166",
+                    "secondary": "#ffd166",
                     "accent": "#ff3e8a"
                 }
             },
@@ -197,7 +197,7 @@
                     "muted": "#5e5e5e",
                     "line": "#e5e5e5",
                     "hair": "#cfcfcf",
-                    "moss": "#111111",
+                    "secondary": "#111111",
                     "accent": "#c83e00"
                 },
                 "dark": {
@@ -208,7 +208,7 @@
                     "muted": "#a3a3a3",
                     "line": "#262626",
                     "hair": "#3a3a3a",
-                    "moss": "#f2f2f2",
+                    "secondary": "#f2f2f2",
                     "accent": "#ff7a3d"
                 }
             },

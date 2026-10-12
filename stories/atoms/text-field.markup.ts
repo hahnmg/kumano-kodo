@@ -1,4 +1,4 @@
-import { attrs, cx, esc } from '../../src/lib/html';
+import { attrs, esc } from '../../src/lib/html';
 import { fieldError, invalidAttrs } from './field-error.markup';
 
 export interface TextFieldProps {
@@ -13,8 +13,8 @@ export interface TextFieldProps {
 }
 
 export const textField = ({ label, name, type = 'text', value, placeholder, required, autocomplete, error }: TextFieldProps): string =>
-    `<label${attrs({ class: cx('field', error && 'field--invalid') })}>` +
-    `<span class="field__label type-label">${esc(label)}</span>` +
-    `<span class="field__box"><input${attrs({ class: 'field__control type-lead', type, name, value, placeholder, required, autocomplete, ...invalidAttrs(name, error) })}></span>` +
+    `<label${attrs({ class: 'field' })}>` +
+    `<span class="field-label type-label">${esc(label)}</span>` +
+    `<span class="field-box"><input${attrs({ class: 'field-control type-lead', type, name, value, placeholder, required, autocomplete, ...invalidAttrs(name, error) })}></span>` +
     fieldError(name, error) +
     `</label>`;

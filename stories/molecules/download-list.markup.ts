@@ -10,8 +10,8 @@ export const downloadList = ({ items }: DownloadListProps): string =>
     items
         .map(
             (i) =>
-                `<li><a${attrs({ class: 'download-list__row', href: i.href, download: true })}>${icon({ name: 'file' })}` +
-                `<span class="download-list__text"><span class="type-button">${esc(i.title)}</span><span class="download-list__meta type-caption">${esc(i.meta)}</span></span>` +
+                `<li><a${attrs({ class: 'download-list-row', href: i.href, download: true })}>${icon({ name: 'file' })}` +
+                `<span class="download-list-text"><span class="type-button">${esc(i.title)}</span><span class="download-list-meta type-caption">${esc(i.meta)}</span></span>` +
                 `${icon({ name: 'download' })}</a></li>`,
         )
         .join('') +

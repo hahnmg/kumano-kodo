@@ -1,25 +1,25 @@
-.search-results__summary {
+.search-results-summary {
     margin: 0;
     padding: var(--space-16) 0;
     border-bottom: var(--border-hairline) solid var(--color-line);
     color: var(--color-muted);
 }
 
-.search-results__items {
+.search-results-items {
     margin: 0 0 var(--space-40);
     padding: 0;
     list-style: none;
 }
 
-.search-results__text {
+.search-results-text {
     gap: var(--space-4);
 }
 
-.search-results__excerpt {
+.search-results-excerpt {
     color: var(--color-ink);
 }
 
-.search-results__excerpt mark {
+.search-results-excerpt mark {
     background: var(--color-sunk);
     color: inherit;
     font-weight: 600;

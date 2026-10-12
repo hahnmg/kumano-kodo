@@ -1,15 +1,15 @@
-.sub-nav__title {
+.sub-nav-title {
     margin: 0 0 var(--space-16);
     color: var(--color-ink);
 }
 
-.sub-nav__list {
+.sub-nav-list {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.sub-nav__link {
+.sub-nav-link {
     display: block;
     padding: var(--space-12) 0;
     background:
@@ -23,7 +23,7 @@
         padding var(--motion-base) var(--ease-out);
 }
 
-.sub-nav__link:hover {
+.sub-nav-link:hover {
     padding-left: var(--space-8);
     background-size:
         100% var(--border-hairline),
@@ -31,6 +31,6 @@
     color: var(--color-ink);
 }
 
-.sub-nav__link[aria-current='page'] {
+.sub-nav-link[aria-current='page'] {
     color: var(--color-accent);
 }

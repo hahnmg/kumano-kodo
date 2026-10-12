@@ -1,9 +1,9 @@
-.place-card h3,
-.place-card p {
+.feature-card h3,
+.feature-card p {
     margin: 0;
 }
 
-.place-card__image {
+.feature-card-image {
     display: block;
     width: 100%;
     height: auto;
@@ -11,25 +11,25 @@
     aspect-ratio: 765 / 425;
 }
 
-.place-card--default .place-card__image {
+.feature-card-default .feature-card-image {
     aspect-ratio: 539 / 425;
 }
 
-.place-card--ruled {
+.feature-card-ruled {
     padding-top: var(--space-24);
     border-top: var(--border-hairline) solid var(--color-line);
 }
 
-.place-card--ruled .place-card__image {
+.feature-card-ruled .feature-card-image {
     aspect-ratio: 539 / 490;
 }
 
-.place-card__title {
+.feature-card-title {
     padding: var(--space-20) 0 var(--space-10);
     color: var(--color-ink);
 }
 
-.place-card__description {
+.feature-card-text {
     max-width: 686px;
     color: var(--color-muted);
 }

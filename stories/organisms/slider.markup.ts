@@ -22,8 +22,8 @@ export const slider = ({ heading, items, labels = {} }: SliderProps): string => 
     return (
         `<div class="slider" data-slider>` +
         sectionHeading({ ...heading, variant: 'with-controls', controlLabels: l }) +
-        `<div class="rail slider__track" tabindex="0" role="group" aria-label="${esc(heading.title)}">${items.join('')}</div>` +
-        `<div class="slider__dots">${sliderDots({ count: items.length, label: l.item })}</div>` +
+        `<div class="rail slider-track" tabindex="0" role="group" aria-label="${esc(heading.title)}">${items.join('')}</div>` +
+        `<div class="slider-indicator">${sliderDots({ count: items.length, label: l.item })}</div>` +
         `</div>`
     );
 };

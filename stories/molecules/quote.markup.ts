@@ -6,5 +6,5 @@ export interface QuoteProps {
 }
 
 export const quote = ({ quote: text, source }: QuoteProps): string =>
-    `<figure class="quote"><blockquote class="quote__text type-quote"><p>${esc(text)}</p></blockquote>` +
-    `<figcaption class="quote__source type-label">${esc(source)}</figcaption></figure>`;
+    `<figure class="quote"><blockquote class="quote-text type-quote"><p>${esc(text)}</p></blockquote>` +
+    `<figcaption class="quote-source type-label">${esc(source)}</figcaption></figure>`;

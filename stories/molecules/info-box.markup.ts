@@ -7,9 +7,9 @@ export interface InfoBoxProps {
 }
 
 export const infoBox = ({ title, text, links = [] }: InfoBoxProps): string =>
-    `<aside class="info-box"><h2 class="info-box__title type-label">${esc(title)}</h2>` +
-    `<p class="info-box__text type-small">${esc(text)}</p>` +
+    `<aside class="info-box"><h2 class="info-box-title type-label">${esc(title)}</h2>` +
+    `<p class="info-box-text type-small">${esc(text)}</p>` +
     (links.length
-        ? `<ul class="info-box__links">${links.map((l) => `<li><a${attrs({ class: 'type-button', href: l.href })}>${esc(l.label)}</a></li>`).join('')}</ul>`
+        ? `<ul class="info-box-links">${links.map((l) => `<li><a${attrs({ class: 'type-button', href: l.href })}>${esc(l.label)}</a></li>`).join('')}</ul>`
         : '') +
     `</aside>`;

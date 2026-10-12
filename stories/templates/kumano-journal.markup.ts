@@ -4,9 +4,9 @@ import { highlight } from '../molecules/highlight.markup';
 import { newsletterForm } from '../molecules/newsletter-form.markup';
 import { richText } from '../molecules/rich-text.markup';
 import { sectionHeading } from '../molecules/section-heading.markup';
-import { bleedPhoto } from '../molecules/bleed-photo.markup';
+import { bleedImage } from '../molecules/bleed-image.markup';
 import { chapter, type ChapterPhoto } from '../organisms/chapter.markup';
-import { journalOpener } from '../organisms/journal-opener.markup';
+import { pageIntro } from '../organisms/page-intro.markup';
 import { routeMap } from '../organisms/route-map.markup';
 import { siteFooter } from '../organisms/site-footer.markup';
 import { siteHeader } from '../organisms/site-header.markup';
@@ -35,7 +35,7 @@ export const kumanoJournal = ({ kumano, photos, home, ui, languages }: Content =
             labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu },
         }) +
         `<main class="journal">` +
-        journalOpener({
+        pageIntro({
             kicker: d.kicker,
             title: d.title,
             lede: d.lede,
@@ -43,12 +43,12 @@ export const kumanoJournal = ({ kumano, photos, home, ui, languages }: Content =
             vertical: '熊野古道',
         }) +
         chapters[0] +
-        bleedPhoto(photos['sea-of-clouds'], undefined, labels) +
+        bleedImage(photos['sea-of-clouds'], undefined, labels) +
         chapters[1] +
         section({ tone: 'sunk', content: highlight(home.crow) }) +
         chapters[2] +
         chapters[3] +
-        bleedPhoto(photos['evening-rooftops'], `${d.coda} ${photos['evening-rooftops'].caption ?? ''}`, labels) +
+        bleedImage(photos['evening-rooftops'], `${d.coda} ${photos['evening-rooftops'].caption ?? ''}`, labels) +
         section({
             content: stack(
                 [sectionHeading({ title: d.mapTitle, variant: 'with-aside', aside: home.map.aside }), routeMap(kumano.route)],

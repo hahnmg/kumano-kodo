@@ -1,10 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
-    <f:render partial="Kumano/Css" arguments="{names: 'day-row,download-list,sub-nav,media-list,section-heading'}"/>
+    <f:render partial="Kumano/Css" arguments="{names: 'timeline-item,download-list,sub-nav,media-list,section-heading'}"/>
     <f:switch expression="{data.colPos}">
         <f:case value="20">
-            <div class="site-footer__column">
+            <div class="site-footer-column">
                 <h2 class="type-label">{record.header}</h2>
                 <ul>
                     <f:for each="{record.tx_kumanokodo_entries}" as="entry">
@@ -25,13 +25,13 @@
             <f:switch expression="{data.tx_kumanokodo_variant}">
                 <f:case value="days">
                     <f:variable name="body">
-                        <ol class="day-list">
+                        <ol class="timeline">
                             <f:for each="{record.tx_kumanokodo_entries}" as="day">
-                                <li class="day-row">
-                                    <p class="day-row__date type-label">{day.label}</p>
-                                    <h3 class="day-row__route type-h4">{day.title}</h3>
-                                    <p class="day-row__description type-small">{day.text}</p>
-                                    <p class="day-row__time type-caption">{day.meta}</p>
+                                <li class="timeline-item">
+                                    <p class="timeline-item-date type-label">{day.label}</p>
+                                    <h3 class="timeline-item-title type-h4">{day.title}</h3>
+                                    <p class="timeline-item-text type-small">{day.text}</p>
+                                    <p class="timeline-item-time type-caption">{day.meta}</p>
                                 </li>
                             </f:for>
                         </ol>
@@ -42,7 +42,7 @@
                     <f:variable name="body">
                         <ul class="download-list">
                             <f:for each="{record.media}" as="file">
-                                <li><a class="download-list__row" href="{file.publicUrl}" download><f:render partial="Kumano/Icon" arguments="{name: 'file', size: 24}"/><span class="download-list__text"><span class="type-button">{f:if(condition: file.title, then: file.title, else: file.name)}</span><span class="download-list__meta type-caption">{file.extension -> f:format.case(mode: 'upper')} · {file.size -> f:format.bytes(units: 'B,KB,MB,GB')}</span></span><f:render partial="Kumano/Icon" arguments="{name: 'download', size: 24}"/></a></li>
+                                <li><a class="download-list-row" href="{file.publicUrl}" download><f:render partial="Kumano/Icon" arguments="{name: 'file', size: 24}"/><span class="download-list-text"><span class="type-button">{f:if(condition: file.title, then: file.title, else: file.name)}</span><span class="download-list-meta type-caption">{file.extension -> f:format.case(mode: 'upper')} · {file.size -> f:format.bytes(units: 'B,KB,MB,GB')}</span></span><f:render partial="Kumano/Icon" arguments="{name: 'download', size: 24}"/></a></li>
                             </f:for>
                         </ul>
                     </f:variable>
@@ -64,11 +64,11 @@
                     <f:variable name="body">
                         <f:variable name="current">{f:uri.page()}</f:variable>
                         <nav class="sub-nav" aria-label="{record.header}">
-                            <h2 class="sub-nav__title type-h4">{record.header}</h2>
-                            <ul class="sub-nav__list">
+                            <h2 class="sub-nav-title type-h4">{record.header}</h2>
+                            <ul class="sub-nav-list">
                                 <f:for each="{record.tx_kumanokodo_entries}" as="entry">
                                     <f:variable name="href">{f:uri.typolink(parameter: entry.link)}</f:variable>
-                                    <li><f:if condition="{href} == {current}"><f:then><a class="sub-nav__link type-small" href="{href}" aria-current="page">{entry.title}</a></f:then><f:else><a class="sub-nav__link type-small" href="{href}">{entry.title}</a></f:else></f:if></li>
+                                    <li><f:if condition="{href} == {current}"><f:then><a class="sub-nav-link type-small" href="{href}" aria-current="page">{entry.title}</a></f:then><f:else><a class="sub-nav-link type-small" href="{href}">{entry.title}</a></f:else></f:if></li>
                                 </f:for>
                             </ul>
                         </nav>

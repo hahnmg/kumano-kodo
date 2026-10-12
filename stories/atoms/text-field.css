@@ -4,11 +4,11 @@
     gap: var(--space-10);
 }
 
-.field__label {
+.field-label {
     color: var(--color-muted);
 }
 
-.field__box {
+.field-box {
     position: relative;
     display: flex;
     gap: var(--space-10);
@@ -18,7 +18,7 @@
     transition: border-color var(--motion-fast) var(--ease-out);
 }
 
-.field__control {
+.field-control {
     width: 100%;
     padding: var(--space-10) 0;
     border: 0;
@@ -29,52 +29,52 @@
     transition: border-color var(--motion-fast) var(--ease-out);
 }
 
-.field__control:hover,
-.field__box:hover {
+.field-control:hover,
+.field-box:hover {
     border-bottom-color: var(--color-ink);
 }
 
-.field__control:focus,
-.field__box:focus-within {
+.field-control:focus,
+.field-box:focus-within {
     border-bottom-color: var(--color-accent);
 }
 
-.field__box .field__control {
+.field-box .field-control {
     border-bottom: 0;
 }
 
-.field__control::placeholder {
+.field-control::placeholder {
     color: var(--color-muted);
 }
 
-.field__control:focus-visible {
+.field-control:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
 /* An invalid field keeps its rule in the accent and names the problem below it. */
-.field--invalid .field__control,
-.field--invalid .field__box {
+.field:has([aria-invalid='true']) .field-control,
+.field:has([aria-invalid='true']) .field-box {
     border-bottom-color: var(--color-accent);
 }
 
-.field__error {
+.field-error {
     display: flex;
     gap: var(--space-6);
     align-items: center;
     color: var(--color-accent);
 }
 
-.field__error .icon {
+.field-error .icon {
     flex-shrink: 0;
 }
 
 /* The focus frame wraps the box: flush with its line and as tall as a button beside it, wider than the text. */
-.field__box .field__control:focus-visible {
+.field-box .field-control:focus-visible {
     outline: 0;
 }
 
-.field__box:has(.field__control:focus-visible)::after {
+.field-box:has(.field-control:focus-visible)::after {
     position: absolute;
     inset: calc(-1 * var(--border-hairline)) calc(-1 * var(--space-12));
     border: 2px solid var(--color-accent);

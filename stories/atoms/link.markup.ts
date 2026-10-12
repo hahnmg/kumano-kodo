@@ -10,7 +10,7 @@ export interface LinkProps {
 
 export const link = ({ label, href, direction = 'forward' }: LinkProps): string => {
     // The arrow is decorative and moves on hover, so it sits in its own span outside the accessible name.
-    const arrow = `<span class="link__arrow" aria-hidden="true">${direction === 'back' ? '←' : '→'}</span>`;
-    const text = `<span class="link__label">${esc(label)}</span>`;
-    return `<a${attrs({ class: `link link--${direction} type-button`, href })}>${direction === 'back' ? `${arrow} ${text}` : `${text} ${arrow}`}</a>`;
+    const arrow = `<span class="link-arrow" aria-hidden="true">${direction === 'back' ? '←' : '→'}</span>`;
+    const text = `<span class="link-label">${esc(label)}</span>`;
+    return `<a${attrs({ class: `link link-${direction} type-button`, href })}>${direction === 'back' ? `${arrow} ${text}` : `${text} ${arrow}`}</a>`;
 };

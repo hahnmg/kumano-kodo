@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.slider-dots__dot {
+.slider-dots-dot {
     width: 24px;
     height: 6px;
     padding: 0;
@@ -17,15 +17,15 @@
         width var(--motion-base) var(--ease-out);
 }
 
-.slider-dots__dot:hover {
+.slider-dots-dot:hover {
     background: var(--color-muted);
 }
 
-.slider-dots__dot:focus-visible {
+.slider-dots-dot:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
-.slider-dots__dot--active {
+.slider-dots-dot[aria-current] {
     background: var(--color-accent);
 }

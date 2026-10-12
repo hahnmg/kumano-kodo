@@ -44,18 +44,18 @@ const defaultLabels: SiteHeaderLabels = { nav: 'Main navigation', languages: 'La
 // Items with a menu are disclosure buttons (src/scripts/nav-flyout.ts); the others stay plain links.
 export const navItem = ({ label, href, active, hasChildren, menu, open = false }: NavItem): string =>
     menu
-        ? `<li${attrs({ class: cx('site-header__item', `site-header__item--${menu.kind}`), 'data-open': open })}>` +
-          `<button${attrs({ class: 'site-header__link site-header__toggle type-small', type: 'button', 'aria-expanded': String(open), 'aria-current': active ? 'true' : undefined })}>` +
+        ? `<li${attrs({ class: cx('site-header-item', `site-header-item-${menu.kind}`), 'data-open': open })}>` +
+          `<button${attrs({ class: 'site-header-link site-header-toggle type-small', type: 'button', 'aria-expanded': String(open), 'aria-current': active ? 'true' : undefined })}>` +
           `${esc(label)}${icon({ name: 'chevron-down', size: 14 })}</button>${navFlyout(menu)}</li>`
-        : `<li class="site-header__item"><a${attrs({ class: 'site-header__link type-small', href, 'aria-current': active ? 'page' : undefined })}>${esc(label)}` +
+        : `<li class="site-header-item"><a${attrs({ class: 'site-header-link type-small', href, 'aria-current': active ? 'page' : undefined })}>${esc(label)}` +
           (hasChildren ? icon({ name: 'chevron-down', size: 14 }) : '') +
           `</a></li>`;
 
 // The search is a disclosure like the nav flyouts; folded behind the menu button its form stands open at the top.
 const searchItem = ({ open = false, ...form }: SearchFormProps & { open?: boolean }): string =>
-    `<div${attrs({ class: 'site-header__item site-header__item--search', 'data-open': open })}>` +
-    `<button${attrs({ class: 'site-header__toggle site-header__search-toggle', type: 'button', 'aria-expanded': String(open), 'aria-label': form.label })}>${icon({ name: 'search', size: 16 })}</button>` +
-    `<div class="nav-flyout nav-flyout--search">${searchForm(form)}</div></div>`;
+    `<div${attrs({ class: 'site-header-item site-header-item-search', 'data-open': open })}>` +
+    `<button${attrs({ class: 'site-header-toggle site-header-search-toggle', type: 'button', 'aria-expanded': String(open), 'aria-label': form.label })}>${icon({ name: 'search', size: 16 })}</button>` +
+    `<div class="nav-flyout nav-flyout-search">${searchForm(form)}</div></div>`;
 
 // The scheme button starts unpressed; src/scripts/scheme-toggle.ts keeps aria-pressed in step with the page.
 export const siteHeader = ({ nav, languages = [], labels = {}, search, logo: brand }: SiteHeaderProps): string => {
@@ -64,12 +64,12 @@ export const siteHeader = ({ nav, languages = [], labels = {}, search, logo: bra
         `<header class="site-header">${logo(brand)}` +
         menuButton({ label: l.menu }) +
         // Below 900px the panel collapses behind the menu button; above it, display: contents keeps the one-row header.
-        `<div class="site-header__panel">` +
+        `<div class="site-header-panel">` +
         (search ? searchItem(search) : '') +
-        `<nav class="site-header__nav" aria-label="${esc(l.nav)}"><ul class="site-header__list">${nav.map(navItem).join('')}</ul></nav>` +
-        `<div class="site-header__tools">` +
+        `<nav class="site-header-nav" aria-label="${esc(l.nav)}"><ul class="site-header-list">${nav.map(navItem).join('')}</ul></nav>` +
+        `<div class="site-header-tools">` +
         (languages.length
-            ? `<ul class="site-header__languages" aria-label="${esc(l.languages)}">` +
+            ? `<ul class="site-header-languages" aria-label="${esc(l.languages)}">` +
               languages
                   .map(
                       (lang) =>

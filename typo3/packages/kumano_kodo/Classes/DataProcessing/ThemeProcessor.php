@@ -20,7 +20,7 @@ use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 // Theme site settings become custom properties over the chosen theme; empty ones keep the theme's value.
 final class ThemeProcessor implements DataProcessorInterface
 {
-    private const ROLES = ['paper', 'surface', 'sunk', 'ink', 'muted', 'line', 'hair', 'moss', 'accent'];
+    private const ROLES = ['paper', 'surface', 'sunk', 'ink', 'muted', 'line', 'hair', 'secondary', 'accent'];
     private const TEXT_STYLES = ['caption', 'small', 'button', 'body', 'lead'];
     private const SPACE_STEPS = [4, 5, 6, 8, 9, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 36, 40, 44, 56, 64, 96, 128];
 

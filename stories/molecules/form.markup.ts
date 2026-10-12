@@ -13,6 +13,6 @@ export interface FormProps {
 export const form = ({ action, fields, submit, note }: FormProps): string =>
     `<form${attrs({ class: 'form', action, method: 'post' })}>` +
     fields.join('') +
-    (note ? `<p class="form__note type-caption">${esc(note)}</p>` : '') +
+    (note ? `<p class="form-note type-caption">${esc(note)}</p>` : '') +
     `<div>${button({ label: submit, type: 'submit' })}</div>` +
     `</form>`;

@@ -1,4 +1,4 @@
-.pagination__list {
+.pagination-list {
     display: flex;
     gap: var(--space-8);
     justify-content: center;
@@ -7,7 +7,7 @@
     list-style: none;
 }
 
-.pagination__item {
+.pagination-item {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -18,10 +18,10 @@
     transition: color var(--motion-fast) var(--ease-out);
 }
 
-a.pagination__item:hover {
+a.pagination-item:hover {
     color: var(--color-ink);
 }
 
-.pagination__item[aria-current='page'] {
+.pagination-item[aria-current='page'] {
     color: var(--color-accent);
 }

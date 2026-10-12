@@ -1,10 +1,10 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <footer class="site-footer">
-    <f:if condition="{settings.kumanoKodo.brand.footerWordmark}"><p class="site-footer__wordmark type-wordmark" aria-hidden="true">{theme.name}</p></f:if>
-    <div class="site-footer__columns"><f:if condition="{content.footer}"><f:render.contentArea contentArea="{content.footer}"/></f:if></div>
+    <f:if condition="{settings.kumanoKodo.brand.footerWordmark}"><p class="site-footer-wordmark type-wordmark" aria-hidden="true">{theme.name}</p></f:if>
+    <div class="site-footer-columns"><f:if condition="{content.footer}"><f:render.contentArea contentArea="{content.footer}"/></f:if></div>
     <f:if condition="!{hideNotice} && {content.footerNotice.records}">
-        <div class="site-footer__notice"><f:render.contentArea contentArea="{content.footerNotice}"/></div>
+        <div class="site-footer-notice"><f:render.contentArea contentArea="{content.footerNotice}"/></div>
     </f:if>
-    <div class="site-footer__legal type-caption"><f:if condition="{content.footerLegal}"><f:render.contentArea contentArea="{content.footerLegal}"/></f:if></div>
+    <div class="site-footer-legal type-caption"><f:if condition="{content.footerLegal}"><f:render.contentArea contentArea="{content.footerLegal}"/></f:if></div>
 </footer>
 </html>

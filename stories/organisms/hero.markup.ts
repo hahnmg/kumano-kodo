@@ -12,11 +12,11 @@ export interface HeroProps {
 }
 
 export const hero = ({ image, eyebrow, title, teaser, actions, stats }: HeroProps): string =>
-    `<section class="hero">${img(image, 'hero__image', '100vw', true)}<div class="hero__shade"></div><div class="hero__content">` +
-    `<p class="hero__eyebrow type-label">${esc(eyebrow)}</p>` +
-    `<h1 class="hero__title type-hero">${esc(title)}</h1>` +
-    `<div class="hero__teaser"><p class="type-lead">${esc(teaser)}</p><div class="hero__actions">` +
+    `<section class="hero">${img(image, 'hero-image', '100vw', true)}<div class="hero-shade"></div><div class="hero-content">` +
+    `<p class="hero-eyebrow type-label">${esc(eyebrow)}</p>` +
+    `<h1 class="hero-title type-hero">${esc(title)}</h1>` +
+    `<div class="hero-teaser"><p class="type-lead">${esc(teaser)}</p><div class="hero-actions">` +
     actions.map((a, i) => button({ ...a, variant: i === 0 ? 'light' : 'outline' })).join('') +
     `</div></div>` +
-    `<div class="hero__stats">${stats.map((s) => stat({ ...s, variant: 'on-image' })).join('')}</div>` +
+    `<div class="hero-stats">${stats.map((s) => stat({ ...s, variant: 'on-image' })).join('')}</div>` +
     `</div></section>`;

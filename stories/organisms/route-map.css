@@ -4,44 +4,44 @@
     border-top: var(--border-hairline) solid var(--color-ink);
 }
 
-.route-map__svg {
+.route-map-svg {
     display: block;
     width: 100%;
     height: auto;
     overflow: visible;
 }
 
-.route-map__path {
+.route-map-path {
     fill: none;
-    stroke: var(--color-moss);
+    stroke: var(--color-secondary);
     stroke-width: 2;
     stroke-linecap: round;
 }
 
-.route-map__boundary {
+.route-map-boundary {
     stroke: var(--color-line);
     stroke-dasharray: 3 7;
 }
 
-.route-map__station {
+.route-map-station {
     fill: var(--color-paper);
-    stroke: var(--color-moss);
+    stroke: var(--color-secondary);
     stroke-width: 2;
 }
 
-.route-map__station--end {
+.route-map-station-end {
     fill: var(--color-accent);
     stroke: var(--color-paper);
 }
 
-.route-map__label {
+.route-map-label {
     fill: var(--color-ink);
     font-family: var(--type-lead-family);
     font-size: 15px;
     font-weight: 500;
 }
 
-.route-map__days {
+.route-map-segments {
     position: relative;
     height: 24px;
     margin: var(--space-4) 0 0;
@@ -50,13 +50,13 @@
     list-style: none;
 }
 
-.route-map__days li {
+.route-map-segments li {
     position: absolute;
     transform: translateX(-50%);
     white-space: nowrap;
 }
 
-.route-map__legend {
+.route-map-legend {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-26);
@@ -66,46 +66,46 @@
     color: var(--color-muted);
 }
 
-.route-map__legend span {
+.route-map-legend span {
     display: flex;
     gap: var(--space-9);
     align-items: center;
 }
 
-.route-map__key {
+.route-map-key {
     display: block;
 }
 
-.route-map__key--walked {
+.route-map-key-completed {
     width: 24px;
     height: 2px;
-    background: var(--color-moss);
+    background: var(--color-secondary);
 }
 
-.route-map__key--end {
+.route-map-key-end {
     width: 10px;
     height: 10px;
     border-radius: var(--radius-full);
     background: var(--color-accent);
 }
 
-.route-map__key--boundary {
+.route-map-key-boundary {
     width: 24px;
     border-top: var(--border-hairline) dashed var(--color-hair);
 }
 
-.route-map__scroll:focus-visible {
+.route-map-scroll:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 4px;
 }
 
 @media (width <= 600px) {
-    .route-map__scroll {
+    .route-map-scroll {
         overflow-x: auto;
     }
 
-    .route-map__svg,
-    .route-map__days {
+    .route-map-svg,
+    .route-map-segments {
         min-width: 720px;
     }
 }

@@ -22,31 +22,31 @@
     outline-offset: 2px;
 }
 
-.button--primary {
+.button-primary {
     background: var(--color-ink);
     color: var(--color-paper);
 }
 
-.button--light {
+.button-light {
     background: var(--color-on-image);
     color: var(--color-on-image-ink);
 }
 
-.button--outline {
+.button-outline {
     background: transparent;
     border-color: color-mix(in srgb, var(--color-on-image) 70%, transparent);
     color: var(--color-on-image);
 }
 
-.button--primary:hover {
+.button-primary:hover {
     background: color-mix(in oklab, var(--color-ink) 82%, var(--color-paper));
 }
 
-.button--light:hover {
+.button-light:hover {
     background: color-mix(in oklab, var(--color-on-image) 86%, var(--color-on-image-ink));
 }
 
-.button--outline:hover {
+.button-outline:hover {
     border-color: var(--color-on-image);
     background: color-mix(in srgb, var(--color-on-image) 12%, transparent);
 }

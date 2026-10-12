@@ -6,25 +6,25 @@
 <f:if condition="{controls}">
     <f:variable name="variant">with-controls</f:variable>
 </f:if>
-<header class="section-heading section-heading--{variant}">
-    <div class="section-heading__main">
+<header class="section-heading section-heading-{variant}">
+    <div class="section-heading-main">
         <f:if condition="{eyebrow}">
-            <p class="section-heading__eyebrow type-label">{eyebrow}</p>
+            <p class="section-heading-eyebrow type-label">{eyebrow}</p>
         </f:if>
         <f:if condition="{level} == 1">
             <f:then>
-                <h1 class="section-heading__title type-h2">{title}</h1>
+                <h1 class="section-heading-title type-h2">{title}</h1>
             </f:then>
             <f:else>
-                <h2 class="section-heading__title type-h2">{title}</h2>
+                <h2 class="section-heading-title type-h2">{title}</h2>
             </f:else>
         </f:if>
     </div>
     <f:if condition="{variant} == 'with-aside'">
-        <p class="section-heading__aside type-small">{aside}</p>
+        <p class="section-heading-aside type-small">{aside}</p>
     </f:if>
     <f:if condition="{variant} == 'with-controls'">
-        <div class="section-heading__controls"><f:render partial="Kumano/IconButton" arguments="{direction: 'previous', label: '{f:translate(key: \'previous\', domain: \'kumano_kodo.messages\')}'}"/><f:render partial="Kumano/IconButton" arguments="{direction: 'next', label: '{f:translate(key: \'next\', domain: \'kumano_kodo.messages\')}'}"/></div>
+        <div class="section-heading-controls"><f:render partial="Kumano/IconButton" arguments="{direction: 'previous', label: '{f:translate(key: \'previous\', domain: \'kumano_kodo.messages\')}'}"/><f:render partial="Kumano/IconButton" arguments="{direction: 'next', label: '{f:translate(key: \'next\', domain: \'kumano_kodo.messages\')}'}"/></div>
     </f:if>
 </header>
 </html>

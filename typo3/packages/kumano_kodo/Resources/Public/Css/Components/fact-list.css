@@ -6,34 +6,34 @@
     border-top: var(--border-hairline) solid var(--color-line);
 }
 
-.fact-list__title,
-.fact-list__items,
+.fact-list-title,
+.fact-list-items,
 .fact-list dd {
     margin: 0;
 }
 
-.fact-list__title {
+.fact-list-title {
     color: var(--color-ink);
 }
 
-.fact-list__items {
+.fact-list-items {
     display: flex;
     flex-direction: column;
     gap: var(--space-16);
 }
 
-.fact-list__row {
+.fact-list-row {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
 }
 
-.fact-list--inline .fact-list__row {
+.fact-list-inline .fact-list-row {
     flex-direction: row;
     gap: var(--space-16);
 }
 
-.fact-list--inline dt {
+.fact-list-inline dt {
     flex: 0 0 96px;
 }
 

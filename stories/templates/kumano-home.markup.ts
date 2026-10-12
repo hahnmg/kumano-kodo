@@ -1,14 +1,14 @@
 import { section, split, stack } from '../layout/layout.markup';
-import { dayList } from '../molecules/day-row.markup';
+import { timeline } from '../molecules/timeline-item.markup';
 import { faqList } from '../molecules/faq-item.markup';
 import { figure } from '../molecules/figure.markup';
 import { highlight } from '../molecules/highlight.markup';
 import { newsletterForm } from '../molecules/newsletter-form.markup';
-import { placeCard } from '../molecules/place-card.markup';
+import { featureCard } from '../molecules/feature-card.markup';
 import { quote } from '../molecules/quote.markup';
 import { richText } from '../molecules/rich-text.markup';
 import { sectionHeading } from '../molecules/section-heading.markup';
-import { stageCard } from '../molecules/stage-card.markup';
+import { portraitCard } from '../molecules/portrait-card.markup';
 import { statRow } from '../molecules/stat.markup';
 import { hero } from '../organisms/hero.markup';
 import { routeMap } from '../organisms/route-map.markup';
@@ -48,7 +48,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
         section({
             space: 'flush-top',
             content: stack(
-                [statRow(kumano.stats), stack([sectionHeading({ ...home.days, variant: 'with-aside' }), dayList(kumano.days)], 'heading')],
+                [statRow(kumano.stats), stack([sectionHeading({ ...home.days, variant: 'with-aside' }), timeline(kumano.days)], 'heading')],
                 'elements',
             ),
         }) +
@@ -59,7 +59,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
             id: 'stages',
             content: slider({
                 heading: home.stages,
-                items: kumano.stages.map(stageCard),
+                items: kumano.stages.map(portraitCard),
                 labels: { previous: ui.previous, next: ui.next, item: ui.card },
             }),
         }) +
@@ -73,9 +73,9 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
                     sectionHeading(home.places),
                     stack(
                         [
-                            split(placeCard(kumano.places[0]), placeCard(kumano.places[1]), 'wide-narrow'),
+                            split(featureCard(kumano.places[0]), featureCard(kumano.places[1]), 'wide-narrow'),
                             split(
-                                placeCard(kumano.places[2]),
+                                featureCard(kumano.places[2]),
                                 figure({
                                     images: [photos['land-crab'], photos['cedar-canopy']],
                                     caption: home.roadsideCaption,

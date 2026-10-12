@@ -10,8 +10,8 @@ export interface IconFactProps {
 }
 
 export const iconFact = ({ icon, label, value, note }: IconFactProps): string =>
-    `<div class="icon-fact">${iconCircle({ name: icon })}<div class="icon-fact__text">` +
-    `<p class="icon-fact__label type-label">${esc(label)}</p>` +
-    `<p class="icon-fact__value type-button">${esc(value)}</p>` +
-    (note ? `<p class="icon-fact__note type-caption">${esc(note)}</p>` : '') +
+    `<div class="icon-fact">${iconCircle({ name: icon })}<div class="icon-fact-text">` +
+    `<p class="icon-fact-label type-label">${esc(label)}</p>` +
+    `<p class="icon-fact-value type-button">${esc(value)}</p>` +
+    (note ? `<p class="icon-fact-note type-caption">${esc(note)}</p>` : '') +
     `</div></div>`;

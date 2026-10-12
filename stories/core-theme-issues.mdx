@@ -23,7 +23,7 @@ export const itemsOf = (status) => data.items.filter((item) => item.status === s
     {groups
         .filter((group) => itemsOf(group.status).length)
         .map((group) => (
-            <li key={group.status} className={`issue-summary__item issue--${group.status}`}>
+            <li key={group.status} className={`issue-summary-item issue-${group.status}`}>
                 <strong>{itemsOf(group.status).length}</strong> {group.label}
             </li>
         ))}
@@ -31,19 +31,19 @@ export const itemsOf = (status) => data.items.filter((item) => item.status === s
 
 {groups.filter((group) => itemsOf(group.status).length).map((group) => (
 
-<section key={group.status} className={`issue-group issue--${group.status}`} data-theme="mono">
-<h2 className="issue-group__title">{group.label}</h2>
+<section key={group.status} className={`issue-group issue-${group.status}`} data-theme="mono">
+<h2 className="issue-group-title">{group.label}</h2>
 <ul className="issue-list">
-<li className="issue issue--head" aria-hidden="true">
-<p className="issue__problem">Problem</p>
-<p className="issue__solution">Solution here</p>
-<p className="issue__refs">Reports</p>
+<li className="issue issue-head" aria-hidden="true">
+<p className="issue-problem">Problem</p>
+<p className="issue-solution">Solution here</p>
+<p className="issue-refs">Reports</p>
 </li>
 {itemsOf(group.status).map((item) => (
 <li key={item.problem} className="issue">
-<p className="issue__problem">{item.problem}</p>
-<p className="issue__solution">{item.solution}</p>
-<p className="issue__refs">
+<p className="issue-problem">{item.problem}</p>
+<p className="issue-solution">{item.solution}</p>
+<p className="issue-refs">
 {item.issues.length
 ? item.issues.map((n) => (
 <a key={n} href={`https://forge.typo3.org/issues/${n}`} target="\_blank" rel="noreferrer">

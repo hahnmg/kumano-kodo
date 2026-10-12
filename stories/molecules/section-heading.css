@@ -5,37 +5,37 @@
     justify-content: space-between;
 }
 
-.section-heading__main {
+.section-heading-main {
     display: flex;
     flex-direction: column;
     gap: var(--space-20);
     max-width: 877px;
 }
 
-.section-heading--with-aside .section-heading__main {
+.section-heading-with-aside .section-heading-main {
     max-width: 765px;
 }
 
-.section-heading__eyebrow,
-.section-heading__title,
-.section-heading__aside {
+.section-heading-eyebrow,
+.section-heading-title,
+.section-heading-aside {
     margin: 0;
 }
 
-.section-heading__eyebrow {
+.section-heading-eyebrow {
     color: var(--color-accent);
 }
 
-.section-heading__title {
+.section-heading-title {
     color: var(--color-ink);
 }
 
-.section-heading__aside {
+.section-heading-aside {
     flex: 0 1 427px;
     color: var(--color-muted);
 }
 
-.section-heading__controls {
+.section-heading-controls {
     display: flex;
     gap: var(--space-8);
 }

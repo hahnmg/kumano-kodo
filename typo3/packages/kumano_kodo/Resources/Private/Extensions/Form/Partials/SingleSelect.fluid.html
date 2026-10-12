@@ -8,7 +8,7 @@
             <f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}"/>
         </f:if>
 
-        <f:render partial="Field/Field" arguments="{element: element}" contentAs="elementContent"><span class="field__box">
+        <f:render partial="Field/Field" arguments="{element: element}" contentAs="elementContent"><span class="field-box">
             <f:if condition="{element.properties.prependOptionLabel}">
                 <f:then>
                     <f:form.select

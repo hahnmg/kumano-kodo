@@ -11,6 +11,6 @@ export const lightboxLink = (image: Image, className: string): string =>
     `<a${attrs({ class: 'lightbox-link', href: image.full ?? image.src, 'data-lightbox': true, 'aria-haspopup': 'dialog' })}>${img(image, className)}</a>`;
 
 export const gallery = ({ images, caption, labels }: GalleryProps): string =>
-    `<figure${attrs({ class: 'gallery', ...lightboxGroupAttrs(labels) })}><div class="gallery__grid">${images.map((i) => lightboxLink(i, 'gallery__image')).join('')}</div>` +
-    (caption ? `<figcaption class="gallery__caption type-caption">${esc(caption)}</figcaption>` : '') +
+    `<figure${attrs({ class: 'gallery', ...lightboxGroupAttrs(labels) })}><div class="gallery-grid">${images.map((i) => lightboxLink(i, 'gallery-image')).join('')}</div>` +
+    (caption ? `<figcaption class="gallery-caption type-caption">${esc(caption)}</figcaption>` : '') +
     `</figure>`;

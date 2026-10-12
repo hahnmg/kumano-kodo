@@ -110,12 +110,12 @@ Light mode
 
     Hair. Left at its default, the chosen theme's colour applies: Caramel #cfc0ab, Forest #bcc7bd, Ocean #b6cbdc, Violet #c6b4da, Mono #cfcfcf.
 
-.. confval:: kumanoKodo.color.light.moss
-    :name: kumanokodo-color-light-moss
+.. confval:: kumanoKodo.color.light.secondary
+    :name: kumanokodo-color-light-secondary
     :type: color
     :Default: `#4a6350`
 
-    Moss. Left at its default, the chosen theme's colour applies: Caramel #4a6350, Forest #2f6b4f, Ocean #0f6e93, Violet #7a2fd4, Mono #111111.
+    Secondary. Left at its default, the chosen theme's colour applies: Caramel #4a6350, Forest #2f6b4f, Ocean #0f6e93, Violet #7a2fd4, Mono #111111.
 
 .. confval:: kumanoKodo.color.light.accent
     :name: kumanokodo-color-light-accent
@@ -176,12 +176,12 @@ Dark mode
 
     Hair. Left at its default, the chosen theme's colour applies: Caramel #463c32, Forest #364136, Ocean #2b4150, Violet #3b2d56, Mono #3a3a3a.
 
-.. confval:: kumanoKodo.color.dark.moss
-    :name: kumanokodo-color-dark-moss
+.. confval:: kumanoKodo.color.dark.secondary
+    :name: kumanokodo-color-dark-secondary
     :type: color
     :Default: `#a9c2ae`
 
-    Moss. Left at its default, the chosen theme's colour applies: Caramel #a9c2ae, Forest #8fd0a8, Ocean #63c8e6, Violet #ffd166, Mono #f2f2f2.
+    Secondary. Left at its default, the chosen theme's colour applies: Caramel #a9c2ae, Forest #8fd0a8, Ocean #63c8e6, Violet #ffd166, Mono #f2f2f2.
 
 .. confval:: kumanoKodo.color.dark.accent
     :name: kumanokodo-color-dark-accent

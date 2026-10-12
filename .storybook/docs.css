@@ -28,19 +28,19 @@
 }
 
 /* Core theme issues: one row per problem, the status colour as a bar on the left. */
-.sbdocs .issue--solved {
+.sbdocs .issue-solved {
     --issue-colour: var(--color-moss);
 }
 
-.sbdocs .issue--partly {
+.sbdocs .issue-partly {
     --issue-colour: var(--color-accent);
 }
 
-.sbdocs .issue--check {
+.sbdocs .issue-check {
     --issue-colour: var(--color-muted);
 }
 
-.sbdocs .issue--irrelevant {
+.sbdocs .issue-irrelevant {
     --issue-colour: var(--color-hair);
 }
 
@@ -58,14 +58,14 @@
     list-style: none;
 }
 
-.sbdocs .issue-summary__item {
+.sbdocs .issue-summary-item {
     margin: 0;
     padding: var(--space-8) var(--space-16);
     border-left: var(--space-4) solid var(--issue-colour);
     background: var(--color-sunk);
 }
 
-.sbdocs .issue-summary__item strong {
+.sbdocs .issue-summary-item strong {
     margin-right: var(--space-4);
     font-family: var(--font-display);
     font-size: 1.4em;
@@ -75,14 +75,14 @@
     margin-bottom: var(--space-40);
 }
 
-.sbdocs .issue-group__title {
+.sbdocs .issue-group-title {
     margin: 0 0 var(--space-12);
     padding: 0;
     border: 0;
     color: var(--issue-colour);
 }
 
-.sbdocs .issue--irrelevant .issue-group__title {
+.sbdocs .issue-irrelevant .issue-group-title {
     color: var(--color-muted);
 }
 
@@ -107,11 +107,11 @@
     margin: 0;
 }
 
-.sbdocs .issue__problem {
+.sbdocs .issue-problem {
     font-weight: 600;
 }
 
-.sbdocs .issue__refs {
+.sbdocs .issue-refs {
     display: flex;
     justify-content: flex-end;
     gap: var(--space-8);
@@ -120,18 +120,18 @@
     white-space: nowrap;
 }
 
-.sbdocs .issue__refs a {
+.sbdocs .issue-refs a {
     color: var(--color-accent);
 }
 
-.sbdocs .issue--head {
+.sbdocs .issue-head {
     padding-block: var(--space-8);
     border-bottom-color: var(--color-hair);
     color: var(--color-muted);
     font-size: 0.85em;
 }
 
-.sbdocs .issue--head .issue__problem {
+.sbdocs .issue-head .issue-problem {
     font-weight: 400;
 }
 
@@ -146,11 +146,11 @@
         gap: var(--space-4);
     }
 
-    .sbdocs .issue--head {
+    .sbdocs .issue-head {
         display: none;
     }
 
-    .sbdocs .issue__refs {
+    .sbdocs .issue-refs {
         justify-content: flex-start;
     }
 }

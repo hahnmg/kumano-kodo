@@ -12,11 +12,11 @@ describe('logo', () => {
     it('carries both Figma marks with their bird and text groups', () => {
         const a = mount(logo()).querySelector('a.logo');
         for (const name of ['classic', 'modern'] as const) {
-            const svg = a?.querySelector(`.logo__mark--${name}`);
+            const svg = a?.querySelector(`.logo-mark-${name}`);
             expect(svg?.getAttribute('viewBox')).toBe(`0 0 ${logos[name].width} ${logos[name].height}`);
             expect(svg?.getAttribute('aria-hidden')).toBe('true');
-            expect(svg?.querySelectorAll('.logo__bird path')).toHaveLength(logos[name].bird.length);
-            expect(svg?.querySelectorAll('.logo__text path')).toHaveLength(logos[name].text.length);
+            expect(svg?.querySelectorAll('.logo-bird path')).toHaveLength(logos[name].bird.length);
+            expect(svg?.querySelectorAll('.logo-text path')).toHaveLength(logos[name].text.length);
         }
     });
     it('keeps the classic bird as the emblem', () => {

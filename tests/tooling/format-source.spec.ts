@@ -14,7 +14,7 @@ describe('format-source', () => {
         expect(out.split('\n').filter((l) => l.includes('<svg'))).toHaveLength(2);
         const reparsed = document.createElement('template');
         reparsed.innerHTML = out;
-        expect(reparsed.content.querySelector('.link-tile__title')?.textContent).toBe('Getting there');
+        expect(reparsed.content.querySelector('.link-tile-title')?.textContent).toBe('Getting there');
     });
     it('keeps classed or styled-and-classed divs', () => {
         expect(formatSource('<div class="grid" style="gap:1px"><p>x</p></div>')).toBe(

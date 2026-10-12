@@ -5,7 +5,7 @@
     max-width: 440px;
 }
 
-.login-form__actions {
+.login-form-actions {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-24);

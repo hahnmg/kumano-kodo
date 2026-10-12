@@ -10,6 +10,6 @@ export interface HeroSplitProps {
 }
 
 export const heroSplit = ({ title, text, action, panel }: HeroSplitProps): string =>
-    `<section class="hero-split"><div class="hero-split__inner"><div class="hero-split__text">` +
+    `<section class="hero-split"><div class="hero-split-inner"><div class="hero-split-text">` +
     `<h1 class="type-h2">${esc(title)}</h1><p class="type-lead">${esc(text)}</p><div>${button(action)}</div></div>` +
-    `<div class="hero-split__panel">${mediaList(panel)}</div></div></section>`;
+    `<div class="hero-split-panel">${mediaList(panel)}</div></div></section>`;

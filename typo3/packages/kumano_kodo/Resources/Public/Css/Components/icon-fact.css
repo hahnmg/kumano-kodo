@@ -4,21 +4,21 @@
     align-items: center;
 }
 
-.icon-fact__text {
+.icon-fact-text {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
 }
 
-.icon-fact__text p {
+.icon-fact-text p {
     margin: 0;
 }
 
-.icon-fact__label,
-.icon-fact__note {
+.icon-fact-label,
+.icon-fact-note {
     color: var(--color-muted);
 }
 
-.icon-fact__value {
+.icon-fact-value {
     color: var(--color-ink);
 }

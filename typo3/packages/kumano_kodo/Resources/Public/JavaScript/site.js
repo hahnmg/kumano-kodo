@@ -6,14 +6,14 @@ var e = ".menu-button", t = (t, n) => {
 		let r = (n.target instanceof Element ? n.target.closest(e) : null)?.closest(".site-header");
 		r && t(r, !r.hasAttribute("data-menu-open"));
 	}, i = (r) => {
-		r.key !== "Escape" || n.querySelector(".site-header__item[data-open]") || n.querySelectorAll(".site-header[data-menu-open]").forEach((n) => {
+		r.key !== "Escape" || n.querySelector(".site-header-item[data-open]") || n.querySelectorAll(".site-header[data-menu-open]").forEach((n) => {
 			t(n, !1), n.querySelector(e)?.focus();
 		});
 	};
 	return n.addEventListener("click", r), n.addEventListener("keydown", i), () => {
 		n.removeEventListener("click", r), n.removeEventListener("keydown", i);
 	};
-}, r = ".site-header__item", i = ".site-header__toggle", a = (e, t) => {
+}, r = ".site-header-item", i = ".site-header-toggle", a = (e, t) => {
 	e.toggleAttribute("data-open", t), e.querySelector(`:scope > ${i}`)?.setAttribute("aria-expanded", String(t));
 }, o = (e, t) => e.querySelectorAll(`${r}[data-open]`).forEach((e) => e !== t && a(e, !1)), s = (e = document) => {
 	let t = (t) => {

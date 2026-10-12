@@ -23,11 +23,11 @@ describe('search', () => {
     it('lists results as links with path and excerpt', () => {
         const items = searchSample(content('en'), 'bus');
         const el = mount(searchResults({ label: 'Search results', summary: `${items.length} results`, items }));
-        expect(el.querySelectorAll('.search-results__items a')).toHaveLength(items.length);
+        expect(el.querySelectorAll('.search-results-items a')).toHaveLength(items.length);
         expect(el.querySelector('mark')).not.toBeNull();
     });
     it('opens the header search as a disclosure', () => {
-        const toggle = mount(siteHeader({ nav: [], search: form })).querySelector('.site-header__search-toggle');
+        const toggle = mount(siteHeader({ nav: [], search: form })).querySelector('.site-header-search-toggle');
         expect(toggle?.getAttribute('aria-expanded')).toBe('false');
         expect(toggle?.getAttribute('aria-label')).toBe('Search');
     });

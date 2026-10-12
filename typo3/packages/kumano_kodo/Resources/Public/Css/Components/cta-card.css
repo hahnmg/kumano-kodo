@@ -9,7 +9,7 @@
     transition: background-size var(--motion-base) var(--ease-out);
 }
 
-.cta-card--featured,
+.cta-card-featured,
 .cta-card:has(.link:hover) {
     background-size:
         100% var(--border-hairline),
@@ -21,14 +21,14 @@
     margin: 0;
 }
 
-.cta-card__title {
+.cta-card-title {
     color: var(--color-ink);
 }
 
-.cta-card__text {
+.cta-card-text {
     color: var(--color-muted);
 }
 
-.cta-card__link {
+.cta-card-link {
     padding-top: var(--space-12);
 }

@@ -1,14 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { bleedPhoto } from '../../stories/molecules/bleed-photo.markup';
+import { bleedImage } from '../../stories/molecules/bleed-image.markup';
 import { photos } from '../../stories/templates/content';
 import { expectAccessible, mount } from '../support/accessibility';
 
-describe('bleed-photo', () => {
+describe('bleed-image', () => {
     it('links the full-size photo and shows its caption', () => {
-        const el = mount(bleedPhoto(photos['sea-of-clouds']));
+        const el = mount(bleedImage(photos['sea-of-clouds']));
         expect(el.querySelector('a[data-lightbox]')?.getAttribute('href')).toBe(photos['sea-of-clouds'].full);
         expect(el.querySelector('figcaption')?.textContent).toBe(photos['sea-of-clouds'].caption);
         expect(el.querySelector('img')?.getAttribute('sizes')).toBe('100vw');
     });
-    it('passes axe', () => expectAccessible(bleedPhoto(photos['sea-of-clouds'])));
+    it('passes axe', () => expectAccessible(bleedImage(photos['sea-of-clouds'])));
 });

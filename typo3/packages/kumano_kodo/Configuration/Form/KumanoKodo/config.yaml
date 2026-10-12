@@ -29,24 +29,24 @@ prototypes:
           formNavigation:
             navigationWrapperClassAttribute: ''
             navigationClassAttribute: ''
-            btnPreviousClassAttribute: 'button type-button button--primary'
-            btnNextClassAttribute: 'button type-button button--primary'
-            btnSubmitClassAttribute: 'button type-button button--primary'
+            btnPreviousClassAttribute: 'button type-button button-primary'
+            btnNextClassAttribute: 'button type-button button-primary'
+            btnSubmitClassAttribute: 'button type-button button-primary'
       Text:
         properties:
-          elementClassAttribute: 'field__control type-lead'
+          elementClassAttribute: 'field-control type-lead'
       Email:
         properties:
-          elementClassAttribute: 'field__control type-lead'
+          elementClassAttribute: 'field-control type-lead'
       Telephone:
         properties:
-          elementClassAttribute: 'field__control type-lead'
+          elementClassAttribute: 'field-control type-lead'
       Textarea:
         properties:
-          elementClassAttribute: 'field__control field__control--textarea type-small'
+          elementClassAttribute: 'field-control field-control-textarea type-small'
       SingleSelect:
         properties:
-          elementClassAttribute: 'field__control field__control--select type-small'
+          elementClassAttribute: 'field-control field-control-select type-small'
       Checkbox:
         properties:
-          elementClassAttribute: choice__input
+          elementClassAttribute: choice-input

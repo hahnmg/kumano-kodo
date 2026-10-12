@@ -2,7 +2,7 @@
     padding: var(--section-sm) max(var(--gutter), (100% - var(--container-page)) / 2);
 }
 
-.chapter__inner {
+.chapter-inner {
     display: flex;
     flex-direction: column;
     gap: var(--space-56);
@@ -13,41 +13,41 @@
     margin: 0;
 }
 
-.chapter__head {
+.chapter-head {
     display: grid;
     grid-template-columns: minmax(0, 3fr) minmax(0, 6fr) minmax(0, 3fr);
     gap: var(--space-24);
     align-items: start;
 }
 
-.chapter__number {
+.chapter-number {
     color: var(--color-accent);
     line-height: 0.8;
 }
 
-.chapter__text {
+.chapter-text {
     display: flex;
     flex-direction: column;
     gap: var(--space-12);
     color: var(--color-ink);
 }
 
-.chapter__date {
+.chapter-date {
     color: var(--color-muted);
 }
 
-.chapter__title {
+.chapter-title {
     color: var(--color-ink);
 }
 
-.chapter__photos {
+.chapter-media {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: var(--space-40) var(--space-24);
     align-items: start;
 }
 
-.chapter__photo {
+.chapter-media-item {
     display: flex;
     flex-direction: column;
     grid-column: span var(--span);
@@ -55,47 +55,47 @@
     margin: 0;
 }
 
-.chapter__photo--shift-1 {
+.chapter-media-item-shift-1 {
     margin-top: var(--space-56);
 }
 
-.chapter__photo--shift-2 {
+.chapter-media-item-shift-2 {
     margin-top: var(--space-96);
 }
 
-.chapter__image {
+.chapter-image {
     display: block;
     width: 100%;
     height: auto;
 }
 
-.chapter__caption {
+.chapter-caption {
     color: var(--color-muted);
 }
 
 @media (width <= 900px) {
-    .chapter__head {
+    .chapter-head {
         grid-template-columns: auto minmax(0, 1fr);
     }
 }
 
 /* Phones: portraits pair up, landscapes take the full width, the stagger goes. */
 @media (width <= 600px) {
-    .chapter__photos {
+    .chapter-media {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--space-24) var(--space-12);
     }
 
-    .chapter__photo {
+    .chapter-media-item {
         grid-column: span 1;
     }
 
-    .chapter__photo--landscape {
+    .chapter-media-item-landscape {
         grid-column: span 2;
     }
 
-    .chapter__photo--shift-1,
-    .chapter__photo--shift-2 {
+    .chapter-media-item-shift-1,
+    .chapter-media-item-shift-2 {
         margin-top: 0;
     }
 }

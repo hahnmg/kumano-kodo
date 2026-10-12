@@ -18,16 +18,16 @@ export interface SearchResultsProps {
 
 // Rows as in the media list, without a picture and with the passage that matched.
 export const searchResults = ({ label, summary, items, pagination = '' }: SearchResultsProps): string =>
-    `<section${attrs({ class: 'search-results', 'aria-label': label })}><p class="search-results__summary type-small">${esc(summary)}</p>` +
+    `<section${attrs({ class: 'search-results', 'aria-label': label })}><p class="search-results-summary type-small">${esc(summary)}</p>` +
     (items.length
-        ? `<ol class="search-results__items">` +
+        ? `<ol class="search-results-items">` +
           items
               .map(
                   (i) =>
-                      `<li><a${attrs({ class: 'media-list__row search-results__row', href: i.href })}>` +
-                      `<span class="media-list__text search-results__text"><span class="type-h4">${esc(i.title)}</span>` +
-                      `<span class="media-list__meta type-caption">${esc(i.path)}</span>` +
-                      `<span class="search-results__excerpt type-small">${i.excerpt}</span></span>` +
+                      `<li><a${attrs({ class: 'media-list-row search-results-row', href: i.href })}>` +
+                      `<span class="media-list-text search-results-text"><span class="type-h4">${esc(i.title)}</span>` +
+                      `<span class="media-list-meta type-caption">${esc(i.path)}</span>` +
+                      `<span class="search-results-excerpt type-small">${i.excerpt}</span></span>` +
                       `${iconCircle({ name: 'arrow-right' })}</a></li>`,
               )
               .join('') +

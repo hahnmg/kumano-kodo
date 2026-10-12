@@ -1,5 +1,5 @@
-const item = '.site-header__item';
-const toggle = '.site-header__toggle';
+const item = '.site-header-item';
+const toggle = '.site-header-toggle';
 
 const setOpen = (li: Element, open: boolean): void => {
     li.toggleAttribute('data-open', open);

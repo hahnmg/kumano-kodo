@@ -16,11 +16,11 @@ const icon = (path: string) =>
     `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="${path}"/></svg>`;
 
 const template =
-    `<figure class="lightbox__figure"><img class="lightbox__image" alt="">` +
-    `<figcaption class="lightbox__caption type-caption"><span class="lightbox__text"></span><span class="lightbox__count"></span></figcaption></figure>` +
-    `<button class="lightbox__button lightbox__close" type="button">${icon('M18 6 6 18M6 6l12 12')}</button>` +
-    `<button class="lightbox__button lightbox__nav lightbox__nav--previous" type="button" data-step="-1">${icon('M19 12H5m0 0 6-6m-6 6 6 6')}</button>` +
-    `<button class="lightbox__button lightbox__nav lightbox__nav--next" type="button" data-step="1">${icon('M5 12h14m0 0-6-6m6 6-6 6')}</button>`;
+    `<figure class="lightbox-figure"><img class="lightbox-image" alt="">` +
+    `<figcaption class="lightbox-caption type-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></figcaption></figure>` +
+    `<button class="lightbox-button lightbox-close" type="button">${icon('M18 6 6 18M6 6l12 12')}</button>` +
+    `<button class="lightbox-button lightbox-nav lightbox-nav-previous" type="button" data-step="-1">${icon('M19 12H5m0 0 6-6m-6 6 6 6')}</button>` +
+    `<button class="lightbox-button lightbox-nav lightbox-nav-next" type="button" data-step="1">${icon('M5 12h14m0 0-6-6m6 6-6 6')}</button>`;
 
 interface State {
     links: HTMLAnchorElement[];
@@ -47,15 +47,15 @@ export const bindLightbox = (doc: Document = document): (() => void) => {
         state.index = (index + n) % n;
         const link = state.links[state.index];
         const alt = link.querySelector('img')?.alt ?? '';
-        const image = dialog.querySelector<HTMLImageElement>('.lightbox__image');
+        const image = dialog.querySelector<HTMLImageElement>('.lightbox-image');
         if (image) {
             image.src = link.href;
             image.alt = alt;
         }
         dialog.setAttribute('aria-label', alt);
-        dialog.querySelector('.lightbox__text')!.textContent = alt;
-        dialog.querySelector('.lightbox__count')!.textContent = n > 1 ? `${state.index + 1} / ${n}` : '';
-        dialog.querySelectorAll<HTMLElement>('.lightbox__nav').forEach((b) => (b.hidden = n < 2));
+        dialog.querySelector('.lightbox-text')!.textContent = alt;
+        dialog.querySelector('.lightbox-count')!.textContent = n > 1 ? `${state.index + 1} / ${n}` : '';
+        dialog.querySelectorAll<HTMLElement>('.lightbox-nav').forEach((b) => (b.hidden = n < 2));
     };
 
     const open = (link: HTMLAnchorElement): void => {
@@ -66,15 +66,15 @@ export const bindLightbox = (doc: Document = document): (() => void) => {
             ...defaultLightboxLabels,
             ...(group ? { close: group.dataset.labelClose, previous: group.dataset.labelPrevious, next: group.dataset.labelNext } : {}),
         };
-        d.querySelector('.lightbox__close')?.setAttribute('aria-label', labels.close ?? defaultLightboxLabels.close);
-        d.querySelector('.lightbox__nav--previous')?.setAttribute('aria-label', labels.previous ?? defaultLightboxLabels.previous);
-        d.querySelector('.lightbox__nav--next')?.setAttribute('aria-label', labels.next ?? defaultLightboxLabels.next);
+        d.querySelector('.lightbox-close')?.setAttribute('aria-label', labels.close ?? defaultLightboxLabels.close);
+        d.querySelector('.lightbox-nav-previous')?.setAttribute('aria-label', labels.previous ?? defaultLightboxLabels.previous);
+        d.querySelector('.lightbox-nav-next')?.setAttribute('aria-label', labels.next ?? defaultLightboxLabels.next);
         state = { links, index: links.indexOf(link), trigger: link };
         show(state.index);
         // jsdom and old browsers lack showModal; the open attribute keeps the dialog usable there.
         if (typeof d.showModal === 'function') d.showModal();
         else d.setAttribute('open', '');
-        d.querySelector<HTMLElement>('.lightbox__close')?.focus();
+        d.querySelector<HTMLElement>('.lightbox-close')?.focus();
     };
 
     const close = (): void => {
@@ -95,7 +95,7 @@ export const bindLightbox = (doc: Document = document): (() => void) => {
         if (!dialog || !dialog.contains(event.target)) return;
         const step = event.target.closest<HTMLElement>('[data-step]');
         if (step) show((state?.index ?? 0) + Number(step.dataset.step));
-        else if (event.target.closest('.lightbox__close') || event.target === dialog) close();
+        else if (event.target.closest('.lightbox-close') || event.target === dialog) close();
     };
 
     const key = (event: KeyboardEvent): void => {

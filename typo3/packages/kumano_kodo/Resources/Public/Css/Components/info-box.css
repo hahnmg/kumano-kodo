@@ -6,26 +6,26 @@
     border-top: var(--border-hairline) solid var(--color-line);
 }
 
-.info-box__title,
-.info-box__text {
+.info-box-title,
+.info-box-text {
     margin: 0;
 }
 
-.info-box__title {
+.info-box-title {
     color: var(--color-accent);
 }
 
-.info-box__text {
+.info-box-text {
     color: var(--color-ink);
 }
 
-.info-box__links {
+.info-box-links {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.info-box__links a {
+.info-box-links a {
     color: var(--color-accent);
     text-underline-offset: 0.2em;
 }

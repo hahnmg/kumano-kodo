@@ -20,14 +20,14 @@ describe('chapter', () => {
         const el = mount(chapter(props));
         expect(el.querySelector('section')?.getAttribute('aria-labelledby')).toBe('day-9');
         expect(el.querySelector('#day-9')?.textContent).toBe('Somewhere');
-        expect(el.querySelector('.chapter__number')?.getAttribute('aria-hidden')).toBe('true');
+        expect(el.querySelector('.chapter-number')?.getAttribute('aria-hidden')).toBe('true');
     });
     it('lays photos out by span, shift and orientation', () => {
-        const figures = mount(chapter(props)).querySelectorAll('.chapter__photo');
+        const figures = mount(chapter(props)).querySelectorAll('.chapter-media-item');
         expect(figures[0].getAttribute('style')).toBe('--span: 4');
-        expect(figures[0].classList.contains('chapter__photo--portrait')).toBe(true);
-        expect(figures[0].classList.contains('chapter__photo--shift-1')).toBe(true);
-        expect(figures[1].classList.contains('chapter__photo--landscape')).toBe(true);
+        expect(figures[0].classList.contains('chapter-media-item-portrait')).toBe(true);
+        expect(figures[0].classList.contains('chapter-media-item-shift-1')).toBe(true);
+        expect(figures[1].classList.contains('chapter-media-item-landscape')).toBe(true);
     });
     it('passes axe', () => expectAccessible(chapter(props)));
 });

@@ -3,26 +3,26 @@
     text-decoration: none;
 }
 
-.link__label {
+.link-label {
     background: linear-gradient(currentcolor, currentcolor) left bottom / 0 var(--border-hairline) no-repeat;
     transition: background-size var(--motion-base) var(--ease-out);
 }
 
-.link__arrow {
+.link-arrow {
     display: inline-block;
     transition: transform var(--motion-base) var(--ease-out);
 }
 
-.link:hover .link__label,
-.link:focus-visible .link__label {
+.link:hover .link-label,
+.link:focus-visible .link-label {
     background-size: 100% var(--border-hairline);
 }
 
-.link--forward:hover .link__arrow {
+.link-forward:hover .link-arrow {
     transform: translateX(4px);
 }
 
-.link--back:hover .link__arrow {
+.link-back:hover .link-arrow {
     transform: translateX(-4px);
 }
 

@@ -21,7 +21,7 @@
     outline-offset: 2px;
 }
 
-.scheme-toggle__dot {
+.scheme-toggle-dot {
     width: 10px;
     height: 10px;
     border: var(--border-hairline) solid var(--color-ink);
@@ -29,6 +29,6 @@
     transition: background-color var(--motion-fast) var(--ease-out);
 }
 
-.scheme-toggle[aria-pressed='true'] .scheme-toggle__dot {
+.scheme-toggle[aria-pressed='true'] .scheme-toggle-dot {
     background: var(--color-ink);
 }

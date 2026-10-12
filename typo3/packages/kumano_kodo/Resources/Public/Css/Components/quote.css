@@ -6,15 +6,15 @@
     margin: 0 auto;
 }
 
-.quote__text {
+.quote-text {
     margin: 0;
     color: var(--color-ink);
 }
 
-.quote__text p {
+.quote-text p {
     margin: 0;
 }
 
-.quote__source {
+.quote-source {
     color: var(--color-muted);
 }
