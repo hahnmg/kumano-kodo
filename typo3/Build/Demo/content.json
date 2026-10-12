@@ -2442,6 +2442,22 @@
                     }
                 },
                 {
+                    "type": "kumano_callout",
+                    "fields": {
+                        "tx_kumanokodo_variant": "quote",
+                        "bodytext": {
+                            "en": "<p>“Up here the clouds come to the village, not the other way round.”</p>",
+                            "de": "<p>„Hier oben kommen die Wolken zum Dorf, nicht umgekehrt.“</p>",
+                            "ja": "<p>「ここでは、雲のほうが村まで上がってくるんですよ。」</p>"
+                        },
+                        "header": {
+                            "en": "Host of the guesthouse in Takahara, 20 April",
+                            "de": "Wirt der Pension in Takahara, 20. April",
+                            "ja": "高原の宿のご主人、4月20日"
+                        }
+                    }
+                },
+                {
                     "type": "kumano_route_map",
                     "fields": {
                         "header": {
@@ -2801,6 +2817,22 @@
                                 }
                             }
                         ]
+                    }
+                },
+                {
+                    "type": "kumano_callout",
+                    "fields": {
+                        "tx_kumanokodo_variant": "quote",
+                        "bodytext": {
+                            "en": "<p>“The crab was here first. Walk around it.”</p>",
+                            "de": "<p>„Die Krabbe war zuerst da. Geh außen herum.“</p>",
+                            "ja": "<p>「カニのほうが先にいたんだから、よけて歩いてね。」</p>"
+                        },
+                        "header": {
+                            "en": "A walker from Osaka, just before Chikatsuyu, 21 April",
+                            "de": "Ein Wanderer aus Osaka, kurz vor Chikatsuyu, 21. April",
+                            "ja": "大阪から来た歩き旅の人、近露の手前で、4月21日"
+                        }
                     }
                 },
                 {
@@ -3178,6 +3210,22 @@
                                 }
                             }
                         ]
+                    }
+                },
+                {
+                    "type": "kumano_callout",
+                    "fields": {
+                        "tx_kumanokodo_variant": "quote",
+                        "bodytext": {
+                            "en": "<p>“Twenty-five kilometres, and the bath does not care how you got here.”</p>",
+                            "de": "<p>„Fünfundzwanzig Kilometer – dem Bad ist egal, wie du hergekommen bist.“</p>",
+                            "ja": "<p>「二十五キロ歩いてきても、お湯はそんなこと気にしませんよ。」</p>"
+                        },
+                        "header": {
+                            "en": "Bath keeper in Yunomine, 22 April",
+                            "de": "Bademeister in Yunomine, 22. April",
+                            "ja": "湯の峰の湯守、4月22日"
+                        }
                     }
                 },
                 {
@@ -3559,6 +3607,22 @@
                                 }
                             }
                         ]
+                    }
+                },
+                {
+                    "type": "kumano_callout",
+                    "fields": {
+                        "tx_kumanokodo_variant": "quote",
+                        "bodytext": {
+                            "en": "<p>“Two passes, one bus. Do not miss the bus.”</p>",
+                            "de": "<p>„Zwei Pässe, ein Bus. Den Bus nicht verpassen.“</p>",
+                            "ja": "<p>「峠は二つ、バスは一本。バスだけは逃さないように。」</p>"
+                        },
+                        "header": {
+                            "en": "Bus driver in Nachi, 23 April",
+                            "de": "Busfahrer in Nachi, 23. April",
+                            "ja": "那智のバス運転手、4月23日"
+                        }
                     }
                 },
                 {

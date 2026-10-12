@@ -523,6 +523,12 @@ const build = (p: Photos): LocaleContent => {
             next: '次の日',
             photos: 'この日の写真',
             mapTitle: 'ルート上のこの日',
+            quotes: [
+                { quote: '「ここでは、雲のほうが村まで上がってくるんですよ。」', source: '高原の宿のご主人、4月20日' },
+                { quote: '「カニのほうが先にいたんだから、よけて歩いてね。」', source: '大阪から来た歩き旅の人、近露の手前で、4月21日' },
+                { quote: '「二十五キロ歩いてきても、お湯はそんなこと気にしませんよ。」', source: '湯の峰の湯守、4月22日' },
+                { quote: '「峠は二つ、バスは一本。バスだけは逃さないように。」', source: '那智のバス運転手、4月23日' },
+            ],
             factsTitle: 'この日の数字',
             facts: { date: '日付', route: 'ルート', distance: '徒歩', photos: '撮影' },
             distances: ['3.7 km', '9.8 km', '約25 km', '約27.5 km'],

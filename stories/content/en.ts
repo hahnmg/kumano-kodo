@@ -544,6 +544,18 @@ const build = (p: Photos) => {
             next: 'Next day',
             photos: 'The day in photos',
             mapTitle: 'The day on the route',
+            quotes: [
+                {
+                    quote: '“Up here the clouds come to the village, not the other way round.”',
+                    source: 'Host of the guesthouse in Takahara, 20 April',
+                },
+                { quote: '“The crab was here first. Walk around it.”', source: 'A walker from Osaka, just before Chikatsuyu, 21 April' },
+                {
+                    quote: '“Twenty-five kilometres, and the bath does not care how you got here.”',
+                    source: 'Bath keeper in Yunomine, 22 April',
+                },
+                { quote: '“Two passes, one bus. Do not miss the bus.”', source: 'Bus driver in Nachi, 23 April' },
+            ],
             factsTitle: 'The day in figures',
             facts: { date: 'Date', route: 'Route', distance: 'On foot', photos: 'Photos taken' },
             distances: ['3.7 km', '9.8 km', 'about 25 km', 'about 27.5 km'],

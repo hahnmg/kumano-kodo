@@ -334,6 +334,11 @@ const dayContent = (n) => {
                 ),
             ],
         ),
+        el('kumano_callout', {
+            tx_kumanokodo_variant: 'quote',
+            bodytext: t((x) => sd(x).quotes[i].quote),
+            header: t((x) => sd(x).quotes[i].source),
+        }),
         routeMap({ header: t((x) => sd(x).mapTitle) }, n),
         images('gallery', names.slice(1), { ...sunk, header: t((x) => sd(x).photos) }),
         listEl('links', {}, [

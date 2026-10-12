@@ -544,6 +544,15 @@ const build = (p: Photos): LocaleContent => {
             next: 'Nächster Tag',
             photos: 'Der Tag in Fotos',
             mapTitle: 'Der Tag auf der Strecke',
+            quotes: [
+                { quote: '„Hier oben kommen die Wolken zum Dorf, nicht umgekehrt.“', source: 'Wirt der Pension in Takahara, 20. April' },
+                { quote: '„Die Krabbe war zuerst da. Geh außen herum.“', source: 'Ein Wanderer aus Osaka, kurz vor Chikatsuyu, 21. April' },
+                {
+                    quote: '„Fünfundzwanzig Kilometer – dem Bad ist egal, wie du hergekommen bist.“',
+                    source: 'Bademeister in Yunomine, 22. April',
+                },
+                { quote: '„Zwei Pässe, ein Bus. Den Bus nicht verpassen.“', source: 'Busfahrer in Nachi, 23. April' },
+            ],
             factsTitle: 'Der Tag in Zahlen',
             facts: { date: 'Datum', route: 'Route', distance: 'Zu Fuß', photos: 'Fotos' },
             distances: ['3,7 km', '9,8 km', 'rund 25 km', 'rund 27,5 km'],

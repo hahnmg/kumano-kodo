@@ -10,11 +10,11 @@ errorHandling:
   -
     errorCode: 403
     errorHandler: Page
-    errorContentSource: 't3://page?uid=2587'
+    errorContentSource: 't3://page?uid=2791'
   -
     errorCode: 404
     errorHandler: Page
-    errorContentSource: 't3://page?uid=2593'
+    errorContentSource: 't3://page?uid=2797'
 languages:
   -
     languageId: 0
@@ -42,12 +42,12 @@ languages:
     base: /ja/
     flag: jp
     fallbackType: strict
-rootPageId: 2512
+rootPageId: 2716
 routeEnhancers:
   NewsDetail:
     type: Extbase
     limitToPages:
-      - 2566
+      - 2770
     extension: News
     plugin: Pi1
     routes:
@@ -62,7 +62,7 @@ routeEnhancers:
   NewsList:
     type: Extbase
     limitToPages:
-      - 2563
+      - 2767
     extension: News
     plugin: Pi1
     routes:

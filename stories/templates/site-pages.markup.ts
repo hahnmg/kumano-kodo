@@ -25,6 +25,7 @@ import { infoBox } from '../molecules/info-box.markup';
 import { linkTile } from '../molecules/link-tile.markup';
 import { loginForm } from '../molecules/login-form.markup';
 import { newsletterForm } from '../molecules/newsletter-form.markup';
+import { quote } from '../molecules/quote.markup';
 import { richText } from '../molecules/rich-text.markup';
 import { searchForm } from '../molecules/search-form.markup';
 import { searchResults } from '../molecules/search-results.markup';
@@ -242,6 +243,7 @@ export const dayPage = (n: number, c: Content = content()): string => {
                     'content-sidebar',
                 ),
             }) +
+            section({ content: quote(s.quotes[i]) }) +
             section({ content: stack([sectionHeading({ title: s.mapTitle }), routeMap(linkRoute(kumano.route, n))], 'heading') }) +
             section({
                 tone: 'sunk',
