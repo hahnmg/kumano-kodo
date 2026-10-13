@@ -1,6 +1,6 @@
 import { esc, img, type Image } from '../../src/lib/html';
 import { link } from '../atoms/link.markup';
-import { hasVideo, videoPoster } from './video.markup';
+import { hasVideo, videoPoster } from '../atoms/video.markup';
 
 export interface TextMediaProps {
     image: Image;

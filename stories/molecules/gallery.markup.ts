@@ -1,5 +1,5 @@
 import { attrs, esc, img, type Image } from '../../src/lib/html';
-import { hasVideo, playBadge, videoPoster, videoSource } from './video.markup';
+import { hasVideo, playBadge, videoPoster, videoSource } from '../atoms/video.markup';
 import { lightboxGroupAttrs, type LightboxLabels } from '../../src/scripts/lightbox';
 
 export interface GalleryProps {

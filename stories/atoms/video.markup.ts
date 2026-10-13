@@ -1,7 +1,7 @@
 import { esc, img, type Image } from '../../src/lib/html';
-import { icon } from '../atoms/icon.markup';
+import { icon } from './icon.markup';
 
-type VideoImage = Image & { video: NonNullable<Image['video']> };
+export type VideoImage = Image & { video: NonNullable<Image['video']> };
 
 export const hasVideo = (image: Image): image is VideoImage => image.video !== undefined;
 

@@ -1,6 +1,6 @@
 import { attrs, esc, img, type Image } from '../../src/lib/html';
 import { lightboxGroupAttrs, type LightboxLabels } from '../../src/scripts/lightbox';
-import { hasVideo, videoPoster } from './video.markup';
+import { hasVideo, videoPoster } from '../atoms/video.markup';
 
 // A photo across the full viewport width, the caption back in the page container.
 export const bleedImage = (image: Image, caption = image.caption, labels?: Partial<LightboxLabels>): string =>
