@@ -1,0 +1,5484 @@
+{
+    "Atoms/Avatar": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        }
+    ],
+    "Atoms/Back To Top": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Badge": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Button": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Checkbox": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Chip": [
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        }
+    ],
+    "Atoms/File Upload": [],
+    "Atoms/Icon": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Icon Button": [
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Icon Circle": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        }
+    ],
+    "Atoms/Link": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Logo": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Menu Button": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Radio": [],
+    "Atoms/Scheme Toggle": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Search Field": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        }
+    ],
+    "Atoms/Select": [
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        }
+    ],
+    "Atoms/Skip Link": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Slider Dots": [
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Text Field": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Atoms/Textarea": [
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        }
+    ],
+    "Atoms/Video": [
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        }
+    ],
+    "Layout/Layout": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Bleed Image": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Breadcrumb": [
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Choice Group": [],
+    "Molecules/CTA Card": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Download List": [
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Fact List": [
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        }
+    ],
+    "Molecules/FAQ Item": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Feature Card": [
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Figure": [
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Form": [
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Gallery": [
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Highlight": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Icon Fact": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Info Box": [
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Lightbox": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Link Tile": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Login Form": [
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Media List": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Nav Flyout": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Newsletter Form": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Notice": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Pagination": [
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Person Card": [
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Portrait Card": [
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Quote": [
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Rich Text": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Search Form": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Search Results": [
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Section Heading": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Stat": [
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Sub Nav": [
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Table": [],
+    "Molecules/Teaser Card": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Molecules/Text & Media": [
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        }
+    ],
+    "Molecules/Timeline Item": [
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Chapter": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Hero": [
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Hero Split": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        }
+    ],
+    "Organisms/Page Header": [
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Page Intro": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Route Map": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Site Footer": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Site Header": [
+        {
+            "id": "site--home",
+            "name": "Home",
+            "group": "Site"
+        },
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-caramel",
+            "name": "Home · Caramel",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-forest",
+            "name": "Home · Forest",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-ocean",
+            "name": "Home · Ocean",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-violet",
+            "name": "Home · Violet",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-mono",
+            "name": "Home · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--starter-mono",
+            "name": "Starter · Mono",
+            "group": "Templates"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Slider": [
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--at-a-glance",
+            "name": "At a glance",
+            "group": "Site"
+        },
+        {
+            "id": "templates--home-v-3",
+            "name": "Home · v3 (previous)",
+            "group": "Templates"
+        }
+    ],
+    "Organisms/Topbar": [
+        {
+            "id": "site--route",
+            "name": "The route",
+            "group": "Site"
+        },
+        {
+            "id": "site--days",
+            "name": "Days and places",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-1",
+            "name": "Day 1",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-2",
+            "name": "Day 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-3",
+            "name": "Day 3",
+            "group": "Site"
+        },
+        {
+            "id": "site--day-4",
+            "name": "Day 4",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-chikatsuyu",
+            "name": "Place · Chikatsuyu",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-yunomine",
+            "name": "Place · Yunomine",
+            "group": "Site"
+        },
+        {
+            "id": "site--place-nachi",
+            "name": "Place · Nachi",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical",
+            "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-getting-there",
+            "name": "Practical · Getting there",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-accommodation",
+            "name": "Practical · Accommodation",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-trail-markers",
+            "name": "Practical · Trail markers",
+            "group": "Site"
+        },
+        {
+            "id": "site--practical-maps",
+            "name": "Practical · Maps",
+            "group": "Site"
+        },
+        {
+            "id": "site--photos",
+            "name": "Photos",
+            "group": "Site"
+        },
+        {
+            "id": "site--newsletter",
+            "name": "Newsletter",
+            "group": "Site"
+        },
+        {
+            "id": "site--kohechi",
+            "name": "Kohechi",
+            "group": "Site"
+        },
+        {
+            "id": "site--imprint",
+            "name": "Imprint",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
+            "id": "site--accessibility",
+            "name": "Accessibility",
+            "group": "Site"
+        },
+        {
+            "id": "site--search",
+            "name": "Search",
+            "group": "Site"
+        },
+        {
+            "id": "site--login",
+            "name": "Log in",
+            "group": "Site"
+        },
+        {
+            "id": "site--contact",
+            "name": "Contact",
+            "group": "Site"
+        },
+        {
+            "id": "site--not-found",
+            "name": "Page not found",
+            "group": "Site"
+        },
+        {
+            "id": "site--papers",
+            "name": "Travel papers",
+            "group": "Site"
+        },
+        {
+            "id": "site--register",
+            "name": "Register a walk",
+            "group": "Site"
+        },
+        {
+            "id": "site--ways",
+            "name": "Ways to walk it",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports",
+            "name": "Trail reports",
+            "group": "Site"
+        },
+        {
+            "id": "site--reports-page-2",
+            "name": "Trail reports · Page 2",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-what-we-packed",
+            "name": "Report · What we packed",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-last-bus",
+            "name": "Report · The last bus",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-the-oldest-bath",
+            "name": "Report · The oldest bath",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-a-land-crab",
+            "name": "Report · A land crab",
+            "group": "Site"
+        },
+        {
+            "id": "site--report-fog-on-the-pass",
+            "name": "Report · Fog on the pass",
+            "group": "Site"
+        }
+    ]
+}

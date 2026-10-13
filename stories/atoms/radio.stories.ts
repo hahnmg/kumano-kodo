@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
 import { radio, type RadioProps } from './radio.markup';
 
-const meta: Meta<RadioProps> = { title: 'Atoms/Radio', args: { name: 'route' } };
+const meta: Meta<RadioProps> = { title: 'Atoms/Radio', parameters: { usage: '\\bchoice-radio\\b' }, args: { name: 'route' } };
 export default meta;
 
 export const Checked: StoryObj<RadioProps> = {

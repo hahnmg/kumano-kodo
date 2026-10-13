@@ -4,6 +4,7 @@ import { checkbox, type CheckboxProps } from './checkbox.markup';
 
 const meta: Meta<CheckboxProps> = {
     title: 'Atoms/Checkbox',
+    parameters: { usage: '\\bchoice-checkbox\\b' },
     render: localized(checkbox, (c) => ({ label: c.ui.consent })),
     args: { name: 'consent', checked: false },
 };

@@ -4,6 +4,7 @@ import { addons } from 'storybook/preview-api';
 import '../src/tokens/tokens.css';
 import '../src/styles/base.css';
 import { brandTheme } from './brand';
+import { DocsPage } from './docs-page';
 import './docs.css';
 import { bindBackToTop } from '../src/scripts/back-to-top';
 import { bindFileUploads } from '../src/scripts/file-upload';
@@ -53,7 +54,8 @@ document.addEventListener('click', (event) => {
         target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
         return;
     }
-    const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href^="/"]') : null;
+    // Site paths only; links to stories themselves (/?path=…) keep their own handling.
+    const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href^="/"]:not([href^="/?"])') : null;
     const href = link?.getAttribute('href') ?? '';
     const storyId = storyFor(href);
     if (!link || !storyId || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
@@ -96,7 +98,7 @@ const preview: Preview = {
     ],
     parameters: {
         layout: 'padded',
-        docs: { theme: brandTheme('light'), source: { language: 'html', transform: (code: string) => formatSource(code) } },
+        docs: { page: DocsPage, theme: brandTheme('light'), source: { language: 'html', transform: (code: string) => formatSource(code) } },
         options: {
             storySort: {
                 order: [

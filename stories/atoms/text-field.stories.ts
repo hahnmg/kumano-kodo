@@ -5,6 +5,7 @@ import { choice } from '../templates/controls';
 
 const meta: Meta<TextFieldProps> = {
     title: 'Atoms/Text Field',
+    parameters: { usage: 'class="field-control type-lead"' },
     argTypes: { type: choice<NonNullable<TextFieldProps['type']>>()('text', 'email', 'tel', 'url', 'number', 'date', 'password') },
     render: localized(
         (p: TextFieldProps) => `<div style="max-width:539px">${textField(p)}</div>`,

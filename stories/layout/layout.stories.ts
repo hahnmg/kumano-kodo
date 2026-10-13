@@ -4,7 +4,7 @@ import { grid, rail, section, split, stack } from './layout.markup';
 const box = (label: string) =>
     `<div style="padding:24px;border-top:1px solid var(--color-line);color:var(--color-muted)" class="type-label">${label}</div>`;
 
-const meta: Meta = { title: 'Layout/Layout', tags: ['autodocs'], parameters: { layout: 'fullscreen' } };
+const meta: Meta = { title: 'Layout/Layout', tags: ['autodocs'], parameters: { layout: 'fullscreen', usage: 'class="section[ "]' } };
 export default meta;
 
 export const Grid: StoryObj = {

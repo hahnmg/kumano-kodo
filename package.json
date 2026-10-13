@@ -5,7 +5,7 @@
     "scripts": {
         "tokens": "node scripts/build-tokens.mjs",
         "storybook": "storybook dev -p 6006",
-        "build": "npm run tokens && node scripts/check-contrast.mjs && storybook build -o storybook-static --quiet",
+        "build": "npm run tokens && node scripts/check-contrast.mjs && node scripts/build-usage.mjs && storybook build -o storybook-static --quiet",
         "build:typo3": "npm run tokens && node scripts/build-typo3.mjs && node scripts/build-docs.mjs",
         "export:demo": "node scripts/export-demo.mjs",
         "export:starter": "node scripts/export-starter.mjs",

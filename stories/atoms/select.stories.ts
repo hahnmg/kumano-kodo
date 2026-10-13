@@ -4,6 +4,7 @@ import { select, type SelectProps } from './select.markup';
 
 const meta: Meta<SelectProps> = {
     title: 'Atoms/Select',
+    parameters: { usage: '\\bfield-control-(?:select|multiple)\\b' },
     render: localized(
         (p: SelectProps) => `<div style="max-width:320px">${select(p)}</div>`,
         (c) => ({ ...c.pages.list.day, value: c.pages.list.day.options[0] }),
