@@ -42,23 +42,28 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-05 Days overview with the days as Slider of Stage Cards (state Hover: title in accent); Practical with the FAQ in "heading-content"
 - [x] 2026-10-12 Functional names: Stage Card → Portrait Card, Day Row → Timeline Item, Place Card → Feature Card, Bleed Photo → Bleed Image, Journal Opener → Page Intro; `color/moss` → `color/secondary`
 - [x] 2026-10-12 Forms: Button Style=Secondary; Select Multiple=Yes; File Upload; Choice Group; Form states Step and Summary
-- [ ] Pages: frames for Register a walk (`/register`, the walk form over three steps) and Routes and hosts (`/ways-to-walk-it`); menus with their new links
-- [ ] Pages: two sections on the same ground share one inner space (the second without top padding), as in code since 2026-10-12
-- [ ] News (2026-10-12): Pagination as component; page frames Trail reports (list) and Report (detail with gallery); main menu with Trail reports
+- [x] 2026-10-13 Pages: frames Register a walk and Routes and hosts; header menu with Trail reports, footer contact with Write to us
+- [x] 2026-10-13 Pages: two sections on the same ground share one inner space (the second without top padding), in all page frames
+- [x] 2026-10-13 News: page frames Trail reports (list with pagination) and Report (detail with gallery); main menu with Trail reports
 - [x] 2026-10-12 Block 2, components: Back To Top atom (Default, Hover); Rich Text with accent list markers and ↗ on an external link; FAQ chevron on the question's first line
-- [ ] Block 2, pages: place pages and contact with links/form moved (links to the page end, form in the main column)
-- [ ] Pages: apply the spacing rule (heading to content 56, elements in a section 96) to the older page frames; the Site pages use it
+- [x] 2026-10-13 Block 2, pages: place page Nachi with the links at the page end
+- [ ] Block 2, pages: contact with the form in the main column
+- [x] 2026-10-13 Pages: heading to content 56 (`layout/heading-gap`) in the older page frames
+- [ ] Pages: elements in a section 96 in the older page frames (not yet checked)
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
 - [x] 2026-09-30 Components page in three sections (Atoms, Molecules, Organisms) as in Storybook, 160 apart
 - [ ] Home page as editorial journal, composed from those components
-- [ ] Site pages: route overview, day page, place page, practical subpage, photos, text page (days and places, practical overview: done 2026-10-05)
+- [ ] Site pages: route overview, practical subpage, photos, text page (days and places, practical overview: done 2026-10-05; day page and place page: done 2026-10-13)
 - [ ] All 27 trip photos (web versions in img/photos) replace the earlier set
 - [ ] Contents: the walk Takijiri → Nachi, 20–23 April 2024, in EN, DE, JA
 - [x] 2026-09-30 Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
 - [x] 2026-10-12 Design feedback, components: `border/rule` (2) opens and closes Media List, Download List, Table, Fact List, Route Map and Site Footer in ink; Notice on accent with paper text; Quote with an accent “ above; Display/Wordmark 60/64
-- [ ] Design feedback, pages: FAQ lists and timelines opening and closing on `border/rule`; day pages with Day 1–4 chips in the page header instead of the sidebar list; place pages led by a Bleed Image; Text & Media with several paragraphs (image held beside long text)
+- [x] 2026-10-13 Design feedback, pages: Day 2 with Day 1–4 chips, quote of the day and the route map with the day highlighted; place page Nachi led by a Bleed Image
+- [ ] Design feedback, pages: FAQ lists and timelines opening and closing on `border/rule`; Text & Media with several paragraphs (image held beside long text)
 - [x] 2026-10-12 `Icon/Play`; Route Map as set `Highlight=None/Day` with underlined day links (the hero video of the same day was taken out again on 2026-10-13)
+- [x] 2026-10-13 Video atom (poster in the video's format, play button) and Figure `Variant=Video`; Day 2 opens with it
+- [x] 2026-10-13 Components: Fact List `Four rows`, Breadcrumb `Third level` (both off by default); Figure and Teaser Card images fill their width and keep their ratio (4:3, 1:1)
 - [ ] Route Map: day labels and legend still carry the older content ("Day 1 · 4 km", "Bus", "End of the pilgrimage")
 
 ## Known differences between Figma and code
@@ -68,7 +73,9 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - Language copies exist for the start page only; the other templates are English in Figma.
 - The header dark mode toggle, menu, flyouts, slider, lightbox and sticky state are drawn as states; their behaviour lives in `src/scripts/`.
 
-- Detail page fact list shows two of the four facts (the component has two rows); the figure has no caption; the breadcrumb has three levels instead of four.
+- Detail page (Beispiel – Detail) fact list shows two of the four facts; the figure has no caption; the breadcrumb has three levels instead of four. The new Site frames use `Four rows` and `Third level`.
+- Gallery tiles have a fixed width for the full container; in the narrow column of the place page the gallery is detached and set to three columns.
+- Register a walk shows the form's second step (`Form State=Step`); the page in code opens on the first, for which Figma has no state.
 - Hover movement (arrow nudge, download icon) and the drawn accent line are shown as their end state, not as motion.
 - CTA Card: both variants share one default text.
 - Page Intro: the upright site name breaks after each character; Figma has no vertical writing mode.
