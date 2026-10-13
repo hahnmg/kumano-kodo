@@ -77,7 +77,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - Day 2's gallery has six tiles for the code's seven photos.
 - Bleed Image has a fixed image height (659); code shows tall photos up to 90 % of the window (810 at 900 high), so the Nachi and evening photos are 151 px lower in Figma.
 - The chapters' photo grids on Site · Home are frames below a Chapter instance (its sample photos hidden): the component holds two photos, the code lays out up to twelve per day.
-- The four Kumano Home frames match Storybook's Home · v3 (previous), the code's At a glance page; Storybook's Home · Caramel to Mono are the journal, which Figma has as Site · Home in Caramel.
+- The four Kumano Home frames match Storybook's Site › At a glance, the code's `/at-a-glance` page; Storybook's Home · Caramel to Mono are the journal, which Figma has as Site · Home in Caramel.
 - The header dark mode toggle, menu, flyouts, slider, lightbox and sticky state are drawn as states; their behaviour lives in `src/scripts/`.
 
 - Detail page (Beispiel – Detail) fact list shows two of the four facts; the figure has no caption; the breadcrumb has three levels instead of four. The new Site frames use `Four rows` and `Third level`.

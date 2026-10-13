@@ -1,7 +1,6 @@
 import { skipLink } from '../atoms/skip-link.markup';
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { content, type Content } from './content';
-import { kumanoHome } from './kumano-home.markup';
 import { kumanoJournal } from './kumano-journal.markup';
 import { section } from '../layout/layout.markup';
 import { richText } from '../molecules/rich-text.markup';
@@ -14,7 +13,7 @@ const page =
     (_, { globals }) =>
         render(content(globals.locale));
 
-// The home page in each theme, the starter set in Mono, and the v3 home it replaced for comparison.
+// The home page in each theme and the starter set in Mono.
 const meta: Meta = { title: 'Templates', tags: ['!autodocs', 'dev'], parameters: { layout: 'fullscreen', options: { showPanel: false } } };
 export default meta;
 
@@ -58,4 +57,3 @@ const starter = ({ languages, ui }: Content) =>
         ],
     });
 export const StarterMono: StoryObj = { name: 'Starter · Mono', render: page(starter), parameters: { theme: 'mono' } };
-export const HomeV3: StoryObj = { name: 'Home · v3 (previous)', render: page(kumanoHome) };

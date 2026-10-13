@@ -221,11 +221,6 @@
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Atoms/Badge": [
@@ -432,11 +427,6 @@
         {
             "id": "templates--home-mono",
             "name": "Home · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -645,11 +635,6 @@
             "id": "templates--home-mono",
             "name": "Home · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Atoms/Checkbox": [
@@ -701,11 +686,6 @@
         {
             "id": "templates--home-mono",
             "name": "Home · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -947,11 +927,6 @@
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Atoms/Icon Button": [
@@ -964,11 +939,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Atoms/Icon Circle": [
@@ -1198,11 +1168,6 @@
             "id": "templates--home-mono",
             "name": "Home · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Atoms/Logo": [
@@ -1414,11 +1379,6 @@
         {
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -1632,11 +1592,6 @@
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Atoms/Radio": [],
@@ -1849,11 +1804,6 @@
         {
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -2246,11 +2196,6 @@
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Atoms/Slider Dots": [
@@ -2263,11 +2208,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Atoms/Text Field": [
@@ -2324,11 +2264,6 @@
         {
             "id": "templates--home-mono",
             "name": "Home · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -2555,11 +2490,6 @@
         {
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -2894,11 +2824,6 @@
             "id": "templates--home-mono",
             "name": "Home · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Feature Card": [
@@ -2906,11 +2831,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Figure": [
@@ -2963,11 +2883,6 @@
             "id": "site--report-fog-on-the-pass",
             "name": "Report · Fog on the pass",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Form": [
@@ -3078,11 +2993,6 @@
         {
             "id": "templates--home-mono",
             "name": "Home · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -3219,11 +3129,6 @@
         {
             "id": "templates--home-mono",
             "name": "Home · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -3468,11 +3373,6 @@
             "id": "templates--home-mono",
             "name": "Home · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Newsletter Form": [
@@ -3514,11 +3414,6 @@
         {
             "id": "templates--home-mono",
             "name": "Home · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -3723,11 +3618,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Quote": [
@@ -3755,11 +3645,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Rich Text": [
@@ -3971,11 +3856,6 @@
         {
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -4258,11 +4138,6 @@
             "id": "templates--home-mono",
             "name": "Home · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Stat": [
@@ -4270,11 +4145,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Sub Nav": [
@@ -4505,11 +4375,6 @@
             "id": "templates--home-mono",
             "name": "Home · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Molecules/Text & Media": [
@@ -4524,11 +4389,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Organisms/Chapter": [
@@ -4573,11 +4433,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Organisms/Hero Split": [
@@ -4851,11 +4706,6 @@
             "id": "templates--home-mono",
             "name": "Home · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Organisms/Site Footer": [
@@ -5067,11 +4917,6 @@
         {
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
-            "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
             "group": "Templates"
         }
     ],
@@ -5285,11 +5130,6 @@
             "id": "templates--starter-mono",
             "name": "Starter · Mono",
             "group": "Templates"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Organisms/Slider": [
@@ -5302,11 +5142,6 @@
             "id": "site--at-a-glance",
             "name": "At a glance",
             "group": "Site"
-        },
-        {
-            "id": "templates--home-v-3",
-            "name": "Home · v3 (previous)",
-            "group": "Templates"
         }
     ],
     "Organisms/Topbar": [
