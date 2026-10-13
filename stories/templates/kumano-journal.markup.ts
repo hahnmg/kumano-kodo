@@ -17,7 +17,7 @@ import { dayPhotos } from './journal-photos';
 
 // Editorial counter-proposal to Kumano Home: one chapter per day instead of repeated section formulas.
 export const kumanoJournal = ({ kumano, photos, home, ui, languages }: Content = content()): string => {
-    const labels = { close: ui.close, previous: ui.previous, next: ui.next };
+    const labels = { close: ui.close, previous: ui.previous, next: ui.next, play: ui.playVideo };
     const d = home.draft;
     const chapters = dayPhotos.map((list, i) =>
         chapter({

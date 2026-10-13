@@ -8,7 +8,7 @@ const meta: Meta<GalleryProps> = {
     render: localized(gallery, ({ photos: p, samples, ui }) => ({
         images: [p['seaside-station'], p['nachi-pagoda'], p['harbour-ferry']],
         caption: samples.galleryCaption,
-        labels: { close: ui.close, previous: ui.previous, next: ui.next },
+        labels: { close: ui.close, previous: ui.previous, next: ui.next, play: ui.playVideo },
     })),
 };
 export default meta;

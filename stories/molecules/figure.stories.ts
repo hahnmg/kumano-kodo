@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
+import { asVideo } from '../content/videos';
 import { figure, type FigureProps } from './figure.markup';
 
 const frame = (p: FigureProps) => `<div style="max-width:765px">${figure(p)}</div>`;
@@ -16,4 +17,13 @@ export const Pair: StoryObj<FigureProps> = {
 export const Unruled: StoryObj<FigureProps> = {
     args: { rule: false },
     render: localized(frame, (c) => ({ images: [c.photos['misty-valley']], caption: c.pages.detail.caption })),
+};
+
+// A video in the image's place: the photo is its poster, the clip plays where it stands.
+export const Video: StoryObj<FigureProps> = {
+    render: localized(frame, (c) => ({
+        images: [asVideo(c.photos['sea-of-clouds'])],
+        caption: c.photos['sea-of-clouds'].caption ?? '',
+        labels: { play: c.ui.playVideo },
+    })),
 };

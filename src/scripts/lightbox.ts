@@ -1,10 +1,13 @@
+import { startPlayer } from './video';
+
 export interface LightboxLabels {
     close: string;
     previous: string;
     next: string;
+    play: string;
 }
 
-export const defaultLightboxLabels: LightboxLabels = { close: 'Close', previous: 'Previous', next: 'Next' };
+export const defaultLightboxLabels: LightboxLabels = { close: 'Close', previous: 'Previous', next: 'Next', play: 'Play video' };
 
 // Groups carry their labels, so one dialog serves every language on the page.
 export const lightboxGroupAttrs = (labels: Partial<LightboxLabels> = {}): Record<string, string> => {
@@ -16,7 +19,7 @@ const icon = (path: string) =>
     `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="${path}"/></svg>`;
 
 const template =
-    `<figure class="lightbox-figure"><img class="lightbox-image" alt="">` +
+    `<figure class="lightbox-figure"><img class="lightbox-image" alt=""><div class="lightbox-player"></div>` +
     `<figcaption class="lightbox-caption type-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></figcaption></figure>` +
     `<button class="lightbox-button lightbox-close" type="button">${icon('M18 6 6 18M6 6l12 12')}</button>` +
     `<button class="lightbox-button lightbox-nav lightbox-nav-previous" type="button" data-step="-1">${icon('M19 12H5m0 0 6-6m-6 6 6 6')}</button>` +
@@ -48,9 +51,18 @@ export const bindLightbox = (doc: Document = document): (() => void) => {
         const link = state.links[state.index];
         const alt = link.querySelector('img')?.alt ?? '';
         const image = dialog.querySelector<HTMLImageElement>('.lightbox-image');
+        const player = dialog.querySelector<HTMLElement>('.lightbox-player');
+        const video = link.querySelector<HTMLTemplateElement>('template.video-source');
+        // Leaving a video for the next item stops it: the player goes with its element.
+        player?.replaceChildren();
         if (image) {
-            image.src = link.href;
+            image.hidden = video !== null;
+            if (!video) image.src = link.href;
             image.alt = alt;
+        }
+        if (video && player) {
+            player.append(video.content.cloneNode(true));
+            startPlayer(player);
         }
         dialog.setAttribute('aria-label', alt);
         dialog.querySelector('.lightbox-text')!.textContent = alt;
@@ -79,6 +91,7 @@ export const bindLightbox = (doc: Document = document): (() => void) => {
 
     const close = (): void => {
         if (!dialog) return;
+        dialog.querySelector('.lightbox-player')?.replaceChildren();
         if (typeof dialog.close === 'function' && dialog.open) dialog.close();
         else dialog.removeAttribute('open');
     };
@@ -107,7 +120,9 @@ export const bindLightbox = (doc: Document = document): (() => void) => {
 
     // Native Escape also ends here, so focus always returns to the image that opened the box.
     const closed = (event: Event): void => {
-        if (event.target === dialog) state?.trigger.focus();
+        if (event.target !== dialog) return;
+        dialog?.querySelector('.lightbox-player')?.replaceChildren();
+        state?.trigger.focus();
     };
 
     doc.addEventListener('click', click);

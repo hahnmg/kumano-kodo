@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { localized } from '../templates/content';
+import { asVideo } from '../content/videos';
 import { textMedia, type TextMediaProps } from './text-media.markup';
 import { choice } from '../templates/controls';
 
@@ -26,5 +27,17 @@ export const LongText: StoryObj<TextMediaProps> = {
         title: c.home.draft.title,
         text: c.home.draft.chapters,
         link: { label: c.ui.readMore, href: '#' },
+    })),
+};
+
+// A video beside the text: the photo is its poster, the clip plays where it stands.
+export const Video: StoryObj<TextMediaProps> = {
+    args: { imageSide: 'left' },
+    render: localized(textMedia, (c) => ({
+        image: asVideo(c.kumano.places[1].image),
+        title: c.kumano.places[1].title,
+        text: c.kumano.places[1].description,
+        link: { label: c.ui.readMore, href: '#' },
+        play: c.ui.playVideo,
     })),
 };

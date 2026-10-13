@@ -9,6 +9,7 @@ const build = (p: Photos): LocaleContent => {
         menu: 'メニュー',
         darkMode: 'ダークモード',
         backToTop: 'ページの先頭へ',
+        playVideo: '動画を再生',
         skipToContent: '本文へ移動',
         uploadDrop: 'ここにファイルをドラッグするか',
         uploadChoose: '選択',

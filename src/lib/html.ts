@@ -19,6 +19,8 @@ export interface Image {
     width?: number;
     height?: number;
     caption?: string;
+    // A video in the image's place; the image is its poster.
+    video?: { src: string; type: string };
 }
 
 // `sizes` tells the browser how wide the image is shown, so it picks the smallest file from srcset that is sharp.

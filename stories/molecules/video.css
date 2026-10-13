@@ -1,0 +1,75 @@
+/* A video stands where its image would: the poster keeps the layout, the player takes its place on request. */
+.video,
+.lightbox-link:has(.video-badge) {
+    position: relative;
+}
+
+.video-poster-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Round like the slider arrows; a tinted ground keeps it legible on any poster. */
+.video-play,
+.video-badge {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin: auto;
+    padding: 0;
+    border: var(--border-hairline) solid color-mix(in srgb, var(--color-on-image) 70%, transparent);
+    border-radius: var(--radius-full);
+    background: color-mix(in srgb, var(--color-ink) 45%, transparent);
+    color: var(--color-on-image);
+}
+
+.video-play {
+    cursor: pointer;
+    transition:
+        background-color var(--motion-fast) var(--ease-out),
+        color var(--motion-fast) var(--ease-out);
+}
+
+.video-badge {
+    width: 56px;
+    height: 56px;
+    pointer-events: none;
+}
+
+.video-play .icon,
+.video-badge .icon {
+    color: currentcolor;
+}
+
+.video-play:hover,
+.lightbox-link:hover .video-badge {
+    background: var(--color-on-image);
+    color: var(--color-on-image-ink);
+}
+
+.video-play:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+.video-stage,
+.video-stage > video,
+.video-stage > iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: var(--color-ink);
+    object-fit: contain;
+}
+
+.video[data-playing] .video-play {
+    visibility: hidden;
+}

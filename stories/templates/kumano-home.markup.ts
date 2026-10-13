@@ -20,7 +20,7 @@ import { slider } from '../organisms/slider.markup';
 import { content, type Content } from './content';
 
 export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = content()): string => {
-    const lightbox = { close: ui.close, previous: ui.previous, next: ui.next };
+    const lightbox = { close: ui.close, previous: ui.previous, next: ui.next, play: ui.playVideo };
     return (
         skipLink({ label: ui.skipToContent }) +
         siteHeader({

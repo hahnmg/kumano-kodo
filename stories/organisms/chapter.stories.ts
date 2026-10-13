@@ -16,7 +16,7 @@ export const Chapter: StoryObj = {
             title: kumano.days[0].route,
             text: home.draft.chapters[0],
             photos: dayPhotos[0].map(([name, span, shift]) => ({ image: photos[name], span, shift })),
-            labels: { close: ui.close, previous: ui.previous, next: ui.next },
+            labels: { close: ui.close, previous: ui.previous, next: ui.next, play: ui.playVideo },
         });
     },
 };

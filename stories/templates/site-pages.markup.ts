@@ -11,6 +11,7 @@ import { link } from '../atoms/link.markup';
 import { select } from '../atoms/select.markup';
 import { textField } from '../atoms/text-field.markup';
 import { textarea } from '../atoms/textarea.markup';
+import { asVideo } from '../content/videos';
 import { linkRoute, paths, practicalSlugs, type LegalSlug, type PlaceSlug, type PracticalSlug } from '../content/paths';
 import { cluster, grid, section, split, stack } from '../layout/layout.markup';
 import { ctaCard } from '../molecules/cta-card.markup';
@@ -53,7 +54,7 @@ type Section = -1 | 0 | 1 | 2 | 3;
 
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const paragraphs = (texts: readonly string[]) => texts.map((t) => `<p>${esc(t)}</p>`).join('');
-const lightbox = ({ ui }: Content) => ({ close: ui.close, previous: ui.previous, next: ui.next });
+const lightbox = ({ ui }: Content) => ({ close: ui.close, previous: ui.previous, next: ui.next, play: ui.playVideo });
 
 const chrome = (c: Content, active: Section, main: string): string =>
     skipLink({ label: c.ui.skipToContent }) +
@@ -212,7 +213,7 @@ export const dayPage = (n: number, c: Content = content()): string => {
                     stack(
                         [
                             figure({
-                                images: [photos[names[0]]],
+                                images: [n === 2 ? asVideo(photos[names[0]]) : photos[names[0]]],
                                 caption: photos[names[0]].caption ?? '',
                                 rule: false,
                                 labels: lightbox(c),

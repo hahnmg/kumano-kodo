@@ -59,6 +59,20 @@
     object-fit: contain;
 }
 
+.lightbox-image[hidden] {
+    display: none;
+}
+
+.lightbox-player > video,
+.lightbox-player > iframe {
+    display: block;
+    width: min(100%, calc((100dvh - 160px) * 16 / 9));
+    max-height: calc(100dvh - 160px);
+    margin: 0 auto;
+    border: 0;
+    aspect-ratio: 16 / 9;
+}
+
 .lightbox-caption {
     display: flex;
     gap: var(--space-24);
