@@ -55,7 +55,8 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-09-30 Components page in three sections (Atoms, Molecules, Organisms) as in Storybook, 160 apart
 - [ ] Home page as editorial journal, composed from those components
 - [ ] Site pages: route overview, practical subpage, photos, text page (days and places, practical overview: done 2026-10-05; day page and place page: done 2026-10-13)
-- [ ] All 27 trip photos (web versions in img/photos) replace the earlier set
+- [x] 2026-10-13 All 27 trip photos in Figma (Foundations › Trip photos, 1200 px web versions); the new Site frames (Day 2, Nachi, Trail reports, Report, Routes and hosts) use them
+- [ ] Trip photos in the older frames (Kumano Home in five themes, Beispiel, Site pages from 2026-10-05) still show the earlier set; Day 2's gallery has six tiles for the code's seven photos
 - [ ] Contents: the walk Takijiri → Nachi, 20–23 April 2024, in EN, DE, JA
 - [x] 2026-09-30 Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
 - [x] 2026-10-12 Design feedback, components: `border/rule` (2) opens and closes Media List, Download List, Table, Fact List, Route Map and Site Footer in ink; Notice on accent with paper text; Quote with an accent “ above; Display/Wordmark 60/64
