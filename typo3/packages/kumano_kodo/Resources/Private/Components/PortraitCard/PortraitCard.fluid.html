@@ -18,7 +18,9 @@
     </div>
     <h3 class="portrait-card-title type-h4">
         <f:if condition="{href}">
-            <f:then><a href="{href}">{title}</a></f:then>
+            <f:then>
+                <a href="{href}">{title}</a>
+            </f:then>
             <f:else>{title}</f:else>
         </f:if>
     </h3>

@@ -16,9 +16,21 @@
     </div>
     <div class="teaser-card-body">
         <f:switch expression="{level}">
-            <f:case value="none"><p class="teaser-card-title type-h4"><a href="{href}">{title}</a></p></f:case>
-            <f:case value="2"><h2 class="teaser-card-title type-h4"><a href="{href}">{title}</a></h2></f:case>
-            <f:defaultCase><h3 class="teaser-card-title type-h4"><a href="{href}">{title}</a></h3></f:defaultCase>
+            <f:case value="none">
+                <p class="teaser-card-title type-h4">
+                    <a href="{href}">{title}</a>
+                </p>
+            </f:case>
+            <f:case value="2">
+                <h2 class="teaser-card-title type-h4">
+                    <a href="{href}">{title}</a>
+                </h2>
+            </f:case>
+            <f:defaultCase>
+                <h3 class="teaser-card-title type-h4">
+                    <a href="{href}">{title}</a>
+                </h3>
+            </f:defaultCase>
         </f:switch>
         <f:if condition="{subtitle}">
             <p class="teaser-card-subtitle type-small">{subtitle}</p>

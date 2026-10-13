@@ -8,7 +8,10 @@
         <li>
             <a class="download-list-row" href="{file.publicUrl}" download>
                 <kk:icon name="file" size="24"/>
-                <span class="download-list-text"><span class="type-button">{f:if(condition: file.title, then: file.title, else: file.name)}</span><span class="download-list-meta type-caption">{file.extension -> f:format.case(mode: 'upper')} · {file.size -> f:format.bytes(units: 'B,KB,MB,GB')}</span></span>
+                <span class="download-list-text">
+                    <span class="type-button">{f:if(condition: file.title, then: file.title, else: file.name)}</span>
+                    <span class="download-list-meta type-caption">{file.extension -> f:format.case(mode: 'upper')} · {file.size -> f:format.bytes(units: 'B,KB,MB,GB')}</span>
+                </span>
                 <kk:icon name="download" size="24"/>
             </a>
         </li>

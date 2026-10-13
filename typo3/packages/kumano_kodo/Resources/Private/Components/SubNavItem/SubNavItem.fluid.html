@@ -6,8 +6,12 @@
 
 <li>
     <f:if condition="{current}">
-        <f:then><a class="sub-nav-link type-small" href="{href}" aria-current="page">{label}</a></f:then>
-        <f:else><a class="sub-nav-link type-small" href="{href}">{label}</a></f:else>
+        <f:then>
+            <a class="sub-nav-link type-small" href="{href}" aria-current="page">{label}</a>
+        </f:then>
+        <f:else>
+            <a class="sub-nav-link type-small" href="{href}">{label}</a>
+        </f:else>
     </f:if>
 </li>
 </html>

@@ -7,7 +7,9 @@
         </f:then>
         <f:else>
             <f:variable name="body">
-                <kk:richText><f:format.html>{record.bodytext}</f:format.html></kk:richText>
+                <kk:richText>
+                    <f:format.html>{record.bodytext}</f:format.html>
+                </kk:richText>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
         </f:else>

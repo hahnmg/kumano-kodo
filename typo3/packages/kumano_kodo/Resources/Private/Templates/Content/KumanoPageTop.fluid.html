@@ -12,7 +12,9 @@
                 <h1 class="type-h2">{record.header}</h1>
                 <p class="type-lead">{text -> f:format.raw()}</p>
                 <f:if condition="{link}">
-                    <div><kk:button label="{link.title}" href="{f:uri.typolink(parameter: link.link)}"/></div>
+                    <div>
+                        <kk:button label="{link.title}" href="{f:uri.typolink(parameter: link.link)}"/>
+                    </div>
                 </f:if>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>

@@ -6,14 +6,24 @@
             <ol class="form-steps type-small" aria-label="{f:translate(key: 'formSteps', domain: 'kumano_kodo.messages')}">
                 <f:for each="{form.pages}" as="step" iteration="i">
                     <f:if condition="{step.index} == {form.currentPage.index}">
-                        <f:then><li class="form-steps-item" aria-current="step"><span class="form-steps-number">{i.cycle}</span> {formvh:translateElementProperty(element: step, property: 'label')}</li></f:then>
-                        <f:else><li class="form-steps-item"><span class="form-steps-number">{i.cycle}</span> {formvh:translateElementProperty(element: step, property: 'label')}</li></f:else>
+                        <f:then>
+                            <li class="form-steps-item" aria-current="step">
+                                <span class="form-steps-number">{i.cycle}</span> {formvh:translateElementProperty(element: step, property: 'label')}
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <li class="form-steps-item">
+                                <span class="form-steps-number">{i.cycle}</span> {formvh:translateElementProperty(element: step, property: 'label')}
+                            </li>
+                        </f:else>
                     </f:if>
                 </f:for>
             </ol>
         </f:if>
         <f:render partial="{form.currentPage.templateName}" arguments="{page: form.currentPage}"/>
-        <f:if condition="{form.currentPage.type} != 'SummaryPage'"><p class="form-note type-caption">{f:translate(key: 'requiredNote', domain: 'kumano_kodo.messages')}</p></f:if>
+        <f:if condition="{form.currentPage.type} != 'SummaryPage'">
+            <p class="form-note type-caption">{f:translate(key: 'requiredNote', domain: 'kumano_kodo.messages')}</p>
+        </f:if>
         <f:render partial="Form/Navigation" arguments="{form: form}"/>
     </formvh:form>
 </formvh:renderRenderable>

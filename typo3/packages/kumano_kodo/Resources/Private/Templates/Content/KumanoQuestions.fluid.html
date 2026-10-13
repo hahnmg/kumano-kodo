@@ -17,7 +17,9 @@
                             <f:then>
                                 <kk:stack gap="16">
                                     <kk:sectionHeading title="{record.header}" eyebrow="{record.subheader}"/>
-                                    <kk:richText><f:format.html>{record.bodytext}</f:format.html></kk:richText>
+                                    <kk:richText>
+                                        <f:format.html>{record.bodytext}</f:format.html>
+                                    </kk:richText>
                                 </kk:stack>
                             </f:then>
                             <f:else>

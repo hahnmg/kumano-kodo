@@ -14,8 +14,12 @@
             <p class="section-heading-eyebrow type-label">{eyebrow}</p>
         </f:if>
         <f:if condition="{level} == 1">
-            <f:then><h1 class="section-heading-title type-h2">{title}</h1></f:then>
-            <f:else><h2 class="section-heading-title type-h2">{title}</h2></f:else>
+            <f:then>
+                <h1 class="section-heading-title type-h2">{title}</h1>
+            </f:then>
+            <f:else>
+                <h2 class="section-heading-title type-h2">{title}</h2>
+            </f:else>
         </f:if>
     </div>
     <f:if condition="{variant} == 'with-aside'">

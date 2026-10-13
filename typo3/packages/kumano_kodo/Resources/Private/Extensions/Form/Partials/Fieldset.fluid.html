@@ -2,8 +2,12 @@
 <f:comment>A group of fields under a legend set as an H4.</f:comment>
 <formvh:renderRenderable renderable="{element}">
     <fieldset id="{element.uniqueIdentifier}" class="form-fieldset">
-        <f:if condition="{element.label}"><legend class="form-fieldset-legend type-h4">{formvh:translateElementProperty(element: element, property: 'label')}</legend></f:if>
-        <f:for each="{element.elements}" as="child"><f:render partial="{child.templateName}" arguments="{element: child}"/></f:for>
+        <f:if condition="{element.label}">
+            <legend class="form-fieldset-legend type-h4">{formvh:translateElementProperty(element: element, property: 'label')}</legend>
+        </f:if>
+        <f:for each="{element.elements}" as="child">
+            <f:render partial="{child.templateName}" arguments="{element: child}"/>
+        </f:for>
     </fieldset>
 </formvh:renderRenderable>
 </html>

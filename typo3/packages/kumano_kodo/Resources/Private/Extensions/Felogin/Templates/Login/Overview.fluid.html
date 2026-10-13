@@ -2,9 +2,13 @@
 <f:comment>Right after logging in, the same logged-in state as the logout view.</f:comment>
 <f:comment>A protected page denies access once logged out, so the logout goes straight to its target page.</f:comment>
 <f:form class="login-form login-form-status" action="login" pageUid="{f:if(condition: settings.redirectPageLogout, then: settings.redirectPageLogout)}" target="_top" fieldNamePrefix="">
-<p class="type-body">{f:translate(key: 'loggedInAs', domain: 'kumano_kodo.messages', arguments: {0: user.username})}</p>
-<div><button class="button type-button button-primary" type="submit" name="submit" value="1">{f:translate(key: 'logOut', domain: 'kumano_kodo.messages')}</button></div>
-<f:form.hidden name="logintype" value="logout"/>
-<f:if condition="{noRedirect}!=''"><f:form.hidden name="noredirect" value="1"/></f:if>
+    <p class="type-body">{f:translate(key: 'loggedInAs', domain: 'kumano_kodo.messages', arguments: {0: user.username})}</p>
+    <div>
+        <button class="button type-button button-primary" type="submit" name="submit" value="1">{f:translate(key: 'logOut', domain: 'kumano_kodo.messages')}</button>
+    </div>
+    <f:form.hidden name="logintype" value="logout"/>
+    <f:if condition="{noRedirect}!=''">
+        <f:form.hidden name="noredirect" value="1"/>
+    </f:if>
 </f:form>
 </html>

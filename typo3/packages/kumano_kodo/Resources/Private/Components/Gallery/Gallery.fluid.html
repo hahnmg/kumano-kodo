@@ -4,7 +4,7 @@
 <f:argument name="skip" type="int" optional="{true}" default="0" description="Leaves out the first images, for example one already shown above."/>
 
 <f:asset.css identifier="kumano-gallery" href="EXT:kumano_kodo/Resources/Public/Css/Components/gallery.css"/>
-<f:variable name="caption"><f:slot/></f:variable>
+<f:variable name="caption" value="{f:slot()}"/>
 <kk:lightboxGroup tag="figure" class="gallery">
     <div class="gallery-grid">
         <f:for each="{images}" as="image" iteration="i">

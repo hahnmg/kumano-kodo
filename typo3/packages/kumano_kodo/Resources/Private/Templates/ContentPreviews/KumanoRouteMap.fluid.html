@@ -1,7 +1,15 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
 <ul class="badge-list">
-    <li><span class="badge badge-default">{f:translate(key: 'preview.stations', domain: 'kumano_kodo.backend_fields')}: {record.tx_kumanokodo_stations -> f:count()}</span></li>
-    <li><span class="badge badge-default">{f:translate(key: 'preview.days', domain: 'kumano_kodo.backend_fields')}: {record.tx_kumanokodo_day_marks -> f:count()}</span></li>
+    <li>
+        <span class="badge badge-default">{f:translate(key: 'preview.stations', domain: 'kumano_kodo.backend_fields')}: {record.tx_kumanokodo_stations -> f:count()}</span>
+    </li>
+    <li>
+        <span class="badge badge-default">{f:translate(key: 'preview.days', domain: 'kumano_kodo.backend_fields')}: {record.tx_kumanokodo_day_marks -> f:count()}</span>
+    </li>
 </ul>
-<p><f:for each="{record.tx_kumanokodo_stations}" as="station" iteration="i">{station.name}<f:if condition="!{i.isLast}"> → </f:if></f:for></p>
+<p>
+    <f:for each="{record.tx_kumanokodo_stations}" as="station" iteration="i">{station.name}
+        <f:if condition="!{i.isLast}"> → </f:if>
+    </f:for>
+</p>
 </html>

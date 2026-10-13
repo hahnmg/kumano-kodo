@@ -2,16 +2,28 @@
 <f:comment>The Search Results molecule: form, summary, rows as in the media list, then pagination.</f:comment>
 <f:asset.script identifier="indexed_search_pagination" src="EXT:indexed_search/Resources/Public/JavaScript/pagination.js"/>
 <div class="stack" style="--stack-gap: var(--section-heading-gap)">
-<f:render partial="Form" arguments="{_all}"/>
-<f:for each="{resultsets}" as="result" key="freeIndexUid">
-<f:variable name="sword"><f:for each="{searchWords}" as="searchWord" iteration="i"><f:if condition="{i.isFirst}">{searchWord.sword}</f:if></f:for></f:variable>
-<section class="search-results" aria-label="{f:translate(key: 'searchResults', domain: 'kumano_kodo.messages')}">
-<p class="search-results-summary type-small"><f:if condition="{result.count} == 1"><f:then>{f:translate(key: 'searchSummaryOne', domain: 'kumano_kodo.messages', arguments: {0: sword})}</f:then><f:else if="{result.count} > 1">{f:translate(key: 'searchSummary', domain: 'kumano_kodo.messages', arguments: {0: result.count, 1: sword})}</f:else><f:else>{f:translate(key: 'searchEmpty', domain: 'kumano_kodo.messages', arguments: {0: sword})}</f:else></f:if></p>
-<f:if condition="{result.count} > 0">
-<ol class="search-results-items"><f:for each="{result.rows}" as="row"><f:if condition="!{row.isSectionHeader}"><f:render partial="Searchresult" arguments="{row: row}"/></f:if></f:for></ol>
-<f:render partial="Pagination" arguments="{pagination: result.pagination, searchParams: searchParams, freeIndexUid: freeIndexUid}"/>
-</f:if>
-</section>
-</f:for>
+    <f:render partial="Form" arguments="{_all}"/>
+    <f:for each="{resultsets}" as="result" key="freeIndexUid">
+        <f:variable name="sword"><f:for each="{searchWords}" as="searchWord" iteration="i"><f:if condition="{i.isFirst}">{searchWord.sword}</f:if></f:for></f:variable>
+        <section class="search-results" aria-label="{f:translate(key: 'searchResults', domain: 'kumano_kodo.messages')}">
+            <p class="search-results-summary type-small">
+                <f:if condition="{result.count} == 1">
+                    <f:then>{f:translate(key: 'searchSummaryOne', domain: 'kumano_kodo.messages', arguments: {0: sword})}</f:then>
+                    <f:else if="{result.count} > 1">{f:translate(key: 'searchSummary', domain: 'kumano_kodo.messages', arguments: {0: result.count, 1: sword})}</f:else>
+                    <f:else>{f:translate(key: 'searchEmpty', domain: 'kumano_kodo.messages', arguments: {0: sword})}</f:else>
+                </f:if>
+            </p>
+            <f:if condition="{result.count} > 0">
+                <ol class="search-results-items">
+                    <f:for each="{result.rows}" as="row">
+                        <f:if condition="!{row.isSectionHeader}">
+                            <f:render partial="Searchresult" arguments="{row: row}"/>
+                        </f:if>
+                    </f:for>
+                </ol>
+                <f:render partial="Pagination" arguments="{pagination: result.pagination, searchParams: searchParams, freeIndexUid: freeIndexUid}"/>
+            </f:if>
+        </section>
+    </f:for>
 </div>
 </html>

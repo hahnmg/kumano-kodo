@@ -26,7 +26,9 @@
                         <f:if condition="{preview}">
                             <kk:figure images="{newsItem.mediaPreviews}">{preview.description}</kk:figure>
                         </f:if>
-                        <kk:richText><f:format.html>{newsItem.bodytext}</f:format.html></kk:richText>
+                        <kk:richText>
+                            <f:format.html>{newsItem.bodytext}</f:format.html>
+                        </kk:richText>
                     </kk:stack>
                 </f:fragment>
                 <f:fragment name="second">

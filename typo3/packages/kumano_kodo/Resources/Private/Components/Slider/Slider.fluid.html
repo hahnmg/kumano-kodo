@@ -16,8 +16,12 @@
         <div class="slider-dots">
             <f:for each="{f:range(start: 1, end: count)}" as="n" iteration="i">
                 <f:if condition="{i.isFirst}">
-                    <f:then><button class="slider-dots-dot" type="button" aria-label="{card} {n}" aria-current="true"></button></f:then>
-                    <f:else><button class="slider-dots-dot" type="button" aria-label="{card} {n}"></button></f:else>
+                    <f:then>
+                        <button class="slider-dots-dot" type="button" aria-label="{card} {n}" aria-current="true"></button>
+                    </f:then>
+                    <f:else>
+                        <button class="slider-dots-dot" type="button" aria-label="{card} {n}"></button>
+                    </f:else>
                 </f:if>
             </f:for>
         </div>

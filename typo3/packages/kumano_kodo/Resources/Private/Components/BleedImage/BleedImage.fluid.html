@@ -3,14 +3,16 @@
 <f:argument name="image" type="object" description="A file or file reference; a video as k:media gives it plays in place."/>
 
 <f:asset.css identifier="kumano-bleed-image" href="EXT:kumano_kodo/Resources/Public/Css/Components/bleed-image.css"/>
-<f:variable name="caption"><f:slot/></f:variable>
+<f:variable name="caption" value="{f:slot()}"/>
 <kk:lightboxGroup tag="figure" class="bleed-image">
     <f:if condition="{image.video}">
         <f:then>
             <kk:video video="{image.video}" poster="{image.poster}" width="{image.width}" height="{image.height}" sizes="100vw"/>
         </f:then>
         <f:else>
-            <a class="lightbox-link" href="{image.publicUrl}" data-lightbox aria-haspopup="dialog"><kk:image image="{image}" class="bleed-image-image" sizes="100vw"/></a>
+            <a class="lightbox-link" href="{image.publicUrl}" data-lightbox aria-haspopup="dialog">
+                <kk:image image="{image}" class="bleed-image-image" sizes="100vw"/>
+            </a>
         </f:else>
     </f:if>
     <f:if condition="{caption -> f:format.trim()}">

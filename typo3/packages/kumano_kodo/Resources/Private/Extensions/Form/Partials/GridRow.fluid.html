@@ -1,6 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:comment>Columns side by side in equal widths, stacked on narrow screens; the grid's column widths are not used.</f:comment>
 <formvh:renderRenderable renderable="{element}">
-    <div class="form-row"><f:for each="{element.elements}" as="column"><f:if condition="{column.enabled}"><div class="stack" style="--stack-gap: var(--space-24)"><f:render partial="{column.templateName}" arguments="{element: column}"/></div></f:if></f:for></div>
+    <div class="form-row">
+        <f:for each="{element.elements}" as="column">
+            <f:if condition="{column.enabled}">
+                <div class="stack" style="--stack-gap: var(--space-24)">
+                    <f:render partial="{column.templateName}" arguments="{element: column}"/>
+                </div>
+            </f:if>
+        </f:for>
+    </div>
 </formvh:renderRenderable>
 </html>

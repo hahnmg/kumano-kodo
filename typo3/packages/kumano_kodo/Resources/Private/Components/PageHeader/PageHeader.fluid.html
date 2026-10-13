@@ -3,7 +3,7 @@
 <f:argument name="title" type="string" description="The title, the page heading."/>
 <f:argument name="breadcrumb" type="iterable" optional="{true}" description="Entries for the breadcrumb, as there."/>
 
-<f:variable name="chips"><f:slot name="chips"/></f:variable>
+<f:variable name="chips" value="{f:slot(name: 'chips')}"/>
 <div class="page-header">
     <div class="page-header-inner">
         <f:if condition="{breadcrumb}">

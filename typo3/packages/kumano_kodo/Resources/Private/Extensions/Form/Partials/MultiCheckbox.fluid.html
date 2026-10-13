@@ -6,9 +6,16 @@
             <div class="choice-group-options">
                 <f:for each="{element.properties.options}" as="label" key="value" iteration="i">
                     <f:variable name="aria" value="{}"/>
-                    <f:if condition="{element.properties.elementDescription}"><f:variable name="aria" value="{describedby: '{element.uniqueIdentifier}-desc'}"/></f:if>
-                    <f:if condition="{validationResults.errors} && {i.isFirst}"><f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}"/></f:if>
-                    <label class="choice choice-checkbox"><f:form.checkbox property="{element.identifier}" multiple="1" id="{element.uniqueIdentifier}-{i.index}" class="choice-input" value="{value}" additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}" aria="{aria}"/><span class="choice-label type-small">{formvh:translateElementProperty(element: element, property: '{0: \'options\', 1: value}')}</span></label>
+                    <f:if condition="{element.properties.elementDescription}">
+                        <f:variable name="aria" value="{describedby: '{element.uniqueIdentifier}-desc'}"/>
+                    </f:if>
+                    <f:if condition="{validationResults.errors} && {i.isFirst}">
+                        <f:variable name="aria" value="{invalid: 'true', describedby: '{element.uniqueIdentifier}-errors'}"/>
+                    </f:if>
+                    <label class="choice choice-checkbox">
+                        <f:form.checkbox property="{element.identifier}" multiple="1" id="{element.uniqueIdentifier}-{i.index}" class="choice-input" value="{value}" additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}" aria="{aria}"/>
+                        <span class="choice-label type-small">{formvh:translateElementProperty(element: element, property: '{0: \'options\', 1: value}')}</span>
+                    </label>
                 </f:for>
             </div>
         </f:render>

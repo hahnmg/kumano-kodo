@@ -19,7 +19,9 @@
                 <label class="field-label type-label" for="{element.uniqueIdentifier}">{label -> f:format.raw()}</label>
                 <f:if condition="{ownBox}">
                     <f:then>{elementContent -> f:format.raw()}</f:then>
-                    <f:else><span class="field-box">{elementContent -> f:format.raw()}</span></f:else>
+                    <f:else>
+                        <span class="field-box">{elementContent -> f:format.raw()}</span>
+                    </f:else>
                 </f:if>
                 {error -> f:format.raw()}{description -> f:format.raw()}
             </div>

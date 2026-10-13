@@ -3,7 +3,7 @@
 <f:argument name="title" type="string" description="The heading of the list."/>
 
 <f:asset.css identifier="kumano-media-list" href="EXT:kumano_kodo/Resources/Public/Css/Components/media-list.css"/>
-<f:variable name="more"><f:slot name="more"/></f:variable>
+<f:variable name="more" value="{f:slot(name: 'more')}"/>
 <section class="media-list">
     <h2 class="media-list-title type-label">{title}</h2>
     <ul class="media-list-items">

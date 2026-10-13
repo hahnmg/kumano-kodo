@@ -1,5 +1,23 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:variable name="phone" value="{settings.kumanoKodo.contact.phone}"/>
 <f:variable name="email" value="{settings.kumanoKodo.contact.email}"/>
-<aside class="topbar" aria-label="{f:translate(key: 'trailStatus', domain: 'kumano_kodo.messages')}"><f:render.contentArea contentArea="{content.topbar}"/><f:if condition="{phone} || {email}"><p class="topbar-contact"><f:if condition="{phone}"><a class="type-small" href="tel:{phone -> f:replace(search: ' ', replace: '')}"><kk:icon name="phone" size="16"/>{phone}</a></f:if><f:if condition="{email}"><a class="type-small" href="mailto:{email}"><kk:icon name="mail" size="16"/>{email}</a></f:if></p></f:if></aside>
+<aside class="topbar" aria-label="{f:translate(key: 'trailStatus', domain: 'kumano_kodo.messages')}">
+    <f:render.contentArea contentArea="{content.topbar}"/>
+    <f:if condition="{phone} || {email}">
+        <p class="topbar-contact">
+            <f:if condition="{phone}">
+                <a class="type-small" href="tel:{phone -> f:replace(search: ' ', replace: '')}">
+                    <kk:icon name="phone" size="16"/>
+                    {phone}
+                </a>
+            </f:if>
+            <f:if condition="{email}">
+                <a class="type-small" href="mailto:{email}">
+                    <kk:icon name="mail" size="16"/>
+                    {email}
+                </a>
+            </f:if>
+        </p>
+    </f:if>
+</aside>
 </html>

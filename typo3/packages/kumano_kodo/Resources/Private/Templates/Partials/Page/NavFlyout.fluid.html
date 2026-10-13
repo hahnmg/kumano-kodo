@@ -20,7 +20,15 @@
                     </div>
                 </f:for>
                 <f:if condition="{navPage.tx_kumanokodo_flyout_text_title}">
-                    <div class="nav-flyout-text"><p class="nav-flyout-title type-label">{navPage.tx_kumanokodo_flyout_text_title}</p><div class="rich-text"><f:format.html>{navPage.tx_kumanokodo_flyout_text}</f:format.html></div><f:if condition="{navPage.tx_kumanokodo_flyout_overview}"><kk:link label="{navPage.tx_kumanokodo_flyout_overview_label}" href="{f:uri.typolink(parameter: navPage.tx_kumanokodo_flyout_overview)}"/></f:if></div>
+                    <div class="nav-flyout-text">
+                        <p class="nav-flyout-title type-label">{navPage.tx_kumanokodo_flyout_text_title}</p>
+                        <div class="rich-text">
+                            <f:format.html>{navPage.tx_kumanokodo_flyout_text}</f:format.html>
+                        </div>
+                        <f:if condition="{navPage.tx_kumanokodo_flyout_overview}">
+                            <kk:link label="{navPage.tx_kumanokodo_flyout_overview_label}" href="{f:uri.typolink(parameter: navPage.tx_kumanokodo_flyout_overview)}"/>
+                        </f:if>
+                    </div>
                 </f:if>
                 <f:if condition="{navPage.tx_kumanokodo_flyout_teaser_title}">
                     <div class="nav-flyout-teaser">
@@ -42,7 +50,9 @@
 <f:section name="Links">
     <ul class="nav-flyout-links">
         <f:for each="{links}" as="entry">
-            <li><a class="nav-flyout-link type-small" href="{f:uri.typolink(parameter: entry.link)}">{entry.label}</a></li>
+            <li>
+                <a class="nav-flyout-link type-small" href="{f:uri.typolink(parameter: entry.link)}">{entry.label}</a>
+            </li>
         </f:for>
     </ul>
 </f:section>

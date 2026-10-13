@@ -7,7 +7,14 @@
                 <h2 class="type-label">{record.header}</h2>
                 <ul>
                     <f:for each="{record.tx_kumanokodo_entries}" as="entry">
-                        <li class="type-small"><f:if condition="{entry.link}"><f:then><a href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a></f:then><f:else>{entry.title}</f:else></f:if></li>
+                        <li class="type-small">
+                            <f:if condition="{entry.link}">
+                                <f:then>
+                                    <a href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a>
+                                </f:then>
+                                <f:else>{entry.title}</f:else>
+                            </f:if>
+                        </li>
                     </f:for>
                 </ul>
             </div>
@@ -16,7 +23,9 @@
             <p>{record.header}</p>
             <ul>
                 <f:for each="{record.tx_kumanokodo_entries}" as="entry">
-                    <li><a href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a></li>
+                    <li>
+                        <a href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a>
+                    </li>
                 </f:for>
             </ul>
         </f:case>

@@ -32,14 +32,14 @@ The sidebar runs from whole pages to parts: **Site** (every page), **Templates**
 **Organisms**, **Molecules**, **Atoms** ("Atoms/Overview" shows all atoms on one page) and **Layout**. Every component
 is one Docs page with all its variants and the controls; single stories are not listed.
 
-| Command             | Does                                                                                  |
-| ------------------- | ------------------------------------------------------------------------------------- |
-| `npm run tokens`    | Generates `src/tokens/tokens.css` from `docs/figma-export/variables.json`             |
-| `npm run storybook` | Local Storybook                                                                       |
-| `npm run build`     | Tokens, contrast gate, static Storybook in `storybook-static/`                        |
-| `npm run lint`      | ESLint, Stylelint (no hex colours in components), lowercase-kebab filenames, Prettier |
-| `npm test`          | Component specs with axe in light and dark                                            |
-| `npm run size`      | CSS size budget                                                                       |
+| Command             | Does                                                                                                             |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `npm run tokens`    | Generates `src/tokens/tokens.css` from `docs/figma-export/variables.json`                                        |
+| `npm run storybook` | Local Storybook                                                                                                  |
+| `npm run build`     | Tokens, contrast gate, static Storybook in `storybook-static/`                                                   |
+| `npm run lint`      | ESLint, Stylelint (no hex colours in components), lowercase-kebab filenames, one tag per line in Fluid, Prettier |
+| `npm test`          | Component specs with axe in light and dark                                                                       |
+| `npm run size`      | CSS size budget                                                                                                  |
 
 All four gates (`build`, `lint`, `size`, `test`) must pass before a merge; the Pages workflow runs them too.
 
