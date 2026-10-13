@@ -126,18 +126,16 @@ published walker account `pilgrim` (`stories/content/demo-login.ts`). Set `KUMAN
 The 27 trip photos live as originals in `img/original` on the maintainer's machine only; that folder is not in git
 (about 400 MB). `npm run images` builds the web versions into `img/photos`: 640, 1200 and 2400 px, rotated upright,
 sRGB, all metadata including GPS removed. It also writes `stories/content/photos.json` with size and capture time,
-which the captions use. The web versions and the manifest are committed. The older files directly in `img/` belong to
-the archived v3 export only.
+which the captions use. The web versions and the manifest are committed. `img/video/` holds a placeholder clip made from
+four of the photos.
 
 ## Where things are
 
-| Path                                   | Content                                                     |
-| -------------------------------------- | ----------------------------------------------------------- |
-| `docs/adr/`                            | Decisions, newest last                                      |
-| `docs/open-questions.md`               | Open decisions with proposal and impact                     |
-| `docs/figma-map.json`                  | Figma node of each component                                |
-| `src/`                                 | Generated tokens, base styles, HTML helpers                 |
-| `scripts/`                             | Token build and gates                                       |
-| `img/`                                 | Photos used in stories                                      |
-| `original/`, `sections/`, `index.html` | The v3 Claude Design export the design started from         |
-| `docs/paper-snapshot/`                 | Record of the intermediate Paper version, no longer updated |
+| Path                     | Content                                         |
+| ------------------------ | ----------------------------------------------- |
+| `docs/adr/`              | Decisions, newest last                          |
+| `docs/open-questions.md` | Open decisions with proposal and impact         |
+| `docs/figma-map.json`    | Figma node of each component                    |
+| `src/`                   | Generated tokens, base styles, HTML helpers     |
+| `scripts/`               | Token build and gates                           |
+| `img/`                   | Photos and the placeholder clip used in stories |
