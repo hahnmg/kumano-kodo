@@ -47,9 +47,9 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-13 News: page frames Trail reports (list with pagination) and Report (detail with gallery); main menu with Trail reports
 - [x] 2026-10-12 Block 2, components: Back To Top atom (Default, Hover); Rich Text with accent list markers and ↗ on an external link; FAQ chevron on the question's first line
 - [x] 2026-10-13 Block 2, pages: place page Nachi with the links at the page end
-- [ ] Block 2, pages: contact with the form in the main column
+- [x] 2026-10-13 Block 2, pages: contact with the form in the main column, the answer time beside it
 - [x] 2026-10-13 Pages: heading to content 56 (`layout/heading-gap`) in the older page frames
-- [ ] Pages: elements in a section 96 in the older page frames (not yet checked)
+- [x] 2026-10-13 Pages: elements in a section 96 in the older page frames (home: places rows 96 apart, heading to cards 56; other sections already right)
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
 - [x] 2026-09-30 Components page in three sections (Atoms, Molecules, Organisms) as in Storybook, 160 apart
@@ -60,11 +60,11 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-09-30 Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
 - [x] 2026-10-12 Design feedback, components: `border/rule` (2) opens and closes Media List, Download List, Table, Fact List, Route Map and Site Footer in ink; Notice on accent with paper text; Quote with an accent “ above; Display/Wordmark 60/64
 - [x] 2026-10-13 Design feedback, pages: Day 2 with Day 1–4 chips, quote of the day and the route map with the day highlighted; place page Nachi led by a Bleed Image
-- [ ] Design feedback, pages: FAQ lists and timelines opening and closing on `border/rule`; Text & Media with several paragraphs (image held beside long text)
+- [x] 2026-10-13 Design feedback, pages: FAQ lists and timelines open and close on `border/rule`; Text & Media `Text=Long` (image at the top beside several paragraphs)
 - [x] 2026-10-12 `Icon/Play`; Route Map as set `Highlight=None/Day` with underlined day links (the hero video of the same day was taken out again on 2026-10-13)
 - [x] 2026-10-13 Video atom (poster in the video's format, play button) and Figure `Variant=Video`; Day 2 opens with it
 - [x] 2026-10-13 Components: Fact List `Four rows`, Breadcrumb `Third level` (both off by default); Figure and Teaser Card images fill their width and keep their ratio (4:3, 1:1)
-- [ ] Route Map: day labels and legend still carry the older content ("Day 1 · 4 km", "Bus", "End of the pilgrimage")
+- [x] 2026-10-13 Route Map: day labels and legend as in code; FAQ Item `State=Open` with the chevron turned up
 
 ## Known differences between Figma and code
 
