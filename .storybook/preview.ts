@@ -9,7 +9,7 @@ import './docs.css';
 import { bindBackToTop } from '../src/scripts/back-to-top';
 import { bindFileUploads } from '../src/scripts/file-upload';
 import { bindLightbox } from '../src/scripts/lightbox';
-import { bindVideos } from '../src/scripts/video';
+import { bindMediaConsent, bindVideos, syncMediaConsent } from '../src/scripts/video';
 import { bindMenuToggle } from '../src/scripts/menu-toggle';
 import { bindNavFlyouts } from '../src/scripts/nav-flyout';
 import { bindSchemeToggle, syncSchemeToggles } from '../src/scripts/scheme-toggle';
@@ -31,6 +31,7 @@ bindNavFlyouts(document);
 bindSliders(document);
 bindLightbox(document);
 bindVideos(document);
+bindMediaConsent(document);
 bindStickyHeader(window);
 bindBackToTop(window);
 bindFileUploads(document);
@@ -92,6 +93,7 @@ const preview: Preview = {
                 syncSchemeToggles();
                 syncSliders();
                 syncStickyHeaders();
+                syncMediaConsent();
             });
             return rendered;
         },

@@ -1,4 +1,3 @@
-import { t as e } from "./video-Dj9eFOb2.js";
-//#region src/entries/video.ts
-e(document);
+import { n as e, t } from "./video-B96lhCtT.js";
+e(document), t(document);
 //#endregion

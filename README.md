@@ -112,7 +112,7 @@ published walker account `pilgrim` (`stories/content/demo-login.ts`). Set `KUMAN
 | `npm run docs`                                             | Renders the manual (Docker) into the package's `Documentation-GENERATED-temp/` |
 
 - **Imports keep their links**: impexp remaps only the root page of an imported site; the demo's
-  `RemapErrorPagesOnPackageInitialization` points its error pages at the imported pages.
+  `RemapSitePagesOnPackageInitialization` points its error pages and page settings at the imported pages.
 - **Lessons from the core theme**: every problem reported for TYPO3's core theme Camino and the solution here, in
   Storybook under "Core theme issues" (data: `docs/core-theme-issues.json`).
 - **Fluid components**: everything the theme renders is a component in `Resources/Private/Components`, namespace

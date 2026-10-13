@@ -7,7 +7,8 @@
             "felogin.showPermaLogin": true,
             "kumanoKodo.brand.logo": "kumano",
             "kumanoKodo.brand.upright": "熊野古道",
-            "kumanoKodo.brand.footerWordmark": true
+            "kumanoKodo.brand.footerWordmark": true,
+            "kumanoKodo.privacy.page": "page:privacy"
         },
         "errorHandling": {
             "403": "login",
@@ -5228,6 +5229,21 @@
                                 }
                             }
                         ]
+                    }
+                },
+                {
+                    "type": "kumano_media_consent",
+                    "fields": {
+                        "header": {
+                            "en": "External videos",
+                            "de": "Externe Videos",
+                            "ja": "外部の動画"
+                        },
+                        "bodytext": {
+                            "en": "<p>Videos from YouTube or Vimeo load only when you ask for them. Tick the box to load them straight away on this device.</p>",
+                            "de": "<p>Videos von YouTube oder Vimeo laden erst, wenn Sie es möchten. Mit dem Häkchen laden sie auf diesem Gerät sofort.</p>",
+                            "ja": "<p>YouTubeやVimeoの動画は、ご希望の場合にのみ読み込まれます。チェックを入れると、この端末ではすぐに読み込まれます。</p>"
+                        }
                     }
                 }
             ],

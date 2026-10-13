@@ -422,6 +422,7 @@ const buildSettings = async (themes) => {
         'Search page',
         'Where the header search sends to. Empty: the first page of the site with the search plugin; without one, the header shows no search.',
     );
+    add('privacy.page', 'privacy', 'page', 0, 'Privacy policy', 'Linked from the question asked before a YouTube or Vimeo video loads.');
     add(
         'custom.css',
         'custom',
@@ -457,6 +458,7 @@ const buildSettings = async (themes) => {
         contact: 'Contact in the top bar',
         newsletter: 'Newsletter',
         search: 'Search',
+        privacy: 'Privacy',
         custom: 'Own files',
     };
     const q = (v) => (typeof v === 'string' ? `'${v.replaceAll("'", "''")}'` : String(v));

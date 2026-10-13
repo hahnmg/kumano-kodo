@@ -1260,7 +1260,7 @@
     },
     {
         "name": "video",
-        "description": "A video in an image's place: the poster in the video's format and a play button. The player (MP4, WebM, YouTube,\n    Vimeo) waits in a template, whose content the browser does not fetch, until the button is pressed.",
+        "description": "A video in an image's place: the poster in the video's format and a play button. The player (MP4, WebM, YouTube,\n    Vimeo) waits in a template, whose content the browser does not fetch, until the button is pressed; YouTube and\n    Vimeo ask first.",
         "arguments": [
             {
                 "name": "video",
@@ -1300,6 +1300,19 @@
                 "required": false,
                 "default": "(width <= 900px) 100vw, 50vw",
                 "description": "As for image."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "videoConsent",
+        "description": "The question asked before a YouTube or Vimeo player loads, as that sends the visitor's address to the provider.\n    It waits in a template for the play button; own video files need none and get nothing.",
+        "arguments": [
+            {
+                "name": "video",
+                "type": "object",
+                "required": true,
+                "description": "The video file or reference."
             }
         ],
         "slots": []

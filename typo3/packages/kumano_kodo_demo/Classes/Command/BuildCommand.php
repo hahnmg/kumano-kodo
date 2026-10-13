@@ -98,6 +98,7 @@ final class BuildCommand extends Command
             }
         }
         $this->writeErrorHandling($demo['site']['errorHandling'] ?? []);
+        $this->writePageSettings($demo['site']['settings']);
         $this->createFrontendUsers($demo['frontendUsers'] ?? []);
         $this->writeRouteEnhancers($demo['site']['routeEnhancers'] ?? []);
         if (isset($demo['news'])) {
@@ -531,7 +532,21 @@ final class BuildCommand extends Command
             'languages' => $languages,
         ];
         $this->siteWriter->write(self::SITE, $this->siteConfiguration);
-        $this->siteWriter->writeSettings(self::SITE, $site['settings']);
+        $this->siteWriter->writeSettings(self::SITE, array_filter($site['settings'], fn (mixed $value): bool => !$this->isPageKey($value)));
+    }
+
+    // A setting can name a page by key (page:privacy); it becomes that page's uid once the pages exist.
+    private function writePageSettings(array $settings): void
+    {
+        $this->siteWriter->writeSettings(self::SITE, array_map(
+            fn (mixed $value): mixed => $this->isPageKey($value) ? $this->pages[substr($value, 5)] : $value,
+            $settings
+        ));
+    }
+
+    private function isPageKey(mixed $value): bool
+    {
+        return is_string($value) && str_starts_with($value, 'page:');
     }
 
     // Error pages are named by page key, so they can only be set once the pages exist.

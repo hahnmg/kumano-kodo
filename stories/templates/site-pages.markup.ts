@@ -1,5 +1,6 @@
 import { pagination } from '../molecules/pagination.markup';
 import type { PhotoName } from './content';
+import { mediaConsent } from '../molecules/media-consent.markup';
 import { mediaList } from '../molecules/media-list.markup';
 import { personCard } from '../molecules/person-card.markup';
 import { textMedia } from '../molecules/text-media.markup';
@@ -378,11 +379,21 @@ export const newsletterPage = (c: Content = content()): string => {
     );
 };
 
-const textPage = (c: Content, active: Section, title: string, text: readonly string[], trail: [string, string][] = [], after = '') =>
+const textPage = (
+    c: Content,
+    active: Section,
+    title: string,
+    text: readonly string[],
+    trail: [string, string][] = [],
+    after = '',
+    more = '',
+) =>
     chrome(
         c,
         active,
-        header(c, title, trail) + section({ content: stack([richText({ html: paragraphs(text) }), after].filter(Boolean), 'elements') }),
+        header(c, title, trail) +
+            section({ content: stack([richText({ html: paragraphs(text) }), after].filter(Boolean), 'elements') }) +
+            more,
     );
 
 export const kohechiPage = (c: Content = content()): string =>
@@ -395,8 +406,20 @@ export const kohechiPage = (c: Content = content()): string =>
         link({ label: c.site.route.title, href: paths.route, direction: 'back' }),
     );
 
+// The privacy page carries the switch for external videos, as the demo's does.
+const mediaConsentSection = (c: Content): string =>
+    section({
+        content: stack(
+            [
+                sectionHeading({ title: c.ui.mediaConsentTitle }),
+                mediaConsent({ text: c.ui.mediaConsentText, toggle: c.ui.mediaConsentToggle }),
+            ],
+            'heading',
+        ),
+    });
+
 export const legalPage = (slug: LegalSlug, c: Content = content()): string =>
-    textPage(c, -1, c.site.legal[slug].title, c.site.legal[slug].text);
+    textPage(c, -1, c.site.legal[slug].title, c.site.legal[slug].text, [], '', slug === 'privacy' ? mediaConsentSection(c) : '');
 
 // The sample query per language; the results are what the journal's own texts answer to it.
 const sampleQuery: Record<string, string> = { en: 'bus', de: 'Bus', ja: 'バス' };

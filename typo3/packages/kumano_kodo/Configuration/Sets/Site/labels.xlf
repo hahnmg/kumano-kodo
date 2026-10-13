@@ -35,6 +35,9 @@
             <trans-unit id="categories.kumanoKodo.search">
                 <source>Search</source>
             </trans-unit>
+            <trans-unit id="categories.kumanoKodo.privacy">
+                <source>Privacy</source>
+            </trans-unit>
             <trans-unit id="categories.kumanoKodo.custom">
                 <source>Own files</source>
             </trans-unit>
@@ -304,6 +307,12 @@
             </trans-unit>
             <trans-unit id="settings.description.kumanoKodo.search.page">
                 <source>Where the header search sends to. Empty: the first page of the site with the search plugin; without one, the header shows no search.</source>
+            </trans-unit>
+            <trans-unit id="settings.kumanoKodo.privacy.page">
+                <source>Privacy policy</source>
+            </trans-unit>
+            <trans-unit id="settings.description.kumanoKodo.privacy.page">
+                <source>Linked from the question asked before a YouTube or Vimeo video loads.</source>
             </trans-unit>
             <trans-unit id="settings.kumanoKodo.custom.css">
                 <source>Own stylesheet</source>

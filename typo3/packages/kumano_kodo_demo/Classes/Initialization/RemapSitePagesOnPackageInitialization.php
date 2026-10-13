@@ -8,16 +8,20 @@ use TYPO3\CMS\Core\Attribute\AsEventListener;
 use TYPO3\CMS\Core\Configuration\SiteConfiguration;
 use TYPO3\CMS\Core\Configuration\SiteWriter;
 use TYPO3\CMS\Core\Package\Event\PackageInitializationEvent;
+use TYPO3\CMS\Core\Site\SiteSettingsFactory;
 use TYPO3\CMS\Impexp\Import;
 use TYPO3\CMS\Impexp\Initialization\ImportContentOnPackageInitialization;
 use TYPO3\CMS\Impexp\Initialization\ImportSiteConfigurationsOnPackageInitialization;
 
-// The core remaps only the root page of an imported site; its error pages and the pages its route enhancers are
-// limited to would still point at the exported uids.
-final readonly class RemapErrorPagesOnPackageInitialization
+// The core remaps only the root page of an imported site; its error pages, the pages its route enhancers are
+// limited to and its page settings would still point at the exported uids.
+final readonly class RemapSitePagesOnPackageInitialization
 {
+    private const PAGE_SETTINGS = ['kumanoKodo.newsletter.target', 'kumanoKodo.search.page', 'kumanoKodo.privacy.page'];
+
     public function __construct(
         private SiteConfiguration $siteConfiguration,
+        private SiteSettingsFactory $siteSettingsFactory,
         private SiteWriter $siteWriter,
     ) {}
 
@@ -49,6 +53,11 @@ final readonly class RemapErrorPagesOnPackageInitialization
                 }
             }
             $this->siteWriter->write($identifier, $configuration);
+            $settings = $this->siteSettingsFactory->loadLocalSettings($identifier) ?? [];
+            foreach (array_intersect(self::PAGE_SETTINGS, array_keys($settings)) as $name) {
+                $settings[$name] = (int)($pages[(int)$settings[$name]] ?? $settings[$name]);
+            }
+            $this->siteWriter->writeSettings($identifier, $settings);
         }
     }
 }

@@ -8,7 +8,7 @@
 
 # The catalogue and the core fields, limited to what the design system has.
 TCEFORM.tt_content {
-  CType.keepItems = header,text,kumano_section,kumano_columns,kumano_text_image,kumano_images,kumano_cards,kumano_list,kumano_facts,kumano_callout,kumano_questions,kumano_page_top,kumano_chapter,kumano_route_map,kumano_newsletter,indexedsearch_pi2,felogin_login,form_formframework
+  CType.keepItems = header,text,kumano_section,kumano_columns,kumano_text_image,kumano_images,kumano_cards,kumano_list,kumano_facts,kumano_callout,kumano_questions,kumano_page_top,kumano_chapter,kumano_route_map,kumano_newsletter,kumano_media_consent,indexedsearch_pi2,felogin_login,form_formframework
   subheader.label = LLL:kumano_kodo.backend_fields:subheader.eyebrow
   header_layout {
     label = LLL:kumano_kodo.backend_fields:header_layout.label

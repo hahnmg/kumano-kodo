@@ -19,6 +19,8 @@ categories:
     parent: kumanoKodo
   kumanoKodo.search:
     parent: kumanoKodo
+  kumanoKodo.privacy:
+    parent: kumanoKodo
   kumanoKodo.custom:
     parent: kumanoKodo
 
@@ -198,6 +200,10 @@ settings:
     type: page
     default: 0
     category: kumanoKodo.search
+  kumanoKodo.privacy.page:
+    type: page
+    default: 0
+    category: kumanoKodo.privacy
   kumanoKodo.custom.css:
     type: string
     default: ''

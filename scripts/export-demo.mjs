@@ -753,7 +753,21 @@ const pages = [
             slug,
             'home',
             t((x) => x.site.legal[slug].title),
-            { navHide: true, content: textPage((x) => x.site.legal[slug].text) },
+            {
+                navHide: true,
+                content: [
+                    ...textPage((x) => x.site.legal[slug].text),
+                    // The privacy page carries the switch for external videos.
+                    ...(slug === 'privacy'
+                        ? [
+                              el('kumano_media_consent', {
+                                  header: t((x) => x.ui.mediaConsentTitle),
+                                  bodytext: t((x) => x.ui.mediaConsentText),
+                              }),
+                          ]
+                        : []),
+                ],
+            },
         ),
     ),
     page(
@@ -978,6 +992,7 @@ const site = {
         'kumanoKodo.brand.logo': 'kumano',
         'kumanoKodo.brand.upright': '熊野古道',
         'kumanoKodo.brand.footerWordmark': true,
+        'kumanoKodo.privacy.page': 'page:privacy',
     },
     errorHandling: { 404: 'not-found', 403: 'login' },
     sets: ['kumano-kodo/site', 'kumano-kodo/news'],

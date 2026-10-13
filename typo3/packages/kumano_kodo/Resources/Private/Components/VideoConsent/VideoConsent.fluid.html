@@ -1,0 +1,34 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>
+    The question asked before a YouTube or Vimeo player loads, as that sends the visitor's address to the provider.
+    It waits in a template for the play button; own video files need none and get nothing.
+</f:comment>
+<f:argument name="video" type="object" description="The video file or reference."/>
+
+<f:switch expression="{video.extension}">
+    <f:case value="youtube">
+        <f:variable name="provider" value="YouTube"/>
+    </f:case>
+    <f:case value="vimeo">
+        <f:variable name="provider" value="Vimeo"/>
+    </f:case>
+</f:switch>
+<f:if condition="{provider}">
+    <f:variable name="privacy" value="{k:siteSetting(name: 'kumanoKodo.privacy.page')}"/>
+    <template class="video-consent-source">
+        <div class="video-consent" role="group" aria-label="{f:translate(key: 'videoConsentLoad', domain: 'kumano_kodo.messages')}">
+            <p class="video-consent-text type-small">
+                {f:translate(key: 'videoConsent', domain: 'kumano_kodo.messages', arguments: {0: provider})}
+                <f:if condition="{privacy}">
+                    <a href="{f:uri.page(pageUid: privacy)}">{f:translate(key: 'videoConsentPrivacy', domain: 'kumano_kodo.messages')}</a>
+                </f:if>
+            </p>
+            <label class="choice choice-checkbox">
+                <input class="choice-input" type="checkbox" name="video-consent-remember">
+                <span class="choice-label type-caption">{f:translate(key: 'videoConsentRemember', domain: 'kumano_kodo.messages')}</span>
+            </label>
+            <kk:button label="{f:translate(key: 'videoConsentLoad', domain: 'kumano_kodo.messages')}"/>
+        </div>
+    </template>
+</f:if>
+</html>

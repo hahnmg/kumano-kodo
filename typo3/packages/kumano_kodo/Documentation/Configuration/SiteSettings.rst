@@ -312,6 +312,16 @@ Search
 
     Search page. Where the header search sends to. Empty: the first page of the site with the search plugin; without one, the header shows no search.
 
+Privacy
+=======
+
+.. confval:: kumanoKodo.privacy.page
+    :name: kumanokodo-privacy-page
+    :type: page
+    :Default: `0`
+
+    Privacy policy. Linked from the question asked before a YouTube or Vimeo video loads.
+
 Own files
 =========
 

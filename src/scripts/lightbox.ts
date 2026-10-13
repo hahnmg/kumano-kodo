@@ -1,4 +1,4 @@
-import { startPlayer } from './video';
+import { startPlayer, withConsent } from './video';
 
 export interface LightboxLabels {
     close: string;
@@ -61,8 +61,10 @@ export const bindLightbox = (doc: Document = document): (() => void) => {
             image.alt = alt;
         }
         if (video && player) {
-            player.append(video.content.cloneNode(true));
-            startPlayer(player);
+            withConsent(link, player, () => {
+                player.append(video.content.cloneNode(true));
+                startPlayer(player);
+            });
         }
         dialog.setAttribute('aria-label', alt);
         dialog.querySelector('.lightbox-text')!.textContent = alt;

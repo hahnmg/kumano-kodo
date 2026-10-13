@@ -649,6 +649,11 @@
             "group": "Site"
         },
         {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        },
+        {
             "id": "site--login",
             "name": "Log in",
             "group": "Site"
@@ -3156,6 +3161,13 @@
             "group": "Site"
         }
     ],
+    "Molecules/Media Consent": [
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
+            "group": "Site"
+        }
+    ],
     "Molecules/Media List": [
         {
             "id": "site--route",
@@ -4077,6 +4089,11 @@
         {
             "id": "site--practical",
             "name": "Practical",
+            "group": "Site"
+        },
+        {
+            "id": "site--privacy",
+            "name": "Privacy",
             "group": "Site"
         },
         {

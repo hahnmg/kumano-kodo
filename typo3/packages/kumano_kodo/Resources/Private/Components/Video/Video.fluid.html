@@ -1,7 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:comment>
     A video in an image's place: the poster in the video's format and a play button. The player (MP4, WebM, YouTube,
-    Vimeo) waits in a template, whose content the browser does not fetch, until the button is pressed.
+    Vimeo) waits in a template, whose content the browser does not fetch, until the button is pressed; YouTube and
+    Vimeo ask first.
 </f:comment>
 <f:argument name="video" type="object" description="The video file or reference."/>
 <f:argument name="poster" type="object" optional="{true}" description="An image file or reference shown until play."/>
@@ -21,5 +22,6 @@
     <template class="video-source">
         <f:media file="{video}" width="{width}" height="{height}" class="video-player"/>
     </template>
+    <kk:videoConsent video="{video}"/>
 </div>
 </html>

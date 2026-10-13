@@ -26,6 +26,34 @@
                 <source>Play video</source>
                 <target>動画を再生</target>
             </trans-unit>
+            <trans-unit id="videoConsent">
+                <source>This video loads from %1$s, which then receives your IP address and may set cookies.</source>
+                <target>この動画は%1$sから読み込まれます。その際、%1$sにIPアドレスが送信され、Cookieが保存される場合があります。</target>
+            </trans-unit>
+            <trans-unit id="videoConsentRemember">
+                <source>Always load external videos</source>
+                <target>外部の動画を常に読み込む</target>
+            </trans-unit>
+            <trans-unit id="videoConsentLoad">
+                <source>Load video</source>
+                <target>動画を読み込む</target>
+            </trans-unit>
+            <trans-unit id="videoConsentPrivacy">
+                <source>Privacy policy</source>
+                <target>プライバシーポリシー</target>
+            </trans-unit>
+            <trans-unit id="mediaConsentTitle">
+                <source>External videos</source>
+                <target>外部の動画</target>
+            </trans-unit>
+            <trans-unit id="mediaConsentText">
+                <source>Videos from YouTube or Vimeo load only when you ask for them. Tick the box to load them straight away on this device.</source>
+                <target>YouTubeやVimeoの動画は、ご希望の場合にのみ読み込まれます。チェックを入れると、この端末ではすぐに読み込まれます。</target>
+            </trans-unit>
+            <trans-unit id="mediaConsentToggle">
+                <source>Load external videos automatically</source>
+                <target>外部の動画を自動で読み込む</target>
+            </trans-unit>
             <trans-unit id="skipToContent">
                 <source>Skip to content</source>
                 <target>本文へ移動</target>

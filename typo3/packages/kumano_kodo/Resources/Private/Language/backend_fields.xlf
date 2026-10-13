@@ -242,6 +242,12 @@
             <trans-unit id="tt_content.CType.kumano_newsletter.description">
                 <source>Heading, text and the sign-up form; its target page is a site setting.</source>
             </trans-unit>
+            <trans-unit id="tt_content.CType.kumano_media_consent">
+                <source>External videos</source>
+            </trans-unit>
+            <trans-unit id="tt_content.CType.kumano_media_consent.description">
+                <source>Heading, text and the switch that loads YouTube and Vimeo videos without asking; for the privacy page.</source>
+            </trans-unit>
             <trans-unit id="tt_content.CType.kumano_page_top">
                 <source>Page top</source>
             </trans-unit>

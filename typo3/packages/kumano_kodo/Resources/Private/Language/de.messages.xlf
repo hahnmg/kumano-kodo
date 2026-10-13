@@ -26,6 +26,34 @@
                 <source>Play video</source>
                 <target>Video abspielen</target>
             </trans-unit>
+            <trans-unit id="videoConsent">
+                <source>This video loads from %1$s, which then receives your IP address and may set cookies.</source>
+                <target>Dieses Video wird von %1$s geladen. %1$s erhält dabei Ihre IP-Adresse und kann Cookies setzen.</target>
+            </trans-unit>
+            <trans-unit id="videoConsentRemember">
+                <source>Always load external videos</source>
+                <target>Externe Videos immer laden</target>
+            </trans-unit>
+            <trans-unit id="videoConsentLoad">
+                <source>Load video</source>
+                <target>Video laden</target>
+            </trans-unit>
+            <trans-unit id="videoConsentPrivacy">
+                <source>Privacy policy</source>
+                <target>Datenschutzerklärung</target>
+            </trans-unit>
+            <trans-unit id="mediaConsentTitle">
+                <source>External videos</source>
+                <target>Externe Videos</target>
+            </trans-unit>
+            <trans-unit id="mediaConsentText">
+                <source>Videos from YouTube or Vimeo load only when you ask for them. Tick the box to load them straight away on this device.</source>
+                <target>Videos von YouTube oder Vimeo laden erst, wenn Sie es möchten. Mit dem Häkchen laden sie auf diesem Gerät sofort.</target>
+            </trans-unit>
+            <trans-unit id="mediaConsentToggle">
+                <source>Load external videos automatically</source>
+                <target>Externe Videos automatisch laden</target>
+            </trans-unit>
             <trans-unit id="skipToContent">
                 <source>Skip to content</source>
                 <target>Zum Inhalt springen</target>

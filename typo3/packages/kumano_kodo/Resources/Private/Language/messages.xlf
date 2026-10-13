@@ -20,6 +20,27 @@
             <trans-unit id="playVideo">
                 <source>Play video</source>
             </trans-unit>
+            <trans-unit id="videoConsent">
+                <source>This video loads from %1$s, which then receives your IP address and may set cookies.</source>
+            </trans-unit>
+            <trans-unit id="videoConsentRemember">
+                <source>Always load external videos</source>
+            </trans-unit>
+            <trans-unit id="videoConsentLoad">
+                <source>Load video</source>
+            </trans-unit>
+            <trans-unit id="videoConsentPrivacy">
+                <source>Privacy policy</source>
+            </trans-unit>
+            <trans-unit id="mediaConsentTitle">
+                <source>External videos</source>
+            </trans-unit>
+            <trans-unit id="mediaConsentText">
+                <source>Videos from YouTube or Vimeo load only when you ask for them. Tick the box to load them straight away on this device.</source>
+            </trans-unit>
+            <trans-unit id="mediaConsentToggle">
+                <source>Load external videos automatically</source>
+            </trans-unit>
             <trans-unit id="skipToContent">
                 <source>Skip to content</source>
             </trans-unit>

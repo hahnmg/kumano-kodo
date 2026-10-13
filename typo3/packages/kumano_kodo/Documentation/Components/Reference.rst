@@ -1112,7 +1112,8 @@ kk:video
 ========
 
 A video in an image's place: the poster in the video's format and a play button. The player (MP4, WebM, YouTube,
-    Vimeo) waits in a template, whose content the browser does not fetch, until the button is pressed.
+    Vimeo) waits in a template, whose content the browser does not fetch, until the button is pressed; YouTube and
+    Vimeo ask first.
 
 ..  list-table::
     :header-rows: 1
@@ -1138,3 +1139,19 @@ A video in an image's place: the poster in the video's format and a play button.
     *   - ``sizes``
         - string, default ``(width <= 900px) 100vw, 50vw``
         - As for image.
+
+kk:videoConsent
+===============
+
+The question asked before a YouTube or Vimeo player loads, as that sends the visitor's address to the provider.
+    It waits in a template for the play button; own video files need none and get nothing.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``video``
+        - object, required
+        - The video file or reference.
