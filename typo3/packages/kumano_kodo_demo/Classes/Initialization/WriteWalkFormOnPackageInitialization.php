@@ -25,6 +25,6 @@ final readonly class WriteWalkFormOnPackageInitialization
             return;
         }
         $exported = $this->walkForm->templateUid();
-        $this->walkForm->write((int)($import->getImportMapId()['tt_content'][$exported] ?? 0));
+        $this->walkForm->restorePluginReferences($this->walkForm->write((int)($import->getImportMapId()['tt_content'][$exported] ?? 0)));
     }
 }

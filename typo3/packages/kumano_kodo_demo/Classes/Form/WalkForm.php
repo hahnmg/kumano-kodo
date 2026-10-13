@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace KumanoKodo\Demo\Form;
 
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\StorageRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Form\Slot\FilePersistenceSlot;
@@ -21,6 +23,7 @@ final readonly class WalkForm
     public function __construct(
         private StorageRepository $storageRepository,
         private FilePersistenceSlot $filePersistenceSlot,
+        private ConnectionPool $connectionPool,
     ) {}
 
     public function templateUid(): int
@@ -35,7 +38,7 @@ final readonly class WalkForm
         file_put_contents($this->templatePath(), $this->withUid($this->template(), $uid));
     }
 
-    public function write(int $uid): void
+    public function write(int $uid): File
     {
         $storage = $this->storageRepository->getDefaultStorage();
         $folder = $storage->hasFolder(self::FOLDER) ? $storage->getFolder(self::FOLDER) : $storage->createFolder(self::FOLDER);
@@ -46,6 +49,21 @@ final readonly class WalkForm
         $this->filePersistenceSlot->allowInvocation(FilePersistenceSlot::COMMAND_FILE_SET_CONTENTS, $identifier, $this->filePersistenceSlot->getContentSignature($content));
         $file = $folder->hasFile(self::FILE) ? $folder->getFile(self::FILE) : $folder->createFile(self::FILE);
         $file->setContents($content);
+        return $file;
+    }
+
+    // An import maps the plugins' form path to the file's new uid ("1:37"), which EXT:form cannot load: its soft
+    // reference parser hands impexp a sys_file relation. This puts the path back.
+    public function restorePluginReferences(File $file): void
+    {
+        $broken = $file->getStorage()->getUid() . ':' . $file->getUid();
+        $connection = $this->connectionPool->getConnectionForTable('tt_content');
+        foreach ($connection->select(['uid', 'pi_flexform'], 'tt_content', ['CType' => 'form_formframework'])->fetchAllAssociative() as $row) {
+            $flexform = str_replace('>' . $broken . '<', '>' . $file->getCombinedIdentifier() . '<', (string)$row['pi_flexform']);
+            if ($flexform !== $row['pi_flexform']) {
+                $connection->update('tt_content', ['pi_flexform' => $flexform], ['uid' => $row['uid']]);
+            }
+        }
     }
 
     private function withUid(string $yaml, int $uid): string
