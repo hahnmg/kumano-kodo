@@ -5634,7 +5634,7 @@
             "key": "at-a-glance",
             "parent": "route",
             "slug": "/at-a-glance",
-            "layout": "Classic",
+            "layout": "Overview",
             "navHide": true,
             "title": {
                 "en": "At a glance",

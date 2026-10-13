@@ -26,8 +26,8 @@
             <trans-unit id="layout.journal">
                 <source>Kumano Kodo: journal home without top bar</source>
             </trans-unit>
-            <trans-unit id="layout.classic">
-                <source>Kumano Kodo: previous home (v3) without top bar</source>
+            <trans-unit id="layout.overview">
+                <source>Kumano Kodo: overview with its own hero, without top bar</source>
             </trans-unit>
         </body>
     </file>

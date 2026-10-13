@@ -1,7 +1,7 @@
 mod.web_layout.BackendLayouts {
-  Classic {
-    title = LLL:kumano_kodo.backend_layouts:layout.classic
-    icon = EXT:kumano_kodo/Resources/Public/Images/BackendLayouts/classic.png
+  Overview {
+    title = LLL:kumano_kodo.backend_layouts:layout.overview
+    icon = EXT:kumano_kodo/Resources/Public/Images/BackendLayouts/overview.png
     config {
       backend_layout {
         colCount = 2

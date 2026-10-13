@@ -14,7 +14,7 @@ Require the theme, and the demo if you want content:
 Add the site set **Kumano Kodo** (`kumano-kodo/site`) to your site. It loads fluid_styled_content, felogin,
 indexed_search, form and the sitemap of seo before itself where they are installed; none of them is required.
 
-Every page needs one of the theme's page layouts (Default, Landing, Journal, Classic). Set one on the root page and
+Every page needs one of the theme's page layouts (Default, Landing, Journal, Overview). Set one on the root page and
 as layout for the subpages; a page without layout falls back to Default.
 
 Demo or starter set

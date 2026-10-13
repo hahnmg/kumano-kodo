@@ -862,7 +862,7 @@ const pages = [
         'at-a-glance',
         'route',
         t((x) => x.site.glance.title),
-        { navHide: true, layout: 'Classic', content: v3 },
+        { navHide: true, layout: 'Overview', content: v3 },
     ),
     // Linked from the practical menu, as is the form below.
     page(
