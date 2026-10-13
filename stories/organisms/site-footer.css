@@ -104,3 +104,9 @@
         grid-column: 1 / -1;
     }
 }
+
+@media print {
+    .site-footer {
+        display: none;
+    }
+}

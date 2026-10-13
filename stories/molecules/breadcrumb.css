@@ -30,3 +30,9 @@
 .breadcrumb-item[aria-current] {
     color: var(--color-ink);
 }
+
+@media print {
+    .breadcrumb {
+        display: none;
+    }
+}

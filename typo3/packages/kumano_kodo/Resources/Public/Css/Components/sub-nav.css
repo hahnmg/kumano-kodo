@@ -34,3 +34,9 @@
 .sub-nav-link[aria-current='page'] {
     color: var(--color-accent);
 }
+
+@media print {
+    .sub-nav {
+        display: none;
+    }
+}

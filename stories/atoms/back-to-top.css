@@ -39,3 +39,9 @@
 .back-to-top .icon {
     transform: rotate(-90deg);
 }
+
+@media print {
+    .back-to-top {
+        display: none;
+    }
+}

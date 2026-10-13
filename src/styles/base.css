@@ -26,3 +26,34 @@ body {
 :lang(ja) :is(h1, h2, h3, h4) {
     word-break: auto-phrase;
 }
+
+/* Print: ink on white in every theme and scheme, and no page break inside a picture or right after a heading. */
+@media print {
+    :root,
+    [data-scheme] {
+        --color-paper: var(--white);
+        --color-surface: var(--white);
+        --color-sunk: var(--white);
+        --color-ink: var(--palette-light-ink);
+        --color-muted: var(--palette-light-muted);
+        --color-line: var(--palette-light-line);
+        --color-hair: var(--palette-light-hair);
+        --color-secondary: var(--palette-light-secondary);
+        --color-accent: var(--palette-light-accent);
+    }
+
+    img,
+    svg,
+    figure,
+    blockquote,
+    li {
+        break-inside: avoid;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        break-after: avoid;
+    }
+}

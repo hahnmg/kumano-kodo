@@ -86,3 +86,14 @@
 .rich-text a[href^='http']:not(:has(img)):lang(ja)::after {
     content: '↗' / '（外部リンク）';
 }
+
+/* On paper the address replaces the arrow, in every language. */
+@media print {
+    .rich-text a[href^='http']:not(:has(img))::after,
+    .rich-text a[href^='http']:not(:has(img)):lang(de)::after,
+    .rich-text a[href^='http']:not(:has(img)):lang(ja)::after {
+        display: inline;
+        margin-left: 0;
+        content: ' (' attr(href) ')';
+    }
+}

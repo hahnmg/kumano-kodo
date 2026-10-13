@@ -45,3 +45,9 @@
         scroll-behavior: auto;
     }
 }
+
+@media print {
+    .slider-indicator {
+        display: none;
+    }
+}

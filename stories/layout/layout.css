@@ -172,3 +172,11 @@
         margin-left: 0;
     }
 }
+
+@media print {
+    /* A rail scrolls sideways on screen; on paper its items wrap. */
+    .rail {
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+}

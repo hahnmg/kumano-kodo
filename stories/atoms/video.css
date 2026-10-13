@@ -72,3 +72,10 @@
 .video[data-playing] .video-play {
     visibility: hidden;
 }
+
+@media print {
+    .video-play,
+    .video-badge {
+        display: none;
+    }
+}

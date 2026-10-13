@@ -25,3 +25,9 @@ a.pagination-item:hover {
 .pagination-item[aria-current='page'] {
     color: var(--color-accent);
 }
+
+@media print {
+    .pagination {
+        display: none;
+    }
+}

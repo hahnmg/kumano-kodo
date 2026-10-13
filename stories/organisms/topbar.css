@@ -63,3 +63,9 @@
         white-space: nowrap;
     }
 }
+
+@media print {
+    .topbar {
+        display: none;
+    }
+}
