@@ -72,7 +72,14 @@ for (const name of (await readdir(componentsDir)).sort()) {
             default: attr(tag, 'default'),
             description: unescape(attr(tag, 'description')),
         })),
-        slots: [...new Set([...source.matchAll(/<f:slot(?:\s+name="([^"]+)")?\s*\/>/g)].map(([, slot]) => slot ?? 'default'))],
+        // Tag and inline notation: <f:slot name="x"/> and {f:slot(name: 'x')}.
+        slots: [
+            ...new Set(
+                [...source.matchAll(/<f:slot(?:\s+name="([^"]+)")?\s*\/>|\{f:slot\((?:name:\s*'([^']+)')?\)\}/g)].map(
+                    ([, tag, inline]) => tag ?? inline ?? 'default',
+                ),
+            ),
+        ],
     });
 }
 // Formatted as the lint expects it, so a build leaves the file unchanged when the components are.
