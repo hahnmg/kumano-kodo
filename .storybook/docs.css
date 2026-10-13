@@ -113,15 +113,16 @@
 
 .sbdocs .issue-refs {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
-    gap: var(--space-8);
+    gap: var(--space-4) var(--space-8);
     color: var(--color-muted);
     font-size: 0.85em;
-    white-space: nowrap;
 }
 
 .sbdocs .issue-refs a {
     color: var(--color-accent);
+    white-space: nowrap;
 }
 
 .sbdocs .issue-head {

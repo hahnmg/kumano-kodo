@@ -4,6 +4,7 @@ const config: StorybookConfig = {
     stories: [
         '../stories/introduction.mdx',
         '../stories/core-theme-issues.mdx',
+        '../stories/feedback.mdx',
         '../stories/fluid-components.mdx',
         '../stories/**/*.stories.ts',
     ],
