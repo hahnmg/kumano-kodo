@@ -65,6 +65,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-13 Design feedback, pages: FAQ lists and timelines open and close on `border/rule`; Text & Media `Text=Long` (image at the top beside several paragraphs)
 - [x] 2026-10-12 `Icon/Play`; Route Map as set `Highlight=None/Day` with underlined day links (the hero video of the same day was taken out again on 2026-10-13)
 - [x] 2026-10-13 Video atom (poster in the video's format, play button) and Figure `Variant=Video`; Day 2 opens with it
+- [x] 2026-10-13 Video as set `State=Default/Asked` (the question before a YouTube or Vimeo player loads, on `color/paper`); Media Consent (the switch for the privacy page)
 - [x] 2026-10-13 Components: Fact List `Four rows`, Breadcrumb `Third level` (both off by default); Figure and Teaser Card images fill their width and keep their ratio (4:3, 1:1)
 - [x] 2026-10-13 Route Map: day labels and legend as in code; FAQ Item `State=Open` with the chevron turned up
 - [x] 2026-10-13 Page frames: section padding on `layout/section-sm` (96), as `.section` in code; only the Kumano Home quote keeps `layout/section` (large). Site frames without the footer notice, as in code
@@ -86,3 +87,4 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - Hover movement (arrow nudge, download icon) and the drawn accent line are shown as their end state, not as motion.
 - CTA Card: both variants share one default text.
 - Page Intro: the upright site name breaks after each character; Figma has no vertical writing mode.
+- The privacy page has no frame; Media Consent exists as a component only. Video `State=Asked` shows the desktop box; on a phone the code lets the box grow with the text.
