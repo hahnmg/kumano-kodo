@@ -10,11 +10,11 @@ errorHandling:
   -
     errorCode: 403
     errorHandler: Page
-    errorContentSource: 't3://page?uid=3505'
+    errorContentSource: 't3://page?uid=3709'
   -
     errorCode: 404
     errorHandler: Page
-    errorContentSource: 't3://page?uid=3511'
+    errorContentSource: 't3://page?uid=3715'
 languages:
   -
     languageId: 0
@@ -42,12 +42,12 @@ languages:
     base: /ja/
     flag: jp
     fallbackType: strict
-rootPageId: 3430
+rootPageId: 3634
 routeEnhancers:
   NewsDetail:
     type: Extbase
     limitToPages:
-      - 3484
+      - 3688
     extension: News
     plugin: Pi1
     routes:
@@ -62,7 +62,7 @@ routeEnhancers:
   NewsList:
     type: Extbase
     limitToPages:
-      - 3481
+      - 3685
     extension: News
     plugin: Pi1
     routes:
@@ -79,6 +79,6 @@ routeEnhancers:
     aspects:
       page:
         type: StaticRangeMapper
-        start: '1'
+        start: '2'
         end: '100'
 websiteTitle: 'Kumano Kodo'

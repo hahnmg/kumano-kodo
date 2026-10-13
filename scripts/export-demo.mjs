@@ -1000,7 +1000,8 @@ const site = {
             defaultController: 'News::list',
             defaults: { page: '' },
             requirements: { page: '\\d+' },
-            aspects: { page: { type: 'StaticRangeMapper', start: '1', end: '100' } },
+            // Page 1 is the list page itself, so it has one address only.
+            aspects: { page: { type: 'StaticRangeMapper', start: '2', end: '100' } },
         },
     },
 };

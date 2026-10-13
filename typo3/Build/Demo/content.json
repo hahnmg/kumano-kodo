@@ -66,7 +66,7 @@
                 "aspects": {
                     "page": {
                         "type": "StaticRangeMapper",
-                        "start": "1",
+                        "start": "2",
                         "end": "100"
                     }
                 }

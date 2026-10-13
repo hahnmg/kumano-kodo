@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
-<f:comment>The news as teaser cards, three in a row, with the pages below. A card shows the first preview image, the teaser, the date and the first category.</f:comment>
+<f:comment>The news as teaser cards, three in a row, with the pages below. A card shows the first preview image, the teaser, the date and the first category. Page 1 links to the list page itself.</f:comment>
 <f:variable name="datePattern">{f:translate(key: 'newsDatePattern', domain: 'kumano_kodo.messages')}</f:variable>
 <kk:section>
     <f:if condition="{news}">
@@ -24,7 +24,7 @@
                         <f:if condition="{page.previousPageNumber}">
                             <kk:paginationItem
                                 label="←"
-                                href="{f:uri.action(arguments: {currentPage: page.previousPageNumber}, addQueryString: 'untrusted')}"
+                                href="{f:if(condition: '{page.previousPageNumber} == 1', then: '{f:uri.page()}', else: '{f:uri.action(arguments: {currentPage: page.previousPageNumber}, addQueryString: \'untrusted\')}')}"
                                 ariaLabel="{f:translate(key: 'newsPreviousPage', domain: 'kumano_kodo.messages')}"
                             />
                         </f:if>
@@ -34,7 +34,7 @@
                         <f:for each="{page.allPageNumbers}" as="number">
                             <kk:paginationItem
                                 label="{number}"
-                                href="{f:uri.action(arguments: {currentPage: number}, addQueryString: 'untrusted')}"
+                                href="{f:if(condition: '{number} == 1', then: '{f:uri.page()}', else: '{f:uri.action(arguments: {currentPage: number}, addQueryString: \'untrusted\')}')}"
                                 current="{f:if(condition: '{number} == {pagination.paginator.currentPageNumber}', then: 1, else: 0)}"
                             />
                         </f:for>
