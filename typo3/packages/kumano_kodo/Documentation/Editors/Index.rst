@@ -56,5 +56,8 @@ Route map
 Newsletter
     The sign-up form; its target is a site setting.
 
+External videos
+    The switch that loads YouTube and Vimeo videos without asking; for the privacy page.
+
 Entries of cards and lists, links and chips share one record type. Each entry can be limited to a user group, for
 example a footer link that only logged-in visitors see.

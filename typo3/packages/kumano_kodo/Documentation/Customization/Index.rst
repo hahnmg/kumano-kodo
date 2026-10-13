@@ -19,6 +19,13 @@ palettes and the tab order General, Images, Appearance. Put its template in your
 build it from the theme's :ref:`components <components>` and render it through the `Kumano/Section` partial so it
 gets the section frame.
 
+Colours
+=======
+
+The five themes pass WCAG AA contrast in light and dark mode; the build checks every pairing of text and ground.
+Colours set in the site settings are not checked. Test text on paper, sunk and accent grounds with a contrast checker
+before going live, for example the `WebAIM Contrast Checker <https://webaim.org/resources/contrastchecker/>`__.
+
 Logo
 ====
 

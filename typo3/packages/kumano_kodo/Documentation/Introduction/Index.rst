@@ -20,7 +20,7 @@ What it covers
 
 *   Five themes (Caramel, Forest, Ocean, Violet, and the reduced Mono), light and dark mode, all colours, typefaces and spacing as site
     settings.
-*   Containers Section and Columns, and 13 content elements with a display option each.
+*   Containers Section and Columns, and 14 content elements with a display option each.
 *   Templates for indexed_search, felogin and form, and the sitemap of seo.
 *   Structured data (WebSite, WebPage, BreadcrumbList) and a title format with the website title.
 *   Own icons for every element and record type, preview images for the page layouts.
