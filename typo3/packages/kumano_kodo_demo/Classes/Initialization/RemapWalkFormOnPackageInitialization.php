@@ -10,8 +10,9 @@ use TYPO3\CMS\Core\Package\Event\PackageInitializationEvent;
 use TYPO3\CMS\Impexp\Import;
 use TYPO3\CMS\Impexp\Initialization\ImportContentOnPackageInitialization;
 
-// The imported content element has a new uid; the form in fileadmin gets that one, mapped from the exported uid.
-final readonly class WriteWalkFormOnPackageInitialization
+// EXT:form keeps impexp from writing form records, so the walk form is stored again after the import, with the
+// imported content element's uid.
+final readonly class RemapWalkFormOnPackageInitialization
 {
     public function __construct(private WalkForm $walkForm) {}
 
@@ -25,6 +26,6 @@ final readonly class WriteWalkFormOnPackageInitialization
             return;
         }
         $exported = $this->walkForm->templateUid();
-        $this->walkForm->restorePluginReferences($this->walkForm->write((int)($import->getImportMapId()['tt_content'][$exported] ?? 0)));
+        $this->walkForm->restoreAfterImport($exported, (int)($import->getImportMapId()['tt_content'][$exported] ?? 0));
     }
 }

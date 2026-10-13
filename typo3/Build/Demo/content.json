@@ -6716,7 +6716,7 @@
                             {
                                 "type": "form_formframework",
                                 "fields": {
-                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">1:/form_definitions/walk.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
+                                    "pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">form:walk</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
                                 }
                             }
                         ],

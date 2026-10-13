@@ -2,223 +2,223 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" target-language="ja" datatype="plaintext" original="form_walk" product-name="kumano_kodo_demo">
         <body>
-            <trans-unit id="walk.renderingOptions.submitButtonLabel">
+            <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
                 <source>Send registration</source>
                 <target>申し込みを送信</target>
             </trans-unit>
-            <trans-unit id="walk.finisher.Confirmation.message">
+            <trans-unit id="finisher.Confirmation.message">
                 <source>Thank you. We will write to you within a week.</source>
                 <target>ありがとうございます。1週間以内にご連絡します。</target>
             </trans-unit>
-            <trans-unit id="walk.element.about.properties.label">
+            <trans-unit id="element.about.properties.label">
                 <source>About you</source>
                 <target>あなたについて</target>
             </trans-unit>
-            <trans-unit id="walk.element.walk.properties.label">
+            <trans-unit id="element.walk.properties.label">
                 <source>Your walk</source>
                 <target>ウォークについて</target>
             </trans-unit>
-            <trans-unit id="walk.element.photos.properties.label">
+            <trans-unit id="element.photos.properties.label">
                 <source>Photos</source>
                 <target>写真</target>
             </trans-unit>
-            <trans-unit id="walk.element.summary.properties.label">
+            <trans-unit id="element.summary.properties.label">
                 <source>Check your details</source>
                 <target>入力内容の確認</target>
             </trans-unit>
-            <trans-unit id="walk.element.about.renderingOptions.previousButtonLabel">
+            <trans-unit id="element.about.renderingOptions.previousButtonLabel">
                 <source>Back</source>
                 <target>戻る</target>
             </trans-unit>
-            <trans-unit id="walk.element.about.renderingOptions.nextButtonLabel">
+            <trans-unit id="element.about.renderingOptions.nextButtonLabel">
                 <source>Next</source>
                 <target>次へ</target>
             </trans-unit>
-            <trans-unit id="walk.element.walk.renderingOptions.previousButtonLabel">
+            <trans-unit id="element.walk.renderingOptions.previousButtonLabel">
                 <source>Back</source>
                 <target>戻る</target>
             </trans-unit>
-            <trans-unit id="walk.element.walk.renderingOptions.nextButtonLabel">
+            <trans-unit id="element.walk.renderingOptions.nextButtonLabel">
                 <source>Next</source>
                 <target>次へ</target>
             </trans-unit>
-            <trans-unit id="walk.element.photos.renderingOptions.previousButtonLabel">
+            <trans-unit id="element.photos.renderingOptions.previousButtonLabel">
                 <source>Back</source>
                 <target>戻る</target>
             </trans-unit>
-            <trans-unit id="walk.element.photos.renderingOptions.nextButtonLabel">
+            <trans-unit id="element.photos.renderingOptions.nextButtonLabel">
                 <source>Next</source>
                 <target>次へ</target>
             </trans-unit>
-            <trans-unit id="walk.element.summary.renderingOptions.previousButtonLabel">
+            <trans-unit id="element.summary.renderingOptions.previousButtonLabel">
                 <source>Back</source>
                 <target>戻る</target>
             </trans-unit>
-            <trans-unit id="walk.element.summary.renderingOptions.nextButtonLabel">
+            <trans-unit id="element.summary.renderingOptions.nextButtonLabel">
                 <source>Next</source>
                 <target>次へ</target>
             </trans-unit>
-            <trans-unit id="walk.element.intro.properties.label">
+            <trans-unit id="element.intro.properties.label">
                 <source>Before you set out</source>
                 <target>出発の前に</target>
             </trans-unit>
-            <trans-unit id="walk.element.intro.properties.text">
+            <trans-unit id="element.intro.properties.text">
                 <source>Tell us who walks, which route and when. We answer within a week.</source>
                 <target>歩く人、ルート、日程を教えてください。1週間以内にお返事します。</target>
             </trans-unit>
-            <trans-unit id="walk.element.name.properties.label">
+            <trans-unit id="element.name.properties.label">
                 <source>Name</source>
                 <target>お名前</target>
             </trans-unit>
-            <trans-unit id="walk.element.email.properties.label">
+            <trans-unit id="element.email.properties.label">
                 <source>Email address</source>
                 <target>メールアドレス</target>
             </trans-unit>
-            <trans-unit id="walk.element.phone.properties.label">
+            <trans-unit id="element.phone.properties.label">
                 <source>Phone</source>
                 <target>電話番号</target>
             </trans-unit>
-            <trans-unit id="walk.element.website.properties.label">
+            <trans-unit id="element.website.properties.label">
                 <source>Blog or website</source>
                 <target>ブログまたはウェブサイト</target>
             </trans-unit>
-            <trans-unit id="walk.element.group.properties.label">
+            <trans-unit id="element.group.properties.label">
                 <source>Walkers in your group</source>
                 <target>グループの人数</target>
             </trans-unit>
-            <trans-unit id="walk.element.arrival.properties.label">
+            <trans-unit id="element.arrival.properties.label">
                 <source>Arrival</source>
                 <target>到着日</target>
             </trans-unit>
-            <trans-unit id="walk.element.departure.properties.label">
+            <trans-unit id="element.departure.properties.label">
                 <source>Departure</source>
                 <target>出発日</target>
             </trans-unit>
-            <trans-unit id="walk.element.account.properties.label">
+            <trans-unit id="element.account.properties.label">
                 <source>Your account</source>
                 <target>アカウント</target>
             </trans-unit>
-            <trans-unit id="walk.element.password.properties.label">
+            <trans-unit id="element.password.properties.label">
                 <source>Password</source>
                 <target>パスワード</target>
             </trans-unit>
-            <trans-unit id="walk.element.new-password.properties.label">
+            <trans-unit id="element.new-password.properties.label">
                 <source>New password</source>
                 <target>新しいパスワード</target>
             </trans-unit>
-            <trans-unit id="walk.element.route.properties.label">
+            <trans-unit id="element.route.properties.label">
                 <source>Route</source>
                 <target>ルート</target>
             </trans-unit>
-            <trans-unit id="walk.element.pace.properties.label">
+            <trans-unit id="element.pace.properties.label">
                 <source>Pace</source>
                 <target>ペース</target>
             </trans-unit>
-            <trans-unit id="walk.element.interests.properties.label">
+            <trans-unit id="element.interests.properties.label">
                 <source>What draws you</source>
                 <target>興味のあること</target>
             </trans-unit>
-            <trans-unit id="walk.element.languages.properties.label">
+            <trans-unit id="element.languages.properties.label">
                 <source>Languages you speak</source>
                 <target>話せる言語</target>
             </trans-unit>
-            <trans-unit id="walk.element.country.properties.label">
+            <trans-unit id="element.country.properties.label">
                 <source>Country you live in</source>
                 <target>お住まいの国</target>
             </trans-unit>
-            <trans-unit id="walk.element.notes.properties.label">
+            <trans-unit id="element.notes.properties.label">
                 <source>Anything else</source>
                 <target>その他</target>
             </trans-unit>
-            <trans-unit id="walk.element.consent.properties.label">
+            <trans-unit id="element.consent.properties.label">
                 <source>I agree that my details are used to plan the walk.</source>
                 <target>ウォークの計画のために個人情報が使われることに同意します。</target>
             </trans-unit>
-            <trans-unit id="walk.element.photo.properties.label">
+            <trans-unit id="element.photo.properties.label">
                 <source>A photo of you</source>
                 <target>あなたの写真</target>
             </trans-unit>
-            <trans-unit id="walk.element.route-file.properties.label">
+            <trans-unit id="element.route-file.properties.label">
                 <source>Your route as PDF</source>
                 <target>ルート（PDF）</target>
             </trans-unit>
-            <trans-unit id="walk.element.new-password.properties.confirmationLabel">
+            <trans-unit id="element.new-password.properties.confirmationLabel">
                 <source>Repeat the password</source>
                 <target>パスワード（確認）</target>
             </trans-unit>
-            <trans-unit id="walk.element.website.properties.elementDescription">
+            <trans-unit id="element.website.properties.elementDescription">
                 <source>Where you write about the walk, if anywhere.</source>
                 <target>ウォークについて書いている場所があれば。</target>
             </trans-unit>
-            <trans-unit id="walk.element.departure.properties.elementDescription">
+            <trans-unit id="element.departure.properties.elementDescription">
                 <source>As day.month.year, for example 25.04.2024.</source>
                 <target>日.月.年の形式で。例：25.04.2024</target>
             </trans-unit>
-            <trans-unit id="walk.element.photo.properties.elementDescription">
+            <trans-unit id="element.photo.properties.elementDescription">
                 <source>JPG or PNG.</source>
                 <target>JPGまたはPNG。</target>
             </trans-unit>
-            <trans-unit id="walk.element.route-file.properties.elementDescription">
+            <trans-unit id="element.route-file.properties.elementDescription">
                 <source>A PDF of your planned stages.</source>
                 <target>予定している区間のPDF。</target>
             </trans-unit>
-            <trans-unit id="walk.element.route.properties.options.1">
+            <trans-unit id="element.route.properties.options.1">
                 <source>Nakahechi</source>
                 <target>中辺路</target>
             </trans-unit>
-            <trans-unit id="walk.element.route.properties.options.2">
+            <trans-unit id="element.route.properties.options.2">
                 <source>Kohechi</source>
                 <target>小辺路</target>
             </trans-unit>
-            <trans-unit id="walk.element.route.properties.options.3">
+            <trans-unit id="element.route.properties.options.3">
                 <source>Iseji</source>
                 <target>伊勢路</target>
             </trans-unit>
-            <trans-unit id="walk.element.route.properties.options.4">
+            <trans-unit id="element.route.properties.options.4">
                 <source>Ohechi</source>
                 <target>大辺路</target>
             </trans-unit>
-            <trans-unit id="walk.element.pace.properties.options.1">
+            <trans-unit id="element.pace.properties.options.1">
                 <source>Slow</source>
                 <target>ゆっくり</target>
             </trans-unit>
-            <trans-unit id="walk.element.pace.properties.options.2">
+            <trans-unit id="element.pace.properties.options.2">
                 <source>Steady</source>
                 <target>一定</target>
             </trans-unit>
-            <trans-unit id="walk.element.pace.properties.options.3">
+            <trans-unit id="element.pace.properties.options.3">
                 <source>Brisk</source>
                 <target>速め</target>
             </trans-unit>
-            <trans-unit id="walk.element.interests.properties.options.1">
+            <trans-unit id="element.interests.properties.options.1">
                 <source>Shrines</source>
                 <target>神社</target>
             </trans-unit>
-            <trans-unit id="walk.element.interests.properties.options.2">
+            <trans-unit id="element.interests.properties.options.2">
                 <source>Hot springs</source>
                 <target>温泉</target>
             </trans-unit>
-            <trans-unit id="walk.element.interests.properties.options.3">
+            <trans-unit id="element.interests.properties.options.3">
                 <source>The forest</source>
                 <target>森</target>
             </trans-unit>
-            <trans-unit id="walk.element.interests.properties.options.4">
+            <trans-unit id="element.interests.properties.options.4">
                 <source>The food</source>
                 <target>食</target>
             </trans-unit>
-            <trans-unit id="walk.element.languages.properties.options.1">
+            <trans-unit id="element.languages.properties.options.1">
                 <source>English</source>
                 <target>英語</target>
             </trans-unit>
-            <trans-unit id="walk.element.languages.properties.options.2">
+            <trans-unit id="element.languages.properties.options.2">
                 <source>German</source>
                 <target>ドイツ語</target>
             </trans-unit>
-            <trans-unit id="walk.element.languages.properties.options.3">
+            <trans-unit id="element.languages.properties.options.3">
                 <source>Japanese</source>
                 <target>日本語</target>
             </trans-unit>
-            <trans-unit id="walk.element.languages.properties.options.4">
+            <trans-unit id="element.languages.properties.options.4">
                 <source>French</source>
                 <target>フランス語</target>
             </trans-unit>

@@ -116,7 +116,7 @@ final class BuildCommand extends Command
         $this->applyOrder();
         if (isset($this->elements[WalkForm::CONTENT_KEY])) {
             $this->walkForm->setTemplateUid($this->elements[WalkForm::CONTENT_KEY]);
-            $this->walkForm->write($this->elements[WalkForm::CONTENT_KEY]);
+            $this->walkForm->storeInDatabase();
         }
         // This instance holds the records the export ships, so its own setup must not import them again.
         $this->registry->set('extensionDataImport', ($demo['site']['package'] ?? 'kumano_kodo_demo') . ':Initialisation/dataImported', 1);
