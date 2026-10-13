@@ -33,7 +33,7 @@ One image across the full width; an optional caption in the slot.
         - Meaning
     *   - ``image``
         - object, required
-        - A file or file reference.
+        - A file or file reference; a video as k:media gives it plays in place.
 
 Slots: ``default``.
 
@@ -258,7 +258,7 @@ One image, or two side by side, with a caption in the slot; they open in the lig
         - Meaning
     *   - ``images``
         - iterable, required
-        - One or two files or file references.
+        - One or two files or file references; a video as k:media gives it plays in place.
     *   - ``ruled``
         - bool|int, default ``{true}``
         - Draws the line above the caption.
@@ -278,7 +278,7 @@ A grid of images that open in the lightbox; an optional caption in the slot.
         - Meaning
     *   - ``images``
         - iterable, required
-        - Files or file references.
+        - Files or file references; a video as k:media gives it opens in the lightbox too.
     *   - ``skip``
         - int, default ``0``
         - Leaves out the first images, for example one already shown above.
@@ -503,7 +503,7 @@ Slots: ``default``.
 kk:lightboxLink
 ===============
 
-An image that opens large in the lightbox; place it inside a lightboxGroup.
+An image that opens large in the lightbox; place it inside a lightboxGroup. A video plays there.
 
 ..  list-table::
     :header-rows: 1
@@ -513,7 +513,7 @@ An image that opens large in the lightbox; place it inside a lightboxGroup.
         - Meaning
     *   - ``image``
         - object, required
-        - A file or file reference.
+        - A file or file reference, or a video as k:media gives it.
     *   - ``class``
         - string
         - Class of the img element.
@@ -1064,7 +1064,7 @@ An image beside a heading, the text in the slot as paragraphs and an optional li
         - The heading.
     *   - ``image``
         - object
-        - A file or file reference.
+        - A file or file reference; a video as k:media gives it plays in place.
     *   - ``imageSide``
         - string, default ``left``
         - left or right.
@@ -1107,3 +1107,34 @@ One entry of a timeline: date, title, text and time.
     *   - ``time``
         - string
         - A note below, such as a time span.
+
+kk:video
+========
+
+A video in an image's place: the poster in the video's format and a play button. The player (MP4, WebM, YouTube,
+    Vimeo) waits in a template, whose content the browser does not fetch, until the button is pressed.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``video``
+        - object, required
+        - The video file or reference.
+    *   - ``poster``
+        - object
+        - An image file or reference shown until play.
+    *   - ``width``
+        - string|int, default ``16``
+        - The video's width, for its format.
+    *   - ``height``
+        - string|int, default ``9``
+        - The video's height, for its format.
+    *   - ``class``
+        - string
+        - A class for the box, where an element's layout hangs on it.
+    *   - ``sizes``
+        - string, default ``(width <= 900px) 100vw, 50vw``
+        - As for image.

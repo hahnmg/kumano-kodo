@@ -20,7 +20,7 @@
                 "name": "image",
                 "type": "object",
                 "required": true,
-                "description": "A file or file reference."
+                "description": "A file or file reference; a video as k:media gives it plays in place."
             }
         ],
         "slots": ["default"]
@@ -282,7 +282,7 @@
                 "name": "images",
                 "type": "iterable",
                 "required": true,
-                "description": "One or two files or file references."
+                "description": "One or two files or file references; a video as k:media gives it plays in place."
             },
             {
                 "name": "ruled",
@@ -302,7 +302,7 @@
                 "name": "images",
                 "type": "iterable",
                 "required": true,
-                "description": "Files or file references."
+                "description": "Files or file references; a video as k:media gives it opens in the lightbox too."
             },
             {
                 "name": "skip",
@@ -553,13 +553,13 @@
     },
     {
         "name": "lightboxLink",
-        "description": "An image that opens large in the lightbox; place it inside a lightboxGroup.",
+        "description": "An image that opens large in the lightbox; place it inside a lightboxGroup. A video plays there.",
         "arguments": [
             {
                 "name": "image",
                 "type": "object",
                 "required": true,
-                "description": "A file or file reference."
+                "description": "A file or file reference, or a video as k:media gives it."
             },
             {
                 "name": "class",
@@ -1197,7 +1197,7 @@
                 "name": "image",
                 "type": "object",
                 "required": false,
-                "description": "A file or file reference."
+                "description": "A file or file reference; a video as k:media gives it plays in place."
             },
             {
                 "name": "imageSide",
@@ -1254,6 +1254,52 @@
                 "type": "string",
                 "required": false,
                 "description": "A note below, such as a time span."
+            }
+        ],
+        "slots": []
+    },
+    {
+        "name": "video",
+        "description": "A video in an image's place: the poster in the video's format and a play button. The player (MP4, WebM, YouTube,\n    Vimeo) waits in a template, whose content the browser does not fetch, until the button is pressed.",
+        "arguments": [
+            {
+                "name": "video",
+                "type": "object",
+                "required": true,
+                "description": "The video file or reference."
+            },
+            {
+                "name": "poster",
+                "type": "object",
+                "required": false,
+                "description": "An image file or reference shown until play."
+            },
+            {
+                "name": "width",
+                "type": "string|int",
+                "required": false,
+                "default": "16",
+                "description": "The video's width, for its format."
+            },
+            {
+                "name": "height",
+                "type": "string|int",
+                "required": false,
+                "default": "9",
+                "description": "The video's height, for its format."
+            },
+            {
+                "name": "class",
+                "type": "string",
+                "required": false,
+                "description": "A class for the box, where an element's layout hangs on it."
+            },
+            {
+                "name": "sizes",
+                "type": "string",
+                "required": false,
+                "default": "(width <= 900px) 100vw, 50vw",
+                "description": "As for image."
             }
         ],
         "slots": []

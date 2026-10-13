@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:comment>A grid of images that open in the lightbox; an optional caption in the slot.</f:comment>
-<f:argument name="images" type="iterable" description="Files or file references."/>
+<f:argument name="images" type="iterable" description="Files or file references; a video as k:media gives it opens in the lightbox too."/>
 <f:argument name="skip" type="int" optional="{true}" default="0" description="Leaves out the first images, for example one already shown above."/>
 
 <f:asset.css identifier="kumano-gallery" href="EXT:kumano_kodo/Resources/Public/Css/Components/gallery.css"/>

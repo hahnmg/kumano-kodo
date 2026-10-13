@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:comment>One image, or two side by side, with a caption in the slot; they open in the lightbox.</f:comment>
-<f:argument name="images" type="iterable" description="One or two files or file references."/>
+<f:argument name="images" type="iterable" description="One or two files or file references; a video as k:media gives it plays in place."/>
 <f:argument name="ruled" type="bool|int" optional="{true}" default="{true}" description="Draws the line above the caption."/>
 
 <f:asset.css identifier="kumano-figure" href="EXT:kumano_kodo/Resources/Public/Css/Components/figure.css"/>
@@ -8,7 +8,14 @@
 <kk:lightboxGroup tag="figure" class="{class}">
     <div class="figure-images">
         <f:for each="{images}" as="image">
-            <kk:lightboxLink image="{image}" class="figure-image"/>
+            <f:if condition="{image.video}">
+                <f:then>
+                    <kk:video video="{image.video}" poster="{image.poster}" width="{image.width}" height="{image.height}"/>
+                </f:then>
+                <f:else>
+                    <kk:lightboxLink image="{image}" class="figure-image"/>
+                </f:else>
+            </f:if>
         </f:for>
     </div>
     <figcaption class="figure-caption type-caption"><f:slot/></figcaption>

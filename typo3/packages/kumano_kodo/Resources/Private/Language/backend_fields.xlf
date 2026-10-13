@@ -296,6 +296,9 @@
             <trans-unit id="tt_content.header.description.quote">
                 <source>For a quotation: its source.</source>
             </trans-unit>
+            <trans-unit id="tt_content.image.description.video">
+                <source>Images, or a video in an image's place: an MP4 or WebM file, or a YouTube or Vimeo address. An image right after a video becomes its poster; YouTube and Vimeo bring their own. The video loads only when a visitor presses play.</source>
+            </trans-unit>
             <trans-unit id="tt_content.imageorient.left">
                 <source>Photo on the left</source>
             </trans-unit>

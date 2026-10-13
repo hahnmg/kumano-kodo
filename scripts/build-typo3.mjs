@@ -65,7 +65,7 @@ const buildJs = () =>
             emptyOutDir: true,
             minify: true,
             lib: {
-                entry: Object.fromEntries(['site', 'slider', 'lightbox'].map((n) => [n, join(root, `src/entries/${n}.ts`)])),
+                entry: Object.fromEntries(['site', 'slider', 'lightbox', 'video'].map((n) => [n, join(root, `src/entries/${n}.ts`)])),
                 formats: ['es'],
                 fileName: (_, name) => `${name}.js`,
             },

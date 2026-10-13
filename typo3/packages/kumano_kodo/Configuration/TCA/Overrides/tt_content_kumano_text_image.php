@@ -24,8 +24,11 @@ ExtensionManagementUtility::addRecordType(
                 ],
             ],
             'image' => [
+                'description' => 'kumano_kodo.backend_fields:tt_content.image.description.video',
                 'config' => [
-                    'maxitems' => 1,
+                    'allowed' => 'common-image-types,mp4,webm,youtube,vimeo',
+                    // A video and its poster.
+                    'maxitems' => 2,
                     'minitems' => 1,
                 ],
             ],

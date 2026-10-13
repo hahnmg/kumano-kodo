@@ -36,6 +36,9 @@ final class BuildCommand extends Command
     private array $pages = [];
     /** @var array<string, int> photo slug => sys_file uid */
     private array $photos = [];
+
+    /** @var array<string, int> video slug => sys_file uid */
+    private array $videos = [];
     /** @var array<string, int> element key => tt_content uid */
     private array $elements = [];
 
@@ -85,6 +88,7 @@ final class BuildCommand extends Command
         $this->translatePage($home);
         $this->importPhotos($demo['photos']);
         $this->importFiles($demo['files'] ?? []);
+        $this->importVideos($demo['videos'] ?? []);
         foreach ($pages as $page) {
             $this->createPage($page);
         }
@@ -138,6 +142,25 @@ final class BuildCommand extends Command
             assert($file instanceof File);
             $file->getMetaData()->add(['title' => $entry['title']])->save();
             $this->files[$slug] = $file->getUid();
+        }
+    }
+
+    // Videos stand in image fields beside the photos; references name them "video:<slug>".
+    private function importVideos(array $videos): void
+    {
+        $storage = $this->storageRepository->getDefaultStorage();
+        $folder = $storage->hasFolder('/kumano-kodo/video/')
+            ? $storage->getFolder('/kumano-kodo/video/')
+            : $storage->createFolder('video', $storage->getFolder('/kumano-kodo/'));
+        $source = dirname(Environment::getProjectPath());
+        foreach ($videos as $slug => $entry) {
+            $name = basename($entry['file']);
+            $file = $storage->hasFileInFolder($name, $folder)
+                ? $storage->getFileInFolder($name, $folder)
+                : $storage->addFile($source . '/' . $entry['file'], $folder, $name, DuplicationBehavior::REPLACE, false);
+            assert($file instanceof File);
+            $file->getMetaData()->add(['width' => $entry['width'], 'height' => $entry['height']])->save();
+            $this->videos[$slug] = $file->getUid();
         }
     }
 
@@ -448,7 +471,8 @@ final class BuildCommand extends Command
         foreach ($photos as $photo) {
             $photo = is_array($photo) ? $photo : ['photo' => $photo];
             $id = 'NEWref' . count($data['sys_file_reference'] ?? []);
-            $data['sys_file_reference'][$id] = ['pid' => $pid, 'uid_local' => $this->photos[$photo['photo']]] + array_diff_key($photo, ['photo' => 1]);
+            $file = str_starts_with($photo['photo'], 'video:') ? $this->videos[substr($photo['photo'], 6)] : $this->photos[$photo['photo']];
+            $data['sys_file_reference'][$id] = ['pid' => $pid, 'uid_local' => $file] + array_diff_key($photo, ['photo' => 1]);
             $ids[] = $id;
         }
         return implode(',', $ids);

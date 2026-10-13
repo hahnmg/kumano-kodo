@@ -42,7 +42,9 @@ ExtensionManagementUtility::addRecordType(
                 ],
             ],
             'image' => [
+                'description' => 'kumano_kodo.backend_fields:tt_content.image.description.video',
                 'config' => [
+                    'allowed' => 'common-image-types,mp4,webm,youtube,vimeo',
                     'minitems' => 1,
                 ],
             ],

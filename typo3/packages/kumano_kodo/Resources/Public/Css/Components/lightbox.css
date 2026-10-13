@@ -59,6 +59,22 @@
     object-fit: contain;
 }
 
+.lightbox-image[hidden] {
+    display: none;
+}
+
+/* The player keeps its own format from its width and height, like a photo. */
+.lightbox-player > video,
+.lightbox-player > iframe {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100dvh - 160px);
+    margin: 0 auto;
+    border: 0;
+}
+
 .lightbox-caption {
     display: flex;
     gap: var(--space-24);

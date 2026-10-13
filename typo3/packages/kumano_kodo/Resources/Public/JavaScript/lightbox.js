@@ -1,51 +1,53 @@
+import { n as e } from "./video-Dj9eFOb2.js";
 //#region src/scripts/lightbox.ts
-var e = {
+var t = {
 	close: "Close",
 	previous: "Previous",
-	next: "Next"
-}, t = (e) => `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="${e}"/></svg>`, n = `<figure class="lightbox-figure"><img class="lightbox-image" alt=""><figcaption class="lightbox-caption type-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></figcaption></figure><button class="lightbox-button lightbox-close" type="button">${t("M18 6 6 18M6 6l12 12")}</button><button class="lightbox-button lightbox-nav lightbox-nav-previous" type="button" data-step="-1">${t("M19 12H5m0 0 6-6m-6 6 6 6")}</button><button class="lightbox-button lightbox-nav lightbox-nav-next" type="button" data-step="1">${t("M5 12h14m0 0-6-6m6 6-6 6")}</button>`;
+	next: "Next",
+	play: "Play video"
+}, n = (e) => `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="${e}"/></svg>`, r = `<figure class="lightbox-figure"><img class="lightbox-image" alt=""><div class="lightbox-player"></div><figcaption class="lightbox-caption type-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></figcaption></figure><button class="lightbox-button lightbox-close" type="button">${n("M18 6 6 18M6 6l12 12")}</button><button class="lightbox-button lightbox-nav lightbox-nav-previous" type="button" data-step="-1">${n("M19 12H5m0 0 6-6m-6 6 6 6")}</button><button class="lightbox-button lightbox-nav lightbox-nav-next" type="button" data-step="1">${n("M5 12h14m0 0-6-6m6 6-6 6")}</button>`;
 //#endregion
 //#region src/entries/lightbox.ts
-((t = document) => {
-	let r = null, i = null, a = () => r?.isConnected ? r : (r = t.createElement("dialog"), r.className = "lightbox", r.innerHTML = n, t.body.append(r), r), o = (e) => {
-		if (!i || !r) return;
-		let t = i.links.length;
-		i.index = (e + t) % t;
-		let n = i.links[i.index], a = n.querySelector("img")?.alt ?? "", o = r.querySelector(".lightbox-image");
-		o && (o.src = n.href, o.alt = a), r.setAttribute("aria-label", a), r.querySelector(".lightbox-text").textContent = a, r.querySelector(".lightbox-count").textContent = t > 1 ? `${i.index + 1} / ${t}` : "", r.querySelectorAll(".lightbox-nav").forEach((e) => e.hidden = t < 2);
-	}, s = (t) => {
-		let n = t.closest("[data-lightbox-group]"), r = n ? [...n.querySelectorAll("a[data-lightbox]")] : [t], s = a(), c = {
-			...e,
+((n = document) => {
+	let i = null, a = null, o = () => i?.isConnected ? i : (i = n.createElement("dialog"), i.className = "lightbox", i.innerHTML = r, n.body.append(i), i), s = (t) => {
+		if (!a || !i) return;
+		let n = a.links.length;
+		a.index = (t + n) % n;
+		let r = a.links[a.index], o = r.querySelector("img")?.alt ?? "", s = i.querySelector(".lightbox-image"), c = i.querySelector(".lightbox-player"), l = r.querySelector("template.video-source");
+		c?.replaceChildren(), s && (s.hidden = l !== null, l || (s.src = r.href), s.alt = o), l && c && (c.append(l.content.cloneNode(!0)), e(c)), i.setAttribute("aria-label", o), i.querySelector(".lightbox-text").textContent = o, i.querySelector(".lightbox-count").textContent = n > 1 ? `${a.index + 1} / ${n}` : "", i.querySelectorAll(".lightbox-nav").forEach((e) => e.hidden = n < 2);
+	}, c = (e) => {
+		let n = e.closest("[data-lightbox-group]"), r = n ? [...n.querySelectorAll("a[data-lightbox]")] : [e], i = o(), c = {
+			...t,
 			...n ? {
 				close: n.dataset.labelClose,
 				previous: n.dataset.labelPrevious,
 				next: n.dataset.labelNext
 			} : {}
 		};
-		s.querySelector(".lightbox-close")?.setAttribute("aria-label", c.close ?? e.close), s.querySelector(".lightbox-nav-previous")?.setAttribute("aria-label", c.previous ?? e.previous), s.querySelector(".lightbox-nav-next")?.setAttribute("aria-label", c.next ?? e.next), i = {
+		i.querySelector(".lightbox-close")?.setAttribute("aria-label", c.close ?? t.close), i.querySelector(".lightbox-nav-previous")?.setAttribute("aria-label", c.previous ?? t.previous), i.querySelector(".lightbox-nav-next")?.setAttribute("aria-label", c.next ?? t.next), a = {
 			links: r,
-			index: r.indexOf(t),
-			trigger: t
-		}, o(i.index), typeof s.showModal == "function" ? s.showModal() : s.setAttribute("open", ""), s.querySelector(".lightbox-close")?.focus();
-	}, c = () => {
-		r && (typeof r.close == "function" && r.open ? r.close() : r.removeAttribute("open"));
-	}, l = (e) => {
+			index: r.indexOf(e),
+			trigger: e
+		}, s(a.index), typeof i.showModal == "function" ? i.showModal() : i.setAttribute("open", ""), i.querySelector(".lightbox-close")?.focus();
+	}, l = () => {
+		i && (i.querySelector(".lightbox-player")?.replaceChildren(), typeof i.close == "function" && i.open ? i.close() : i.removeAttribute("open"));
+	}, u = (e) => {
 		if (!(e.target instanceof Element)) return;
 		let t = e.target.closest("a[data-lightbox]");
 		if (t && !e.metaKey && !e.ctrlKey && !e.shiftKey && e.button === 0) {
-			e.preventDefault(), s(t);
+			e.preventDefault(), c(t);
 			return;
 		}
-		if (!r || !r.contains(e.target)) return;
+		if (!i || !i.contains(e.target)) return;
 		let n = e.target.closest("[data-step]");
-		n ? o((i?.index ?? 0) + Number(n.dataset.step)) : (e.target.closest(".lightbox-close") || e.target === r) && c();
-	}, u = (e) => {
-		r?.hasAttribute("open") && (e.key === "ArrowRight" ? o((i?.index ?? 0) + 1) : e.key === "ArrowLeft" ? o((i?.index ?? 0) - 1) : e.key === "Escape" && typeof r.showModal != "function" && c());
+		n ? s((a?.index ?? 0) + Number(n.dataset.step)) : (e.target.closest(".lightbox-close") || e.target === i) && l();
 	}, d = (e) => {
-		e.target === r && i?.trigger.focus();
+		i?.hasAttribute("open") && (e.key === "ArrowRight" ? s((a?.index ?? 0) + 1) : e.key === "ArrowLeft" ? s((a?.index ?? 0) - 1) : e.key === "Escape" && typeof i.showModal != "function" && l());
+	}, f = (e) => {
+		e.target === i && (i?.querySelector(".lightbox-player")?.replaceChildren(), a?.trigger.focus());
 	};
-	return t.addEventListener("click", l), t.addEventListener("keydown", u), t.addEventListener("close", d, !0), () => {
-		t.removeEventListener("click", l), t.removeEventListener("keydown", u), t.removeEventListener("close", d, !0), r?.remove();
+	return n.addEventListener("click", u), n.addEventListener("keydown", d), n.addEventListener("close", f, !0), () => {
+		n.removeEventListener("click", u), n.removeEventListener("keydown", d), n.removeEventListener("close", f, !0), i?.remove();
 	};
 })(document);
 //#endregion

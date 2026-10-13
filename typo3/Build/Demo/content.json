@@ -464,6 +464,13 @@
             "title": "雨の日の持ち物リスト"
         }
     },
+    "videos": {
+        "trail": {
+            "file": "img/video/trail.mp4",
+            "width": 1280,
+            "height": 720
+        }
+    },
     "pages": [
         {
             "key": "home",
@@ -2710,6 +2717,7 @@
                                     "tx_kumanokodo_variant": "figure-plain"
                                 },
                                 "image": [
+                                    "video:trail",
                                     "sea-of-clouds"
                                 ]
                             },

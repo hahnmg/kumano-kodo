@@ -1,11 +1,11 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:variable name="link" value="{record.tx_kumanokodo_links -> f:first()}"/>
     <f:variable name="body">
         <kk:textMedia
             title="{record.header}"
-            image="{record.image -> f:first()}"
+            image="{k:media(items: record.image) -> f:first()}"
             imageSide="{f:if(condition: '{data.imageorient} == 25', then: 'right', else: 'left')}"
             linkLabel="{link.title}"
             href="{f:if(condition: link, then: '{f:uri.typolink(parameter: link.link)}')}"

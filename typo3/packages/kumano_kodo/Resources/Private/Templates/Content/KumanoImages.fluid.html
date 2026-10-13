@@ -1,14 +1,15 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
-    <f:variable name="first" value="{record.image -> f:first()}"/>
-    <f:comment>The element's text is the caption; without it the first image's description.</f:comment>
+    <f:variable name="media" value="{k:media(items: record.image)}"/>
+    <f:variable name="first" value="{media -> f:first()}"/>
+    <f:comment>The element's text is the caption; without it the first image's description, for a video its poster's.</f:comment>
     <f:if condition="{record.bodytext}">
         <f:then>
             <f:variable name="caption">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:variable>
         </f:then>
         <f:else>
-            <f:variable name="caption">{first.description}</f:variable>
+            <f:variable name="caption">{f:if(condition: first.video, then: first.poster.description, else: first.description)}</f:variable>
         </f:else>
     </f:if>
     <f:switch expression="{data.tx_kumanokodo_variant}">
@@ -19,10 +20,10 @@
             <f:variable name="body">
                 <f:if condition="{record.bodytext}">
                     <f:then>
-                        <kk:gallery images="{record.image}">{caption -> f:format.raw()}</kk:gallery>
+                        <kk:gallery images="{media}">{caption -> f:format.raw()}</kk:gallery>
                     </f:then>
                     <f:else>
-                        <kk:gallery images="{record.image}"/>
+                        <kk:gallery images="{media}"/>
                     </f:else>
                 </f:if>
             </f:variable>
@@ -30,7 +31,7 @@
         </f:case>
         <f:defaultCase>
             <f:variable name="body">
-                <kk:figure images="{record.image}" ruled="{f:if(condition: '{data.tx_kumanokodo_variant} == figure-plain', then: 0, else: 1)}">{caption -> f:format.raw()}</kk:figure>
+                <kk:figure images="{media}" ruled="{f:if(condition: '{data.tx_kumanokodo_variant} == figure-plain', then: 0, else: 1)}">{caption -> f:format.raw()}</kk:figure>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:defaultCase>

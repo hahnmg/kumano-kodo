@@ -319,7 +319,10 @@ const dayContent = (n) => {
         columns(
             'content-sidebar',
             {},
-            [images('figure-plain', [names[0]]), text(t((x) => `<p>${esc(x.home.draft.chapters[i])}</p><p>${esc(d(x).description)}</p>`))],
+            [
+                images('figure-plain', n === 2 ? ['video:trail', names[0]] : [names[0]]),
+                text(t((x) => `<p>${esc(x.home.draft.chapters[i])}</p><p>${esc(d(x).description)}</p>`)),
+            ],
             [
                 facts('pairs', { header: t((x) => sd(x).factsTitle) }, [
                     { label: t((x) => sd(x).facts.date), value: t((x) => d(x).date) },
@@ -1213,7 +1216,10 @@ for (const lang of langs)
     await writeFile(join(demoPackage, `Resources/Private/Language/${lang === 'en' ? '' : `${lang}.`}form_walk.xlf`), xliff(lang));
 
 const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.values(e.children ?? {}).flat()), 0);
-await writeFile(out, `${JSON.stringify({ site, photos, files, pages, frontendUsers, news }, null, 4)}\n`);
+// A placeholder clip made from four trip photos; on day 2 it stands in the opening figure, its photo as poster.
+const videos = { trail: { file: 'img/video/trail.mp4', width: 1280, height: 720 } };
+
+await writeFile(out, `${JSON.stringify({ site, photos, files, videos, pages, frontendUsers, news }, null, 4)}\n`);
 console.log(
     `Demo: ${pages.length} pages, ${count(pages.flatMap((p) => p.content))} content elements, ${Object.keys(photos).length} photos → ${out}`,
 );
