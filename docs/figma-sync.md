@@ -34,7 +34,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-05 Logo · Title: the website title in Heading/Logo for sites without a logo of their own
 - [x] 2026-10-05 Text Field state Focus (frame over the box); Search Field box as tall as the button
 - [x] 2026-10-05 Theme mode Mono (Inter, radii 0, black and white, signal orange)
-- [ ] Site Footer without wordmark and a starter page frame in Mono
+- [x] 2026-10-13 Site Footer `Show wordmark`, Site Header `Show logo` / `Show title` (Logo · Title); frame Starter · Mono in Theme mode Mono, as the code's Starter · Mono
 - [x] 2026-09-30 Spacing rule as variables: `layout/heading-gap` (56), `layout/element-gap` (96), `layout/column-gap` (40)
 - [x] 2026-10-05 Text Field and Checkbox with an Invalid state; Search Toggle in the header, Search Panel, Search Form (row and stacked, open at the top of the mobile menu), Search Results, Login Form, Form
 - [x] 2026-10-05 Site Footer: "Walked with us? Log in" in the contact column leads to the log-in page
@@ -53,7 +53,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 
 - [x] 2026-09-30 Journal Opener, Chapter and Bleed Photo as components
 - [x] 2026-09-30 Components page in three sections (Atoms, Molecules, Organisms) as in Storybook, 160 apart
-- [ ] Home page as editorial journal, composed from those components
+- [x] 2026-10-13 Site · Home: the editorial journal home (Page Intro, four chapters with their photo grids, Bleed Images, Highlight, map, FAQ, newsletter); section heights within 2 px of Storybook except the second Bleed Image
 - [ ] Site pages: route overview, practical subpage, photos, text page (days and places, practical overview: done 2026-10-05; day page and place page: done 2026-10-13)
 - [x] 2026-10-13 All 27 trip photos in Figma (Foundations › Trip photos, 1200 px web versions); the new Site frames (Day 2, Nachi, Trail reports, Report, Routes and hosts) use them
 - [x] 2026-10-13 Trip photos and English texts in the older frames: Kumano Home (four themes) as the code's At a glance page, Site pages from 2026-10-05; Topbar and Site Footer texts as in code
@@ -67,6 +67,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-10-13 Video atom (poster in the video's format, play button) and Figure `Variant=Video`; Day 2 opens with it
 - [x] 2026-10-13 Components: Fact List `Four rows`, Breadcrumb `Third level` (both off by default); Figure and Teaser Card images fill their width and keep their ratio (4:3, 1:1)
 - [x] 2026-10-13 Route Map: day labels and legend as in code; FAQ Item `State=Open` with the chevron turned up
+- [x] 2026-10-13 Page frames: section padding on `layout/section-sm` (96), as `.section` in code; only the Kumano Home quote keeps `layout/section` (large). Site frames without the footer notice, as in code
 
 ## Known differences between Figma and code
 
@@ -74,6 +75,9 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - The Site pages use the photos Figma already holds (the earlier set); places and stays show the components' sample photo until the trip photos are in Figma.
 - All current frames are English; the earlier DE and JA start page copies are in Archive.
 - Day 2's gallery has six tiles for the code's seven photos.
+- Bleed Image has a fixed image height (659); code shows tall photos up to 90 % of the window (810 at 900 high), so the Nachi and evening photos are 151 px lower in Figma.
+- The chapters' photo grids on Site · Home are frames below a Chapter instance (its sample photos hidden): the component holds two photos, the code lays out up to twelve per day.
+- The four Kumano Home frames match Storybook's Home · v3 (previous), the code's At a glance page; Storybook's Home · Caramel to Mono are the journal, which Figma has as Site · Home in Caramel.
 - The header dark mode toggle, menu, flyouts, slider, lightbox and sticky state are drawn as states; their behaviour lives in `src/scripts/`.
 
 - Detail page (Beispiel – Detail) fact list shows two of the four facts; the figure has no caption; the breadcrumb has three levels instead of four. The new Site frames use `Four rows` and `Third level`.
