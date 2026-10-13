@@ -16,7 +16,7 @@ export const lightboxLink = (image: Image, className: string, play = 'Play video
 
 // Inline elements play a video where it stands; only the gallery sends it to the lightbox.
 export const photoOrVideo = (image: Image, className: string, play: string): string =>
-    hasVideo(image) ? videoPoster(image, play, { image: className }) : lightboxLink(image, className);
+    hasVideo(image) ? videoPoster(image, play) : lightboxLink(image, className);
 
 export const gallery = ({ images, caption, labels }: GalleryProps): string =>
     `<figure${attrs({ class: 'gallery', ...lightboxGroupAttrs(labels) })}><div class="gallery-grid">${images.map((i) => lightboxLink(i, 'gallery-image', labels?.play)).join('')}</div>` +

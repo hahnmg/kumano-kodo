@@ -19,8 +19,8 @@ export interface Image {
     width?: number;
     height?: number;
     caption?: string;
-    // A video in the image's place; the image is its poster.
-    video?: { src: string; type: string };
+    // A video in the image's place; the image is its poster, cut to the video's format.
+    video?: { src: string; type: string; width: number; height: number };
 }
 
 // `sizes` tells the browser how wide the image is shown, so it picks the smallest file from srcset that is sharp.
