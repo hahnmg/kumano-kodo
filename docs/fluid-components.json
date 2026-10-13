@@ -687,7 +687,7 @@
     },
     {
         "name": "notice",
-        "description": "A short warning with an icon; the title as an argument, the text in the slot.",
+        "description": "A short warning with an icon; the title as an argument, the text in the slot. Its styles ship in global.css.",
         "arguments": [
             {
                 "name": "title",

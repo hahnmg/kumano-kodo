@@ -622,7 +622,7 @@ One row of a mediaList.
 kk:notice
 =========
 
-A short warning with an icon; the title as an argument, the text in the slot.
+A short warning with an icon; the title as an argument, the text in the slot. Its styles ship in global.css.
 
 ..  list-table::
     :header-rows: 1

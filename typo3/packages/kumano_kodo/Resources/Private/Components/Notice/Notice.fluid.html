@@ -1,8 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
-<f:comment>A short warning with an icon; the title as an argument, the text in the slot.</f:comment>
+<f:comment>A short warning with an icon; the title as an argument, the text in the slot. Its styles ship in global.css.</f:comment>
 <f:argument name="title" type="string" description="The title, set before the text."/>
 
-<f:asset.css identifier="kumano-notice" href="EXT:kumano_kodo/Resources/Public/Css/Components/notice.css"/>
 <div class="notice" role="note">
     <kk:icon name="alert" size="24"/>
     <p class="notice-body"><strong class="notice-title type-label">{title}</strong> <span class="type-small"><f:slot/></span></p>
