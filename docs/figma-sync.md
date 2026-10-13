@@ -58,7 +58,7 @@ Changes made in code first, to be carried into Figma once approved. Tick with th
 - [x] 2026-09-30 Scheme Toggle and Menu Button move to Atoms, Nav Dropdown and Nav Mega to Molecules (Nav Flyout)
 - [x] 2026-10-12 Design feedback, components: `border/rule` (2) opens and closes Media List, Download List, Table, Fact List, Route Map and Site Footer in ink; Notice on accent with paper text; Quote with an accent “ above; Display/Wordmark 60/64
 - [ ] Design feedback, pages: FAQ lists and timelines opening and closing on `border/rule`; day pages with Day 1–4 chips in the page header instead of the sidebar list; place pages led by a Bleed Image; Text & Media with several paragraphs (image held beside long text)
-- [x] 2026-10-12 Hero as set `Video=No/Yes/Playing` (play button on the title line; playing: video full, close button); `Icon/Play`; Route Map as set `Highlight=None/Day` with underlined day links
+- [x] 2026-10-12 `Icon/Play`; Route Map as set `Highlight=None/Day` with underlined day links (the hero video of the same day was taken out again on 2026-10-13)
 - [ ] Route Map: day labels and legend still carry the older content ("Day 1 · 4 km", "Bus", "End of the pilgrimage")
 
 ## Known differences between Figma and code

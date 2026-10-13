@@ -10,11 +10,3 @@ const meta: Meta<HeroProps> = {
 export default meta;
 
 export const Hero: StoryObj<HeroProps> = {};
-
-// Poster, title and a play button; the video loads only when asked for.
-export const WithVideo: StoryObj<HeroProps> = {
-    render: localized(hero, (c) => ({
-        ...c.kumano.hero,
-        video: { src: '/img/video/trail.mp4', type: 'video/mp4', play: c.ui.playVideo, close: c.ui.closeVideo },
-    })),
-};

@@ -436,7 +436,6 @@ const v3 = [
         },
         {
             image: [photo(c.en.kumano.hero.image)],
-            video: 'trail',
             items: {
                 tx_kumanokodo_links: list(
                     (x) => x.kumano.hero.actions,
@@ -1214,10 +1213,7 @@ for (const lang of langs)
     await writeFile(join(demoPackage, `Resources/Private/Language/${lang === 'en' ? '' : `${lang}.`}form_walk.xlf`), xliff(lang));
 
 const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.values(e.children ?? {}).flat()), 0);
-// A placeholder clip made from four trip photos; the hero shows it on request.
-const videos = { trail: { file: 'img/video/trail.mp4' } };
-
-await writeFile(out, `${JSON.stringify({ site, photos, files, videos, pages, frontendUsers, news }, null, 4)}\n`);
+await writeFile(out, `${JSON.stringify({ site, photos, files, pages, frontendUsers, news }, null, 4)}\n`);
 console.log(
     `Demo: ${pages.length} pages, ${count(pages.flatMap((p) => p.content))} content elements, ${Object.keys(photos).length} photos → ${out}`,
 );

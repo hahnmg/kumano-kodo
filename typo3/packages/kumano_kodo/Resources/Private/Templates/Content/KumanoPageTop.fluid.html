@@ -18,7 +18,7 @@
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:case>
         <f:defaultCase>
-            <kk:hero title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}" video="{record.tx_kumanokodo_video -> f:first()}">
+            <kk:hero title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}">
                 <f:fragment>{text -> f:format.raw()}</f:fragment>
                 <f:fragment name="actions">
                     <f:for each="{record.tx_kumanokodo_links}" as="action" iteration="i">

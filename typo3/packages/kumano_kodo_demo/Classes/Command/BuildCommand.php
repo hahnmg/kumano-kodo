@@ -85,7 +85,6 @@ final class BuildCommand extends Command
         $this->translatePage($home);
         $this->importPhotos($demo['photos']);
         $this->importFiles($demo['files'] ?? []);
-        $this->importVideos($demo['videos'] ?? []);
         foreach ($pages as $page) {
             $this->createPage($page);
         }
@@ -138,23 +137,6 @@ final class BuildCommand extends Command
                 : $storage->addFile($source . '/' . $entry['file'], $folder, $name, DuplicationBehavior::REPLACE, false);
             assert($file instanceof File);
             $file->getMetaData()->add(['title' => $entry['title']])->save();
-            $this->files[$slug] = $file->getUid();
-        }
-    }
-
-    private function importVideos(array $videos): void
-    {
-        $storage = $this->storageRepository->getDefaultStorage();
-        $folder = $storage->hasFolder('/kumano-kodo/video/')
-            ? $storage->getFolder('/kumano-kodo/video/')
-            : $storage->createFolder('video', $storage->getFolder('/kumano-kodo/'));
-        $source = dirname(Environment::getProjectPath());
-        foreach ($videos as $slug => $entry) {
-            $name = basename($entry['file']);
-            $file = $storage->hasFileInFolder($name, $folder)
-                ? $storage->getFileInFolder($name, $folder)
-                : $storage->addFile($source . '/' . $entry['file'], $folder, $name, DuplicationBehavior::REPLACE, false);
-            assert($file instanceof File);
             $this->files[$slug] = $file->getUid();
         }
     }
@@ -341,10 +323,6 @@ final class BuildCommand extends Command
         foreach ($element['media']['en'] ?? [] as $i => $slug) {
             $data['sys_file_reference']['NEWfile' . $i] = ['pid' => $pid, 'uid_local' => $this->files[$slug]];
         }
-        if (isset($element['video'])) {
-            $data['sys_file_reference']['NEWvideo'] = ['pid' => $pid, 'uid_local' => $this->files[$element['video']]];
-            $data['tt_content']['NEWce']['tx_kumanokodo_video'] = 'NEWvideo';
-        }
         if ($element['media'] ?? []) {
             $data['tt_content']['NEWce']['media'] = implode(',', array_map(static fn (int $i): string => 'NEWfile' . $i, array_keys($element['media']['en'])));
         }
@@ -384,9 +362,6 @@ final class BuildCommand extends Command
         $this->translate('tt_content', $uid, $language, $fields);
         if ($element['image'] ?? []) {
             $this->syncInline('tt_content', $uid, 'image', $language);
-        }
-        if (isset($element['video'])) {
-            $this->syncInline('tt_content', $uid, 'tx_kumanokodo_video', $language);
         }
         if ($element['media'] ?? []) {
             $this->syncInline('tt_content', $uid, 'media', $language);

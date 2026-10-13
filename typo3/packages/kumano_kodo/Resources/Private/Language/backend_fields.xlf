@@ -503,12 +503,6 @@
             <trans-unit id="tt_content.tx_kumanokodo_variant.tile">
                 <source>Link tile</source>
             </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_video">
-                <source>Video</source>
-            </trans-unit>
-            <trans-unit id="tt_content.tx_kumanokodo_video.description">
-                <source>An MP4 or WebM file, or a YouTube or Vimeo address. The image stays the poster; the video loads only when a visitor presses play.</source>
-            </trans-unit>
             <trans-unit id="tx_kumanokodo_day_mark">
                 <source>Day mark</source>
             </trans-unit>

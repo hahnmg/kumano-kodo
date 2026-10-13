@@ -14,7 +14,7 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'kumano-page-top',
         'group' => 'kumano_text',
     ],
-    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_meta, tx_kumanokodo_facts, tx_kumanokodo_links, --div--;core.form.tabs:images, image, tx_kumanokodo_video, --div--;core.form.tabs:appearance, --palette--;;frames',
+    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_meta, tx_kumanokodo_facts, tx_kumanokodo_links, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
             'tx_kumanokodo_variant' => [
@@ -59,9 +59,6 @@ ExtensionManagementUtility::addRecordType(
             ],
             'tx_kumanokodo_meta' => [
                 'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:opener',
-            ],
-            'tx_kumanokodo_video' => [
-                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero',
             ],
             'tx_kumanokodo_facts' => [
                 'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero',

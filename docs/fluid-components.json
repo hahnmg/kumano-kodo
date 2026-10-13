@@ -330,7 +330,7 @@
     },
     {
         "name": "hero",
-        "description": "The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat\n    components in the fragment stats. With a video, the photo is its poster and a play button loads the player.",
+        "description": "The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat components in the fragment stats.",
         "arguments": [
             {
                 "name": "title",
@@ -349,12 +349,6 @@
                 "type": "string",
                 "required": false,
                 "description": "Short line above the title."
-            },
-            {
-                "name": "video",
-                "type": "object",
-                "required": false,
-                "description": "A video file or reference: MP4, WebM, YouTube or Vimeo."
             }
         ],
         "slots": ["default", "actions", "stats"]

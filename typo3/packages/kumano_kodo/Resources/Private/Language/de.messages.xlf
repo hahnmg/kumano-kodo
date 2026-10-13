@@ -22,14 +22,6 @@
                 <source>Back to top</source>
                 <target>Nach oben</target>
             </trans-unit>
-            <trans-unit id="playVideo">
-                <source>Play video</source>
-                <target>Video abspielen</target>
-            </trans-unit>
-            <trans-unit id="closeVideo">
-                <source>Close video</source>
-                <target>Video schließen</target>
-            </trans-unit>
             <trans-unit id="skipToContent">
                 <source>Skip to content</source>
                 <target>Zum Inhalt springen</target>

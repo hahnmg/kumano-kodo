@@ -305,8 +305,7 @@ Slots: ``default``.
 kk:hero
 =======
 
-The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat
-    components in the fragment stats. With a video, the photo is its poster and a play button loads the player.
+The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat components in the fragment stats.
 
 ..  list-table::
     :header-rows: 1
@@ -323,9 +322,6 @@ The opening photo of a page: eyebrow and title, the teaser in the slot, buttons 
     *   - ``eyebrow``
         - string
         - Short line above the title.
-    *   - ``video``
-        - object
-        - A video file or reference: MP4, WebM, YouTube or Vimeo.
 
 Slots: ``default``, ``actions``, ``stats``.
 

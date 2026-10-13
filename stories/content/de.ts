@@ -9,8 +9,6 @@ const build = (p: Photos): LocaleContent => {
         menu: 'Menü',
         darkMode: 'Dunkler Modus',
         backToTop: 'Nach oben',
-        playVideo: 'Video abspielen',
-        closeVideo: 'Video schließen',
         skipToContent: 'Zum Inhalt springen',
         uploadDrop: 'Datei hierher ziehen oder',
         uploadChoose: 'auswählen',
