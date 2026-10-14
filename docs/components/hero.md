@@ -14,5 +14,14 @@ on-image stats. The shade gradient is built from the tokens `scrim/top`,
 | `actions`                    | two `{ label, href }`           |
 | `stats`                      | `{ label, value }[]`            |
 
+## Slides
+
+`heroSlides` (Fluid: `<kk:heroSlides>` with `<kk:heroSlide>`) turns the hero
+into a slideshow: each slide has its own photo, eyebrow, title, teaser and
+actions; the stats and the controls (pause, arrows, dots) stay at the foot. It
+moves on every seven seconds and starts over at the end, holds while the pointer
+or the focus is inside or the page is hidden, and starts paused when the visitor
+asks for less motion. Only the first slide carries the h1.
+
 Tokens: `--color-ink`, `--color-on-image`, `--gutter`, `--container-page`,
 `.type-hero`.

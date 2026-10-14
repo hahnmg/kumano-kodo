@@ -15,13 +15,15 @@ earlier ones stay.
 
 ## Decided, to do
 
-| Topic       | Decision                                    |
-| ----------- | ------------------------------------------- |
-| Hero slider | Planned with a Storybook draft for approval |
+Nothing decided is waiting to be built.
 
 ## Decisions
 
 ### 2026-10-14
+
+- **Hero slider, done**: the photo hero takes up to four further slides, each
+  with photo, eyebrow, title, text and button; it moves on every seven seconds
+  until paused, sideways, and starts paused for reduced motion.
 
 - **Base theme, done**: Route map and Chapter moved into the demo package with
   the set `kumano-kodo/demo` and the components `kkd:`; see

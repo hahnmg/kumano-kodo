@@ -325,18 +325,22 @@
 			]
 		},
 		{
-			"status": "partly",
+			"status": "solved",
 			"from": "Annett",
 			"feedback": "Add a hero slider or a hero video.",
-			"change": "A hero video was tried and dropped; editors can put a video in an image's place in figures, galleries and text & media. A hero slider is planned (decided 2026-10-14).",
+			"change": "A hero video was tried and dropped; editors can put a video in an image's place instead. The hero becomes a slideshow with further slides: own photo and text each, moving on every seven seconds until paused.",
 			"links": [
+				{
+					"label": "Hero slides",
+					"story": "organisms-hero--slides"
+				},
+				{
+					"label": "At a glance",
+					"story": "site--at-a-glance"
+				},
 				{
 					"label": "Video",
 					"docs": "atoms-video--docs"
-				},
-				{
-					"label": "Gallery with video",
-					"story": "molecules-gallery--with-video"
 				},
 				{
 					"commit": "5e11483"

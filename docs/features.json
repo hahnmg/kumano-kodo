@@ -21,11 +21,15 @@
 		},
 		{
 			"title": "Content",
-			"summary": "Two containers and 12 content elements, galleries with a lightbox, video in an image's place and tables from the text editor.",
+			"summary": "Two containers and 12 content elements, a hero that can turn into a slideshow, galleries with a lightbox, video in an image's place and tables from the text editor.",
 			"features": [
 				{
 					"text": "Two containers and 12 content elements",
 					"manual": "Editors/Index.html"
+				},
+				{
+					"text": "A hero that turns into a slideshow, paused on request",
+					"docs": "organisms-hero--docs"
 				},
 				{
 					"text": "Galleries that open in a lightbox",
