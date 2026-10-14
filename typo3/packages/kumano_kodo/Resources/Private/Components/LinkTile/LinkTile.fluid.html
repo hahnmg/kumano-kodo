@@ -3,9 +3,10 @@
 <f:argument name="title" type="string" description="The link text."/>
 <f:argument name="href" type="string" description="The target."/>
 <f:argument name="icon" type="string" description="Name of an icon, as for icon."/>
+<f:argument name="edge" type="bool" optional="{true}" default="{false}" description="A bar in the accent beside the tile instead of the line above it."/>
 
 <f:asset.css identifier="kumano-link-tile" href="EXT:kumano_kodo/Resources/Public/Css/Components/link-tile.css"/>
-<a class="link-tile" href="{href}">
+<a class="link-tile{f:if(condition: edge, then: ' link-tile-edge')}" href="{href}">
     <span class="icon-circle">
         <kk:icon name="{icon}" size="24"/>
     </span>

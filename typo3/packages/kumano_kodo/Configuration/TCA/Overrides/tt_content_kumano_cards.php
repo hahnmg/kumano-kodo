@@ -14,9 +14,12 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'kumano-cards',
         'group' => 'kumano_lists',
     ],
-    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, tx_kumanokodo_entries, --div--;core.form.tabs:appearance, --palette--;;frames, tx_kumanokodo_columns',
+    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_full, tx_kumanokodo_entries, --div--;core.form.tabs:appearance, --palette--;;frames, tx_kumanokodo_columns, tx_kumanokodo_edge',
     [
         'columnsOverrides' => [
+            'tx_kumanokodo_edge' => [
+                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:cta,teaser,tile',
+            ],
             'tx_kumanokodo_variant' => [
                 'label' => 'kumano_kodo.backend_fields:tt_content.kumano_cards.variant',
                 'config' => [

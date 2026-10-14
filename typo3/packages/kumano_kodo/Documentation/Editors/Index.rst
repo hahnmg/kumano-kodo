@@ -19,7 +19,9 @@ Section
 
 Columns
     Two columns: Even, Content and sidebar, Text and media, Heading and content,
-    Wide and narrow, Narrow and wide, or Page top: text and list.
+    Wide and narrow, Narrow and wide, or Page top: text and list. Colour box
+    sets the first or second column in the accent, with everything in it light
+    on that ground.
 
 Content elements
 ================
@@ -38,7 +40,8 @@ Images
 
 Cards
     Teaser, Place, Person, Call to action, Link tile or Stage, in two to four
-    columns or as a slider.
+    columns or as a slider. Call to action, Teaser and Link tile can take a
+    colour edge: a bar in the accent beside each card.
 
 List
     Media list, Days, Downloads (from files), Links side by side, Links one

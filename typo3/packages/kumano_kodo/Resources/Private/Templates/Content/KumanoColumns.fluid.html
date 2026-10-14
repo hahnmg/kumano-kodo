@@ -38,7 +38,7 @@
         </f:then>
         <f:else>
             <f:variable name="body">
-                <kk:split ratio="{data.tx_kumanokodo_layout}" align="{data.tx_kumanokodo_align}">
+                <kk:split ratio="{data.tx_kumanokodo_layout}" align="{data.tx_kumanokodo_align}" colour="{data.tx_kumanokodo_colour}">
                     <f:fragment name="first">{first -> f:format.raw()}</f:fragment>
                     <f:fragment name="second">{second -> f:format.raw()}</f:fragment>
                 </kk:split>

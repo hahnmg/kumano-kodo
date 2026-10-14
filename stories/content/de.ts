@@ -570,6 +570,10 @@ const build = (p: Photos): LocaleContent => {
         plugins: 'Plugins',
       },
       variants: {
+        ctaEdge: 'Handlungsaufruf mit Farbkante',
+        teaserEdge: 'Teaser mit Farbkante',
+        tileEdge: 'Link-Kachel mit Farbkante',
+        colourColumn: 'Farbspalte',
         hero: 'Foto-Hero',
         heroSlides: 'Foto-Hero mit Bildfolge',
         text: 'Text',

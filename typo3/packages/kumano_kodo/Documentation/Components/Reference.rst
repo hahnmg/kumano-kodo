@@ -131,6 +131,9 @@ target.
     *   - ``variant``
         - string, default ``default``
         - default, or featured to draw the line in the accent.
+    *   - ``edge``
+        - bool, default ``{false}``
+        - A bar in the accent beside the card instead of the line above it.
 
 kk:downloadList
 ===============
@@ -631,6 +634,9 @@ A large link with an icon in a circle and an arrow.
     *   - ``icon``
         - string, required
         - Name of an icon, as for icon.
+    *   - ``edge``
+        - bool, default ``{false}``
+        - A bar in the accent beside the tile instead of the line above it.
 
 kk:logoBird
 ===========
@@ -984,6 +990,10 @@ and second.
     *   - ``align``
         - string, default ``start``
         - Vertical alignment: start, center or end.
+    *   - ``colour``
+        - string
+        - first or second: that column becomes a box in the accent, its content
+          light on it.
 
 Slots: ``first``, ``second``.
 
@@ -1105,6 +1115,9 @@ optional badge.
     *   - ``level``
         - string|int, default ``3``
         - Heading level: 2, 3 or none.
+    *   - ``edge``
+        - bool, default ``{false}``
+        - A bar in the accent beside the card.
 
 kk:textMedia
 ============

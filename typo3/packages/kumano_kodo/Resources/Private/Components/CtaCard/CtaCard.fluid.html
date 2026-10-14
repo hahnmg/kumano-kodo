@@ -5,9 +5,10 @@
 <f:argument name="href" type="string" description="The target."/>
 <f:argument name="text" type="string" optional="{true}" description="A short text."/>
 <f:argument name="variant" type="string" optional="{true}" default="default" description="default, or featured to draw the line in the accent."/>
+<f:argument name="edge" type="bool" optional="{true}" default="{false}" description="A bar in the accent beside the card instead of the line above it."/>
 
 <f:asset.css identifier="kumano-cta-card" href="EXT:kumano_kodo/Resources/Public/Css/Components/cta-card.css"/>
-<article class="cta-card cta-card-{variant}">
+<article class="cta-card cta-card-{variant}{f:if(condition: edge, then: ' cta-card-edge')}">
     <h3 class="cta-card-title type-h4">{title}</h3>
     <p class="cta-card-text type-small">{text}</p>
     <div class="cta-card-link">

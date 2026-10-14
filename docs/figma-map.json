@@ -220,7 +220,7 @@
 			"group": "molecules",
 			"component": "teaser-card",
 			"node": "29:189",
-			"variants": ["State=Default", "State=Hover"]
+			"variants": ["State=Default, Edge=Off", "State=Hover, Edge=Off", "State=Default, Edge=On", "State=Hover, Edge=On"]
 		},
 		{
 			"name": "Person Card",
@@ -233,13 +233,14 @@
 			"group": "molecules",
 			"component": "link-tile",
 			"node": "29:177",
-			"variants": ["State=Default", "State=Hover"]
+			"variants": ["State=Default, Edge=Off", "State=Hover, Edge=Off", "State=Default, Edge=On", "State=Hover, Edge=On"]
 		},
 		{
 			"name": "CTA Card",
 			"group": "molecules",
 			"component": "cta-card",
-			"node": "18:76"
+			"node": "18:76",
+			"variants": ["Variant=Default, Edge=Off", "Variant=Featured, Edge=Off", "Variant=Default, Edge=On", "Variant=Featured, Edge=On"]
 		},
 		{
 			"name": "Info Box",

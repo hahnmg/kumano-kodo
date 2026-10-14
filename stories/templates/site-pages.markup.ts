@@ -118,7 +118,16 @@ export const routePage = (c: Content = content()): string => {
       section({ label: s.factsLabel, content: grid(guide.facts.map(iconFact), 4) }) +
       section({
         space: 'flush-top',
-        content: stack([sectionHeading({ title: s.stages.title }), grid(teasers(dayTeasers(c)), 4)], 'heading'),
+        content: stack(
+          [
+            sectionHeading({ title: s.stages.title }),
+            grid(
+              dayTeasers(c).map((t) => teaserCard({ ...t, edge: true })),
+              4,
+            ),
+          ],
+          'heading',
+        ),
       }) +
       section({
         id: 'map',
@@ -133,7 +142,7 @@ export const routePage = (c: Content = content()): string => {
           [
             sectionHeading({ title: s.prep.title }),
             grid(
-              guide.prep.map((p) => ctaCard({ ...p, linkLabel: ui.readMore })),
+              guide.prep.map((p) => ctaCard({ ...p, linkLabel: ui.readMore, edge: true })),
               3,
             ),
           ],
@@ -307,10 +316,16 @@ export const practicalPage = (c: Content = content()): string => {
     1,
     header(c, site.practical.title, []) +
       section({ content: richText({ html: `<p>${esc(site.practical.intro)}</p>` }) }) +
-      section({ space: 'flush-top', content: grid(guide.tiles.map(linkTile), 2) }) +
+      section({
+        space: 'flush-top',
+        content: grid(
+          guide.tiles.map((t) => linkTile({ ...t, edge: true })),
+          2,
+        ),
+      }) +
       section({
         tone: 'sunk',
-        content: split(sectionHeading({ title: home.practical.title }), faqList(kumano.faq), 'heading-content'),
+        content: split(sectionHeading({ title: home.practical.title }), faqList(kumano.faq), 'heading-content', 'start', 'first'),
       }),
   );
 };
@@ -796,6 +811,15 @@ export const showcasePage = (c: Content = content()): string => {
     },
     { id: 'teaser', element: e.cards, variant: v.teaser, body: grid(teasers(dayTeasers(c)), 4) },
     {
+      id: 'teaser-edge',
+      element: e.cards,
+      variant: v.teaserEdge,
+      body: grid(
+        dayTeasers(c).map((t) => teaserCard({ ...t, edge: true })),
+        4,
+      ),
+    },
+    {
       id: 'place',
       element: e.cards,
       variant: v.place,
@@ -812,7 +836,25 @@ export const showcasePage = (c: Content = content()): string => {
       ),
       tone: 'sunk',
     },
+    {
+      id: 'cta-edge',
+      element: e.cards,
+      variant: v.ctaEdge,
+      body: grid(
+        guide.prep.map((p) => ctaCard({ ...p, linkLabel: ui.readMore, edge: true })),
+        3,
+      ),
+    },
     { id: 'tile', element: e.cards, variant: v.tile, body: grid(guide.tiles.map(linkTile), 2) },
+    {
+      id: 'tile-edge',
+      element: e.cards,
+      variant: v.tileEdge,
+      body: grid(
+        guide.tiles.map((t) => linkTile({ ...t, edge: true })),
+        2,
+      ),
+    },
     {
       id: 'stage',
       element: e.cards,
@@ -868,6 +910,18 @@ export const showcasePage = (c: Content = content()): string => {
       variant: v[ratio.replace(/-(\w)/g, (_, l: string) => l.toUpperCase()) as 'even'],
       body: split(richText({ html: `<p>${esc(kumano.intro[0])}</p>` }), richText({ html: `<p>${esc(kumano.intro[1])}</p>` }), ratio),
     })),
+    {
+      id: 'columns-colour',
+      element: e.columns,
+      variant: v.colourColumn,
+      body: split(
+        sectionHeading({ eyebrow: home.practical.eyebrow, title: home.practical.title }),
+        faqList(kumano.faq),
+        'heading-content',
+        'start',
+        'first',
+      ),
+    },
     { id: 'section-sunk', element: e.section, variant: v.sunk, tone: 'sunk', body: richText({ html: paragraphs([site.days.intro]) }) },
     {
       id: 'newsletter',

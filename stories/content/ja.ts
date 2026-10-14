@@ -551,6 +551,10 @@ const build = (p: Photos): LocaleContent => {
         plugins: 'プラグイン',
       },
       variants: {
+        ctaEdge: '行動の呼びかけ（カラーエッジ）',
+        teaserEdge: 'ティーザー（カラーエッジ）',
+        tileEdge: 'リンクタイル（カラーエッジ）',
+        colourColumn: 'カラーカラム',
         hero: '写真ヒーロー',
         heroSlides: '写真ヒーロー（スライド）',
         text: 'テキスト',

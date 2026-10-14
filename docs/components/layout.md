@@ -7,11 +7,11 @@ bleed), `stack`, `grid` (2–4 columns), `split` (fixed ratios from the Figma
 grid), `rail` (horizontal scroll), `center`, `cluster`. Collapses to one or two
 columns below 900px until a mobile reference exists.
 
-| Prop      | Values                                                                                                                                                                              |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `section` | `tone` paper/sunk, `space` default/large/flush-top/none, `bleed`, `label`                                                                                                           |
-| `split`   | ratio content-sidebar, text-media, heading-content, wide-narrow, narrow-wide, even                                                                                                  |
-| `stack`   | gap `heading` (section heading to its content, 56), `elements` (elements in one section, 96), `column` (elements in one column, 40, the default); 16 and 24 only inside a component |
+| Prop      | Values                                                                                                                                                                                                     |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `section` | `tone` paper/sunk, `space` default/large/flush-top/none, `bleed`, `label`                                                                                                                                  |
+| `split`   | ratio content-sidebar, text-media, heading-content, wide-narrow, narrow-wide, even; `colour` first/second turns that column into a box in the accent, its content light on it and its h2 scaled to the box |
+| `stack`   | gap `heading` (section heading to its content, 56), `elements` (elements in one section, 96), `column` (elements in one column, 40, the default); 16 and 24 only inside a component                        |
 
 Two sections on the same ground follow each other with one inner space between
 them: the second drops its top padding.

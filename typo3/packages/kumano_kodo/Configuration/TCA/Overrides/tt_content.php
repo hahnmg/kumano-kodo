@@ -117,6 +117,37 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
             'default' => 'even',
         ],
     ],
+    'tx_kumanokodo_edge' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_edge',
+        'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_edge.description',
+        'config' => [
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'default' => 0,
+        ],
+    ],
+    'tx_kumanokodo_colour' => [
+        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_colour',
+        'config' => [
+            'type' => 'select',
+            'renderType' => 'selectSingle',
+            'items' => [
+                [
+                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_colour.none',
+                    'value' => '',
+                ],
+                [
+                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_colour.first',
+                    'value' => 'first',
+                ],
+                [
+                    'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_colour.second',
+                    'value' => 'second',
+                ],
+            ],
+            'default' => '',
+        ],
+    ],
     'tx_kumanokodo_align' => [
         'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_align',
         'config' => [

@@ -137,6 +137,13 @@
 				"required": false,
 				"default": "default",
 				"description": "default, or featured to draw the line in the accent."
+			},
+			{
+				"name": "edge",
+				"type": "bool",
+				"required": false,
+				"default": "{false}",
+				"description": "A bar in the accent beside the card instead of the line above it."
 			}
 		],
 		"slots": []
@@ -684,6 +691,13 @@
 				"type": "string",
 				"required": true,
 				"description": "Name of an icon, as for icon."
+			},
+			{
+				"name": "edge",
+				"type": "bool",
+				"required": false,
+				"default": "{false}",
+				"description": "A bar in the accent beside the tile instead of the line above it."
 			}
 		],
 		"slots": []
@@ -1073,6 +1087,12 @@
 				"required": false,
 				"default": "start",
 				"description": "Vertical alignment: start, center or end."
+			},
+			{
+				"name": "colour",
+				"type": "string",
+				"required": false,
+				"description": "first or second: that column becomes a box in the accent, its content light on it."
 			}
 		],
 		"slots": ["first", "second"]
@@ -1208,6 +1228,13 @@
 				"required": false,
 				"default": "3",
 				"description": "Heading level: 2, 3 or none."
+			},
+			{
+				"name": "edge",
+				"type": "bool",
+				"required": false,
+				"default": "{false}",
+				"description": "A bar in the accent beside the card."
 			}
 		],
 		"slots": []

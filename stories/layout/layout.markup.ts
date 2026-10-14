@@ -28,8 +28,15 @@ export const grid = (items: string[], columns: 2 | 3 | 4): string => `<div class
 
 export type SplitRatio = 'content-sidebar' | 'text-media' | 'heading-content' | 'wide-narrow' | 'narrow-wide' | 'even';
 
-export const split = (first: string, second: string, ratio: SplitRatio = 'even', align: 'start' | 'center' | 'end' = 'start'): string =>
-  `<div class="split split-${ratio} split-align-${align}"><div>${first}</div><div>${second}</div></div>`;
+// colour sets one column as a box in the accent; everything in it reads light on that ground.
+export const split = (
+  first: string,
+  second: string,
+  ratio: SplitRatio = 'even',
+  align: 'start' | 'center' | 'end' = 'start',
+  colour?: 'first' | 'second',
+): string =>
+  `<div class="${cx('split', `split-${ratio}`, `split-align-${align}`, colour && `split-colour-${colour}`)}"><div>${first}</div><div>${second}</div></div>`;
 
 export const rail = (items: string[]): string => `<div class="rail">${items.join('')}</div>`;
 

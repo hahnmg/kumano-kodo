@@ -1465,7 +1465,8 @@
 							"en": "Four days, Takijiri to Nachi",
 							"de": "Vier Tage, Takijiri bis Nachi",
 							"ja": "四日間、滝尻から那智へ"
-						}
+						},
+						"tx_kumanokodo_edge": 1
 					},
 					"items": {
 						"tx_kumanokodo_entries": [
@@ -1715,7 +1716,8 @@
 							"en": "Before you go",
 							"de": "Vor dem Aufbruch",
 							"ja": "出発前に"
-						}
+						},
+						"tx_kumanokodo_edge": 1
 					},
 					"items": {
 						"tx_kumanokodo_entries": [
@@ -4229,7 +4231,8 @@
 					"fields": {
 						"tx_kumanokodo_variant": "tile",
 						"tx_kumanokodo_columns": "2",
-						"space_before_class": "flush-top"
+						"space_before_class": "flush-top",
+						"tx_kumanokodo_edge": 1
 					},
 					"items": {
 						"tx_kumanokodo_entries": [
@@ -4276,7 +4279,8 @@
 					"type": "kumano_columns",
 					"fields": {
 						"tx_kumanokodo_layout": "heading-content",
-						"frame_class": "sunk"
+						"frame_class": "sunk",
+						"tx_kumanokodo_colour": "first"
 					},
 					"children": {
 						"201": [
@@ -7002,6 +7006,19 @@
 									"ja": "カード"
 								},
 								"title": {
+									"en": "Teaser, colour edge",
+									"de": "Teaser mit Farbkante",
+									"ja": "ティーザー（カラーエッジ）"
+								},
+								"link": "#showcase-teaser-edge"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
 									"en": "Place",
 									"de": "Ort",
 									"ja": "場所"
@@ -7041,11 +7058,37 @@
 									"ja": "カード"
 								},
 								"title": {
+									"en": "Call to action, colour edge",
+									"de": "Handlungsaufruf mit Farbkante",
+									"ja": "行動の呼びかけ（カラーエッジ）"
+								},
+								"link": "#showcase-cta-edge"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
 									"en": "Link tile",
 									"de": "Link-Kachel",
 									"ja": "リンクタイル"
 								},
 								"link": "#showcase-tile"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
+									"en": "Link tile, colour edge",
+									"de": "Link-Kachel mit Farbkante",
+									"ja": "リンクタイル（カラーエッジ）"
+								},
+								"link": "#showcase-tile-edge"
 							},
 							{
 								"label": {
@@ -7319,6 +7362,19 @@
 									"ja": "狭いと広い"
 								},
 								"link": "#showcase-columns-narrow-wide"
+							},
+							{
+								"label": {
+									"en": "Columns",
+									"de": "Spalten",
+									"ja": "カラム"
+								},
+								"title": {
+									"en": "Colour column",
+									"de": "Farbspalte",
+									"ja": "カラーカラム"
+								},
+								"link": "#showcase-columns-colour"
 							},
 							{
 								"label": {
@@ -8152,6 +8208,105 @@
 					}
 				},
 				{
+					"type": "kumano_cards",
+					"fields": {
+						"tx_kumanokodo_variant": "teaser",
+						"tx_kumanokodo_columns": "4",
+						"tx_kumanokodo_anchor": "showcase-teaser-edge",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Teaser, colour edge",
+							"de": "Teaser mit Farbkante",
+							"ja": "ティーザー（カラーエッジ）"
+						},
+						"tx_kumanokodo_edge": 1
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"image": "signpost",
+								"title": {
+									"en": "Takijiri → Takahara",
+									"de": "Takijiri → Takahara",
+									"ja": "滝尻 → 高原"
+								},
+								"text": {
+									"en": "3.7 km",
+									"de": "3,7 km",
+									"ja": "3.7 km"
+								},
+								"meta": {
+									"en": "Day 1 · 20 April · from 15:40",
+									"de": "Tag 1 · 20. April · ab 15:40",
+									"ja": "1日目 · 4月20日 · 15:40から"
+								},
+								"link": "page:day-1"
+							},
+							{
+								"image": "roadside-markers",
+								"title": {
+									"en": "Takahara → Chikatsuyu",
+									"de": "Takahara → Chikatsuyu",
+									"ja": "高原 → 近露"
+								},
+								"text": {
+									"en": "9.8 km",
+									"de": "9,8 km",
+									"ja": "9.8 km"
+								},
+								"meta": {
+									"en": "Day 2 · 21 April · 07:02–17:28",
+									"de": "Tag 2 · 21. April · 07:02–17:28",
+									"ja": "2日目 · 4月21日 · 07:02–17:28"
+								},
+								"link": "page:day-2"
+							},
+							{
+								"image": "cedar-canopy",
+								"title": {
+									"en": "Chikatsuyu → Hongu → Yunomine",
+									"de": "Chikatsuyu → Hongu → Yunomine",
+									"ja": "近露 → 本宮 → 湯の峰"
+								},
+								"text": {
+									"en": "about 25 km",
+									"de": "rund 25 km",
+									"ja": "約25 km"
+								},
+								"meta": {
+									"en": "Day 3 · 22 April · 07:18–16:05",
+									"de": "Tag 3 · 22. April · 07:18–16:05",
+									"ja": "3日目 · 4月22日 · 07:18–16:05"
+								},
+								"link": "page:day-3"
+							},
+							{
+								"image": "nachi-pagoda",
+								"title": {
+									"en": "Yunomine → Nachi",
+									"de": "Yunomine → Nachi",
+									"ja": "湯の峰 → 那智"
+								},
+								"text": {
+									"en": "about 27.5 km",
+									"de": "rund 27,5 km",
+									"ja": "約27.5 km"
+								},
+								"meta": {
+									"en": "Day 4 · 23 April · 10:55–15:48",
+									"de": "Tag 4 · 23. April · 10:55–15:48",
+									"ja": "4日目 · 4月23日 · 10:55–15:48"
+								},
+								"link": "page:day-4"
+							}
+						]
+					}
+				},
+				{
 					"type": "kumano_section",
 					"fields": {
 						"tx_kumanokodo_anchor": "showcase-place",
@@ -8356,6 +8511,86 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
+						"tx_kumanokodo_variant": "cta",
+						"tx_kumanokodo_columns": "3",
+						"tx_kumanokodo_anchor": "showcase-cta-edge",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Call to action, colour edge",
+							"de": "Handlungsaufruf mit Farbkante",
+							"ja": "行動の呼びかけ（カラーエッジ）"
+						},
+						"tx_kumanokodo_edge": 1
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"title": {
+									"en": "Book accommodation",
+									"de": "Unterkunft buchen",
+									"ja": "宿を予約する"
+								},
+								"text": {
+									"en": "Takahara and Chikatsuyu each have a handful of minshuku, and in spring and autumn they are full months ahead.",
+									"de": "Takahara und Chikatsuyu haben je eine Handvoll Minshuku, und im Frühling und Herbst sind sie Monate vorher voll.",
+									"ja": "高原と近露には民宿が数軒ずつしかなく、春と秋は数か月前に満室になります。"
+								},
+								"link": "page:practical-accommodation",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								},
+								"emphasis": "featured"
+							},
+							{
+								"title": {
+									"en": "Pack for rain",
+									"de": "Für Regen packen",
+									"ja": "雨に備える"
+								},
+								"text": {
+									"en": "A dry change of clothes in a sealed bag helps more than gaiters.",
+									"de": "Trockene Wechselkleidung in einem dichten Beutel hilft mehr als Gamaschen.",
+									"ja": "スパッツより、密封袋に入れた乾いた着替えが役に立ちます。"
+								},
+								"link": "page:practical-trail-markers",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								},
+								"emphasis": "default"
+							},
+							{
+								"title": {
+									"en": "Send your luggage ahead",
+									"de": "Gepäck vorausschicken",
+									"ja": "荷物を先に送る"
+								},
+								"text": {
+									"en": "Luggage moves between the main villages, booked one day ahead through the Tanabe tourism office.",
+									"de": "Das Gepäck reist zwischen den größeren Orten, einen Tag vorher über das Tourismusbüro in Tanabe gebucht.",
+									"ja": "主な集落の間で荷物を運んでもらえます。前日までに田辺市観光協会で予約します。"
+								},
+								"link": "page:practical-getting-there",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								},
+								"emphasis": "default"
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_cards",
+					"fields": {
 						"tx_kumanokodo_variant": "tile",
 						"tx_kumanokodo_columns": "2",
 						"tx_kumanokodo_anchor": "showcase-tile",
@@ -8369,6 +8604,65 @@
 							"de": "Link-Kachel",
 							"ja": "リンクタイル"
 						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"icon": "map-pin",
+								"title": {
+									"en": "Getting there and buses",
+									"de": "Anreise und Busse",
+									"ja": "アクセスとバス"
+								},
+								"link": "page:practical-getting-there"
+							},
+							{
+								"icon": "home",
+								"title": {
+									"en": "Accommodation",
+									"de": "Unterkunft",
+									"ja": "宿泊"
+								},
+								"link": "page:practical-accommodation"
+							},
+							{
+								"icon": "alert",
+								"title": {
+									"en": "Trail markers and safety",
+									"de": "Wegmarken und Sicherheit",
+									"ja": "道標と安全"
+								},
+								"link": "page:practical-trail-markers"
+							},
+							{
+								"icon": "download",
+								"title": {
+									"en": "Maps and timetables",
+									"de": "Karten und Fahrpläne",
+									"ja": "地図と時刻表"
+								},
+								"link": "page:practical-maps"
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_cards",
+					"fields": {
+						"tx_kumanokodo_variant": "tile",
+						"tx_kumanokodo_columns": "2",
+						"tx_kumanokodo_anchor": "showcase-tile-edge",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Link tile, colour edge",
+							"de": "Link-Kachel mit Farbkante",
+							"ja": "リンクタイル（カラーエッジ）"
+						},
+						"tx_kumanokodo_edge": 1
 					},
 					"items": {
 						"tx_kumanokodo_entries": [
@@ -9688,6 +9982,105 @@
 										"de": "<p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
 										"ja": "<p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
 									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "heading-content",
+						"tx_kumanokodo_anchor": "showcase-columns-colour",
+						"subheader": {
+							"en": "Columns",
+							"de": "Spalten",
+							"ja": "カラム"
+						},
+						"header": {
+							"en": "Colour column",
+							"de": "Farbspalte",
+							"ja": "カラーカラム"
+						},
+						"tx_kumanokodo_colour": "first"
+					},
+					"children": {
+						"201": [
+							{
+								"type": "header",
+								"fields": {
+									"subheader": {
+										"en": "Practical",
+										"de": "Praktisches",
+										"ja": "実用情報"
+									},
+									"header": {
+										"en": "Questions we were asked afterwards",
+										"de": "Was man uns danach gefragt hat",
+										"ja": "帰ってから聞かれたこと"
+									}
+								}
+							}
+						],
+						"202": [
+							{
+								"type": "kumano_questions",
+								"fields": {},
+								"items": {
+									"tx_kumanokodo_questions": [
+										{
+											"question": {
+												"en": "Do I need to book accommodation in advance?",
+												"de": "Muss ich die Unterkünfte im Voraus buchen?",
+												"ja": "宿は事前に予約が必要ですか？"
+											},
+											"answer": {
+												"en": "Yes, and early. Takahara and Chikatsuyu each have a handful of minshuku, and in spring and autumn they are full months ahead. The Tanabe tourism office reservation service books in English.",
+												"de": "Ja, und früh. Takahara und Chikatsuyu haben je eine Handvoll Minshuku, und im Frühling und Herbst sind sie Monate vorher voll. Der Reservierungsdienst des Tourismusbüros in Tanabe bucht auf Englisch.",
+												"ja": "はい、早めに。高原と近露には民宿が数軒ずつしかなく、春と秋は数か月前に満室になります。田辺市観光協会の予約サービスは英語でも対応しています。"
+											},
+											"open": 1
+										},
+										{
+											"question": {
+												"en": "How much rain should I expect?",
+												"de": "Mit wie viel Regen muss man rechnen?",
+												"ja": "雨はどのくらい降りますか？"
+											},
+											"answer": {
+												"en": "The Kii peninsula is one of the wettest regions of Japan. Waterproof boots and gaiters help less than you hope; a dry change of clothes in a sealed bag helps more.",
+												"de": "Die Kii-Halbinsel gehört zu den regenreichsten Gegenden Japans. Wasserdichte Schuhe und Gamaschen helfen weniger als erhofft; trockene Wechselkleidung in einem dichten Beutel hilft mehr.",
+												"ja": "紀伊半島は日本でも特に雨の多い地域です。防水の靴やスパッツは思ったほど役に立たず、密封袋に入れた乾いた着替えのほうが助かります。"
+											},
+											"open": 0
+										},
+										{
+											"question": {
+												"en": "Can you get around by bus?",
+												"de": "Kommt man mit dem Bus voran?",
+												"ja": "バスで移動できますか？"
+											},
+											"answer": {
+												"en": "Yes. Buses link the villages along the route several times a day, which makes it easy to shorten a day or to get back to the start.",
+												"de": "Ja. Busse verbinden die Orte entlang der Route mehrmals am Tag. So lässt sich ein Tag verkürzen oder man kommt zum Start zurück.",
+												"ja": "はい。ルート沿いの集落を一日に何本かバスが結んでいるので、一日を短くしたり出発地へ戻ったりしやすいです。"
+											},
+											"open": 0
+										},
+										{
+											"question": {
+												"en": "Is there a luggage transfer?",
+												"de": "Gibt es einen Gepäcktransport?",
+												"ja": "荷物の配送はありますか？"
+											},
+											"answer": {
+												"en": "Yes, between the main villages, booked through the Tanabe tourism office one day ahead.",
+												"de": "Ja, zwischen den größeren Orten, einen Tag vorher über das Tourismusbüro in Tanabe gebucht.",
+												"ja": "はい、主な集落の間で利用でき、前日までに田辺市観光協会で予約します。"
+											},
+											"open": 0
+										}
+									]
 								}
 							}
 						]

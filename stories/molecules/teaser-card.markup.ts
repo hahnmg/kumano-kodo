@@ -10,10 +10,12 @@ export interface TeaserCardProps {
   badge?: string;
   // 'none' renders the title as a paragraph, for teasers inside navigation where a heading would break the outline.
   level?: 2 | 3 | 'none';
+  // A bar in the accent beside the card.
+  edge?: boolean;
 }
 
-export const teaserCard = ({ image, title, href, subtitle, meta, badge: badgeLabel, level = 3 }: TeaserCardProps): string =>
-  `<article class="teaser-card"><div class="teaser-card-media">${img(image, 'teaser-card-image', '(width <= 600px) 100vw, (width <= 900px) 50vw, 320px')}</div>` +
+export const teaserCard = ({ image, title, href, subtitle, meta, badge: badgeLabel, level = 3, edge = false }: TeaserCardProps): string =>
+  `<article class="teaser-card${edge ? ' teaser-card-edge' : ''}"><div class="teaser-card-media">${img(image, 'teaser-card-image', '(width <= 600px) 100vw, (width <= 900px) 50vw, 320px')}</div>` +
   `<div class="teaser-card-body">` +
   `<${level === 'none' ? 'p' : `h${level}`} class="teaser-card-title type-h4"><a${attrs({ href })}>${esc(title)}</a></${level === 'none' ? 'p' : `h${level}`}>` +
   (subtitle ? `<p class="teaser-card-subtitle type-small">${esc(subtitle)}</p>` : '') +

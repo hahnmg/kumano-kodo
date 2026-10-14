@@ -7,8 +7,9 @@
 <f:argument name="meta" type="string" optional="{true}" description="A small line at the foot, such as a date."/>
 <f:argument name="badge" type="string" optional="{true}" description="A short label beside the meta line."/>
 <f:argument name="level" type="string|int" optional="{true}" default="3" description="Heading level: 2, 3 or none."/>
+<f:argument name="edge" type="bool" optional="{true}" default="{false}" description="A bar in the accent beside the card."/>
 
-<article class="teaser-card">
+<article class="teaser-card{f:if(condition: edge, then: ' teaser-card-edge')}">
     <div class="teaser-card-media">
         <f:if condition="{image}">
             <kk:image image="{image}" class="teaser-card-image" sizes="(width <= 600px) 100vw, (width <= 900px) 50vw, 320px"/>

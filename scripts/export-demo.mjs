@@ -221,6 +221,18 @@ const tiles = (fields) =>
       (p) => ({ icon: p(c.en).icon, title: t((x) => p(x).title), link: link(p(c.en).href) }),
     ),
   );
+// The three cards on preparing the walk, on the route page and the showcase.
+const prepCards = () =>
+  list(
+    (x) => x.guide.prep,
+    (p) => ({
+      title: t((x) => p(x).title),
+      text: t((x) => p(x).text),
+      link: link(p(c.en).href),
+      link_label: t((x) => x.ui.readMore),
+      emphasis: p(c.en).variant ?? 'default',
+    }),
+  );
 const routeContent = [
   columns(
     'hero',
@@ -249,23 +261,9 @@ const routeContent = [
       (f) => ({ icon: f(c.en).icon, label: t((x) => f(x).label), value: t((x) => f(x).value), note: t((x) => f(x).note) }),
     ),
   ),
-  cards('teaser', 4, { space_before_class: 'flush-top', header: t((x) => s(x).stages.title) }, teasers(dayTeasers)),
+  cards('teaser', 4, { space_before_class: 'flush-top', header: t((x) => s(x).stages.title), tx_kumanokodo_edge: 1 }, teasers(dayTeasers)),
   routeMap({ tx_kumanokodo_anchor: 'map', ...heading((x) => ({ title: x.home.map.title, aside: x.home.map.aside })) }),
-  cards(
-    'cta',
-    3,
-    { ...sunk, header: t((x) => s(x).prep.title) },
-    list(
-      (x) => x.guide.prep,
-      (p) => ({
-        title: t((x) => p(x).title),
-        text: t((x) => p(x).text),
-        link: link(p(c.en).href),
-        link_label: t((x) => x.ui.readMore),
-        emphasis: p(c.en).variant ?? 'default',
-      }),
-    ),
-  ),
+  cards('cta', 3, { ...sunk, header: t((x) => s(x).prep.title), tx_kumanokodo_edge: 1 }, prepCards()),
   tiles({ header: t((x) => s(x).plan) }),
 ];
 
@@ -384,8 +382,13 @@ const placeContent = (slug) => {
 
 const practicalContent = [
   text(t((x) => `<p>${esc(x.site.practical.intro)}</p>`)),
-  tiles({ space_before_class: 'flush-top' }),
-  columns('heading-content', sunk, [el('header', { header: t((x) => x.home.practical.title) })], [questions({})]),
+  tiles({ space_before_class: 'flush-top', tx_kumanokodo_edge: 1 }),
+  columns(
+    'heading-content',
+    { ...sunk, tx_kumanokodo_colour: 'first' },
+    [el('header', { header: t((x) => x.home.practical.title) })],
+    [questions({})],
+  ),
 ];
 
 const practicalSubContent = (slug) => [
@@ -729,6 +732,7 @@ const showcaseBlocks = [
     (h) => [el('header', { ...h, space_before_class: 'default' }), images('fullwidth', ['evening-rooftops'])],
   ],
   ['teaser', 'cards', 'teaser', (h) => cards('teaser', 4, h, teasers(dayTeasers))],
+  ['teaser-edge', 'cards', 'teaserEdge', (h) => cards('teaser', 4, { ...h, tx_kumanokodo_edge: 1 }, teasers(dayTeasers))],
   ['place', 'cards', 'place', (h) => section(h, [columns('wide-narrow', {}, [place(0)], [place(1)])])],
   [
     'person',
@@ -750,28 +754,10 @@ const showcaseBlocks = [
         ),
       ),
   ],
-  [
-    'cta',
-    'cards',
-    'cta',
-    (h) =>
-      cards(
-        'cta',
-        3,
-        { ...sunk, ...h },
-        list(
-          (x) => x.guide.prep,
-          (p) => ({
-            title: t((x) => p(x).title),
-            text: t((x) => p(x).text),
-            link: link(p(c.en).href),
-            link_label: t((x) => x.ui.readMore),
-            emphasis: p(c.en).variant ?? 'default',
-          }),
-        ),
-      ),
-  ],
+  ['cta', 'cards', 'cta', (h) => cards('cta', 3, { ...sunk, ...h }, prepCards())],
+  ['cta-edge', 'cards', 'ctaEdge', (h) => cards('cta', 3, { ...h, tx_kumanokodo_edge: 1 }, prepCards())],
   ['tile', 'cards', 'tile', (h) => tiles(h)],
+  ['tile-edge', 'cards', 'tileEdge', (h) => tiles({ ...h, tx_kumanokodo_edge: 1 })],
   ['stage', 'cards', 'stage', (h) => cards('stage', 'slider', h, stageCards())],
   [
     'media',
@@ -911,6 +897,18 @@ const showcaseBlocks = [
     ratio.replace(/-(\w)/g, (_, l) => l.toUpperCase()),
     (h) => columns(ratio, h, [intro(0)], [intro(1)]),
   ]),
+  [
+    'columns-colour',
+    'columns',
+    'colourColumn',
+    (h) =>
+      columns(
+        'heading-content',
+        { ...h, tx_kumanokodo_colour: 'first' },
+        [el('header', { subheader: t((x) => x.home.practical.eyebrow), header: t((x) => x.home.practical.title) })],
+        [questions({})],
+      ),
+  ],
   ['section-sunk', 'section', 'sunk', (h) => section({ ...sunk, ...h }, [text(t((x) => `<p>${esc(x.site.days.intro)}</p>`))])],
   [
     'newsletter',

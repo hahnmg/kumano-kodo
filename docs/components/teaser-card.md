@@ -12,6 +12,7 @@ meta and optional badge. The whole card is clickable.
 | `title`, `href`             | text, URL                                                                            |
 | `subtitle`, `meta`, `badge` | optional                                                                             |
 | `level`                     | heading level 2 or 3, or `'none'` for a paragraph title inside navigation; default 3 |
+| `edge`                      | bar in the accent beside the card; rounds with `--radius-surface`                    |
 
 Tokens: `--color-hair`, `--color-ink`, `--color-muted`, `--space-4`,
 `--space-12`, `--space-14`, `--space-20`, `--radius-surface`.

@@ -159,7 +159,7 @@ renderables:
         type: ContentElement
         label: ''
         properties:
-          contentElementUid: 3940
+          contentElementUid: 4711
       - identifier: notes
         type: Textarea
         label: Anything else

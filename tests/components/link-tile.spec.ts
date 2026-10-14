@@ -8,5 +8,10 @@ describe('link-tile', () => {
     expect(a?.getAttribute('href')).toBe('/t');
     expect(a?.textContent?.trim()).toBe('Getting there');
   });
+  it('takes the colour edge only when asked', () => {
+    expect(mount(linkTile({ title: 'Getting there', href: '#', icon: 'home', edge: true })).querySelector('a')?.className).toBe(
+      'link-tile link-tile-edge',
+    );
+  });
   it('passes axe', () => expectAccessible(linkTile({ title: 'Getting there', href: '#', icon: 'home' })));
 });

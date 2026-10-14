@@ -278,6 +278,18 @@
       <trans-unit id="tt_content.tx_kumanokodo_chips">
         <source>Chips</source>
       </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_colour">
+        <source>Colour box</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_colour.first">
+        <source>First column, light on the accent</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_colour.none">
+        <source>None</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_colour.second">
+        <source>Second column, light on the accent</source>
+      </trans-unit>
       <trans-unit id="tt_content.tx_kumanokodo_columns">
         <source>Shown as</source>
       </trans-unit>
@@ -292,6 +304,12 @@
       </trans-unit>
       <trans-unit id="tt_content.tx_kumanokodo_columns.slider">
         <source>Slider</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_edge">
+        <source>Colour edge</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_edge.description">
+        <source>A bar in the accent beside each card instead of the line above it.</source>
       </trans-unit>
       <trans-unit id="tt_content.tx_kumanokodo_entries">
         <source>Entries</source>

@@ -5,10 +5,11 @@ Fluid: `<kk:linkTile>`.
 
 Navigational row: icon, title and arrow under a top rule.
 
-| Prop            | Values    |
-| --------------- | --------- |
-| `title`, `href` | text, URL |
-| `icon`          | icon name |
+| Prop            | Values                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------- |
+| `title`, `href` | text, URL                                                                                   |
+| `icon`          | icon name                                                                                   |
+| `edge`          | bar in the accent beside the tile instead of the line above; rounds with `--radius-surface` |
 
 Tokens: `--color-line`, `--color-ink`, `--color-accent`, `--space-16`,
 `--space-24`.

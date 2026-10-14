@@ -573,6 +573,10 @@ const build = (p: Photos) => {
         plugins: 'Plugins',
       },
       variants: {
+        ctaEdge: 'Call to action, colour edge',
+        teaserEdge: 'Teaser, colour edge',
+        tileEdge: 'Link tile, colour edge',
+        colourColumn: 'Colour column',
         hero: 'Photo hero',
         heroSlides: 'Photo hero with slides',
         text: 'Text',

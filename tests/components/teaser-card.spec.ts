@@ -17,5 +17,9 @@ describe('teaser-card', () => {
   });
   it('sets the heading level', () =>
     expect(mount(teaserCard({ ...guide.entries[0], href: '#', level: 2 })).querySelector('h2')).not.toBeNull());
+  it('takes the colour edge only when asked', () => {
+    expect(mount(teaserCard({ ...guide.entries[2], href: '#', edge: true })).querySelector('.teaser-card-edge')).not.toBeNull();
+    expect(mount(teaserCard({ ...guide.entries[2], href: '#' })).querySelector('.teaser-card-edge')).toBeNull();
+  });
   it('passes axe', () => expectAccessible(teaserCard({ ...guide.entries[2], href: '#' })));
 });
