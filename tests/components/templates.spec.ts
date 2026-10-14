@@ -21,6 +21,7 @@ import {
   papersPage,
   registerPage,
   waysPage,
+  showcasePage,
   reportsPage,
   reportPage,
 } from '../../stories/templates/site-pages.markup';
@@ -49,6 +50,7 @@ const pages: Record<string, (c: Content) => string> = {
   papers: papersPage,
   register: registerPage,
   ways: waysPage,
+  showcase: showcasePage,
   reports: (c: Content) => reportsPage(1, c),
   'reports page 2': (c: Content) => reportsPage(2, c),
   ...Object.fromEntries(reportSlugs.map((s) => [`report ${s}`, (c: Content) => reportPage(s, c)])),
@@ -82,4 +84,14 @@ describe('site pages', () => {
       it(`${name} (${locale}) passes axe`, () => expectAccessible(html(), true), 20_000);
     }
   }
+});
+
+describe('content showcase', () => {
+  it('gives every block its own anchor in the table of contents', () => {
+    document.body.innerHTML = showcasePage(content('en'));
+    const ids = [...document.querySelectorAll('[id]')].map((e) => e.id);
+    expect(ids.filter((id, i) => ids.indexOf(id) !== i)).toEqual([]);
+    const toc = [...document.querySelectorAll('.link-groups a')].map((a) => a.getAttribute('href'));
+    expect(toc).toEqual(ids.filter((id) => id.startsWith('showcase-') && id !== 'showcase-chapter-day-2').map((id) => `#${id}`));
+  });
 });

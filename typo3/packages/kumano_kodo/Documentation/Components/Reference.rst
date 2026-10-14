@@ -579,6 +579,32 @@ back.
         - string, default ``forward``
         - forward or back.
 
+kk:linkGroup
+============
+
+One column of linkGroups: a label above its links, each a list item with a link
+component.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``title``
+        - string, required
+        - The label above the links.
+
+Slots: ``default``.
+
+kk:linkGroups
+=============
+
+Links in labelled columns, such as a page's table of contents; the columns are
+linkGroup components.
+
+Slots: ``default``.
+
 kk:linkTile
 ===========
 

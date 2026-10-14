@@ -631,6 +631,25 @@
 		"slots": []
 	},
 	{
+		"name": "linkGroup",
+		"description": "One column of linkGroups: a label above its links, each a list item with a link component.",
+		"arguments": [
+			{
+				"name": "title",
+				"type": "string",
+				"required": true,
+				"description": "The label above the links."
+			}
+		],
+		"slots": ["default"]
+	},
+	{
+		"name": "linkGroups",
+		"description": "Links in labelled columns, such as a page's table of contents; the columns are linkGroup components.",
+		"arguments": [],
+		"slots": ["default"]
+	},
+	{
 		"name": "linkTile",
 		"description": "A large link with an icon in a circle and an arrow.",
 		"arguments": [

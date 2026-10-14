@@ -1,0 +1,44 @@
+.link-groups {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-40) var(--space-24);
+}
+
+.link-group-title {
+    margin: 0;
+    padding-bottom: var(--space-12);
+    border-bottom: var(--border-hairline) solid var(--color-line);
+    color: var(--color-muted);
+}
+
+.link-group-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    margin: 0;
+    padding: var(--space-16) 0 0;
+    list-style: none;
+}
+
+@media (width <= 900px) {
+    .link-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (width <= 600px) {
+    .link-groups {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* On paper the list still tells what the page holds; only the arrow, which points nowhere there, goes. */
+@media print {
+    .link-group .link-forward {
+        display: inline;
+    }
+
+    .link-group .link-arrow {
+        display: none;
+    }
+}

@@ -22,6 +22,13 @@ import { faqList } from '../molecules/faq-item.markup';
 import { figure } from '../molecules/figure.markup';
 import { form } from '../molecules/form.markup';
 import { gallery } from '../molecules/gallery.markup';
+import { featureCard } from '../molecules/feature-card.markup';
+import { highlight } from '../molecules/highlight.markup';
+import { linkGroups } from '../molecules/link-groups.markup';
+import { notice } from '../molecules/notice.markup';
+import { statRow } from '../molecules/stat.markup';
+import { timeline } from '../molecules/timeline-item.markup';
+import { button } from '../atoms/button.markup';
 import { iconFact } from '../molecules/icon-fact.markup';
 import { infoBox } from '../molecules/info-box.markup';
 import { linkTile } from '../molecules/link-tile.markup';
@@ -607,38 +614,39 @@ export const loginPage = (c: Content = content()): string =>
       }),
   );
 
-export const contactPage = (c: Content = content()): string => {
+// The contact page's form, also on the content showcase.
+const contactForm = (c: Content): string => {
   const { ui, site } = c;
-  const contact = c.guide.footer.columns[c.guide.footer.columns.length - 1];
   const topics = practicalSlugs.map((slug) => site.practical.pages[slug].title);
+  return form({
+    action: paths.contact,
+    fields: [
+      textField({ label: `${ui.name} *`, name: 'name', autocomplete: 'name', required: true }),
+      textField({
+        label: `${ui.emailAddress} *`,
+        name: 'email',
+        type: 'email',
+        autocomplete: 'email',
+        placeholder: ui.emailPlaceholder,
+        required: true,
+      }),
+      select({ label: ui.topic, name: 'topic', options: topics }),
+      textarea({ label: `${ui.message} *`, name: 'message', rows: 6, required: true }),
+      checkbox({ label: `${ui.contactConsent} *`, name: 'consent', required: true }),
+    ],
+    note: ui.requiredNote,
+    submit: ui.send,
+  });
+};
+
+export const contactPage = (c: Content = content()): string => {
+  const contact = c.guide.footer.columns[c.guide.footer.columns.length - 1];
   return chrome(
     c,
     -1,
     header(c, contact.title, []) +
       section({
-        content: split(
-          form({
-            action: paths.contact,
-            fields: [
-              textField({ label: `${ui.name} *`, name: 'name', autocomplete: 'name', required: true }),
-              textField({
-                label: `${ui.emailAddress} *`,
-                name: 'email',
-                type: 'email',
-                autocomplete: 'email',
-                placeholder: ui.emailPlaceholder,
-                required: true,
-              }),
-              select({ label: ui.topic, name: 'topic', options: topics }),
-              textarea({ label: `${ui.message} *`, name: 'message', rows: 6, required: true }),
-              checkbox({ label: `${ui.contactConsent} *`, name: 'consent', required: true }),
-            ],
-            note: ui.requiredNote,
-            submit: ui.send,
-          }),
-          richText({ html: `<p>${esc(contact.links[1].label)}</p>` }),
-          'content-sidebar',
-        ),
+        content: split(contactForm(c), richText({ html: `<p>${esc(contact.links[1].label)}</p>` }), 'content-sidebar'),
       }),
   );
 };
@@ -683,5 +691,285 @@ export const papersPage = (c: Content = content()): string => {
         ),
       }) +
       section({ content: stack([sectionHeading({ title: site.days.groups.days }), grid(teasers(dayTeasers(c), 3), 4)], 'heading') }),
+  );
+};
+
+// Every content element in every form it takes, one below the other, from the journal's own texts and photos. The
+// page top variants that set the page's h1 (photo hero, slides, opener, the columns' page top) show on their own pages.
+export const showcasePage = (c: Content = content()): string => {
+  const { site, kumano, guide, home, pages, photos, ui, reports } = c;
+  const s = site.showcase;
+  const e = s.elements;
+  const v = s.variants;
+  const practicalNav = practicalSlugs.map((slug) => ({ label: site.practical.pages[slug].title, href: paths.practicalPage(slug) }));
+  const blocks: {
+    id: string;
+    element: string;
+    variant?: string;
+    title?: string;
+    body: string;
+    tone?: 'sunk';
+    bleed?: boolean;
+    raw?: boolean;
+    ownHeading?: boolean;
+  }[] = [
+    { id: 'text', element: e.text, variant: v.text, body: richText({ html: paragraphs(kumano.intro) }) },
+    { id: 'table', element: e.text, variant: v.table, body: richText({ html: stagesTable(c) }) },
+    {
+      id: 'image-left',
+      element: e.textImage,
+      variant: v.imageLeft,
+      body: textMedia({
+        ...kumano.places[1],
+        text: kumano.places[1].description,
+        link: { label: ui.readMore, href: paths.place('yunomine') },
+      }),
+    },
+    {
+      id: 'image-right',
+      element: e.textImage,
+      variant: v.imageRight,
+      body: textMedia({
+        ...kumano.places[2],
+        text: kumano.places[2].description,
+        imageSide: 'right',
+        link: { label: ui.readMore, href: paths.place('chikatsuyu') },
+      }),
+    },
+    {
+      id: 'long-text',
+      element: e.textImage,
+      variant: v.longText,
+      body: textMedia({ image: photos['cedar-canopy'], title: home.why.title, text: kumano.intro.join(' ') }),
+    },
+    {
+      id: 'video',
+      element: e.textImage,
+      variant: v.video,
+      body: textMedia({
+        image: asVideo(photos['sea-of-clouds']),
+        title: kumano.days[1].route,
+        text: kumano.days[1].description,
+        play: ui.playVideo,
+      }),
+    },
+    {
+      id: 'figure',
+      element: e.images,
+      variant: v.figure,
+      body: figure({ images: [photos['forest-stream']], caption: home.bridgeCaption, labels: lightbox(c) }),
+    },
+    {
+      id: 'figure-plain',
+      element: e.images,
+      variant: v.figurePlain,
+      body: figure({ images: [photos['misty-valley'], photos['root-path']], caption: '', rule: false, labels: lightbox(c) }),
+    },
+    {
+      id: 'gallery',
+      element: e.images,
+      variant: v.gallery,
+      body: gallery({ images: photosOfDay(1).map((name) => photos[name]), labels: lightbox(c) }),
+    },
+    {
+      id: 'fullwidth',
+      element: e.images,
+      variant: v.fullwidth,
+      raw: true,
+      body: bleedImage(photos['evening-rooftops'], undefined, lightbox(c)),
+    },
+    { id: 'teaser', element: e.cards, variant: v.teaser, body: grid(teasers(dayTeasers(c)), 4) },
+    {
+      id: 'place',
+      element: e.cards,
+      variant: v.place,
+      body: split(featureCard(kumano.places[0]), featureCard(kumano.places[1]), 'wide-narrow'),
+    },
+    { id: 'person', element: e.cards, variant: v.person, body: grid(guide.hosts.map(personCard), 2) },
+    {
+      id: 'cta',
+      element: e.cards,
+      variant: v.cta,
+      body: grid(
+        guide.prep.map((p) => ctaCard({ ...p, linkLabel: ui.readMore })),
+        3,
+      ),
+      tone: 'sunk',
+    },
+    { id: 'tile', element: e.cards, variant: v.tile, body: grid(guide.tiles.map(linkTile), 2) },
+    {
+      id: 'stage',
+      element: e.cards,
+      variant: v.stage,
+      bleed: true,
+      body: slider({
+        heading: { eyebrow: e.cards, title: v.stage },
+        items: kumano.stages.map(portraitCard),
+        labels: { previous: ui.previous, next: ui.next, item: ui.card },
+      }),
+    },
+    {
+      id: 'media',
+      element: e.list,
+      variant: v.media,
+      body: mediaList({ title: pages.start.panelTitle, items: guide.routes, more: { label: pages.start.panelMore, href: paths.days } }),
+    },
+    { id: 'days', element: e.list, variant: v.days, body: timeline(kumano.days) },
+    { id: 'downloads', element: e.list, variant: v.downloads, body: downloadList({ items: pages.detail.downloads }) },
+    { id: 'links', element: e.list, variant: v.links, body: cluster(practicalNav.map((l) => link(l))) },
+    { id: 'links-stacked', element: e.list, variant: v.linksStacked, body: stack(practicalNav.map((l) => link(l))) },
+    { id: 'subnav', element: e.list, variant: v.subnav, body: subNav({ title: site.practical.title, items: practicalNav }) },
+    { id: 'figures', element: e.facts, variant: v.figures, body: statRow(kumano.stats) },
+    { id: 'icons', element: e.facts, variant: v.icons, body: grid(guide.facts.map(iconFact), 4) },
+    {
+      id: 'pairs',
+      element: e.facts,
+      variant: v.pairs,
+      body: factList({
+        facts: kumano.days.map((d) => ({ label: d.date, value: d.route })),
+      }),
+    },
+    { id: 'highlight', element: e.callout, variant: v.highlight, body: highlight(home.crow) },
+    {
+      id: 'infobox',
+      element: e.callout,
+      variant: v.infobox,
+      body: infoBox({ title: site.day.tipTitle, text: site.day.tips[1], links: [{ label: site.practical.title, href: paths.practical }] }),
+    },
+    { id: 'notice', element: e.callout, variant: v.notice, body: notice(guide.footer.notice) },
+    { id: 'quote', element: e.callout, variant: v.quote, body: quote(home.quote) },
+    // The element sets its heading beside the questions, as on the practical page.
+    {
+      id: 'questions',
+      element: e.questions,
+      title: home.practical.title,
+      ownHeading: true,
+      body: split(sectionHeading({ eyebrow: e.questions, title: home.practical.title }), faqList(kumano.faq), 'heading-content'),
+    },
+    ...(['even', 'content-sidebar', 'text-media', 'heading-content', 'wide-narrow', 'narrow-wide'] as const).map((ratio) => ({
+      id: `columns-${ratio}`,
+      element: e.columns,
+      variant: v[ratio.replace(/-(\w)/g, (_, l: string) => l.toUpperCase()) as 'even'],
+      body: split(richText({ html: `<p>${esc(kumano.intro[0])}</p>` }), richText({ html: `<p>${esc(kumano.intro[1])}</p>` }), ratio),
+    })),
+    { id: 'section-sunk', element: e.section, variant: v.sunk, tone: 'sunk', body: richText({ html: paragraphs([site.days.intro]) }) },
+    {
+      id: 'newsletter',
+      element: e.newsletter,
+      title: home.newsletter.title,
+      body: split(
+        richText({ html: `<p>${esc(home.newsletter.text)}</p>` }),
+        newsletterForm({
+          action: '#',
+          emailLabel: ui.emailAddress,
+          placeholder: ui.emailPlaceholder,
+          consent: ui.consent,
+          submit: ui.subscribe,
+        }),
+        'text-media',
+      ),
+    },
+    {
+      id: 'external-videos',
+      element: e.media,
+      title: ui.mediaConsentTitle,
+      body: mediaConsent({ text: ui.mediaConsentText, toggle: ui.mediaConsentToggle }),
+    },
+    { id: 'route-map', element: e.journal, variant: v.routeMap, body: routeMap(linkRoute(kumano.route)) },
+    {
+      id: 'chapter',
+      element: e.journal,
+      variant: v.chapter,
+      body: chapter({
+        id: 'showcase-chapter-day-2',
+        number: '1',
+        date: `${kumano.days[1].date} · ${kumano.days[1].time}`,
+        title: kumano.days[1].route,
+        text: home.draft.chapters[1],
+        photos: dayPhotos[1].map(([name, span, shift]) => ({ image: photos[name], span, shift })),
+        labels: lightbox(c),
+      }),
+    },
+    { id: 'form', element: e.plugins, variant: v.form, body: split(contactForm(c), '', 'content-sidebar') },
+    {
+      id: 'login',
+      element: e.plugins,
+      variant: v.login,
+      body: split(loginForm({ action: paths.login, labels: loginLabels(c) }), '', 'content-sidebar'),
+    },
+    {
+      id: 'search',
+      element: e.plugins,
+      variant: v.search,
+      body: searchForm({
+        action: paths.search,
+        label: ui.search,
+        submit: ui.search,
+        placeholder: ui.searchPlaceholder,
+        landmark: ui.searchResults,
+      }),
+    },
+    {
+      id: 'news',
+      element: e.plugins,
+      variant: v.news,
+      body: grid(
+        reports.items.slice(0, 3).map((r) =>
+          teaserCard({
+            image: photos[r.photos[0] as PhotoName],
+            title: r.title,
+            href: paths.report(r.slug),
+            subtitle: r.teaser,
+            meta: longDate(c, r.date),
+            badge: reports.categories[r.category as keyof typeof reports.categories],
+            level: 3,
+          }),
+        ),
+        3,
+      ),
+    },
+  ];
+  const anchor = (id: string) => `showcase-${id}`;
+  return chrome(
+    c,
+    1,
+    // The page top "Title and text" carries the page's h1; it points to where the photo hero shows.
+    section({
+      content:
+        `<h1 class="type-h2">${esc(s.title)}</h1><p class="type-lead">${esc(s.intro)}</p>` +
+        `<div>${button({ label: s.heroLink, href: paths.glance })}</div>`,
+    }) +
+      section({
+        space: 'flush-top',
+        content: stack(
+          [
+            sectionHeading({ title: s.contents }),
+            linkGroups({
+              groups: [...new Set(blocks.map((b) => b.element))].map((title) => ({
+                title,
+                links: blocks
+                  .filter((b) => b.element === title)
+                  .map((b) => ({ label: b.variant ?? b.title ?? title, href: `#${anchor(b.id)}` })),
+              })),
+            }),
+          ],
+          'heading',
+        ),
+      }) +
+      blocks
+        .map((b) =>
+          b.raw
+            ? `<div id="${anchor(b.id)}">${stack([section({ space: 'none', content: sectionHeading({ eyebrow: b.element, title: b.variant ?? '' }) }), b.body], 'heading')}</div>`
+            : section({
+                id: anchor(b.id),
+                tone: b.tone,
+                bleed: b.bleed,
+                content:
+                  b.bleed || b.ownHeading
+                    ? b.body
+                    : stack([sectionHeading({ eyebrow: b.element, title: b.title ?? b.variant ?? '' }), b.body], 'heading'),
+              }),
+        )
+        .join(''),
   );
 };

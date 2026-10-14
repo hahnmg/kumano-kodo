@@ -40,7 +40,9 @@ Cards
 
 List
     Media list, Days, Downloads (from files), Links side by side, Links one
-    below the other, or Sub navigation.
+    below the other, Links in columns, or Sub navigation. Links in columns
+    groups the entries by their Label, one column per label, as a table of
+    contents.
 
 Facts
     With icons, Large figures, or Label and value.

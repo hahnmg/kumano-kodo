@@ -1,0 +1,11 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>One column of linkGroups: a label above its links, each a list item with a link component.</f:comment>
+<f:argument name="title" type="string" description="The label above the links."/>
+
+<div class="link-group">
+    <h3 class="link-group-title type-label">{title}</h3>
+    <ul class="link-group-list">
+        <f:slot/>
+    </ul>
+</div>
+</html>

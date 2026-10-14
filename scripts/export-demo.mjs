@@ -641,6 +641,336 @@ const newsFlexform = (sheets) =>
     .join('') +
   '</data></T3FlexForms>';
 
+// Every element in each of its variants, one below the other; an element that brings its own heading sits in a section.
+const sc = (x) => x.site.showcase;
+const shown = (id, element, variant) => ({
+  tx_kumanokodo_anchor: `showcase-${id}`,
+  subheader: t((x) => sc(x).elements[element]),
+  header: t((x) => (typeof variant === 'function' ? variant(x) : sc(x).variants[variant])),
+});
+const practicalLinks = () => practicalSlugs.map((p) => ({ title: t((x) => x.site.practical.pages[p].title), link: `page:practical-${p}` }));
+const intro = (i) => text(t((x) => `<p>${esc(x.kumano.intro[i])}</p>`));
+const textImage = (fields, image, more) => el('kumano_text_image', fields, { image, ...(more ? { items: links(more) } : {}) });
+const showcaseBlocks = [
+  [
+    'text',
+    'text',
+    'text',
+    (h) =>
+      text(
+        t((x) => x.kumano.intro.map((p) => `<p>${esc(p)}</p>`).join('')),
+        h,
+      ),
+  ],
+  ['table', 'text', 'table', (h) => text(t(stagesTable), h)],
+  [
+    'image-left',
+    'textImage',
+    'imageLeft',
+    (h) =>
+      section(h, [
+        textImage(
+          { header: t((x) => x.kumano.places[1].title), bodytext: t((x) => x.kumano.places[1].description), imageorient: 26 },
+          [photo(c.en.kumano.places[1].image)],
+          { title: t((x) => x.ui.readMore), link: 'page:place-yunomine' },
+        ),
+      ]),
+  ],
+  [
+    'image-right',
+    'textImage',
+    'imageRight',
+    (h) =>
+      section(h, [
+        textImage(
+          { header: t((x) => x.kumano.places[2].title), bodytext: t((x) => x.kumano.places[2].description), imageorient: 25 },
+          [photo(c.en.kumano.places[2].image)],
+          { title: t((x) => x.ui.readMore), link: 'page:place-chikatsuyu' },
+        ),
+      ]),
+  ],
+  [
+    'long-text',
+    'textImage',
+    'longText',
+    (h) =>
+      section(h, [
+        textImage({ header: t((x) => x.home.why.title), bodytext: t((x) => x.kumano.intro.join(' ')), imageorient: 26 }, ['cedar-canopy']),
+      ]),
+  ],
+  [
+    'video',
+    'textImage',
+    'video',
+    (h) =>
+      section(h, [
+        textImage({ header: t((x) => x.kumano.days[1].route), bodytext: t((x) => x.kumano.days[1].description), imageorient: 26 }, [
+          'video:trail',
+          'sea-of-clouds',
+        ]),
+      ]),
+  ],
+  ['figure', 'images', 'figure', (h) => section(h, [images('figure', ['forest-stream'], { bodytext: t((x) => x.home.bridgeCaption) })])],
+  ['figure-plain', 'images', 'figurePlain', (h) => section(h, [images('figure-plain', ['misty-valley', 'root-path'])])],
+  ['gallery', 'images', 'gallery', (h) => images('gallery', photosOfDay(1), h)],
+  // A full-width image and a plugin draw no section of their own heading, so a heading before them carries the anchor.
+  [
+    'fullwidth',
+    'images',
+    'fullwidth',
+    (h) => [el('header', { ...h, space_before_class: 'default' }), images('fullwidth', ['evening-rooftops'])],
+  ],
+  ['teaser', 'cards', 'teaser', (h) => cards('teaser', 4, h, teasers(dayTeasers))],
+  ['place', 'cards', 'place', (h) => section(h, [columns('wide-narrow', {}, [place(0)], [place(1)])])],
+  [
+    'person',
+    'cards',
+    'person',
+    (h) =>
+      cards(
+        'person',
+        2,
+        h,
+        list(
+          (x) => x.guide.hosts,
+          (p) => ({
+            image: photo(p(c.en).image),
+            title: t((x) => p(x).name),
+            meta: t((x) => p(x).role),
+            text: t((x) => p(x).focus),
+          }),
+        ),
+      ),
+  ],
+  [
+    'cta',
+    'cards',
+    'cta',
+    (h) =>
+      cards(
+        'cta',
+        3,
+        { ...sunk, ...h },
+        list(
+          (x) => x.guide.prep,
+          (p) => ({
+            title: t((x) => p(x).title),
+            text: t((x) => p(x).text),
+            link: link(p(c.en).href),
+            link_label: t((x) => x.ui.readMore),
+            emphasis: p(c.en).variant ?? 'default',
+          }),
+        ),
+      ),
+  ],
+  ['tile', 'cards', 'tile', (h) => tiles(h)],
+  ['stage', 'cards', 'stage', (h) => cards('stage', 'slider', h, stageCards())],
+  [
+    'media',
+    'list',
+    'media',
+    (h) =>
+      section(h, [
+        listEl(
+          'media',
+          { header: t((x) => x.pages.start.panelTitle) },
+          mediaItems((x) => x.guide.routes),
+          [{ title: t((x) => x.pages.start.panelMore), link: 'page:days' }],
+        ),
+      ]),
+  ],
+  [
+    'days',
+    'list',
+    'days',
+    (h) =>
+      listEl(
+        'days',
+        h,
+        list(
+          (x) => x.kumano.days,
+          (d) => ({
+            label: t((x) => d(x).date),
+            title: t((x) => d(x).route),
+            text: t((x) => d(x).description),
+            meta: t((x) => d(x).time),
+          }),
+        ),
+      ),
+  ],
+  [
+    'downloads',
+    'list',
+    'downloads',
+    (h) =>
+      el(
+        'kumano_list',
+        { tx_kumanokodo_variant: 'downloads', ...h },
+        { media: t((x) => x.pages.detail.downloads.map((d) => fileSlug(d.href))) },
+      ),
+  ],
+  ['links', 'list', 'links', (h) => listEl('links', h, practicalLinks())],
+  ['links-stacked', 'list', 'linksStacked', (h) => listEl('links-stacked', h, practicalLinks())],
+  ['subnav', 'list', 'subnav', (h) => section(h, [listEl('subnav', { header: t((x) => x.site.practical.title) }, practicalLinks())])],
+  [
+    'figures',
+    'facts',
+    'figures',
+    (h) =>
+      facts(
+        'figures',
+        h,
+        list(
+          (x) => x.kumano.stats,
+          (a) => ({ value: t((x) => a(x).value), label: t((x) => a(x).label) }),
+        ),
+      ),
+  ],
+  [
+    'icons',
+    'facts',
+    'icons',
+    (h) =>
+      facts(
+        'icons',
+        { ...h, tx_kumanokodo_columns: '4' },
+        list(
+          (x) => x.guide.facts,
+          (f) => ({ icon: f(c.en).icon, label: t((x) => f(x).label), value: t((x) => f(x).value), note: t((x) => f(x).note) }),
+        ),
+      ),
+  ],
+  [
+    'pairs',
+    'facts',
+    'pairs',
+    (h) =>
+      section(h, [
+        facts(
+          'pairs',
+          {},
+          list(
+            (x) => x.kumano.days,
+            (d) => ({ label: t((x) => d(x).date), value: t((x) => d(x).route) }),
+          ),
+        ),
+      ]),
+  ],
+  ['highlight', 'callout', 'highlight', (h) => section(h, [highlight()])],
+  [
+    'infobox',
+    'callout',
+    'infobox',
+    (h) =>
+      section(h, [
+        el(
+          'kumano_callout',
+          { tx_kumanokodo_variant: 'infobox', header: t((x) => x.site.day.tipTitle), bodytext: t((x) => x.site.day.tips[1]) },
+          { items: links({ title: t((x) => x.site.practical.title), link: 'page:practical' }) },
+        ),
+      ]),
+  ],
+  [
+    'notice',
+    'callout',
+    'notice',
+    (h) =>
+      section(h, [
+        el('kumano_callout', {
+          tx_kumanokodo_variant: 'notice',
+          header: t((x) => x.guide.footer.notice.title),
+          bodytext: t((x) => x.guide.footer.notice.text),
+        }),
+      ]),
+  ],
+  [
+    'quote',
+    'callout',
+    'quote',
+    (h) =>
+      section(h, [
+        el('kumano_callout', {
+          tx_kumanokodo_variant: 'quote',
+          bodytext: t((x) => x.home.quote.quote),
+          header: t((x) => x.home.quote.source),
+        }),
+      ]),
+  ],
+  ['questions', 'questions', (x) => x.home.practical.title, (h) => questions(h)],
+  ...['even', 'content-sidebar', 'text-media', 'heading-content', 'wide-narrow', 'narrow-wide'].map((ratio) => [
+    `columns-${ratio}`,
+    'columns',
+    ratio.replace(/-(\w)/g, (_, l) => l.toUpperCase()),
+    (h) => columns(ratio, h, [intro(0)], [intro(1)]),
+  ]),
+  ['section-sunk', 'section', 'sunk', (h) => section({ ...sunk, ...h }, [text(t((x) => `<p>${esc(x.site.days.intro)}</p>`))])],
+  [
+    'newsletter',
+    'newsletter',
+    (x) => x.home.newsletter.title,
+    (h) => section(h, [el('kumano_newsletter', { bodytext: t((x) => x.home.newsletter.text) })]),
+  ],
+  [
+    'external-videos',
+    'media',
+    (x) => x.ui.mediaConsentTitle,
+    (h) => section(h, [el('kumano_media_consent', { bodytext: t((x) => x.ui.mediaConsentText) })]),
+  ],
+  ['route-map', 'journal', 'routeMap', (h) => routeMap(h)],
+  ['chapter', 'journal', 'chapter', (h) => section(h, [chapter(1, 'showcase-chapter-day-2')])],
+  [
+    'form',
+    'plugins',
+    'form',
+    (h) =>
+      columns(
+        'content-sidebar',
+        h,
+        [el('form_formframework', { pi_flexform: formFlexform('EXT:kumano_kodo_demo/Resources/Private/Forms/contact.form.yaml') })],
+        [],
+      ),
+  ],
+  [
+    'login',
+    'plugins',
+    'login',
+    (h) => columns('content-sidebar', h, [el('felogin_login', { pi_flexform: loginFlexform('walkers', { login: 'papers' }) })], []),
+  ],
+  ['search', 'plugins', 'search', (h) => [el('header', h), el('indexedsearch_pi2')]],
+  [
+    'news',
+    'plugins',
+    'news',
+    (h) => [
+      el('header', h),
+      el('news_pi1', {
+        pi_flexform: newsFlexform({
+          sDEF: { orderBy: 'datetime', orderDirection: 'desc', startingpoint: 'page:news-records' },
+          additional: { detailPid: 'page:report', limit: 3, hidePagination: 1 },
+        }),
+      }),
+    ],
+  ],
+];
+const showcaseContent = [
+  el(
+    'kumano_page_top',
+    { tx_kumanokodo_variant: 'text', header: t((x) => sc(x).title), bodytext: t((x) => sc(x).intro) },
+    { items: links({ title: t((x) => sc(x).heroLink), link: 'page:at-a-glance' }) },
+  ),
+  // The table of contents: one column per element, its label on each entry.
+  listEl(
+    'link-groups',
+    { header: t((x) => sc(x).contents), space_before_class: 'flush-top' },
+    showcaseBlocks.map(([id, element, variant]) => ({
+      label: t((x) => sc(x).elements[element]),
+      title: t((x) => (typeof variant === 'function' ? variant(x) : sc(x).variants[variant])),
+      link: `#showcase-${id}`,
+    })),
+  ),
+  ...showcaseBlocks.flatMap(([id, element, variant, build]) => build(shown(id, element, variant))),
+];
+
 const pages = [
   page(
     'home',
@@ -912,6 +1242,12 @@ const pages = [
     { navHide: true, content: components },
   ),
   page(
+    'practical-showcase',
+    'practical',
+    t((x) => x.site.showcase.title),
+    { navHide: true, layout: 'Landing', content: showcaseContent },
+  ),
+  page(
     'register',
     'practical',
     t((x) => x.walkForm.title),
@@ -965,6 +1301,7 @@ const intros = {
   ...Object.fromEntries(legalSlugs.map((slug) => [slug, (x) => x.site.legal[slug].text])),
   'at-a-glance': (x) => x.kumano.hero.teaser,
   ways: (x) => x.kumano.places[1].description,
+  'practical-showcase': (x) => x.site.showcase.intro,
   register: (x) => x.walkForm.introText,
   contact: (x) => contact(x).links[1].label,
 };

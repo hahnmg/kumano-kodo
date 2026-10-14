@@ -42,6 +42,10 @@ ExtensionManagementUtility::addRecordType(
                             'value' => 'links-stacked',
                         ],
                         [
+                            'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.link-groups',
+                            'value' => 'link-groups',
+                        ],
+                        [
                             'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_variant.subnav',
                             'value' => 'subnav',
                         ],

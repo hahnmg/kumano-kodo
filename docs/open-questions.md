@@ -21,6 +21,12 @@ Nothing decided is waiting to be built.
 
 ### 2026-10-14
 
+- **Content showcase, done**: Practical › Content showcase shows every element
+  in each of its variants, plugins included, with the element's name above each
+  block. Hero, slides, opener and the page-top columns stay on their own pages,
+  since each sets the h1. Its table of contents is the new list variant Links in
+  columns, which groups the entries by their label.
+
 - **Hero slider, done**: the photo hero takes up to four further slides, each
   with photo, eyebrow, title, text and button; it moves on every seven seconds
   until paused, sideways, and starts paused for reduced motion.

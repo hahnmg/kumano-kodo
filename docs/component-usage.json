@@ -9,6 +9,11 @@
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Atoms/Back To Top": [
@@ -165,6 +170,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -395,6 +405,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -617,6 +632,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -716,6 +736,11 @@
 		{
 			"id": "site--register-photos",
 			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -940,6 +965,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -1017,6 +1047,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -1041,6 +1076,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -1198,6 +1238,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -1420,6 +1465,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -1647,6 +1697,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -1884,6 +1939,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -2106,6 +2166,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--reports",
 			"name": "Trail reports",
 			"group": "Site"
@@ -2150,6 +2215,11 @@
 		{
 			"id": "site--register-your-walk",
 			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -2310,6 +2380,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -2387,6 +2462,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -2416,6 +2496,11 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -2459,12 +2544,22 @@
 			"id": "site--register-your-walk",
 			"name": "Register a walk · Your walk",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Atoms/Video": [
 		{
 			"id": "site--day-2",
 			"name": "Day 2",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -2625,6 +2720,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -2719,6 +2819,11 @@
 		{
 			"id": "site--photos",
 			"name": "Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -2946,6 +3051,11 @@
 			"id": "site--route",
 			"name": "The route",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Molecules/Download List": [
@@ -2957,6 +3067,11 @@
 		{
 			"id": "site--papers",
 			"name": "Travel papers",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -2979,6 +3094,11 @@
 		{
 			"id": "site--day-4",
 			"name": "Day 4",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -3019,6 +3139,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -3051,6 +3176,11 @@
 	],
 	"Molecules/Feature Card": [
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -3075,6 +3205,11 @@
 		{
 			"id": "site--day-4",
 			"name": "Day 4",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -3133,6 +3268,11 @@
 			"id": "site--register-summary",
 			"name": "Register a walk · Summary",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Molecules/Gallery": [
@@ -3172,6 +3312,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -3201,6 +3346,11 @@
 		{
 			"id": "site--home",
 			"name": "Home",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -3239,6 +3389,11 @@
 			"id": "site--route",
 			"name": "The route",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Molecules/Info Box": [
@@ -3270,6 +3425,11 @@
 		{
 			"id": "site--register-your-walk",
 			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -3320,6 +3480,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -3375,6 +3540,13 @@
 			"group": "Templates"
 		}
 	],
+	"Molecules/Link Groups": [
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		}
+	],
 	"Molecules/Link Tile": [
 		{
 			"id": "site--route",
@@ -3384,6 +3556,11 @@
 		{
 			"id": "site--practical",
 			"name": "Practical",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -3397,12 +3574,22 @@
 			"id": "site--papers",
 			"name": "Travel papers",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Molecules/Media Consent": [
 		{
 			"id": "site--privacy",
 			"name": "Privacy",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -3415,6 +3602,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -3575,6 +3767,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -3649,6 +3846,11 @@
 		{
 			"id": "site--newsletter",
 			"name": "Newsletter",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -3834,6 +4036,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--reports",
 			"name": "Trail reports",
 			"group": "Site"
@@ -3886,12 +4093,22 @@
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Molecules/Portrait Card": [
 		{
 			"id": "site--days",
 			"name": "Days and places",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -3919,6 +4136,11 @@
 		{
 			"id": "site--day-4",
 			"name": "Day 4",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -4081,6 +4303,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -4306,6 +4533,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--reports",
 			"name": "Trail reports",
 			"group": "Site"
@@ -4400,6 +4632,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -4457,6 +4694,11 @@
 	],
 	"Molecules/Stat": [
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -4482,12 +4724,22 @@
 			"id": "site--practical-maps",
 			"name": "Practical · Maps",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Molecules/Table": [
 		{
 			"id": "site--days",
 			"name": "Days and places",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		}
 	],
@@ -4648,6 +4900,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -4718,9 +4975,19 @@
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
 		}
 	],
 	"Molecules/Timeline Item": [
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
 		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
@@ -4736,6 +5003,11 @@
 		{
 			"id": "site--photos",
 			"name": "Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -5029,6 +5301,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -5213,6 +5490,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -5443,6 +5725,11 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -5517,6 +5804,11 @@
 		{
 			"id": "site--days",
 			"name": "Days and places",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{
@@ -5674,6 +5966,11 @@
 		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
+			"group": "Site"
+		},
+		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
 			"group": "Site"
 		},
 		{

@@ -4416,6 +4416,14 @@
 							},
 							{
 								"label": {
+									"en": "Content showcase",
+									"de": "Inhalte im Überblick",
+									"ja": "コンテンツ一覧"
+								},
+								"link": "page:practical-showcase"
+							},
+							{
+								"label": {
 									"en": "Register a walk",
 									"de": "Wanderung anmelden",
 									"ja": "ウォークの申し込み"
@@ -6775,6 +6783,3059 @@
 				"en": "A narrow valley with the bath houses along the stream. Carp streamers hung across it for Children’s Day.",
 				"de": "Ein enges Tal, die Badehäuser am Bach entlang. Zum Kindertag hingen Karpfenfahnen quer darüber.",
 				"ja": "狭い谷の沢沿いに湯屋が並ぶ。こどもの日を前に、鯉のぼりが川をまたいで泳いでいた。"
+			}
+		},
+		{
+			"key": "practical-showcase",
+			"parent": "practical",
+			"slug": "/practical/showcase",
+			"layout": "Landing",
+			"navHide": true,
+			"title": {
+				"en": "Content showcase",
+				"de": "Inhalte im Überblick",
+				"ja": "コンテンツ一覧"
+			},
+			"content": [
+				{
+					"type": "kumano_page_top",
+					"fields": {
+						"tx_kumanokodo_variant": "text",
+						"header": {
+							"en": "Content showcase",
+							"de": "Inhalte im Überblick",
+							"ja": "コンテンツ一覧"
+						},
+						"bodytext": {
+							"en": "<p>Every content element of the theme in every form it takes, one below the other, with the texts and photos of the journal. The line above each block names the element and its variant.</p>",
+							"de": "<p>Jedes Inhaltselement des Themes in jeder Form, die es annehmen kann, untereinander, mit den Texten und Fotos des Tagebuchs. Die Zeile über jedem Block nennt Element und Variante.</p>",
+							"ja": "<p>テーマのすべてのコンテンツ要素を、とり得るすべての形で、旅の記録の文章と写真を使って縦に並べています。各ブロックの上の行に、要素とバリエーションの名前があります。</p>"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_links": [
+							{
+								"title": {
+									"en": "Photo hero and slides",
+									"de": "Foto-Hero und Bildfolge",
+									"ja": "写真ヒーローとスライド"
+								},
+								"link": "page:at-a-glance"
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_list",
+					"fields": {
+						"tx_kumanokodo_variant": "link-groups",
+						"header": {
+							"en": "Contents",
+							"de": "Inhalt",
+							"ja": "目次"
+						},
+						"space_before_class": "flush-top"
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"label": {
+									"en": "Text",
+									"de": "Text",
+									"ja": "テキスト"
+								},
+								"title": {
+									"en": "Text",
+									"de": "Text",
+									"ja": "テキスト"
+								},
+								"link": "#showcase-text"
+							},
+							{
+								"label": {
+									"en": "Text",
+									"de": "Text",
+									"ja": "テキスト"
+								},
+								"title": {
+									"en": "Text with a table",
+									"de": "Text mit Tabelle",
+									"ja": "表を含むテキスト"
+								},
+								"link": "#showcase-table"
+							},
+							{
+								"label": {
+									"en": "Text and image",
+									"de": "Text und Bild",
+									"ja": "テキストと画像"
+								},
+								"title": {
+									"en": "Image left",
+									"de": "Bild links",
+									"ja": "画像が左"
+								},
+								"link": "#showcase-image-left"
+							},
+							{
+								"label": {
+									"en": "Text and image",
+									"de": "Text und Bild",
+									"ja": "テキストと画像"
+								},
+								"title": {
+									"en": "Image right",
+									"de": "Bild rechts",
+									"ja": "画像が右"
+								},
+								"link": "#showcase-image-right"
+							},
+							{
+								"label": {
+									"en": "Text and image",
+									"de": "Text und Bild",
+									"ja": "テキストと画像"
+								},
+								"title": {
+									"en": "Long text",
+									"de": "Langer Text",
+									"ja": "長いテキスト"
+								},
+								"link": "#showcase-long-text"
+							},
+							{
+								"label": {
+									"en": "Text and image",
+									"de": "Text und Bild",
+									"ja": "テキストと画像"
+								},
+								"title": {
+									"en": "Video in the image’s place",
+									"de": "Video an Stelle des Bildes",
+									"ja": "画像の代わりの動画"
+								},
+								"link": "#showcase-video"
+							},
+							{
+								"label": {
+									"en": "Images",
+									"de": "Bilder",
+									"ja": "画像"
+								},
+								"title": {
+									"en": "Figure",
+									"de": "Abbildung",
+									"ja": "図"
+								},
+								"link": "#showcase-figure"
+							},
+							{
+								"label": {
+									"en": "Images",
+									"de": "Bilder",
+									"ja": "画像"
+								},
+								"title": {
+									"en": "Figure without a rule",
+									"de": "Abbildung ohne Linie",
+									"ja": "線なしの図"
+								},
+								"link": "#showcase-figure-plain"
+							},
+							{
+								"label": {
+									"en": "Images",
+									"de": "Bilder",
+									"ja": "画像"
+								},
+								"title": {
+									"en": "Gallery",
+									"de": "Galerie",
+									"ja": "ギャラリー"
+								},
+								"link": "#showcase-gallery"
+							},
+							{
+								"label": {
+									"en": "Images",
+									"de": "Bilder",
+									"ja": "画像"
+								},
+								"title": {
+									"en": "Full width",
+									"de": "Volle Breite",
+									"ja": "全幅"
+								},
+								"link": "#showcase-fullwidth"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
+									"en": "Teaser",
+									"de": "Teaser",
+									"ja": "ティーザー"
+								},
+								"link": "#showcase-teaser"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
+									"en": "Place",
+									"de": "Ort",
+									"ja": "場所"
+								},
+								"link": "#showcase-place"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
+									"en": "Person",
+									"de": "Person",
+									"ja": "人物"
+								},
+								"link": "#showcase-person"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
+									"en": "Call to action",
+									"de": "Handlungsaufruf",
+									"ja": "行動の呼びかけ"
+								},
+								"link": "#showcase-cta"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
+									"en": "Link tile",
+									"de": "Link-Kachel",
+									"ja": "リンクタイル"
+								},
+								"link": "#showcase-tile"
+							},
+							{
+								"label": {
+									"en": "Cards",
+									"de": "Karten",
+									"ja": "カード"
+								},
+								"title": {
+									"en": "Stage, as a slider",
+									"de": "Etappe, als Slider",
+									"ja": "行程（スライダー）"
+								},
+								"link": "#showcase-stage"
+							},
+							{
+								"label": {
+									"en": "List",
+									"de": "Liste",
+									"ja": "リスト"
+								},
+								"title": {
+									"en": "Media",
+									"de": "Medien",
+									"ja": "メディア"
+								},
+								"link": "#showcase-media"
+							},
+							{
+								"label": {
+									"en": "List",
+									"de": "Liste",
+									"ja": "リスト"
+								},
+								"title": {
+									"en": "Days",
+									"de": "Tage",
+									"ja": "日程"
+								},
+								"link": "#showcase-days"
+							},
+							{
+								"label": {
+									"en": "List",
+									"de": "Liste",
+									"ja": "リスト"
+								},
+								"title": {
+									"en": "Downloads",
+									"de": "Downloads",
+									"ja": "ダウンロード"
+								},
+								"link": "#showcase-downloads"
+							},
+							{
+								"label": {
+									"en": "List",
+									"de": "Liste",
+									"ja": "リスト"
+								},
+								"title": {
+									"en": "Links",
+									"de": "Links",
+									"ja": "リンク"
+								},
+								"link": "#showcase-links"
+							},
+							{
+								"label": {
+									"en": "List",
+									"de": "Liste",
+									"ja": "リスト"
+								},
+								"title": {
+									"en": "Links, one below the other",
+									"de": "Links untereinander",
+									"ja": "縦に並んだリンク"
+								},
+								"link": "#showcase-links-stacked"
+							},
+							{
+								"label": {
+									"en": "List",
+									"de": "Liste",
+									"ja": "リスト"
+								},
+								"title": {
+									"en": "Sub navigation",
+									"de": "Unternavigation",
+									"ja": "サブナビゲーション"
+								},
+								"link": "#showcase-subnav"
+							},
+							{
+								"label": {
+									"en": "Facts",
+									"de": "Fakten",
+									"ja": "データ"
+								},
+								"title": {
+									"en": "Figures",
+									"de": "Zahlen",
+									"ja": "数値"
+								},
+								"link": "#showcase-figures"
+							},
+							{
+								"label": {
+									"en": "Facts",
+									"de": "Fakten",
+									"ja": "データ"
+								},
+								"title": {
+									"en": "Icons",
+									"de": "Symbole",
+									"ja": "アイコン"
+								},
+								"link": "#showcase-icons"
+							},
+							{
+								"label": {
+									"en": "Facts",
+									"de": "Fakten",
+									"ja": "データ"
+								},
+								"title": {
+									"en": "Pairs",
+									"de": "Paare",
+									"ja": "項目と値"
+								},
+								"link": "#showcase-pairs"
+							},
+							{
+								"label": {
+									"en": "Callout",
+									"de": "Hervorhebung",
+									"ja": "強調"
+								},
+								"title": {
+									"en": "Highlight",
+									"de": "Hervorhebung",
+									"ja": "ハイライト"
+								},
+								"link": "#showcase-highlight"
+							},
+							{
+								"label": {
+									"en": "Callout",
+									"de": "Hervorhebung",
+									"ja": "強調"
+								},
+								"title": {
+									"en": "Info box",
+									"de": "Infobox",
+									"ja": "情報ボックス"
+								},
+								"link": "#showcase-infobox"
+							},
+							{
+								"label": {
+									"en": "Callout",
+									"de": "Hervorhebung",
+									"ja": "強調"
+								},
+								"title": {
+									"en": "Notice",
+									"de": "Hinweis",
+									"ja": "お知らせ"
+								},
+								"link": "#showcase-notice"
+							},
+							{
+								"label": {
+									"en": "Callout",
+									"de": "Hervorhebung",
+									"ja": "強調"
+								},
+								"title": {
+									"en": "Quote",
+									"de": "Zitat",
+									"ja": "引用"
+								},
+								"link": "#showcase-quote"
+							},
+							{
+								"label": {
+									"en": "Questions",
+									"de": "Fragen",
+									"ja": "質問"
+								},
+								"title": {
+									"en": "Questions we were asked afterwards",
+									"de": "Was man uns danach gefragt hat",
+									"ja": "帰ってから聞かれたこと"
+								},
+								"link": "#showcase-questions"
+							},
+							{
+								"label": {
+									"en": "Columns",
+									"de": "Spalten",
+									"ja": "カラム"
+								},
+								"title": {
+									"en": "Even",
+									"de": "Gleich breit",
+									"ja": "均等"
+								},
+								"link": "#showcase-columns-even"
+							},
+							{
+								"label": {
+									"en": "Columns",
+									"de": "Spalten",
+									"ja": "カラム"
+								},
+								"title": {
+									"en": "Content and sidebar",
+									"de": "Inhalt und Seitenleiste",
+									"ja": "本文とサイドバー"
+								},
+								"link": "#showcase-columns-content-sidebar"
+							},
+							{
+								"label": {
+									"en": "Columns",
+									"de": "Spalten",
+									"ja": "カラム"
+								},
+								"title": {
+									"en": "Text and media",
+									"de": "Text und Medien",
+									"ja": "テキストとメディア"
+								},
+								"link": "#showcase-columns-text-media"
+							},
+							{
+								"label": {
+									"en": "Columns",
+									"de": "Spalten",
+									"ja": "カラム"
+								},
+								"title": {
+									"en": "Heading and content",
+									"de": "Überschrift und Inhalt",
+									"ja": "見出しと本文"
+								},
+								"link": "#showcase-columns-heading-content"
+							},
+							{
+								"label": {
+									"en": "Columns",
+									"de": "Spalten",
+									"ja": "カラム"
+								},
+								"title": {
+									"en": "Wide and narrow",
+									"de": "Breit und schmal",
+									"ja": "広いと狭い"
+								},
+								"link": "#showcase-columns-wide-narrow"
+							},
+							{
+								"label": {
+									"en": "Columns",
+									"de": "Spalten",
+									"ja": "カラム"
+								},
+								"title": {
+									"en": "Narrow and wide",
+									"de": "Schmal und breit",
+									"ja": "狭いと広い"
+								},
+								"link": "#showcase-columns-narrow-wide"
+							},
+							{
+								"label": {
+									"en": "Section",
+									"de": "Abschnitt",
+									"ja": "セクション"
+								},
+								"title": {
+									"en": "On the sunk ground",
+									"de": "Auf vertieftem Grund",
+									"ja": "沈んだ地"
+								},
+								"link": "#showcase-section-sunk"
+							},
+							{
+								"label": {
+									"en": "Newsletter",
+									"de": "Newsletter",
+									"ja": "ニュースレター"
+								},
+								"title": {
+									"en": "Two emails a year, whenever a new route is written up",
+									"de": "Zwei E-Mails im Jahr, immer wenn eine neue Route beschrieben ist",
+									"ja": "新しいルートを書いたときだけ、年に二通のメール"
+								},
+								"link": "#showcase-newsletter"
+							},
+							{
+								"label": {
+									"en": "External videos",
+									"de": "Externe Videos",
+									"ja": "外部の動画"
+								},
+								"title": {
+									"en": "External videos",
+									"de": "Externe Videos",
+									"ja": "外部の動画"
+								},
+								"link": "#showcase-external-videos"
+							},
+							{
+								"label": {
+									"en": "Journal",
+									"de": "Tagebuch",
+									"ja": "旅の記録"
+								},
+								"title": {
+									"en": "Route map",
+									"de": "Routenkarte",
+									"ja": "ルートマップ"
+								},
+								"link": "#showcase-route-map"
+							},
+							{
+								"label": {
+									"en": "Journal",
+									"de": "Tagebuch",
+									"ja": "旅の記録"
+								},
+								"title": {
+									"en": "Chapter",
+									"de": "Kapitel",
+									"ja": "章"
+								},
+								"link": "#showcase-chapter"
+							},
+							{
+								"label": {
+									"en": "Plugins",
+									"de": "Plugins",
+									"ja": "プラグイン"
+								},
+								"title": {
+									"en": "Form",
+									"de": "Formular",
+									"ja": "フォーム"
+								},
+								"link": "#showcase-form"
+							},
+							{
+								"label": {
+									"en": "Plugins",
+									"de": "Plugins",
+									"ja": "プラグイン"
+								},
+								"title": {
+									"en": "Login",
+									"de": "Anmeldung",
+									"ja": "ログイン"
+								},
+								"link": "#showcase-login"
+							},
+							{
+								"label": {
+									"en": "Plugins",
+									"de": "Plugins",
+									"ja": "プラグイン"
+								},
+								"title": {
+									"en": "Search",
+									"de": "Suche",
+									"ja": "検索"
+								},
+								"link": "#showcase-search"
+							},
+							{
+								"label": {
+									"en": "Plugins",
+									"de": "Plugins",
+									"ja": "プラグイン"
+								},
+								"title": {
+									"en": "News",
+									"de": "News",
+									"ja": "ニュース"
+								},
+								"link": "#showcase-news"
+							}
+						],
+						"tx_kumanokodo_links": []
+					}
+				},
+				{
+					"type": "text",
+					"fields": {
+						"bodytext": {
+							"en": "<p>Between Takijiri and Hongu the trail crosses passes barely higher than 700 metres, and still it feels remote. The forests are planted sugi cedars, set close together; when the mist settles between them you cannot see twenty metres ahead.</p><p>Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.</p>",
+							"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit.</p><p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
+							"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。</p><p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
+						},
+						"tx_kumanokodo_anchor": "showcase-text",
+						"subheader": {
+							"en": "Text",
+							"de": "Text",
+							"ja": "テキスト"
+						},
+						"header": {
+							"en": "Text",
+							"de": "Text",
+							"ja": "テキスト"
+						}
+					}
+				},
+				{
+					"type": "text",
+					"fields": {
+						"bodytext": {
+							"en": "<table><thead><tr><th>Day</th><th>Section</th><th>Distance</th></tr></thead><tbody><tr><td>Day 1</td><td>Takijiri → Takahara</td><td>3.7 km</td></tr><tr><td>Day 2</td><td>Takahara → Chikatsuyu</td><td>9.8 km</td></tr><tr><td>Day 3</td><td>Chikatsuyu → Hongu</td><td>about 25 km</td></tr><tr><td>Day 4</td><td>Kogumotori-goe</td><td>about 13 km</td></tr><tr><td>Day 4</td><td>Ogumotori-goe → Nachi</td><td>about 14.5 km</td></tr></tbody></table>",
+							"de": "<table><thead><tr><th>Tag</th><th>Abschnitt</th><th>Strecke</th></tr></thead><tbody><tr><td>Tag 1</td><td>Takijiri → Takahara</td><td>3,7 km</td></tr><tr><td>Tag 2</td><td>Takahara → Chikatsuyu</td><td>9,8 km</td></tr><tr><td>Tag 3</td><td>Chikatsuyu → Hongu</td><td>rund 25 km</td></tr><tr><td>Tag 4</td><td>Kogumotori-goe</td><td>rund 13 km</td></tr><tr><td>Tag 4</td><td>Ogumotori-goe → Nachi</td><td>rund 14,5 km</td></tr></tbody></table>",
+							"ja": "<table><thead><tr><th>日</th><th>区間</th><th>距離</th></tr></thead><tbody><tr><td>1日目</td><td>滝尻 → 高原</td><td>3.7 km</td></tr><tr><td>2日目</td><td>高原 → 近露</td><td>9.8 km</td></tr><tr><td>3日目</td><td>近露 → 本宮</td><td>約25 km</td></tr><tr><td>4日目</td><td>小雲取越</td><td>約13 km</td></tr><tr><td>4日目</td><td>大雲取越 → 那智</td><td>約14.5 km</td></tr></tbody></table>"
+						},
+						"tx_kumanokodo_anchor": "showcase-table",
+						"subheader": {
+							"en": "Text",
+							"de": "Text",
+							"ja": "テキスト"
+						},
+						"header": {
+							"en": "Text with a table",
+							"de": "Text mit Tabelle",
+							"ja": "表を含むテキスト"
+						}
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-image-left",
+						"subheader": {
+							"en": "Text and image",
+							"de": "Text und Bild",
+							"ja": "テキストと画像"
+						},
+						"header": {
+							"en": "Image left",
+							"de": "Bild links",
+							"ja": "画像が左"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_text_image",
+								"fields": {
+									"header": {
+										"en": "Yunomine Onsen",
+										"de": "Yunomine Onsen",
+										"ja": "湯の峰温泉"
+									},
+									"bodytext": {
+										"en": "<p>A narrow valley with the bath houses along the stream. Carp streamers hung across it for Children’s Day.</p>",
+										"de": "<p>Ein enges Tal, die Badehäuser am Bach entlang. Zum Kindertag hingen Karpfenfahnen quer darüber.</p>",
+										"ja": "<p>狭い谷の沢沿いに湯屋が並ぶ。こどもの日を前に、鯉のぼりが川をまたいで泳いでいた。</p>"
+									},
+									"imageorient": 26
+								},
+								"image": [
+									"yunomine-street"
+								],
+								"items": {
+									"tx_kumanokodo_links": [
+										{
+											"title": {
+												"en": "Read more",
+												"de": "Weiterlesen",
+												"ja": "続きを読む"
+											},
+											"link": "page:place-yunomine"
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-image-right",
+						"subheader": {
+							"en": "Text and image",
+							"de": "Text und Bild",
+							"ja": "テキストと画像"
+						},
+						"header": {
+							"en": "Image right",
+							"de": "Bild rechts",
+							"ja": "画像が右"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_text_image",
+								"fields": {
+									"header": {
+										"en": "Chikatsuyu",
+										"de": "Chikatsuyu",
+										"ja": "近露"
+									},
+									"bodytext": {
+										"en": "<p>The lantern gate at the edge of the village, with the three-legged crow on the middle lantern. The end of day two.</p>",
+										"de": "<p>Das Laternentor am Ortsrand, auf der mittleren Laterne die dreibeinige Krähe. Das Ende von Tag zwei.</p>",
+										"ja": "<p>集落の入口にある提灯の門。真ん中の提灯には三本足の烏。二日目の終わり。</p>"
+									},
+									"imageorient": 25
+								},
+								"image": [
+									"chikatsuyu-gate"
+								],
+								"items": {
+									"tx_kumanokodo_links": [
+										{
+											"title": {
+												"en": "Read more",
+												"de": "Weiterlesen",
+												"ja": "続きを読む"
+											},
+											"link": "page:place-chikatsuyu"
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-long-text",
+						"subheader": {
+							"en": "Text and image",
+							"de": "Text und Bild",
+							"ja": "テキストと画像"
+						},
+						"header": {
+							"en": "Long text",
+							"de": "Langer Text",
+							"ja": "長いテキスト"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_text_image",
+								"fields": {
+									"header": {
+										"en": "A path in use for a thousand years",
+										"de": "Ein Pfad, der seit tausend Jahren begangen wird",
+										"ja": "千年歩かれてきた道"
+									},
+									"bodytext": {
+										"en": "<p>Between Takijiri and Hongu the trail crosses passes barely higher than 700 metres, and still it feels remote. The forests are planted sugi cedars, set close together; when the mist settles between them you cannot see twenty metres ahead. Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.</p>",
+										"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit. Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
+										"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。 道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
+									},
+									"imageorient": 26
+								},
+								"image": [
+									"cedar-canopy"
+								]
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-video",
+						"subheader": {
+							"en": "Text and image",
+							"de": "Text und Bild",
+							"ja": "テキストと画像"
+						},
+						"header": {
+							"en": "Video in the image’s place",
+							"de": "Video an Stelle des Bildes",
+							"ja": "画像の代わりの動画"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_text_image",
+								"fields": {
+									"header": {
+										"en": "Takahara → Chikatsuyu",
+										"de": "Takahara → Chikatsuyu",
+										"ja": "高原 → 近露"
+									},
+									"bodytext": {
+										"en": "<p>Clouds lying in the valley at seven. Stone paving, a stream, a land crab at noon, the lantern gate of Chikatsuyu at 17:28.</p>",
+										"de": "<p>Um sieben Wolken im Tal. Steinpflaster, ein Bach, mittags eine Landkrabbe, um 17:28 das Laternentor von Chikatsuyu.</p>",
+										"ja": "<p>朝7時、谷に雲。石畳、沢、昼にカニ、17時28分に近露の提灯の門。</p>"
+									},
+									"imageorient": 26
+								},
+								"image": [
+									"video:trail",
+									"sea-of-clouds"
+								]
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-figure",
+						"subheader": {
+							"en": "Images",
+							"de": "Bilder",
+							"ja": "画像"
+						},
+						"header": {
+							"en": "Figure",
+							"de": "Abbildung",
+							"ja": "図"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_images",
+								"fields": {
+									"tx_kumanokodo_variant": "figure",
+									"bodytext": {
+										"en": "<p>Nakahechi, April 21, 11:47</p>",
+										"de": "<p>Nakahechi, 21. April, 11:47</p>",
+										"ja": "<p>中辺路, 4月21日, 11:47</p>"
+									}
+								},
+								"image": [
+									"forest-stream"
+								]
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-figure-plain",
+						"subheader": {
+							"en": "Images",
+							"de": "Bilder",
+							"ja": "画像"
+						},
+						"header": {
+							"en": "Figure without a rule",
+							"de": "Abbildung ohne Linie",
+							"ja": "線なしの図"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_images",
+								"fields": {
+									"tx_kumanokodo_variant": "figure-plain"
+								},
+								"image": [
+									"misty-valley",
+									"root-path"
+								]
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_images",
+					"fields": {
+						"tx_kumanokodo_variant": "gallery",
+						"tx_kumanokodo_anchor": "showcase-gallery",
+						"subheader": {
+							"en": "Images",
+							"de": "Bilder",
+							"ja": "画像"
+						},
+						"header": {
+							"en": "Gallery",
+							"de": "Galerie",
+							"ja": "ギャラリー"
+						}
+					},
+					"image": [
+						"sea-of-clouds",
+						"misty-valley",
+						"roadside-markers",
+						"stone-path-walkers",
+						"forest-stream",
+						"land-crab",
+						"vending-machines",
+						"chikatsuyu-gate"
+					]
+				},
+				{
+					"type": "header",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-fullwidth",
+						"subheader": {
+							"en": "Images",
+							"de": "Bilder",
+							"ja": "画像"
+						},
+						"header": {
+							"en": "Full width",
+							"de": "Volle Breite",
+							"ja": "全幅"
+						},
+						"space_before_class": "default"
+					}
+				},
+				{
+					"type": "kumano_images",
+					"fields": {
+						"tx_kumanokodo_variant": "fullwidth"
+					},
+					"image": [
+						"evening-rooftops"
+					]
+				},
+				{
+					"type": "kumano_cards",
+					"fields": {
+						"tx_kumanokodo_variant": "teaser",
+						"tx_kumanokodo_columns": "4",
+						"tx_kumanokodo_anchor": "showcase-teaser",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Teaser",
+							"de": "Teaser",
+							"ja": "ティーザー"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"image": "signpost",
+								"title": {
+									"en": "Takijiri → Takahara",
+									"de": "Takijiri → Takahara",
+									"ja": "滝尻 → 高原"
+								},
+								"text": {
+									"en": "3.7 km",
+									"de": "3,7 km",
+									"ja": "3.7 km"
+								},
+								"meta": {
+									"en": "Day 1 · 20 April · from 15:40",
+									"de": "Tag 1 · 20. April · ab 15:40",
+									"ja": "1日目 · 4月20日 · 15:40から"
+								},
+								"link": "page:day-1"
+							},
+							{
+								"image": "roadside-markers",
+								"title": {
+									"en": "Takahara → Chikatsuyu",
+									"de": "Takahara → Chikatsuyu",
+									"ja": "高原 → 近露"
+								},
+								"text": {
+									"en": "9.8 km",
+									"de": "9,8 km",
+									"ja": "9.8 km"
+								},
+								"meta": {
+									"en": "Day 2 · 21 April · 07:02–17:28",
+									"de": "Tag 2 · 21. April · 07:02–17:28",
+									"ja": "2日目 · 4月21日 · 07:02–17:28"
+								},
+								"link": "page:day-2"
+							},
+							{
+								"image": "cedar-canopy",
+								"title": {
+									"en": "Chikatsuyu → Hongu → Yunomine",
+									"de": "Chikatsuyu → Hongu → Yunomine",
+									"ja": "近露 → 本宮 → 湯の峰"
+								},
+								"text": {
+									"en": "about 25 km",
+									"de": "rund 25 km",
+									"ja": "約25 km"
+								},
+								"meta": {
+									"en": "Day 3 · 22 April · 07:18–16:05",
+									"de": "Tag 3 · 22. April · 07:18–16:05",
+									"ja": "3日目 · 4月22日 · 07:18–16:05"
+								},
+								"link": "page:day-3"
+							},
+							{
+								"image": "nachi-pagoda",
+								"title": {
+									"en": "Yunomine → Nachi",
+									"de": "Yunomine → Nachi",
+									"ja": "湯の峰 → 那智"
+								},
+								"text": {
+									"en": "about 27.5 km",
+									"de": "rund 27,5 km",
+									"ja": "約27.5 km"
+								},
+								"meta": {
+									"en": "Day 4 · 23 April · 10:55–15:48",
+									"de": "Tag 4 · 23. April · 10:55–15:48",
+									"ja": "4日目 · 4月23日 · 10:55–15:48"
+								},
+								"link": "page:day-4"
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-place",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Place",
+							"de": "Ort",
+							"ja": "場所"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_columns",
+								"fields": {
+									"tx_kumanokodo_layout": "wide-narrow"
+								},
+								"children": {
+									"201": [
+										{
+											"type": "kumano_cards",
+											"fields": {
+												"tx_kumanokodo_variant": "place",
+												"tx_kumanokodo_columns": "2"
+											},
+											"items": {
+												"tx_kumanokodo_entries": [
+													{
+														"image": "nachi-pagoda",
+														"title": {
+															"en": "Seiganto-ji and Nachi falls",
+															"de": "Seiganto-ji und Nachi-Fall",
+															"ja": "青岸渡寺と那智の滝"
+														},
+														"text": {
+															"en": "The three-storey pagoda in front of the falls, the end of the walk. It rained, and the falls disappeared in the mist every few minutes.",
+															"de": "Die dreistöckige Pagode vor dem Wasserfall, das Ende der Wanderung. Es regnete, und der Fall verschwand alle paar Minuten im Nebel.",
+															"ja": "滝の前に立つ三重塔、この旅の終点。雨が降り、滝は数分ごとに霧に消えた。"
+														},
+														"emphasis": "featured"
+													}
+												]
+											}
+										}
+									],
+									"202": [
+										{
+											"type": "kumano_cards",
+											"fields": {
+												"tx_kumanokodo_variant": "place",
+												"tx_kumanokodo_columns": "2"
+											},
+											"items": {
+												"tx_kumanokodo_entries": [
+													{
+														"image": "yunomine-street",
+														"title": {
+															"en": "Yunomine Onsen",
+															"de": "Yunomine Onsen",
+															"ja": "湯の峰温泉"
+														},
+														"text": {
+															"en": "A narrow valley with the bath houses along the stream. Carp streamers hung across it for Children’s Day.",
+															"de": "Ein enges Tal, die Badehäuser am Bach entlang. Zum Kindertag hingen Karpfenfahnen quer darüber.",
+															"ja": "狭い谷の沢沿いに湯屋が並ぶ。こどもの日を前に、鯉のぼりが川をまたいで泳いでいた。"
+														},
+														"emphasis": "default"
+													}
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_cards",
+					"fields": {
+						"tx_kumanokodo_variant": "person",
+						"tx_kumanokodo_columns": "2",
+						"tx_kumanokodo_anchor": "showcase-person",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Person",
+							"de": "Person",
+							"ja": "人物"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"image": "ryokan-room",
+								"title": {
+									"en": "Ryokan in Katsuura",
+									"de": "Ryokan in Katsuura",
+									"ja": "勝浦の旅館"
+								},
+								"meta": {
+									"en": "The night after Nachi",
+									"de": "Die Nacht nach Nachi",
+									"ja": "那智のあとの夜"
+								},
+								"text": {
+									"en": "“Dinner is at six.”",
+									"de": "„Abendessen gibt es um sechs.“",
+									"ja": "「夕食は六時です。」"
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_cards",
+					"fields": {
+						"tx_kumanokodo_variant": "cta",
+						"tx_kumanokodo_columns": "3",
+						"frame_class": "sunk",
+						"tx_kumanokodo_anchor": "showcase-cta",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Call to action",
+							"de": "Handlungsaufruf",
+							"ja": "行動の呼びかけ"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"title": {
+									"en": "Book accommodation",
+									"de": "Unterkunft buchen",
+									"ja": "宿を予約する"
+								},
+								"text": {
+									"en": "Takahara and Chikatsuyu each have a handful of minshuku, and in spring and autumn they are full months ahead.",
+									"de": "Takahara und Chikatsuyu haben je eine Handvoll Minshuku, und im Frühling und Herbst sind sie Monate vorher voll.",
+									"ja": "高原と近露には民宿が数軒ずつしかなく、春と秋は数か月前に満室になります。"
+								},
+								"link": "page:practical-accommodation",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								},
+								"emphasis": "featured"
+							},
+							{
+								"title": {
+									"en": "Pack for rain",
+									"de": "Für Regen packen",
+									"ja": "雨に備える"
+								},
+								"text": {
+									"en": "A dry change of clothes in a sealed bag helps more than gaiters.",
+									"de": "Trockene Wechselkleidung in einem dichten Beutel hilft mehr als Gamaschen.",
+									"ja": "スパッツより、密封袋に入れた乾いた着替えが役に立ちます。"
+								},
+								"link": "page:practical-trail-markers",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								},
+								"emphasis": "default"
+							},
+							{
+								"title": {
+									"en": "Send your luggage ahead",
+									"de": "Gepäck vorausschicken",
+									"ja": "荷物を先に送る"
+								},
+								"text": {
+									"en": "Luggage moves between the main villages, booked one day ahead through the Tanabe tourism office.",
+									"de": "Das Gepäck reist zwischen den größeren Orten, einen Tag vorher über das Tourismusbüro in Tanabe gebucht.",
+									"ja": "主な集落の間で荷物を運んでもらえます。前日までに田辺市観光協会で予約します。"
+								},
+								"link": "page:practical-getting-there",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								},
+								"emphasis": "default"
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_cards",
+					"fields": {
+						"tx_kumanokodo_variant": "tile",
+						"tx_kumanokodo_columns": "2",
+						"tx_kumanokodo_anchor": "showcase-tile",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Link tile",
+							"de": "Link-Kachel",
+							"ja": "リンクタイル"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"icon": "map-pin",
+								"title": {
+									"en": "Getting there and buses",
+									"de": "Anreise und Busse",
+									"ja": "アクセスとバス"
+								},
+								"link": "page:practical-getting-there"
+							},
+							{
+								"icon": "home",
+								"title": {
+									"en": "Accommodation",
+									"de": "Unterkunft",
+									"ja": "宿泊"
+								},
+								"link": "page:practical-accommodation"
+							},
+							{
+								"icon": "alert",
+								"title": {
+									"en": "Trail markers and safety",
+									"de": "Wegmarken und Sicherheit",
+									"ja": "道標と安全"
+								},
+								"link": "page:practical-trail-markers"
+							},
+							{
+								"icon": "download",
+								"title": {
+									"en": "Maps and timetables",
+									"de": "Karten und Fahrpläne",
+									"ja": "地図と時刻表"
+								},
+								"link": "page:practical-maps"
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_cards",
+					"fields": {
+						"tx_kumanokodo_variant": "stage",
+						"tx_kumanokodo_columns": "slider",
+						"tx_kumanokodo_anchor": "showcase-stage",
+						"subheader": {
+							"en": "Cards",
+							"de": "Karten",
+							"ja": "カード"
+						},
+						"header": {
+							"en": "Stage, as a slider",
+							"de": "Etappe, als Slider",
+							"ja": "行程（スライダー）"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"image": "signpost",
+								"label": {
+									"en": "Day 1",
+									"de": "Tag 1",
+									"ja": "1日目"
+								},
+								"meta": {
+									"en": "3.7 km",
+									"de": "3,7 km",
+									"ja": "3.7 km"
+								},
+								"title": {
+									"en": "Takijiri → Takahara",
+									"de": "Takijiri → Takahara",
+									"ja": "滝尻 → 高原"
+								},
+								"text": {
+									"en": "On the trail at a quarter to four. The first hour climbs the whole way.",
+									"de": "Um Viertel vor vier auf dem Weg. Die erste Stunde geht nur bergauf.",
+									"ja": "15時45分に歩き始めた。最初の一時間はひたすら登り。"
+								},
+								"link": "page:day-1"
+							},
+							{
+								"image": "stone-path-walkers",
+								"label": {
+									"en": "Day 2",
+									"de": "Tag 2",
+									"ja": "2日目"
+								},
+								"meta": {
+									"en": "9.8 km",
+									"de": "9,8 km",
+									"ja": "9.8 km"
+								},
+								"title": {
+									"en": "Takahara → Chikatsuyu",
+									"de": "Takahara → Chikatsuyu",
+									"ja": "高原 → 近露"
+								},
+								"text": {
+									"en": "Clouds below the village at seven, stone paving, a stream, the lantern gate of Chikatsuyu at half past five.",
+									"de": "Um sieben Wolken unter dem Dorf, Steinpflaster, ein Bach, um halb sechs das Laternentor von Chikatsuyu.",
+									"ja": "朝7時は集落の下に雲、石畳、沢、17時半に近露の提灯の門。"
+								},
+								"link": "page:day-2"
+							},
+							{
+								"image": "walker-in-mist",
+								"label": {
+									"en": "Day 3",
+									"de": "Tag 3",
+									"ja": "3日目"
+								},
+								"meta": {
+									"en": "about 25 km",
+									"de": "rund 25 km",
+									"ja": "約25 km"
+								},
+								"title": {
+									"en": "Chikatsuyu → Hongu",
+									"de": "Chikatsuyu → Hongu",
+									"ja": "近露 → 本宮"
+								},
+								"text": {
+									"en": "The longest day, through the cedars and past a small oji shrine, and on to Yunomine for the night.",
+									"de": "Der längste Tag, durch die Zedern und an einem kleinen Oji-Schrein vorbei, weiter nach Yunomine zum Übernachten.",
+									"ja": "いちばん長い日。杉林を抜け、小さな王子の社を過ぎて、湯の峰で泊まった。"
+								},
+								"link": "page:day-3"
+							},
+							{
+								"image": "fern-frond",
+								"label": {
+									"en": "Day 4",
+									"de": "Tag 4",
+									"ja": "4日目"
+								},
+								"meta": {
+									"en": "about 13 km",
+									"de": "rund 13 km",
+									"ja": "約13 km"
+								},
+								"title": {
+									"en": "Kogumotori-goe",
+									"de": "Kogumotori-goe",
+									"ja": "小雲取越"
+								},
+								"text": {
+									"en": "From the hot springs over the first of the two passes that lead to the coast.",
+									"de": "Von den heißen Quellen über den ersten der beiden Pässe, die zur Küste führen.",
+									"ja": "温泉から、海へ向かう二つの峠のうち最初の峠へ。"
+								},
+								"link": "page:day-4"
+							},
+							{
+								"image": "nachi-pagoda",
+								"label": {
+									"en": "Day 4",
+									"de": "Tag 4",
+									"ja": "4日目"
+								},
+								"meta": {
+									"en": "about 14.5 km",
+									"de": "rund 14,5 km",
+									"ja": "約14.5 km"
+								},
+								"title": {
+									"en": "Ogumotori-goe → Nachi",
+									"de": "Ogumotori-goe → Nachi",
+									"ja": "大雲取越 → 那智"
+								},
+								"text": {
+									"en": "The second pass, and at the end the pagoda standing in front of the falls.",
+									"de": "Der zweite Pass, und am Ende die Pagode vor dem Wasserfall.",
+									"ja": "二つ目の峠を越え、最後は滝の前に立つ三重塔。"
+								},
+								"link": "page:day-4"
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-media",
+						"subheader": {
+							"en": "List",
+							"de": "Liste",
+							"ja": "リスト"
+						},
+						"header": {
+							"en": "Media",
+							"de": "Medien",
+							"ja": "メディア"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_list",
+								"fields": {
+									"tx_kumanokodo_variant": "media",
+									"header": {
+										"en": "Ways to walk it",
+										"de": "Wege, ihn zu gehen",
+										"ja": "歩き方"
+									}
+								},
+								"items": {
+									"tx_kumanokodo_entries": [
+										{
+											"image": "stone-path-walkers",
+											"title": {
+												"en": "Nakahechi",
+												"de": "Nakahechi",
+												"ja": "中辺路"
+											},
+											"meta": {
+												"en": "Four days on foot · this journal",
+												"de": "Vier Tage zu Fuß · dieses Tagebuch",
+												"ja": "徒歩四日間 · この日記"
+											},
+											"link": "page:route"
+										},
+										{
+											"image": "walker-in-mist",
+											"title": {
+												"en": "Day 3",
+												"de": "Tag 3",
+												"ja": "3日目"
+											},
+											"meta": {
+												"en": "Chikatsuyu → Hongu · the longest day",
+												"de": "Chikatsuyu → Hongu · der längste Tag",
+												"ja": "近露 → 本宮 · いちばん長い日"
+											},
+											"link": "page:day-3"
+										},
+										{
+											"image": "cedar-canopy",
+											"title": {
+												"en": "Kohechi",
+												"de": "Kohechi",
+												"ja": "小辺路"
+											},
+											"meta": {
+												"en": "Koyasan → Hongu · next time",
+												"de": "Koyasan → Hongu · beim nächsten Mal",
+												"ja": "高野山 → 本宮 · 次の機会に"
+											},
+											"link": "page:kohechi"
+										}
+									],
+									"tx_kumanokodo_links": [
+										{
+											"title": {
+												"en": "All days and places",
+												"de": "Alle Tage und Orte",
+												"ja": "すべての日程と見どころ"
+											},
+											"link": "page:days"
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_list",
+					"fields": {
+						"tx_kumanokodo_variant": "days",
+						"tx_kumanokodo_anchor": "showcase-days",
+						"subheader": {
+							"en": "List",
+							"de": "Liste",
+							"ja": "リスト"
+						},
+						"header": {
+							"en": "Days",
+							"de": "Tage",
+							"ja": "日程"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"label": {
+									"en": "Day 1 · 20 April",
+									"de": "Tag 1 · 20. April",
+									"ja": "1日目 · 4月20日"
+								},
+								"title": {
+									"en": "Takijiri → Takahara",
+									"de": "Takijiri → Takahara",
+									"ja": "滝尻 → 高原"
+								},
+								"text": {
+									"en": "On the trail at a quarter to four. 3.7 km, almost all of it uphill, to a village that sits above the valley.",
+									"de": "Um Viertel vor vier auf dem Weg. 3,7 km, fast alles bergauf, zu einem Dorf über dem Tal.",
+									"ja": "15時45分に歩き始めた。3.7 km、ほとんど登りで、谷を見下ろす集落へ。"
+								},
+								"meta": {
+									"en": "from 15:40",
+									"de": "ab 15:40",
+									"ja": "15:40から"
+								}
+							},
+							{
+								"label": {
+									"en": "Day 2 · 21 April",
+									"de": "Tag 2 · 21. April",
+									"ja": "2日目 · 4月21日"
+								},
+								"title": {
+									"en": "Takahara → Chikatsuyu",
+									"de": "Takahara → Chikatsuyu",
+									"ja": "高原 → 近露"
+								},
+								"text": {
+									"en": "Clouds lying in the valley at seven. Stone paving, a stream, a land crab at noon, the lantern gate of Chikatsuyu at 17:28.",
+									"de": "Um sieben Wolken im Tal. Steinpflaster, ein Bach, mittags eine Landkrabbe, um 17:28 das Laternentor von Chikatsuyu.",
+									"ja": "朝7時、谷に雲。石畳、沢、昼にカニ、17時28分に近露の提灯の門。"
+								},
+								"meta": {
+									"en": "07:02–17:28",
+									"de": "07:02–17:28",
+									"ja": "07:02–17:28"
+								}
+							},
+							{
+								"label": {
+									"en": "Day 3 · 22 April",
+									"de": "Tag 3 · 22. April",
+									"ja": "3日目 · 4月22日"
+								},
+								"title": {
+									"en": "Chikatsuyu → Hongu → Yunomine",
+									"de": "Chikatsuyu → Hongu → Yunomine",
+									"ja": "近露 → 本宮 → 湯の峰"
+								},
+								"text": {
+									"en": "The longest day, about 25 kilometres through the cedars to Hongu, and on to Yunomine. At four an outdoor bath.",
+									"de": "Der längste Tag, rund 25 Kilometer durch die Zedern nach Hongu und weiter nach Yunomine. Um vier ein Außenbad.",
+									"ja": "いちばん長い日。杉林を約25キロ歩いて本宮へ、さらに湯の峰へ。4時に露天風呂。"
+								},
+								"meta": {
+									"en": "07:18–16:05",
+									"de": "07:18–16:05",
+									"ja": "07:18–16:05"
+								}
+							},
+							{
+								"label": {
+									"en": "Day 4 · 23 April",
+									"de": "Tag 4 · 23. April",
+									"ja": "4日目 · 4月23日"
+								},
+								"title": {
+									"en": "Yunomine → Nachi",
+									"de": "Yunomine → Nachi",
+									"ja": "湯の峰 → 那智"
+								},
+								"text": {
+									"en": "Over the Kogumotori-goe and the Ogumotori-goe to Nachi and the pagoda in front of the falls. In Katsuura a ferry to the ryokan.",
+									"de": "Über den Kogumotori-goe und den Ogumotori-goe nach Nachi zur Pagode vor dem Wasserfall. In Katsuura eine Fähre zum Ryokan.",
+									"ja": "小雲取越と大雲取越を越えて那智へ、滝の前の三重塔。勝浦から船で旅館へ。"
+								},
+								"meta": {
+									"en": "10:55–15:48",
+									"de": "10:55–15:48",
+									"ja": "10:55–15:48"
+								}
+							}
+						],
+						"tx_kumanokodo_links": []
+					}
+				},
+				{
+					"type": "kumano_list",
+					"fields": {
+						"tx_kumanokodo_variant": "downloads",
+						"tx_kumanokodo_anchor": "showcase-downloads",
+						"subheader": {
+							"en": "List",
+							"de": "Liste",
+							"ja": "リスト"
+						},
+						"header": {
+							"en": "Downloads",
+							"de": "Downloads",
+							"ja": "ダウンロード"
+						}
+					},
+					"media": {
+						"en": [
+							"stage-map-takahara-chikatsuyu-en",
+							"getting-there-and-buses-en",
+							"packing-list-for-rain-en"
+						],
+						"de": [
+							"stage-map-takahara-chikatsuyu-de",
+							"getting-there-and-buses-de",
+							"packing-list-for-rain-de"
+						],
+						"ja": [
+							"stage-map-takahara-chikatsuyu-ja",
+							"getting-there-and-buses-ja",
+							"packing-list-for-rain-ja"
+						]
+					}
+				},
+				{
+					"type": "kumano_list",
+					"fields": {
+						"tx_kumanokodo_variant": "links",
+						"tx_kumanokodo_anchor": "showcase-links",
+						"subheader": {
+							"en": "List",
+							"de": "Liste",
+							"ja": "リスト"
+						},
+						"header": {
+							"en": "Links",
+							"de": "Links",
+							"ja": "リンク"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"title": {
+									"en": "Getting there and buses",
+									"de": "Anreise und Busse",
+									"ja": "アクセスとバス"
+								},
+								"link": "page:practical-getting-there"
+							},
+							{
+								"title": {
+									"en": "Accommodation",
+									"de": "Unterkunft",
+									"ja": "宿泊"
+								},
+								"link": "page:practical-accommodation"
+							},
+							{
+								"title": {
+									"en": "Trail markers and safety",
+									"de": "Wegmarken und Sicherheit",
+									"ja": "道標と安全"
+								},
+								"link": "page:practical-trail-markers"
+							},
+							{
+								"title": {
+									"en": "Maps and timetables",
+									"de": "Karten und Fahrpläne",
+									"ja": "地図と時刻表"
+								},
+								"link": "page:practical-maps"
+							}
+						],
+						"tx_kumanokodo_links": []
+					}
+				},
+				{
+					"type": "kumano_list",
+					"fields": {
+						"tx_kumanokodo_variant": "links-stacked",
+						"tx_kumanokodo_anchor": "showcase-links-stacked",
+						"subheader": {
+							"en": "List",
+							"de": "Liste",
+							"ja": "リスト"
+						},
+						"header": {
+							"en": "Links, one below the other",
+							"de": "Links untereinander",
+							"ja": "縦に並んだリンク"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_entries": [
+							{
+								"title": {
+									"en": "Getting there and buses",
+									"de": "Anreise und Busse",
+									"ja": "アクセスとバス"
+								},
+								"link": "page:practical-getting-there"
+							},
+							{
+								"title": {
+									"en": "Accommodation",
+									"de": "Unterkunft",
+									"ja": "宿泊"
+								},
+								"link": "page:practical-accommodation"
+							},
+							{
+								"title": {
+									"en": "Trail markers and safety",
+									"de": "Wegmarken und Sicherheit",
+									"ja": "道標と安全"
+								},
+								"link": "page:practical-trail-markers"
+							},
+							{
+								"title": {
+									"en": "Maps and timetables",
+									"de": "Karten und Fahrpläne",
+									"ja": "地図と時刻表"
+								},
+								"link": "page:practical-maps"
+							}
+						],
+						"tx_kumanokodo_links": []
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-subnav",
+						"subheader": {
+							"en": "List",
+							"de": "Liste",
+							"ja": "リスト"
+						},
+						"header": {
+							"en": "Sub navigation",
+							"de": "Unternavigation",
+							"ja": "サブナビゲーション"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_list",
+								"fields": {
+									"tx_kumanokodo_variant": "subnav",
+									"header": {
+										"en": "Practical",
+										"de": "Praktisches",
+										"ja": "実用情報"
+									}
+								},
+								"items": {
+									"tx_kumanokodo_entries": [
+										{
+											"title": {
+												"en": "Getting there and buses",
+												"de": "Anreise und Busse",
+												"ja": "アクセスとバス"
+											},
+											"link": "page:practical-getting-there"
+										},
+										{
+											"title": {
+												"en": "Accommodation",
+												"de": "Unterkunft",
+												"ja": "宿泊"
+											},
+											"link": "page:practical-accommodation"
+										},
+										{
+											"title": {
+												"en": "Trail markers and safety",
+												"de": "Wegmarken und Sicherheit",
+												"ja": "道標と安全"
+											},
+											"link": "page:practical-trail-markers"
+										},
+										{
+											"title": {
+												"en": "Maps and timetables",
+												"de": "Karten und Fahrpläne",
+												"ja": "地図と時刻表"
+											},
+											"link": "page:practical-maps"
+										}
+									],
+									"tx_kumanokodo_links": []
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_facts",
+					"fields": {
+						"tx_kumanokodo_variant": "figures",
+						"tx_kumanokodo_anchor": "showcase-figures",
+						"subheader": {
+							"en": "Facts",
+							"de": "Fakten",
+							"ja": "データ"
+						},
+						"header": {
+							"en": "Figures",
+							"de": "Zahlen",
+							"ja": "数値"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_facts": [
+							{
+								"value": {
+									"en": "68",
+									"de": "68",
+									"ja": "68"
+								},
+								"label": {
+									"en": "kilometres on foot",
+									"de": "Kilometer zu Fuß",
+									"ja": "歩いたキロ数"
+								}
+							},
+							{
+								"value": {
+									"en": "4",
+									"de": "4",
+									"ja": "4"
+								},
+								"label": {
+									"en": "days, Takijiri to Nachi",
+									"de": "Tage, Takijiri bis Nachi",
+									"ja": "日間、滝尻から那智まで"
+								}
+							},
+							{
+								"value": {
+									"en": "27",
+									"de": "27",
+									"ja": "27"
+								},
+								"label": {
+									"en": "photos",
+									"de": "Fotos",
+									"ja": "枚の写真"
+								}
+							},
+							{
+								"value": {
+									"en": "1",
+									"de": "1",
+									"ja": "1"
+								},
+								"label": {
+									"en": "land crab on the path",
+									"de": "Landkrabbe auf dem Weg",
+									"ja": "道で出会ったカニ"
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_facts",
+					"fields": {
+						"tx_kumanokodo_variant": "icons",
+						"tx_kumanokodo_anchor": "showcase-icons",
+						"subheader": {
+							"en": "Facts",
+							"de": "Fakten",
+							"ja": "データ"
+						},
+						"header": {
+							"en": "Icons",
+							"de": "Symbole",
+							"ja": "アイコン"
+						},
+						"tx_kumanokodo_columns": "4"
+					},
+					"items": {
+						"tx_kumanokodo_facts": [
+							{
+								"icon": "clock",
+								"label": {
+									"en": "When",
+									"de": "Wann",
+									"ja": "時期"
+								},
+								"value": {
+									"en": "20 to 23 April",
+									"de": "20. bis 23. April",
+									"ja": "4月20日〜23日"
+								},
+								"note": {
+									"en": "Four days on foot",
+									"de": "Vier Tage zu Fuß",
+									"ja": "徒歩四日間"
+								}
+							},
+							{
+								"icon": "map-pin",
+								"label": {
+									"en": "Start",
+									"de": "Start",
+									"ja": "出発地"
+								},
+								"value": {
+									"en": "Takijiri",
+									"de": "Takijiri",
+									"ja": "滝尻"
+								},
+								"note": {
+									"en": "On the trail at 15:40",
+									"de": "Um 15:40 auf dem Weg",
+									"ja": "15時40分に歩き始め"
+								}
+							},
+							{
+								"icon": "home",
+								"label": {
+									"en": "Overnight",
+									"de": "Übernachtung",
+									"ja": "宿泊"
+								},
+								"value": {
+									"en": "Minshuku and ryokan",
+									"de": "Minshuku und Ryokan",
+									"ja": "民宿と旅館"
+								},
+								"note": {
+									"en": "Booked months ahead",
+									"de": "Monate vorher gebucht",
+									"ja": "数か月前に予約"
+								}
+							},
+							{
+								"icon": "file",
+								"label": {
+									"en": "On foot",
+									"de": "Zu Fuß",
+									"ja": "徒歩"
+								},
+								"value": {
+									"en": "About 68 km",
+									"de": "Rund 68 km",
+									"ja": "約68 km"
+								},
+								"note": {
+									"en": "Takijiri to Nachi",
+									"de": "Takijiri bis Nachi",
+									"ja": "滝尻から那智まで"
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-pairs",
+						"subheader": {
+							"en": "Facts",
+							"de": "Fakten",
+							"ja": "データ"
+						},
+						"header": {
+							"en": "Pairs",
+							"de": "Paare",
+							"ja": "項目と値"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_facts",
+								"fields": {
+									"tx_kumanokodo_variant": "pairs"
+								},
+								"items": {
+									"tx_kumanokodo_facts": [
+										{
+											"label": {
+												"en": "Day 1 · 20 April",
+												"de": "Tag 1 · 20. April",
+												"ja": "1日目 · 4月20日"
+											},
+											"value": {
+												"en": "Takijiri → Takahara",
+												"de": "Takijiri → Takahara",
+												"ja": "滝尻 → 高原"
+											}
+										},
+										{
+											"label": {
+												"en": "Day 2 · 21 April",
+												"de": "Tag 2 · 21. April",
+												"ja": "2日目 · 4月21日"
+											},
+											"value": {
+												"en": "Takahara → Chikatsuyu",
+												"de": "Takahara → Chikatsuyu",
+												"ja": "高原 → 近露"
+											}
+										},
+										{
+											"label": {
+												"en": "Day 3 · 22 April",
+												"de": "Tag 3 · 22. April",
+												"ja": "3日目 · 4月22日"
+											},
+											"value": {
+												"en": "Chikatsuyu → Hongu → Yunomine",
+												"de": "Chikatsuyu → Hongu → Yunomine",
+												"ja": "近露 → 本宮 → 湯の峰"
+											}
+										},
+										{
+											"label": {
+												"en": "Day 4 · 23 April",
+												"de": "Tag 4 · 23. April",
+												"ja": "4日目 · 4月23日"
+											},
+											"value": {
+												"en": "Yunomine → Nachi",
+												"de": "Yunomine → Nachi",
+												"ja": "湯の峰 → 那智"
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-highlight",
+						"subheader": {
+							"en": "Callout",
+							"de": "Hervorhebung",
+							"ja": "強調"
+						},
+						"header": {
+							"en": "Highlight",
+							"de": "Hervorhebung",
+							"ja": "ハイライト"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_callout",
+								"fields": {
+									"tx_kumanokodo_variant": "highlight",
+									"frame_class": "sunk",
+									"subheader": {
+										"en": "Yatagarasu",
+										"de": "Yatagarasu",
+										"ja": "八咫烏"
+									},
+									"header": {
+										"en": "The three-legged crow",
+										"de": "Die dreibeinige Krähe",
+										"ja": "三本足の烏"
+									},
+									"bodytext": {
+										"en": "<p>The bird in the logo is the Yatagarasu, messenger of the Kumano deities. According to the old chronicles it guided Emperor Jimmu through the mountains from Kumano to Yamato. Its three legs are often read as heaven, earth and humankind. On the trail you meet it on shrine banners and on the goōhōin talismans, and on the middle lantern of the gate in Chikatsuyu.</p>",
+										"de": "<p>Der Vogel im Logo ist die Yatagarasu, Botin der Kumano-Gottheiten. Den alten Chroniken nach führte sie Kaiser Jimmu durch die Berge von Kumano nach Yamato. Ihre drei Beine werden oft als Himmel, Erde und Mensch gedeutet. Am Weg begegnet man ihr auf Schreinfahnen, den Goōhōin-Amuletten und auf der mittleren Laterne des Tors in Chikatsuyu.</p>",
+										"ja": "<p>ロゴの鳥は八咫烏、熊野の神々の使いです。古い記録によれば、神武天皇を熊野から大和へと山中で導いたとされます。三本の足は天・地・人を表すとよく言われます。道中では神社の幟や熊野牛王宝印の護符に、そして近露の門の真ん中の提灯にも姿を見せます。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-infobox",
+						"subheader": {
+							"en": "Callout",
+							"de": "Hervorhebung",
+							"ja": "強調"
+						},
+						"header": {
+							"en": "Info box",
+							"de": "Infobox",
+							"ja": "情報ボックス"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_callout",
+								"fields": {
+									"tx_kumanokodo_variant": "infobox",
+									"header": {
+										"en": "Tip for this day",
+										"de": "Tipp für diesen Tag",
+										"ja": "この日のヒント"
+									},
+									"bodytext": {
+										"en": "<p>The stone paving is safe in the wet, the roots between it are not. Walk on the stones.</p>",
+										"de": "<p>Das Steinpflaster ist bei Nässe sicher, die Wurzeln dazwischen nicht. Auf den Steinen gehen.</p>",
+										"ja": "<p>石畳は濡れても安全だが、その間の木の根は滑る。石の上を歩くこと。</p>"
+									}
+								},
+								"items": {
+									"tx_kumanokodo_links": [
+										{
+											"title": {
+												"en": "Practical",
+												"de": "Praktisches",
+												"ja": "実用情報"
+											},
+											"link": "page:practical"
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-notice",
+						"subheader": {
+							"en": "Callout",
+							"de": "Hervorhebung",
+							"ja": "強調"
+						},
+						"header": {
+							"en": "Notice",
+							"de": "Hinweis",
+							"ja": "お知らせ"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_callout",
+								"fields": {
+									"tx_kumanokodo_variant": "notice",
+									"header": {
+										"en": "Trail conditions:",
+										"de": "Wegzustand:",
+										"ja": "道の状況："
+									},
+									"bodytext": {
+										"en": "<p>After heavy rain, check the tourism office notices before you set out.</p>",
+										"de": "<p>Nach starkem Regen vor dem Aufbruch die Hinweise des Tourismusbüros prüfen.</p>",
+										"ja": "<p>大雨のあとは、出発前に観光協会のお知らせを確認してください。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-quote",
+						"subheader": {
+							"en": "Callout",
+							"de": "Hervorhebung",
+							"ja": "強調"
+						},
+						"header": {
+							"en": "Quote",
+							"de": "Zitat",
+							"ja": "引用"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_callout",
+								"fields": {
+									"tx_kumanokodo_variant": "quote",
+									"bodytext": {
+										"en": "<p>“Dinner is at six. The bath is open until eleven.”</p>",
+										"de": "<p>„Abendessen gibt es um sechs. Das Bad ist bis elf offen.“</p>",
+										"ja": "<p>「夕食は六時です。お風呂は十一時まで。」</p>"
+									},
+									"header": {
+										"en": "Ryokan in Katsuura, 23 April",
+										"de": "Ryokan in Katsuura, 23. April",
+										"ja": "勝浦の旅館、4月23日"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_questions",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-questions",
+						"subheader": {
+							"en": "Questions",
+							"de": "Fragen",
+							"ja": "質問"
+						},
+						"header": {
+							"en": "Questions we were asked afterwards",
+							"de": "Was man uns danach gefragt hat",
+							"ja": "帰ってから聞かれたこと"
+						}
+					},
+					"items": {
+						"tx_kumanokodo_questions": [
+							{
+								"question": {
+									"en": "Do I need to book accommodation in advance?",
+									"de": "Muss ich die Unterkünfte im Voraus buchen?",
+									"ja": "宿は事前に予約が必要ですか？"
+								},
+								"answer": {
+									"en": "Yes, and early. Takahara and Chikatsuyu each have a handful of minshuku, and in spring and autumn they are full months ahead. The Tanabe tourism office reservation service books in English.",
+									"de": "Ja, und früh. Takahara und Chikatsuyu haben je eine Handvoll Minshuku, und im Frühling und Herbst sind sie Monate vorher voll. Der Reservierungsdienst des Tourismusbüros in Tanabe bucht auf Englisch.",
+									"ja": "はい、早めに。高原と近露には民宿が数軒ずつしかなく、春と秋は数か月前に満室になります。田辺市観光協会の予約サービスは英語でも対応しています。"
+								},
+								"open": 1
+							},
+							{
+								"question": {
+									"en": "How much rain should I expect?",
+									"de": "Mit wie viel Regen muss man rechnen?",
+									"ja": "雨はどのくらい降りますか？"
+								},
+								"answer": {
+									"en": "The Kii peninsula is one of the wettest regions of Japan. Waterproof boots and gaiters help less than you hope; a dry change of clothes in a sealed bag helps more.",
+									"de": "Die Kii-Halbinsel gehört zu den regenreichsten Gegenden Japans. Wasserdichte Schuhe und Gamaschen helfen weniger als erhofft; trockene Wechselkleidung in einem dichten Beutel hilft mehr.",
+									"ja": "紀伊半島は日本でも特に雨の多い地域です。防水の靴やスパッツは思ったほど役に立たず、密封袋に入れた乾いた着替えのほうが助かります。"
+								},
+								"open": 0
+							},
+							{
+								"question": {
+									"en": "Can you get around by bus?",
+									"de": "Kommt man mit dem Bus voran?",
+									"ja": "バスで移動できますか？"
+								},
+								"answer": {
+									"en": "Yes. Buses link the villages along the route several times a day, which makes it easy to shorten a day or to get back to the start.",
+									"de": "Ja. Busse verbinden die Orte entlang der Route mehrmals am Tag. So lässt sich ein Tag verkürzen oder man kommt zum Start zurück.",
+									"ja": "はい。ルート沿いの集落を一日に何本かバスが結んでいるので、一日を短くしたり出発地へ戻ったりしやすいです。"
+								},
+								"open": 0
+							},
+							{
+								"question": {
+									"en": "Is there a luggage transfer?",
+									"de": "Gibt es einen Gepäcktransport?",
+									"ja": "荷物の配送はありますか？"
+								},
+								"answer": {
+									"en": "Yes, between the main villages, booked through the Tanabe tourism office one day ahead.",
+									"de": "Ja, zwischen den größeren Orten, einen Tag vorher über das Tourismusbüro in Tanabe gebucht.",
+									"ja": "はい、主な集落の間で利用でき、前日までに田辺市観光協会で予約します。"
+								},
+								"open": 0
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "even",
+						"tx_kumanokodo_anchor": "showcase-columns-even",
+						"subheader": {
+							"en": "Columns",
+							"de": "Spalten",
+							"ja": "カラム"
+						},
+						"header": {
+							"en": "Even",
+							"de": "Gleich breit",
+							"ja": "均等"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Between Takijiri and Hongu the trail crosses passes barely higher than 700 metres, and still it feels remote. The forests are planted sugi cedars, set close together; when the mist settles between them you cannot see twenty metres ahead.</p>",
+										"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit.</p>",
+										"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。</p>"
+									}
+								}
+							}
+						],
+						"202": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.</p>",
+										"de": "<p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
+										"ja": "<p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "content-sidebar",
+						"tx_kumanokodo_anchor": "showcase-columns-content-sidebar",
+						"subheader": {
+							"en": "Columns",
+							"de": "Spalten",
+							"ja": "カラム"
+						},
+						"header": {
+							"en": "Content and sidebar",
+							"de": "Inhalt und Seitenleiste",
+							"ja": "本文とサイドバー"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Between Takijiri and Hongu the trail crosses passes barely higher than 700 metres, and still it feels remote. The forests are planted sugi cedars, set close together; when the mist settles between them you cannot see twenty metres ahead.</p>",
+										"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit.</p>",
+										"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。</p>"
+									}
+								}
+							}
+						],
+						"202": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.</p>",
+										"de": "<p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
+										"ja": "<p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "text-media",
+						"tx_kumanokodo_anchor": "showcase-columns-text-media",
+						"subheader": {
+							"en": "Columns",
+							"de": "Spalten",
+							"ja": "カラム"
+						},
+						"header": {
+							"en": "Text and media",
+							"de": "Text und Medien",
+							"ja": "テキストとメディア"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Between Takijiri and Hongu the trail crosses passes barely higher than 700 metres, and still it feels remote. The forests are planted sugi cedars, set close together; when the mist settles between them you cannot see twenty metres ahead.</p>",
+										"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit.</p>",
+										"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。</p>"
+									}
+								}
+							}
+						],
+						"202": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.</p>",
+										"de": "<p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
+										"ja": "<p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "heading-content",
+						"tx_kumanokodo_anchor": "showcase-columns-heading-content",
+						"subheader": {
+							"en": "Columns",
+							"de": "Spalten",
+							"ja": "カラム"
+						},
+						"header": {
+							"en": "Heading and content",
+							"de": "Überschrift und Inhalt",
+							"ja": "見出しと本文"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Between Takijiri and Hongu the trail crosses passes barely higher than 700 metres, and still it feels remote. The forests are planted sugi cedars, set close together; when the mist settles between them you cannot see twenty metres ahead.</p>",
+										"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit.</p>",
+										"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。</p>"
+									}
+								}
+							}
+						],
+						"202": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.</p>",
+										"de": "<p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
+										"ja": "<p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "wide-narrow",
+						"tx_kumanokodo_anchor": "showcase-columns-wide-narrow",
+						"subheader": {
+							"en": "Columns",
+							"de": "Spalten",
+							"ja": "カラム"
+						},
+						"header": {
+							"en": "Wide and narrow",
+							"de": "Breit und schmal",
+							"ja": "広いと狭い"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Between Takijiri and Hongu the trail crosses passes barely higher than 700 metres, and still it feels remote. The forests are planted sugi cedars, set close together; when the mist settles between them you cannot see twenty metres ahead.</p>",
+										"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit.</p>",
+										"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。</p>"
+									}
+								}
+							}
+						],
+						"202": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.</p>",
+										"de": "<p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
+										"ja": "<p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "narrow-wide",
+						"tx_kumanokodo_anchor": "showcase-columns-narrow-wide",
+						"subheader": {
+							"en": "Columns",
+							"de": "Spalten",
+							"ja": "カラム"
+						},
+						"header": {
+							"en": "Narrow and wide",
+							"de": "Schmal und breit",
+							"ja": "狭いと広い"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Between Takijiri and Hongu the trail crosses passes barely higher than 700 metres, and still it feels remote. The forests are planted sugi cedars, set close together; when the mist settles between them you cannot see twenty metres ahead.</p>",
+										"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit.</p>",
+										"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。</p>"
+									}
+								}
+							}
+						],
+						"202": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Along the way you pass the oji, small roadside shrines where pilgrims once stopped to pray. Most are a clearing, a stone and a wooden torii, easy to walk past if you are looking at your feet.</p>",
+										"de": "<p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
+										"ja": "<p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"frame_class": "sunk",
+						"tx_kumanokodo_anchor": "showcase-section-sunk",
+						"subheader": {
+							"en": "Section",
+							"de": "Abschnitt",
+							"ja": "セクション"
+						},
+						"header": {
+							"en": "On the sunk ground",
+							"de": "Auf vertieftem Grund",
+							"ja": "沈んだ地"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "text",
+								"fields": {
+									"bodytext": {
+										"en": "<p>The four days in order, then the places we stopped at and where we slept.</p>",
+										"de": "<p>Die vier Tage der Reihe nach, dann die Orte, an denen wir Halt gemacht und übernachtet haben.</p>",
+										"ja": "<p>四日間を順番に、そのあと立ち寄った場所と泊まった場所。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-newsletter",
+						"subheader": {
+							"en": "Newsletter",
+							"de": "Newsletter",
+							"ja": "ニュースレター"
+						},
+						"header": {
+							"en": "Two emails a year, whenever a new route is written up",
+							"de": "Zwei E-Mails im Jahr, immer wenn eine neue Route beschrieben ist",
+							"ja": "新しいルートを書いたときだけ、年に二通のメール"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_newsletter",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Next time the Kohechi, the mountain path from Koyasan to Hongu. No marketing, no sharing of your address.</p>",
+										"de": "<p>Beim nächsten Mal der Kohechi, der Bergpfad von Koyasan nach Hongu. Keine Werbung, keine Weitergabe Ihrer Adresse.</p>",
+										"ja": "<p>次は高野山から本宮へ向かう山道、小辺路です。広告なし、アドレスの共有なし。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-external-videos",
+						"subheader": {
+							"en": "External videos",
+							"de": "Externe Videos",
+							"ja": "外部の動画"
+						},
+						"header": {
+							"en": "External videos",
+							"de": "Externe Videos",
+							"ja": "外部の動画"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_media_consent",
+								"fields": {
+									"bodytext": {
+										"en": "<p>Videos from YouTube or Vimeo load only when you ask for them. Tick the box to load them straight away on this device.</p>",
+										"de": "<p>Videos von YouTube oder Vimeo laden erst, wenn Sie es möchten. Mit dem Häkchen laden sie auf diesem Gerät sofort.</p>",
+										"ja": "<p>YouTubeやVimeoの動画は、ご希望の場合にのみ読み込まれます。チェックを入れると、この端末ではすぐに読み込まれます。</p>"
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_route_map",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-route-map",
+						"subheader": {
+							"en": "Journal",
+							"de": "Tagebuch",
+							"ja": "旅の記録"
+						},
+						"header": {
+							"en": "Route map",
+							"de": "Routenkarte",
+							"ja": "ルートマップ"
+						},
+						"bodytext": {
+							"en": "<p>Schematic map of the route with six stations</p>",
+							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
+							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
+						},
+						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+					},
+					"items": {
+						"tx_kumanokodo_stations": [
+							{
+								"name": {
+									"en": "Takijiri",
+									"de": "Takijiri",
+									"ja": "滝尻"
+								},
+								"x": 40,
+								"y": 200,
+								"label_y": 228,
+								"anchor": "start",
+								"boundary": 0,
+								"highlight": 0,
+								"link": "page:day-1"
+							},
+							{
+								"name": {
+									"en": "Takahara",
+									"de": "Takahara",
+									"ja": "高原"
+								},
+								"x": 250,
+								"y": 100,
+								"label_y": 82,
+								"anchor": "middle",
+								"boundary": 1,
+								"highlight": 0,
+								"link": "page:day-1"
+							},
+							{
+								"name": {
+									"en": "Chikatsuyu",
+									"de": "Chikatsuyu",
+									"ja": "近露"
+								},
+								"x": 430,
+								"y": 140,
+								"label_y": 122,
+								"anchor": "middle",
+								"boundary": 1,
+								"highlight": 0,
+								"link": "page:place-chikatsuyu"
+							},
+							{
+								"name": {
+									"en": "Hongu",
+									"de": "Hongu",
+									"ja": "本宮"
+								},
+								"x": 610,
+								"y": 70,
+								"label_y": 52,
+								"anchor": "middle",
+								"boundary": 1,
+								"highlight": 0,
+								"link": "page:day-3"
+							},
+							{
+								"name": {
+									"en": "Koguchi",
+									"de": "Koguchi",
+									"ja": "小口"
+								},
+								"x": 800,
+								"y": 120,
+								"label_y": 102,
+								"anchor": "middle",
+								"boundary": 0,
+								"highlight": 0,
+								"link": "page:day-4"
+							},
+							{
+								"name": {
+									"en": "Nachi",
+									"de": "Nachi",
+									"ja": "那智"
+								},
+								"x": 960,
+								"y": 86,
+								"label_y": 68,
+								"anchor": "end",
+								"boundary": 0,
+								"highlight": 0,
+								"link": "page:place-nachi"
+							}
+						],
+						"tx_kumanokodo_day_marks": [
+							{
+								"label": {
+									"en": "Day 1 · 3.7 km",
+									"de": "Tag 1 · 3,7 km",
+									"ja": "1日目 · 3.7 km"
+								},
+								"x": 145,
+								"link": "page:day-1"
+							},
+							{
+								"label": {
+									"en": "Day 2 · 9.8 km",
+									"de": "Tag 2 · 9,8 km",
+									"ja": "2日目 · 9.8 km"
+								},
+								"x": 340,
+								"link": "page:day-2"
+							},
+							{
+								"label": {
+									"en": "Day 3 · 25 km",
+									"de": "Tag 3 · 25 km",
+									"ja": "3日目 · 25 km"
+								},
+								"x": 520,
+								"link": "page:day-3"
+							},
+							{
+								"label": {
+									"en": "Day 4 · 13 km",
+									"de": "Tag 4 · 13 km",
+									"ja": "4日目 · 13 km"
+								},
+								"x": 705,
+								"link": "page:day-4"
+							},
+							{
+								"label": {
+									"en": "Day 4 · 14.5 km",
+									"de": "Tag 4 · 14,5 km",
+									"ja": "4日目 · 14.5 km"
+								},
+								"x": 880,
+								"link": "page:day-4"
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_section",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-chapter",
+						"subheader": {
+							"en": "Journal",
+							"de": "Tagebuch",
+							"ja": "旅の記録"
+						},
+						"header": {
+							"en": "Chapter",
+							"de": "Kapitel",
+							"ja": "章"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "kumano_chapter",
+								"fields": {
+									"tx_kumanokodo_anchor": "showcase-chapter-day-2",
+									"subheader": {
+										"en": "Day 2 · 21 April · 07:02–17:28",
+										"de": "Tag 2 · 21. April · 07:02–17:28",
+										"ja": "2日目 · 4月21日 · 07:02–17:28"
+									},
+									"header": {
+										"en": "Takahara → Chikatsuyu",
+										"de": "Takahara → Chikatsuyu",
+										"ja": "高原 → 近露"
+									},
+									"bodytext": {
+										"en": "<p>The morning began above the clouds and ended at a gate of paper lanterns. In between, stone paving that stays grippy when wet, a stream under the cedars and a bright orange crab that did not move for the camera.</p>",
+										"de": "<p>Der Morgen begann über den Wolken und endete an einem Tor aus Papierlaternen. Dazwischen Steinpflaster, das auch nass griffig bleibt, ein Bach unter den Zedern und eine leuchtend orange Krabbe, die für die Kamera stillhielt.</p>",
+										"ja": "<p>朝は雲の上で始まり、紙の提灯の門で終わった。その間に、濡れても滑りにくい石畳、杉林の沢、そしてカメラの前でじっとしていた鮮やかな橙色のカニ。</p>"
+									}
+								},
+								"image": [
+									{
+										"photo": "misty-valley",
+										"tx_kumanokodo_span": 4,
+										"tx_kumanokodo_shift": 0
+									},
+									{
+										"photo": "roadside-markers",
+										"tx_kumanokodo_span": 3,
+										"tx_kumanokodo_shift": 2
+									},
+									{
+										"photo": "stone-path-walkers",
+										"tx_kumanokodo_span": 5,
+										"tx_kumanokodo_shift": 1
+									},
+									{
+										"photo": "forest-stream",
+										"tx_kumanokodo_span": 5,
+										"tx_kumanokodo_shift": 0
+									},
+									{
+										"photo": "land-crab",
+										"tx_kumanokodo_span": 4,
+										"tx_kumanokodo_shift": 2
+									},
+									{
+										"photo": "vending-machines",
+										"tx_kumanokodo_span": 3,
+										"tx_kumanokodo_shift": 1
+									},
+									{
+										"photo": "chikatsuyu-gate",
+										"tx_kumanokodo_span": 12,
+										"tx_kumanokodo_shift": 0
+									}
+								]
+							}
+						]
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "content-sidebar",
+						"tx_kumanokodo_anchor": "showcase-form",
+						"subheader": {
+							"en": "Plugins",
+							"de": "Plugins",
+							"ja": "プラグイン"
+						},
+						"header": {
+							"en": "Form",
+							"de": "Formular",
+							"ja": "フォーム"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "form_formframework",
+								"fields": {
+									"pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:kumano_kodo_demo/Resources/Private/Forms/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
+								}
+							}
+						],
+						"202": []
+					}
+				},
+				{
+					"type": "kumano_columns",
+					"fields": {
+						"tx_kumanokodo_layout": "content-sidebar",
+						"tx_kumanokodo_anchor": "showcase-login",
+						"subheader": {
+							"en": "Plugins",
+							"de": "Plugins",
+							"ja": "プラグイン"
+						},
+						"header": {
+							"en": "Login",
+							"de": "Anmeldung",
+							"ja": "ログイン"
+						}
+					},
+					"children": {
+						"201": [
+							{
+								"type": "felogin_login",
+								"fields": {
+									"pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.pages\"><value index=\"vDEF\">page:walkers</value></field></language></sheet><sheet index=\"s_redirect\"><language index=\"lDEF\"><field index=\"settings.redirectMode\"><value index=\"vDEF\">login</value></field><field index=\"settings.redirectPageLogin\"><value index=\"vDEF\">page:papers</value></field></language></sheet></data></T3FlexForms>"
+								}
+							}
+						],
+						"202": []
+					}
+				},
+				{
+					"type": "header",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-search",
+						"subheader": {
+							"en": "Plugins",
+							"de": "Plugins",
+							"ja": "プラグイン"
+						},
+						"header": {
+							"en": "Search",
+							"de": "Suche",
+							"ja": "検索"
+						}
+					}
+				},
+				{
+					"type": "indexedsearch_pi2",
+					"fields": {}
+				},
+				{
+					"type": "header",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-news",
+						"subheader": {
+							"en": "Plugins",
+							"de": "Plugins",
+							"ja": "プラグイン"
+						},
+						"header": {
+							"en": "News",
+							"de": "News",
+							"ja": "ニュース"
+						}
+					}
+				},
+				{
+					"type": "news_pi1",
+					"fields": {
+						"pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.orderBy\"><value index=\"vDEF\">datetime</value></field><field index=\"settings.orderDirection\"><value index=\"vDEF\">desc</value></field><field index=\"settings.startingpoint\"><value index=\"vDEF\">page:news-records</value></field></language></sheet><sheet index=\"additional\"><language index=\"lDEF\"><field index=\"settings.detailPid\"><value index=\"vDEF\">page:report</value></field><field index=\"settings.limit\"><value index=\"vDEF\">3</value></field><field index=\"settings.hidePagination\"><value index=\"vDEF\">1</value></field></language></sheet></data></T3FlexForms>"
+					}
+				}
+			],
+			"description": {
+				"en": "Every content element of the theme in every form it takes, one below the other, with the texts and photos of the journal.",
+				"de": "Jedes Inhaltselement des Themes in jeder Form, die es annehmen kann, untereinander, mit den Texten und Fotos des Tagebuchs.",
+				"ja": "テーマのすべてのコンテンツ要素を、とり得るすべての形で、旅の記録の文章と写真を使って縦に並べています。各ブロックの上の行に、要素とバリエーションの名前があります。"
 			}
 		},
 		{

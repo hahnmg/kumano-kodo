@@ -42,6 +42,10 @@
 				{
 					"text": "Tables from the text editor",
 					"story": "site--days"
+				},
+				{
+					"text": "A page with every element in each of its variants",
+					"story": "site--practical-showcase"
 				}
 			]
 		},

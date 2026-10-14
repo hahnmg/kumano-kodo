@@ -392,6 +392,9 @@
       <trans-unit id="tt_content.tx_kumanokodo_variant.links-stacked">
         <source>Links one below the other</source>
       </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_variant.link-groups">
+        <source>Links in columns, grouped by their label</source>
+      </trans-unit>
       <trans-unit id="tt_content.tx_kumanokodo_variant.media">
         <source>Media list</source>
       </trans-unit>

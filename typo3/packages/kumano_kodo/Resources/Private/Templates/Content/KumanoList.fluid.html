@@ -67,6 +67,22 @@
                     </f:variable>
                     <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
                 </f:case>
+                <f:case value="link-groups">
+                    <f:variable name="body">
+                        <kk:linkGroups>
+                            <f:groupedFor each="{record.tx_kumanokodo_entries}" as="entries" groupBy="label" groupKey="label">
+                                <kk:linkGroup title="{label}">
+                                    <f:for each="{entries}" as="entry">
+                                        <li>
+                                            <kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
+                                        </li>
+                                    </f:for>
+                                </kk:linkGroup>
+                            </f:groupedFor>
+                        </kk:linkGroups>
+                    </f:variable>
+                    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+                </f:case>
                 <f:case value="subnav">
                     <f:variable name="current">{f:uri.page()}</f:variable>
                     <f:variable name="body">

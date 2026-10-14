@@ -272,6 +272,12 @@
 			"node": "19:66"
 		},
 		{
+			"name": "Link Groups",
+			"group": "molecules",
+			"component": "link-groups",
+			"node": "113:520"
+		},
+		{
 			"name": "Media List",
 			"group": "molecules",
 			"component": "media-list",

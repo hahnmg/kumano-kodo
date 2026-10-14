@@ -22,6 +22,7 @@ import {
   registerPage,
   reportsPage,
   reportPage,
+  showcasePage,
   waysPage,
 } from '../templates/site-pages.markup';
 
@@ -74,6 +75,7 @@ export const RegisterYourWalk: StoryObj = { name: 'Register a walk · Your walk'
 export const RegisterPhotos: StoryObj = { name: 'Register a walk · Photos', render: page((c) => registerPage(c, 2)) };
 export const RegisterSummary: StoryObj = { name: 'Register a walk · Summary', render: page((c) => registerPage(c, 'summary')) };
 export const Ways: StoryObj = { name: 'Ways to walk it', render: page(waysPage) };
+export const PracticalShowcase: StoryObj = { name: 'Practical · Content showcase', render: page(showcasePage) };
 // The previous home, kept as an overview of the whole trip.
 export const AtAGlance: StoryObj = { name: 'At a glance', render: page(kumanoHome) };
 export const Reports: StoryObj = { name: 'Trail reports', render: page((c) => reportsPage(1, c)) };
