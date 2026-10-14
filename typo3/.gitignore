@@ -5,3 +5,4 @@
 !/public/.htaccess
 # Written by the demo import with the root page uid of each installation.
 /config/sites/
+.php-cs-fixer.cache
