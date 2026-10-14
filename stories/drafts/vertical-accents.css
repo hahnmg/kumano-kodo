@@ -1,0 +1,43 @@
+/* Drafts for Annett, not part of the theme: tall boxes in the accent colour. Paper on accent passes the contrast gate. */
+.draft-colour-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: var(--space-64);
+    align-items: stretch;
+}
+
+.draft-colour-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+    padding: var(--space-40) var(--space-32);
+    background: var(--color-accent);
+    color: var(--color-paper);
+}
+
+.draft-colour-column > * {
+    margin: 0;
+}
+
+.draft-colour-figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.draft-edge .cta-card,
+.draft-edge .teaser-card {
+    padding-left: var(--space-20);
+    border-left: var(--space-8) solid var(--color-accent);
+}
+
+.draft-edge .cta-card {
+    padding-bottom: var(--space-24);
+}
+
+@media (width <= 900px) {
+    .draft-colour-split {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-40);
+    }
+}

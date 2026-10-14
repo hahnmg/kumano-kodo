@@ -105,7 +105,7 @@ const preview: Preview = {
     docs: { page: DocsPage, theme: brandTheme('light'), source: { language: 'html', transform: (code: string) => formatSource(code) } },
     options: {
       storySort: {
-        order: ['Start', 'Status', 'Site', 'Templates', 'Atoms', 'Molecules', 'Organisms', 'Layout', 'Reference'],
+        order: ['Start', 'Status', 'Drafts', 'Site', 'Templates', 'Atoms', 'Molecules', 'Organisms', 'Layout', 'Reference'],
       },
     },
   },
