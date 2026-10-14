@@ -78,12 +78,27 @@ const preview: Preview = {
       description: 'Colour scheme',
       toolbar: { icon: 'contrast', items: ['light', 'dark'], dynamicTitle: true },
     },
+    theme: {
+      description: 'Theme',
+      toolbar: {
+        icon: 'paintbrush',
+        items: [
+          { value: 'caramel', title: 'Caramel' },
+          { value: 'forest', title: 'Forest' },
+          { value: 'ocean', title: 'Ocean' },
+          { value: 'violet', title: 'Violet' },
+          { value: 'mono', title: 'Mono' },
+        ],
+        dynamicTitle: true,
+      },
+    },
   },
-  initialGlobals: { locale: 'en', scheme: 'light' },
+  initialGlobals: { locale: 'en', scheme: 'light', theme: 'caramel' },
   decorators: [
     (story, context) => {
       const html = document.documentElement;
-      html.dataset.theme = (context.parameters.theme as string | undefined) ?? 'caramel';
+      // A story that names its theme, such as Templates › Home · Ocean, keeps it whatever the toolbar says.
+      html.dataset.theme = (context.parameters.theme as string | undefined) ?? (context.globals.theme as string | undefined) ?? 'caramel';
       html.dataset.scheme = context.globals.scheme;
       html.lang = isLocale(context.globals.locale) ? context.globals.locale : 'en';
       const rendered = story();
