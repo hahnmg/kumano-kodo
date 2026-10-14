@@ -4,7 +4,7 @@ import { mediaConsent } from '../molecules/media-consent.markup';
 import { mediaList } from '../molecules/media-list.markup';
 import { personCard } from '../molecules/person-card.markup';
 import { textMedia } from '../molecules/text-media.markup';
-import { walkForm } from './walk-form';
+import { walkForm, type WalkFormStep } from './walk-form';
 import { skipLink } from '../atoms/skip-link.markup';
 import { fill } from '../../src/lib/html';
 import { checkbox } from '../atoms/checkbox.markup';
@@ -545,12 +545,13 @@ export const reportPage = (slug: string, c: Content = content()): string => {
 };
 
 // The demo's form with every EXT:form element type; the other steps are in Molecules/Form.
-export const registerPage = (c: Content = content()): string =>
+// Each step of the form is a state of the same page, as TYPO3 shows it after "Next".
+export const registerPage = (c: Content = content(), step: WalkFormStep = 0): string =>
   chrome(
     c,
     1,
     header(c, c.walkForm.title, [[c.site.practical.title, paths.practical]]) +
-      section({ content: split(walkForm(c), '', 'content-sidebar') }),
+      section({ content: split(walkForm(c, step), '', 'content-sidebar') }),
   );
 
 // The components no other page uses, given a place of their own: a place, the ways to walk the route and the hosts.

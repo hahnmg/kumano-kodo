@@ -148,6 +148,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -360,6 +375,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -567,6 +597,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -664,6 +709,16 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"
@@ -721,7 +776,13 @@
 			"group": "Site"
 		}
 	],
-	"Atoms/File Upload": [],
+	"Atoms/File Upload": [
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		}
+	],
 	"Atoms/Icon": [
 		{
 			"id": "site--home",
@@ -856,6 +917,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{
@@ -1105,6 +1181,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -1309,6 +1400,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{
@@ -1524,6 +1630,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -1599,7 +1720,13 @@
 			"group": "Templates"
 		}
 	],
-	"Atoms/Radio": [],
+	"Atoms/Radio": [
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		}
+	],
 	"Atoms/Scheme Toggle": [
 		{
 			"id": "site--home",
@@ -1734,6 +1861,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{
@@ -1944,6 +2086,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -1988,6 +2145,11 @@
 		{
 			"id": "site--contact",
 			"name": "Contact",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
 			"group": "Site"
 		}
 	],
@@ -2125,6 +2287,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{
@@ -2277,6 +2454,11 @@
 			"id": "site--contact",
 			"name": "Contact",
 			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
 		}
 	],
 	"Atoms/Video": [
@@ -2420,6 +2602,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{
@@ -2677,6 +2874,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -2722,7 +2934,13 @@
 			"group": "Templates"
 		}
 	],
-	"Molecules/Choice Group": [],
+	"Molecules/Choice Group": [
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		}
+	],
 	"Molecules/CTA Card": [
 		{
 			"id": "site--route",
@@ -2900,6 +3118,21 @@
 			"id": "site--register",
 			"name": "Register a walk",
 			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
 		}
 	],
 	"Molecules/Gallery": [
@@ -3032,6 +3265,11 @@
 		{
 			"id": "site--login",
 			"name": "Log in",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
 			"group": "Site"
 		}
 	],
@@ -3317,6 +3555,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -3561,6 +3814,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -3796,6 +4064,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -4000,6 +4283,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{
@@ -4324,6 +4622,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -4583,6 +4896,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{
@@ -4862,6 +5190,21 @@
 			"group": "Site"
 		},
 		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
+			"group": "Site"
+		},
+		{
 			"id": "site--ways",
 			"name": "Ways to walk it",
 			"group": "Site"
@@ -5071,6 +5414,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{
@@ -5290,6 +5648,21 @@
 		{
 			"id": "site--register",
 			"name": "Register a walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-your-walk",
+			"name": "Register a walk · Your walk",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-photos",
+			"name": "Register a walk · Photos",
+			"group": "Site"
+		},
+		{
+			"id": "site--register-summary",
+			"name": "Register a walk · Summary",
 			"group": "Site"
 		},
 		{

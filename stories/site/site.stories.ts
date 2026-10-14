@@ -70,6 +70,9 @@ export const Contact: StoryObj = { render: page(contactPage) };
 export const NotFound: StoryObj = { name: 'Page not found', render: page(notFoundPage) };
 export const Papers: StoryObj = { name: 'Travel papers', render: page(papersPage) };
 export const Register: StoryObj = { name: 'Register a walk', render: page(registerPage) };
+export const RegisterYourWalk: StoryObj = { name: 'Register a walk · Your walk', render: page((c) => registerPage(c, 1)) };
+export const RegisterPhotos: StoryObj = { name: 'Register a walk · Photos', render: page((c) => registerPage(c, 2)) };
+export const RegisterSummary: StoryObj = { name: 'Register a walk · Summary', render: page((c) => registerPage(c, 'summary')) };
 export const Ways: StoryObj = { name: 'Ways to walk it', render: page(waysPage) };
 // The previous home, kept as an overview of the whole trip.
 export const AtAGlance: StoryObj = { name: 'At a glance', render: page(kumanoHome) };
