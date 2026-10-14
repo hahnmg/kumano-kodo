@@ -1,0 +1,82 @@
+{
+	"manual": "https://hahnmg.github.io/kumano-kodo/manual/",
+	"groups": [
+		{
+			"title": "Design",
+			"summary": "Five themes in light and dark; colours, typefaces, spacing and logo as site settings; own stylesheet, script and templates.",
+			"features": [
+				{ "text": "Five themes, each in light and dark", "story": "templates--home-caramel" },
+				{ "text": "Colours, typefaces, spacing and logo as site settings", "manual": "Configuration/SiteSettings.html" },
+				{ "text": "Own stylesheet, script and templates on top", "manual": "Customization/Index.html" }
+			]
+		},
+		{
+			"title": "Content",
+			"summary": "Two containers and 14 content elements, galleries with a lightbox, video in an image's place, a route map and tables from the text editor.",
+			"features": [
+				{ "text": "Two containers and 14 content elements", "manual": "Editors/Index.html" },
+				{ "text": "Galleries that open in a lightbox", "docs": "molecules-gallery--docs" },
+				{ "text": "Video in an image's place, own files or YouTube and Vimeo", "docs": "atoms-video--docs" },
+				{ "text": "A route map with linked stations and days", "docs": "organisms-route-map--docs" },
+				{ "text": "Tables from the text editor", "story": "site--days" }
+			]
+		},
+		{
+			"title": "Core extensions",
+			"summary": "Forms with every element type and steps, login, search, news, the XML sitemap and structured data, all in the theme's own markup.",
+			"features": [
+				{ "text": "Forms with every element type, in steps", "story": "site--register" },
+				{ "text": "Login for members", "story": "site--login" },
+				{ "text": "Site search", "story": "site--search" },
+				{ "text": "News, as trail reports", "story": "site--reports" },
+				{ "text": "XML sitemap and structured data", "manual": "CoreExtensions/Index.html" }
+			]
+		},
+		{
+			"title": "Accessibility",
+			"summary": "WCAG 2.2 AA as the target: contrast checked in every theme and mode, keyboard use, large targets, marked external links, reduced motion.",
+			"features": [
+				{ "text": "WCAG 2.2 AA as the target", "story": "site--accessibility" },
+				{ "text": "Contrast checked in every theme, light and dark", "manual": "Customization/Index.html" },
+				{ "text": "Skip link, visible focus, menus that close with Escape", "docs": "atoms-skip-link--docs" },
+				{ "text": "External links marked, for eyes and screen readers", "docs": "molecules-rich-text--docs" },
+				{ "text": "No motion when the system asks for less" }
+			]
+		},
+		{
+			"title": "Privacy",
+			"summary": "Fonts from the site itself, YouTube and Vimeo only after the visitor's yes, no tracking and no cookies of the theme's own.",
+			"features": [
+				{ "text": "Fonts delivered from the site itself", "manual": "Privacy/Index.html" },
+				{ "text": "YouTube and Vimeo only after the visitor's yes", "story": "site--privacy" },
+				{ "text": "No tracking, no cookies of its own", "manual": "Privacy/Index.html" }
+			]
+		},
+		{
+			"title": "Languages and print",
+			"summary": "English, German and Japanese throughout; pages print as content only, ink on white.",
+			"features": [
+				{ "text": "English, German and Japanese, interface included", "story": "site--home" },
+				{ "text": "Pages print as content only, ink on white" }
+			]
+		},
+		{
+			"title": "For developers",
+			"summary": "Fluid components for other extensions, no fluid_styled_content, a manual, and checks for code, contrast, accessibility and size.",
+			"features": [
+				{ "text": "{components} Fluid components for other extensions", "docs": "reference-fluid-components--docs" },
+				{ "text": "Runs without fluid_styled_content", "manual": "Introduction/Index.html" },
+				{ "text": "A manual for integrators and editors", "manual": "Index.html" },
+				{ "text": "Checks for code style, contrast, accessibility and CSS size" }
+			]
+		},
+		{
+			"title": "Demo and starter",
+			"summary": "A travel journal of a four-day walk in three languages to look at, and five pages to start a site from.",
+			"features": [
+				{ "text": "A travel journal of a four-day walk, in three languages", "story": "site--home" },
+				{ "text": "A starter of five pages to build on", "story": "templates--starter-mono" }
+			]
+		}
+	]
+}

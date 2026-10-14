@@ -69,7 +69,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     gap: var(--space-24);
-    margin: var(--space-32) 0 0;
+    margin: var(--space-32) 0 var(--space-64);
     padding: 0;
     list-style: none;
 }
@@ -224,4 +224,41 @@
     --color-accent: var(--palette-light-accent);
 
     font-family: var(--font-meta);
+}
+
+/* What Kumano Kodo does: one tile per group, its features as links to where they show. */
+.sbdocs .start-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-32) var(--space-24);
+    margin: var(--space-24) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sbdocs .start-feature-group {
+    margin: 0;
+    padding-top: var(--space-16);
+    border-top: var(--border-hairline) solid var(--color-line);
+}
+
+.sbdocs .start-feature-title {
+    margin: 0 0 var(--space-12);
+}
+
+.sbdocs .start-feature-list {
+    display: grid;
+    gap: var(--space-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sbdocs .start-feature-list li {
+    margin: 0;
+}
+
+.sbdocs .start-feature-list a {
+    color: var(--color-ink);
+    text-decoration-color: var(--color-line);
 }

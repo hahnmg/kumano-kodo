@@ -1,6 +1,8 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 import feedback from '../docs/feedback.json';
 import core from '../docs/core-theme-issues.json';
+import features from '../docs/features.json';
+import components from '../docs/fluid-components.json';
 
 export const items = [...feedback.items, ...core.items];
 export const done = items.filter((i) => i.status === 'solved').length;
@@ -34,6 +36,10 @@ export const entries = [
     },
 ];
 
+export const featureHref = (f) =>
+    f.story ? `./?path=/story/${f.story}` : f.docs ? `./?path=/docs/${f.docs}` : f.manual ? `${features.manual}${f.manual}` : null;
+export const featureText = (f) => f.text.replace('{components}', String(components.length));
+
 <Meta title="Start" tags={['dev']} />
 
 # Kumano Kodo for TYPO3
@@ -55,6 +61,29 @@ export const entries = [
                         <a href={link.href} target={link.external ? '_blank' : '_top'} rel={link.external ? 'noreferrer' : undefined}>
                             {link.label}
                         </a>
+                    </li>
+                ))}
+            </ul>
+        </li>
+    ))}
+</ul>
+
+## What Kumano Kodo does
+
+<ul className="start-features" data-theme="mono">
+    {features.groups.map((group) => (
+        <li key={group.title} className="start-feature-group">
+            <h3 className="start-feature-title">{group.title}</h3>
+            <ul className="start-feature-list">
+                {group.features.map((f) => (
+                    <li key={f.text}>
+                        {featureHref(f) ? (
+                            <a href={featureHref(f)} target={f.manual ? '_blank' : '_top'} rel={f.manual ? 'noreferrer' : undefined}>
+                                {featureText(f)}
+                            </a>
+                        ) : (
+                            featureText(f)
+                        )}
                     </li>
                 ))}
             </ul>

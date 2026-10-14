@@ -30,6 +30,8 @@ A theme for TYPO3 v14: site set, page layouts, 14 content elements in two
 containers, and templates for search, login and forms. It renders without
 fluid_styled_content.
 
+..  include:: Features.rst.txt
+
 ----
 
 **Table of Contents**
