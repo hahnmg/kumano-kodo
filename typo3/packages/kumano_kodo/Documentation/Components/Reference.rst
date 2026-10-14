@@ -398,7 +398,7 @@ An icon of the theme set, drawn to the TYPO3 icon grid.
     *   - ``name``
         - string, required
         - One of: clock, phone, mail, map-pin, home, file, search, chevron-down,
-          alert, arrow-right, sun, close, play, download.
+          alert, arrow-right, sun, close, play, pause, download.
     *   - ``size``
         - string|int, default ``24``
         - Width and height in pixels.

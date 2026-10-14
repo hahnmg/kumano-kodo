@@ -56,7 +56,7 @@ var e = "[data-slider]", t = ".slider-track", n = (e) => ({
 }, f = "[data-slider][data-autoplay]", p = /* @__PURE__ */ new WeakMap(), m = (e, n) => {
 	e.toggleAttribute("data-paused", n);
 	let r = e.querySelector(".hero-pause");
-	r && (r.setAttribute("aria-pressed", String(n)), r.textContent = (n ? e.dataset.labelPlay : e.dataset.labelPause) ?? r.textContent), e.querySelector(t)?.setAttribute("aria-live", n ? "polite" : "off");
+	r && (r.setAttribute("aria-pressed", String(n)), r.setAttribute("aria-label", (n ? e.dataset.labelPlay : e.dataset.labelPause) ?? "")), e.querySelector(t)?.setAttribute("aria-live", n ? "polite" : "off");
 }, h = (e = document) => {
 	e.querySelectorAll(f).forEach((t) => {
 		let n = t.querySelector(".hero-bar");

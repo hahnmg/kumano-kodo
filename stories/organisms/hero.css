@@ -119,22 +119,47 @@
 
 .hero-controls {
     display: flex;
-    gap: var(--space-12);
+    gap: var(--space-24);
     align-items: center;
+    justify-content: center;
     padding-top: var(--space-16);
 }
 
-.hero-controls .icon-button {
+/* Over the photo, above the bar; only the buttons take clicks. */
+.hero-arrows {
+    position: absolute;
+    inset: 0 0 var(--hero-bar-height, 11rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--space-16);
+    pointer-events: none;
+}
+
+.hero-arrows .icon-button {
+    pointer-events: auto;
+}
+
+.hero-pause .icon {
+    color: currentcolor;
+}
+
+.hero-pause[aria-pressed='false'] .icon:last-child,
+.hero-pause[aria-pressed='true'] .icon:first-child {
+    display: none;
+}
+
+.hero-slides .icon-button {
     border-color: color-mix(in srgb, var(--color-on-image) 70%, transparent);
     color: var(--color-on-image);
 }
 
-.hero-controls .icon-button:hover {
+.hero-slides .icon-button:hover {
     border-color: var(--color-on-image);
     background: color-mix(in srgb, var(--color-on-image) 12%, transparent);
 }
 
-.hero-controls .icon-button[aria-disabled='true'] {
+.hero-slides .icon-button[aria-disabled='true'] {
     opacity: 0.4;
 }
 
@@ -175,6 +200,12 @@
     .hero-slides {
         min-height: 0;
         padding-top: 0;
+    }
+
+    /* On a phone the arrows would cover the text; they join the foot row instead. */
+    .hero-arrows {
+        inset: auto 0 var(--space-40);
+        padding-inline: var(--gutter);
     }
 
     .hero-actions > * {

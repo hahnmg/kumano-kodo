@@ -413,7 +413,7 @@
 				"name": "name",
 				"type": "string",
 				"required": true,
-				"description": "One of: clock, phone, mail, map-pin, home, file, search, chevron-down, alert, arrow-right, sun, close, play, download."
+				"description": "One of: clock, phone, mail, map-pin, home, file, search, chevron-down, alert, arrow-right, sun, close, play, pause, download."
 			},
 			{
 				"name": "size",

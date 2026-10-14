@@ -62,7 +62,7 @@ describe('hero slides', () => {
     const pause = document.querySelector<HTMLButtonElement>('.hero-pause')!;
     pause.click();
     expect(pause.getAttribute('aria-pressed')).toBe('true');
-    expect(pause.textContent).toBe('Play');
+    expect(pause.getAttribute('aria-label')).toBe('Play');
     expect(document.querySelector('.hero-track')?.getAttribute('aria-live')).toBe('polite');
     vi.advanceTimersByTime(20000);
     expect(current()).toBe('Slide 1');

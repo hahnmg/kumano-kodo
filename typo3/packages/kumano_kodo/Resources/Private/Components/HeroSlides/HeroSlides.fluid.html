@@ -15,13 +15,16 @@
     <div class="hero-track slider-track" tabindex="0" aria-live="off">
         <f:slot/>
     </div>
+    <f:comment>The arrows sit on the photo's edges; dots and pause stay centred at the foot.</f:comment>
+    <div class="hero-arrows">
+        <kk:iconButton direction="previous" label="{f:translate(key: 'previous', domain: 'kumano_kodo.messages')}"/>
+        <kk:iconButton direction="next" label="{f:translate(key: 'next', domain: 'kumano_kodo.messages')}"/>
+    </div>
     <div class="hero-bar">
         <div class="hero-stats">
             <f:slot name="stats"/>
         </div>
         <div class="hero-controls">
-            <button class="hero-pause button type-button button-outline" type="button" aria-pressed="false">{pause}</button>
-            <kk:iconButton direction="previous" label="{f:translate(key: 'previous', domain: 'kumano_kodo.messages')}"/>
             <div class="slider-dots">
                 <f:for each="{f:range(start: 1, end: count)}" as="n" iteration="i">
                     <f:if condition="{i.isFirst}">
@@ -34,7 +37,10 @@
                     </f:if>
                 </f:for>
             </div>
-            <kk:iconButton direction="next" label="{f:translate(key: 'next', domain: 'kumano_kodo.messages')}"/>
+            <button class="hero-pause icon-button" type="button" aria-pressed="false" aria-label="{pause}">
+                <kk:icon name="pause" size="20"/>
+                <kk:icon name="play" size="20"/>
+            </button>
         </div>
     </div>
 </section>

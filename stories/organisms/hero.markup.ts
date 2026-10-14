@@ -1,4 +1,5 @@
 import { attrs, esc, fill, img, type Image } from '../../src/lib/html';
+import { icon } from '../atoms/icon.markup';
 import { iconButton } from '../atoms/icon-button.markup';
 import { sliderDots } from '../atoms/slider-dots.markup';
 import { button } from '../atoms/button.markup';
@@ -71,10 +72,10 @@ export const heroSlides = ({ slides, stats, labels }: HeroSlidesProps): string =
     })
     .join('') +
   `</div>` +
+  // The arrows sit on the photo's edges; dots and pause stay centred at the foot.
+  `<div class="hero-arrows">${iconButton({ direction: 'previous', label: labels.previous })}${iconButton({ direction: 'next', label: labels.next })}</div>` +
   `<div class="hero-bar"><div class="hero-stats">${stats.map((s) => stat({ ...s, variant: 'on-image' })).join('')}</div>` +
   `<div class="hero-controls">` +
-  `<button class="hero-pause button type-button button-outline" type="button" aria-pressed="false">${esc(labels.pause)}</button>` +
-  iconButton({ direction: 'previous', label: labels.previous }) +
   sliderDots({ count: slides.length, label: labels.dot }) +
-  iconButton({ direction: 'next', label: labels.next }) +
+  `<button${attrs({ class: 'hero-pause icon-button', type: 'button', 'aria-pressed': 'false', 'aria-label': labels.pause })}>${icon({ name: 'pause', size: 20 })}${icon({ name: 'play', size: 20 })}</button>` +
   `</div></div></section>`;

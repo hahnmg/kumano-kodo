@@ -128,7 +128,7 @@ const setPaused = (root: HTMLElement, paused: boolean): void => {
   const button = root.querySelector<HTMLButtonElement>('.hero-pause');
   if (button) {
     button.setAttribute('aria-pressed', String(paused));
-    button.textContent = (paused ? root.dataset.labelPlay : root.dataset.labelPause) ?? button.textContent;
+    button.setAttribute('aria-label', (paused ? root.dataset.labelPlay : root.dataset.labelPause) ?? '');
   }
   // Announce slide changes only when the visitor moves them, not on every automatic step.
   root.querySelector(track)?.setAttribute('aria-live', paused ? 'polite' : 'off');
