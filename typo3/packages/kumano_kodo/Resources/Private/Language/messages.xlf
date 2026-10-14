@@ -122,6 +122,21 @@
       <trans-unit id="readMore">
         <source>Read more</source>
       </trans-unit>
+      <trans-unit id="slideshow">
+        <source>Photos of the walk</source>
+      </trans-unit>
+      <trans-unit id="slideOf">
+        <source>Slide %1$s of %2$s</source>
+      </trans-unit>
+      <trans-unit id="slide">
+        <source>Slide</source>
+      </trans-unit>
+      <trans-unit id="pause">
+        <source>Pause</source>
+      </trans-unit>
+      <trans-unit id="play">
+        <source>Play</source>
+      </trans-unit>
       <trans-unit id="emailAddress">
         <source>Email address</source>
       </trans-unit>

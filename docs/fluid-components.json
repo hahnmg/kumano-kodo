@@ -331,6 +331,56 @@
 		"slots": ["default", "actions", "stats"]
 	},
 	{
+		"name": "heroSlide",
+		"description": "One slide of heroSlides: photo, eyebrow, title, the teaser in the slot and buttons in the fragment actions.",
+		"arguments": [
+			{
+				"name": "title",
+				"type": "string",
+				"required": true,
+				"description": "The title; the first slide's is the page heading."
+			},
+			{
+				"name": "image",
+				"type": "object",
+				"required": true,
+				"description": "A file or file reference."
+			},
+			{
+				"name": "number",
+				"type": "string|int",
+				"required": true,
+				"description": "Its place among the slides, from 1."
+			},
+			{
+				"name": "count",
+				"type": "string|int",
+				"required": true,
+				"description": "Number of slides."
+			},
+			{
+				"name": "eyebrow",
+				"type": "string",
+				"required": false,
+				"description": "Short line above the title."
+			}
+		],
+		"slots": ["default", "actions"]
+	},
+	{
+		"name": "heroSlides",
+		"description": "The hero as a slideshow: heroSlide components in the slot, stat components in the fragment stats. It moves on every seven seconds until paused, and holds while the pointer or the focus is inside.",
+		"arguments": [
+			{
+				"name": "count",
+				"type": "string|int",
+				"required": true,
+				"description": "Number of slides, for the dots."
+			}
+		],
+		"slots": ["default", "stats"]
+	},
+	{
 		"name": "heroSplit",
 		"description": "An opening in two halves: fill the fragments text and panel.",
 		"arguments": [],

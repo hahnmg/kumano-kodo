@@ -13,7 +13,7 @@ import { bindMediaConsent, bindVideos, syncMediaConsent } from '../src/scripts/v
 import { bindMenuToggle } from '../src/scripts/menu-toggle';
 import { bindNavFlyouts } from '../src/scripts/nav-flyout';
 import { bindSchemeToggle, syncSchemeToggles } from '../src/scripts/scheme-toggle';
-import { bindSliders, syncSliders } from '../src/scripts/slider';
+import { bindSlideshows, bindSliders, syncSlideshows, syncSliders } from '../src/scripts/slider';
 import { bindStickyHeader, syncStickyHeaders } from '../src/scripts/sticky-header';
 import { storyFor } from '../stories/content/paths';
 import { isLocale, locales } from '../stories/templates/content';
@@ -29,6 +29,7 @@ bindSchemeToggle(document, (scheme) => updateGlobals({ scheme }));
 bindMenuToggle(document);
 bindNavFlyouts(document);
 bindSliders(document);
+bindSlideshows(document);
 bindLightbox(document);
 bindVideos(document);
 bindMediaConsent(document);
@@ -92,6 +93,7 @@ const preview: Preview = {
         pendingHash = '';
         syncSchemeToggles();
         syncSliders();
+        syncSlideshows();
         syncStickyHeaders();
         syncMediaConsent();
       });

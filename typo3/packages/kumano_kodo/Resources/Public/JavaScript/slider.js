@@ -32,8 +32,7 @@ var e = "[data-slider]", t = ".slider-track", n = (e) => ({
 			e.hidden = t >= c, t === l ? e.setAttribute("aria-current", "true") : e.removeAttribute("aria-current");
 		}), r?.setAttribute("aria-disabled", String(l === 0)), i?.setAttribute("aria-disabled", String(l >= c - 1));
 	});
-}, u = (e, t) => c(e, s(e) + t);
-((r = document) => {
+}, u = (e, t) => c(e, s(e) + t), d = (r = document) => {
 	let i = (i) => {
 		if (!(i.target instanceof Element)) return;
 		let a = i.target.closest(e), o = a?.querySelector(t);
@@ -53,6 +52,34 @@ var e = "[data-slider]", t = ".slider-track", n = (e) => ({
 	}, p = r.defaultView;
 	return r.addEventListener("click", i), r.addEventListener("keydown", a), r.addEventListener("scroll", d, !0), r.addEventListener("pointerdown", f), r.addEventListener("wheel", f, { passive: !0 }), p?.addEventListener("resize", s), () => {
 		r.removeEventListener("click", i), r.removeEventListener("keydown", a), r.removeEventListener("scroll", d, !0), r.removeEventListener("pointerdown", f), r.removeEventListener("wheel", f), p?.removeEventListener("resize", s);
+	};
+}, f = "[data-slider][data-autoplay]", p = /* @__PURE__ */ new WeakMap(), m = (e, n) => {
+	e.toggleAttribute("data-paused", n);
+	let r = e.querySelector(".hero-pause");
+	r && (r.setAttribute("aria-pressed", String(n)), r.textContent = (n ? e.dataset.labelPlay : e.dataset.labelPause) ?? r.textContent), e.querySelector(t)?.setAttribute("aria-live", n ? "polite" : "off");
+}, h = (e = document) => {
+	e.querySelectorAll(f).forEach((t) => {
+		let n = t.querySelector(".hero-bar");
+		n && t.style.setProperty("--hero-bar-height", `${n.offsetHeight}px`), t.hasAttribute("data-autoplay-ready") || (t.setAttribute("data-autoplay-ready", ""), m(t, e.defaultView?.matchMedia("(prefers-reduced-motion: reduce)").matches ?? !1), p.set(t, Date.now()));
+	});
+};
+d(document), ((e = document) => {
+	let n = () => {
+		e.hidden || e.querySelectorAll(f).forEach((n) => {
+			let r = n.querySelector(t), i = n.hasAttribute("data-paused") || n.matches(":hover") || n.contains(e.activeElement), o = Date.now() - (p.get(n) ?? 0) >= Number(n.dataset.autoplay || 7e3);
+			if (!r || i || !o) return;
+			let u = s(r) + 1;
+			c(r, u >= a(r).length ? 0 : u), p.set(n, Date.now()), l(e);
+		});
+	}, r = (e) => {
+		let t = (e.target instanceof Element ? e.target.closest(".hero-pause") : null)?.closest(f);
+		t && m(t, !t.hasAttribute("data-paused"));
+	}, i = (e) => {
+		let t = e.target instanceof Element ? e.target.closest(f) : null;
+		t && p.set(t, Date.now());
+	}, o = e.defaultView, u = o?.setInterval(n, 500), d = () => h(e);
+	return e.addEventListener("click", r), e.addEventListener("pointerdown", i), e.addEventListener("keydown", i), o?.addEventListener("resize", d), h(e), () => {
+		u !== void 0 && o?.clearInterval(u), e.removeEventListener("click", r), e.removeEventListener("pointerdown", i), e.removeEventListener("keydown", i), o?.removeEventListener("resize", d);
 	};
 })(document), l(document);
 //#endregion

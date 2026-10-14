@@ -77,9 +77,87 @@
     border-top: var(--border-hairline) solid color-mix(in srgb, var(--color-on-image) 40%, transparent);
 }
 
+/* Slides: the photos and their text move sideways; the stats and controls stay at the foot. The script sets the bar's
+   height so each slide's text ends above it. */
+.hero-slides {
+    display: block;
+    min-height: 0;
+    padding: 0;
+}
+
+/* In the flow, so the hero grows with the longest text; without the card slider's inset to the container. */
+.hero-slides .hero-track {
+    position: relative;
+    display: flex;
+    padding-inline: 0;
+    overflow-x: auto;
+    scroll-padding-inline: 0;
+    scroll-snap-type: x mandatory;
+}
+
+.hero-slide {
+    position: relative;
+    display: flex;
+    flex: 0 0 100%;
+    min-height: 821px;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 var(--gutter) calc(var(--hero-bar-height, 11rem) + var(--space-40));
+    scroll-snap-align: start;
+}
+
+.hero-bar {
+    position: absolute;
+    right: 0;
+    bottom: var(--space-40);
+    left: 0;
+    width: auto;
+    max-width: calc(var(--container-page) + 2 * var(--gutter));
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+}
+
+.hero-controls {
+    display: flex;
+    gap: var(--space-12);
+    align-items: center;
+    padding-top: var(--space-16);
+}
+
+.hero-controls .icon-button {
+    border-color: color-mix(in srgb, var(--color-on-image) 70%, transparent);
+    color: var(--color-on-image);
+}
+
+.hero-controls .icon-button:hover {
+    border-color: var(--color-on-image);
+    background: color-mix(in srgb, var(--color-on-image) 12%, transparent);
+}
+
+.hero-controls .icon-button[aria-disabled='true'] {
+    opacity: 0.4;
+}
+
+.hero-controls .slider-dots-dot::before {
+    background: color-mix(in srgb, var(--color-on-image) 40%, transparent);
+}
+
+.hero-controls .slider-dots-dot[aria-current]::before {
+    background: var(--color-on-image);
+}
+
+.hero-controls .slider-dots-dot:hover::before {
+    background: color-mix(in srgb, var(--color-on-image) 70%, transparent);
+}
+
 @media (width <= 900px) {
-    .hero {
+    .hero,
+    .hero-slide {
         min-height: 640px;
+    }
+
+    .hero-slides {
+        min-height: 0;
     }
 
     .hero-stats {
@@ -88,9 +166,15 @@
 }
 
 @media (width <= 600px) {
-    .hero {
+    .hero,
+    .hero-slide {
         min-height: 560px;
         padding-top: var(--space-56);
+    }
+
+    .hero-slides {
+        min-height: 0;
+        padding-top: 0;
     }
 
     .hero-actions > * {

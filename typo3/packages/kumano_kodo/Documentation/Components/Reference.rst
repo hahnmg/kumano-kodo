@@ -308,6 +308,55 @@ in the fragment actions, stat components in the fragment stats.
 
 Slots: ``default``, ``actions``, ``stats``.
 
+kk:heroSlide
+============
+
+One slide of heroSlides: photo, eyebrow, title, the teaser in the slot and
+buttons in the fragment actions.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``title``
+        - string, required
+        - The title; the first slide's is the page heading.
+    *   - ``image``
+        - object, required
+        - A file or file reference.
+    *   - ``number``
+        - string|int, required
+        - Its place among the slides, from 1.
+    *   - ``count``
+        - string|int, required
+        - Number of slides.
+    *   - ``eyebrow``
+        - string
+        - Short line above the title.
+
+Slots: ``default``, ``actions``.
+
+kk:heroSlides
+=============
+
+The hero as a slideshow: heroSlide components in the slot, stat components in
+the fragment stats. It moves on every seven seconds until paused, and holds
+while the pointer or the focus is inside.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``count``
+        - string|int, required
+        - Number of slides, for the dots.
+
+Slots: ``default``, ``stats``.
+
 kk:heroSplit
 ============
 

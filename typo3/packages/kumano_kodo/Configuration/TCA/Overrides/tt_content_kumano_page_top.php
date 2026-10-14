@@ -14,7 +14,7 @@ ExtensionManagementUtility::addRecordType(
         'icon' => 'kumano-page-top',
         'group' => 'kumano_text',
     ],
-    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_meta, tx_kumanokodo_facts, tx_kumanokodo_links, --div--;core.form.tabs:images, image, --div--;core.form.tabs:appearance, --palette--;;frames',
+    'tx_kumanokodo_variant, --palette--;kumano_kodo.backend_fields:palettes.heading;kumanoHeading_eyebrow, bodytext, tx_kumanokodo_meta, tx_kumanokodo_facts, tx_kumanokodo_links, --div--;core.form.tabs:images, image, tx_kumanokodo_entries, --div--;core.form.tabs:appearance, --palette--;;frames',
     [
         'columnsOverrides' => [
             'tx_kumanokodo_variant' => [
@@ -63,6 +63,28 @@ ExtensionManagementUtility::addRecordType(
             'tx_kumanokodo_facts' => [
                 'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero',
                 'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_facts.description.hero',
+            ],
+            // Further slides turn the photo hero into a slideshow; the element itself stays the first slide.
+            'tx_kumanokodo_entries' => [
+                'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_entries.slides',
+                'description' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_entries.slides.description',
+                'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero',
+                'config' => [
+                    'minitems' => 0,
+                    'maxitems' => 4,
+                    'overrideChildTca' => [
+                        'types' => [
+                            '0' => [
+                                'showitem' => 'image, meta, title, text, --palette--;;slide_link',
+                            ],
+                        ],
+                        'palettes' => [
+                            'slide_link' => [
+                                'showitem' => 'link, link_label',
+                            ],
+                        ],
+                    ],
+                ],
             ],
             'tx_kumanokodo_links' => [
                 'displayCond' => 'FIELD:tx_kumanokodo_variant:IN:hero,text',

@@ -162,6 +162,26 @@
         <source>Read more</source>
         <target>Weiterlesen</target>
       </trans-unit>
+      <trans-unit id="slideshow">
+        <source>Photos of the walk</source>
+        <target>Fotos der Wanderung</target>
+      </trans-unit>
+      <trans-unit id="slideOf">
+        <source>Slide %1$s of %2$s</source>
+        <target>Bild %1$s von %2$s</target>
+      </trans-unit>
+      <trans-unit id="slide">
+        <source>Slide</source>
+        <target>Bild</target>
+      </trans-unit>
+      <trans-unit id="pause">
+        <source>Pause</source>
+        <target>Anhalten</target>
+      </trans-unit>
+      <trans-unit id="play">
+        <source>Play</source>
+        <target>Abspielen</target>
+      </trans-unit>
       <trans-unit id="emailAddress">
         <source>Email address</source>
         <target>E-Mail-Adresse</target>

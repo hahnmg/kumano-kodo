@@ -455,6 +455,25 @@ const v3 = [
           (x) => x.kumano.hero.stats,
           (a) => ({ label: t((x) => a(x).label), value: t((x) => a(x).value) }),
         ),
+        // Two more slides, as Storybook's Hero › Slides: the second day and the end of the walk.
+        tx_kumanokodo_entries: [
+          {
+            image: photo(c.en.kumano.stages[1].image),
+            meta: t((x) => x.kumano.days[1].date),
+            title: t((x) => x.kumano.stages[1].title),
+            text: t((x) => x.kumano.stages[1].description),
+            link: link(c.en.kumano.stages[1].href),
+            link_label: t((x) => x.ui.readMore),
+          },
+          {
+            image: photo(c.en.kumano.places[0].image),
+            meta: t((x) => x.kumano.days[3].date),
+            title: t((x) => x.kumano.places[0].title),
+            text: t((x) => x.kumano.places[0].description),
+            link: link(paths.place('nachi')),
+            link_label: t((x) => x.ui.readMore),
+          },
+        ],
       },
     },
   ),

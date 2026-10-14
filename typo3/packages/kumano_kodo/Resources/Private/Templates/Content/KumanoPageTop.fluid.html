@@ -20,20 +20,64 @@
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:case>
         <f:defaultCase>
-            <kk:hero title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}">
+            <f:if condition="{record.tx_kumanokodo_entries}">
+                <f:then>
+                    <f:render section="Slides" arguments="{_all}"/>
+                </f:then>
+                <f:else>
+                    <f:render section="Hero" arguments="{_all}"/>
+                </f:else>
+            </f:if>
+        </f:defaultCase>
+    </f:switch>
+</f:section>
+
+<f:section name="Hero">
+    <kk:hero title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}">
+        <f:fragment>{text -> f:format.raw()}</f:fragment>
+        <f:fragment name="actions">
+            <f:for each="{record.tx_kumanokodo_links}" as="action" iteration="i">
+                <kk:button label="{action.title}" href="{f:uri.typolink(parameter: action.link)}" variant="{f:if(condition: i.isFirst, then: 'light', else: 'outline')}"/>
+            </f:for>
+        </f:fragment>
+        <f:fragment name="stats">
+            <f:for each="{record.tx_kumanokodo_facts}" as="stat">
+                <kk:stat value="{stat.value}" label="{stat.label}" variant="on-image"/>
+            </f:for>
+        </f:fragment>
+    </kk:hero>
+</f:section>
+
+<f:comment>The element itself is the first slide; each further slide is an entry with photo, eyebrow, title, text and link.</f:comment>
+<f:section name="Slides">
+    <f:variable name="count" value="{record.tx_kumanokodo_entries -> f:count()}"/>
+    <f:variable name="count" value="{count + 1}"/>
+    <kk:heroSlides count="{count}">
+        <f:fragment>
+            <kk:heroSlide title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}" number="1" count="{count}">
                 <f:fragment>{text -> f:format.raw()}</f:fragment>
                 <f:fragment name="actions">
                     <f:for each="{record.tx_kumanokodo_links}" as="action" iteration="i">
                         <kk:button label="{action.title}" href="{f:uri.typolink(parameter: action.link)}" variant="{f:if(condition: i.isFirst, then: 'light', else: 'outline')}"/>
                     </f:for>
                 </f:fragment>
-                <f:fragment name="stats">
-                    <f:for each="{record.tx_kumanokodo_facts}" as="stat">
-                        <kk:stat value="{stat.value}" label="{stat.label}" variant="on-image"/>
-                    </f:for>
-                </f:fragment>
-            </kk:hero>
-        </f:defaultCase>
-    </f:switch>
+            </kk:heroSlide>
+            <f:for each="{record.tx_kumanokodo_entries}" as="slide" iteration="i">
+                <kk:heroSlide title="{slide.title}" eyebrow="{slide.meta}" image="{slide.image -> f:first()}" number="{i.cycle + 1}" count="{count}">
+                    <f:fragment>{slide.text}</f:fragment>
+                    <f:fragment name="actions">
+                        <f:if condition="{slide.link}">
+                            <kk:button label="{slide.link_label}" href="{f:uri.typolink(parameter: slide.link)}" variant="light"/>
+                        </f:if>
+                    </f:fragment>
+                </kk:heroSlide>
+            </f:for>
+        </f:fragment>
+        <f:fragment name="stats">
+            <f:for each="{record.tx_kumanokodo_facts}" as="stat">
+                <kk:stat value="{stat.value}" label="{stat.label}" variant="on-image"/>
+            </f:for>
+        </f:fragment>
+    </kk:heroSlides>
 </f:section>
 </html>

@@ -162,6 +162,26 @@
         <source>Read more</source>
         <target>続きを読む</target>
       </trans-unit>
+      <trans-unit id="slideshow">
+        <source>Photos of the walk</source>
+        <target>歩いた道の写真</target>
+      </trans-unit>
+      <trans-unit id="slideOf">
+        <source>Slide %1$s of %2$s</source>
+        <target>%2$s枚中%1$s枚目</target>
+      </trans-unit>
+      <trans-unit id="slide">
+        <source>Slide</source>
+        <target>写真</target>
+      </trans-unit>
+      <trans-unit id="pause">
+        <source>Pause</source>
+        <target>一時停止</target>
+      </trans-unit>
+      <trans-unit id="play">
+        <source>Play</source>
+        <target>再生</target>
+      </trans-unit>
       <trans-unit id="emailAddress">
         <source>Email address</source>
         <target>メールアドレス</target>

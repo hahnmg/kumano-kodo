@@ -320,6 +320,12 @@
       <trans-unit id="tt_content.tx_kumanokodo_layout.wide-narrow">
         <source>Wide and narrow</source>
       </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_entries.slides">
+        <source>More slides</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_entries.slides.description">
+        <source>Each slide adds a photo with its own eyebrow, title, text and button; the hero then moves on every seven seconds until paused. Without slides it shows the photo above.</source>
+      </trans-unit>
       <trans-unit id="tt_content.tx_kumanokodo_links">
         <source>Links</source>
       </trans-unit>

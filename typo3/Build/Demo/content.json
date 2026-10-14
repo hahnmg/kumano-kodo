@@ -5766,6 +5766,56 @@
 									"ja": "4月"
 								}
 							}
+						],
+						"tx_kumanokodo_entries": [
+							{
+								"image": "stone-path-walkers",
+								"meta": {
+									"en": "Day 2 · 21 April",
+									"de": "Tag 2 · 21. April",
+									"ja": "2日目 · 4月21日"
+								},
+								"title": {
+									"en": "Takahara → Chikatsuyu",
+									"de": "Takahara → Chikatsuyu",
+									"ja": "高原 → 近露"
+								},
+								"text": {
+									"en": "Clouds below the village at seven, stone paving, a stream, the lantern gate of Chikatsuyu at half past five.",
+									"de": "Um sieben Wolken unter dem Dorf, Steinpflaster, ein Bach, um halb sechs das Laternentor von Chikatsuyu.",
+									"ja": "朝7時は集落の下に雲、石畳、沢、17時半に近露の提灯の門。"
+								},
+								"link": "page:day-2",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								}
+							},
+							{
+								"image": "nachi-pagoda",
+								"meta": {
+									"en": "Day 4 · 23 April",
+									"de": "Tag 4 · 23. April",
+									"ja": "4日目 · 4月23日"
+								},
+								"title": {
+									"en": "Seiganto-ji and Nachi falls",
+									"de": "Seiganto-ji und Nachi-Fall",
+									"ja": "青岸渡寺と那智の滝"
+								},
+								"text": {
+									"en": "The three-storey pagoda in front of the falls, the end of the walk. It rained, and the falls disappeared in the mist every few minutes.",
+									"de": "Die dreistöckige Pagode vor dem Wasserfall, das Ende der Wanderung. Es regnete, und der Fall verschwand alle paar Minuten im Nebel.",
+									"ja": "滝の前に立つ三重塔、この旅の終点。雨が降り、滝は数分ごとに霧に消えた。"
+								},
+								"link": "page:place-nachi",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								}
+							}
 						]
 					}
 				},

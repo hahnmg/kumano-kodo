@@ -117,3 +117,73 @@ export const bindSliders = (doc: Document = document): (() => void) => {
     view?.removeEventListener('resize', schedule);
   };
 };
+
+// Slideshows ([data-autoplay], the hero) advance on their own and start over at the end. They hold while the pointer
+// or the focus is inside, while the page is hidden, and when paused; a visitor who asks for less motion starts paused.
+const autoplay = '[data-slider][data-autoplay]';
+const lastMove = new WeakMap<HTMLElement, number>();
+
+const setPaused = (root: HTMLElement, paused: boolean): void => {
+  root.toggleAttribute('data-paused', paused);
+  const button = root.querySelector<HTMLButtonElement>('.hero-pause');
+  if (button) {
+    button.setAttribute('aria-pressed', String(paused));
+    button.textContent = (paused ? root.dataset.labelPlay : root.dataset.labelPause) ?? button.textContent;
+  }
+  // Announce slide changes only when the visitor moves them, not on every automatic step.
+  root.querySelector(track)?.setAttribute('aria-live', paused ? 'polite' : 'off');
+};
+
+// The stats and controls lie over the slides; each slide's text ends above them.
+export const syncSlideshows = (doc: Document = document): void => {
+  doc.querySelectorAll<HTMLElement>(autoplay).forEach((root) => {
+    const bar = root.querySelector<HTMLElement>('.hero-bar');
+    if (bar) root.style.setProperty('--hero-bar-height', `${bar.offsetHeight}px`);
+    if (!root.hasAttribute('data-autoplay-ready')) {
+      root.setAttribute('data-autoplay-ready', '');
+      setPaused(root, doc.defaultView?.matchMedia('(prefers-reduced-motion: reduce)').matches ?? false);
+      lastMove.set(root, Date.now());
+    }
+  });
+};
+
+export const bindSlideshows = (doc: Document = document): (() => void) => {
+  const tick = (): void => {
+    if (doc.hidden) return;
+    doc.querySelectorAll<HTMLElement>(autoplay).forEach((root) => {
+      const t = root.querySelector<HTMLElement>(track);
+      const held = root.hasAttribute('data-paused') || root.matches(':hover') || root.contains(doc.activeElement);
+      const due = Date.now() - (lastMove.get(root) ?? 0) >= Number(root.dataset.autoplay || 7000);
+      if (!t || held || !due) return;
+      const next = activeStop(t) + 1;
+      scrollToStop(t, next >= stops(t).length ? 0 : next);
+      lastMove.set(root, Date.now());
+      syncSliders(doc);
+    });
+  };
+  const click = (event: Event): void => {
+    const button = event.target instanceof Element ? event.target.closest('.hero-pause') : null;
+    const root = button?.closest<HTMLElement>(autoplay);
+    if (root) setPaused(root, !root.hasAttribute('data-paused'));
+  };
+  // A move by hand starts the wait for the next automatic one again.
+  const moved = (event: Event): void => {
+    const root = event.target instanceof Element ? event.target.closest<HTMLElement>(autoplay) : null;
+    if (root) lastMove.set(root, Date.now());
+  };
+  const view = doc.defaultView;
+  const timer = view?.setInterval(tick, 500);
+  const resize = (): void => syncSlideshows(doc);
+  doc.addEventListener('click', click);
+  doc.addEventListener('pointerdown', moved);
+  doc.addEventListener('keydown', moved);
+  view?.addEventListener('resize', resize);
+  syncSlideshows(doc);
+  return () => {
+    if (timer !== undefined) view?.clearInterval(timer);
+    doc.removeEventListener('click', click);
+    doc.removeEventListener('pointerdown', moved);
+    doc.removeEventListener('keydown', moved);
+    view?.removeEventListener('resize', resize);
+  };
+};

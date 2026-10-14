@@ -1,5 +1,5 @@
 import { skipLink } from '../atoms/skip-link.markup';
-import { linkRoute } from '../content/paths';
+import { linkRoute, paths } from '../content/paths';
 import { section, split, stack } from '../layout/layout.markup';
 import { timeline } from '../molecules/timeline-item.markup';
 import { faqList } from '../molecules/faq-item.markup';
@@ -12,14 +12,38 @@ import { richText } from '../molecules/rich-text.markup';
 import { sectionHeading } from '../molecules/section-heading.markup';
 import { portraitCard } from '../molecules/portrait-card.markup';
 import { statRow } from '../molecules/stat.markup';
-import { hero } from '../organisms/hero.markup';
+import { heroSlides, type HeroSlidesProps } from '../organisms/hero.markup';
 import { routeMap } from '../organisms/route-map.markup';
 import { siteFooter } from '../organisms/site-footer.markup';
 import { siteHeader } from '../organisms/site-header.markup';
 import { slider } from '../organisms/slider.markup';
 import { content, type Content } from './content';
 
-export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = content()): string => {
+// The opening, then the second day and the end of the walk, all from the journal's own texts; as the demo's slides.
+export const heroSlidesOf = ({ kumano, ui }: Content): HeroSlidesProps => ({
+  slides: [
+    kumano.hero,
+    {
+      image: kumano.stages[1].image,
+      eyebrow: kumano.days[1].date,
+      title: kumano.stages[1].title,
+      teaser: kumano.stages[1].description,
+      actions: [{ label: ui.readMore, href: kumano.stages[1].href }],
+    },
+    {
+      image: kumano.places[0].image,
+      eyebrow: kumano.days[3].date,
+      title: kumano.places[0].title,
+      teaser: kumano.places[0].description,
+      actions: [{ label: ui.readMore, href: paths.place('nachi') }],
+    },
+  ],
+  stats: kumano.hero.stats,
+  labels: { label: ui.slideshow, slide: ui.slideOf, dot: ui.slide, pause: ui.pause, play: ui.play, previous: ui.previous, next: ui.next },
+});
+
+export const kumanoHome = (c: Content = content()): string => {
+  const { kumano, photos, home, ui, languages } = c;
   const lightbox = { close: ui.close, previous: ui.previous, next: ui.next, play: ui.playVideo };
   return (
     skipLink({ label: ui.skipToContent }) +
@@ -29,7 +53,7 @@ export const kumanoHome = ({ kumano, photos, home, ui, languages }: Content = co
       labels: { nav: ui.mainNav, languages: ui.language, scheme: ui.darkMode, menu: ui.menu },
     }) +
     `<main id="main">` +
-    hero(kumano.hero) +
+    heroSlides(heroSlidesOf(c)) +
     section({
       content: stack(
         [

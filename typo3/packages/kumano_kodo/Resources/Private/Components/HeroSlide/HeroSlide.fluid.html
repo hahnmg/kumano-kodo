@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<f:comment>One slide of heroSlides: photo, eyebrow, title, the teaser in the slot and buttons in the fragment actions.</f:comment>
+<f:argument name="title" type="string" description="The title; the first slide's is the page heading."/>
+<f:argument name="image" type="object" description="A file or file reference."/>
+<f:argument name="number" type="string|int" description="Its place among the slides, from 1."/>
+<f:argument name="count" type="string|int" description="Number of slides."/>
+<f:argument name="eyebrow" type="string" optional="{true}" description="Short line above the title."/>
+
+<div class="hero-slide" role="group" aria-roledescription="slide" aria-label="{f:translate(key: 'slideOf', domain: 'kumano_kodo.messages', arguments: {0: number, 1: count})}">
+    <kk:image image="{image}" class="hero-image" sizes="100vw" eager="{f:if(condition: '{number} == 1', then: 1, else: 0)}"/>
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow type-label">{eyebrow}</p>
+        <f:comment>One h1 per page: the first slide carries it, the others repeat its form.</f:comment>
+        <f:if condition="{number} == 1">
+            <f:then>
+                <h1 class="hero-title type-hero">{title}</h1>
+            </f:then>
+            <f:else>
+                <h2 class="hero-title type-hero">{title}</h2>
+            </f:else>
+        </f:if>
+        <div class="hero-teaser">
+            <p class="type-lead">
+                <f:slot/>
+            </p>
+            <div class="hero-actions">
+                <f:slot name="actions"/>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

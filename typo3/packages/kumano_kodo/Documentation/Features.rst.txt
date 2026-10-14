@@ -5,8 +5,9 @@ Design
     settings; own stylesheet, script and templates.
 
 Content
-    Two containers and 12 content elements, galleries with a lightbox, video in
-    an image's place and tables from the text editor.
+    Two containers and 12 content elements, a hero that can turn into a
+    slideshow, galleries with a lightbox, video in an image's place and tables
+    from the text editor.
 
 Core extensions
     Forms with every element type and steps, login, search, news, the XML
