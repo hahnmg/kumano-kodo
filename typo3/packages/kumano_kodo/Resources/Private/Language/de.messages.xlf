@@ -306,22 +306,6 @@
         <source>I agree that my details are used to answer my message.</source>
         <target>Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Nachricht verwendet werden.</target>
       </trans-unit>
-      <trans-unit id="mapWalked">
-        <source>Walked section</source>
-        <target>Gegangener Abschnitt</target>
-      </trans-unit>
-      <trans-unit id="mapEnd">
-        <source>End of the walk</source>
-        <target>Ende der Wanderung</target>
-      </trans-unit>
-      <trans-unit id="mapBoundary">
-        <source>Day boundary with overnight stay</source>
-        <target>Tagesgrenze mit Übernachtung</target>
-      </trans-unit>
-      <trans-unit id="mapDay">
-        <source>This day</source>
-        <target>Dieser Tag</target>
-      </trans-unit>
     </body>
   </file>
 </xliff>

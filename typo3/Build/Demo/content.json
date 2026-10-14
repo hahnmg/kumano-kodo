@@ -17,7 +17,8 @@
 		},
 		"sets": [
 			"kumano-kodo/site",
-			"kumano-kodo/news"
+			"kumano-kodo/news",
+			"kumano-kodo/demo"
 		],
 		"routeEnhancers": {
 			"NewsDetail": {

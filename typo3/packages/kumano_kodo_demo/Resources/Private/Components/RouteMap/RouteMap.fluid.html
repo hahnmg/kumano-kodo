@@ -8,7 +8,7 @@
 <f:argument name="stations" type="iterable" description="Entries with x, y, name, label_y, anchor, boundary, highlight and link; the last is the end."/>
 <f:argument name="days" type="iterable" optional="{true}" description="Entries with x, label and link, set below the map."/>
 
-<f:asset.css identifier="kumano-route-map" href="EXT:kumano_kodo/Resources/Public/Css/Components/route-map.css"/>
+<f:asset.css identifier="kumano-route-map" href="EXT:kumano_kodo_demo/Resources/Public/Css/Components/route-map.css"/>
 <f:variable name="from" value=""/>
 <f:variable name="to" value=""/>
 <f:variable name="linked" value=""/>
@@ -87,17 +87,17 @@
     <figcaption class="route-map-legend type-caption">
         <f:if condition="{span}">
             <span>
-                <i class="route-map-key route-map-key-day"></i>{f:translate(key: 'mapDay', domain: 'kumano_kodo.messages')}
+                <i class="route-map-key route-map-key-day"></i>{f:translate(key: 'mapDay', domain: 'kumano_kodo_demo.messages')}
             </span>
         </f:if>
         <span>
-            <i class="route-map-key route-map-key-completed"></i>{f:translate(key: 'mapWalked', domain: 'kumano_kodo.messages')}
+            <i class="route-map-key route-map-key-completed"></i>{f:translate(key: 'mapWalked', domain: 'kumano_kodo_demo.messages')}
         </span>
         <span>
-            <i class="route-map-key route-map-key-end"></i>{f:translate(key: 'mapEnd', domain: 'kumano_kodo.messages')}
+            <i class="route-map-key route-map-key-end"></i>{f:translate(key: 'mapEnd', domain: 'kumano_kodo_demo.messages')}
         </span>
         <span>
-            <i class="route-map-key route-map-key-boundary"></i>{f:translate(key: 'mapBoundary', domain: 'kumano_kodo.messages')}
+            <i class="route-map-key route-map-key-boundary"></i>{f:translate(key: 'mapBoundary', domain: 'kumano_kodo_demo.messages')}
         </span>
     </figcaption>
 </figure>

@@ -8,8 +8,8 @@ defined('TYPO3') or die();
 
 ExtensionManagementUtility::addRecordType(
     [
-        'label' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_chapter',
-        'description' => 'kumano_kodo.backend_fields:tt_content.CType.kumano_chapter.description',
+        'label' => 'kumano_kodo_demo.backend_fields:tt_content.CType.kumano_chapter',
+        'description' => 'kumano_kodo_demo.backend_fields:tt_content.CType.kumano_chapter.description',
         'value' => 'kumano_chapter',
         'icon' => 'kumano-chapter',
         'group' => 'kumano_journal',

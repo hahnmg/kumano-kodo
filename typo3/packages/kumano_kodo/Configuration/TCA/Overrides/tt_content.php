@@ -9,7 +9,6 @@ defined('TYPO3') or die();
 ExtensionManagementUtility::addTcaSelectItemGroup('tt_content', 'CType', 'kumano_layout', 'kumano_kodo.backend_fields:tt_content.group.kumano_layout', 'after:default');
 ExtensionManagementUtility::addTcaSelectItemGroup('tt_content', 'CType', 'kumano_text', 'kumano_kodo.backend_fields:tt_content.group.kumano_text', 'after:default');
 ExtensionManagementUtility::addTcaSelectItemGroup('tt_content', 'CType', 'kumano_lists', 'kumano_kodo.backend_fields:tt_content.group.kumano_lists', 'after:default');
-ExtensionManagementUtility::addTcaSelectItemGroup('tt_content', 'CType', 'kumano_journal', 'kumano_kodo.backend_fields:tt_content.group.kumano_journal', 'after:default');
 
 ExtensionManagementUtility::addTCAcolumns('tt_content', [
     'tx_kumanokodo_variant' => [
@@ -77,14 +76,6 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
             'type' => 'input',
             'size' => 40,
             'max' => 255,
-        ],
-    ],
-    'tx_kumanokodo_path' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_path',
-        'config' => [
-            'type' => 'text',
-            'rows' => 3,
-            'required' => true,
         ],
     ],
     'tx_kumanokodo_layout' => [
@@ -232,43 +223,6 @@ ExtensionManagementUtility::addTCAcolumns('tt_content', [
                 'showPossibleLocalizationRecords' => true,
             ],
             'minitems' => 1,
-        ],
-    ],
-    'tx_kumanokodo_stations' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_stations',
-        'config' => [
-            'type' => 'inline',
-            'foreign_table' => 'tx_kumanokodo_station',
-            'foreign_field' => 'uid_foreign',
-            'foreign_table_field' => 'tablename',
-            'foreign_match_fields' => [
-                'fieldname' => 'tx_kumanokodo_stations',
-            ],
-            'appearance' => [
-                'useSortable' => true,
-                'expandSingle' => true,
-                'showAllLocalizationLink' => true,
-                'showPossibleLocalizationRecords' => true,
-            ],
-            'minitems' => 2,
-        ],
-    ],
-    'tx_kumanokodo_day_marks' => [
-        'label' => 'kumano_kodo.backend_fields:tt_content.tx_kumanokodo_day_marks',
-        'config' => [
-            'type' => 'inline',
-            'foreign_table' => 'tx_kumanokodo_day_mark',
-            'foreign_field' => 'uid_foreign',
-            'foreign_table_field' => 'tablename',
-            'foreign_match_fields' => [
-                'fieldname' => 'tx_kumanokodo_day_marks',
-            ],
-            'appearance' => [
-                'useSortable' => true,
-                'expandSingle' => true,
-                'showAllLocalizationLink' => true,
-                'showPossibleLocalizationRecords' => true,
-            ],
         ],
     ],
 ]);

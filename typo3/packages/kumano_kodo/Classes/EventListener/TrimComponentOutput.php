@@ -13,12 +13,13 @@ use TYPO3Fluid\Fluid\Core\Component\ComponentRenderer;
 #[AsEventListener]
 final readonly class TrimComponentOutput
 {
-    private const NAMESPACE = 'KumanoKodo\\Sitepackage\\Components';
+    // The theme's collection and the demo's, which builds on it.
+    private const NAMESPACE_PREFIX = 'KumanoKodo\\';
 
     public function __invoke(RenderComponentEvent $event): void
     {
         $collection = $event->getComponentCollection();
-        if (!method_exists($collection, 'getNamespace') || $collection->getNamespace() !== self::NAMESPACE) {
+        if (!method_exists($collection, 'getNamespace') || !str_starts_with($collection->getNamespace(), self::NAMESPACE_PREFIX)) {
             return;
         }
         $event->setRenderedComponent(trim((new ComponentRenderer($collection))->renderComponent(

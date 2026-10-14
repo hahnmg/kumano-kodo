@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'ctrl' => [
-        'title' => 'kumano_kodo.backend_fields:tx_kumanokodo_station',
+        'title' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station',
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -34,7 +34,7 @@ return [
             ],
         ],
         'name' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.name',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.name',
             'config' => [
                 'type' => 'input',
                 'size' => 40,
@@ -43,7 +43,7 @@ return [
             ],
         ],
         'x' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.x',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.x',
             'config' => [
                 'type' => 'number',
                 'range' => [
@@ -53,7 +53,7 @@ return [
             ],
         ],
         'y' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.y',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.y',
             'config' => [
                 'type' => 'number',
                 'range' => [
@@ -63,7 +63,7 @@ return [
             ],
         ],
         'label_y' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.label_y',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.label_y',
             'config' => [
                 'type' => 'number',
                 'range' => [
@@ -73,21 +73,21 @@ return [
             ],
         ],
         'anchor' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.anchor',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.anchor',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
                     [
-                        'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.anchor.middle',
+                        'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.anchor.middle',
                         'value' => 'middle',
                     ],
                     [
-                        'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.anchor.start',
+                        'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.anchor.start',
                         'value' => 'start',
                     ],
                     [
-                        'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.anchor.end',
+                        'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.anchor.end',
                         'value' => 'end',
                     ],
                 ],
@@ -95,22 +95,22 @@ return [
             ],
         ],
         'boundary' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.boundary',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.boundary',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
             ],
         ],
         'highlight' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.highlight',
-            'description' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.highlight.description',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.highlight',
+            'description' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.highlight.description',
             'config' => [
                 'type' => 'check',
                 'renderType' => 'checkboxToggle',
             ],
         ],
         'link' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_station.link',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_station.link',
             'config' => [
                 'type' => 'link',
                 'size' => 40,

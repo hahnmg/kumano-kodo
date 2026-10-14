@@ -1,8 +1,8 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" xmlns:kkd="http://typo3.org/ns/KumanoKodo/Demo/Components" data-namespace-typo3-fluid="true">
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:variable name="body">
-        <kk:routeMap
+        <kkd:routeMap
             label="{record.bodytext -> f:format.stripTags() -> f:format.trim()}"
             path="{record.tx_kumanokodo_path}"
             stations="{record.tx_kumanokodo_stations}"

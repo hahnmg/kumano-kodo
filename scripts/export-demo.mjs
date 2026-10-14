@@ -1003,7 +1003,7 @@ const site = {
     'news.pages.detail': 'page:report',
   },
   errorHandling: { 404: 'not-found', 403: 'login' },
-  sets: ['kumano-kodo/site', 'kumano-kodo/news'],
+  sets: ['kumano-kodo/site', 'kumano-kodo/news', 'kumano-kodo/demo'],
   // As the news manual's quick start: readable report and page URLs, each limited to its page.
   routeEnhancers: {
     NewsDetail: {

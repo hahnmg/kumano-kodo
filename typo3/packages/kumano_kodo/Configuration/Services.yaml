@@ -12,11 +12,6 @@ services:
       - name: data.processor
         identifier: kumano-theme
 
-  KumanoKodo\Sitepackage\DataProcessing\ChapterNumberProcessor:
-    tags:
-      - name: data.processor
-        identifier: kumano-chapter-number
-
   KumanoKodo\Sitepackage\DataProcessing\StructuredDataProcessor:
     tags:
       - name: data.processor

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="messages" product-name="kumano_kodo_demo">
+    <body>
+      <trans-unit id="mapWalked">
+        <source>Walked section</source>
+        <target>歩いた区間</target>
+      </trans-unit>
+      <trans-unit id="mapEnd">
+        <source>End of the walk</source>
+        <target>ウォークの終点</target>
+      </trans-unit>
+      <trans-unit id="mapBoundary">
+        <source>Day boundary with overnight stay</source>
+        <target>宿泊を伴う日の区切り</target>
+      </trans-unit>
+      <trans-unit id="mapDay">
+        <source>This day</source>
+        <target>この日</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

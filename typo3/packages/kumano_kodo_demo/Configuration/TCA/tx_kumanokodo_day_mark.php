@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
     'ctrl' => [
-        'title' => 'kumano_kodo.backend_fields:tx_kumanokodo_day_mark',
+        'title' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_day_mark',
         'label' => 'label',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -34,7 +34,7 @@ return [
             ],
         ],
         'label' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_day_mark.label',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_day_mark.label',
             'config' => [
                 'type' => 'input',
                 'size' => 40,
@@ -43,7 +43,7 @@ return [
             ],
         ],
         'x' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_day_mark.x',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_day_mark.x',
             'config' => [
                 'type' => 'number',
                 'range' => [
@@ -54,7 +54,7 @@ return [
         ],
 
         'link' => [
-            'label' => 'kumano_kodo.backend_fields:tx_kumanokodo_day_mark.link',
+            'label' => 'kumano_kodo_demo.backend_fields:tx_kumanokodo_day_mark.link',
             'config' => [
                 'type' => 'link',
                 'size' => 40,

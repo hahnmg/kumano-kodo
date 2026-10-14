@@ -6,15 +6,16 @@ baseVariants:
 dependencies:
   - kumano-kodo/site
   - kumano-kodo/news
+  - kumano-kodo/demo
 errorHandling:
   -
     errorCode: 403
     errorHandler: Page
-    errorContentSource: 't3://page?uid=178'
+    errorContentSource: 't3://page?uid=280'
   -
     errorCode: 404
     errorHandler: Page
-    errorContentSource: 't3://page?uid=184'
+    errorContentSource: 't3://page?uid=286'
 languages:
   -
     languageId: 0
@@ -42,12 +43,12 @@ languages:
     base: /ja/
     flag: jp
     fallbackType: strict
-rootPageId: 103
+rootPageId: 205
 routeEnhancers:
   NewsDetail:
     type: Extbase
     limitToPages:
-      - 157
+      - 259
     extension: News
     plugin: Pi1
     routes:
@@ -62,7 +63,7 @@ routeEnhancers:
   NewsList:
     type: Extbase
     limitToPages:
-      - 154
+      - 256
     extension: News
     plugin: Pi1
     routes:

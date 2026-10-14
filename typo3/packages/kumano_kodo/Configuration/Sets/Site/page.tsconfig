@@ -8,7 +8,7 @@
 
 # The catalogue and the core fields, limited to what the design system has.
 TCEFORM.tt_content {
-  CType.keepItems = header,text,kumano_section,kumano_columns,kumano_text_image,kumano_images,kumano_cards,kumano_list,kumano_facts,kumano_callout,kumano_questions,kumano_page_top,kumano_chapter,kumano_route_map,kumano_newsletter,kumano_media_consent,indexedsearch_pi2,felogin_login,form_formframework
+  CType.keepItems = header,text,kumano_section,kumano_columns,kumano_text_image,kumano_images,kumano_cards,kumano_list,kumano_facts,kumano_callout,kumano_questions,kumano_page_top,kumano_newsletter,kumano_media_consent,indexedsearch_pi2,felogin_login,form_formframework
   subheader.label = LLL:kumano_kodo.backend_fields:subheader.eyebrow
   header_layout {
     label = LLL:kumano_kodo.backend_fields:header_layout.label
@@ -47,8 +47,6 @@ mod.web_layout.tt_content.preview {
   kumano_callout = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoCallout.fluid.html
   kumano_questions = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoQuestions.fluid.html
   kumano_page_top = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoPageTop.fluid.html
-  kumano_chapter = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoChapter.fluid.html
-  kumano_route_map = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoRouteMap.fluid.html
   kumano_newsletter = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoNewsletter.fluid.html
 }
 

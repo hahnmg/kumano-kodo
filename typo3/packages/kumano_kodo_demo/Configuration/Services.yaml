@@ -6,3 +6,8 @@ services:
 
   KumanoKodo\Demo\:
     resource: '../Classes/*'
+
+  KumanoKodo\Demo\DataProcessing\ChapterNumberProcessor:
+    tags:
+      - name: data.processor
+        identifier: kumano-chapter-number
