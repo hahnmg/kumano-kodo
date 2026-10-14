@@ -1,0 +1,63 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import feedback from '../docs/feedback.json';
+import core from '../docs/core-theme-issues.json';
+
+export const items = [...feedback.items, ...core.items];
+export const done = items.filter((i) => i.status === 'solved').length;
+export const open = items.filter((i) => i.status === 'check' || i.status === 'partly').length;
+export const entries = [
+    {
+        title: 'Review',
+        text: 'What the team and the Camino reports asked for, and what changed.',
+        links: [
+            { label: `Status: ${done} done, ${open} open`, href: './?path=/docs/status--docs' },
+            { label: 'The demo, page by page', href: './?path=/story/site--home' },
+        ],
+    },
+    {
+        title: 'Design',
+        text: 'Every page of the demo, the home page in five themes, and the Figma file the parts come from.',
+        links: [
+            { label: 'Site pages', href: './?path=/story/site--home' },
+            { label: 'Five themes', href: './?path=/story/templates--home-caramel' },
+            { label: 'Figma (needs access)', href: 'https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm', external: true },
+        ],
+    },
+    {
+        title: 'Build',
+        text: 'The parts from atoms up, the Fluid components for other extensions, and the manual for TYPO3 users.',
+        links: [
+            { label: 'Atoms, molecules, organisms', href: './?path=/docs/atoms-button--docs' },
+            { label: 'Fluid components', href: './?path=/docs/reference-fluid-components--docs' },
+            { label: 'Manual for TYPO3', href: 'https://hahnmg.github.io/kumano-kodo/manual/Index.html', external: true },
+        ],
+    },
+];
+
+<Meta title="Start" tags={['dev']} />
+
+# Kumano Kodo for TYPO3
+
+<p className="start-lede" data-theme="mono">
+    {
+        'A theme for TYPO3 v14 and the design system it is built from: five themes in light and dark, fourteen content elements, and a demo of a four-day walk in English, German and Japanese.'
+    }
+</p>
+
+<ul className="start-entries" data-theme="mono">
+    {entries.map((entry) => (
+        <li key={entry.title} className="start-entry">
+            <h2 className="start-entry-title">{entry.title}</h2>
+            <p className="start-entry-text">{entry.text}</p>
+            <ul className="start-entry-links">
+                {entry.links.map((link) => (
+                    <li key={link.label}>
+                        <a href={link.href} target={link.external ? '_blank' : '_top'} rel={link.external ? 'noreferrer' : undefined}>
+                            {link.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </li>
+    ))}
+</ul>

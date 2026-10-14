@@ -36,11 +36,13 @@ each with the same shape; `npx tsc --noEmit` reports a language that misses a
 key (no script runs it). The Japanese text has not been checked by a native
 speaker.
 
-The sidebar runs from whole pages to parts: **Site** (every page), **Templates**
-(the home page in five themes and the starter set), **Organisms**,
-**Molecules**, **Atoms** ("Atoms/Overview" shows all atoms on one page) and
-**Layout**. Every component is one Docs page with all its variants and the
-controls; single stories are not listed.
+The sidebar opens with **Start** (three ways in: review, design, build) and
+**Status** (team feedback and the Camino reports, with what changed), then runs
+from whole pages to parts: **Site** (every page), **Templates** (the home page
+in five themes and the starter set), **Atoms** ("Atoms/Overview" shows all atoms
+on one page), **Molecules**, **Organisms** and **Layout**, and ends with
+**Reference** (the Fluid components). Every component is one Docs page with all
+its variants and the controls; single stories are not listed.
 
 | Command             | Does                                                                                                             |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------- |

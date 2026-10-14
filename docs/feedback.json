@@ -465,7 +465,7 @@
 			]
 		},
 		{
-			"status": "irrelevant",
+			"status": "deferred",
 			"from": "Georg",
 			"feedback": "Render the core's frontend content elements, as fluid_styled_content leaves the core with v15.",
 			"change": "Deferred until v15's core is clear. Kumano Kodo already runs without fluid_styled_content.",

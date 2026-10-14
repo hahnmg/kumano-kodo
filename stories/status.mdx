@@ -1,0 +1,105 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import feedback from '../docs/feedback.json';
+import core from '../docs/core-theme-issues.json';
+
+export const statuses = [
+    { status: 'solved', label: 'Done' },
+    { status: 'partly', label: 'Partly done' },
+    { status: 'check', label: 'Open' },
+    { status: 'deferred', label: 'Deferred' },
+    { status: 'irrelevant', label: 'Not relevant here' },
+];
+export const sources = [
+    { id: 'feedback', title: 'Team feedback', data: feedback, head: ['Feedback', 'What changed', 'See'] },
+    { id: 'core-theme', title: 'Core theme (Camino)', data: core, head: ['Problem', 'Solution here', 'Reports'] },
+];
+export const count = (status) => sources.reduce((n, s) => n + s.data.items.filter((i) => i.status === status).length, 0);
+export const storyHref = (link) => `./?path=/${link.docs ? 'docs' : 'story'}/${link.docs ?? link.story}`;
+export const commitHref = (hash) => `https://github.com/hahnmg/kumano-kodo/commit/${hash}`;
+export const Row = ({ source, item }) =>
+    source.id === 'feedback' ? (
+        <li className="issue">
+            <p className="issue-problem">
+                <strong>{item.from}:</strong> {item.feedback}
+            </p>
+            <p className="issue-solution">{item.change}</p>
+            <p className="issue-refs">
+                {item.links.filter((l) => !l.commit).map((l) => (
+                    <a key={l.label} href={storyHref(l)} target="_top">
+                        {l.label}
+                    </a>
+                ))}
+                {item.links.filter((l) => l.commit).map((l) => (
+                    <a key={l.commit} className="issue-commit" href={commitHref(l.commit)} target="_blank" rel="noreferrer">
+                        {l.commit}
+                    </a>
+                ))}
+                {item.links.length ? null : '–'}
+            </p>
+        </li>
+    ) : (
+        <li className="issue">
+            <p className="issue-problem">{item.problem}</p>
+            <p className="issue-solution">{item.solution}</p>
+            <p className="issue-refs">
+                {item.issues.length
+                    ? item.issues.map((n) => (
+                          <a key={n} href={`https://forge.typo3.org/issues/${n}`} target="_blank" rel="noreferrer">
+                              #{n}
+                          </a>
+                      ))
+                    : 'Core team feedback'}
+            </p>
+        </li>
+    );
+
+<Meta title="Status" tags={['dev']} />
+
+# What was asked, and what changed
+
+<p className="issue-lede" data-theme="mono">
+    {
+        'Feedback from the team and every problem reported for TYPO3’s core theme Camino, with what Kumano Kodo did about each. Names open the result in this Storybook; hashes are commits and need access to the repository.'
+    }
+</p>
+
+<ul className="issue-summary" data-theme="mono">
+    {statuses
+        .filter((s) => count(s.status))
+        .map((s) => (
+            <li key={s.status} className={`issue-summary-item issue-${s.status}`}>
+                <strong>{count(s.status)}</strong> {s.label}
+            </li>
+        ))}
+</ul>
+
+<nav className="issue-sources" data-theme="mono" aria-label="Sources">
+    {sources.map((s) => (
+        <a key={s.id} href={`#${s.id}`}>
+            {s.title} ({s.data.items.length})
+        </a>
+    ))}
+</nav>
+
+{sources.map((source) => (
+
+<section key={source.id} id={source.id} className="issue-source-section" data-theme="mono">
+<h2>{source.title}</h2>
+{statuses.filter((s) => source.data.items.some((i) => i.status === s.status)).map((s) => (
+<div key={s.status} className={`issue-group issue-${s.status}`}>
+<h3 className="issue-group-title">{s.label}</h3>
+<ul className="issue-list">
+<li className="issue issue-head" aria-hidden="true">
+{source.head.map((h, i) => (
+<p key={h} className={['issue-problem', 'issue-solution', 'issue-refs'][i]}>{h}</p>
+))}
+</li>
+{source.data.items.filter((i) => i.status === s.status).map((item) => (
+<Row key={item.feedback ?? item.problem} source={source} item={item} />
+))}
+</ul>
+</div>
+))}
+<p className="issue-source">{source.data.source}</p>
+</section>
+))}

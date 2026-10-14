@@ -15,19 +15,7 @@
     font-weight: 600;
 }
 
-.sbdocs .docs-callout {
-    margin: 0 0 var(--space-32);
-    padding: var(--space-16) var(--space-20);
-    border: var(--border-hairline) solid var(--color-accent);
-    background: var(--color-sunk);
-}
-
-.sbdocs .docs-callout a {
-    color: var(--color-accent);
-    font-weight: 600;
-}
-
-/* Core theme issues: one row per problem, the status colour as a bar on the left. */
+/* Status: one row per point, the status colour as a bar on the left. */
 .sbdocs .issue-solved {
     --issue-colour: var(--color-moss);
 }
@@ -42,6 +30,72 @@
 
 .sbdocs .issue-irrelevant {
     --issue-colour: var(--color-hair);
+}
+
+.sbdocs .issue-deferred {
+    --issue-colour: var(--color-line);
+}
+
+.sbdocs .issue-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8) var(--space-24);
+    margin: 0 0 var(--space-32);
+}
+
+.sbdocs .issue-sources a,
+.sbdocs .start-entry-links a {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.sbdocs .issue-source-section {
+    margin-top: var(--space-56);
+}
+
+/* Commits need access to the repository, so they come after the Storybook links and quieter. */
+.sbdocs .issue-refs .issue-commit {
+    color: var(--color-muted);
+}
+
+/* Start: the three ways in, side by side where there is room. */
+.sbdocs .start-lede {
+    max-width: 60ch;
+    color: var(--color-muted);
+    font-size: 1.1em;
+}
+
+.sbdocs .start-entries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-24);
+    margin: var(--space-32) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sbdocs .start-entry {
+    margin: 0;
+    padding: var(--space-24);
+    border-top: var(--space-4) solid var(--color-accent);
+    background: var(--color-sunk);
+}
+
+.sbdocs .start-entry-title {
+    margin: 0 0 var(--space-8);
+    border: 0;
+}
+
+.sbdocs .start-entry-text {
+    margin: 0 0 var(--space-16);
+}
+
+.sbdocs .start-entry-links {
+    display: grid;
+    gap: var(--space-8);
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .sbdocs .issue-lede {
