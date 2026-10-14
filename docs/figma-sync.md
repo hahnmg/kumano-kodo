@@ -134,8 +134,10 @@ the date when synced.
       Figure `Variant=Video`; Day 2 opens with it
 - [x] 2026-10-13 Video as set `State=Default/Asked` (the question before a
 - [x] 2026-10-14 Hero shade: gradient stops bound to `scrim/top`,
-      `scrim/middle`, `scrim/bottom` (Primitives) YouTube or Vimeo player loads,
-      on `color/paper`); Media Consent (the switch for the privacy page)
+- [x] 2026-10-14 Feature Card: `Ruled` merged into `Default` as `Image=Tall`
+      with the boolean `Rule`; its six instances keep their look `scrim/middle`,
+      `scrim/bottom` (Primitives) YouTube or Vimeo player loads, on
+      `color/paper`); Media Consent (the switch for the privacy page)
 - [x] 2026-10-13 Components: Fact List `Four rows`, Breadcrumb `Third level`
       (both off by default); Figure and Teaser Card images fill their width and
       keep their ratio (4:3, 1:1)

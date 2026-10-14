@@ -3,10 +3,12 @@
 <f:argument name="title" type="string" description="The title."/>
 <f:argument name="text" type="string" optional="{true}" description="A short description."/>
 <f:argument name="image" type="object" optional="{true}" description="A file or file reference."/>
-<f:argument name="emphasis" type="string" optional="{true}" default="default" description="default, featured or ruled."/>
+<f:argument name="emphasis" type="string" optional="{true}" default="default" description="default or featured."/>
+<f:argument name="rule" type="bool" optional="{true}" default="{false}" description="A hairline above the card."/>
+<f:argument name="tall" type="bool" optional="{true}" default="{false}" description="A taller photo, as the card below a pair has."/>
 
 <f:asset.css identifier="kumano-feature-card" href="EXT:kumano_kodo/Resources/Public/Css/Components/feature-card.css"/>
-<article class="feature-card feature-card-{emphasis}">
+<article class="feature-card feature-card-{emphasis}{f:if(condition: rule, then: ' feature-card-ruled')}{f:if(condition: tall, then: ' feature-card-tall')}">
     <f:if condition="{image}">
         <kk:image image="{image}" class="feature-card-image"/>
     </f:if>

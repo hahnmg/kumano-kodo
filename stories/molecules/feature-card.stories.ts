@@ -7,10 +7,15 @@ const card = (p: PlaceCardProps) => `<div style="max-width:765px">${featureCard(
 
 const meta: Meta<PlaceCardProps> = {
   title: 'Molecules/Feature Card',
-  argTypes: { variant: choice<NonNullable<PlaceCardProps['variant']>>()('featured', 'default', 'ruled') },
+  argTypes: {
+    variant: choice<NonNullable<PlaceCardProps['variant']>>()('featured', 'default'),
+    rule: { control: 'boolean' },
+    tall: { control: 'boolean' },
+  },
 };
 export default meta;
 
 export const Featured: StoryObj<PlaceCardProps> = { render: localized(card, (c) => c.kumano.places[0]) };
 export const Default: StoryObj<PlaceCardProps> = { args: { variant: 'default' }, render: localized(card, (c) => c.kumano.places[1]) };
+// The card below the pair: rule and tall image.
 export const Ruled: StoryObj<PlaceCardProps> = { render: localized(card, (c) => c.kumano.places[2]) };

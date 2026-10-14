@@ -3,7 +3,16 @@
 <f:variable name="href">{f:uri.typolink(parameter: card.link)}</f:variable>
 <f:switch expression="{data.tx_kumanokodo_variant}">
     <f:case value="place">
-        <kk:featureCard image="{card.image -> f:first()}" title="{card.title}" text="{card.text}" emphasis="{card.emphasis}"/>
+        <f:comment>The editor's "ruled" is the card below a pair: the default card with rule and tall photo.</f:comment>
+        <f:variable name="ruled" value="{f:if(condition: '{card.emphasis} == ruled', then: 1, else: 0)}"/>
+        <kk:featureCard
+            image="{card.image -> f:first()}"
+            title="{card.title}"
+            text="{card.text}"
+            emphasis="{f:if(condition: '{card.emphasis} == featured', then: 'featured', else: 'default')}"
+            rule="{ruled}"
+            tall="{ruled}"
+        />
     </f:case>
     <f:case value="person">
         <kk:personCard image="{card.image -> f:first()}" name="{card.title}" role="{card.meta}" focus="{card.text}"/>

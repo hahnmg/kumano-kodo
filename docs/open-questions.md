@@ -17,7 +17,6 @@ earlier ones stay.
 
 | Topic                                                  | Decision                                                                                                                         |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| Place Card `Ruled` (formerly question 10)              | Merges into `Default`: the top rule and the image ratio become properties                                                        |
 | Theme effects Figma cannot show (formerly question 13) | Approximated in Figma as far as it goes; the rest documented per theme in Storybook                                              |
 | Hero slider                                            | Planned with a Storybook draft for approval                                                                                      |
 | Base theme                                             | The journal's own models (stations, day marks, route map, chapters) move out of the theme into the demo; own plan with migration |
@@ -25,6 +24,10 @@ earlier ones stay.
 ## Decisions
 
 ### 2026-10-14
+
+- **Place Card `Ruled` (question 10), done**: one `Default` card with the switch
+  Rule and the image axis Tall, in Figma and code (`rule`, `tall`); the editors'
+  choice Ruled stays and sets both.
 
 - **Hero gradient (question 6), done**: its three stops are the variables
   `scrim/top`, `scrim/middle` and `scrim/bottom` in Figma and code.

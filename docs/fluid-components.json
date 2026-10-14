@@ -269,7 +269,21 @@
 				"type": "string",
 				"required": false,
 				"default": "default",
-				"description": "default, featured or ruled."
+				"description": "default or featured."
+			},
+			{
+				"name": "rule",
+				"type": "bool",
+				"required": false,
+				"default": "{false}",
+				"description": "A hairline above the card."
+			},
+			{
+				"name": "tall",
+				"type": "bool",
+				"required": false,
+				"default": "{false}",
+				"description": "A taller photo, as the card below a pair has."
 			}
 		],
 		"slots": []

@@ -146,7 +146,8 @@ const build = (p: Photos) => {
       image: p['chikatsuyu-gate'],
       title: 'Chikatsuyu',
       description: 'The lantern gate at the edge of the village, with the three-legged crow on the middle lantern. The end of day two.',
-      variant: 'ruled' as const,
+      rule: true,
+      tall: true,
     },
   ];
 

@@ -144,7 +144,8 @@ const build = (p: Photos): LocaleContent => {
       image: p['chikatsuyu-gate'],
       title: '近露',
       description: '集落の入口にある提灯の門。真ん中の提灯には三本足の烏。二日目の終わり。',
-      variant: 'ruled' as const,
+      rule: true,
+      tall: true,
     },
   ];
 

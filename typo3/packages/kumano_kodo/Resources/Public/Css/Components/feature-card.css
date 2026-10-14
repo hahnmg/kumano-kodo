@@ -20,7 +20,7 @@
     border-top: var(--border-hairline) solid var(--color-line);
 }
 
-.feature-card-ruled .feature-card-image {
+.feature-card-tall .feature-card-image {
     aspect-ratio: 539 / 490;
 }
 

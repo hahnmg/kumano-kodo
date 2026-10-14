@@ -145,7 +145,8 @@ const build = (p: Photos): LocaleContent => {
       image: p['chikatsuyu-gate'],
       title: 'Chikatsuyu',
       description: 'Das Laternentor am Ortsrand, auf der mittleren Laterne die dreibeinige Krähe. Das Ende von Tag zwei.',
-      variant: 'ruled' as const,
+      rule: true,
+      tall: true,
     },
   ];
 

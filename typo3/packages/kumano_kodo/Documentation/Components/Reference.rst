@@ -246,7 +246,13 @@ A card that shows a place: image, title and text; featured sets it larger.
         - A file or file reference.
     *   - ``emphasis``
         - string, default ``default``
-        - default, featured or ruled.
+        - default or featured.
+    *   - ``rule``
+        - bool, default ``{false}``
+        - A hairline above the card.
+    *   - ``tall``
+        - bool, default ``{false}``
+        - A taller photo, as the card below a pair has.
 
 kk:figure
 =========
