@@ -22,5 +22,9 @@ rm -rf "$target/data.xml" "$target/data.xml.files" "$target/Site"
 mv public/fileadmin/user_upload/_temp_/importexport/data.xml public/fileadmin/user_upload/_temp_/importexport/data.xml.files "$target/"
 mkdir -p "$target/Site" && cp -R config/sites/kumano-kodo "$target/Site/"
 
+# impexp exports a news record's categories only from the category side (items) and keeps the count in the news row;
+# the import reads that count as a uid and adds category 1 to every report. The count goes, the relations stay.
+php -r '$f = $argv[1]; file_put_contents($f, preg_replace_callback("#<tablerow index=\"tx_news_domain_model_news:\\d+\".*?</tablerow>#s", fn ($m) => preg_replace("#(<field index=\"categories\"[^>]*>)\\d+(</field>)#", "\${1}0\${2}", $m[0]), file_get_contents($f)));' "$target/data.xml"
+
 grep -q '<files_fal' "$target/data.xml" || { echo "data.xml has no files_fal section: the images are missing" >&2; exit 1; }
 echo "Exported root page $root with $(ls "$target/data.xml.files" | wc -l | tr -d ' ') files to $target"
