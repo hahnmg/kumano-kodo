@@ -135,9 +135,12 @@ the date when synced.
 - [x] 2026-10-13 Video as set `State=Default/Asked` (the question before a
 - [x] 2026-10-14 Hero shade: gradient stops bound to `scrim/top`,
 - [x] 2026-10-14 Feature Card: `Ruled` merged into `Default` as `Image=Tall`
-      with the boolean `Rule`; its six instances keep their look `scrim/middle`,
-      `scrim/bottom` (Primitives) YouTube or Vimeo player loads, on
-      `color/paper`); Media Consent (the switch for the privacy page)
+- [x] 2026-10-14 Text styles `Violet/…` for the ten display styles (capitals, +9
+      % tracking, as `--display-case` and `--display-tracking` in code); Kumano
+      Home · Violet uses them with the boolean `Rule`; its six instances keep
+      their look `scrim/middle`, `scrim/bottom` (Primitives) YouTube or Vimeo
+      player loads, on `color/paper`); Media Consent (the switch for the privacy
+      page)
 - [x] 2026-10-13 Components: Fact List `Four rows`, Breadcrumb `Third level`
       (both off by default); Figure and Teaser Card images fill their width and
       keep their ratio (4:3, 1:1)

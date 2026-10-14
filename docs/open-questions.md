@@ -15,15 +15,19 @@ earlier ones stay.
 
 ## Decided, to do
 
-| Topic                                                  | Decision                                                                                                                         |
-| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| Theme effects Figma cannot show (formerly question 13) | Approximated in Figma as far as it goes; the rest documented per theme in Storybook                                              |
-| Hero slider                                            | Planned with a Storybook draft for approval                                                                                      |
-| Base theme                                             | The journal's own models (stations, day marks, route map, chapters) move out of the theme into the demo; own plan with migration |
+| Topic       | Decision                                                                                                                         |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Hero slider | Planned with a Storybook draft for approval                                                                                      |
+| Base theme  | The journal's own models (stations, day marks, route map, chapters) move out of the theme into the demo; own plan with migration |
 
 ## Decisions
 
 ### 2026-10-14
+
+- **Theme effects (question 13), done**: the gradients, glow and triple rule it
+  listed left with v3; the code keeps only Violet's capitals and +0.09em on the
+  display face. Figma has them as the text styles `Violet/…`, used by Kumano
+  Home · Violet.
 
 - **Place Card `Ruled` (question 10), done**: one `Default` card with the switch
   Rule and the image axis Tall, in Figma and code (`rule`, `tall`); the editors'
