@@ -133,8 +133,9 @@ the date when synced.
 - [x] 2026-10-13 Video atom (poster in the video's format, play button) and
       Figure `Variant=Video`; Day 2 opens with it
 - [x] 2026-10-13 Video as set `State=Default/Asked` (the question before a
-      YouTube or Vimeo player loads, on `color/paper`); Media Consent (the
-      switch for the privacy page)
+- [x] 2026-10-14 Hero shade: gradient stops bound to `scrim/top`,
+      `scrim/middle`, `scrim/bottom` (Primitives) YouTube or Vimeo player loads,
+      on `color/paper`); Media Consent (the switch for the privacy page)
 - [x] 2026-10-13 Components: Fact List `Four rows`, Breadcrumb `Third level`
       (both off by default); Figure and Teaser Card images fill their width and
       keep their ratio (4:3, 1:1)

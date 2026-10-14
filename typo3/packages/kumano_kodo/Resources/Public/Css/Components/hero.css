@@ -22,9 +22,9 @@
     object-fit: cover;
 }
 
-/* The only colour outside the tokens, the photo shade from the v3 export; it is to become a token. */
+/* The photo shade: dark at the top for the header, light in the middle, darkest under the text. */
 .hero-shade {
-    background: linear-gradient(180deg, rgb(10 12 14 / 55%) 0%, rgb(10 12 14 / 12%) 38%, rgb(10 12 14 / 82%) 100%);
+    background: linear-gradient(180deg, var(--scrim-top) 0%, var(--scrim-middle) 38%, var(--scrim-bottom) 100%);
 }
 
 .hero-content {

@@ -8,6 +8,9 @@
     --theme-ocean: #0f6e93;
     --theme-violet: #ff3e8a;
     --on-image-ink-raw: #15171a;
+    --scrim-top: rgb(10 12 14 / 55%);
+    --scrim-middle: rgb(10 12 14 / 12%);
+    --scrim-bottom: rgb(10 12 14 / 82%);
 }
 
 :root,

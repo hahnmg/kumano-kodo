@@ -17,7 +17,6 @@ earlier ones stay.
 
 | Topic                                                  | Decision                                                                                                                         |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| Hero gradient (formerly question 6)                    | Becomes a token, in Figma and code                                                                                               |
 | Place Card `Ruled` (formerly question 10)              | Merges into `Default`: the top rule and the image ratio become properties                                                        |
 | Theme effects Figma cannot show (formerly question 13) | Approximated in Figma as far as it goes; the rest documented per theme in Storybook                                              |
 | Hero slider                                            | Planned with a Storybook draft for approval                                                                                      |
@@ -26,6 +25,9 @@ earlier ones stay.
 ## Decisions
 
 ### 2026-10-14
+
+- **Hero gradient (question 6), done**: its three stops are the variables
+  `scrim/top`, `scrim/middle` and `scrim/bottom` in Figma and code.
 
 - **Mobile (question 4)**: the coded responsive steps are the reference; no
   390px frames in Figma.
