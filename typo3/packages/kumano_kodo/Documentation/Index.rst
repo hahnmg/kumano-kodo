@@ -22,11 +22,13 @@ Kumano Kodo for TYPO3
 ----
 
 ..  figure:: /Images/Themes.svg
-    :alt: The start page in the five themes, one after the other: Caramel, Forest, Ocean, Violet and Mono
+    :alt: The start page in the five themes, one after the other: Caramel,
+        Forest, Ocean, Violet and Mono
     :class: with-shadow
 
-A theme for TYPO3 v14: site set, page layouts, 14 content elements in two containers, and templates for search,
-login and forms. It renders without fluid_styled_content.
+A theme for TYPO3 v14: site set, page layouts, 14 content elements in two
+containers, and templates for search, login and forms. It renders without
+fluid_styled_content.
 
 ----
 

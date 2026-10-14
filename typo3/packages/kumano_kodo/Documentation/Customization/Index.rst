@@ -7,35 +7,42 @@ Customization
 Own files
 =========
 
-The site settings in the category Own files take a stylesheet and a script, loaded after the theme, and a template
-folder ahead of the theme's. The folder mirrors `Resources/Private/Templates/` (`Pages/`, `Layouts/`, `Partials/`,
-`Content/`); a file there replaces the theme's file of the same name. A path that cannot be resolved is skipped.
+The site settings in the category Own files take a stylesheet and a script,
+loaded after the theme, and a template folder ahead of the theme's. The folder
+mirrors `Resources/Private/Templates/` (`Pages/`, `Layouts/`, `Partials/`,
+`Content/`); a file there replaces the theme's file of the same name. A path
+that cannot be resolved is skipped.
 
 Own content elements
 ====================
 
-Register the CType in your own extension as `Configuration/TCA/Overrides` does here, with the `kumanoHeading_*`
-palettes and the tab order General, Images, Appearance. Put its template in your template folder under `Content/`,
-build it from the theme's :ref:`components <components>` and render it through the `Kumano/Section` partial so it
-gets the section frame.
+Register the CType in your own extension as `Configuration/TCA/Overrides` does
+here, with the `kumanoHeading_*` palettes and the tab order General, Images,
+Appearance. Put its template in your template folder under `Content/`, build it
+from the theme's :ref:`components <components>` and render it through the
+`Kumano/Section` partial so it gets the section frame.
 
 Colours
 =======
 
-The five themes pass WCAG AA contrast in light and dark mode; the build checks every pairing of text and ground.
-Colours set in the site settings are not checked. Test text on paper, sunk and accent grounds with a contrast checker
-before going live, for example the `WebAIM Contrast Checker <https://webaim.org/resources/contrastchecker/>`__.
+The five themes pass WCAG AA contrast in light and dark mode; the build checks
+every pairing of text and ground. Colours set in the site settings are not
+checked. Test text on paper, sunk and accent grounds with a contrast checker
+before going live, for example the
+`WebAIM Contrast Checker <https://webaim.org/resources/contrastchecker/>`__.
 
 Logo
 ====
 
-Without a logo of its own the header shows the website title. The site setting Logo switches to the Kumano Kodo mark:
-Caramel shows the classic mark, the other themes the modern one. An editor uploads an own logo in the page properties
-of the home page (tab Appearance); it wins over both. An SVG takes the theme colours when its groups are named `bird`
-and `text`.
+Without a logo of its own the header shows the website title. The site setting
+Logo switches to the Kumano Kodo mark: Caramel shows the classic mark, the other
+themes the modern one. An editor uploads an own logo in the page properties of
+the home page (tab Appearance); it wins over both. An SVG takes the theme
+colours when its groups are named `bird` and `text`.
 
 Decoration
 ==========
 
-Two elements of the trail journal are off until a site switches them on in the site settings: the upright name
-beside the journal title, and the website title set large in the footer.
+Two elements of the trail journal are off until a site switches them on in the
+site settings: the upright name beside the journal title, and the website title
+set large in the footer.

@@ -4,11 +4,12 @@
 For editors
 ===========
 
-Layout comes from two containers, content from elements placed in them. An element placed directly on the page
-renders as its own section.
+Layout comes from two containers, content from elements placed in them. An
+element placed directly on the page renders as its own section.
 
-Every element has the same form: what it is on the tab General (display, heading, text, entries, links), photos on
-Images, and background, space above and anchor on Appearance. Spacing comes from the design, not from fields.
+Every element has the same form: what it is on the tab General (display,
+heading, text, entries, links), photos on Images, and background, space above
+and anchor on Appearance. Spacing comes from the design, not from fields.
 
 Containers
 ==========
@@ -17,8 +18,8 @@ Section
     One column with an optional heading.
 
 Columns
-    Two columns: Even, Content and sidebar, Text and media, Heading and content, Wide and narrow, Narrow and wide,
-    or Page top: text and list.
+    Two columns: Even, Content and sidebar, Text and media, Heading and content,
+    Wide and narrow, Narrow and wide, or Page top: text and list.
 
 Content elements
 ================
@@ -30,13 +31,16 @@ Text and image
     Text beside a photo.
 
 Images
-    Figure (one or two photos), Figure without line above, Gallery, or Full width.
+    Figure (one or two photos), Figure without line above, Gallery, or Full
+    width.
 
 Cards
-    Teaser, Place, Person, Call to action, Link tile or Stage, in two to four columns or as a slider.
+    Teaser, Place, Person, Call to action, Link tile or Stage, in two to four
+    columns or as a slider.
 
 List
-    Media list, Days, Downloads (from files), Links side by side, Links one below the other, or Sub navigation.
+    Media list, Days, Downloads (from files), Links side by side, Links one
+    below the other, or Sub navigation.
 
 Facts
     With icons, Large figures, or Label and value.
@@ -57,7 +61,9 @@ Newsletter
     The sign-up form; its target is a site setting.
 
 External videos
-    The switch that loads YouTube and Vimeo videos without asking; for the privacy page.
+    The switch that loads YouTube and Vimeo videos without asking; for the
+    privacy page.
 
-Entries of cards and lists, links and chips share one record type. Each entry can be limited to a user group, for
-example a footer link that only logged-in visitors see.
+Entries of cards and lists, links and chips share one record type. Each entry
+can be limited to a user group, for example a footer link that only logged-in
+visitors see.

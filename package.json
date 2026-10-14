@@ -11,7 +11,7 @@
 		"export:starter": "node scripts/export-starter.mjs",
 		"docs:feature": "node scripts/build-feature.mjs",
 		"docs": "docker run --rm -v \"$PWD/typo3/packages/kumano_kodo\":/project ghcr.io/typo3-documentation/render-guides:latest --config=Documentation",
-		"lint": "eslint . && stylelint \"stories/**/*.css\" \"src/**/*.css\" && node scripts/check-filenames.mjs && node scripts/check-fluid.mjs && prettier --check \"**/*.{ts,mjs,css,json,md}\"",
+		"lint": "eslint . && stylelint \"stories/**/*.css\" \"src/**/*.css\" && node scripts/check-filenames.mjs && node scripts/check-fluid.mjs && node scripts/wrap-rst.mjs --check && prettier --check \"**/*.{ts,mjs,css,json,md}\"",
 		"size": "node scripts/check-size.mjs",
 		"test": "npm run tokens && vitest run",
 		"images": "node scripts/build-images.mjs"
