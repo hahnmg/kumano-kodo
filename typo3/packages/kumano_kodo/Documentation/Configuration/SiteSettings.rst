@@ -8,6 +8,12 @@ Site settings
 Sites › Setup › Edit settings of the site. Empty fields and colours left at
 their default keep the theme's value.
 
+..  important::
+
+    After saving, flush the frontend caches (the lightning icon in the toolbar).
+    The settings editor clears neither the page nor the TypoScript cache, so
+    pages keep the old values until then.
+
 Appearance
 ==========
 
