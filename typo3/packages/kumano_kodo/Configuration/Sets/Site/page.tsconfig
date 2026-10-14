@@ -39,16 +39,16 @@ TCEFORM.tt_content {
 }
 
 mod.web_layout.tt_content.preview {
-    kumano_text_image = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoTextImage.fluid.html
-    kumano_images = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoImages.fluid.html
-    kumano_cards = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoCards.fluid.html
-    kumano_list = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoList.fluid.html
-    kumano_facts = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoFacts.fluid.html
-    kumano_callout = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoCallout.fluid.html
-    kumano_questions = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoQuestions.fluid.html
-    kumano_page_top = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoPageTop.fluid.html
-    kumano_chapter = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoChapter.fluid.html
-    kumano_route_map = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoRouteMap.fluid.html
-    kumano_newsletter = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoNewsletter.fluid.html
+  kumano_text_image = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoTextImage.fluid.html
+  kumano_images = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoImages.fluid.html
+  kumano_cards = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoCards.fluid.html
+  kumano_list = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoList.fluid.html
+  kumano_facts = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoFacts.fluid.html
+  kumano_callout = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoCallout.fluid.html
+  kumano_questions = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoQuestions.fluid.html
+  kumano_page_top = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoPageTop.fluid.html
+  kumano_chapter = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoChapter.fluid.html
+  kumano_route_map = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoRouteMap.fluid.html
+  kumano_newsletter = EXT:kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoNewsletter.fluid.html
 }
 

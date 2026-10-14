@@ -1210,14 +1210,14 @@ const walkForm = () => {
     const body = Object.keys(source)
       .map(
         (id) =>
-          `            <trans-unit id="${id}">\n                <source>${xml(source[id])}</source>\n` +
-          (lang === 'en' ? '' : `                <target>${xml(target[id])}</target>\n`) +
-          `            </trans-unit>`,
+          `      <trans-unit id="${id}">\n        <source>${xml(source[id])}</source>\n` +
+          (lang === 'en' ? '' : `        <target>${xml(target[id])}</target>\n`) +
+          `      </trans-unit>`,
       )
       .join('\n');
     return (
       `<?xml version="1.0" encoding="UTF-8"?>\n<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n` +
-      `    <file source-language="en"${lang === 'en' ? '' : ` target-language="${lang}"`} datatype="plaintext" original="form_walk" product-name="kumano_kodo_demo">\n        <body>\n${body}\n        </body>\n    </file>\n</xliff>\n`
+      `  <file source-language="en"${lang === 'en' ? '' : ` target-language="${lang}"`} datatype="plaintext" original="form_walk" product-name="kumano_kodo_demo">\n    <body>\n${body}\n    </body>\n  </file>\n</xliff>\n`
     );
   };
   return { definition, xliff };

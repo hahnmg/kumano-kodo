@@ -265,14 +265,14 @@ const writeXliff = async (language, name, pick, { content, locales }) => {
     const units = Object.keys(source)
       .map(
         (id) =>
-          `            <trans-unit id="${id}">\n                <source>${xml(source[id])}</source>\n` +
-          (locale === 'en' ? '' : `                <target>${xml(ui[id])}</target>\n`) +
-          `            </trans-unit>`,
+          `      <trans-unit id="${id}">\n        <source>${xml(source[id])}</source>\n` +
+          (locale === 'en' ? '' : `        <target>${xml(ui[id])}</target>\n`) +
+          `      </trans-unit>`,
       )
       .join('\n');
     const file =
       `<?xml version="1.0" encoding="UTF-8"?>\n<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n` +
-      `    <file source-language="en"${target} datatype="plaintext" original="${name}" product-name="kumano_kodo">\n        <body>\n${units}\n        </body>\n    </file>\n</xliff>\n`;
+      `  <file source-language="en"${target} datatype="plaintext" original="${name}" product-name="kumano_kodo">\n    <body>\n${units}\n    </body>\n  </file>\n</xliff>\n`;
     await writeFile(join(language, `${locale === 'en' ? '' : `${locale}.`}${name}.xlf`), file);
   }
 };
@@ -474,8 +474,7 @@ const buildSettings = async (themes) => {
     ]),
   ];
   await writeFile(join(set, 'settings.definitions.yaml'), `${yaml.join('\n')}\n`);
-  const unit = (id, text) =>
-    `            <trans-unit id="${id}">\n                <source>${xml(text)}</source>\n            </trans-unit>`;
+  const unit = (id, text) => `      <trans-unit id="${id}">\n        <source>${xml(text)}</source>\n      </trans-unit>`;
   const units = [
     unit('label', 'Kumano Kodo'),
     unit('categories.kumanoKodo', 'Kumano Kodo'),
@@ -489,7 +488,7 @@ const buildSettings = async (themes) => {
   await writeFile(
     join(set, 'labels.xlf'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n` +
-      `    <file source-language="en" datatype="plaintext" original="labels" product-name="kumano_kodo">\n        <body>\n${units.join('\n')}\n        </body>\n    </file>\n</xliff>\n`,
+      `  <file source-language="en" datatype="plaintext" original="labels" product-name="kumano_kodo">\n    <body>\n${units.join('\n')}\n    </body>\n  </file>\n</xliff>\n`,
   );
 };
 

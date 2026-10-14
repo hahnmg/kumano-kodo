@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="ja" datatype="plaintext" original="form_contact" product-name="kumano_kodo">
-        <body>
-            <trans-unit id="kumano-contact.renderingOptions.submitButtonLabel">
-                <source>Send</source>
-                <target>送信</target>
-            </trans-unit>
-            <trans-unit id="kumano-contact.element.name.properties.label">
-                <source>Name</source>
-                <target>名前</target>
-            </trans-unit>
-            <trans-unit id="kumano-contact.element.email.properties.label">
-                <source>Email address</source>
-                <target>メールアドレス</target>
-            </trans-unit>
-            <trans-unit id="kumano-contact.element.email.properties.placeholder">
-                <source>name@example.com</source>
-                <target>name@example.jp</target>
-            </trans-unit>
-            <trans-unit id="kumano-contact.element.message.properties.label">
-                <source>Message</source>
-                <target>メッセージ</target>
-            </trans-unit>
-            <trans-unit id="kumano-contact.element.consent.properties.label">
-                <source>I agree that my details are used to answer my message.</source>
-                <target>メッセージへの返信のために入力内容が使われることに同意します。</target>
-            </trans-unit>
-            <trans-unit id="kumano-contact.finisher.Confirmation.message">
-                <source>Thank you. Your message has arrived.</source>
-                <target>ありがとうございます。メッセージを受け取りました。</target>
-            </trans-unit>
-        </body>
-    </file>
+  <file source-language="en" target-language="ja" datatype="plaintext" original="form_contact" product-name="kumano_kodo">
+    <body>
+      <trans-unit id="kumano-contact.renderingOptions.submitButtonLabel">
+        <source>Send</source>
+        <target>送信</target>
+      </trans-unit>
+      <trans-unit id="kumano-contact.element.name.properties.label">
+        <source>Name</source>
+        <target>名前</target>
+      </trans-unit>
+      <trans-unit id="kumano-contact.element.email.properties.label">
+        <source>Email address</source>
+        <target>メールアドレス</target>
+      </trans-unit>
+      <trans-unit id="kumano-contact.element.email.properties.placeholder">
+        <source>name@example.com</source>
+        <target>name@example.jp</target>
+      </trans-unit>
+      <trans-unit id="kumano-contact.element.message.properties.label">
+        <source>Message</source>
+        <target>メッセージ</target>
+      </trans-unit>
+      <trans-unit id="kumano-contact.element.consent.properties.label">
+        <source>I agree that my details are used to answer my message.</source>
+        <target>メッセージへの返信のために入力内容が使われることに同意します。</target>
+      </trans-unit>
+      <trans-unit id="kumano-contact.finisher.Confirmation.message">
+        <source>Thank you. Your message has arrived.</source>
+        <target>ありがとうございます。メッセージを受け取りました。</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>

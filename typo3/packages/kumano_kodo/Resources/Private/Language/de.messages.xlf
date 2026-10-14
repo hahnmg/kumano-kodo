@@ -1,327 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="kumano_kodo">
-        <body>
-            <trans-unit id="mainNav">
-                <source>Main navigation</source>
-                <target>Hauptnavigation</target>
-            </trans-unit>
-            <trans-unit id="language">
-                <source>Language</source>
-                <target>Sprache</target>
-            </trans-unit>
-            <trans-unit id="menu">
-                <source>Menu</source>
-                <target>Menü</target>
-            </trans-unit>
-            <trans-unit id="darkMode">
-                <source>Dark mode</source>
-                <target>Dunkler Modus</target>
-            </trans-unit>
-            <trans-unit id="backToTop">
-                <source>Back to top</source>
-                <target>Nach oben</target>
-            </trans-unit>
-            <trans-unit id="playVideo">
-                <source>Play video</source>
-                <target>Video abspielen</target>
-            </trans-unit>
-            <trans-unit id="videoConsent">
-                <source>This video loads from %1$s, which then receives your IP address and may set cookies.</source>
-                <target>Dieses Video wird von %1$s geladen. %1$s erhält dabei Ihre IP-Adresse und kann Cookies setzen.</target>
-            </trans-unit>
-            <trans-unit id="videoConsentRemember">
-                <source>Always load external videos</source>
-                <target>Externe Videos immer laden</target>
-            </trans-unit>
-            <trans-unit id="videoConsentLoad">
-                <source>Load video</source>
-                <target>Video laden</target>
-            </trans-unit>
-            <trans-unit id="videoConsentPrivacy">
-                <source>Privacy policy</source>
-                <target>Datenschutzerklärung</target>
-            </trans-unit>
-            <trans-unit id="mediaConsentTitle">
-                <source>External videos</source>
-                <target>Externe Videos</target>
-            </trans-unit>
-            <trans-unit id="mediaConsentText">
-                <source>Videos from YouTube or Vimeo load only when you ask for them. Tick the box to load them straight away on this device.</source>
-                <target>Videos von YouTube oder Vimeo laden erst, wenn Sie es möchten. Mit dem Häkchen laden sie auf diesem Gerät sofort.</target>
-            </trans-unit>
-            <trans-unit id="mediaConsentToggle">
-                <source>Load external videos automatically</source>
-                <target>Externe Videos automatisch laden</target>
-            </trans-unit>
-            <trans-unit id="skipToContent">
-                <source>Skip to content</source>
-                <target>Zum Inhalt springen</target>
-            </trans-unit>
-            <trans-unit id="uploadDrop">
-                <source>Drag a file here or</source>
-                <target>Datei hierher ziehen oder</target>
-            </trans-unit>
-            <trans-unit id="uploadChoose">
-                <source>choose one</source>
-                <target>auswählen</target>
-            </trans-unit>
-            <trans-unit id="formSteps">
-                <source>Steps</source>
-                <target>Schritte</target>
-            </trans-unit>
-            <trans-unit id="newsAll">
-                <source>All reports</source>
-                <target>Alle Berichte</target>
-            </trans-unit>
-            <trans-unit id="newsPrevious">
-                <source>Previous report</source>
-                <target>Vorheriger Bericht</target>
-            </trans-unit>
-            <trans-unit id="newsNext">
-                <source>Next report</source>
-                <target>Nächster Bericht</target>
-            </trans-unit>
-            <trans-unit id="newsPhotos">
-                <source>Photos from this report</source>
-                <target>Fotos zu diesem Bericht</target>
-            </trans-unit>
-            <trans-unit id="newsDate">
-                <source>Date</source>
-                <target>Datum</target>
-            </trans-unit>
-            <trans-unit id="newsCategory">
-                <source>Category</source>
-                <target>Kategorie</target>
-            </trans-unit>
-            <trans-unit id="newsTags">
-                <source>Tags</source>
-                <target>Schlagwörter</target>
-            </trans-unit>
-            <trans-unit id="newsPages">
-                <source>Pages</source>
-                <target>Seiten</target>
-            </trans-unit>
-            <trans-unit id="newsPreviousPage">
-                <source>Previous page</source>
-                <target>Vorherige Seite</target>
-            </trans-unit>
-            <trans-unit id="newsNextPage">
-                <source>Next page</source>
-                <target>Nächste Seite</target>
-            </trans-unit>
-            <trans-unit id="newsDatePattern">
-                <source>d MMMM y</source>
-                <target>d. MMMM y</target>
-            </trans-unit>
-            <trans-unit id="newsListSeparator">
-                <source>, </source>
-                <target>, </target>
-            </trans-unit>
-            <trans-unit id="trailStatus">
-                <source>Trail status and contact</source>
-                <target>Wegzustand und Kontakt</target>
-            </trans-unit>
-            <trans-unit id="inSection">
-                <source>In this section</source>
-                <target>In diesem Bereich</target>
-            </trans-unit>
-            <trans-unit id="breadcrumb">
-                <source>Breadcrumb</source>
-                <target>Brotkrumen</target>
-            </trans-unit>
-            <trans-unit id="pages">
-                <source>Pages</source>
-                <target>Seiten</target>
-            </trans-unit>
-            <trans-unit id="previousPage">
-                <source>Previous page</source>
-                <target>Vorherige Seite</target>
-            </trans-unit>
-            <trans-unit id="nextPage">
-                <source>Next page</source>
-                <target>Nächste Seite</target>
-            </trans-unit>
-            <trans-unit id="previous">
-                <source>Previous</source>
-                <target>Zurück</target>
-            </trans-unit>
-            <trans-unit id="next">
-                <source>Next</source>
-                <target>Weiter</target>
-            </trans-unit>
-            <trans-unit id="close">
-                <source>Close</source>
-                <target>Schließen</target>
-            </trans-unit>
-            <trans-unit id="card">
-                <source>Card</source>
-                <target>Karte</target>
-            </trans-unit>
-            <trans-unit id="readMore">
-                <source>Read more</source>
-                <target>Weiterlesen</target>
-            </trans-unit>
-            <trans-unit id="emailAddress">
-                <source>Email address</source>
-                <target>E-Mail-Adresse</target>
-            </trans-unit>
-            <trans-unit id="emailPlaceholder">
-                <source>name@example.com</source>
-                <target>name@beispiel.de</target>
-            </trans-unit>
-            <trans-unit id="consent">
-                <source>I would like to receive the newsletter and have read the privacy policy.</source>
-                <target>Ich möchte den Newsletter erhalten und habe die Datenschutzerklärung gelesen.</target>
-            </trans-unit>
-            <trans-unit id="subscribe">
-                <source>Subscribe</source>
-                <target>Abonnieren</target>
-            </trans-unit>
-            <trans-unit id="search">
-                <source>Search</source>
-                <target>Suche</target>
-            </trans-unit>
-            <trans-unit id="searchPlaceholder">
-                <source>Search days, places and tips</source>
-                <target>Tage, Orte und Tipps durchsuchen</target>
-            </trans-unit>
-            <trans-unit id="searchSummary">
-                <source>%1$s results for “%2$s”</source>
-                <target>%1$s Ergebnisse für „%2$s“</target>
-            </trans-unit>
-            <trans-unit id="searchSummaryOne">
-                <source>1 result for “%1$s”</source>
-                <target>1 Ergebnis für „%1$s“</target>
-            </trans-unit>
-            <trans-unit id="searchEmpty">
-                <source>Nothing found for “%1$s”. A place or a day works best, for example Hongu.</source>
-                <target>Nichts gefunden für „%1$s“. Am besten klappt ein Ort oder ein Tag, zum Beispiel Hongu.</target>
-            </trans-unit>
-            <trans-unit id="searchResults">
-                <source>Search results</source>
-                <target>Suchergebnisse</target>
-            </trans-unit>
-            <trans-unit id="logIn">
-                <source>Log in</source>
-                <target>Anmelden</target>
-            </trans-unit>
-            <trans-unit id="username">
-                <source>Username</source>
-                <target>Benutzername</target>
-            </trans-unit>
-            <trans-unit id="password">
-                <source>Password</source>
-                <target>Passwort</target>
-            </trans-unit>
-            <trans-unit id="stayLoggedIn">
-                <source>Stay logged in</source>
-                <target>Angemeldet bleiben</target>
-            </trans-unit>
-            <trans-unit id="forgotPassword">
-                <source>Forgot your password?</source>
-                <target>Passwort vergessen?</target>
-            </trans-unit>
-            <trans-unit id="loginFailed">
-                <source>Login failed</source>
-                <target>Anmeldung fehlgeschlagen</target>
-            </trans-unit>
-            <trans-unit id="loginFailedText">
-                <source>Username or password were not accepted.</source>
-                <target>Benutzername oder Passwort wurden nicht akzeptiert.</target>
-            </trans-unit>
-            <trans-unit id="loggedInAs">
-                <source>Logged in as %1$s</source>
-                <target>Angemeldet als %1$s</target>
-            </trans-unit>
-            <trans-unit id="logOut">
-                <source>Log out</source>
-                <target>Abmelden</target>
-            </trans-unit>
-            <trans-unit id="demoAccess">
-                <source>Demo access</source>
-                <target>Demo-Zugang</target>
-            </trans-unit>
-            <trans-unit id="demoAccessText">
-                <source>Username %1$s · password %2$s</source>
-                <target>Benutzername %1$s · Passwort %2$s</target>
-            </trans-unit>
-            <trans-unit id="notFoundTitle">
-                <source>Page not found</source>
-                <target>Seite nicht gefunden</target>
-            </trans-unit>
-            <trans-unit id="notFoundText">
-                <source>This path is not on the map: the page may have moved, or the address has a typo. Search the journal above, or start again from here.</source>
-                <target>Dieser Weg steht auf keiner Karte: Die Seite ist umgezogen, oder in der Adresse steckt ein Tippfehler. Durchsuchen Sie das Tagebuch oben, oder beginnen Sie hier neu.</target>
-            </trans-unit>
-            <trans-unit id="papersTitle">
-                <source>Travel papers</source>
-                <target>Reiseunterlagen</target>
-            </trans-unit>
-            <trans-unit id="papersText">
-                <source>Welcome back. Here are the papers from our walk: the stage map, how we got there, and what to pack for rain. The days below lead back to each stage.</source>
-                <target>Willkommen zurück. Hier liegen die Unterlagen unserer Wanderung: die Etappenkarte, die Anreise und die Packliste für Regen. Die Tage darunter führen zurück zu jeder Etappe.</target>
-            </trans-unit>
-            <trans-unit id="papersLink">
-                <source>Your travel papers</source>
-                <target>Ihre Reiseunterlagen</target>
-            </trans-unit>
-            <trans-unit id="requiredNote">
-                <source>Fields marked * are required.</source>
-                <target>Mit * markierte Felder sind Pflichtfelder.</target>
-            </trans-unit>
-            <trans-unit id="fieldRequired">
-                <source>Please fill in this field.</source>
-                <target>Bitte füllen Sie dieses Feld aus.</target>
-            </trans-unit>
-            <trans-unit id="emailInvalid">
-                <source>Please enter a valid email address.</source>
-                <target>Bitte geben Sie eine gültige E-Mail-Adresse ein.</target>
-            </trans-unit>
-            <trans-unit id="send">
-                <source>Send</source>
-                <target>Senden</target>
-            </trans-unit>
-            <trans-unit id="formSent">
-                <source>Message sent</source>
-                <target>Nachricht gesendet</target>
-            </trans-unit>
-            <trans-unit id="formSentText">
-                <source>Thank you. Your message has arrived.</source>
-                <target>Danke. Ihre Nachricht ist angekommen.</target>
-            </trans-unit>
-            <trans-unit id="name">
-                <source>Name</source>
-                <target>Name</target>
-            </trans-unit>
-            <trans-unit id="topic">
-                <source>Topic</source>
-                <target>Thema</target>
-            </trans-unit>
-            <trans-unit id="message">
-                <source>Message</source>
-                <target>Nachricht</target>
-            </trans-unit>
-            <trans-unit id="contactConsent">
-                <source>I agree that my details are used to answer my message.</source>
-                <target>Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Nachricht verwendet werden.</target>
-            </trans-unit>
-            <trans-unit id="mapWalked">
-                <source>Walked section</source>
-                <target>Gegangener Abschnitt</target>
-            </trans-unit>
-            <trans-unit id="mapEnd">
-                <source>End of the walk</source>
-                <target>Ende der Wanderung</target>
-            </trans-unit>
-            <trans-unit id="mapBoundary">
-                <source>Day boundary with overnight stay</source>
-                <target>Tagesgrenze mit Übernachtung</target>
-            </trans-unit>
-            <trans-unit id="mapDay">
-                <source>This day</source>
-                <target>Dieser Tag</target>
-            </trans-unit>
-        </body>
-    </file>
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages" product-name="kumano_kodo">
+    <body>
+      <trans-unit id="mainNav">
+        <source>Main navigation</source>
+        <target>Hauptnavigation</target>
+      </trans-unit>
+      <trans-unit id="language">
+        <source>Language</source>
+        <target>Sprache</target>
+      </trans-unit>
+      <trans-unit id="menu">
+        <source>Menu</source>
+        <target>Menü</target>
+      </trans-unit>
+      <trans-unit id="darkMode">
+        <source>Dark mode</source>
+        <target>Dunkler Modus</target>
+      </trans-unit>
+      <trans-unit id="backToTop">
+        <source>Back to top</source>
+        <target>Nach oben</target>
+      </trans-unit>
+      <trans-unit id="playVideo">
+        <source>Play video</source>
+        <target>Video abspielen</target>
+      </trans-unit>
+      <trans-unit id="videoConsent">
+        <source>This video loads from %1$s, which then receives your IP address and may set cookies.</source>
+        <target>Dieses Video wird von %1$s geladen. %1$s erhält dabei Ihre IP-Adresse und kann Cookies setzen.</target>
+      </trans-unit>
+      <trans-unit id="videoConsentRemember">
+        <source>Always load external videos</source>
+        <target>Externe Videos immer laden</target>
+      </trans-unit>
+      <trans-unit id="videoConsentLoad">
+        <source>Load video</source>
+        <target>Video laden</target>
+      </trans-unit>
+      <trans-unit id="videoConsentPrivacy">
+        <source>Privacy policy</source>
+        <target>Datenschutzerklärung</target>
+      </trans-unit>
+      <trans-unit id="mediaConsentTitle">
+        <source>External videos</source>
+        <target>Externe Videos</target>
+      </trans-unit>
+      <trans-unit id="mediaConsentText">
+        <source>Videos from YouTube or Vimeo load only when you ask for them. Tick the box to load them straight away on this device.</source>
+        <target>Videos von YouTube oder Vimeo laden erst, wenn Sie es möchten. Mit dem Häkchen laden sie auf diesem Gerät sofort.</target>
+      </trans-unit>
+      <trans-unit id="mediaConsentToggle">
+        <source>Load external videos automatically</source>
+        <target>Externe Videos automatisch laden</target>
+      </trans-unit>
+      <trans-unit id="skipToContent">
+        <source>Skip to content</source>
+        <target>Zum Inhalt springen</target>
+      </trans-unit>
+      <trans-unit id="uploadDrop">
+        <source>Drag a file here or</source>
+        <target>Datei hierher ziehen oder</target>
+      </trans-unit>
+      <trans-unit id="uploadChoose">
+        <source>choose one</source>
+        <target>auswählen</target>
+      </trans-unit>
+      <trans-unit id="formSteps">
+        <source>Steps</source>
+        <target>Schritte</target>
+      </trans-unit>
+      <trans-unit id="newsAll">
+        <source>All reports</source>
+        <target>Alle Berichte</target>
+      </trans-unit>
+      <trans-unit id="newsPrevious">
+        <source>Previous report</source>
+        <target>Vorheriger Bericht</target>
+      </trans-unit>
+      <trans-unit id="newsNext">
+        <source>Next report</source>
+        <target>Nächster Bericht</target>
+      </trans-unit>
+      <trans-unit id="newsPhotos">
+        <source>Photos from this report</source>
+        <target>Fotos zu diesem Bericht</target>
+      </trans-unit>
+      <trans-unit id="newsDate">
+        <source>Date</source>
+        <target>Datum</target>
+      </trans-unit>
+      <trans-unit id="newsCategory">
+        <source>Category</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="newsTags">
+        <source>Tags</source>
+        <target>Schlagwörter</target>
+      </trans-unit>
+      <trans-unit id="newsPages">
+        <source>Pages</source>
+        <target>Seiten</target>
+      </trans-unit>
+      <trans-unit id="newsPreviousPage">
+        <source>Previous page</source>
+        <target>Vorherige Seite</target>
+      </trans-unit>
+      <trans-unit id="newsNextPage">
+        <source>Next page</source>
+        <target>Nächste Seite</target>
+      </trans-unit>
+      <trans-unit id="newsDatePattern">
+        <source>d MMMM y</source>
+        <target>d. MMMM y</target>
+      </trans-unit>
+      <trans-unit id="newsListSeparator">
+        <source>, </source>
+        <target>, </target>
+      </trans-unit>
+      <trans-unit id="trailStatus">
+        <source>Trail status and contact</source>
+        <target>Wegzustand und Kontakt</target>
+      </trans-unit>
+      <trans-unit id="inSection">
+        <source>In this section</source>
+        <target>In diesem Bereich</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb">
+        <source>Breadcrumb</source>
+        <target>Brotkrumen</target>
+      </trans-unit>
+      <trans-unit id="pages">
+        <source>Pages</source>
+        <target>Seiten</target>
+      </trans-unit>
+      <trans-unit id="previousPage">
+        <source>Previous page</source>
+        <target>Vorherige Seite</target>
+      </trans-unit>
+      <trans-unit id="nextPage">
+        <source>Next page</source>
+        <target>Nächste Seite</target>
+      </trans-unit>
+      <trans-unit id="previous">
+        <source>Previous</source>
+        <target>Zurück</target>
+      </trans-unit>
+      <trans-unit id="next">
+        <source>Next</source>
+        <target>Weiter</target>
+      </trans-unit>
+      <trans-unit id="close">
+        <source>Close</source>
+        <target>Schließen</target>
+      </trans-unit>
+      <trans-unit id="card">
+        <source>Card</source>
+        <target>Karte</target>
+      </trans-unit>
+      <trans-unit id="readMore">
+        <source>Read more</source>
+        <target>Weiterlesen</target>
+      </trans-unit>
+      <trans-unit id="emailAddress">
+        <source>Email address</source>
+        <target>E-Mail-Adresse</target>
+      </trans-unit>
+      <trans-unit id="emailPlaceholder">
+        <source>name@example.com</source>
+        <target>name@beispiel.de</target>
+      </trans-unit>
+      <trans-unit id="consent">
+        <source>I would like to receive the newsletter and have read the privacy policy.</source>
+        <target>Ich möchte den Newsletter erhalten und habe die Datenschutzerklärung gelesen.</target>
+      </trans-unit>
+      <trans-unit id="subscribe">
+        <source>Subscribe</source>
+        <target>Abonnieren</target>
+      </trans-unit>
+      <trans-unit id="search">
+        <source>Search</source>
+        <target>Suche</target>
+      </trans-unit>
+      <trans-unit id="searchPlaceholder">
+        <source>Search days, places and tips</source>
+        <target>Tage, Orte und Tipps durchsuchen</target>
+      </trans-unit>
+      <trans-unit id="searchSummary">
+        <source>%1$s results for “%2$s”</source>
+        <target>%1$s Ergebnisse für „%2$s“</target>
+      </trans-unit>
+      <trans-unit id="searchSummaryOne">
+        <source>1 result for “%1$s”</source>
+        <target>1 Ergebnis für „%1$s“</target>
+      </trans-unit>
+      <trans-unit id="searchEmpty">
+        <source>Nothing found for “%1$s”. A place or a day works best, for example Hongu.</source>
+        <target>Nichts gefunden für „%1$s“. Am besten klappt ein Ort oder ein Tag, zum Beispiel Hongu.</target>
+      </trans-unit>
+      <trans-unit id="searchResults">
+        <source>Search results</source>
+        <target>Suchergebnisse</target>
+      </trans-unit>
+      <trans-unit id="logIn">
+        <source>Log in</source>
+        <target>Anmelden</target>
+      </trans-unit>
+      <trans-unit id="username">
+        <source>Username</source>
+        <target>Benutzername</target>
+      </trans-unit>
+      <trans-unit id="password">
+        <source>Password</source>
+        <target>Passwort</target>
+      </trans-unit>
+      <trans-unit id="stayLoggedIn">
+        <source>Stay logged in</source>
+        <target>Angemeldet bleiben</target>
+      </trans-unit>
+      <trans-unit id="forgotPassword">
+        <source>Forgot your password?</source>
+        <target>Passwort vergessen?</target>
+      </trans-unit>
+      <trans-unit id="loginFailed">
+        <source>Login failed</source>
+        <target>Anmeldung fehlgeschlagen</target>
+      </trans-unit>
+      <trans-unit id="loginFailedText">
+        <source>Username or password were not accepted.</source>
+        <target>Benutzername oder Passwort wurden nicht akzeptiert.</target>
+      </trans-unit>
+      <trans-unit id="loggedInAs">
+        <source>Logged in as %1$s</source>
+        <target>Angemeldet als %1$s</target>
+      </trans-unit>
+      <trans-unit id="logOut">
+        <source>Log out</source>
+        <target>Abmelden</target>
+      </trans-unit>
+      <trans-unit id="demoAccess">
+        <source>Demo access</source>
+        <target>Demo-Zugang</target>
+      </trans-unit>
+      <trans-unit id="demoAccessText">
+        <source>Username %1$s · password %2$s</source>
+        <target>Benutzername %1$s · Passwort %2$s</target>
+      </trans-unit>
+      <trans-unit id="notFoundTitle">
+        <source>Page not found</source>
+        <target>Seite nicht gefunden</target>
+      </trans-unit>
+      <trans-unit id="notFoundText">
+        <source>This path is not on the map: the page may have moved, or the address has a typo. Search the journal above, or start again from here.</source>
+        <target>Dieser Weg steht auf keiner Karte: Die Seite ist umgezogen, oder in der Adresse steckt ein Tippfehler. Durchsuchen Sie das Tagebuch oben, oder beginnen Sie hier neu.</target>
+      </trans-unit>
+      <trans-unit id="papersTitle">
+        <source>Travel papers</source>
+        <target>Reiseunterlagen</target>
+      </trans-unit>
+      <trans-unit id="papersText">
+        <source>Welcome back. Here are the papers from our walk: the stage map, how we got there, and what to pack for rain. The days below lead back to each stage.</source>
+        <target>Willkommen zurück. Hier liegen die Unterlagen unserer Wanderung: die Etappenkarte, die Anreise und die Packliste für Regen. Die Tage darunter führen zurück zu jeder Etappe.</target>
+      </trans-unit>
+      <trans-unit id="papersLink">
+        <source>Your travel papers</source>
+        <target>Ihre Reiseunterlagen</target>
+      </trans-unit>
+      <trans-unit id="requiredNote">
+        <source>Fields marked * are required.</source>
+        <target>Mit * markierte Felder sind Pflichtfelder.</target>
+      </trans-unit>
+      <trans-unit id="fieldRequired">
+        <source>Please fill in this field.</source>
+        <target>Bitte füllen Sie dieses Feld aus.</target>
+      </trans-unit>
+      <trans-unit id="emailInvalid">
+        <source>Please enter a valid email address.</source>
+        <target>Bitte geben Sie eine gültige E-Mail-Adresse ein.</target>
+      </trans-unit>
+      <trans-unit id="send">
+        <source>Send</source>
+        <target>Senden</target>
+      </trans-unit>
+      <trans-unit id="formSent">
+        <source>Message sent</source>
+        <target>Nachricht gesendet</target>
+      </trans-unit>
+      <trans-unit id="formSentText">
+        <source>Thank you. Your message has arrived.</source>
+        <target>Danke. Ihre Nachricht ist angekommen.</target>
+      </trans-unit>
+      <trans-unit id="name">
+        <source>Name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="topic">
+        <source>Topic</source>
+        <target>Thema</target>
+      </trans-unit>
+      <trans-unit id="message">
+        <source>Message</source>
+        <target>Nachricht</target>
+      </trans-unit>
+      <trans-unit id="contactConsent">
+        <source>I agree that my details are used to answer my message.</source>
+        <target>Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Nachricht verwendet werden.</target>
+      </trans-unit>
+      <trans-unit id="mapWalked">
+        <source>Walked section</source>
+        <target>Gegangener Abschnitt</target>
+      </trans-unit>
+      <trans-unit id="mapEnd">
+        <source>End of the walk</source>
+        <target>Ende der Wanderung</target>
+      </trans-unit>
+      <trans-unit id="mapBoundary">
+        <source>Day boundary with overnight stay</source>
+        <target>Tagesgrenze mit Übernachtung</target>
+      </trans-unit>
+      <trans-unit id="mapDay">
+        <source>This day</source>
+        <target>Dieser Tag</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
