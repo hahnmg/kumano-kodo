@@ -25,8 +25,8 @@ final class StructuredDataProcessor implements DataProcessorInterface
         $page = $pageInformation->getPageRecord();
         // A site base without a host yields relative links; schema.org wants them absolute.
         $origin = rtrim($request->getAttribute('normalizedParams')->getSiteUrl(), '/');
-        $absolute = static fn (string $link): string => str_starts_with($link, '/') ? $origin . $link : $link;
-        $url = static fn (int $uid): string => $absolute($cObj->createUrl(['parameter' => $uid]));
+        $absolute = static fn(string $link): string => str_starts_with($link, '/') ? $origin . $link : $link;
+        $url = static fn(int $uid): string => $absolute($cObj->createUrl(['parameter' => $uid]));
         $home = $absolute((string)$language->getBase());
         $title = trim($language->getWebsiteTitle()) !== '' ? $language->getWebsiteTitle() : (string)($site->getConfiguration()['websiteTitle'] ?? '');
 

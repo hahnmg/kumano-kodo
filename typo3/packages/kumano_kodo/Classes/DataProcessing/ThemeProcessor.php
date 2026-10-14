@@ -11,9 +11,9 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;
 use TYPO3\CMS\Core\Site\Entity\Site;
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\SystemResource\SystemResourceFactory;
-use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -43,7 +43,7 @@ final class ThemeProcessor implements DataProcessorInterface
             return $processedData;
         }
         $settings = $site->getSettings();
-        $setting = static fn (string $key): string => trim((string)$settings->get('kumanoKodo.' . $key, ''));
+        $setting = static fn(string $key): string => trim((string)$settings->get('kumanoKodo.' . $key, ''));
         $theme = $this->presets->theme($setting('theme'));
 
         $root = [];
@@ -206,7 +206,7 @@ final class ThemeProcessor implements DataProcessorInterface
         if ($properties === []) {
             return '';
         }
-        $lines = array_map(static fn (string $k, string $v): string => $k . ': ' . $v . ';', array_keys($properties), $properties);
+        $lines = array_map(static fn(string $k, string $v): string => $k . ': ' . $v . ';', array_keys($properties), $properties);
         return $selector . ' {' . implode(' ', $lines) . '}';
     }
 }

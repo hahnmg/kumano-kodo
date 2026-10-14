@@ -40,14 +40,14 @@ final readonly class RemapSitePagesOnPackageInitialization
             foreach ($configuration['errorHandling'] ?? [] as $i => $handler) {
                 $configuration['errorHandling'][$i]['errorContentSource'] = preg_replace_callback(
                     '/^t3:\/\/page\?uid=(\d+)/',
-                    static fn (array $m): string => 't3://page?uid=' . ($pages[(int)$m[1]] ?? $m[1]),
+                    static fn(array $m): string => 't3://page?uid=' . ($pages[(int)$m[1]] ?? $m[1]),
                     (string)($handler['errorContentSource'] ?? '')
                 );
             }
             foreach ($configuration['routeEnhancers'] ?? [] as $name => $enhancer) {
                 if (isset($enhancer['limitToPages'])) {
                     $configuration['routeEnhancers'][$name]['limitToPages'] = array_map(
-                        static fn (int|string $uid): int => (int)($pages[(int)$uid] ?? $uid),
+                        static fn(int|string $uid): int => (int)($pages[(int)$uid] ?? $uid),
                         $enhancer['limitToPages']
                     );
                 }

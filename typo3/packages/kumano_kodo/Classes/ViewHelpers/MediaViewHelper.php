@@ -25,7 +25,7 @@ final class MediaViewHelper extends AbstractViewHelper
     {
         $files = array_values(array_filter(
             is_array($this->arguments['items']) ? $this->arguments['items'] : iterator_to_array($this->arguments['items'] ?? [], false),
-            static fn (mixed $file): bool => $file instanceof FileInterface,
+            static fn(mixed $file): bool => $file instanceof FileInterface,
         ));
         $media = [];
         for ($i = 0; $i < count($files); $i++) {

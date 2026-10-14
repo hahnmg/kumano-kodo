@@ -133,6 +133,7 @@ pages instead.
 | `npm run export:demo`, `npm run export:starter`            | Demo and starter pages and texts from the Storybook content as JSON                   |
 | `ddev exec -d /var/www/html/typo3 composer demo:export`    | Rebuilds the demo records and exports them as the demo's `data.xml`                   |
 | `ddev exec -d /var/www/html/typo3 composer starter:export` | The same for the starter package, then puts the demo back                             |
+| `ddev exec -d /var/www/html/typo3 composer cs`             | Checks the PHP against typo3/coding-standards; `cs:fix` corrects it                   |
 | `npm run docs`                                             | Renders the manual (Docker) into the package's `Documentation-GENERATED-temp/`        |
 | `npm run docs:feature`                                     | Draws the manual's start image, the start page in each theme (fetches the fonts once) |
 

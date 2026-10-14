@@ -32,6 +32,17 @@ final class BuildCommand extends Command
     private const SITE = 'kumano-kodo';
     private const LANGUAGES = ['de' => 1, 'ja' => 2];
 
+    /** Inline fields of content elements and pages, and the item table each holds. */
+    private const ITEMS = [
+        'tx_kumanokodo_entries' => 'tx_kumanokodo_entry',
+        'tx_kumanokodo_links' => 'tx_kumanokodo_entry',
+        'tx_kumanokodo_facts' => 'tx_kumanokodo_fact',
+        'tx_kumanokodo_questions' => 'tx_kumanokodo_question',
+        'tx_kumanokodo_stations' => 'tx_kumanokodo_station',
+        'tx_kumanokodo_day_marks' => 'tx_kumanokodo_day_mark',
+        'tx_kumanokodo_chips' => 'tx_kumanokodo_entry',
+    ];
+
     /** @var array<string, int> page key => uid */
     private array $pages = [];
     /** @var array<string, int> photo slug => sys_file uid */
@@ -44,6 +55,17 @@ final class BuildCommand extends Command
 
     /** @var array<string, int> download slug => sys_file uid */
     private array $files = [];
+
+    /** @var array<string, string|null> page key => parent key */
+    private array $parentOf = [];
+
+    /** @var array<string, list<int>> "pid:colPos:container" => elements in the order of the definition */
+    private array $order = [];
+
+    /** @var array<string, int> "pid:colPos:container" => uid of the last element created there */
+    private array $lastContent = [];
+
+    private array $siteConfiguration = [];
 
     public function __construct(
         private readonly ConnectionPool $connectionPool,
@@ -202,7 +224,7 @@ final class BuildCommand extends Command
     {
         $parent = $page['parent'] === null ? 0 : $this->pages[$page['parent']];
         // A positive pid inserts at the top, so later siblings go after the last one created.
-        $siblings = array_filter($this->pages, fn (string $key) => ($this->parentOf[$key] ?? null) === $page['parent'], ARRAY_FILTER_USE_KEY);
+        $siblings = array_filter($this->pages, fn(string $key) => ($this->parentOf[$key] ?? null) === $page['parent'], ARRAY_FILTER_USE_KEY);
         $pid = $siblings === [] ? $parent : -end($siblings);
         $fields = [
             'pid' => $pid,
@@ -233,9 +255,6 @@ final class BuildCommand extends Command
             $this->translate('pages', $this->pages[$page['key']], $language, ['title' => $page['title'][$code], 'description' => $page['description'][$code] ?? '', 'slug' => $page['slug'], 'hidden' => 0]);
         }
     }
-
-    /** @var array<string, string|null> page key => parent key */
-    private array $parentOf = [];
 
     private function addFlyout(array $page): void
     {
@@ -311,17 +330,6 @@ final class BuildCommand extends Command
         }
     }
 
-    /** Inline fields of content elements and pages, and the item table each holds. */
-    private const ITEMS = [
-        'tx_kumanokodo_entries' => 'tx_kumanokodo_entry',
-        'tx_kumanokodo_links' => 'tx_kumanokodo_entry',
-        'tx_kumanokodo_facts' => 'tx_kumanokodo_fact',
-        'tx_kumanokodo_questions' => 'tx_kumanokodo_question',
-        'tx_kumanokodo_stations' => 'tx_kumanokodo_station',
-        'tx_kumanokodo_day_marks' => 'tx_kumanokodo_day_mark',
-        'tx_kumanokodo_chips' => 'tx_kumanokodo_entry',
-    ];
-
     // Nested records are written in steps: an inline child only attaches to a parent that is already saved.
     // Returns the number of elements created, children of containers included.
     private function createElement(array $element, int $pid, int $colPos, int $container = 0): int
@@ -329,7 +337,7 @@ final class BuildCommand extends Command
         $fields = ['pid' => $pid, 'colPos' => $colPos, 'CType' => $element['type'], 'hidden' => 0];
         foreach ($element['fields'] ?? [] as $field => $value) {
             $fields[$field] = $field === 'pi_flexform'
-                ? preg_replace_callback('/page:([a-z0-9-]+)/', fn (array $m): string => (string)$this->pages[$m[1]], (string)$value)
+                ? preg_replace_callback('/page:([a-z0-9-]+)/', fn(array $m): string => (string)$this->pages[$m[1]], (string)$value)
                 : $this->value($value, 'en');
         }
         if ($container > 0) {
@@ -348,7 +356,7 @@ final class BuildCommand extends Command
             $data['sys_file_reference']['NEWfile' . $i] = ['pid' => $pid, 'uid_local' => $this->files[$slug]];
         }
         if ($element['media'] ?? []) {
-            $data['tt_content']['NEWce']['media'] = implode(',', array_map(static fn (int $i): string => 'NEWfile' . $i, array_keys($element['media']['en'])));
+            $data['tt_content']['NEWce']['media'] = implode(',', array_map(static fn(int $i): string => 'NEWfile' . $i, array_keys($element['media']['en'])));
         }
         $uid = $this->create('tt_content', $fields, $data);
         if (isset($element['key'])) {
@@ -496,9 +504,6 @@ final class BuildCommand extends Command
         return is_array($value) ? $value[$code] : $value;
     }
 
-    /** @var array<string, list<int>> "pid:colPos:container" => elements in the order of the definition */
-    private array $order = [];
-
     // Adding children to a container moves elements around; the definition's order is set once at the end.
     private function applyOrder(): void
     {
@@ -511,9 +516,6 @@ final class BuildCommand extends Command
             }
         }
     }
-
-    /** @var array<string, int> "pid:colPos:container" => uid of the last element created there */
-    private array $lastContent = [];
 
     private function writeSite(array $site): void
     {
@@ -532,14 +534,14 @@ final class BuildCommand extends Command
             'languages' => $languages,
         ];
         $this->siteWriter->write(self::SITE, $this->siteConfiguration);
-        $this->siteWriter->writeSettings(self::SITE, array_filter($site['settings'], fn (mixed $value): bool => !$this->isPageKey($value)));
+        $this->siteWriter->writeSettings(self::SITE, array_filter($site['settings'], fn(mixed $value): bool => !$this->isPageKey($value)));
     }
 
     // A setting can name a page by key (page:privacy); it becomes that page's uid once the pages exist.
     private function writePageSettings(array $settings): void
     {
         $this->siteWriter->writeSettings(self::SITE, array_map(
-            fn (mixed $value): mixed => $this->isPageKey($value) ? $this->pages[substr($value, 5)] : $value,
+            fn(mixed $value): mixed => $this->isPageKey($value) ? $this->pages[substr($value, 5)] : $value,
             $settings
         ));
     }
@@ -558,8 +560,6 @@ final class BuildCommand extends Command
         $this->siteWriter->write(self::SITE, $this->siteConfiguration);
     }
 
-    private array $siteConfiguration = [];
-
     // limitToPages names page keys; they become uids once the pages exist.
     private function writeRouteEnhancers(array $enhancers): void
     {
@@ -568,7 +568,7 @@ final class BuildCommand extends Command
         }
         foreach ($enhancers as $name => $enhancer) {
             if (isset($enhancer['limitToPages'])) {
-                $enhancers[$name]['limitToPages'] = array_map(fn (string $key): int => $this->pages[$key], $enhancer['limitToPages']);
+                $enhancers[$name]['limitToPages'] = array_map(fn(string $key): int => $this->pages[$key], $enhancer['limitToPages']);
             }
         }
         $this->siteConfiguration['routeEnhancers'] = $enhancers;
@@ -601,8 +601,8 @@ final class BuildCommand extends Command
                 'bodytext' => $item['bodytext']['en'],
                 'datetime' => (new \DateTimeImmutable($item['datetime']))->getTimestamp(),
                 'path_segment' => $item['slug'],
-                'categories' => implode(',', array_map(static fn (string $key): int => $categories[$key], $item['categories'])),
-                'tags' => implode(',', array_map(static fn (string $key): int => $tags[$key], $item['tags'])),
+                'categories' => implode(',', array_map(static fn(string $key): int => $categories[$key], $item['categories'])),
+                'tags' => implode(',', array_map(static fn(string $key): int => $tags[$key], $item['tags'])),
             ];
             $data = ['tx_news_domain_model_news' => ['NEWnews' => $fields]];
             $data['tx_news_domain_model_news']['NEWnews']['fal_media'] = $this->references($data, $item['images'], $folder);

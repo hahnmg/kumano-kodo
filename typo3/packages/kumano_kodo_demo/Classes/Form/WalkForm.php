@@ -45,7 +45,7 @@ final readonly class WalkForm
     public function storeInDatabase(): int
     {
         $uid = $this->createRecord();
-        $this->replaceInPlugins(fn (string $value): bool => $value === self::PLACEHOLDER, $uid);
+        $this->replaceInPlugins(fn(string $value): bool => $value === self::PLACEHOLDER, $uid);
         return $uid;
     }
 
@@ -58,7 +58,7 @@ final readonly class WalkForm
         $configuration = (string)preg_replace('/"contentElementUid":\s*"?' . $exportedElement . '"?/', '"contentElementUid":' . $importedElement, (string)($row['configuration'] ?? ''));
         // A JSON column: passed as text, or the connection would encode the encoded definition once more.
         $connection->update(self::TABLE, ['configuration' => $configuration], ['uid' => $uid], ['configuration' => ParameterType::STRING]);
-        $this->replaceInPlugins(fn (string $value): bool => ctype_digit($value), $uid);
+        $this->replaceInPlugins(fn(string $value): bool => ctype_digit($value), $uid);
     }
 
     // The core's transfer command writes the record in its own format, under a unique identifier such as walk_1, as
@@ -87,7 +87,7 @@ final readonly class WalkForm
         $query = $this->connectionPool->getQueryBuilderForTable(self::TABLE);
         $query->getRestrictions()->removeAll();
         $rows = $query->select('uid', 'identifier', 'configuration')->from(self::TABLE)->orderBy('uid', 'DESC')->executeQuery()->fetchAllAssociative();
-        return array_values(array_filter($rows, static fn (array $row): bool => preg_match('/^' . self::IDENTIFIER . '(_\d+)?$/', (string)$row['identifier']) === 1));
+        return array_values(array_filter($rows, static fn(array $row): bool => preg_match('/^' . self::IDENTIFIER . '(_\d+)?$/', (string)$row['identifier']) === 1));
     }
 
     /** @param \Closure(string): bool $matches which persistence identifiers point at this form */
@@ -97,7 +97,7 @@ final readonly class WalkForm
         foreach ($connection->select(['uid', 'pi_flexform'], 'tt_content', ['CType' => 'form_formframework'])->fetchAllAssociative() as $row) {
             $flexform = (string)preg_replace_callback(
                 '/(<field index="settings\.persistenceIdentifier">\s*<value index="vDEF">)([^<]*)(<\/value>)/',
-                fn (array $m): string => $matches($m[2]) ? $m[1] . $uid . $m[3] : $m[0],
+                fn(array $m): string => $matches($m[2]) ? $m[1] . $uid . $m[3] : $m[0],
                 (string)$row['pi_flexform'],
             );
             if ($flexform !== $row['pi_flexform']) {
