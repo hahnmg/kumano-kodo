@@ -136,11 +136,13 @@ the date when synced.
 - [x] 2026-10-14 Hero shade: gradient stops bound to `scrim/top`,
 - [x] 2026-10-14 Feature Card: `Ruled` merged into `Default` as `Image=Tall`
 - [x] 2026-10-14 Text styles `Violet/…` for the ten display styles (capitals, +9
-      % tracking, as `--display-case` and `--display-tracking` in code); Kumano
-      Home · Violet uses them with the boolean `Rule`; its six instances keep
-      their look `scrim/middle`, `scrim/bottom` (Primitives) YouTube or Vimeo
-      player loads, on `color/paper`); Media Consent (the switch for the privacy
-      page)
+- [x] 2026-10-14 Hero as set `Variant=Single/Slides`; Slides adds the controls
+      (Outline button Pause, Icon Buttons, Slider Dots in `color/on-image`)
+      under the stats. The Kumano Home frames keep `Single` % tracking, as
+      `--display-case` and `--display-tracking` in code); Kumano Home · Violet
+      uses them with the boolean `Rule`; its six instances keep their look
+      `scrim/middle`, `scrim/bottom` (Primitives) YouTube or Vimeo player loads,
+      on `color/paper`); Media Consent (the switch for the privacy page)
 - [x] 2026-10-13 Components: Fact List `Four rows`, Breadcrumb `Third level`
       (both off by default); Figure and Teaser Card images fill their width and
       keep their ratio (4:3, 1:1)
@@ -183,7 +185,9 @@ the date when synced.
   shown as their end state, not as motion.
 - CTA Card: both variants share one default text.
 - Page Intro: the upright site name breaks after each character; Figma has no
-  vertical writing mode.
+- Hero `Slides` shows one slide; the other slides and the movement live in code.
+  Dot opacity sits on the layer, as a bound paint drops it. vertical writing
+  mode.
 - The privacy page has no frame; Media Consent exists as a component only. Video
   `State=Asked` shows the desktop box; on a phone the code lets the box grow
   with the text.
