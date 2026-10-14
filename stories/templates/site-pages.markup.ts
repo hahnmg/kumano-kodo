@@ -137,6 +137,12 @@ export const routePage = (c: Content = content()): string => {
 };
 
 // The former list template: every day, place and stay, with the chips jumping to the groups.
+// The stages as the text editor writes a table, with the class and wrapper the theme's parseFunc adds.
+export const stagesTable = ({ site, kumano }: Content): string =>
+  `<div class="table-wrap"><table class="table"><thead><tr>${site.days.stagesTable.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>` +
+  kumano.stages.map((s) => `<tr><td>${esc(s.stage)}</td><td>${esc(s.title)}</td><td>${esc(s.stats)}</td></tr>`).join('') +
+  `</tbody></table></div>`;
+
 export const daysPage = (c: Content = content()): string => {
   const { guide, site, pages, kumano } = c;
   const g = site.days.groups;
@@ -164,20 +170,8 @@ export const daysPage = (c: Content = content()): string => {
       ],
     ) +
       section({ content: richText({ html: `<p>${esc(site.days.intro)}</p>` }) }) +
-      // A table as the text editor writes it, with the class and wrapper the theme's parseFunc adds.
       section({
-        content: stack(
-          [
-            sectionHeading({ title: site.days.stagesTable.title }),
-            richText({
-              html:
-                `<div class="table-wrap"><table class="table"><thead><tr>${site.days.stagesTable.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>` +
-                kumano.stages.map((s) => `<tr><td>${esc(s.stage)}</td><td>${esc(s.title)}</td><td>${esc(s.stats)}</td></tr>`).join('') +
-                `</tbody></table></div>`,
-            }),
-          ],
-          'heading',
-        ),
+        content: stack([sectionHeading({ title: site.days.stagesTable.title }), richText({ html: stagesTable(c) })], 'heading'),
       }) +
       section({
         id: 'days',
