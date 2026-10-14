@@ -1,12 +1,14 @@
 # Link Tile
 
-Figma: Link Tile (29:177). Markup: `stories/molecules/link-tile.markup.ts`. Fluid: `<kk:linkTile>`.
+Figma: Link Tile (29:177). Markup: `stories/molecules/link-tile.markup.ts`.
+Fluid: `<kk:linkTile>`.
 
 Navigational row: icon, title and arrow under a top rule.
 
-| Prop | Values |
-|---|---|
+| Prop            | Values    |
+| --------------- | --------- |
 | `title`, `href` | text, URL |
-| `icon` | icon name |
+| `icon`          | icon name |
 
-Tokens: `--color-line`, `--color-ink`, `--color-accent`, `--space-16`, `--space-24`.
+Tokens: `--color-line`, `--color-ink`, `--color-accent`, `--space-16`,
+`--space-24`.

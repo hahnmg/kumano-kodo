@@ -1,12 +1,14 @@
 # Info Box
 
-Figma: Info Box (18:77). Markup: `stories/molecules/info-box.markup.ts`. Fluid: `<kk:infoBox>`.
+Figma: Info Box (18:77). Markup: `stories/molecules/info-box.markup.ts`. Fluid:
+`<kk:infoBox>`.
 
 Sidebar note with an eyebrow title, text and contact links.
 
-| Prop | Values |
-|---|---|
-| `title`, `text` | text |
-| `links` | `{ label, href }[]` |
+| Prop            | Values              |
+| --------------- | ------------------- |
+| `title`, `text` | text                |
+| `links`         | `{ label, href }[]` |
 
-Tokens: `--color-line`, `--color-accent`, `--color-ink`, `--space-12`, `--space-20`.
+Tokens: `--color-line`, `--color-accent`, `--color-ink`, `--space-12`,
+`--space-20`.
