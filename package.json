@@ -11,6 +11,7 @@
 		"export:demo:content": "node scripts/export-demo.mjs",
 		"export:starter": "npm run export:starter:content && ddev exec -d /var/www/html/typo3 composer starter:export",
 		"export:starter:content": "node scripts/export-starter.mjs",
+		"review:ja": "node scripts/export-ja-review.mjs",
 		"docs:feature": "node scripts/build-feature.mjs",
 		"docs": "docker run --rm -v \"$PWD/typo3/packages/kumano_kodo\":/project ghcr.io/typo3-documentation/render-guides:latest --config=Documentation",
 		"lint": "eslint . && stylelint \"stories/**/*.css\" \"src/**/*.css\" && node scripts/check-filenames.mjs && node scripts/check-fluid.mjs && node scripts/wrap-rst.mjs --check && prettier --check \"**/*.{ts,mjs,css,json,md}\"",
