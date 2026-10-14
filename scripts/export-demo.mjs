@@ -430,7 +430,8 @@ const place = (i) => {
       image: photo(p(c.en).image),
       title: t((x) => p(x).title),
       text: t((x) => p(x).description),
-      emphasis: p(c.en).variant ?? 'default',
+      // The editors' choice Ruled is the card with rule and tall photo.
+      emphasis: p(c.en).rule ? 'ruled' : (p(c.en).variant ?? 'default'),
     },
   ]);
 };
