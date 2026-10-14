@@ -6811,18 +6811,6 @@
 							"de": "<p>Jedes Inhaltselement des Themes in jeder Form, die es annehmen kann, untereinander, mit den Texten und Fotos des Tagebuchs. Die Zeile über jedem Block nennt Element und Variante.</p>",
 							"ja": "<p>テーマのすべてのコンテンツ要素を、とり得るすべての形で、旅の記録の文章と写真を使って縦に並べています。各ブロックの上の行に、要素とバリエーションの名前があります。</p>"
 						}
-					},
-					"items": {
-						"tx_kumanokodo_links": [
-							{
-								"title": {
-									"en": "Photo hero and slides",
-									"de": "Foto-Hero und Bildfolge",
-									"ja": "写真ヒーローとスライド"
-								},
-								"link": "page:at-a-glance"
-							}
-						]
 					}
 				},
 				{
@@ -6838,6 +6826,32 @@
 					},
 					"items": {
 						"tx_kumanokodo_entries": [
+							{
+								"label": {
+									"en": "Page top",
+									"de": "Seitenkopf",
+									"ja": "ページ上部"
+								},
+								"title": {
+									"en": "Photo hero",
+									"de": "Foto-Hero",
+									"ja": "写真ヒーロー"
+								},
+								"link": "#showcase-hero"
+							},
+							{
+								"label": {
+									"en": "Page top",
+									"de": "Seitenkopf",
+									"ja": "ページ上部"
+								},
+								"title": {
+									"en": "Photo hero with slides",
+									"de": "Foto-Hero mit Bildfolge",
+									"ja": "写真ヒーロー（スライド）"
+								},
+								"link": "#showcase-hero-slides"
+							},
 							{
 								"label": {
 									"en": "Text",
@@ -7425,6 +7439,278 @@
 							}
 						],
 						"tx_kumanokodo_links": []
+					}
+				},
+				{
+					"type": "header",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-hero",
+						"subheader": {
+							"en": "Page top",
+							"de": "Seitenkopf",
+							"ja": "ページ上部"
+						},
+						"header": {
+							"en": "Photo hero",
+							"de": "Foto-Hero",
+							"ja": "写真ヒーロー"
+						}
+					}
+				},
+				{
+					"type": "kumano_page_top",
+					"fields": {
+						"tx_kumanokodo_variant": "hero",
+						"header_layout": "2",
+						"subheader": {
+							"en": "Kii Peninsula · Wakayama · April 2024",
+							"de": "Kii-Halbinsel · Wakayama · April 2024",
+							"ja": "紀伊半島 · 和歌山 · 2024年4月"
+						},
+						"header": {
+							"en": "Four days through\nthe cedar mist",
+							"de": "Vier Tage durch\nden Zedernnebel",
+							"ja": "杉の霧のなかを\n歩いた四日間"
+						},
+						"bodytext": {
+							"en": "<p>The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines. We walked the Nakahechi in April, from Takijiri to Nachi, in four days.</p>",
+							"de": "<p>Der Kumano Kodo ist kein einzelner Fernwanderweg, sondern ein Netz alter Pilgerpfade zu drei Schreinen. Wir sind im April den Nakahechi gegangen, von Takijiri bis Nachi, in vier Tagen.</p>",
+							"ja": "<p>熊野古道は一本の長距離トレイルではなく、三つの神社へ向かう古い参詣道の網です。4月、滝尻から那智まで、四日間で中辺路を歩きました。</p>"
+						}
+					},
+					"image": [
+						"sea-of-clouds"
+					],
+					"items": {
+						"tx_kumanokodo_links": [
+							{
+								"title": {
+									"en": "See the days",
+									"de": "Zu den Tagen",
+									"ja": "日程を見る"
+								},
+								"link": "page:at-a-glance#stages"
+							},
+							{
+								"title": {
+									"en": "Practical questions",
+									"de": "Praktische Fragen",
+									"ja": "よくある質問"
+								},
+								"link": "page:at-a-glance#faq"
+							}
+						],
+						"tx_kumanokodo_facts": [
+							{
+								"label": {
+									"en": "On foot",
+									"de": "Zu Fuß",
+									"ja": "徒歩"
+								},
+								"value": {
+									"en": "68 km",
+									"de": "68 km",
+									"ja": "68 km"
+								}
+							},
+							{
+								"label": {
+									"en": "Days",
+									"de": "Tage",
+									"ja": "日数"
+								},
+								"value": {
+									"en": "4",
+									"de": "4",
+									"ja": "4日"
+								}
+							},
+							{
+								"label": {
+									"en": "Photos",
+									"de": "Fotos",
+									"ja": "写真"
+								},
+								"value": {
+									"en": "27",
+									"de": "27",
+									"ja": "27"
+								}
+							},
+							{
+								"label": {
+									"en": "Month",
+									"de": "Monat",
+									"ja": "月"
+								},
+								"value": {
+									"en": "April",
+									"de": "April",
+									"ja": "4月"
+								}
+							}
+						]
+					}
+				},
+				{
+					"type": "header",
+					"fields": {
+						"tx_kumanokodo_anchor": "showcase-hero-slides",
+						"subheader": {
+							"en": "Page top",
+							"de": "Seitenkopf",
+							"ja": "ページ上部"
+						},
+						"header": {
+							"en": "Photo hero with slides",
+							"de": "Foto-Hero mit Bildfolge",
+							"ja": "写真ヒーロー（スライド）"
+						}
+					}
+				},
+				{
+					"type": "kumano_page_top",
+					"fields": {
+						"tx_kumanokodo_variant": "hero",
+						"header_layout": "2",
+						"subheader": {
+							"en": "Kii Peninsula · Wakayama · April 2024",
+							"de": "Kii-Halbinsel · Wakayama · April 2024",
+							"ja": "紀伊半島 · 和歌山 · 2024年4月"
+						},
+						"header": {
+							"en": "Four days through\nthe cedar mist",
+							"de": "Vier Tage durch\nden Zedernnebel",
+							"ja": "杉の霧のなかを\n歩いた四日間"
+						},
+						"bodytext": {
+							"en": "<p>The Kumano Kodo is not one long trail but a network of old pilgrim paths to three shrines. We walked the Nakahechi in April, from Takijiri to Nachi, in four days.</p>",
+							"de": "<p>Der Kumano Kodo ist kein einzelner Fernwanderweg, sondern ein Netz alter Pilgerpfade zu drei Schreinen. Wir sind im April den Nakahechi gegangen, von Takijiri bis Nachi, in vier Tagen.</p>",
+							"ja": "<p>熊野古道は一本の長距離トレイルではなく、三つの神社へ向かう古い参詣道の網です。4月、滝尻から那智まで、四日間で中辺路を歩きました。</p>"
+						}
+					},
+					"image": [
+						"sea-of-clouds"
+					],
+					"items": {
+						"tx_kumanokodo_links": [
+							{
+								"title": {
+									"en": "See the days",
+									"de": "Zu den Tagen",
+									"ja": "日程を見る"
+								},
+								"link": "page:at-a-glance#stages"
+							},
+							{
+								"title": {
+									"en": "Practical questions",
+									"de": "Praktische Fragen",
+									"ja": "よくある質問"
+								},
+								"link": "page:at-a-glance#faq"
+							}
+						],
+						"tx_kumanokodo_facts": [
+							{
+								"label": {
+									"en": "On foot",
+									"de": "Zu Fuß",
+									"ja": "徒歩"
+								},
+								"value": {
+									"en": "68 km",
+									"de": "68 km",
+									"ja": "68 km"
+								}
+							},
+							{
+								"label": {
+									"en": "Days",
+									"de": "Tage",
+									"ja": "日数"
+								},
+								"value": {
+									"en": "4",
+									"de": "4",
+									"ja": "4日"
+								}
+							},
+							{
+								"label": {
+									"en": "Photos",
+									"de": "Fotos",
+									"ja": "写真"
+								},
+								"value": {
+									"en": "27",
+									"de": "27",
+									"ja": "27"
+								}
+							},
+							{
+								"label": {
+									"en": "Month",
+									"de": "Monat",
+									"ja": "月"
+								},
+								"value": {
+									"en": "April",
+									"de": "April",
+									"ja": "4月"
+								}
+							}
+						],
+						"tx_kumanokodo_entries": [
+							{
+								"image": "stone-path-walkers",
+								"meta": {
+									"en": "Day 2 · 21 April",
+									"de": "Tag 2 · 21. April",
+									"ja": "2日目 · 4月21日"
+								},
+								"title": {
+									"en": "Takahara → Chikatsuyu",
+									"de": "Takahara → Chikatsuyu",
+									"ja": "高原 → 近露"
+								},
+								"text": {
+									"en": "Clouds below the village at seven, stone paving, a stream, the lantern gate of Chikatsuyu at half past five.",
+									"de": "Um sieben Wolken unter dem Dorf, Steinpflaster, ein Bach, um halb sechs das Laternentor von Chikatsuyu.",
+									"ja": "朝7時は集落の下に雲、石畳、沢、17時半に近露の提灯の門。"
+								},
+								"link": "page:day-2",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								}
+							},
+							{
+								"image": "nachi-pagoda",
+								"meta": {
+									"en": "Day 4 · 23 April",
+									"de": "Tag 4 · 23. April",
+									"ja": "4日目 · 4月23日"
+								},
+								"title": {
+									"en": "Seiganto-ji and Nachi falls",
+									"de": "Seiganto-ji und Nachi-Fall",
+									"ja": "青岸渡寺と那智の滝"
+								},
+								"text": {
+									"en": "The three-storey pagoda in front of the falls, the end of the walk. It rained, and the falls disappeared in the mist every few minutes.",
+									"de": "Die dreistöckige Pagode vor dem Wasserfall, das Ende der Wanderung. Es regnete, und der Fall verschwand alle paar Minuten im Nebel.",
+									"ja": "滝の前に立つ三重塔、この旅の終点。雨が降り、滝は数分ごとに霧に消えた。"
+								},
+								"link": "page:place-nachi",
+								"link_label": {
+									"en": "Read more",
+									"de": "Weiterlesen",
+									"ja": "続きを読む"
+								}
+							}
+						]
 					}
 				},
 				{

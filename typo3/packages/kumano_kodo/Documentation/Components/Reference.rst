@@ -298,13 +298,16 @@ in the fragment actions, stat components in the fragment stats.
         - Meaning
     *   - ``title``
         - string, required
-        - The title, the page heading.
+        - The title, the page heading unless level is 2.
     *   - ``image``
         - object, required
         - A file or file reference.
     *   - ``eyebrow``
         - string
         - Short line above the title.
+    *   - ``level``
+        - string|int, default ``1``
+        - 1, or 2 where something above already carries the page's h1.
 
 Slots: ``default``, ``actions``, ``stats``.
 
@@ -322,7 +325,7 @@ buttons in the fragment actions.
         - Meaning
     *   - ``title``
         - string, required
-        - The title; the first slide's is the page heading.
+        - The title; the first slide's is the page heading unless level is 2.
     *   - ``image``
         - object, required
         - A file or file reference.
@@ -335,6 +338,9 @@ buttons in the fragment actions.
     *   - ``eyebrow``
         - string
         - Short line above the title.
+    *   - ``level``
+        - string|int, default ``1``
+        - 1, or 2 where something above already carries the page's h1.
 
 Slots: ``default``, ``actions``.
 

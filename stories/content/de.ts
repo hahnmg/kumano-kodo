@@ -552,8 +552,8 @@ const build = (p: Photos): LocaleContent => {
       intro:
         'Jedes Inhaltselement des Themes in jeder Form, die es annehmen kann, untereinander, mit den Texten und Fotos des Tagebuchs. Die Zeile über jedem Block nennt Element und Variante.',
       contents: 'Inhalt',
-      heroLink: 'Foto-Hero und Bildfolge',
       elements: {
+        pageTop: 'Seitenkopf',
         text: 'Text',
         textImage: 'Text und Bild',
         images: 'Bilder',
@@ -570,6 +570,8 @@ const build = (p: Photos): LocaleContent => {
         plugins: 'Plugins',
       },
       variants: {
+        hero: 'Foto-Hero',
+        heroSlides: 'Foto-Hero mit Bildfolge',
         text: 'Text',
         table: 'Text mit Tabelle',
         imageLeft: 'Bild links',

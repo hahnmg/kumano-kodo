@@ -435,11 +435,32 @@ const place = (i) => {
     },
   ]);
 };
-const v3 = [
+// Two more slides, as Storybook's Hero › Slides: the second day and the end of the walk.
+const moreSlides = [
+  {
+    image: photo(c.en.kumano.stages[1].image),
+    meta: t((x) => x.kumano.days[1].date),
+    title: t((x) => x.kumano.stages[1].title),
+    text: t((x) => x.kumano.stages[1].description),
+    link: link(c.en.kumano.stages[1].href),
+    link_label: t((x) => x.ui.readMore),
+  },
+  {
+    image: photo(c.en.kumano.places[0].image),
+    meta: t((x) => x.kumano.days[3].date),
+    title: t((x) => x.kumano.places[0].title),
+    text: t((x) => x.kumano.places[0].description),
+    link: link(paths.place('nachi')),
+    link_label: t((x) => x.ui.readMore),
+  },
+];
+// The photo hero of At a glance; the showcase sets its title as h2 and shows it with and without slides.
+const photoHero = (fields = {}, slides = true) =>
   el(
     'kumano_page_top',
     {
       tx_kumanokodo_variant: 'hero',
+      ...fields,
       subheader: t((x) => x.kumano.hero.eyebrow),
       header: t((x) => x.kumano.hero.title),
       bodytext: t((x) => x.kumano.hero.teaser),
@@ -455,28 +476,12 @@ const v3 = [
           (x) => x.kumano.hero.stats,
           (a) => ({ label: t((x) => a(x).label), value: t((x) => a(x).value) }),
         ),
-        // Two more slides, as Storybook's Hero › Slides: the second day and the end of the walk.
-        tx_kumanokodo_entries: [
-          {
-            image: photo(c.en.kumano.stages[1].image),
-            meta: t((x) => x.kumano.days[1].date),
-            title: t((x) => x.kumano.stages[1].title),
-            text: t((x) => x.kumano.stages[1].description),
-            link: link(c.en.kumano.stages[1].href),
-            link_label: t((x) => x.ui.readMore),
-          },
-          {
-            image: photo(c.en.kumano.places[0].image),
-            meta: t((x) => x.kumano.days[3].date),
-            title: t((x) => x.kumano.places[0].title),
-            text: t((x) => x.kumano.places[0].description),
-            link: link(paths.place('nachi')),
-            link_label: t((x) => x.ui.readMore),
-          },
-        ],
+        ...(slides ? { tx_kumanokodo_entries: moreSlides } : {}),
       },
     },
-  ),
+  );
+const v3 = [
+  photoHero(),
   columns(
     'text-media',
     heading((x) => x.home.why),
@@ -652,6 +657,9 @@ const practicalLinks = () => practicalSlugs.map((p) => ({ title: t((x) => x.site
 const intro = (i) => text(t((x) => `<p>${esc(x.kumano.intro[i])}</p>`));
 const textImage = (fields, image, more) => el('kumano_text_image', fields, { image, ...(more ? { items: links(more) } : {}) });
 const showcaseBlocks = [
+  // Below the page's own h1 the heroes take an h2 (header_layout 2); a heading before them carries the anchor.
+  ['hero', 'pageTop', 'hero', (h) => [el('header', h), photoHero({ header_layout: '2' }, false)]],
+  ['hero-slides', 'pageTop', 'heroSlides', (h) => [el('header', h), photoHero({ header_layout: '2' })]],
   [
     'text',
     'text',
@@ -713,7 +721,7 @@ const showcaseBlocks = [
   ['figure', 'images', 'figure', (h) => section(h, [images('figure', ['forest-stream'], { bodytext: t((x) => x.home.bridgeCaption) })])],
   ['figure-plain', 'images', 'figurePlain', (h) => section(h, [images('figure-plain', ['misty-valley', 'root-path'])])],
   ['gallery', 'images', 'gallery', (h) => images('gallery', photosOfDay(1), h)],
-  // A full-width image and a plugin draw no section of their own heading, so a heading before them carries the anchor.
+  // A full-width image and a plugin draw no heading of their own, so a heading before them carries the anchor.
   [
     'fullwidth',
     'images',
@@ -953,11 +961,7 @@ const showcaseBlocks = [
   ],
 ];
 const showcaseContent = [
-  el(
-    'kumano_page_top',
-    { tx_kumanokodo_variant: 'text', header: t((x) => sc(x).title), bodytext: t((x) => sc(x).intro) },
-    { items: links({ title: t((x) => sc(x).heroLink), link: 'page:at-a-glance' }) },
-  ),
+  el('kumano_page_top', { tx_kumanokodo_variant: 'text', header: t((x) => sc(x).title), bodytext: t((x) => sc(x).intro) }),
   // The table of contents: one column per element, its label on each entry.
   listEl(
     'link-groups',

@@ -25,7 +25,9 @@ Content elements
 ================
 
 Page top
-    Photo hero, Title and text, or Journal opener.
+    Photo hero, Title and text, or Journal opener. Its title is the page's h1;
+    set Heading shown as to Section heading (h2) for a photo hero below another
+    page heading.
 
 Text and image
     Text beside a photo.

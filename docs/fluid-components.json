@@ -313,7 +313,7 @@
 				"name": "title",
 				"type": "string",
 				"required": true,
-				"description": "The title, the page heading."
+				"description": "The title, the page heading unless level is 2."
 			},
 			{
 				"name": "image",
@@ -326,6 +326,13 @@
 				"type": "string",
 				"required": false,
 				"description": "Short line above the title."
+			},
+			{
+				"name": "level",
+				"type": "string|int",
+				"required": false,
+				"default": "1",
+				"description": "1, or 2 where something above already carries the page's h1."
 			}
 		],
 		"slots": ["default", "actions", "stats"]
@@ -338,7 +345,7 @@
 				"name": "title",
 				"type": "string",
 				"required": true,
-				"description": "The title; the first slide's is the page heading."
+				"description": "The title; the first slide's is the page heading unless level is 2."
 			},
 			{
 				"name": "image",
@@ -363,6 +370,13 @@
 				"type": "string",
 				"required": false,
 				"description": "Short line above the title."
+			},
+			{
+				"name": "level",
+				"type": "string|int",
+				"required": false,
+				"default": "1",
+				"description": "1, or 2 where something above already carries the page's h1."
 			}
 		],
 		"slots": ["default", "actions"]

@@ -26,8 +26,14 @@
       <trans-unit id="header_layout.label">
         <source>Heading shown as</source>
       </trans-unit>
+      <trans-unit id="header_layout.page">
+        <source>Page heading (h1)</source>
+      </trans-unit>
       <trans-unit id="header_layout.section">
         <source>Section heading</source>
+      </trans-unit>
+      <trans-unit id="header_layout.sectionBelow">
+        <source>Section heading (h2), below another page heading</source>
       </trans-unit>
       <trans-unit id="pages.palettes.flyout_teaser">
         <source>Teaser card (mega flyout only)</source>

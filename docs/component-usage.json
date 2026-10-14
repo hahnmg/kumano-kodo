@@ -5038,6 +5038,11 @@
 	],
 	"Organisms/Hero": [
 		{
+			"id": "site--practical-showcase",
+			"name": "Practical · Content showcase",
+			"group": "Site"
+		},
+		{
 			"id": "site--at-a-glance",
 			"name": "At a glance",
 			"group": "Site"

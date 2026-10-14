@@ -555,8 +555,8 @@ const build = (p: Photos) => {
       intro:
         'Every content element of the theme in every form it takes, one below the other, with the texts and photos of the journal. The line above each block names the element and its variant.',
       contents: 'Contents',
-      heroLink: 'Photo hero and slides',
       elements: {
+        pageTop: 'Page top',
         text: 'Text',
         textImage: 'Text and image',
         images: 'Images',
@@ -573,6 +573,8 @@ const build = (p: Photos) => {
         plugins: 'Plugins',
       },
       variants: {
+        hero: 'Photo hero',
+        heroSlides: 'Photo hero with slides',
         text: 'Text',
         table: 'Text with a table',
         imageLeft: 'Image left',

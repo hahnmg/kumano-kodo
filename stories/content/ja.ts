@@ -533,8 +533,8 @@ const build = (p: Photos): LocaleContent => {
       intro:
         'テーマのすべてのコンテンツ要素を、とり得るすべての形で、旅の記録の文章と写真を使って縦に並べています。各ブロックの上の行に、要素とバリエーションの名前があります。',
       contents: '目次',
-      heroLink: '写真ヒーローとスライド',
       elements: {
+        pageTop: 'ページ上部',
         text: 'テキスト',
         textImage: 'テキストと画像',
         images: '画像',
@@ -551,6 +551,8 @@ const build = (p: Photos): LocaleContent => {
         plugins: 'プラグイン',
       },
       variants: {
+        hero: '写真ヒーロー',
+        heroSlides: '写真ヒーロー（スライド）',
         text: 'テキスト',
         table: '表を含むテキスト',
         imageLeft: '画像が左',

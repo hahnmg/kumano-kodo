@@ -13,6 +13,11 @@ describe('hero', () => {
     expect(el.querySelector('.button-outline')).not.toBeNull();
     expect(el.querySelectorAll('.stat-on-image')).toHaveLength(4);
   });
+  it('steps its title down to h2 below a page heading', () => {
+    const el = mount(hero({ ...kumano.hero, level: 2 }));
+    expect(el.querySelector('h1')).toBeNull();
+    expect(el.querySelector('h2.hero-title')?.textContent).toBe(kumano.hero.title);
+  });
   it('passes axe', () => expectAccessible(hero(kumano.hero)));
 });
 
@@ -47,6 +52,11 @@ describe('hero slides', () => {
     expect(el.querySelector('.hero-slide')?.getAttribute('aria-label')).toBe('Slide 1 of 3');
     expect(el.querySelectorAll('h1')).toHaveLength(1);
     expect(el.querySelectorAll('h2.hero-title')).toHaveLength(2);
+  });
+  it('has no h1 at all below a page heading', () => {
+    const el = mount(heroSlides({ ...props, level: 2 }));
+    expect(el.querySelector('h1')).toBeNull();
+    expect(el.querySelectorAll('h2.hero-title')).toHaveLength(3);
   });
   it('moves on by itself, starts over at the end, and holds when paused', () => {
     vi.useFakeTimers();

@@ -12,12 +12,14 @@ export interface HeroProps {
   teaser: string;
   actions: { label: string; href: string }[];
   stats: { label: string; value: string }[];
+  // 2 where something above already carries the page's h1.
+  level?: 1 | 2;
 }
 
-export const hero = ({ image, eyebrow, title, teaser, actions, stats }: HeroProps): string =>
+export const hero = ({ image, eyebrow, title, teaser, actions, stats, level = 1 }: HeroProps): string =>
   `<section class="hero">${img(image, 'hero-image', '100vw', true)}<div class="hero-shade"></div><div class="hero-content">` +
   `<p class="hero-eyebrow type-label">${esc(eyebrow)}</p>` +
-  `<h1 class="hero-title type-hero">${esc(title)}</h1>` +
+  `<h${level} class="hero-title type-hero">${esc(title)}</h${level}>` +
   `<div class="hero-teaser"><p class="type-lead">${esc(teaser)}</p><div class="hero-actions">` +
   actions.map((a, i) => button({ ...a, variant: i === 0 ? 'light' : 'outline' })).join('') +
   `</div></div>` +
@@ -49,17 +51,18 @@ export interface HeroSlidesProps {
   slides: HeroSlide[];
   stats: HeroProps['stats'];
   labels: HeroSlidesLabels;
+  level?: HeroProps['level'];
 }
 
 // Several photos, each with its own text; the stats and controls stay. src/scripts/slider.ts moves the track, plays it
 // on its own until paused, and holds it while the pointer or focus is inside; without the script the track still scrolls.
-export const heroSlides = ({ slides, stats, labels }: HeroSlidesProps): string =>
+export const heroSlides = ({ slides, stats, labels, level = 1 }: HeroSlidesProps): string =>
   `<section${attrs({ class: 'hero hero-slides', 'data-slider': true, 'data-autoplay': '7000', 'data-label-pause': labels.pause, 'data-label-play': labels.play, 'aria-roledescription': 'carousel', 'aria-label': labels.label })}>` +
   `<div class="hero-track slider-track" tabindex="0" aria-live="off">` +
   slides
     .map((s, i) => {
       // One h1 per page: the first slide carries it, the others repeat its form.
-      const tag = i === 0 ? 'h1' : 'h2';
+      const tag = i === 0 ? `h${level}` : 'h2';
       return (
         `<div${attrs({ class: 'hero-slide', role: 'group', 'aria-roledescription': 'slide', 'aria-label': fill(labels.slide, i + 1, slides.length) })}>` +
         `${img(s.image, 'hero-image', '100vw', i === 0)}<div class="hero-shade"></div><div class="hero-content">` +

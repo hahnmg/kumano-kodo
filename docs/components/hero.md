@@ -13,6 +13,7 @@ on-image stats. The shade gradient is built from the tokens `scrim/top`,
 | `eyebrow`, `title`, `teaser` | text; `title` keeps line breaks |
 | `actions`                    | two `{ label, href }`           |
 | `stats`                      | `{ label, value }[]`            |
+| `level`                      | `1` (default) or `2`            |
 
 ## Slides
 
@@ -24,6 +25,9 @@ phone they join the dots). It moves on every seven seconds and starts over at
 the end, holds while the pointer or the focus is inside or the page is hidden,
 and starts paused when the visitor asks for less motion. Only the first slide
 carries the h1.
+
+With `level` 2 (Fluid: `level="2"`) neither carries an h1: for a hero below
+another page heading, as on the content showcase.
 
 Tokens: `--color-ink`, `--color-on-image`, `--gutter`, `--container-page`,
 `.type-hero`.

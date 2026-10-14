@@ -16,6 +16,12 @@ TCEFORM.tt_content {
     altLabels.0 = LLL:kumano_kodo.backend_fields:header_layout.section
     altLabels.100 = LLL:kumano_kodo.backend_fields:header_layout.hidden
   }
+  # The page top holds the page's h1, or an h2 where something above already does.
+  header_layout.types.kumano_page_top {
+    keepItems = 0,2
+    altLabels.0 = LLL:kumano_kodo.backend_fields:header_layout.page
+    altLabels.2 = LLL:kumano_kodo.backend_fields:header_layout.sectionBelow
+  }
   frame_class {
     label = LLL:kumano_kodo.backend_fields:frame.label
     keepItems = default

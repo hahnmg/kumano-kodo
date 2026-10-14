@@ -13,6 +13,7 @@ import { select } from '../atoms/select.markup';
 import { textField } from '../atoms/text-field.markup';
 import { textarea } from '../atoms/textarea.markup';
 import { asVideo } from '../content/videos';
+import { heroSlidesOf } from './kumano-home.markup';
 import { linkRoute, paths, practicalSlugs, type LegalSlug, type PlaceSlug, type PracticalSlug } from '../content/paths';
 import { cluster, grid, section, split, stack } from '../layout/layout.markup';
 import { ctaCard } from '../molecules/cta-card.markup';
@@ -24,11 +25,11 @@ import { form } from '../molecules/form.markup';
 import { gallery } from '../molecules/gallery.markup';
 import { featureCard } from '../molecules/feature-card.markup';
 import { highlight } from '../molecules/highlight.markup';
+import { hero, heroSlides } from '../organisms/hero.markup';
 import { linkGroups } from '../molecules/link-groups.markup';
 import { notice } from '../molecules/notice.markup';
 import { statRow } from '../molecules/stat.markup';
 import { timeline } from '../molecules/timeline-item.markup';
-import { button } from '../atoms/button.markup';
 import { iconFact } from '../molecules/icon-fact.markup';
 import { infoBox } from '../molecules/info-box.markup';
 import { linkTile } from '../molecules/link-tile.markup';
@@ -701,6 +702,12 @@ export const showcasePage = (c: Content = content()): string => {
   const s = site.showcase;
   const e = s.elements;
   const v = s.variants;
+  // The hero's buttons lead to sections of At a glance.
+  const glanceHero = {
+    ...kumano.hero,
+    actions: kumano.hero.actions.map((a) => ({ ...a, href: a.href.startsWith('#') ? `${paths.glance}${a.href}` : a.href })),
+  };
+  const slides = heroSlidesOf(c);
   const practicalNav = practicalSlugs.map((slug) => ({ label: site.practical.pages[slug].title, href: paths.practicalPage(slug) }));
   const blocks: {
     id: string;
@@ -713,6 +720,15 @@ export const showcasePage = (c: Content = content()): string => {
     raw?: boolean;
     ownHeading?: boolean;
   }[] = [
+    // Both come under a heading of the page, so their titles step down to h2.
+    { id: 'hero', element: e.pageTop, variant: v.hero, raw: true, body: hero({ ...glanceHero, level: 2 }) },
+    {
+      id: 'hero-slides',
+      element: e.pageTop,
+      variant: v.heroSlides,
+      raw: true,
+      body: heroSlides({ ...slides, slides: [glanceHero, ...slides.slides.slice(1)], level: 2 }),
+    },
     { id: 'text', element: e.text, variant: v.text, body: richText({ html: paragraphs(kumano.intro) }) },
     { id: 'table', element: e.text, variant: v.table, body: richText({ html: stagesTable(c) }) },
     {
@@ -933,11 +949,9 @@ export const showcasePage = (c: Content = content()): string => {
   return chrome(
     c,
     1,
-    // The page top "Title and text" carries the page's h1; it points to where the photo hero shows.
+    // The page top "Title and text" carries the page's h1.
     section({
-      content:
-        `<h1 class="type-h2">${esc(s.title)}</h1><p class="type-lead">${esc(s.intro)}</p>` +
-        `<div>${button({ label: s.heroLink, href: paths.glance })}</div>`,
+      content: `<h1 class="type-h2">${esc(s.title)}</h1><p class="type-lead">${esc(s.intro)}</p>`,
     }) +
       section({
         space: 'flush-top',
@@ -959,7 +973,8 @@ export const showcasePage = (c: Content = content()): string => {
       blocks
         .map((b) =>
           b.raw
-            ? `<div id="${anchor(b.id)}">${stack([section({ space: 'none', content: sectionHeading({ eyebrow: b.element, title: b.variant ?? '' }) }), b.body], 'heading')}</div>`
+            ? // As in TYPO3, where a header element stands before the full-width element.
+              section({ id: anchor(b.id), content: sectionHeading({ eyebrow: b.element, title: b.variant ?? '' }) }) + b.body
             : section({
                 id: anchor(b.id),
                 tone: b.tone,

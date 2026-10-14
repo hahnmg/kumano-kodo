@@ -33,7 +33,7 @@
 </f:section>
 
 <f:section name="Hero">
-    <kk:hero title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}">
+    <kk:hero title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}" level="{f:if(condition: '{data.header_layout} == 2', then: 2, else: 1)}">
         <f:fragment>{text -> f:format.raw()}</f:fragment>
         <f:fragment name="actions">
             <f:for each="{record.tx_kumanokodo_links}" as="action" iteration="i">
@@ -54,7 +54,7 @@
     <f:variable name="count" value="{count + 1}"/>
     <kk:heroSlides count="{count}">
         <f:fragment>
-            <kk:heroSlide title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}" number="1" count="{count}">
+            <kk:heroSlide title="{record.header}" eyebrow="{record.subheader}" image="{record.image -> f:first()}" number="1" count="{count}" level="{f:if(condition: '{data.header_layout} == 2', then: 2, else: 1)}">
                 <f:fragment>{text -> f:format.raw()}</f:fragment>
                 <f:fragment name="actions">
                     <f:for each="{record.tx_kumanokodo_links}" as="action" iteration="i">
