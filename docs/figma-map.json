@@ -1,559 +1,559 @@
 {
-    "file": {
-        "key": "p6SK2xN5ZzBisOW1wKlrDm",
-        "url": "https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm",
-        "pages": {
-            "foundations": "4:2",
-            "components": "4:3",
-            "pages": "4:4"
-        }
-    },
-    "components": [
-        {
-            "name": "Button",
-            "group": "atoms",
-            "component": "button",
-            "node": "5:9",
-            "variants": [
-                "Style=Primary, State=Default",
-                "Style=Light, State=Default",
-                "Style=Outline, State=Default",
-                "Style=Primary, State=Hover",
-                "Style=Light, State=Hover",
-                "Style=Outline, State=Hover",
-                "Style=Secondary, State=Default",
-                "Style=Secondary, State=Hover"
-            ]
-        },
-        {
-            "name": "Icon Button",
-            "group": "atoms",
-            "component": "icon-button",
-            "node": "5:16",
-            "variants": [
-                "Direction=Previous, State=Default",
-                "Direction=Next, State=Default",
-                "Direction=Previous, State=Disabled",
-                "Direction=Next, State=Disabled"
-            ]
-        },
-        {
-            "name": "Slider Dots",
-            "group": "atoms",
-            "component": "slider-dots",
-            "node": "5:17"
-        },
-        {
-            "name": "Text Field",
-            "group": "atoms",
-            "component": "text-field",
-            "node": "65:214",
-            "variants": ["State=Default", "State=Invalid"]
-        },
-        {
-            "name": "Checkbox",
-            "group": "atoms",
-            "component": "checkbox",
-            "node": "65:227",
-            "variants": ["State=Default", "State=Invalid"]
-        },
-        {
-            "name": "File Upload",
-            "group": "atoms",
-            "component": "file-upload",
-            "node": "84:4564",
-            "variants": ["State=Default", "State=Hover", "State=Uploaded", "State=Invalid"]
-        },
-        {
-            "name": "Stat",
-            "group": "molecules",
-            "component": "stat",
-            "node": "6:9",
-            "variants": ["Variant=Large", "Variant=On Image"]
-        },
-        {
-            "name": "Quote",
-            "group": "molecules",
-            "component": "quote",
-            "node": "6:10"
-        },
-        {
-            "name": "Section Heading",
-            "group": "molecules",
-            "component": "section-heading",
-            "node": "6:33",
-            "variants": ["Variant=Default", "Variant=With Aside", "Variant=With Controls"]
-        },
-        {
-            "name": "Timeline Item",
-            "group": "molecules",
-            "component": "timeline-item",
-            "node": "6:34"
-        },
-        {
-            "name": "Portrait Card",
-            "group": "molecules",
-            "component": "portrait-card",
-            "node": "70:3346"
-        },
-        {
-            "name": "Feature Card",
-            "group": "molecules",
-            "component": "feature-card",
-            "node": "7:31",
-            "variants": ["Variant=Featured", "Variant=Default", "Variant=Ruled"]
-        },
-        {
-            "name": "Figure",
-            "group": "molecules",
-            "component": "figure",
-            "node": "7:40",
-            "variants": ["Variant=Default", "Variant=Pair", "Variant=Unruled"]
-        },
-        {
-            "name": "FAQ Item",
-            "group": "molecules",
-            "component": "faq-item",
-            "node": "8:19",
-            "variants": ["State=Open", "State=Closed"]
-        },
-        {
-            "name": "Newsletter Form",
-            "group": "molecules",
-            "component": "newsletter-form",
-            "node": "8:20"
-        },
-        {
-            "name": "Site Header",
-            "group": "organisms",
-            "component": "site-header",
-            "node": "36:213",
-            "variants": ["State=Default", "State=Docked"]
-        },
-        {
-            "name": "Site Footer",
-            "group": "organisms",
-            "component": "site-footer",
-            "node": "9:49"
-        },
-        {
-            "name": "Hero",
-            "group": "organisms",
-            "component": "hero",
-            "node": "10:13"
-        },
-        {
-            "name": "Route Map",
-            "group": "organisms",
-            "component": "route-map",
-            "node": "10:41"
-        },
-        {
-            "name": "Link",
-            "group": "atoms",
-            "component": "link",
-            "node": "17:75",
-            "variants": [
-                "Direction=Forward, State=Default",
-                "Direction=Back, State=Default",
-                "Direction=Forward, State=Hover",
-                "Direction=Back, State=Hover"
-            ]
-        },
-        {
-            "name": "Badge",
-            "group": "atoms",
-            "component": "badge",
-            "node": "17:103"
-        },
-        {
-            "name": "Chip",
-            "group": "atoms",
-            "component": "chip",
-            "node": "17:146"
-        },
-        {
-            "name": "Select",
-            "group": "atoms",
-            "component": "select",
-            "node": "84:4583",
-            "variants": ["Multiple=No", "Multiple=Yes"]
-        },
-        {
-            "name": "Search Field",
-            "group": "atoms",
-            "component": "search-field",
-            "node": "17:201"
-        },
-        {
-            "name": "Textarea",
-            "group": "atoms",
-            "component": "textarea",
-            "node": "17:209"
-        },
-        {
-            "name": "Radio",
-            "group": "atoms",
-            "component": "radio",
-            "node": "17:220"
-        },
-        {
-            "name": "Avatar",
-            "group": "atoms",
-            "component": "avatar",
-            "node": "17:225"
-        },
-        {
-            "name": "Icon Circle",
-            "group": "atoms",
-            "component": "icon-circle",
-            "node": "17:226"
-        },
-        {
-            "name": "Breadcrumb",
-            "group": "molecules",
-            "component": "breadcrumb",
-            "node": "18:32"
-        },
-        {
-            "name": "Teaser Card",
-            "group": "molecules",
-            "component": "teaser-card",
-            "node": "29:189",
-            "variants": ["State=Default", "State=Hover"]
-        },
-        {
-            "name": "Person Card",
-            "group": "molecules",
-            "component": "person-card",
-            "node": "18:47"
-        },
-        {
-            "name": "Link Tile",
-            "group": "molecules",
-            "component": "link-tile",
-            "node": "29:177",
-            "variants": ["State=Default", "State=Hover"]
-        },
-        {
-            "name": "CTA Card",
-            "group": "molecules",
-            "component": "cta-card",
-            "node": "18:76"
-        },
-        {
-            "name": "Info Box",
-            "group": "molecules",
-            "component": "info-box",
-            "node": "18:77"
-        },
-        {
-            "name": "Fact List",
-            "group": "molecules",
-            "component": "fact-list",
-            "node": "18:97"
-        },
-        {
-            "name": "Notice",
-            "group": "molecules",
-            "component": "notice",
-            "node": "19:41"
-        },
-        {
-            "name": "Icon Fact",
-            "group": "molecules",
-            "component": "icon-fact",
-            "node": "19:48"
-        },
-        {
-            "name": "Sub Navigation",
-            "group": "molecules",
-            "component": "sub-nav",
-            "node": "19:66"
-        },
-        {
-            "name": "Media List",
-            "group": "molecules",
-            "component": "media-list",
-            "node": "19:79"
-        },
-        {
-            "name": "Pagination",
-            "group": "molecules",
-            "component": "pagination",
-            "node": "19:129"
-        },
-        {
-            "name": "Download List",
-            "group": "molecules",
-            "component": "download-list",
-            "node": "19:144"
-        },
-        {
-            "name": "Rich Text",
-            "group": "molecules",
-            "component": "rich-text",
-            "node": "19:178"
-        },
-        {
-            "name": "Text & Media",
-            "group": "molecules",
-            "component": "text-media",
-            "node": "19:200"
-        },
-        {
-            "name": "Gallery",
-            "group": "molecules",
-            "component": "gallery",
-            "node": "19:201"
-        },
-        {
-            "name": "Table",
-            "group": "molecules",
-            "component": "table",
-            "node": "19:210"
-        },
-        {
-            "name": "Nav Item",
-            "group": "organisms",
-            "component": "site-header",
-            "node": "21:100"
-        },
-        {
-            "name": "Topbar",
-            "group": "organisms",
-            "component": "topbar",
-            "node": "21:261"
-        },
-        {
-            "name": "Page Header",
-            "group": "organisms",
-            "component": "page-header",
-            "node": "21:399"
-        },
-        {
-            "name": "Hero Split",
-            "group": "organisms",
-            "component": "hero-split",
-            "node": "21:418"
-        },
-        {
-            "name": "Logo modern",
-            "group": "atoms",
-            "component": "logo",
-            "node": "55:3167"
-        },
-        {
-            "name": "Scheme Toggle",
-            "group": "atoms",
-            "component": "scheme-toggle",
-            "node": "36:173",
-            "variants": ["State=Off", "State=On"]
-        },
-        {
-            "name": "Menu Button",
-            "group": "atoms",
-            "component": "menu-button",
-            "node": "36:182",
-            "variants": ["State=Closed", "State=Open"]
-        },
-        {
-            "name": "Site Header · Mobile",
-            "group": "organisms",
-            "component": "site-header",
-            "node": "37:317",
-            "variants": ["State=Closed", "State=Open"]
-        },
-        {
-            "name": "Nav Dropdown",
-            "group": "molecules",
-            "component": "nav-flyout",
-            "node": "37:181"
-        },
-        {
-            "name": "Nav Mega",
-            "group": "molecules",
-            "component": "nav-flyout",
-            "node": "37:194"
-        },
-        {
-            "name": "Highlight",
-            "group": "molecules",
-            "component": "highlight",
-            "node": "37:232"
-        },
-        {
-            "name": "Lightbox",
-            "group": "molecules",
-            "component": "lightbox",
-            "node": "37:242"
-        },
-        {
-            "name": "Icon Close",
-            "group": "atoms",
-            "component": "icon",
-            "node": "36:217"
-        },
-        {
-            "name": "Bleed Image",
-            "group": "molecules",
-            "component": "bleed-image",
-            "node": "61:227"
-        },
-        {
-            "name": "Page Intro",
-            "group": "organisms",
-            "component": "page-intro",
-            "node": "61:218"
-        },
-        {
-            "name": "Chapter",
-            "group": "organisms",
-            "component": "chapter",
-            "node": "61:204"
-        },
-        {
-            "name": "Search Toggle",
-            "group": "atoms",
-            "component": "site-header",
-            "node": "65:238",
-            "variants": ["State=Off", "State=On"]
-        },
-        {
-            "name": "Search Form",
-            "group": "molecules",
-            "component": "search-form",
-            "node": "66:3404",
-            "variants": ["Layout=Row", "Layout=Stacked"]
-        },
-        {
-            "name": "Search Panel",
-            "group": "molecules",
-            "component": "site-header",
-            "node": "66:227"
-        },
-        {
-            "name": "Search Results",
-            "group": "molecules",
-            "component": "search-results",
-            "node": "66:239"
-        },
-        {
-            "name": "Login Form",
-            "group": "molecules",
-            "component": "login-form",
-            "node": "66:319",
-            "variants": ["State=Default", "State=Failed", "State=Logged in"]
-        },
-        {
-            "name": "Form",
-            "group": "molecules",
-            "component": "form",
-            "node": "66:393",
-            "variants": ["State=Default", "State=Invalid", "State=Sent", "State=Step", "State=Summary"]
-        },
-        {
-            "name": "Choice Group",
-            "group": "molecules",
-            "component": "choice-group",
-            "node": "84:4516",
-            "variants": [
-                "Type=Radio, State=Default",
-                "Type=Radio, State=Invalid",
-                "Type=Checkbox, State=Default",
-                "Type=Checkbox, State=Invalid"
-            ]
-        },
-        {
-            "name": "Logo · Title",
-            "node": "78:358"
-        }
-    ],
-    "pages": [
-        {
-            "name": "Kumano Home · Caramel",
-            "slug": "home",
-            "node": "12:2"
-        },
-        {
-            "name": "Beispiel – Start",
-            "slug": "start",
-            "node": "22:926"
-        },
-        {
-            "name": "Beispiel – Liste",
-            "slug": "list",
-            "node": "22:1324"
-        },
-        {
-            "name": "Beispiel – Detail",
-            "slug": "detail",
-            "node": "22:1579"
-        },
-        {
-            "name": "Kumano Home · Forest",
-            "slug": "home-forest",
-            "node": "39:1702"
-        },
-        {
-            "name": "Kumano Home · Ocean",
-            "slug": "home-ocean",
-            "node": "39:1768"
-        },
-        {
-            "name": "Kumano Home · Violet",
-            "slug": "home-violet",
-            "node": "39:1834"
-        },
-        {
-            "name": "Beispiel – Start · DE",
-            "slug": "start-de",
-            "node": "40:2544"
-        },
-        {
-            "name": "Beispiel – Start · JA",
-            "slug": "start-ja",
-            "node": "40:2841"
-        },
-        {
-            "name": "Mobile references · 390px from code",
-            "slug": "mobile-references",
-            "node": "40:3204"
-        },
-        {
-            "name": "Site · Search",
-            "slug": "search",
-            "node": "73:3146"
-        },
-        {
-            "name": "Site · Log in",
-            "slug": "login",
-            "node": "73:3329"
-        },
-        {
-            "name": "Site · Contact",
-            "slug": "contact",
-            "node": "73:3489"
-        },
-        {
-            "name": "Site · Travel papers",
-            "slug": "papers",
-            "node": "73:3663"
-        },
-        {
-            "name": "Site · Page not found",
-            "slug": "not-found",
-            "node": "73:3881"
-        },
-        {
-            "name": "Site · Days and places",
-            "slug": "days",
-            "node": "75:3897"
-        },
-        {
-            "name": "Site · Practical",
-            "slug": "practical",
-            "node": "75:4126"
-        }
-    ]
+	"file": {
+		"key": "p6SK2xN5ZzBisOW1wKlrDm",
+		"url": "https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm",
+		"pages": {
+			"foundations": "4:2",
+			"components": "4:3",
+			"pages": "4:4"
+		}
+	},
+	"components": [
+		{
+			"name": "Button",
+			"group": "atoms",
+			"component": "button",
+			"node": "5:9",
+			"variants": [
+				"Style=Primary, State=Default",
+				"Style=Light, State=Default",
+				"Style=Outline, State=Default",
+				"Style=Primary, State=Hover",
+				"Style=Light, State=Hover",
+				"Style=Outline, State=Hover",
+				"Style=Secondary, State=Default",
+				"Style=Secondary, State=Hover"
+			]
+		},
+		{
+			"name": "Icon Button",
+			"group": "atoms",
+			"component": "icon-button",
+			"node": "5:16",
+			"variants": [
+				"Direction=Previous, State=Default",
+				"Direction=Next, State=Default",
+				"Direction=Previous, State=Disabled",
+				"Direction=Next, State=Disabled"
+			]
+		},
+		{
+			"name": "Slider Dots",
+			"group": "atoms",
+			"component": "slider-dots",
+			"node": "5:17"
+		},
+		{
+			"name": "Text Field",
+			"group": "atoms",
+			"component": "text-field",
+			"node": "65:214",
+			"variants": ["State=Default", "State=Invalid"]
+		},
+		{
+			"name": "Checkbox",
+			"group": "atoms",
+			"component": "checkbox",
+			"node": "65:227",
+			"variants": ["State=Default", "State=Invalid"]
+		},
+		{
+			"name": "File Upload",
+			"group": "atoms",
+			"component": "file-upload",
+			"node": "84:4564",
+			"variants": ["State=Default", "State=Hover", "State=Uploaded", "State=Invalid"]
+		},
+		{
+			"name": "Stat",
+			"group": "molecules",
+			"component": "stat",
+			"node": "6:9",
+			"variants": ["Variant=Large", "Variant=On Image"]
+		},
+		{
+			"name": "Quote",
+			"group": "molecules",
+			"component": "quote",
+			"node": "6:10"
+		},
+		{
+			"name": "Section Heading",
+			"group": "molecules",
+			"component": "section-heading",
+			"node": "6:33",
+			"variants": ["Variant=Default", "Variant=With Aside", "Variant=With Controls"]
+		},
+		{
+			"name": "Timeline Item",
+			"group": "molecules",
+			"component": "timeline-item",
+			"node": "6:34"
+		},
+		{
+			"name": "Portrait Card",
+			"group": "molecules",
+			"component": "portrait-card",
+			"node": "70:3346"
+		},
+		{
+			"name": "Feature Card",
+			"group": "molecules",
+			"component": "feature-card",
+			"node": "7:31",
+			"variants": ["Variant=Featured", "Variant=Default", "Variant=Ruled"]
+		},
+		{
+			"name": "Figure",
+			"group": "molecules",
+			"component": "figure",
+			"node": "7:40",
+			"variants": ["Variant=Default", "Variant=Pair", "Variant=Unruled"]
+		},
+		{
+			"name": "FAQ Item",
+			"group": "molecules",
+			"component": "faq-item",
+			"node": "8:19",
+			"variants": ["State=Open", "State=Closed"]
+		},
+		{
+			"name": "Newsletter Form",
+			"group": "molecules",
+			"component": "newsletter-form",
+			"node": "8:20"
+		},
+		{
+			"name": "Site Header",
+			"group": "organisms",
+			"component": "site-header",
+			"node": "36:213",
+			"variants": ["State=Default", "State=Docked"]
+		},
+		{
+			"name": "Site Footer",
+			"group": "organisms",
+			"component": "site-footer",
+			"node": "9:49"
+		},
+		{
+			"name": "Hero",
+			"group": "organisms",
+			"component": "hero",
+			"node": "10:13"
+		},
+		{
+			"name": "Route Map",
+			"group": "organisms",
+			"component": "route-map",
+			"node": "10:41"
+		},
+		{
+			"name": "Link",
+			"group": "atoms",
+			"component": "link",
+			"node": "17:75",
+			"variants": [
+				"Direction=Forward, State=Default",
+				"Direction=Back, State=Default",
+				"Direction=Forward, State=Hover",
+				"Direction=Back, State=Hover"
+			]
+		},
+		{
+			"name": "Badge",
+			"group": "atoms",
+			"component": "badge",
+			"node": "17:103"
+		},
+		{
+			"name": "Chip",
+			"group": "atoms",
+			"component": "chip",
+			"node": "17:146"
+		},
+		{
+			"name": "Select",
+			"group": "atoms",
+			"component": "select",
+			"node": "84:4583",
+			"variants": ["Multiple=No", "Multiple=Yes"]
+		},
+		{
+			"name": "Search Field",
+			"group": "atoms",
+			"component": "search-field",
+			"node": "17:201"
+		},
+		{
+			"name": "Textarea",
+			"group": "atoms",
+			"component": "textarea",
+			"node": "17:209"
+		},
+		{
+			"name": "Radio",
+			"group": "atoms",
+			"component": "radio",
+			"node": "17:220"
+		},
+		{
+			"name": "Avatar",
+			"group": "atoms",
+			"component": "avatar",
+			"node": "17:225"
+		},
+		{
+			"name": "Icon Circle",
+			"group": "atoms",
+			"component": "icon-circle",
+			"node": "17:226"
+		},
+		{
+			"name": "Breadcrumb",
+			"group": "molecules",
+			"component": "breadcrumb",
+			"node": "18:32"
+		},
+		{
+			"name": "Teaser Card",
+			"group": "molecules",
+			"component": "teaser-card",
+			"node": "29:189",
+			"variants": ["State=Default", "State=Hover"]
+		},
+		{
+			"name": "Person Card",
+			"group": "molecules",
+			"component": "person-card",
+			"node": "18:47"
+		},
+		{
+			"name": "Link Tile",
+			"group": "molecules",
+			"component": "link-tile",
+			"node": "29:177",
+			"variants": ["State=Default", "State=Hover"]
+		},
+		{
+			"name": "CTA Card",
+			"group": "molecules",
+			"component": "cta-card",
+			"node": "18:76"
+		},
+		{
+			"name": "Info Box",
+			"group": "molecules",
+			"component": "info-box",
+			"node": "18:77"
+		},
+		{
+			"name": "Fact List",
+			"group": "molecules",
+			"component": "fact-list",
+			"node": "18:97"
+		},
+		{
+			"name": "Notice",
+			"group": "molecules",
+			"component": "notice",
+			"node": "19:41"
+		},
+		{
+			"name": "Icon Fact",
+			"group": "molecules",
+			"component": "icon-fact",
+			"node": "19:48"
+		},
+		{
+			"name": "Sub Navigation",
+			"group": "molecules",
+			"component": "sub-nav",
+			"node": "19:66"
+		},
+		{
+			"name": "Media List",
+			"group": "molecules",
+			"component": "media-list",
+			"node": "19:79"
+		},
+		{
+			"name": "Pagination",
+			"group": "molecules",
+			"component": "pagination",
+			"node": "19:129"
+		},
+		{
+			"name": "Download List",
+			"group": "molecules",
+			"component": "download-list",
+			"node": "19:144"
+		},
+		{
+			"name": "Rich Text",
+			"group": "molecules",
+			"component": "rich-text",
+			"node": "19:178"
+		},
+		{
+			"name": "Text & Media",
+			"group": "molecules",
+			"component": "text-media",
+			"node": "19:200"
+		},
+		{
+			"name": "Gallery",
+			"group": "molecules",
+			"component": "gallery",
+			"node": "19:201"
+		},
+		{
+			"name": "Table",
+			"group": "molecules",
+			"component": "table",
+			"node": "19:210"
+		},
+		{
+			"name": "Nav Item",
+			"group": "organisms",
+			"component": "site-header",
+			"node": "21:100"
+		},
+		{
+			"name": "Topbar",
+			"group": "organisms",
+			"component": "topbar",
+			"node": "21:261"
+		},
+		{
+			"name": "Page Header",
+			"group": "organisms",
+			"component": "page-header",
+			"node": "21:399"
+		},
+		{
+			"name": "Hero Split",
+			"group": "organisms",
+			"component": "hero-split",
+			"node": "21:418"
+		},
+		{
+			"name": "Logo modern",
+			"group": "atoms",
+			"component": "logo",
+			"node": "55:3167"
+		},
+		{
+			"name": "Scheme Toggle",
+			"group": "atoms",
+			"component": "scheme-toggle",
+			"node": "36:173",
+			"variants": ["State=Off", "State=On"]
+		},
+		{
+			"name": "Menu Button",
+			"group": "atoms",
+			"component": "menu-button",
+			"node": "36:182",
+			"variants": ["State=Closed", "State=Open"]
+		},
+		{
+			"name": "Site Header · Mobile",
+			"group": "organisms",
+			"component": "site-header",
+			"node": "37:317",
+			"variants": ["State=Closed", "State=Open"]
+		},
+		{
+			"name": "Nav Dropdown",
+			"group": "molecules",
+			"component": "nav-flyout",
+			"node": "37:181"
+		},
+		{
+			"name": "Nav Mega",
+			"group": "molecules",
+			"component": "nav-flyout",
+			"node": "37:194"
+		},
+		{
+			"name": "Highlight",
+			"group": "molecules",
+			"component": "highlight",
+			"node": "37:232"
+		},
+		{
+			"name": "Lightbox",
+			"group": "molecules",
+			"component": "lightbox",
+			"node": "37:242"
+		},
+		{
+			"name": "Icon Close",
+			"group": "atoms",
+			"component": "icon",
+			"node": "36:217"
+		},
+		{
+			"name": "Bleed Image",
+			"group": "molecules",
+			"component": "bleed-image",
+			"node": "61:227"
+		},
+		{
+			"name": "Page Intro",
+			"group": "organisms",
+			"component": "page-intro",
+			"node": "61:218"
+		},
+		{
+			"name": "Chapter",
+			"group": "organisms",
+			"component": "chapter",
+			"node": "61:204"
+		},
+		{
+			"name": "Search Toggle",
+			"group": "atoms",
+			"component": "site-header",
+			"node": "65:238",
+			"variants": ["State=Off", "State=On"]
+		},
+		{
+			"name": "Search Form",
+			"group": "molecules",
+			"component": "search-form",
+			"node": "66:3404",
+			"variants": ["Layout=Row", "Layout=Stacked"]
+		},
+		{
+			"name": "Search Panel",
+			"group": "molecules",
+			"component": "site-header",
+			"node": "66:227"
+		},
+		{
+			"name": "Search Results",
+			"group": "molecules",
+			"component": "search-results",
+			"node": "66:239"
+		},
+		{
+			"name": "Login Form",
+			"group": "molecules",
+			"component": "login-form",
+			"node": "66:319",
+			"variants": ["State=Default", "State=Failed", "State=Logged in"]
+		},
+		{
+			"name": "Form",
+			"group": "molecules",
+			"component": "form",
+			"node": "66:393",
+			"variants": ["State=Default", "State=Invalid", "State=Sent", "State=Step", "State=Summary"]
+		},
+		{
+			"name": "Choice Group",
+			"group": "molecules",
+			"component": "choice-group",
+			"node": "84:4516",
+			"variants": [
+				"Type=Radio, State=Default",
+				"Type=Radio, State=Invalid",
+				"Type=Checkbox, State=Default",
+				"Type=Checkbox, State=Invalid"
+			]
+		},
+		{
+			"name": "Logo · Title",
+			"node": "78:358"
+		}
+	],
+	"pages": [
+		{
+			"name": "Kumano Home · Caramel",
+			"slug": "home",
+			"node": "12:2"
+		},
+		{
+			"name": "Beispiel – Start",
+			"slug": "start",
+			"node": "22:926"
+		},
+		{
+			"name": "Beispiel – Liste",
+			"slug": "list",
+			"node": "22:1324"
+		},
+		{
+			"name": "Beispiel – Detail",
+			"slug": "detail",
+			"node": "22:1579"
+		},
+		{
+			"name": "Kumano Home · Forest",
+			"slug": "home-forest",
+			"node": "39:1702"
+		},
+		{
+			"name": "Kumano Home · Ocean",
+			"slug": "home-ocean",
+			"node": "39:1768"
+		},
+		{
+			"name": "Kumano Home · Violet",
+			"slug": "home-violet",
+			"node": "39:1834"
+		},
+		{
+			"name": "Beispiel – Start · DE",
+			"slug": "start-de",
+			"node": "40:2544"
+		},
+		{
+			"name": "Beispiel – Start · JA",
+			"slug": "start-ja",
+			"node": "40:2841"
+		},
+		{
+			"name": "Mobile references · 390px from code",
+			"slug": "mobile-references",
+			"node": "40:3204"
+		},
+		{
+			"name": "Site · Search",
+			"slug": "search",
+			"node": "73:3146"
+		},
+		{
+			"name": "Site · Log in",
+			"slug": "login",
+			"node": "73:3329"
+		},
+		{
+			"name": "Site · Contact",
+			"slug": "contact",
+			"node": "73:3489"
+		},
+		{
+			"name": "Site · Travel papers",
+			"slug": "papers",
+			"node": "73:3663"
+		},
+		{
+			"name": "Site · Page not found",
+			"slug": "not-found",
+			"node": "73:3881"
+		},
+		{
+			"name": "Site · Days and places",
+			"slug": "days",
+			"node": "75:3897"
+		},
+		{
+			"name": "Site · Practical",
+			"slug": "practical",
+			"node": "75:4126"
+		}
+	]
 }

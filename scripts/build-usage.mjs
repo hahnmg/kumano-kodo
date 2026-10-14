@@ -13,7 +13,10 @@ const server = await createServer({ configFile: false, root, logLevel: 'silent',
 try {
   const { componentUsage } = await server.ssrLoadModule('/.storybook/component-usage.ts');
   const usage = componentUsage();
-  await writeFile(out, await format(JSON.stringify(usage, null, 4), { ...(await resolveConfig(out)), filepath: out }));
+  await writeFile(
+    out,
+    await format(JSON.stringify(usage, null, '\t'), { ...(await resolveConfig(out, { editorconfig: true })), filepath: out }),
+  );
   const used = Object.values(usage).filter((pages) => pages.length).length;
   console.log(`Usage: ${used} of ${Object.keys(usage).length} components appear on pages → docs/component-usage.json`);
 } finally {

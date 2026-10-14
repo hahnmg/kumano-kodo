@@ -1,173 +1,173 @@
 {
-    "source": "Forge category Themes and full-text matches for camino and theme_camino, with comments, plus feedback from the core team (2026-09-30). As of 2026-10-05.",
-    "items": [
-        {
-            "status": "solved",
-            "issues": [],
-            "problem": "Unclear what an integrator may change.",
-            "solution": "Site settings for colours, fonts, spacing and logo; own CSS, JS and template folder."
-        },
-        {
-            "status": "solved",
-            "issues": [108673, 108674, 108675],
-            "problem": "Search, login and forms look unstyled.",
-            "solution": "Search in the header, a login with a demo account and forms, all built from the theme's parts."
-        },
-        {
-            "status": "solved",
-            "issues": [109670],
-            "problem": "fluid_styled_content can break every element.",
-            "solution": "The theme renders its elements itself and loads fluid_styled_content first; a conflict shows an error."
-        },
-        {
-            "status": "solved",
-            "issues": [],
-            "problem": "File downloads need fluid_styled_content.",
-            "solution": "The Downloads list takes files; name, type and size come from the file."
-        },
-        {
-            "status": "solved",
-            "issues": [108669],
-            "problem": "The menu cannot be used with a keyboard.",
-            "solution": "Menus open with buttons and close with Escape."
-        },
-        {
-            "status": "solved",
-            "issues": [109507],
-            "problem": "Keyboard focus in the slider is hard to see.",
-            "solution": "A visible focus ring on the slider and its dots."
-        },
-        {
-            "status": "solved",
-            "issues": [108793],
-            "problem": "The logo link has no name for screen readers.",
-            "solution": "The logo link carries the site name."
-        },
-        {
-            "status": "solved",
-            "issues": [108682, 108683],
-            "problem": "Elements can be saved empty.",
-            "solution": "Title and link are required fields."
-        },
-        {
-            "status": "solved",
-            "issues": [108671],
-            "problem": "Elements use generic icons.",
-            "solution": "20 own icons, drawn to the TYPO3 icon grid."
-        },
-        {
-            "status": "solved",
-            "issues": [108676],
-            "problem": "Backend layouts have no preview.",
-            "solution": "A screenshot for every layout."
-        },
-        {
-            "status": "solved",
-            "issues": [108714, 109599],
-            "problem": "Backend previews are unused or print raw HTML.",
-            "solution": "One escaped preview per element."
-        },
-        {
-            "status": "solved",
-            "issues": [108895],
-            "problem": "The site shows the theme's name, not its own.",
-            "solution": "Header and footer show the website title."
-        },
-        {
-            "status": "solved",
-            "issues": [110853, 110854],
-            "problem": "The demo is weak for search engines.",
-            "solution": "Page titles, descriptions, one H1 per page, sitemap and structured data."
-        },
-        {
-            "status": "solved",
-            "issues": [109704],
-            "problem": "Pages are never cached by browsers.",
-            "solution": "Core behaviour, kept; the README explains how to switch on cache headers."
-        },
-        {
-            "status": "solved",
-            "issues": [108646, 109562, 108971],
-            "problem": "The theme installs itself unasked, or not at all in DDEV.",
-            "solution": "Theme and demo are two packages; DDEV installs both on the first start."
-        },
-        {
-            "status": "solved",
-            "issues": [108713, 109708, 110388],
-            "problem": "The demo import is incomplete or outdated.",
-            "solution": "One command rebuilds and exports the demo; it requires the import extension."
-        },
-        {
-            "status": "solved",
-            "issues": [109379, 108786],
-            "problem": "No dark mode switch and no language menu.",
-            "solution": "Both in the header."
-        },
-        {
-            "status": "solved",
-            "issues": [108736, 108847],
-            "problem": "Templates use older APIs.",
-            "solution": "Templates read records and render content areas the current way."
-        },
-        {
-            "status": "solved",
-            "issues": [109395],
-            "problem": "A page without a backend layout fails.",
-            "solution": "Such a page falls back to the Default template; top bar and footer texts then stay empty."
-        },
-        {
-            "status": "solved",
-            "issues": [108677, 108680],
-            "problem": "Focus rings are clipped or too round.",
-            "solution": "Square rings with offset, whole and visible on cards, tiles and in the slider."
-        },
-        {
-            "status": "solved",
-            "issues": [110384],
-            "problem": "Labels are missing in backend previews.",
-            "solution": "Every label key the previews use exists."
-        },
-        {
-            "status": "solved",
-            "issues": [109789],
-            "problem": "Command line setup prints a warning.",
-            "solution": "The first DDEV start runs TYPO3 setup on the command line and imports the demo without a warning."
-        },
-        {
-            "status": "solved",
-            "issues": [],
-            "problem": "Unclear whether the theme is a starting point or a demo.",
-            "solution": "Theme and demo are separate; the demo installs either the full journal or a five-page starter set."
-        },
-        {
-            "status": "solved",
-            "issues": [108672, 108777, 108681],
-            "problem": "Documentation is missing.",
-            "solution": "A manual in the docs.typo3.org format, with the site settings generated from the set; README and this Storybook."
-        },
-        {
-            "status": "irrelevant",
-            "issues": [108678, 109553],
-            "problem": "Social links: focus and Mastodon URLs.",
-            "solution": "The theme has no social links element."
-        },
-        {
-            "status": "irrelevant",
-            "issues": [108794, 109464],
-            "problem": "Lists in rich text render invalid HTML.",
-            "solution": "Caused by the core theme's own rich text setup; this theme uses the core's."
-        },
-        {
-            "status": "irrelevant",
-            "issues": [108670],
-            "problem": "A global text width misaligns elements.",
-            "solution": "Widths are set per component."
-        },
-        {
-            "status": "irrelevant",
-            "issues": [109403, 110176, 109555, 109093],
-            "problem": "Details of the core theme's demo and package.",
-            "solution": "Own demo content and package."
-        }
-    ]
+	"source": "Forge category Themes and full-text matches for camino and theme_camino, with comments, plus feedback from the core team (2026-09-30). As of 2026-10-05.",
+	"items": [
+		{
+			"status": "solved",
+			"issues": [],
+			"problem": "Unclear what an integrator may change.",
+			"solution": "Site settings for colours, fonts, spacing and logo; own CSS, JS and template folder."
+		},
+		{
+			"status": "solved",
+			"issues": [108673, 108674, 108675],
+			"problem": "Search, login and forms look unstyled.",
+			"solution": "Search in the header, a login with a demo account and forms, all built from the theme's parts."
+		},
+		{
+			"status": "solved",
+			"issues": [109670],
+			"problem": "fluid_styled_content can break every element.",
+			"solution": "The theme renders its elements itself and loads fluid_styled_content first; a conflict shows an error."
+		},
+		{
+			"status": "solved",
+			"issues": [],
+			"problem": "File downloads need fluid_styled_content.",
+			"solution": "The Downloads list takes files; name, type and size come from the file."
+		},
+		{
+			"status": "solved",
+			"issues": [108669],
+			"problem": "The menu cannot be used with a keyboard.",
+			"solution": "Menus open with buttons and close with Escape."
+		},
+		{
+			"status": "solved",
+			"issues": [109507],
+			"problem": "Keyboard focus in the slider is hard to see.",
+			"solution": "A visible focus ring on the slider and its dots."
+		},
+		{
+			"status": "solved",
+			"issues": [108793],
+			"problem": "The logo link has no name for screen readers.",
+			"solution": "The logo link carries the site name."
+		},
+		{
+			"status": "solved",
+			"issues": [108682, 108683],
+			"problem": "Elements can be saved empty.",
+			"solution": "Title and link are required fields."
+		},
+		{
+			"status": "solved",
+			"issues": [108671],
+			"problem": "Elements use generic icons.",
+			"solution": "20 own icons, drawn to the TYPO3 icon grid."
+		},
+		{
+			"status": "solved",
+			"issues": [108676],
+			"problem": "Backend layouts have no preview.",
+			"solution": "A screenshot for every layout."
+		},
+		{
+			"status": "solved",
+			"issues": [108714, 109599],
+			"problem": "Backend previews are unused or print raw HTML.",
+			"solution": "One escaped preview per element."
+		},
+		{
+			"status": "solved",
+			"issues": [108895],
+			"problem": "The site shows the theme's name, not its own.",
+			"solution": "Header and footer show the website title."
+		},
+		{
+			"status": "solved",
+			"issues": [110853, 110854],
+			"problem": "The demo is weak for search engines.",
+			"solution": "Page titles, descriptions, one H1 per page, sitemap and structured data."
+		},
+		{
+			"status": "solved",
+			"issues": [109704],
+			"problem": "Pages are never cached by browsers.",
+			"solution": "Core behaviour, kept; the README explains how to switch on cache headers."
+		},
+		{
+			"status": "solved",
+			"issues": [108646, 109562, 108971],
+			"problem": "The theme installs itself unasked, or not at all in DDEV.",
+			"solution": "Theme and demo are two packages; DDEV installs both on the first start."
+		},
+		{
+			"status": "solved",
+			"issues": [108713, 109708, 110388],
+			"problem": "The demo import is incomplete or outdated.",
+			"solution": "One command rebuilds and exports the demo; it requires the import extension."
+		},
+		{
+			"status": "solved",
+			"issues": [109379, 108786],
+			"problem": "No dark mode switch and no language menu.",
+			"solution": "Both in the header."
+		},
+		{
+			"status": "solved",
+			"issues": [108736, 108847],
+			"problem": "Templates use older APIs.",
+			"solution": "Templates read records and render content areas the current way."
+		},
+		{
+			"status": "solved",
+			"issues": [109395],
+			"problem": "A page without a backend layout fails.",
+			"solution": "Such a page falls back to the Default template; top bar and footer texts then stay empty."
+		},
+		{
+			"status": "solved",
+			"issues": [108677, 108680],
+			"problem": "Focus rings are clipped or too round.",
+			"solution": "Square rings with offset, whole and visible on cards, tiles and in the slider."
+		},
+		{
+			"status": "solved",
+			"issues": [110384],
+			"problem": "Labels are missing in backend previews.",
+			"solution": "Every label key the previews use exists."
+		},
+		{
+			"status": "solved",
+			"issues": [109789],
+			"problem": "Command line setup prints a warning.",
+			"solution": "The first DDEV start runs TYPO3 setup on the command line and imports the demo without a warning."
+		},
+		{
+			"status": "solved",
+			"issues": [],
+			"problem": "Unclear whether the theme is a starting point or a demo.",
+			"solution": "Theme and demo are separate; the demo installs either the full journal or a five-page starter set."
+		},
+		{
+			"status": "solved",
+			"issues": [108672, 108777, 108681],
+			"problem": "Documentation is missing.",
+			"solution": "A manual in the docs.typo3.org format, with the site settings generated from the set; README and this Storybook."
+		},
+		{
+			"status": "irrelevant",
+			"issues": [108678, 109553],
+			"problem": "Social links: focus and Mastodon URLs.",
+			"solution": "The theme has no social links element."
+		},
+		{
+			"status": "irrelevant",
+			"issues": [108794, 109464],
+			"problem": "Lists in rich text render invalid HTML.",
+			"solution": "Caused by the core theme's own rich text setup; this theme uses the core's."
+		},
+		{
+			"status": "irrelevant",
+			"issues": [108670],
+			"problem": "A global text width misaligns elements.",
+			"solution": "Widths are set per component."
+		},
+		{
+			"status": "irrelevant",
+			"issues": [109403, 110176, 109555, 109093],
+			"problem": "Details of the core theme's demo and package.",
+			"solution": "Own demo content and package."
+		}
+	]
 }

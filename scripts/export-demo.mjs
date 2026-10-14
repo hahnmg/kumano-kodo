@@ -1236,7 +1236,7 @@ const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.value
 // A placeholder clip made from four trip photos; on day 2 it stands in the opening figure, its photo as poster.
 const videos = { trail: { file: 'img/video/trail.mp4', width: 1280, height: 720 } };
 
-await writeFile(out, `${JSON.stringify({ site, photos, files, videos, pages, frontendUsers, news }, null, 4)}\n`);
+await writeFile(out, `${JSON.stringify({ site, photos, files, videos, pages, frontendUsers, news }, null, '\t')}\n`);
 console.log(
   `Demo: ${pages.length} pages, ${count(pages.flatMap((p) => p.content))} content elements, ${Object.keys(photos).length} photos → ${out}`,
 );

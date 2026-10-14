@@ -70,5 +70,5 @@ for (const [file, slug] of Object.entries(photos)) {
   }
   manifest[slug] = { width, height, taken: taken(meta.exif), sizes };
 }
-await writeFile(join(root, 'stories/content/photos.json'), `${JSON.stringify(manifest, null, 4)}\n`);
+await writeFile(join(root, 'stories/content/photos.json'), `${JSON.stringify(manifest, null, '\t')}\n`);
 console.log(`img/photos: ${Object.keys(manifest).length} photos × ${widths.length} widths`);

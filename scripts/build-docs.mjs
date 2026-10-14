@@ -84,7 +84,10 @@ for (const name of (await readdir(componentsDir)).sort()) {
 }
 // Formatted as the lint expects it, so a build leaves the file unchanged when the components are.
 const jsonPath = join(root, 'docs/fluid-components.json');
-await writeFile(jsonPath, await format(JSON.stringify(components, null, 4), { ...(await resolveConfig(jsonPath)), filepath: jsonPath }));
+await writeFile(
+  jsonPath,
+  await format(JSON.stringify(components, null, '\t'), { ...(await resolveConfig(jsonPath, { editorconfig: true })), filepath: jsonPath }),
+);
 
 const rst = (s = '') => s.replaceAll('*', '\\*');
 const code = (s) => '``' + s + '``';

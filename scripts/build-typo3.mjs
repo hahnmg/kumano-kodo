@@ -323,7 +323,7 @@ const buildThemes = async () => {
   );
   const out = join(pkg, 'Resources/Private/Themes');
   await mkdir(out, { recursive: true });
-  await writeFile(join(out, 'themes.json'), `${JSON.stringify({ fonts, themes }, null, 4)}\n`);
+  await writeFile(join(out, 'themes.json'), `${JSON.stringify({ fonts, themes }, null, '\t')}\n`);
   await buildSettings(themes);
 };
 

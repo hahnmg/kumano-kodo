@@ -1,9 +1,9 @@
 {
-    "stack": "design-system",
-    "commitMode": "commit",
-    "designReference": "figma",
-    "referencePath": "https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm (pages Components, Pages)",
-    "docs": "versioned",
-    "answeredOn": "2026-09-29",
-    "notes": "Figma is the single source of truth. Components and tokens are edited in Figma and synced to code. See docs/adr/2026-09-29-figma-replaces-paper.md."
+	"stack": "design-system",
+	"commitMode": "commit",
+	"designReference": "figma",
+	"referencePath": "https://www.figma.com/design/p6SK2xN5ZzBisOW1wKlrDm (pages Components, Pages)",
+	"docs": "versioned",
+	"answeredOn": "2026-09-29",
+	"notes": "Figma is the single source of truth. Components and tokens are edited in Figma and synced to code. See docs/adr/2026-09-29-figma-replaces-paper.md."
 }
