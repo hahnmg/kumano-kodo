@@ -19,4 +19,5 @@ remove it.
 | `error`, `description`                      | optional, as Text Field                          |
 
 Tokens: `--color-line`, `--color-ink`, `--color-sunk`, `--color-muted`,
-`--color-accent`, `--space-8`, `--space-10`, `--space-20`, `--space-28`.
+`--color-accent`, `--space-8`, `--space-10`, `--space-20`, `--space-28`,
+`--radius-surface`.

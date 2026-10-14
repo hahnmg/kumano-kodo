@@ -10,4 +10,4 @@ Three-column image grid with optional caption.
 | `images`  | `{ src, alt }[]` |
 | `caption` | optional         |
 
-Tokens: `--color-muted`, `--space-16`, `--space-24`.
+Tokens: `--color-muted`, `--space-16`, `--space-24`, `--radius-surface`.

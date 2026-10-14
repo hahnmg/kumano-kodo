@@ -12,4 +12,5 @@ Image beside a heading, text and optional link.
 | `link`          | optional `{ label, href }` |
 | `imageSide`     | `left`, `right`            |
 
-Tokens: `--color-muted`, `--space-16`, `--space-64`, `.type-h3`.
+Tokens: `--color-muted`, `--space-16`, `--space-64`, `.type-h3`,
+`--radius-surface`.

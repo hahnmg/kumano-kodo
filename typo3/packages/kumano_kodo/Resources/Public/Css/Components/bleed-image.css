@@ -5,6 +5,12 @@
     margin: 0;
 }
 
+/* Full width runs to the window's edges, so it keeps square corners in every theme. */
+.bleed-image .lightbox-link,
+.bleed-image .video {
+    border-radius: 0;
+}
+
 .bleed-image-image {
     display: block;
     width: 100%;

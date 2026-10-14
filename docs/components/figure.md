@@ -13,4 +13,4 @@ where the figure opens a content column (detail page).
 | `rule`    | top hairline, default true |
 
 Tokens: `--color-line`, `--color-muted`, `--space-14`, `--space-20`,
-`--space-24`.
+`--space-24`, `--radius-surface`.

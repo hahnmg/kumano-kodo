@@ -4,6 +4,12 @@
     position: relative;
 }
 
+/* The theme's rounding clips the poster and the player alike. */
+.video {
+    overflow: hidden;
+    border-radius: var(--radius-surface);
+}
+
 .video-poster {
     display: block;
     width: 100%;

@@ -180,6 +180,10 @@ settings:
     type: string
     default: ''
     category: kumanoKodo.spacing
+  kumanoKodo.radius.surface:
+    type: string
+    default: ''
+    category: kumanoKodo.spacing
   kumanoKodo.radius.pill:
     type: string
     default: ''

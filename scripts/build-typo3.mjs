@@ -327,7 +327,7 @@ const buildThemes = async () => {
             sectionSmall: v('layout/section-sm'),
             container: v('layout/page'),
           },
-          radius: { button: v('radius/button'), pill: v('radius/pill') },
+          radius: { button: v('radius/button'), pill: v('radius/pill'), surface: v('radius/surface') },
         },
       ];
     }),
@@ -413,7 +413,14 @@ const buildSettings = async (themes) => {
   px('spacing.sectionLarge', 'spacing', 'Large section spacing', (t) => t.spacing.sectionLarge, 'Above 900px. ');
   px('spacing.sectionSmall', 'spacing', 'Section spacing', (t) => t.spacing.sectionSmall, 'Above 900px. ');
   px('spacing.container', 'spacing', 'Content width', (t) => t.spacing.container);
-  px('radius.button', 'spacing', 'Corner radius', (t) => t.radius.button, 'Buttons, fields and cards. ');
+  px('radius.button', 'spacing', 'Corner radius', (t) => t.radius.button, 'Buttons. ');
+  px(
+    'radius.surface',
+    'spacing',
+    'Surface radius',
+    (t) => t.radius.surface,
+    'Photos, video, dropdown menus and boxes; full-width photos stay square. ',
+  );
   px('radius.pill', 'spacing', 'Pill radius', (t) => t.radius.pill, 'Chips and badges. ');
   add('contact.phone', 'contact', 'string', '', 'Phone');
   add('contact.email', 'contact', 'string', '', 'Email');

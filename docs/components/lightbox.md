@@ -12,4 +12,4 @@ the image that opened it. Labels come from the group's `data-label-*`
 attributes, set through the `labels` prop of Gallery and Figure.
 
 Tokens: `--color-on-image`, `--color-on-image-ink`, `--gutter`, `--space-*`,
-`--radius-full`, `--motion-*`.
+`--radius-full`, `--motion-*`, `--radius-surface`.

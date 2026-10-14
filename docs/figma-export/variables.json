@@ -635,6 +635,17 @@
 						"Mono": 0
 					}
 				},
+				"radius/surface": {
+					"type": "FLOAT",
+					"css": "--radius-surface",
+					"v": {
+						"Caramel": 2,
+						"Forest": 0,
+						"Ocean": 16,
+						"Violet": 0,
+						"Mono": 0
+					}
+				},
 				"radius/pill": {
 					"type": "FLOAT",
 					"css": "--radius-pill",

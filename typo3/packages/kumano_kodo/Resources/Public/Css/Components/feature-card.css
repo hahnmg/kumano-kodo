@@ -9,6 +9,7 @@
     height: auto;
     object-fit: cover;
     aspect-ratio: 765 / 425;
+    border-radius: var(--radius-surface);
 }
 
 .feature-card-default .feature-card-image {

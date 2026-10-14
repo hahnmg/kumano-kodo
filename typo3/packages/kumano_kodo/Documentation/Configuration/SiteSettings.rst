@@ -306,8 +306,17 @@ Spacing and shape
     :type: string
     :Default: (empty)
 
-    Corner radius. Buttons, fields and cards. Pixels. Empty: Caramel 2px, Forest
-    0px, Ocean 16px, Violet 0px, Mono 0px.
+    Corner radius. Buttons. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px,
+    Violet 0px, Mono 0px.
+
+.. confval:: kumanoKodo.radius.surface
+    :name: kumanokodo-radius-surface
+    :type: string
+    :Default: (empty)
+
+    Surface radius. Photos, video, dropdown menus and boxes; full-width photos
+    stay square. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px, Violet 0px,
+    Mono 0px.
 
 .. confval:: kumanoKodo.radius.pill
     :name: kumanokodo-radius-pill

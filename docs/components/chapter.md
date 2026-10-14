@@ -17,4 +17,5 @@ On phones portraits pair up and landscapes take the full width.
 | `labels`                          | lightbox labels                          |
 
 Tokens: `--color-accent`, `--color-ink`, `--color-muted`, `--space-*`,
-`--section-sm`, `.type-hero`, `.type-h3`, `.type-lead`, `.type-caption`.
+`--section-sm`, `.type-hero`, `.type-h3`, `.type-lead`, `.type-caption`,
+`--radius-surface`.

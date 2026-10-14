@@ -13,6 +13,7 @@
     padding: var(--space-40) var(--space-32);
     background: var(--color-accent);
     color: var(--color-paper);
+    border-radius: var(--radius-surface);
 }
 
 .draft-colour-column > * {

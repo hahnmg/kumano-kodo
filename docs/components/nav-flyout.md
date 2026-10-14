@@ -14,4 +14,4 @@ narrow screens.
 | `kind` | `dropdown` with `links`, or `mega` with `columns`, `text?`, `teaser?`, `overview?` |
 
 Tokens: `--color-paper`, `--color-line`, `--color-accent`, `--color-ink`,
-`--color-muted`, `--space-*`.
+`--color-muted`, `--space-*`, `--radius-surface`.

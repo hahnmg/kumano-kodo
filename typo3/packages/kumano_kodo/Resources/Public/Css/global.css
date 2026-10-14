@@ -50,6 +50,7 @@
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 2px;
+    --radius-surface: 2px;
     --radius-pill: 2px;
     --radius-checkbox: 3px;
     --radius-full: 9999px;
@@ -119,6 +120,7 @@
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 0px;
+    --radius-surface: 0px;
     --radius-pill: 0px;
     --radius-checkbox: 3px;
     --radius-full: 9999px;
@@ -188,6 +190,7 @@
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 16px;
+    --radius-surface: 16px;
     --radius-pill: 999px;
     --radius-checkbox: 3px;
     --radius-full: 9999px;
@@ -257,6 +260,7 @@
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 0px;
+    --radius-surface: 0px;
     --radius-pill: 0px;
     --radius-checkbox: 3px;
     --radius-full: 9999px;
@@ -326,6 +330,7 @@
     --spacing-grid-gap: var(--space-24);
     --container-page: 1328px;
     --radius: 0px;
+    --radius-surface: 0px;
     --radius-pill: 0px;
     --radius-checkbox: 0px;
     --radius-full: 9999px;
@@ -961,6 +966,7 @@ body {
 .file-upload-input,
 .file-upload-face {
     grid-area: 1 / 1;
+    border-radius: var(--radius-surface);
 }
 
 .file-upload-input {
@@ -1450,6 +1456,12 @@ body {
 .video,
 .lightbox-link:has(.video-badge) {
     position: relative;
+}
+
+/* The theme's rounding clips the poster and the player alike. */
+.video {
+    overflow: hidden;
+    border-radius: var(--radius-surface);
 }
 
 .video-poster {
@@ -2368,6 +2380,7 @@ body {
     padding: var(--space-4) var(--space-20) var(--space-8);
     border: var(--border-hairline) solid var(--color-line);
     border-top-color: var(--color-accent);
+    border-radius: 0 0 var(--radius-surface) var(--radius-surface);
 }
 
 .nav-flyout-mega {
@@ -2441,6 +2454,7 @@ body {
     padding: var(--space-16) var(--space-20);
     background: var(--color-accent);
     color: var(--color-paper);
+    border-radius: var(--radius-surface);
 }
 
 .notice .icon {
@@ -2603,6 +2617,7 @@ body {
 
 .teaser-card-media {
     overflow: hidden;
+    border-radius: var(--radius-surface);
 }
 
 .teaser-card-image {

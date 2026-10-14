@@ -282,7 +282,13 @@
         <source>Corner radius</source>
       </trans-unit>
       <trans-unit id="settings.description.kumanoKodo.radius.button">
-        <source>Buttons, fields and cards. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px, Violet 0px, Mono 0px.</source>
+        <source>Buttons. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px, Violet 0px, Mono 0px.</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.radius.surface">
+        <source>Surface radius</source>
+      </trans-unit>
+      <trans-unit id="settings.description.kumanoKodo.radius.surface">
+        <source>Photos, video, dropdown menus and boxes; full-width photos stay square. Pixels. Empty: Caramel 2px, Forest 0px, Ocean 16px, Violet 0px, Mono 0px.</source>
       </trans-unit>
       <trans-unit id="settings.kumanoKodo.radius.pill">
         <source>Pill radius</source>

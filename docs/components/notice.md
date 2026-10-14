@@ -10,4 +10,4 @@ Short important note between two rules, with a warning icon.
 | `title`, `text` | text   |
 
 Tokens: `--color-line`, `--color-accent`, `--color-ink`, `--space-12`,
-`--space-16`.
+`--space-16`, `--radius-surface`.

@@ -13,4 +13,4 @@ leads to its day.
 | `href`                                   | optional; the title's link then covers the card, as on the Teaser Card |
 
 Tokens: `--color-hair`, `--color-accent`, `--color-muted`, `--space-12`,
-`--space-14`, `--space-20`.
+`--space-14`, `--space-20`, `--radius-surface`.

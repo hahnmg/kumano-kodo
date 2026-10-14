@@ -49,7 +49,8 @@
 			},
 			"radius": {
 				"button": 2,
-				"pill": 2
+				"pill": 2,
+				"surface": 2
 			}
 		},
 		"forest": {
@@ -92,7 +93,8 @@
 			},
 			"radius": {
 				"button": 0,
-				"pill": 0
+				"pill": 0,
+				"surface": 0
 			}
 		},
 		"ocean": {
@@ -135,7 +137,8 @@
 			},
 			"radius": {
 				"button": 16,
-				"pill": 999
+				"pill": 999,
+				"surface": 16
 			}
 		},
 		"violet": {
@@ -178,7 +181,8 @@
 			},
 			"radius": {
 				"button": 0,
-				"pill": 0
+				"pill": 0,
+				"surface": 0
 			}
 		},
 		"mono": {
@@ -221,7 +225,8 @@
 			},
 			"radius": {
 				"button": 0,
-				"pill": 0
+				"pill": 0,
+				"surface": 0
 			}
 		}
 	}

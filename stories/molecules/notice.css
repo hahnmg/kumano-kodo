@@ -6,6 +6,7 @@
     padding: var(--space-16) var(--space-20);
     background: var(--color-accent);
     color: var(--color-paper);
+    border-radius: var(--radius-surface);
 }
 
 .notice .icon {

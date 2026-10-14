@@ -90,7 +90,7 @@ final class ThemeProcessor implements DataProcessorInterface
                 $root['--space-' . $step] = round($step * $unit / 8, 2) . 'px';
             }
         }
-        foreach (['container' => '--container-page', 'radius.button' => '--radius', 'radius.pill' => '--radius-pill'] as $key => $property) {
+        foreach (['container' => '--container-page', 'radius.button' => '--radius', 'radius.pill' => '--radius-pill', 'radius.surface' => '--radius-surface'] as $key => $property) {
             $value = $this->pixels($setting(str_contains($key, '.') ? $key : 'spacing.' . $key));
             if ($value !== null) {
                 $root[$property] = $value . 'px';
