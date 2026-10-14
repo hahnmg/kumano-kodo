@@ -64,6 +64,9 @@ External videos
     The switch that loads YouTube and Vimeo videos without asking; for the
     privacy page.
 
+A table set in the text editor of the element Text takes the theme's table style
+and scrolls sideways on narrow screens.
+
 Entries of cards and lists, links and chips share one record type. Each entry
 can be limited to a user group, for example a footer link that only logged-in
 visitors see.

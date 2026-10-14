@@ -544,6 +544,7 @@ const build = (p: Photos): LocaleContent => {
     route: { title: 'Die Route', lede: pages.start.text },
     days: {
       title: 'Tage und Orte',
+      stagesTable: { title: 'Die fünf Etappen', head: ['Tag', 'Abschnitt', 'Strecke'] },
       intro: 'Die vier Tage der Reihe nach, dann die Orte, an denen wir Halt gemacht und übernachtet haben.',
       groups: { days: 'Tage', places: 'Orte', stays: 'Unterkünfte' },
     },

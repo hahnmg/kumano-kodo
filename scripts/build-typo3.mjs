@@ -27,6 +27,7 @@ const frame = [
   'molecules/nav-flyout',
   'molecules/notice',
   'molecules/rich-text',
+  'molecules/table',
   'molecules/teaser-card',
 ];
 

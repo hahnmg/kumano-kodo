@@ -164,6 +164,21 @@ export const daysPage = (c: Content = content()): string => {
       ],
     ) +
       section({ content: richText({ html: `<p>${esc(site.days.intro)}</p>` }) }) +
+      // A table as the text editor writes it, with the class and wrapper the theme's parseFunc adds.
+      section({
+        content: stack(
+          [
+            sectionHeading({ title: site.days.stagesTable.title }),
+            richText({
+              html:
+                `<div class="table-wrap"><table class="table"><thead><tr>${site.days.stagesTable.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>` +
+                kumano.stages.map((s) => `<tr><td>${esc(s.stage)}</td><td>${esc(s.title)}</td><td>${esc(s.stats)}</td></tr>`).join('') +
+                `</tbody></table></div>`,
+            }),
+          ],
+          'heading',
+        ),
+      }) +
       section({
         id: 'days',
         bleed: true,

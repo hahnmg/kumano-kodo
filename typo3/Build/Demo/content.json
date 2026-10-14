@@ -1991,6 +1991,21 @@
 					}
 				},
 				{
+					"type": "text",
+					"fields": {
+						"bodytext": {
+							"en": "<table><thead><tr><th>Day</th><th>Section</th><th>Distance</th></tr></thead><tbody><tr><td>Day 1</td><td>Takijiri → Takahara</td><td>3.7 km</td></tr><tr><td>Day 2</td><td>Takahara → Chikatsuyu</td><td>9.8 km</td></tr><tr><td>Day 3</td><td>Chikatsuyu → Hongu</td><td>about 25 km</td></tr><tr><td>Day 4</td><td>Kogumotori-goe</td><td>about 13 km</td></tr><tr><td>Day 4</td><td>Ogumotori-goe → Nachi</td><td>about 14.5 km</td></tr></tbody></table>",
+							"de": "<table><thead><tr><th>Tag</th><th>Abschnitt</th><th>Strecke</th></tr></thead><tbody><tr><td>Tag 1</td><td>Takijiri → Takahara</td><td>3,7 km</td></tr><tr><td>Tag 2</td><td>Takahara → Chikatsuyu</td><td>9,8 km</td></tr><tr><td>Tag 3</td><td>Chikatsuyu → Hongu</td><td>rund 25 km</td></tr><tr><td>Tag 4</td><td>Kogumotori-goe</td><td>rund 13 km</td></tr><tr><td>Tag 4</td><td>Ogumotori-goe → Nachi</td><td>rund 14,5 km</td></tr></tbody></table>",
+							"ja": "<table><thead><tr><th>日</th><th>区間</th><th>距離</th></tr></thead><tbody><tr><td>1日目</td><td>滝尻 → 高原</td><td>3.7 km</td></tr><tr><td>2日目</td><td>高原 → 近露</td><td>9.8 km</td></tr><tr><td>3日目</td><td>近露 → 本宮</td><td>約25 km</td></tr><tr><td>4日目</td><td>小雲取越</td><td>約13 km</td></tr><tr><td>4日目</td><td>大雲取越 → 那智</td><td>約14.5 km</td></tr></tbody></table>"
+						},
+						"header": {
+							"en": "The five stages",
+							"de": "Die fünf Etappen",
+							"ja": "五つの区間"
+						}
+					}
+				},
+				{
 					"type": "kumano_cards",
 					"fields": {
 						"tx_kumanokodo_variant": "stage",

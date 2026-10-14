@@ -4484,7 +4484,13 @@
 			"group": "Site"
 		}
 	],
-	"Molecules/Table": [],
+	"Molecules/Table": [
+		{
+			"id": "site--days",
+			"name": "Days and places",
+			"group": "Site"
+		}
+	],
 	"Molecules/Teaser Card": [
 		{
 			"id": "site--home",

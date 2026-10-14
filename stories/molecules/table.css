@@ -1,3 +1,4 @@
+/* The type is set here, not by classes in the markup: a table from the text editor comes without them. */
 .table-wrap {
     overflow-x: auto;
 }
@@ -18,8 +19,20 @@
 .table th {
     background: var(--color-sunk);
     color: var(--color-muted);
+    font-family: var(--type-label-family);
+    font-weight: var(--type-label-weight);
+    font-size: var(--type-label-size);
+    line-height: var(--type-label-line-height);
+    letter-spacing: var(--type-label-tracking);
+    text-transform: var(--type-label-case);
 }
 
 .table td {
     color: var(--color-ink);
+    font-family: var(--type-small-family);
+    font-weight: var(--type-small-weight);
+    font-size: var(--type-small-size);
+    line-height: var(--type-small-line-height);
+    letter-spacing: var(--type-small-tracking);
+    text-transform: var(--type-small-case);
 }

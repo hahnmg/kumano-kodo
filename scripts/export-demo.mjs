@@ -292,8 +292,14 @@ const stageCards = () =>
     }),
   );
 const group = (id, pickTitle, pickItems) => cards('teaser', 4, { tx_kumanokodo_anchor: id, header: t(pickTitle) }, teasers(pickItems));
+// As the text editor writes a table; the theme's parseFunc adds the Table component's class and wrapper.
+const stagesTable = (x) =>
+  `<table><thead><tr>${x.site.days.stagesTable.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>` +
+  x.kumano.stages.map((s) => `<tr><td>${esc(s.stage)}</td><td>${esc(s.title)}</td><td>${esc(s.stats)}</td></tr>`).join('') +
+  `</tbody></table>`;
 const daysContent = [
   text(t((x) => `<p>${esc(x.site.days.intro)}</p>`)),
+  text(t(stagesTable), { header: t((x) => x.site.days.stagesTable.title) }),
   cards('stage', 'slider', { tx_kumanokodo_anchor: 'days', header: t((x) => g(x).days) }, stageCards()),
   group(
     'places',

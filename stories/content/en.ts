@@ -547,6 +547,7 @@ const build = (p: Photos) => {
     route: { title: 'The route', lede: pages.start.text },
     days: {
       title: 'Days and places',
+      stagesTable: { title: 'The five stages', head: ['Day', 'Section', 'Distance'] },
       intro: 'The four days in order, then the places we stopped at and where we slept.',
       groups: { days: 'Days', places: 'Places', stays: 'Stays' },
     },

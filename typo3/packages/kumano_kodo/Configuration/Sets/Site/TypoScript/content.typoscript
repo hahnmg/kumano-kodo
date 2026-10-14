@@ -43,3 +43,9 @@ plugin.tx_felogin_login.view {
   templateRootPaths.20 = EXT:kumano_kodo/Resources/Private/Extensions/Felogin/Templates/
   partialRootPaths.30 = EXT:kumano_kodo/Resources/Private/Templates/Partials/
 }
+
+# Tables from the text editor get the Table component's class and its scrolling wrapper.
+lib.parseFunc_RTE.externalBlocks.table.stdWrap {
+  HTMLparser.tags.table.fixAttrib.class.default = table
+  wrap = <div class="table-wrap">|</div>
+}

@@ -525,6 +525,7 @@ const build = (p: Photos): LocaleContent => {
     route: { title: 'ルート', lede: pages.start.text },
     days: {
       title: '日程と見どころ',
+      stagesTable: { title: '五つの区間', head: ['日', '区間', '距離'] },
       intro: '四日間を順番に、そのあと立ち寄った場所と泊まった場所。',
       groups: { days: '日程', places: '見どころ', stays: '宿' },
     },
