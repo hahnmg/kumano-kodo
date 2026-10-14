@@ -1,6 +1,6 @@
 # Proposal: class names in the core's hyphen style
 
-Status: proposed 2026-10-12, for approval before the rename.
+Status: accepted and built 2026-10-12 (4176471).
 
 ## Rules
 

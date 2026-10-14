@@ -102,7 +102,7 @@ for (const s of data.textStyles) {
 }
 out.push(block(':root', typeVars));
 
-// No mobile reference exists (open question 4): large styles and page spacing step down in code only.
+// The code is the mobile reference (decided 2026-10-14): large styles and page spacing step down here only.
 const steps = {
     900: { hero: [88, 92], h2: [48, 52], quote: [40, 46], stat: [52, 52], wordmark: [48, 52] },
     600: {

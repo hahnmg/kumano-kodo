@@ -22,7 +22,7 @@
     object-fit: cover;
 }
 
-/* The only colour outside the tokens (open question 6): the photo shade from the v3 export. */
+/* The only colour outside the tokens, the photo shade from the v3 export; it is to become a token. */
 .hero-shade {
     background: linear-gradient(180deg, rgb(10 12 14 / 55%) 0%, rgb(10 12 14 / 12%) 38%, rgb(10 12 14 / 82%) 100%);
 }

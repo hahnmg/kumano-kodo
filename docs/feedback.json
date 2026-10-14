@@ -1,12 +1,20 @@
 {
-    "source": "Feedback from Benjamin, Georg and Annett, and what changed since. As of 2026-10-13. Commit links need access to the repository.",
+    "source": "Feedback from Benjamin, Georg and Annett, and what changed since. As of 2026-10-14. Commit links need access to the repository.",
     "items": [
         {
             "status": "solved",
             "from": "Benjamin",
             "feedback": "Name classes like the core: no double underscores.",
             "change": "Classes in the core's hyphen style, states as attributes.",
-            "links": [{ "commit": "4176471" }, { "label": "Fluid components", "docs": "fluid-components--docs" }]
+            "links": [
+                {
+                    "commit": "4176471"
+                },
+                {
+                    "label": "Fluid components",
+                    "docs": "fluid-components--docs"
+                }
+            ]
         },
         {
             "status": "solved",
@@ -14,11 +22,23 @@
             "feedback": "Style forms with every element type of the core.",
             "change": "Every EXT:form element styled, with steps, drop zone and summary; a demo form to register a walk, stored in the form database.",
             "links": [
-                { "label": "Form", "docs": "molecules-form--docs" },
-                { "label": "Register page", "story": "site--register" },
-                { "commit": "5aaf008" },
-                { "commit": "9b951fb" },
-                { "commit": "44a8492" }
+                {
+                    "label": "Form",
+                    "docs": "molecules-form--docs"
+                },
+                {
+                    "label": "Register page",
+                    "story": "site--register"
+                },
+                {
+                    "commit": "5aaf008"
+                },
+                {
+                    "commit": "9b951fb"
+                },
+                {
+                    "commit": "44a8492"
+                }
             ]
         },
         {
@@ -26,7 +46,15 @@
             "from": "Benjamin",
             "feedback": "Support EXT:news.",
             "change": "EXT:news drawn with the theme's components in an optional site set.",
-            "links": [{ "label": "Trail reports", "story": "site--reports" }, { "commit": "6bc8186" }]
+            "links": [
+                {
+                    "label": "Trail reports",
+                    "story": "site--reports"
+                },
+                {
+                    "commit": "6bc8186"
+                }
+            ]
         },
         {
             "status": "solved",
@@ -34,11 +62,22 @@
             "feedback": "Offer components that extension authors can use.",
             "change": "Atoms, molecules and layout parts as Fluid components, every content element rendered through them, documented for extension authors.",
             "links": [
-                { "label": "Fluid components", "docs": "fluid-components--docs" },
-                { "commit": "fadfb48" },
-                { "commit": "3f1cd0e" },
-                { "commit": "fbd29ee" },
-                { "commit": "3b7f491" }
+                {
+                    "label": "Fluid components",
+                    "docs": "fluid-components--docs"
+                },
+                {
+                    "commit": "fadfb48"
+                },
+                {
+                    "commit": "3f1cd0e"
+                },
+                {
+                    "commit": "fbd29ee"
+                },
+                {
+                    "commit": "3b7f491"
+                }
             ]
         },
         {
@@ -47,9 +86,17 @@
             "feedback": "Show a news list and a detail page with a gallery in the demo.",
             "change": "Trail reports as news, with a paged list and detail pages that end in a gallery.",
             "links": [
-                { "label": "List", "story": "site--reports" },
-                { "label": "Detail", "story": "site--report-a-land-crab" },
-                { "commit": "650ca94" }
+                {
+                    "label": "List",
+                    "story": "site--reports"
+                },
+                {
+                    "label": "Detail",
+                    "story": "site--report-a-land-crab"
+                },
+                {
+                    "commit": "650ca94"
+                }
             ]
         },
         {
@@ -57,116 +104,246 @@
             "from": "Annett",
             "feedback": "Vary the line weights.",
             "change": "Lists framed by a 2px structure rule, hairlines inside.",
-            "links": [{ "label": "Media list", "docs": "molecules-media-list--docs" }, { "commit": "789fbe7" }]
+            "links": [
+                {
+                    "label": "Media list",
+                    "docs": "molecules-media-list--docs"
+                },
+                {
+                    "commit": "789fbe7"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Make the notice stand out.",
             "change": "Notices sit on the accent colour.",
-            "links": [{ "label": "Notice", "docs": "molecules-notice--docs" }, { "commit": "789fbe7" }]
+            "links": [
+                {
+                    "label": "Notice",
+                    "docs": "molecules-notice--docs"
+                },
+                {
+                    "commit": "789fbe7"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Bigger images on the place pages.",
             "change": "Place pages open with a full-bleed photo.",
-            "links": [{ "label": "Nachi", "story": "site--place-nachi" }, { "commit": "e1200c4" }]
+            "links": [
+                {
+                    "label": "Nachi",
+                    "story": "site--place-nachi"
+                },
+                {
+                    "commit": "e1200c4"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Move back and forward links to the end of the page.",
             "change": "Previous and next sit at the page end.",
-            "links": [{ "label": "Day 2", "story": "site--day-2" }, { "commit": "4e1e074" }]
+            "links": [
+                {
+                    "label": "Day 2",
+                    "story": "site--day-2"
+                },
+                {
+                    "commit": "4e1e074"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "The FAQ chevron drifts on long questions.",
             "change": "The chevron stays on the first line.",
-            "links": [{ "label": "FAQ item", "docs": "molecules-faq-item--docs" }, { "commit": "4e1e074" }]
+            "links": [
+                {
+                    "label": "FAQ item",
+                    "docs": "molecules-faq-item--docs"
+                },
+                {
+                    "commit": "4e1e074"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "The footer wordmark is bigger than the H1.",
             "change": "The wordmark is 60px, the size of an H2.",
-            "links": [{ "label": "Site footer", "docs": "organisms-site-footer--docs" }, { "commit": "789fbe7" }]
+            "links": [
+                {
+                    "label": "Site footer",
+                    "docs": "organisms-site-footer--docs"
+                },
+                {
+                    "commit": "789fbe7"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Put the day menu somewhere else.",
             "change": "The days are chips under the title.",
-            "links": [{ "label": "Day 2", "story": "site--day-2" }, { "commit": "e1200c4" }]
+            "links": [
+                {
+                    "label": "Day 2",
+                    "story": "site--day-2"
+                },
+                {
+                    "commit": "e1200c4"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Show the day's route on the day page.",
             "change": "The route map draws the day's stretch in accent.",
-            "links": [{ "label": "Route map, day", "story": "organisms-route-map--day" }, { "commit": "2a2c5ca" }]
+            "links": [
+                {
+                    "label": "Route map, day",
+                    "story": "organisms-route-map--day"
+                },
+                {
+                    "commit": "2a2c5ca"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Make the special of the day a quote.",
             "change": "Every day page quotes something said on the way.",
-            "links": [{ "label": "Day 2", "story": "site--day-2" }, { "commit": "12dacf6" }]
+            "links": [
+                {
+                    "label": "Day 2",
+                    "story": "site--day-2"
+                },
+                {
+                    "commit": "12dacf6"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Give the quote an icon.",
             "change": "A large quotation mark opens the quote.",
-            "links": [{ "label": "Quote", "docs": "molecules-quote--docs" }, { "commit": "789fbe7" }]
+            "links": [
+                {
+                    "label": "Quote",
+                    "docs": "molecules-quote--docs"
+                },
+                {
+                    "commit": "789fbe7"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Show text & media with a lot of text.",
             "change": "A long-text variant; the image stays in view while the text scrolls.",
-            "links": [{ "label": "Long text", "story": "molecules-text-media--long-text" }, { "commit": "e1200c4" }]
+            "links": [
+                {
+                    "label": "Long text",
+                    "story": "molecules-text-media--long-text"
+                },
+                {
+                    "commit": "e1200c4"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Show lists and links in rich text.",
             "change": "Rich text with lists, links and marked external links.",
-            "links": [{ "label": "Rich text", "docs": "molecules-rich-text--docs" }, { "commit": "a4e4dd5" }]
+            "links": [
+                {
+                    "label": "Rich text",
+                    "docs": "molecules-rich-text--docs"
+                },
+                {
+                    "commit": "a4e4dd5"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "The route map is not interactive.",
             "change": "Stations link to their place, else to their day; day marks link to the day.",
-            "links": [{ "label": "Route map", "story": "organisms-route-map--linked" }, { "commit": "2a2c5ca" }]
+            "links": [
+                {
+                    "label": "Route map",
+                    "story": "organisms-route-map--linked"
+                },
+                {
+                    "commit": "2a2c5ca"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "The contact page pushes what matters to the side.",
             "change": "The form sits in the main column.",
-            "links": [{ "label": "Contact", "story": "site--contact" }, { "commit": "4e1e074" }]
+            "links": [
+                {
+                    "label": "Contact",
+                    "story": "site--contact"
+                },
+                {
+                    "commit": "4e1e074"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Add a scroll-to-top button.",
             "change": "A back-to-top button appears on long pages.",
-            "links": [{ "label": "Back to top", "docs": "atoms-back-to-top--docs" }, { "commit": "a4e4dd5" }]
+            "links": [
+                {
+                    "label": "Back to top",
+                    "docs": "atoms-back-to-top--docs"
+                },
+                {
+                    "commit": "a4e4dd5"
+                }
+            ]
         },
         {
             "status": "partly",
             "from": "Annett",
             "feedback": "Add a hero slider or a hero video.",
-            "change": "No hero slider. A hero video was tried and dropped; instead, editors can put a video in an image's place in figures, galleries and text & media.",
+            "change": "A hero video was tried and dropped; editors can put a video in an image's place in figures, galleries and text & media. A hero slider is planned (decided 2026-10-14).",
             "links": [
-                { "label": "Video", "docs": "atoms-video--docs" },
-                { "label": "Gallery with video", "story": "molecules-gallery--with-video" },
-                { "commit": "5e11483" },
-                { "commit": "eb12472" }
+                {
+                    "label": "Video",
+                    "docs": "atoms-video--docs"
+                },
+                {
+                    "label": "Gallery with video",
+                    "story": "molecules-gallery--with-video"
+                },
+                {
+                    "commit": "5e11483"
+                },
+                {
+                    "commit": "eb12472"
+                }
             ]
         },
         {
@@ -174,44 +351,84 @@
             "from": "Annett",
             "feedback": "Click targets are too small (BITV), e.g. the CTA card.",
             "change": "Slider dots take clicks on 24 × 24px; the whole CTA card is the target.",
-            "links": [{ "label": "CTA card", "docs": "molecules-cta-card--docs" }, { "commit": "a4e4dd5" }]
+            "links": [
+                {
+                    "label": "CTA card",
+                    "docs": "molecules-cta-card--docs"
+                },
+                {
+                    "commit": "a4e4dd5"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Check colour contrast, in dark mode too.",
             "change": "A contrast check runs every theme in light and dark mode and fails the build below WCAG AA.",
-            "links": [{ "label": "Themes", "story": "templates--home-mono" }]
+            "links": [
+                {
+                    "label": "Themes",
+                    "story": "templates--home-mono"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Navigation elements such as the slider need keyboard support.",
             "change": "Slider controls keep focus and say when they are disabled.",
-            "links": [{ "label": "Slider", "docs": "organisms-slider--docs" }, { "commit": "a4e4dd5" }]
+            "links": [
+                {
+                    "label": "Slider",
+                    "docs": "organisms-slider--docs"
+                },
+                {
+                    "commit": "a4e4dd5"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Tell external from internal links in running text.",
             "change": "External links carry an arrow and a spoken hint.",
-            "links": [{ "label": "Rich text", "docs": "molecules-rich-text--docs" }, { "commit": "a4e4dd5" }]
+            "links": [
+                {
+                    "label": "Rich text",
+                    "docs": "molecules-rich-text--docs"
+                },
+                {
+                    "commit": "a4e4dd5"
+                }
+            ]
         },
         {
             "status": "solved",
             "from": "Annett",
             "feedback": "Should the theme be accessible?",
             "change": "Yes: the target is WCAG 2.2 AA.",
-            "links": [{ "label": "Accessibility page", "story": "site--accessibility" }]
+            "links": [
+                {
+                    "label": "Accessibility page",
+                    "story": "site--accessibility"
+                }
+            ]
         },
         {
             "status": "check",
             "from": "Annett",
             "feedback": "More variety in type and colour; more elements in the primary colour.",
-            "change": "Open. Annett's direction is due; so far: a theme switch should show more, for example in the header colour as in Camino.",
+            "change": "Waiting for Annett's direction; so far: a theme switch should show more, for example in the header colour as in Camino.",
             "links": [
-                { "label": "Mono", "story": "templates--home-mono" },
-                { "label": "Forest", "story": "templates--home-forest" }
+                {
+                    "label": "Mono",
+                    "story": "templates--home-mono"
+                },
+                {
+                    "label": "Forest",
+                    "story": "templates--home-forest"
+                }
             ]
         },
         {
@@ -232,15 +449,20 @@
             "status": "check",
             "from": "Annett",
             "feedback": "Have native speakers check the Japanese.",
-            "change": "Open: needs a native speaker.",
+            "change": "Open: Alexander finds native speakers; a table of every Japanese text is prepared for them.",
             "links": []
         },
         {
-            "status": "check",
+            "status": "partly",
             "from": "Annett",
             "feedback": "A distribution for a travel journal, or a base theme to build on?",
-            "change": "Open. The journal and the Starter in Mono show both ways; the decision is still to make.",
-            "links": [{ "label": "Starter", "story": "templates--starter-mono" }]
+            "change": "Decided 2026-10-14: a base theme. The journal's own models (stations, day marks, route map, chapters) move out of the theme into the demo; that move is still to plan.",
+            "links": [
+                {
+                    "label": "Starter",
+                    "story": "templates--starter-mono"
+                }
+            ]
         },
         {
             "status": "irrelevant",

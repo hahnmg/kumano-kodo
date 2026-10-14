@@ -1705,7 +1705,7 @@ body {
     scroll-snap-align: start;
 }
 
-/* Provisional narrow layout until a mobile reference exists (open question 4). */
+/* Narrow layout; the code is the mobile reference. */
 @media (width <= 900px) {
     .grid-3,
     .grid-4 {
@@ -2034,7 +2034,7 @@ body {
     border-bottom: var(--border-hairline) solid var(--color-line);
 }
 
-/* Provisional until a mobile reference exists (open question 4): nav, languages and scheme fold behind the menu button. */
+/* Narrow screens (the code is the mobile reference): nav, languages and scheme fold behind the menu button. */
 @media (width <= 900px) {
     /* A zero basis keeps the menu button on the logo's line; a wide mark scales down instead of wrapping it. */
     .site-header .logo {

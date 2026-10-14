@@ -25,8 +25,8 @@ The toolbar switches **language** (日本語, Deutsch, English) and **scheme** (
 dark mode button in the site header do the same and keep the toolbar in step. Themes are shown as templates
 (Kumano Home · Caramel, Forest, Ocean, Violet, Mono, and the starter set in Mono); components render in Caramel.
 
-Sample content lives in `stories/content/en.ts`, `de.ts` and `ja.ts`, one object each with the same shape; TypeScript
-fails the build if a language misses a key. The Japanese text has not been checked by a native speaker.
+Sample content lives in `stories/content/en.ts`, `de.ts` and `ja.ts`, one object each with the same shape; `npx tsc --noEmit`
+reports a language that misses a key (no script runs it). The Japanese text has not been checked by a native speaker.
 
 The sidebar runs from whole pages to parts: **Site** (every page), **Templates** (the home page in five themes and the starter set),
 **Organisms**, **Molecules**, **Atoms** ("Atoms/Overview" shows all atoms on one page) and **Layout**. Every component
@@ -132,11 +132,11 @@ four of the photos.
 
 ## Where things are
 
-| Path                     | Content                                         |
-| ------------------------ | ----------------------------------------------- |
-| `docs/adr/`              | Decisions, newest last                          |
-| `docs/open-questions.md` | Open decisions with proposal and impact         |
-| `docs/figma-map.json`    | Figma node of each component                    |
-| `src/`                   | Generated tokens, base styles, HTML helpers     |
-| `scripts/`               | Token build and gates                           |
-| `img/`                   | Photos and the placeholder clip used in stories |
+| Path                     | Content                                              |
+| ------------------------ | ---------------------------------------------------- |
+| `docs/adr/`              | Decisions, newest last                               |
+| `docs/open-questions.md` | What waits on whom, what is decided, dated decisions |
+| `docs/figma-map.json`    | Figma node of each component                         |
+| `src/`                   | Generated tokens, base styles, HTML helpers          |
+| `scripts/`               | Token build and gates                                |
+| `img/`                   | Photos and the placeholder clip used in stories      |
