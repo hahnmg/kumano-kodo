@@ -15,14 +15,17 @@ earlier ones stay.
 
 ## Decided, to do
 
-| Topic       | Decision                                                                                                                         |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Hero slider | Planned with a Storybook draft for approval                                                                                      |
-| Base theme  | The journal's own models (stations, day marks, route map, chapters) move out of the theme into the demo; own plan with migration |
+| Topic       | Decision                                    |
+| ----------- | ------------------------------------------- |
+| Hero slider | Planned with a Storybook draft for approval |
 
 ## Decisions
 
 ### 2026-10-14
+
+- **Base theme, done**: Route map and Chapter moved into the demo package with
+  the set `kumano-kodo/demo` and the components `kkd:`; see
+  `docs/adr/2026-10-14-base-theme.md`.
 
 - **Theme effects (question 13), done**: the gradients, glow and triple rule it
   listed left with v3; the code keeps only Violet's capitals and +0.09em on the
