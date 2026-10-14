@@ -1,7 +1,7 @@
 # Route Map
 
 Figma: Route Map (10:41). Markup: `stories/organisms/route-map.markup.ts`.
-Fluid: `<kk:routeMap>`.
+Fluid: `<kkd:routeMap>`, in the demo package.
 
 Schematic route as SVG with stations, day boundaries, day labels and legend.
 

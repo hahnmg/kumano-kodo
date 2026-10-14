@@ -5,8 +5,8 @@ Design
     settings; own stylesheet, script and templates.
 
 Content
-    Two containers and 14 content elements, galleries with a lightbox, video in
-    an image's place, a route map and tables from the text editor.
+    Two containers and 12 content elements, galleries with a lightbox, video in
+    an image's place and tables from the text editor.
 
 Core extensions
     Forms with every element type and steps, login, search, news, the XML
@@ -29,5 +29,5 @@ For developers
     and checks for code, contrast, accessibility and size.
 
 Demo and starter
-    A travel journal of a four-day walk in three languages to look at, and five
-    pages to start a site from.
+    A travel journal of a four-day walk in three languages, with its own route
+    map and chapters, and five pages to start a site from.

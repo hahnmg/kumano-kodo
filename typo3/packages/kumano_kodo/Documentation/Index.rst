@@ -26,7 +26,7 @@ Kumano Kodo for TYPO3
         Forest, Ocean, Violet and Mono
     :class: with-shadow
 
-A theme for TYPO3 v14: site set, page layouts, 14 content elements in two
+A theme for TYPO3 v14: site set, page layouts, 12 content elements in two
 containers, and templates for search, login and forms. It renders without
 fluid_styled_content.
 

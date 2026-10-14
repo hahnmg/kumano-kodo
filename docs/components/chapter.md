@@ -1,7 +1,7 @@
 # Chapter
 
 Figma: Chapter (61:204). Markup: `stories/organisms/chapter.markup.ts`. Fluid:
-`<kk:chapter>`.
+`<kkd:chapter>`, in the demo package.
 
 One day of the trail journal: a large numeral, date, route and a paragraph, then
 the day's photos in capture order on a twelve-column grid. Each photo sets its

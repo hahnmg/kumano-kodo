@@ -51,18 +51,15 @@ Callout
 Questions
     An accordion of questions and answers.
 
-Chapter
-    A chapter of the journal; its numeral counts itself.
-
-Route map
-    The stations of the route, with days and the walked part.
-
 Newsletter
     The sign-up form; its target is a site setting.
 
 External videos
     The switch that loads YouTube and Vimeo videos without asking; for the
     privacy page.
+
+The demo adds two elements of its own in the group Journal: Chapter, whose
+numeral counts itself, and Route map, with stations, days and the walked part.
 
 A table set in the text editor of the element Text takes the theme's table style
 and scrolls sideways on narrow screens.
