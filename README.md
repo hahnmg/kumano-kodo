@@ -129,15 +129,14 @@ published walker account `pilgrim` (`stories/content/demo-login.ts`). Set
 (`ddev config --web-environment-add=KUMANO_DEMO=starter`) to build the starter
 pages instead.
 
-| Command                                                    | Does                                                                                  |
-| ---------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `npm run build:typo3`                                      | CSS, scripts, generated partials, labels and the manual's settings page               |
-| `npm run export:demo`, `npm run export:starter`            | Demo and starter pages and texts from the Storybook content as JSON                   |
-| `ddev exec -d /var/www/html/typo3 composer demo:export`    | Rebuilds the demo records and exports them as the demo's `data.xml`                   |
-| `ddev exec -d /var/www/html/typo3 composer starter:export` | The same for the starter package, then puts the demo back                             |
-| `ddev exec -d /var/www/html/typo3 composer cs`             | Checks the PHP against typo3/coding-standards; `cs:fix` corrects it                   |
-| `npm run docs`                                             | Renders the manual (Docker) into the package's `Documentation-GENERATED-temp/`        |
-| `npm run docs:feature`                                     | Draws the manual's start image, the start page in each theme (fetches the fonts once) |
+| Command                                                         | Does                                                                                                                                                                      |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run build:typo3`                                           | CSS, scripts, generated partials, labels and the manual's settings page                                                                                                   |
+| `npm run export:demo`, `npm run export:starter`                 | Writes the demo or starter from the Storybook content and exports it as the package's `data.xml` (needs DDEV); one step, so the form and its content element stay in step |
+| `npm run export:demo:content`, `npm run export:starter:content` | Only the first step: the pages and texts as JSON, for debugging                                                                                                           |
+| `ddev exec -d /var/www/html/typo3 composer cs`                  | Checks the PHP against typo3/coding-standards; `cs:fix` corrects it                                                                                                       |
+| `npm run docs`                                                  | Renders the manual (Docker) into the package's `Documentation-GENERATED-temp/`                                                                                            |
+| `npm run docs:feature`                                          | Draws the manual's start image, the start page in each theme (fetches the fonts once)                                                                                     |
 
 - **Imports keep their links**: impexp remaps only the root page of an imported
   site; the demo's `RemapSitePagesOnPackageInitialization` points its error

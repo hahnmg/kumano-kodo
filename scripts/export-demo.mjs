@@ -993,6 +993,7 @@ const site = {
     'kumanoKodo.brand.upright': '熊野古道',
     'kumanoKodo.brand.footerWordmark': true,
     'kumanoKodo.privacy.page': 'page:privacy',
+    'news.pages.detail': 'page:report',
   },
   errorHandling: { 404: 'not-found', 403: 'login' },
   sets: ['kumano-kodo/site', 'kumano-kodo/news'],

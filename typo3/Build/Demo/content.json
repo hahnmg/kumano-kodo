@@ -8,7 +8,8 @@
 			"kumanoKodo.brand.logo": "kumano",
 			"kumanoKodo.brand.upright": "熊野古道",
 			"kumanoKodo.brand.footerWordmark": true,
-			"kumanoKodo.privacy.page": "page:privacy"
+			"kumanoKodo.privacy.page": "page:privacy",
+			"news.pages.detail": "page:report"
 		},
 		"errorHandling": {
 			"403": "login",

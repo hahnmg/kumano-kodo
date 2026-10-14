@@ -17,7 +17,7 @@ use TYPO3\CMS\Impexp\Initialization\ImportSiteConfigurationsOnPackageInitializat
 // limited to and its page settings would still point at the exported uids.
 final readonly class RemapSitePagesOnPackageInitialization
 {
-    private const PAGE_SETTINGS = ['kumanoKodo.newsletter.target', 'kumanoKodo.search.page', 'kumanoKodo.privacy.page'];
+    private const PAGE_SETTINGS = ['kumanoKodo.newsletter.target', 'kumanoKodo.search.page', 'kumanoKodo.privacy.page', 'news.pages.detail'];
 
     public function __construct(
         private SiteConfiguration $siteConfiguration,
