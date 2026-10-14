@@ -68,30 +68,34 @@ var e = ".back-to-top", t = (t = window) => {
 	return e.addEventListener("click", t), e.addEventListener("keydown", n), e.addEventListener("focusout", r), () => {
 		e.removeEventListener("click", t), e.removeEventListener("keydown", n), e.removeEventListener("focusout", r);
 	};
-}, m = ".scheme-toggle", h = (e = document) => e.documentElement.dataset.scheme === "dark" ? "dark" : "light", g = (e = document) => {
-	let t = String(h(e) === "dark");
+}, m = ".scheme-toggle", h = "kumano-kodo.scheme", g = (e = document) => e.documentElement.dataset.scheme === "dark" ? "dark" : "light", _ = (e = document) => {
+	let t = String(g(e) === "dark");
 	e.querySelectorAll(m).forEach((e) => e.setAttribute("aria-pressed", t));
-}, _ = (e, t = document) => {
-	t.documentElement.dataset.scheme = e, g(t);
-}, v = (e = document, t) => {
+}, v = (e, t = document) => {
+	t.documentElement.dataset.scheme = e, _(t);
+}, y = (e = document, t) => {
 	let n = (n) => {
 		if (!(n.target instanceof Element) || !n.target.closest(m)) return;
-		let r = h(e) === "dark" ? "light" : "dark";
-		_(r, e), t?.(r);
+		let r = g(e) === "dark" ? "light" : "dark";
+		v(r, e), t?.(r);
 	};
 	return e.addEventListener("click", n), () => e.removeEventListener("click", n);
-}, y = ".site-header", b = (e = window) => {
-	e.document.querySelectorAll(y).forEach((t) => {
+}, b = (e) => {
+	try {
+		localStorage.setItem(h, e);
+	} catch {}
+}, x = ".site-header", S = (e = window) => {
+	e.document.querySelectorAll(x).forEach((t) => {
 		let n = e.scrollY > 0 && t.getBoundingClientRect().top <= 0 && getComputedStyle(t).position === "sticky";
 		t.toggleAttribute("data-stuck", n);
 	});
 };
-v(document), c(document), p(document), ((e = window) => {
+y(document, b), c(document), p(document), ((e = window) => {
 	let t = 0, n = () => {
-		cancelAnimationFrame(t), t = requestAnimationFrame(() => b(e));
+		cancelAnimationFrame(t), t = requestAnimationFrame(() => S(e));
 	};
 	return e.addEventListener("scroll", n, { passive: !0 }), e.addEventListener("resize", n), n(), () => {
 		cancelAnimationFrame(t), e.removeEventListener("scroll", n), e.removeEventListener("resize", n);
 	};
-})(window), n(window), a(document), g(document), b(window);
+})(window), n(window), a(document), _(document), S(window);
 //#endregion

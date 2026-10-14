@@ -29,6 +29,10 @@ A ticked box is stored in the browser (`localStorage`, no cookie). The content
 element External videos shows the stored answer and takes it back; put it on the
 privacy page.
 
+The light or dark choice of the scheme toggle is stored the same way, as
+`kumano-kodo.scheme`, and applies on every page until the visitor switches
+again.
+
 No tracking
 ===========
 

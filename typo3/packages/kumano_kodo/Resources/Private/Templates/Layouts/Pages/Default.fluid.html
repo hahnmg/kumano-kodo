@@ -8,6 +8,12 @@
     <f:asset.css identifier="kumano-theme" inline="1">{theme.css -> f:format.raw()}</f:asset.css>
 </f:if>
 <f:asset.script identifier="kumano-site" src="EXT:kumano_kodo/Resources/Public/JavaScript/site.js" type="module"/>
+<f:comment>The visitor's light or dark choice, stored by site.js, applies before the first paint; CDATA keeps the braces from Fluid.</f:comment>
+<f:if condition="{settings.kumanoKodo.schemeToggle}">
+    <f:asset.script identifier="kumano-scheme" priority="1" csp="1">
+        <![CDATA[try{var s=localStorage.getItem('kumano-kodo.scheme');if(s==='dark'||s==='light')document.documentElement.dataset.scheme=s}catch(e){}]]>
+    </f:asset.script>
+</f:if>
 <f:if condition="{theme.ownCss}">
     <f:asset.css identifier="kumano-own" href="{theme.ownCss}"/>
 </f:if>

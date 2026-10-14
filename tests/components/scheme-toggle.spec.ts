@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { bindSchemeToggle, currentScheme } from '../../src/scripts/scheme-toggle';
+import { bindSchemeToggle, currentScheme, rememberScheme, schemeKey } from '../../src/scripts/scheme-toggle';
 import { schemeToggle } from '../../stories/atoms/scheme-toggle.markup';
 import { expectAccessible, mount } from '../support/accessibility';
 import { siteHeader } from '../../stories/organisms/site-header.markup';
@@ -22,6 +22,16 @@ describe('scheme-toggle', () => {
     button?.click();
     expect(document.documentElement.dataset.scheme).toBe('light');
     expect(button?.getAttribute('aria-pressed')).toBe('false');
+  });
+  it('keeps the choice in the browser, and carries on where storage is blocked', () => {
+    rememberScheme('dark');
+    expect(localStorage.getItem(schemeKey)).toBe('dark');
+    const setItem = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('blocked');
+    });
+    expect(() => rememberScheme('light')).not.toThrow();
+    setItem.mockRestore();
+    localStorage.removeItem(schemeKey);
   });
   it('ignores clicks elsewhere', () => {
     document.documentElement.dataset.scheme = 'light';
