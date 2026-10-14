@@ -3,32 +3,32 @@ import { kumanoHome } from '../templates/kumano-home.markup';
 import type { Meta, StoryObj } from '@storybook/html-vite';
 import { content, type Content } from '../templates/content';
 import {
-    dayPage,
-    daysPage,
-    homePage,
-    kohechiPage,
-    legalPage,
-    newsletterPage,
-    photosPage,
-    placePage,
-    practicalPage,
-    practicalSubPage,
-    routePage,
-    searchPage,
-    loginPage,
-    contactPage,
-    notFoundPage,
-    papersPage,
-    registerPage,
-    reportsPage,
-    reportPage,
-    waysPage,
+  dayPage,
+  daysPage,
+  homePage,
+  kohechiPage,
+  legalPage,
+  newsletterPage,
+  photosPage,
+  placePage,
+  practicalPage,
+  practicalSubPage,
+  routePage,
+  searchPage,
+  loginPage,
+  contactPage,
+  notFoundPage,
+  papersPage,
+  registerPage,
+  reportsPage,
+  reportPage,
+  waysPage,
 } from '../templates/site-pages.markup';
 
 const page =
-    (render: (c: Content) => string): StoryObj['render'] =>
-    (_, { globals }) =>
-        render(content(globals.locale));
+  (render: (c: Content) => string): StoryObj['render'] =>
+  (_, { globals }) =>
+    render(content(globals.locale));
 
 // Every page of the trail journal; internal links switch between these stories (see .storybook/preview.ts).
 const meta: Meta = { title: 'Site', tags: ['!autodocs', 'dev'], parameters: { layout: 'fullscreen', options: { showPanel: false } } };
@@ -46,16 +46,16 @@ export const PlaceYunomine: StoryObj = { name: 'Place · Yunomine', render: page
 export const PlaceNachi: StoryObj = { name: 'Place · Nachi', render: page((c) => placePage('nachi', c)) };
 export const Practical: StoryObj = { render: page(practicalPage) };
 export const PracticalGettingThere: StoryObj = {
-    name: 'Practical · Getting there',
-    render: page((c) => practicalSubPage('getting-there', c)),
+  name: 'Practical · Getting there',
+  render: page((c) => practicalSubPage('getting-there', c)),
 };
 export const PracticalAccommodation: StoryObj = {
-    name: 'Practical · Accommodation',
-    render: page((c) => practicalSubPage('accommodation', c)),
+  name: 'Practical · Accommodation',
+  render: page((c) => practicalSubPage('accommodation', c)),
 };
 export const PracticalTrailMarkers: StoryObj = {
-    name: 'Practical · Trail markers',
-    render: page((c) => practicalSubPage('trail-markers', c)),
+  name: 'Practical · Trail markers',
+  render: page((c) => practicalSubPage('trail-markers', c)),
 };
 export const PracticalMaps: StoryObj = { name: 'Practical · Maps', render: page((c) => practicalSubPage('maps', c)) };
 export const Photos: StoryObj = { render: page(photosPage) };

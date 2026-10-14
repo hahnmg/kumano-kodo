@@ -6,9 +6,9 @@ import { choice } from '../templates/controls';
 const card = (p: TeaserCardProps) => `<div style="max-width:314px">${teaserCard(p)}</div>`;
 
 const meta: Meta<TeaserCardProps> = {
-    title: 'Molecules/Teaser Card',
-    args: { href: '#' },
-    argTypes: { level: choice<NonNullable<TeaserCardProps['level']>>()(2, 3, 'none') },
+  title: 'Molecules/Teaser Card',
+  args: { href: '#' },
+  argTypes: { level: choice<NonNullable<TeaserCardProps['level']>>()(2, 3, 'none') },
 };
 export default meta;
 

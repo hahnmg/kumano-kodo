@@ -10,16 +10,16 @@ export default meta;
 const query: Record<string, string> = { en: 'bus', de: 'Bus', ja: 'バス' };
 
 export const SearchResults: StoryObj = {
-    render: (_, { globals }) => {
-        const c = content(globals.locale);
-        const items = searchSample(c, query[c.locale]);
-        return searchResults({ label: c.ui.searchResults, summary: fill(c.ui.searchSummary, items.length, query[c.locale]), items });
-    },
+  render: (_, { globals }) => {
+    const c = content(globals.locale);
+    const items = searchSample(c, query[c.locale]);
+    return searchResults({ label: c.ui.searchResults, summary: fill(c.ui.searchSummary, items.length, query[c.locale]), items });
+  },
 };
 
 export const NothingFound: StoryObj = {
-    render: (_, { globals }) => {
-        const c = content(globals.locale);
-        return searchResults({ label: c.ui.searchResults, summary: fill(c.ui.searchEmpty, 'Kumano Kaido'), items: [] });
-    },
+  render: (_, { globals }) => {
+    const c = content(globals.locale);
+    return searchResults({ label: c.ui.searchResults, summary: fill(c.ui.searchEmpty, 'Kumano Kaido'), items: [] });
+  },
 };

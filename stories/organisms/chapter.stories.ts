@@ -7,16 +7,16 @@ const meta: Meta = { title: 'Organisms/Chapter', parameters: { layout: 'fullscre
 export default meta;
 
 export const Chapter: StoryObj = {
-    render: (_, { globals }) => {
-        const { kumano, home, photos, ui } = content(globals.locale);
-        return chapter({
-            id: 'story-day-1',
-            number: '1',
-            date: `${kumano.days[0].date} · ${kumano.days[0].time}`,
-            title: kumano.days[0].route,
-            text: home.draft.chapters[0],
-            photos: dayPhotos[0].map(([name, span, shift]) => ({ image: photos[name], span, shift })),
-            labels: { close: ui.close, previous: ui.previous, next: ui.next, play: ui.playVideo },
-        });
-    },
+  render: (_, { globals }) => {
+    const { kumano, home, photos, ui } = content(globals.locale);
+    return chapter({
+      id: 'story-day-1',
+      number: '1',
+      date: `${kumano.days[0].date} · ${kumano.days[0].time}`,
+      title: kumano.days[0].route,
+      text: home.draft.chapters[0],
+      photos: dayPhotos[0].map(([name, span, shift]) => ({ image: photos[name], span, shift })),
+      labels: { close: ui.close, previous: ui.previous, next: ui.next, play: ui.playVideo },
+    });
+  },
 };

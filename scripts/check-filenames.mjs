@@ -12,16 +12,16 @@ const pattern = /^[a-z0-9]+(-[a-z0-9]+)*(\.[a-z0-9]+(-[a-z0-9]+)*)*$/;
 
 const bad = [];
 const walk = async (dir) => {
-    for (const entry of await readdir(dir, { withFileTypes: true }).catch(() => [])) {
-        const path = join(dir, entry.name);
-        if (!pattern.test(entry.name)) bad.push(relative(root, path));
-        if (entry.isDirectory()) await walk(path);
-    }
+  for (const entry of await readdir(dir, { withFileTypes: true }).catch(() => [])) {
+    const path = join(dir, entry.name);
+    if (!pattern.test(entry.name)) bad.push(relative(root, path));
+    if (entry.isDirectory()) await walk(path);
+  }
 };
 for (const d of dirs) await walk(join(root, d));
 
 if (bad.length) {
-    console.error(`Filename gate failed:\n  ${bad.join('\n  ')}`);
-    process.exit(1);
+  console.error(`Filename gate failed:\n  ${bad.join('\n  ')}`);
+  process.exit(1);
 }
 console.log('Filename gate: all names lowercase-kebab');

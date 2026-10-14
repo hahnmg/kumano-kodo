@@ -10,5 +10,5 @@ export default meta;
 export const Open: StoryObj<FaqItemProps> = { render: localized(item, (c) => c.kumano.faq[0]) };
 export const Closed: StoryObj<FaqItemProps> = { render: localized(item, (c) => c.kumano.faq[1]) };
 export const List: StoryObj<FaqItemProps> = {
-    render: (_, { globals }) => `<div style="max-width:764px">${faqList(content(globals.locale).kumano.faq)}</div>`,
+  render: (_, { globals }) => `<div style="max-width:764px">${faqList(content(globals.locale).kumano.faq)}</div>`,
 };

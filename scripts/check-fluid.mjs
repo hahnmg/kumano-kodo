@@ -13,30 +13,30 @@ const tag = /<(?!\/)(?:!--|[a-zA-Z][\w:.-]*)/g;
 
 const files = [];
 const walk = async (dir) => {
-    for (const entry of await readdir(dir, { withFileTypes: true }).catch(() => [])) {
-        const path = join(dir, entry.name);
-        if (entry.isDirectory()) await walk(path);
-        else if (entry.name.endsWith('.html') && path.includes('/Resources/Private/')) files.push(path);
-    }
+  for (const entry of await readdir(dir, { withFileTypes: true }).catch(() => [])) {
+    const path = join(dir, entry.name);
+    if (entry.isDirectory()) await walk(path);
+    else if (entry.name.endsWith('.html') && path.includes('/Resources/Private/')) files.push(path);
+  }
 };
 await walk(packages);
 
 const bad = [];
 for (const file of files) {
-    const source = await readFile(file, 'utf8');
-    if (source.includes(generated)) continue;
-    // Comments are prose: their tags do not count.
-    const lines = source.replace(/<f:comment>[\s\S]*?<\/f:comment>/g, (c) => c.replace(/<(?!\/?f:comment)/g, '&lt;')).split('\n');
-    lines.forEach((line, i) => {
-        // A captured variable keeps its content on its line: a line break would become part of the value.
-        if (/^\s*<f:variable\b[^>]*[^/]>/.test(line)) return;
-        // Quoted arguments of inline notation are text, such as the allowed tags of stripTags.
-        if ((line.replace(/'[^']*'/g, '').match(tag) ?? []).length > 1) bad.push(`${relative(root, file)}:${i + 1}`);
-    });
+  const source = await readFile(file, 'utf8');
+  if (source.includes(generated)) continue;
+  // Comments are prose: their tags do not count.
+  const lines = source.replace(/<f:comment>[\s\S]*?<\/f:comment>/g, (c) => c.replace(/<(?!\/?f:comment)/g, '&lt;')).split('\n');
+  lines.forEach((line, i) => {
+    // A captured variable keeps its content on its line: a line break would become part of the value.
+    if (/^\s*<f:variable\b[^>]*[^/]>/.test(line)) return;
+    // Quoted arguments of inline notation are text, such as the allowed tags of stripTags.
+    if ((line.replace(/'[^']*'/g, '').match(tag) ?? []).length > 1) bad.push(`${relative(root, file)}:${i + 1}`);
+  });
 }
 
 if (bad.length) {
-    console.error(`Fluid gate failed, one tag per line:\n  ${bad.join('\n  ')}`);
-    process.exit(1);
+  console.error(`Fluid gate failed, one tag per line:\n  ${bad.join('\n  ')}`);
+  process.exit(1);
 }
 console.log(`Fluid gate: ${files.length} templates, one tag per line`);

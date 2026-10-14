@@ -7,14 +7,14 @@ import { dayPage } from '../../stories/templates/site-pages.markup';
 import { expectAccessible } from '../support/accessibility';
 
 describe('skip-link', () => {
-    it('is the first link of every template and points at main', () => {
-        for (const page of [kumanoHome(content('de')), kumanoJournal(content('de')), dayPage(1, content('de'))]) {
-            document.body.innerHTML = page;
-            const first = document.querySelector('a[href], button');
-            expect(first?.className).toContain('skip-link');
-            expect(first?.textContent).toBe('Zum Inhalt springen');
-            expect(document.querySelector(first!.getAttribute('href')!)?.tagName).toBe('MAIN');
-        }
-    });
-    it('passes axe', () => expectAccessible(skipLink()));
+  it('is the first link of every template and points at main', () => {
+    for (const page of [kumanoHome(content('de')), kumanoJournal(content('de')), dayPage(1, content('de'))]) {
+      document.body.innerHTML = page;
+      const first = document.querySelector('a[href], button');
+      expect(first?.className).toContain('skip-link');
+      expect(first?.textContent).toBe('Zum Inhalt springen');
+      expect(document.querySelector(first!.getAttribute('href')!)?.tagName).toBe('MAIN');
+    }
+  });
+  it('passes axe', () => expectAccessible(skipLink()));
 });

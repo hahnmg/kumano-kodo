@@ -10,11 +10,11 @@ export const asVideo = (poster: Image): VideoImage => ({ ...poster, video: trail
 // A YouTube video in the same format. The id is a placeholder until a real clip of the trip exists: the consent
 // question can be reviewed, the player itself shows YouTube's "unavailable" page.
 export const externalVideo: NonNullable<Image['video']> = {
-    src: 'https://www.youtube-nocookie.com/embed/PLACEHOLDER',
-    type: 'video/youtube',
-    width: 1280,
-    height: 720,
-    provider: 'YouTube',
+  src: 'https://www.youtube-nocookie.com/embed/PLACEHOLDER',
+  type: 'video/youtube',
+  width: 1280,
+  height: 720,
+  provider: 'YouTube',
 };
 
 export const asExternalVideo = (poster: Image): VideoImage => ({ ...poster, video: externalVideo });

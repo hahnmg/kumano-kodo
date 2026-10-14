@@ -4,11 +4,11 @@ import './icon-button.css';
 import { choice } from '../templates/controls';
 
 const meta: Meta<IconButtonProps> = {
-    tags: ['autodocs'],
-    title: 'Atoms/Icon Button',
-    render: (args) => iconButton(args),
-    argTypes: { direction: choice<NonNullable<IconButtonProps['direction']>>()('previous', 'next') },
-    args: { direction: 'next' },
+  tags: ['autodocs'],
+  title: 'Atoms/Icon Button',
+  render: (args) => iconButton(args),
+  argTypes: { direction: choice<NonNullable<IconButtonProps['direction']>>()('previous', 'next') },
+  args: { direction: 'next' },
 };
 export default meta;
 

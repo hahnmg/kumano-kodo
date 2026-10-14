@@ -3,21 +3,21 @@ import { content, type Content } from '../templates/content';
 import { loginForm, type LoginFormProps } from './login-form.markup';
 
 const labels = ({ ui }: Content) => ({
-    username: ui.username,
-    password: ui.password,
-    stayLoggedIn: ui.stayLoggedIn,
-    logIn: ui.logIn,
-    forgotPassword: ui.forgotPassword,
-    loginFailed: ui.loginFailed,
-    loginFailedText: ui.loginFailedText,
-    loggedInAs: ui.loggedInAs,
-    logOut: ui.logOut,
+  username: ui.username,
+  password: ui.password,
+  stayLoggedIn: ui.stayLoggedIn,
+  logIn: ui.logIn,
+  forgotPassword: ui.forgotPassword,
+  loginFailed: ui.loginFailed,
+  loginFailedText: ui.loginFailedText,
+  loggedInAs: ui.loggedInAs,
+  logOut: ui.logOut,
 });
 
 const render =
-    (props: Partial<LoginFormProps>): StoryObj['render'] =>
-    (_, { globals }) =>
-        loginForm({ action: '#', forgotHref: '#', labels: labels(content(globals.locale)), ...props });
+  (props: Partial<LoginFormProps>): StoryObj['render'] =>
+  (_, { globals }) =>
+    loginForm({ action: '#', forgotHref: '#', labels: labels(content(globals.locale)), ...props });
 
 const meta: Meta = { title: 'Molecules/Login Form' };
 export default meta;

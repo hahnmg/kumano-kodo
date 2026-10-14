@@ -8,35 +8,35 @@ const meta: Meta<SiteHeaderProps> = { title: 'Organisms/Site Header', parameters
 export default meta;
 
 export const Kumano: StoryObj<SiteHeaderProps> = {
-    render: localized(siteHeader, (c) => ({ nav: c.kumano.nav, languages: c.languages, labels: labels(c) })),
+  render: localized(siteHeader, (c) => ({ nav: c.kumano.nav, languages: c.languages, labels: labels(c) })),
 };
 // Without a logo of its own the header sets the site name, as the starter set does.
 export const SiteTitle: StoryObj<SiteHeaderProps> = {
-    render: localized(siteHeader, (c) => ({
-        nav: [
-            { label: 'About us', href: '#' },
-            { label: 'Contact', href: '#' },
-        ],
-        languages: c.languages,
-        labels: labels(c),
-        logo: { variant: 'title', label: 'Your site', href: '#' },
-    })),
+  render: localized(siteHeader, (c) => ({
+    nav: [
+      { label: 'About us', href: '#' },
+      { label: 'Contact', href: '#' },
+    ],
+    languages: c.languages,
+    labels: labels(c),
+    logo: { variant: 'title', label: 'Your site', href: '#' },
+  })),
 };
 export const Standard: StoryObj<SiteHeaderProps> = {
-    render: localized(siteHeader, (c) => ({ nav: c.guide.nav, languages: c.languages, labels: labels(c) })),
+  render: localized(siteHeader, (c) => ({ nav: c.guide.nav, languages: c.languages, labels: labels(c) })),
 };
 
 // Open states for review; in use the flyouts open on click (src/scripts/nav-flyout.ts).
 const room = (html: string) => `<div style="min-height:620px">${html}</div>`;
 export const MegaOpen: StoryObj<SiteHeaderProps> = {
-    render: localized(
-        (p: SiteHeaderProps) => room(siteHeader(p)),
-        (c) => ({ nav: c.kumano.nav.map((n, i) => ({ ...n, open: i === 0 })), languages: c.languages, labels: labels(c) }),
-    ),
+  render: localized(
+    (p: SiteHeaderProps) => room(siteHeader(p)),
+    (c) => ({ nav: c.kumano.nav.map((n, i) => ({ ...n, open: i === 0 })), languages: c.languages, labels: labels(c) }),
+  ),
 };
 export const DropdownOpen: StoryObj<SiteHeaderProps> = {
-    render: localized(
-        (p: SiteHeaderProps) => room(siteHeader(p)),
-        (c) => ({ nav: c.kumano.nav.map((n, i) => ({ ...n, open: i === 1 })), languages: c.languages, labels: labels(c) }),
-    ),
+  render: localized(
+    (p: SiteHeaderProps) => room(siteHeader(p)),
+    (c) => ({ nav: c.kumano.nav.map((n, i) => ({ ...n, open: i === 1 })), languages: c.languages, labels: labels(c) }),
+  ),
 };

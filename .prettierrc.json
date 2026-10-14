@@ -1,5 +1,13 @@
 {
-    "tabWidth": 4,
-    "singleQuote": true,
-    "printWidth": 140
+	"singleQuote": true,
+	"printWidth": 140,
+	"overrides": [
+		{
+			"files": "*.md",
+			"options": {
+				"printWidth": 80,
+				"proseWrap": "always"
+			}
+		}
+	]
 }

@@ -4,12 +4,12 @@ import { factList, type FactListProps } from './fact-list.markup';
 import { choice } from '../templates/controls';
 
 const meta: Meta<FactListProps> = {
-    title: 'Molecules/Fact List',
-    render: localized(
-        (p: FactListProps) => `<div style="max-width:427px">${factList(p)}</div>`,
-        (c) => ({ title: c.pages.detail.factsTitle, facts: c.pages.detail.facts }),
-    ),
-    argTypes: { layout: choice<NonNullable<FactListProps['layout']>>()('inline', 'stacked') },
+  title: 'Molecules/Fact List',
+  render: localized(
+    (p: FactListProps) => `<div style="max-width:427px">${factList(p)}</div>`,
+    (c) => ({ title: c.pages.detail.factsTitle, facts: c.pages.detail.facts }),
+  ),
+  argTypes: { layout: choice<NonNullable<FactListProps['layout']>>()('inline', 'stacked') },
 };
 export default meta;
 

@@ -8,21 +8,21 @@ const meta: Meta<{ image: Image }> = { title: 'Molecules/Bleed Image', parameter
 export default meta;
 
 export const BleedImage: StoryObj = {
-    render: (_, { globals }) => {
-        const { photos, ui } = content(globals.locale);
-        return bleedImage(photos['sea-of-clouds'], undefined, {
-            close: ui.close,
-            previous: ui.previous,
-            next: ui.next,
-            play: ui.playVideo,
-        });
-    },
+  render: (_, { globals }) => {
+    const { photos, ui } = content(globals.locale);
+    return bleedImage(photos['sea-of-clouds'], undefined, {
+      close: ui.close,
+      previous: ui.previous,
+      next: ui.next,
+      play: ui.playVideo,
+    });
+  },
 };
 
 // A video across the page: the photo is its poster, the clip plays where it stands.
 export const Video: StoryObj = {
-    render: (_, { globals }) => {
-        const { photos, ui } = content(globals.locale);
-        return bleedImage(asVideo(photos['sea-of-clouds']), undefined, { play: ui.playVideo });
-    },
+  render: (_, { globals }) => {
+    const { photos, ui } = content(globals.locale);
+    return bleedImage(asVideo(photos['sea-of-clouds']), undefined, { play: ui.playVideo });
+  },
 };

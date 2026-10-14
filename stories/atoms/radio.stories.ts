@@ -6,10 +6,10 @@ const meta: Meta<RadioProps> = { title: 'Atoms/Radio', parameters: { usage: '\\b
 export default meta;
 
 export const Checked: StoryObj<RadioProps> = {
-    args: { checked: true, value: 'nakahechi' },
-    render: localized(radio, (c) => ({ label: c.guide.routes[0].title })),
+  args: { checked: true, value: 'nakahechi' },
+  render: localized(radio, (c) => ({ label: c.guide.routes[0].title })),
 };
 export const Unchecked: StoryObj<RadioProps> = {
-    args: { checked: false, value: 'kohechi' },
-    render: localized(radio, (c) => ({ label: c.guide.routes[2].title })),
+  args: { checked: false, value: 'kohechi' },
+  render: localized(radio, (c) => ({ label: c.guide.routes[2].title })),
 };

@@ -4,9 +4,9 @@ import { avatar, type AvatarProps } from './avatar.markup';
 import { choice } from '../templates/controls';
 
 const meta: Meta<AvatarProps> = {
-    title: 'Atoms/Avatar',
-    render: localized(avatar, (c) => c.photos['stone-path-walkers']),
-    argTypes: { size: choice<NonNullable<AvatarProps['size']>>()('large', 'small') },
+  title: 'Atoms/Avatar',
+  render: localized(avatar, (c) => c.photos['stone-path-walkers']),
+  argTypes: { size: choice<NonNullable<AvatarProps['size']>>()('large', 'small') },
 };
 export default meta;
 

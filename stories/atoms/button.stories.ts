@@ -5,33 +5,33 @@ import { choice } from '../templates/controls';
 
 const onImage = { backgrounds: { disable: true } };
 const photo = (html: string) =>
-    `<div style="padding:40px;background:url(img/photos/sea-of-clouds-1200.jpg) center/cover;display:inline-flex;gap:12px">${html}</div>`;
+  `<div style="padding:40px;background:url(img/photos/sea-of-clouds-1200.jpg) center/cover;display:inline-flex;gap:12px">${html}</div>`;
 
 const meta: Meta<ButtonProps> = {
-    title: 'Atoms/Button',
-    render: localized(button, (c) => ({ label: c.ui.subscribe })),
-    argTypes: {
-        variant: choice<NonNullable<ButtonProps['variant']>>()('primary', 'secondary', 'light', 'outline'),
-        type: choice<NonNullable<ButtonProps['type']>>()('button', 'submit'),
-    },
+  title: 'Atoms/Button',
+  render: localized(button, (c) => ({ label: c.ui.subscribe })),
+  argTypes: {
+    variant: choice<NonNullable<ButtonProps['variant']>>()('primary', 'secondary', 'light', 'outline'),
+    type: choice<NonNullable<ButtonProps['type']>>()('button', 'submit'),
+  },
 };
 export default meta;
 
 export const Primary: StoryObj<ButtonProps> = { args: { variant: 'primary' } };
 export const Secondary: StoryObj<ButtonProps> = { args: { variant: 'secondary' } };
 export const Light: StoryObj<ButtonProps> = {
-    args: { variant: 'light' },
-    render: localized(
-        (p: ButtonProps) => photo(button(p)),
-        (c) => ({ label: c.kumano.hero.actions[0].label }),
-    ),
-    parameters: onImage,
+  args: { variant: 'light' },
+  render: localized(
+    (p: ButtonProps) => photo(button(p)),
+    (c) => ({ label: c.kumano.hero.actions[0].label }),
+  ),
+  parameters: onImage,
 };
 export const Outline: StoryObj<ButtonProps> = {
-    args: { variant: 'outline' },
-    render: localized(
-        (p: ButtonProps) => photo(button(p)),
-        (c) => ({ label: c.kumano.hero.actions[1].label }),
-    ),
-    parameters: onImage,
+  args: { variant: 'outline' },
+  render: localized(
+    (p: ButtonProps) => photo(button(p)),
+    (c) => ({ label: c.kumano.hero.actions[1].label }),
+  ),
+  parameters: onImage,
 };

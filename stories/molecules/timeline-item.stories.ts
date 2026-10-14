@@ -3,11 +3,11 @@ import { content, localized } from '../templates/content';
 import { timeline, type DayRowProps } from './timeline-item.markup';
 
 const meta: Meta<DayRowProps> = {
-    title: 'Molecules/Timeline Item',
-    render: localized(
-        (p: DayRowProps) => timeline([p]),
-        (c) => c.kumano.days[0],
-    ),
+  title: 'Molecules/Timeline Item',
+  render: localized(
+    (p: DayRowProps) => timeline([p]),
+    (c) => c.kumano.days[0],
+  ),
 };
 export default meta;
 

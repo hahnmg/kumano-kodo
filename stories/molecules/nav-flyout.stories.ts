@@ -8,14 +8,14 @@ const meta: Meta = { title: 'Molecules/Nav Flyout', parameters: { layout: 'fulls
 export default meta;
 
 export const Dropdown: StoryObj = {
-    render: (_, { globals }) => {
-        const m = menu(globals.locale, 1);
-        return m ? `<div style="padding:24px">${navFlyout(m)}</div>` : '';
-    },
+  render: (_, { globals }) => {
+    const m = menu(globals.locale, 1);
+    return m ? `<div style="padding:24px">${navFlyout(m)}</div>` : '';
+  },
 };
 export const Mega: StoryObj = {
-    render: (_, { globals }) => {
-        const m = menu(globals.locale, 0);
-        return m ? navFlyout(m) : '';
-    },
+  render: (_, { globals }) => {
+    const m = menu(globals.locale, 0);
+    return m ? navFlyout(m) : '';
+  },
 };

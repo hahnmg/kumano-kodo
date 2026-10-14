@@ -4,30 +4,30 @@ import { photos } from '../../stories/templates/content';
 import { expectAccessible, mount } from '../support/accessibility';
 
 const props = {
-    id: 'day-9',
-    number: '9',
-    date: 'Day 9',
-    title: 'Somewhere',
-    text: 'Text.',
-    photos: [
-        { image: photos['signpost'], span: 4, shift: 1 as const },
-        { image: photos['trailhead-river'], span: 8 },
-    ],
+  id: 'day-9',
+  number: '9',
+  date: 'Day 9',
+  title: 'Somewhere',
+  text: 'Text.',
+  photos: [
+    { image: photos['signpost'], span: 4, shift: 1 as const },
+    { image: photos['trailhead-river'], span: 8 },
+  ],
 };
 
 describe('chapter', () => {
-    it('labels the section by its heading and keeps the numeral decorative', () => {
-        const el = mount(chapter(props));
-        expect(el.querySelector('section')?.getAttribute('aria-labelledby')).toBe('day-9');
-        expect(el.querySelector('#day-9')?.textContent).toBe('Somewhere');
-        expect(el.querySelector('.chapter-number')?.getAttribute('aria-hidden')).toBe('true');
-    });
-    it('lays photos out by span, shift and orientation', () => {
-        const figures = mount(chapter(props)).querySelectorAll('.chapter-media-item');
-        expect(figures[0].getAttribute('style')).toBe('--span: 4');
-        expect(figures[0].classList.contains('chapter-media-item-portrait')).toBe(true);
-        expect(figures[0].classList.contains('chapter-media-item-shift-1')).toBe(true);
-        expect(figures[1].classList.contains('chapter-media-item-landscape')).toBe(true);
-    });
-    it('passes axe', () => expectAccessible(chapter(props)));
+  it('labels the section by its heading and keeps the numeral decorative', () => {
+    const el = mount(chapter(props));
+    expect(el.querySelector('section')?.getAttribute('aria-labelledby')).toBe('day-9');
+    expect(el.querySelector('#day-9')?.textContent).toBe('Somewhere');
+    expect(el.querySelector('.chapter-number')?.getAttribute('aria-hidden')).toBe('true');
+  });
+  it('lays photos out by span, shift and orientation', () => {
+    const figures = mount(chapter(props)).querySelectorAll('.chapter-media-item');
+    expect(figures[0].getAttribute('style')).toBe('--span: 4');
+    expect(figures[0].classList.contains('chapter-media-item-portrait')).toBe(true);
+    expect(figures[0].classList.contains('chapter-media-item-shift-1')).toBe(true);
+    expect(figures[1].classList.contains('chapter-media-item-landscape')).toBe(true);
+  });
+  it('passes axe', () => expectAccessible(chapter(props)));
 });

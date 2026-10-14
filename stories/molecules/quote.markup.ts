@@ -1,10 +1,10 @@
 import { esc } from '../../src/lib/html';
 
 export interface QuoteProps {
-    quote: string;
-    source: string;
+  quote: string;
+  source: string;
 }
 
 export const quote = ({ quote: text, source }: QuoteProps): string =>
-    `<figure class="quote"><blockquote class="quote-text type-quote"><p>${esc(text)}</p></blockquote>` +
-    `<figcaption class="quote-source type-label">${esc(source)}</figcaption></figure>`;
+  `<figure class="quote"><blockquote class="quote-text type-quote"><p>${esc(text)}</p></blockquote>` +
+  `<figcaption class="quote-source type-label">${esc(source)}</figcaption></figure>`;

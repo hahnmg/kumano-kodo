@@ -4,10 +4,10 @@ import { logo, type LogoProps } from './logo.markup';
 import './logo.css';
 
 const meta: Meta<LogoProps> = {
-    title: 'Atoms/Logo',
-    render: (args) => logo(args),
-    args: { href: '/', label: 'Kumano Kodo' },
-    argTypes: { variant: choice<NonNullable<LogoProps['variant']>>()('mark', 'title') },
+  title: 'Atoms/Logo',
+  render: (args) => logo(args),
+  args: { href: '/', label: 'Kumano Kodo' },
+  argTypes: { variant: choice<NonNullable<LogoProps['variant']>>()('mark', 'title') },
 };
 export default meta;
 

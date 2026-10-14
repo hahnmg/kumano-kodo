@@ -5,10 +5,10 @@ import './icon.css';
 import './icon-circle.css';
 
 const meta: Meta<IconCircleProps> = {
-    title: 'Atoms/Icon Circle',
-    render: (args) => iconCircle(args),
-    argTypes: { name: { control: 'select', options: iconNames } },
-    args: { name: 'clock' },
+  title: 'Atoms/Icon Circle',
+  render: (args) => iconCircle(args),
+  argTypes: { name: { control: 'select', options: iconNames } },
+  args: { name: 'clock' },
 };
 export default meta;
 

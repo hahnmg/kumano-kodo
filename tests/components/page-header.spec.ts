@@ -5,15 +5,15 @@ import { expectAccessible, mount } from '../support/accessibility';
 const breadcrumb = [{ label: 'Start', href: '/' }, { label: 'Stages' }];
 
 describe('page-header', () => {
-    it('renders the h1 and chips only when given', () => {
-        expect(mount(pageHeader({ title: 'Stages', breadcrumb })).querySelector('h1')?.textContent).toBe('Stages');
-        expect(mount(pageHeader({ title: 'Stages', breadcrumb })).querySelector('.page-header-chips')).toBeNull();
-        expect(
-            mount(pageHeader({ title: 'Stages', breadcrumb, chips: [{ label: 'Stages', href: '#', active: true }] })).querySelector(
-                '.chip[aria-current]',
-            ),
-        ).not.toBeNull();
-    });
-    it('passes axe', () =>
-        expectAccessible(pageHeader({ title: 'Stages', breadcrumb, chips: [{ label: 'Stages', href: '#', active: true }] })));
+  it('renders the h1 and chips only when given', () => {
+    expect(mount(pageHeader({ title: 'Stages', breadcrumb })).querySelector('h1')?.textContent).toBe('Stages');
+    expect(mount(pageHeader({ title: 'Stages', breadcrumb })).querySelector('.page-header-chips')).toBeNull();
+    expect(
+      mount(pageHeader({ title: 'Stages', breadcrumb, chips: [{ label: 'Stages', href: '#', active: true }] })).querySelector(
+        '.chip[aria-current]',
+      ),
+    ).not.toBeNull();
+  });
+  it('passes axe', () =>
+    expectAccessible(pageHeader({ title: 'Stages', breadcrumb, chips: [{ label: 'Stages', href: '#', active: true }] })));
 });

@@ -6,8 +6,8 @@ import { choice } from '../templates/controls';
 const card = (p: PlaceCardProps) => `<div style="max-width:765px">${featureCard(p)}</div>`;
 
 const meta: Meta<PlaceCardProps> = {
-    title: 'Molecules/Feature Card',
-    argTypes: { variant: choice<NonNullable<PlaceCardProps['variant']>>()('featured', 'default', 'ruled') },
+  title: 'Molecules/Feature Card',
+  argTypes: { variant: choice<NonNullable<PlaceCardProps['variant']>>()('featured', 'default', 'ruled') },
 };
 export default meta;
 

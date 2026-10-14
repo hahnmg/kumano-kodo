@@ -5,10 +5,10 @@ import { expectAccessible, mount } from '../support/accessibility';
 const props = { caption: 'Stages', head: ['Stage', 'Distance'], rows: [['Chikatsuyu → Hongu', '25,9 km']] };
 
 describe('table', () => {
-    it('has a caption and column headers', () => {
-        const el = mount(table(props));
-        expect(el.querySelector('caption')?.textContent).toBe('Stages');
-        expect(el.querySelectorAll('th[scope="col"]')).toHaveLength(2);
-    });
-    it('passes axe', () => expectAccessible(table(props)));
+  it('has a caption and column headers', () => {
+    const el = mount(table(props));
+    expect(el.querySelector('caption')?.textContent).toBe('Stages');
+    expect(el.querySelectorAll('th[scope="col"]')).toHaveLength(2);
+  });
+  it('passes axe', () => expectAccessible(table(props)));
 });

@@ -4,9 +4,9 @@ import { link, type LinkProps } from './link.markup';
 import { choice } from '../templates/controls';
 
 const meta: Meta<LinkProps> = {
-    title: 'Atoms/Link',
-    argTypes: { direction: choice<NonNullable<LinkProps['direction']>>()('forward', 'back') },
-    args: { href: '#' },
+  title: 'Atoms/Link',
+  argTypes: { direction: choice<NonNullable<LinkProps['direction']>>()('forward', 'back') },
+  args: { href: '#' },
 };
 export default meta;
 
