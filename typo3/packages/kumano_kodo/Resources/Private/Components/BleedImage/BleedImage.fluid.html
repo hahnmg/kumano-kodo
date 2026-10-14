@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Sitepackage/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
 <f:comment>One image across the full width; an optional caption in the slot.</f:comment>
-<f:argument name="image" type="object" description="A file or file reference; a video as k:media gives it plays in place."/>
+<f:argument name="image" type="mixed" description="A file or file reference; a video as k:media gives it plays in place."/>
 
 <f:asset.css identifier="kumano-bleed-image" href="EXT:kumano_kodo/Resources/Public/Css/Components/bleed-image.css"/>
 <f:variable name="caption" value="{f:slot()}"/>

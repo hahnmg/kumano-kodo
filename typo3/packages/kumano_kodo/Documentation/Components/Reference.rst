@@ -32,7 +32,7 @@ One image across the full width; an optional caption in the slot.
         - Type
         - Meaning
     *   - ``image``
-        - object, required
+        - mixed, required
         - A file or file reference; a video as k:media gives it plays in place.
 
 Slots: ``default``.
@@ -548,7 +548,7 @@ video plays there.
         - Type
         - Meaning
     *   - ``image``
-        - object, required
+        - mixed, required
         - A file or file reference, or a video as k:media gives it.
     *   - ``class``
         - string
@@ -1090,7 +1090,7 @@ link.
         - string, required
         - The heading.
     *   - ``image``
-        - object
+        - mixed
         - A file or file reference; a video as k:media gives it plays in place.
     *   - ``imageSide``
         - string, default ``left``

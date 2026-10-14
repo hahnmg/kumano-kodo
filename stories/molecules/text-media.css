@@ -55,6 +55,7 @@
     }
 
     .text-media > .text-media-image {
-        position: static;
+        position: relative;
+        top: auto;
     }
 }

@@ -18,7 +18,7 @@
 		"arguments": [
 			{
 				"name": "image",
-				"type": "object",
+				"type": "mixed",
 				"required": true,
 				"description": "A file or file reference; a video as k:media gives it plays in place."
 			}
@@ -584,7 +584,7 @@
 		"arguments": [
 			{
 				"name": "image",
-				"type": "object",
+				"type": "mixed",
 				"required": true,
 				"description": "A file or file reference, or a video as k:media gives it."
 			},
@@ -1191,7 +1191,7 @@
 			},
 			{
 				"name": "image",
-				"type": "object",
+				"type": "mixed",
 				"required": false,
 				"description": "A file or file reference; a video as k:media gives it plays in place."
 			},
