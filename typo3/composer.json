@@ -1,6 +1,6 @@
 {
-	"name": "kumano-kodo/site",
-	"description": "Kumano Kodo - TYPO3 installation running the sitepackage and its demo",
+	"name": "kumano-kodo/project",
+	"description": "Kumano Kodo - TYPO3 installation for developing the theme extension and its demo",
 	"type": "project",
 	"license": "proprietary",
 	"repositories": [
@@ -13,8 +13,7 @@
 		"php": "^8.2",
 		"b13/container": "^4.1",
 		"georgringer/news": "^14.1",
-		"kumano-kodo/demo": "@dev",
-		"kumano-kodo/sitepackage": "@dev",
+		"kumano-kodo/theme": "@dev",
 		"typo3/cms-backend": "^14.3",
 		"typo3/cms-belog": "^14.3",
 		"typo3/cms-core": "^14.3",

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="form_walk" product-name="kumano_kodo">
+    <body>
+      <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
+        <source>Send registration</source>
+        <target>Anmeldung senden</target>
+      </trans-unit>
+      <trans-unit id="finisher.Confirmation.message">
+        <source>Thank you. We will write to you within a week.</source>
+        <target>Danke. Wir schreiben dir innerhalb einer Woche.</target>
+      </trans-unit>
+      <trans-unit id="element.about.properties.label">
+        <source>About you</source>
+        <target>Über dich</target>
+      </trans-unit>
+      <trans-unit id="element.walk.properties.label">
+        <source>Your walk</source>
+        <target>Deine Wanderung</target>
+      </trans-unit>
+      <trans-unit id="element.photos.properties.label">
+        <source>Photos</source>
+        <target>Fotos</target>
+      </trans-unit>
+      <trans-unit id="element.summary.properties.label">
+        <source>Check your details</source>
+        <target>Angaben prüfen</target>
+      </trans-unit>
+      <trans-unit id="element.about.renderingOptions.previousButtonLabel">
+        <source>Back</source>
+        <target>Zurück</target>
+      </trans-unit>
+      <trans-unit id="element.about.renderingOptions.nextButtonLabel">
+        <source>Next</source>
+        <target>Weiter</target>
+      </trans-unit>
+      <trans-unit id="element.walk.renderingOptions.previousButtonLabel">
+        <source>Back</source>
+        <target>Zurück</target>
+      </trans-unit>
+      <trans-unit id="element.walk.renderingOptions.nextButtonLabel">
+        <source>Next</source>
+        <target>Weiter</target>
+      </trans-unit>
+      <trans-unit id="element.photos.renderingOptions.previousButtonLabel">
+        <source>Back</source>
+        <target>Zurück</target>
+      </trans-unit>
+      <trans-unit id="element.photos.renderingOptions.nextButtonLabel">
+        <source>Next</source>
+        <target>Weiter</target>
+      </trans-unit>
+      <trans-unit id="element.summary.renderingOptions.previousButtonLabel">
+        <source>Back</source>
+        <target>Zurück</target>
+      </trans-unit>
+      <trans-unit id="element.summary.renderingOptions.nextButtonLabel">
+        <source>Next</source>
+        <target>Weiter</target>
+      </trans-unit>
+      <trans-unit id="element.intro.properties.label">
+        <source>Before you set out</source>
+        <target>Bevor es losgeht</target>
+      </trans-unit>
+      <trans-unit id="element.intro.properties.text">
+        <source>Tell us who walks, which route and when. We answer within a week.</source>
+        <target>Sag uns, wer wandert, auf welcher Route und wann. Wir antworten innerhalb einer Woche.</target>
+      </trans-unit>
+      <trans-unit id="element.name.properties.label">
+        <source>Name</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="element.email.properties.label">
+        <source>Email address</source>
+        <target>E-Mail-Adresse</target>
+      </trans-unit>
+      <trans-unit id="element.phone.properties.label">
+        <source>Phone</source>
+        <target>Telefon</target>
+      </trans-unit>
+      <trans-unit id="element.website.properties.label">
+        <source>Blog or website</source>
+        <target>Blog oder Website</target>
+      </trans-unit>
+      <trans-unit id="element.group.properties.label">
+        <source>Walkers in your group</source>
+        <target>Wandernde in deiner Gruppe</target>
+      </trans-unit>
+      <trans-unit id="element.arrival.properties.label">
+        <source>Arrival</source>
+        <target>Anreise</target>
+      </trans-unit>
+      <trans-unit id="element.departure.properties.label">
+        <source>Departure</source>
+        <target>Abreise</target>
+      </trans-unit>
+      <trans-unit id="element.account.properties.label">
+        <source>Your account</source>
+        <target>Dein Konto</target>
+      </trans-unit>
+      <trans-unit id="element.password.properties.label">
+        <source>Password</source>
+        <target>Passwort</target>
+      </trans-unit>
+      <trans-unit id="element.new-password.properties.label">
+        <source>New password</source>
+        <target>Neues Passwort</target>
+      </trans-unit>
+      <trans-unit id="element.route.properties.label">
+        <source>Route</source>
+        <target>Route</target>
+      </trans-unit>
+      <trans-unit id="element.pace.properties.label">
+        <source>Pace</source>
+        <target>Tempo</target>
+      </trans-unit>
+      <trans-unit id="element.interests.properties.label">
+        <source>What draws you</source>
+        <target>Was dich reizt</target>
+      </trans-unit>
+      <trans-unit id="element.languages.properties.label">
+        <source>Languages you speak</source>
+        <target>Sprachen, die du sprichst</target>
+      </trans-unit>
+      <trans-unit id="element.country.properties.label">
+        <source>Country you live in</source>
+        <target>Land, in dem du lebst</target>
+      </trans-unit>
+      <trans-unit id="element.notes.properties.label">
+        <source>Anything else</source>
+        <target>Sonst noch etwas</target>
+      </trans-unit>
+      <trans-unit id="element.consent.properties.label">
+        <source>I agree that my details are used to plan the walk.</source>
+        <target>Ich bin einverstanden, dass meine Angaben zur Planung der Wanderung verwendet werden.</target>
+      </trans-unit>
+      <trans-unit id="element.photo.properties.label">
+        <source>A photo of you</source>
+        <target>Ein Foto von dir</target>
+      </trans-unit>
+      <trans-unit id="element.route-file.properties.label">
+        <source>Your route as PDF</source>
+        <target>Deine Route als PDF</target>
+      </trans-unit>
+      <trans-unit id="element.new-password.properties.confirmationLabel">
+        <source>Repeat the password</source>
+        <target>Passwort wiederholen</target>
+      </trans-unit>
+      <trans-unit id="element.website.properties.elementDescription">
+        <source>Where you write about the walk, if anywhere.</source>
+        <target>Wo du über die Wanderung schreibst, falls irgendwo.</target>
+      </trans-unit>
+      <trans-unit id="element.departure.properties.elementDescription">
+        <source>As day.month.year, for example 25.04.2024.</source>
+        <target>Als Tag.Monat.Jahr, zum Beispiel 25.04.2024.</target>
+      </trans-unit>
+      <trans-unit id="element.photo.properties.elementDescription">
+        <source>JPG or PNG.</source>
+        <target>JPG oder PNG.</target>
+      </trans-unit>
+      <trans-unit id="element.route-file.properties.elementDescription">
+        <source>A PDF of your planned stages.</source>
+        <target>Ein PDF deiner geplanten Etappen.</target>
+      </trans-unit>
+      <trans-unit id="element.route.properties.options.1">
+        <source>Nakahechi</source>
+        <target>Nakahechi</target>
+      </trans-unit>
+      <trans-unit id="element.route.properties.options.2">
+        <source>Kohechi</source>
+        <target>Kohechi</target>
+      </trans-unit>
+      <trans-unit id="element.route.properties.options.3">
+        <source>Iseji</source>
+        <target>Iseji</target>
+      </trans-unit>
+      <trans-unit id="element.route.properties.options.4">
+        <source>Ohechi</source>
+        <target>Ohechi</target>
+      </trans-unit>
+      <trans-unit id="element.pace.properties.options.1">
+        <source>Slow</source>
+        <target>Gemächlich</target>
+      </trans-unit>
+      <trans-unit id="element.pace.properties.options.2">
+        <source>Steady</source>
+        <target>Gleichmäßig</target>
+      </trans-unit>
+      <trans-unit id="element.pace.properties.options.3">
+        <source>Brisk</source>
+        <target>Zügig</target>
+      </trans-unit>
+      <trans-unit id="element.interests.properties.options.1">
+        <source>Shrines</source>
+        <target>Schreine</target>
+      </trans-unit>
+      <trans-unit id="element.interests.properties.options.2">
+        <source>Hot springs</source>
+        <target>Heiße Quellen</target>
+      </trans-unit>
+      <trans-unit id="element.interests.properties.options.3">
+        <source>The forest</source>
+        <target>Der Wald</target>
+      </trans-unit>
+      <trans-unit id="element.interests.properties.options.4">
+        <source>The food</source>
+        <target>Das Essen</target>
+      </trans-unit>
+      <trans-unit id="element.languages.properties.options.1">
+        <source>English</source>
+        <target>Englisch</target>
+      </trans-unit>
+      <trans-unit id="element.languages.properties.options.2">
+        <source>German</source>
+        <target>Deutsch</target>
+      </trans-unit>
+      <trans-unit id="element.languages.properties.options.3">
+        <source>Japanese</source>
+        <target>Japanisch</target>
+      </trans-unit>
+      <trans-unit id="element.languages.properties.options.4">
+        <source>French</source>
+        <target>Französisch</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

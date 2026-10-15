@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace KumanoKodo\Sitepackage\ViewHelpers;
+namespace KumanoKodo\Theme\ViewHelpers;
 
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 

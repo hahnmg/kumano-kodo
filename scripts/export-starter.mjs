@@ -4,7 +4,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const out = join(root, 'typo3/packages/kumano_kodo_demo/Resources/Private/Starter/starter.json');
+const out = join(root, 'typo3/packages/kumano_kodo/Resources/Private/Starter/starter.json');
 
 const t = (en, de, ja) => ({ en, de, ja });
 const p = (text) => ({ en: `<p>${text.en}</p>`, de: `<p>${text.de}</p>`, ja: `<p>${text.ja}</p>` });
@@ -123,6 +123,6 @@ const pages = [
   }),
 ];
 
-const site = { websiteTitle: 'Your site', package: 'kumano_kodo_starter', settings: { 'kumanoKodo.theme': 'mono' } };
+const site = { websiteTitle: 'Your site', settings: { 'kumanoKodo.theme': 'mono' } };
 await writeFile(out, `${JSON.stringify({ site, photos: {}, files: {}, pages, frontendUsers: [] }, null, '\t')}\n`);
 console.log(`Starter: ${pages.length} pages → ${out}`);

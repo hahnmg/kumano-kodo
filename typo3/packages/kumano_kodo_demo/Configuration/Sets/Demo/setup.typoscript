@@ -1,4 +1,0 @@
-lib.contentElement.templateRootPaths.20 = EXT:kumano_kodo_demo/Resources/Private/Templates/Content/
-
-tt_content.kumano_chapter < lib.contentElement
-tt_content.kumano_chapter.dataProcessing.20 = kumano-chapter-number

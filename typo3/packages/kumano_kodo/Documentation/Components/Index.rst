@@ -22,7 +22,7 @@ Declare the namespace and call a component by its name:
 
     <html
         xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-        xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components"
+        xmlns:kk="http://typo3.org/ns/KumanoKodo/Theme/Components"
         data-namespace-typo3-fluid="true"
     >
     <kk:grid columns="3">
@@ -87,7 +87,7 @@ folder to the theme's collection in its own
 ..  code-block:: php
 
     return [
-        'KumanoKodo\\Sitepackage\\Components' => [
+        'KumanoKodo\\Theme\\Components' => [
             'templatePaths' => [
                 20 => 'EXT:my_site/Resources/Private/Components',
             ],

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="backend_fields" product-name="kumano_kodo">
+    <body>
+      <trans-unit id="preview.chapter">
+        <source>Chapter</source>
+      </trans-unit>
+      <trans-unit id="preview.days">
+        <source>Day marks</source>
+      </trans-unit>
+      <trans-unit id="preview.stations">
+        <source>Stations</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.palettes.chapter">
+        <source>Place in the chapter</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_shift">
+        <source>Lowered by</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_shift.0">
+        <source>No step</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_shift.1">
+        <source>One step</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_shift.2">
+        <source>Two steps</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span">
+        <source>Width in twelfths</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.10">
+        <source>10 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.11">
+        <source>11 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.12">
+        <source>12 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.2">
+        <source>2 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.3">
+        <source>3 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.4">
+        <source>4 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.5">
+        <source>5 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.6">
+        <source>6 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.7">
+        <source>7 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.8">
+        <source>8 / 12</source>
+      </trans-unit>
+      <trans-unit id="sys_file_reference.tx_kumanokodo_span.9">
+        <source>9 / 12</source>
+      </trans-unit>
+      <trans-unit id="tabs.map">
+        <source>Map</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.kumano_chapter">
+        <source>Chapter</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.kumano_chapter.description">
+        <source>One day of the journal: numeral, date, title, text and its photos. Chapters on a page are numbered in order.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.kumano_route_map">
+        <source>Route map</source>
+      </trans-unit>
+      <trans-unit id="tt_content.CType.kumano_route_map.description">
+        <source>The route as a line with its stations and days.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.bodytext.description.map">
+        <source>Describes the map for screen readers.</source>
+      </trans-unit>
+      <trans-unit id="tt_content.group.kumano_journal">
+        <source>Journal</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_day_marks">
+        <source>Day marks</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_path">
+        <source>Route line (SVG path in 1000 × 250)</source>
+      </trans-unit>
+      <trans-unit id="tt_content.tx_kumanokodo_stations">
+        <source>Stations</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_day_mark">
+        <source>Day mark</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_day_mark.label">
+        <source>Label</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_day_mark.link">
+        <source>Links to</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_day_mark.x">
+        <source>Across (0–1000)</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station">
+        <source>Station</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.anchor">
+        <source>Name aligned</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.anchor.end">
+        <source>Right</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.anchor.middle">
+        <source>Centred</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.anchor.start">
+        <source>Left</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.boundary">
+        <source>Marks the end of a day</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.highlight">
+        <source>Part of the highlighted stretch</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.highlight.description">
+        <source>The stretch from the first to the last station switched on is drawn in accent, the rest of the route steps back. For a day page: switch on the stations of that day.</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.label_y">
+        <source>Name at (0–250)</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.link">
+        <source>Links to</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.name">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.x">
+        <source>Across (0–1000)</source>
+      </trans-unit>
+      <trans-unit id="tx_kumanokodo_station.y">
+        <source>Down (0–250)</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

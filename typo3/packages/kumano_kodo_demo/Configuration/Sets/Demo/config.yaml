@@ -1,5 +1,0 @@
-name: kumano-kodo/demo
-label: 'Kumano Kodo · Demo'
-# The trail journal's own elements on top of the theme: Route map and Chapter.
-dependencies:
-  - kumano-kodo/site

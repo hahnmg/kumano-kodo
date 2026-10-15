@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace KumanoKodo\Sitepackage\ViewHelpers;
+namespace KumanoKodo\Theme\ViewHelpers;
 
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Core\Domain\Repository\PageRepository;

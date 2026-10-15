@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Builds the starter set and writes it into the starter package as its Initialisation data, then restores the demo.
+# Builds the starter and writes it into the extension, where kumano:starter:create reads it, then restores the demo.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 
 typo3=vendor/bin/typo3
-target=packages/kumano_kodo_starter/Initialisation
+target=packages/kumano_kodo/Resources/Private/Starter
 $typo3 kumano:demo:build --replace --starter
 root=$($typo3 site:show kumano-kodo | sed -n 's/.*rootPageId: *\([0-9]*\).*/\1/p')
 

@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Sitepackage/Components" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Theme/Components" data-namespace-typo3-fluid="true">
 <f:comment>One row: title, the page's path in the tree, the passage with the matched words marked.</f:comment>
 <f:variable name="path"><f:for each="{row.pathTitle -> f:split(separator: '/')}" as="step" iteration="i"><f:if condition="{step} && !{i.isLast}"><f:if condition="!{i.isFirst} && {i.index} > 1"> › </f:if>{step}</f:if></f:for></f:variable>
 <li>

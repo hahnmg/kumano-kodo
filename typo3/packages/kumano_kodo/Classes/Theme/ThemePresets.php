@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace KumanoKodo\Sitepackage\Theme;
+namespace KumanoKodo\Theme\Theme;
 
 // themes.json is written by `npm run build:typo3` from the Figma variables.
 final class ThemePresets

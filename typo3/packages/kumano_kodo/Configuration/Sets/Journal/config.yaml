@@ -1,0 +1,5 @@
+name: kumano-kodo/journal
+label: 'Kumano Kodo · Journal'
+# The travel journal's own elements: a route map with linked stations and days, and numbered chapters.
+dependencies:
+  - kumano-kodo/theme

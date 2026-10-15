@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace KumanoKodo\Sitepackage\EventListener;
+namespace KumanoKodo\Theme\EventListener;
 
 use TYPO3\CMS\Core\Attribute\AsEventListener;
 use TYPO3\CMS\Fluid\Event\RenderComponentEvent;

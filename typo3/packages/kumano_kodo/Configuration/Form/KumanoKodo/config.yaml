@@ -5,6 +5,8 @@ priority: 50
 persistenceManager:
   allowedExtensionPaths:
     20: 'EXT:kumano_kodo/Resources/Private/Forms/'
+    # The demo's own forms: a contact form with a topic, and the walk registration with every element type.
+    30: 'EXT:kumano_kodo/Resources/Private/Forms/Demo/'
 
 prototypes:
   standard:

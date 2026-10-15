@@ -76,6 +76,36 @@ The call to action of a section: a link with href, a button without.
         - string, default ``button``
         - button or submit, without href.
 
+kk:chapter
+==========
+
+A chapter of the journal: a large number, date, title, the text in the slot and
+its photos, which open in the lightbox.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``id``
+        - string, required
+        - Anchor, also ties the title to the chapter.
+    *   - ``title``
+        - string, required
+        - The heading.
+    *   - ``number``
+        - string|int
+        - The large number; decorative.
+    *   - ``date``
+        - string
+        - A line above the title.
+    *   - ``images``
+        - iterable
+        - File references; their span (1 to 12) and shift set the layout.
+
+Slots: ``default``.
+
 kk:chip
 =======
 
@@ -888,6 +918,33 @@ Editorial HTML from the editor, in the slot: headings, paragraphs, lists and
 links.
 
 Slots: ``default``.
+
+kk:routeMap
+===========
+
+A schematic map of a route: a path, stations with names, day marks below and a
+legend. Stations and day marks with a link lead there; the stretch between the
+first and last highlighted station is drawn in accent.
+
+..  list-table::
+    :header-rows: 1
+
+    *   - Argument
+        - Type
+        - Meaning
+    *   - ``label``
+        - string, required
+        - Describes the map for screen readers.
+    *   - ``path``
+        - string, required
+        - SVG path data of the route in a 1000 × 250 box.
+    *   - ``stations``
+        - iterable, required
+        - Entries with x, y, name, label_y, anchor, boundary, highlight and
+          link; the last is the end.
+    *   - ``days``
+        - iterable
+        - Entries with x, label and link, set below the map.
 
 kk:section
 ==========

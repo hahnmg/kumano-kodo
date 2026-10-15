@@ -1,0 +1,104 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/KumanoKodo/Theme/ViewHelpers" xmlns:kk="http://typo3.org/ns/KumanoKodo/Theme/Components" data-namespace-typo3-fluid="true">
+<f:comment>
+    A schematic map of a route: a path, stations with names, day marks below and a legend. Stations and day marks with
+    a link lead there; the stretch between the first and last highlighted station is drawn in accent.
+</f:comment>
+<f:argument name="label" type="string" description="Describes the map for screen readers."/>
+<f:argument name="path" type="string" description="SVG path data of the route in a 1000 × 250 box."/>
+<f:argument name="stations" type="iterable" description="Entries with x, y, name, label_y, anchor, boundary, highlight and link; the last is the end."/>
+<f:argument name="days" type="iterable" optional="{true}" description="Entries with x, label and link, set below the map."/>
+
+<f:asset.css identifier="kumano-route-map" href="EXT:kumano_kodo/Resources/Public/Css/Components/route-map.css"/>
+<f:variable name="from" value=""/>
+<f:variable name="to" value=""/>
+<f:variable name="linked" value=""/>
+<f:for each="{stations}" as="station">
+    <f:if condition="{station.highlight}">
+        <f:if condition="{from} == ''">
+            <f:variable name="from" value="{station.x}"/>
+        </f:if>
+        <f:variable name="to" value="{station.x}"/>
+    </f:if>
+    <f:if condition="{station.link}">
+        <f:variable name="linked" value="1"/>
+    </f:if>
+</f:for>
+<f:variable name="span" value="{f:if(condition: '{from} != \'\' && {to} > {from}', then: 1, else: 0)}"/>
+<figure class="route-map{f:if(condition: span, then: ' route-map-highlighted')}">
+    <div class="route-map-scroll" tabindex="0" role="group" aria-label="{label}">
+        <svg class="route-map-svg" viewBox="0 0 1000 250" role="{f:if(condition: linked, then: 'group', else: 'img')}" aria-label="{label}">
+            <f:if condition="{span}">
+                <clipPath id="route-map-day-{from}-{to}">
+                    <rect x="{from}" y="0" width="{to - from}" height="250"/>
+                </clipPath>
+            </f:if>
+            <path class="route-map-path" d="{path}"/>
+            <f:if condition="{span}">
+                <path class="route-map-path-day" d="{path}" clip-path="url(#route-map-day-{from}-{to})"/>
+            </f:if>
+            <f:for each="{stations}" as="station">
+                <f:if condition="{station.boundary}">
+                    <line class="route-map-boundary" x1="{station.x}" y1="{station.y}" x2="{station.x}" y2="228"/>
+                </f:if>
+            </f:for>
+            <f:for each="{stations}" as="station" iteration="i">
+                <f:variable name="muted" value="{f:if(condition: '{span} && ({station.x} < {from} || {station.x} > {to})', then: ' route-map-station-muted')}"/>
+                <f:variable name="marker">
+                    <f:if condition="{station.link}">
+                        <circle class="route-map-target" cx="{station.x}" cy="{station.y}" r="16"/>
+                    </f:if>
+                    <f:if condition="{i.isLast}">
+                        <f:then>
+                            <circle class="route-map-station route-map-station-end{muted}" cx="{station.x}" cy="{station.y}" r="8"/>
+                        </f:then>
+                        <f:else>
+                            <circle class="route-map-station{muted}" cx="{station.x}" cy="{station.y}" r="7"/>
+                        </f:else>
+                    </f:if>
+                    <text class="route-map-label" x="{station.x}" y="{station.label_y}" text-anchor="{station.anchor}">{station.name}</text>
+                </f:variable>
+                <f:if condition="{station.link}">
+                    <f:then>
+                        <a class="route-map-link" href="{f:uri.typolink(parameter: station.link)}">
+                            {marker -> f:format.raw()}
+                        </a>
+                    </f:then>
+                    <f:else>
+                        {marker -> f:format.raw()}
+                    </f:else>
+                </f:if>
+            </f:for>
+        </svg>
+        <ol class="route-map-segments type-caption">
+            <f:for each="{days}" as="day">
+                <li style="left:{day.x / 10}%">
+                    <f:if condition="{day.link}">
+                        <f:then>
+                            <a class="route-map-day-link" href="{f:uri.typolink(parameter: day.link)}">{day.label}</a>
+                        </f:then>
+                        <f:else>
+                            {day.label}
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:for>
+        </ol>
+    </div>
+    <figcaption class="route-map-legend type-caption">
+        <f:if condition="{span}">
+            <span>
+                <i class="route-map-key route-map-key-day"></i>{f:translate(key: 'mapDay', domain: 'kumano_kodo.journal')}
+            </span>
+        </f:if>
+        <span>
+            <i class="route-map-key route-map-key-completed"></i>{f:translate(key: 'mapWalked', domain: 'kumano_kodo.journal')}
+        </span>
+        <span>
+            <i class="route-map-key route-map-key-end"></i>{f:translate(key: 'mapEnd', domain: 'kumano_kodo.journal')}
+        </span>
+        <span>
+            <i class="route-map-key route-map-key-boundary"></i>{f:translate(key: 'mapBoundary', domain: 'kumano_kodo.journal')}
+        </span>
+    </figcaption>
+</figure>
+</html>

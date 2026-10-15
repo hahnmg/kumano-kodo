@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace KumanoKodo\Sitepackage\DataProcessing;
+namespace KumanoKodo\Theme\DataProcessing;
 
 use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;

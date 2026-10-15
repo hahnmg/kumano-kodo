@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<ul class="badge-list">
+    <li>
+        <span class="badge badge-info">{f:translate(key: 'preview.chapter', domain: 'kumano_kodo.journal_fields')}</span>
+    </li>
+    <li>
+        <span class="badge badge-default">{f:translate(key: 'preview.photos', domain: 'kumano_kodo.backend_fields')}: {record.image -> f:count()}</span>
+    </li>
+</ul>
+<f:if condition="{record.bodytext}">
+    <p>{record.bodytext -> f:format.stripTags() -> f:format.crop(maxCharacters: 160) -> f:format.htmlspecialchars(doubleEncode: false)}</p>
+</f:if>
+<div class="d-flex flex-wrap gap-2">
+    <f:for each="{record.image}" as="image">
+        <figure class="m-0">
+            <f:image image="{image}" width="64c" height="48c" alt=""/>
+            <figcaption class="text-body-secondary">{image.properties.tx_kumanokodo_span -> f:or(alternative: 6)}/12</figcaption>
+        </figure>
+    </f:for>
+</div>
+</html>

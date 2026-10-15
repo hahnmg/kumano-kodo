@@ -1,8 +1,8 @@
 # Kumano Kodo for TYPO3
 
 A theme for TYPO3 and its design system: components and tokens for the Kumano
-Kodo sitepackage. **Figma is the design source**; this repository turns it into
-a Storybook of plain HTML components.
+Kodo theme extension. **Figma is the design source**; this repository turns it
+into a Storybook of plain HTML components.
 
 This README is for those who build Kumano Kodo. Who uses the TYPO3 packages
 reads the manual in `typo3/packages/kumano_kodo/Documentation/`.
@@ -105,17 +105,16 @@ renders every page in every language and fails on any link that points nowhere.
 what they do for users is in the manual,
 `typo3/packages/kumano_kodo/Documentation/` (docs.typo3.org format). Why it is
 built this way: `docs/adr/2026-09-30-typo3-sitepackage.md`,
+`docs/adr/2026-10-15-one-extension.md`,
 `docs/adr/2026-09-30-typo3-content-model.md`,
 `docs/adr/2026-09-30-typo3-content-form.md`.
 
-| Package                                       | Is                                                                         |
-| --------------------------------------------- | -------------------------------------------------------------------------- |
-| `kumano-kodo/sitepackage` (`kumano_kodo`)     | The theme. Generated parts come from Storybook via `npm run build:typo3`   |
-| `kumano-kodo/demo` (`kumano_kodo_demo`)       | The trail journal, built from the Storybook content, and the build command |
-| `kumano-kodo/starter` (`kumano_kodo_starter`) | Five placeholder pages; excludes the demo                                  |
+| Package                             | Is                                                                                                                                                         |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `kumano-kodo/theme` (`kumano_kodo`) | The one extension. Sets: theme, news, journal, demo. Demo and starter are created by `kumano:demo:create` / `kumano:starter:create` or Sites › Kumano Kodo |
 
 ```
-ddev start               # installs TYPO3 and imports the demo on the first start
+ddev start               # installs TYPO3 and creates the demo on the first start
 ```
 
 The site answers at https://kumano-kodo.ddev.site in EN, `/de/` and `/ja/`; the
@@ -146,8 +145,8 @@ pages instead.
   Camino and the solution here, in Storybook under "Core theme issues" (data:
   `docs/core-theme-issues.json`).
 - **Fluid components**: everything the theme renders is a component in
-  `Resources/Private/Components`, namespace `KumanoKodo\Sitepackage\Components`,
-  so other extensions can use them; `TrimComponentOutput` trims the line breaks
+  `Resources/Private/Components`, namespace `KumanoKodo\Theme\Components`, so
+  other extensions can use them; `TrimComponentOutput` trims the line breaks
   around each. `npm run build:typo3` writes the reference for the manual and
   Storybook (`docs/fluid-components.json`).
 - **Icons**: drawn to the

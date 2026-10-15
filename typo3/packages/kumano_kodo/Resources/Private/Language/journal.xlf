@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="journal" product-name="kumano_kodo">
+    <body>
+      <trans-unit id="mapWalked">
+        <source>Walked section</source>
+      </trans-unit>
+      <trans-unit id="mapEnd">
+        <source>End of the walk</source>
+      </trans-unit>
+      <trans-unit id="mapBoundary">
+        <source>Day boundary with overnight stay</source>
+      </trans-unit>
+      <trans-unit id="mapDay">
+        <source>This day</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

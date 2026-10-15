@@ -4,15 +4,20 @@ services:
     autoconfigure: true
     public: false
 
-  KumanoKodo\Sitepackage\:
+  KumanoKodo\Theme\:
     resource: '../Classes/*'
 
-  KumanoKodo\Sitepackage\DataProcessing\ThemeProcessor:
+  KumanoKodo\Theme\DataProcessing\ThemeProcessor:
     tags:
       - name: data.processor
         identifier: kumano-theme
 
-  KumanoKodo\Sitepackage\DataProcessing\StructuredDataProcessor:
+  KumanoKodo\Theme\DataProcessing\StructuredDataProcessor:
     tags:
       - name: data.processor
         identifier: kumano-structured-data
+
+  KumanoKodo\Theme\DataProcessing\ChapterNumberProcessor:
+    tags:
+      - name: data.processor
+        identifier: kumano-chapter-number

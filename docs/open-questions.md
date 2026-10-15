@@ -19,6 +19,12 @@ Nothing decided is waiting to be built.
 
 ## Decisions
 
+### 2026-10-15
+
+- **One extension, done**: Kumano Kodo is the extension `kumano-kodo/theme` with
+  the sets theme, news, journal and demo; the demo and the starter are created
+  by command or backend module. See `docs/adr/2026-10-15-one-extension.md`.
+
 ### 2026-10-14
 
 - **Content showcase, done**: Practical › Content showcase shows every element

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace KumanoKodo\Sitepackage\Theme;
+namespace KumanoKodo\Theme\Theme;
 
 use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Core\Environment;

@@ -11,7 +11,7 @@
                edit-on-github-branch="develop"
                edit-on-github=""
                typo3-core-preferred="main"
-               interlink-shortcode="kumano-kodo/sitepackage"
+               interlink-shortcode="kumano-kodo/theme"
     />
     <project title="Kumano Kodo for TYPO3"
              release="0.1.0"

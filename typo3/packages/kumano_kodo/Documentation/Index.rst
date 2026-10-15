@@ -8,7 +8,7 @@ Kumano Kodo for TYPO3
     kumano_kodo
 
 :Package name:
-    kumano-kodo/sitepackage
+    kumano-kodo/theme
 
 :Version:
     |release|

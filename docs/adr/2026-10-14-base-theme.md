@@ -1,6 +1,7 @@
 # A base theme: the trail journal's own elements live in the demo
 
-Date: 2026-10-14 Status: accepted
+Date: 2026-10-14 Status: accepted; packaging superseded by
+2026-10-15-one-extension
 
 ## Context
 

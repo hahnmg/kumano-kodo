@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Rebuilds the demo from Build/Demo/content.json and writes it into the demo package as its Initialisation data.
+# Rebuilds the demo from Build/Demo/content.json and writes it into the extension, where kumano:demo:create reads it.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 
 typo3=vendor/bin/typo3
-target=packages/kumano_kodo_demo/Initialisation
+target=packages/kumano_kodo/Resources/Private/Demo
 $typo3 kumano:demo:build --replace
 root=$($typo3 site:show kumano-kodo | sed -n 's/.*rootPageId: *\([0-9]*\).*/\1/p')
 

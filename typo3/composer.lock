@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b262879e0dd2bffad4f6232b1fe72cdd",
+    "content-hash": "2b77eb4ad288913c605d4e6acd73844d",
     "packages": [
         {
             "name": "b13/container",
@@ -1381,48 +1381,12 @@
             "time": "2026-08-24T11:02:13+00:00"
         },
         {
-            "name": "kumano-kodo/demo",
-            "version": "0.1.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/kumano_kodo_demo",
-                "reference": "4d07895fd1c1fa68e5b66eb4852d47dc39855141"
-            },
-            "require": {
-                "georgringer/news": "^14.1",
-                "kumano-kodo/sitepackage": "@dev",
-                "typo3/cms-core": "^14.3",
-                "typo3/cms-impexp": "^14.3"
-            },
-            "type": "typo3-cms-extension",
-            "extra": {
-                "typo3/cms": {
-                    "extension-key": "kumano_kodo_demo",
-                    "Package": {
-                        "providesPackages": []
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "KumanoKodo\\Demo\\": "Classes/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "description": "Kumano Kodo Demo - The trail journal as demo content for the Kumano Kodo sitepackage",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "kumano-kodo/sitepackage",
+            "name": "kumano-kodo/theme",
             "version": "0.1.0",
             "dist": {
                 "type": "path",
                 "url": "packages/kumano_kodo",
-                "reference": "13f7394060ce8836ab52cdc459f96fcab2f7fa7d"
+                "reference": "04f9e0509105c6ab3d1c8628dc5a2a7b44258dfb"
             },
             "require": {
                 "b13/container": "^4.1",
@@ -1432,7 +1396,9 @@
                 "typo3/cms-rte-ckeditor": "^14.3"
             },
             "suggest": {
-                "georgringer/news": "News and blog posts with the theme's components: the site set kumano-kodo/news"
+                "georgringer/news": "News and blog posts with the theme's components: the site set kumano-kodo/news",
+                "typo3/cms-form": "Forms in the theme's markup; the demo's forms need it",
+                "typo3/cms-impexp": "Needed by kumano:demo:create and kumano:starter:create"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -1445,7 +1411,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "KumanoKodo\\Sitepackage\\": "Classes/"
+                    "KumanoKodo\\Theme\\": "Classes/"
                 }
             },
             "license": [
@@ -8856,8 +8822,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kumano-kodo/demo": 20,
-        "kumano-kodo/sitepackage": 20
+        "kumano-kodo/theme": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

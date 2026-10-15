@@ -1,0 +1,7 @@
+name: kumano-kodo/demo
+label: 'Kumano Kodo · Demo'
+# What the demo site from kumano:demo:create uses: the theme, the journal elements and news.
+dependencies:
+  - kumano-kodo/theme
+  - kumano-kodo/journal
+  - kumano-kodo/news

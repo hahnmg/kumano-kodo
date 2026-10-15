@@ -7,7 +7,7 @@ import { format, resolveConfig } from 'prettier';
 import { wrapRst } from './wrap-rst.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const set = join(root, 'typo3/packages/kumano_kodo/Configuration/Sets/Site');
+const set = join(root, 'typo3/packages/kumano_kodo/Configuration/Sets/Theme');
 const out = join(root, 'typo3/packages/kumano_kodo/Documentation/Configuration/SiteSettings.rst');
 
 const { categories, settings } = yaml.load(await readFile(join(set, 'settings.definitions.yaml'), 'utf8'));

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace KumanoKodo\Sitepackage\DataProcessing;
+namespace KumanoKodo\Theme\DataProcessing;
 
-use KumanoKodo\Sitepackage\Theme\SiteLogo;
-use KumanoKodo\Sitepackage\Theme\ThemePresets;
-use KumanoKodo\Sitepackage\Theme\WebFontService;
+use KumanoKodo\Theme\Theme\SiteLogo;
+use KumanoKodo\Theme\Theme\ThemePresets;
+use KumanoKodo\Theme\Theme\WebFontService;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
 use TYPO3\CMS\Core\Exception\SiteNotFoundException;

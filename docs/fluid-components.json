@@ -72,6 +72,43 @@
 		"slots": []
 	},
 	{
+		"name": "chapter",
+		"description": "A chapter of the journal: a large number, date, title, the text in the slot and its photos, which open in the lightbox.",
+		"arguments": [
+			{
+				"name": "id",
+				"type": "string",
+				"required": true,
+				"description": "Anchor, also ties the title to the chapter."
+			},
+			{
+				"name": "title",
+				"type": "string",
+				"required": true,
+				"description": "The heading."
+			},
+			{
+				"name": "number",
+				"type": "string|int",
+				"required": false,
+				"description": "The large number; decorative."
+			},
+			{
+				"name": "date",
+				"type": "string",
+				"required": false,
+				"description": "A line above the title."
+			},
+			{
+				"name": "images",
+				"type": "iterable",
+				"required": false,
+				"description": "File references; their span (1 to 12) and shift set the layout."
+			}
+		],
+		"slots": ["default"]
+	},
+	{
 		"name": "chip",
 		"description": "A filter link; the active one marks the current page.",
 		"arguments": [
@@ -965,6 +1002,37 @@
 		"description": "Editorial HTML from the editor, in the slot: headings, paragraphs, lists and links.",
 		"arguments": [],
 		"slots": ["default"]
+	},
+	{
+		"name": "routeMap",
+		"description": "A schematic map of a route: a path, stations with names, day marks below and a legend. Stations and day marks with a link lead there; the stretch between the first and last highlighted station is drawn in accent.",
+		"arguments": [
+			{
+				"name": "label",
+				"type": "string",
+				"required": true,
+				"description": "Describes the map for screen readers."
+			},
+			{
+				"name": "path",
+				"type": "string",
+				"required": true,
+				"description": "SVG path data of the route in a 1000 × 250 box."
+			},
+			{
+				"name": "stations",
+				"type": "iterable",
+				"required": true,
+				"description": "Entries with x, y, name, label_y, anchor, boundary, highlight and link; the last is the end."
+			},
+			{
+				"name": "days",
+				"type": "iterable",
+				"required": false,
+				"description": "Entries with x, label and link, set below the map."
+			}
+		],
+		"slots": []
 	},
 	{
 		"name": "section",
