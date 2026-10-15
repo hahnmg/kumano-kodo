@@ -9,7 +9,7 @@ Content
     slideshow, galleries with a lightbox, video in an image's place and tables
     from the text editor.
 
-Core extensions
+Extensions
     Forms with every element type and steps, login, search, news, the XML
     sitemap and structured data, all in the theme's own markup.
 

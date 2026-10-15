@@ -50,7 +50,7 @@
 			]
 		},
 		{
-			"title": "Core extensions",
+			"title": "Extensions",
 			"summary": "Forms with every element type and steps, login, search, news, the XML sitemap and structured data, all in the theme's own markup.",
 			"features": [
 				{
@@ -71,7 +71,7 @@
 				},
 				{
 					"text": "XML sitemap and structured data",
-					"manual": "CoreExtensions/Index.html"
+					"manual": "Extensions/Index.html"
 				}
 			]
 		},

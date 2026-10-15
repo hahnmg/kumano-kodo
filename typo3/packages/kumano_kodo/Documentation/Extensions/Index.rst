@@ -1,10 +1,13 @@
-..  _core-extensions:
+..  _extensions:
 
-===============
-Core extensions
-===============
+====================
+Supported extensions
+====================
 
 The theme renders these in its own markup when they are installed.
+
+Core
+====
 
 Search (indexed_search)
     A magnifier in the header opens the search; results show like the Media
@@ -28,15 +31,21 @@ Forms (form)
     format: its calendar needs jQuery UI, which the theme does not load. For a
     calendar, use the element "Date", which shows the browser's own.
 
-News (georgringer/news)
-    Not a core extension, but the most common one. Add the site set **Kumano
-    Kodo · News** to the site: the list shows the news as teaser cards with
-    pages below, a news item shows its preview images and text with date,
-    category and tags beside, and its other images as a gallery below. Put the
-    detail plugin on a page with the layout **Landing**, so the news item brings
-    its own page header and breadcrumb. Readable URLs need the route enhancers
-    of the news manual's quick start, limited to the list and the detail page.
-
 Sitemap (seo)
     `/sitemap.xml`. Pages with "No index" stay out. Absolute URLs need a site
     base with a host.
+
+Third-party
+===========
+
+Container (b13/container)
+    Required. The containers Section and Columns are built on it.
+
+News (georgringer/news)
+    Add the site set **Kumano Kodo · News** (`kumano-kodo/news`) to the site:
+    the list shows the news as teaser cards with pages below, a news item shows
+    its preview images and text with date, category and tags beside, and its
+    other images as a gallery below. Put the detail plugin on a page with the
+    layout **Landing**, so the news item brings its own page header and
+    breadcrumb. Readable URLs need the route enhancers of the news manual's
+    quick start, limited to the list and the detail page.

@@ -44,7 +44,7 @@ fluid_styled_content.
     Installation/Index
     Configuration/Index
     Editors/Index
-    CoreExtensions/Index
+    Extensions/Index
     Components/Index
     Customization/Index
     Privacy/Index
