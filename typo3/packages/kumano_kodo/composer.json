@@ -2,7 +2,7 @@
 	"name": "kumano-kodo/theme",
 	"description": "Kumano Kodo for TYPO3: a theme built from the Kumano Kodo design system",
 	"type": "typo3-cms-extension",
-	"license": "proprietary",
+	"license": "GPL-2.0-or-later",
 	"version": "0.1.0",
 	"require": {
 		"b13/container": "^4.1",

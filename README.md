@@ -174,3 +174,8 @@ placeholder clip made from four of the photos.
 | `src/`                   | Generated tokens, base styles, HTML helpers          |
 | `scripts/`               | Token build and gates                                |
 | `img/`                   | Photos and the placeholder clip used in stories      |
+
+## License
+
+Code: GPL-2.0-or-later, as the TYPO3 core (`LICENSE`). Photos and video: CC BY
+4.0, © 2024 Alexander Hahn (`img/LICENSE.md`).

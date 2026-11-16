@@ -1,6 +1,7 @@
 {
 	"name": "kumano-kodo-design-system",
 	"private": true,
+	"license": "GPL-2.0-or-later",
 	"type": "module",
 	"scripts": {
 		"tokens": "node scripts/build-tokens.mjs",
