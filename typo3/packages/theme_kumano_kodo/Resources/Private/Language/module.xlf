@@ -8,14 +8,32 @@
       <trans-unit id="create">
         <source>Create</source>
       </trans-unit>
+      <trans-unit id="created">
+        <source>Created the site "%s" with root page %d.</source>
+      </trans-unit>
       <trans-unit id="description">
         <source>Creates the Kumano Kodo starter as a site of its own, with its pages, files and site configuration. Installing the extension adds no pages; the demo comes with the package typo3/theme-kumano-kodo-demo.</source>
       </trans-unit>
+      <trans-unit id="error.base">
+        <source>"%s" is no base: it starts with / or with http:// or https:// and a host.</source>
+      </trans-unit>
+      <trans-unit id="error.baseTaken">
+        <source>The site "%s" answers on %s already.</source>
+      </trans-unit>
+      <trans-unit id="error.identifier">
+        <source>"%s" is no site identifier: lowercase letters, digits, - and _ only.</source>
+      </trans-unit>
+      <trans-unit id="error.identifierTaken">
+        <source>A site "%s" exists already.</source>
+      </trans-unit>
+      <trans-unit id="error.import">
+        <source>The starter could not be imported; nothing was created. The log has the details.</source>
+      </trans-unit>
+      <trans-unit id="error.missing">
+        <source>Install these extensions first: %s.</source>
+      </trans-unit>
       <trans-unit id="identifier">
         <source>Site identifier</source>
-      </trans-unit>
-      <trans-unit id="missing">
-        <source>Install these extensions first:</source>
       </trans-unit>
       <trans-unit id="short_description">
         <source>Create the starter site</source>
