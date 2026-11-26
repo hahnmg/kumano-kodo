@@ -485,12 +485,12 @@ const loginLabels = ({ ui }: Content) => ({
   logOut: ui.logOut,
 });
 
-// The demo's news, from EXT:news in TYPO3: three reports a page, newest first.
+// EXT:news drawn with the theme, for the templates of the extras package: three reports a page, newest first.
 const reportsPerPage = 3;
 const longDate = (c: Content, iso: string) =>
   new Intl.DateTimeFormat(c.locale === 'en' ? 'en-GB' : c.locale, { dateStyle: 'long' }).format(new Date(iso));
 
-export const reportsPage = (page: number, c: Content = content()): string => {
+export const newsListPage = (page: number, c: Content = content()): string => {
   const { reports, photos, ui } = c;
   const pages = Math.ceil(reports.items.length / reportsPerPage);
   const items = reports.items.slice((page - 1) * reportsPerPage, page * reportsPerPage);
@@ -532,8 +532,8 @@ export const reportsPage = (page: number, c: Content = content()): string => {
   );
 };
 
-// A report: lead, first photo and text with its facts beside, the other photos below, then the way on.
-export const reportPage = (slug: string, c: Content = content()): string => {
+// A news item: lead, first photo and text with its facts beside, the other photos below, then the way on.
+export const newsDetailPage = (slug: string, c: Content = content()): string => {
   const { reports, photos, ui } = c;
   const i = reports.items.findIndex((r) => r.slug === slug);
   const r = reports.items[i];
@@ -561,6 +561,71 @@ export const reportPage = (slug: string, c: Content = content()): string => {
             ],
           }),
           'content-sidebar',
+        ),
+      }) +
+      section({
+        tone: 'sunk',
+        content: stack([sectionHeading({ title: ui.newsPhotos }), gallery({ images: rest, labels: lightbox(c) })], 'heading'),
+      }) +
+      section({
+        content: cluster([
+          link({ label: ui.newsAll, href: paths.reports, direction: 'back' }),
+          ...(older ? [link({ label: `${ui.newsNext}: ${older.title}`, href: paths.report(older.slug) })] : []),
+        ]),
+      }),
+  );
+};
+
+// The demo's trail reports as pages: all of them as teaser cards, newest first.
+export const reportsPage = (c: Content = content()): string => {
+  const { reports, photos } = c;
+  return chrome(
+    c,
+    3,
+    header(c, reports.title, []) +
+      section({ content: richText({ html: `<p>${esc(reports.intro)}</p>` }) }) +
+      section({
+        space: 'flush-top',
+        content: grid(
+          reports.items.map((r) =>
+            teaserCard({
+              image: photos[r.photos[0] as PhotoName],
+              title: r.title,
+              href: paths.report(r.slug),
+              subtitle: r.teaser,
+              meta: longDate(c, r.date),
+              badge: reports.categories[r.category as keyof typeof reports.categories],
+              level: 2,
+            }),
+          ),
+          3,
+        ),
+      }),
+  );
+};
+
+// A report page as the demo builds it from elements: the page top with date and category, the first photo and
+// the text, the other photos below, then the way back and on.
+export const reportPage = (slug: string, c: Content = content()): string => {
+  const { reports, photos, ui } = c;
+  const i = reports.items.findIndex((r) => r.slug === slug);
+  const r = reports.items[i];
+  const older = reports.items[i + 1];
+  const [first, ...rest] = r.photos.map((name) => photos[name as PhotoName]);
+  const category = reports.categories[r.category as keyof typeof reports.categories];
+  return chrome(
+    c,
+    3,
+    section({
+      content:
+        `<p class="section-heading-eyebrow type-label">${esc(`${longDate(c, r.date)} · ${category}`)}</p>` +
+        `<h1 class="type-h2">${esc(r.title)}</h1><p class="type-lead">${esc(r.teaser)}</p>`,
+    }) +
+      section({
+        space: 'flush-top',
+        content: stack(
+          [figure({ images: [first], caption: first.caption ?? '', labels: lightbox(c) }), richText({ html: paragraphs(r.text) })],
+          'elements',
         ),
       }) +
       section({
@@ -713,7 +778,7 @@ export const papersPage = (c: Content = content()): string => {
 // Every content element in every form it takes, one below the other, from the journal's own texts and photos. The
 // page top variants that set the page's h1 (photo hero, slides, opener, the columns' page top) show on their own pages.
 export const showcasePage = (c: Content = content()): string => {
-  const { site, kumano, guide, home, pages, photos, ui, reports } = c;
+  const { site, kumano, guide, home, pages, photos, ui } = c;
   const s = site.showcase;
   const e = s.elements;
   const v = s.variants;
@@ -978,25 +1043,6 @@ export const showcasePage = (c: Content = content()): string => {
         placeholder: ui.searchPlaceholder,
         landmark: ui.searchResults,
       }),
-    },
-    {
-      id: 'news',
-      element: e.plugins,
-      variant: v.news,
-      body: grid(
-        reports.items.slice(0, 3).map((r) =>
-          teaserCard({
-            image: photos[r.photos[0] as PhotoName],
-            title: r.title,
-            href: paths.report(r.slug),
-            subtitle: r.teaser,
-            meta: longDate(c, r.date),
-            badge: reports.categories[r.category as keyof typeof reports.categories],
-            level: 3,
-          }),
-        ),
-        3,
-      ),
     },
   ];
   const anchor = (id: string) => `showcase-${id}`;

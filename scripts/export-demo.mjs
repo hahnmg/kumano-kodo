@@ -649,21 +649,6 @@ const formFlexform = (identifier) =>
 // The form with every element type; TYPO3\\CMS\\ThemeKumanoKodo\\Demo\\WalkForm stores it in the form database and puts its uid here.
 const walkFormTarget = 'form:walk';
 
-// FlexForm values of the news plugins, sheet by sheet; page:<key> becomes the uid of that page in the build.
-const newsFlexform = (sheets) =>
-  '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data>' +
-  Object.entries(sheets)
-    .map(
-      ([sheet, fields]) =>
-        `<sheet index="${sheet}"><language index="lDEF">` +
-        Object.entries(fields)
-          .map(([name, value]) => `<field index="settings.${name}"><value index="vDEF">${value}</value></field>`)
-          .join('') +
-        '</language></sheet>',
-    )
-    .join('') +
-  '</data></T3FlexForms>';
-
 // Every element in each of its variants, one below the other; an element that brings its own heading sits in a section.
 const sc = (x) => x.site.showcase;
 const shown = (id, element, variant) => ({
@@ -958,20 +943,6 @@ const showcaseBlocks = [
     (h) => columns('content-sidebar', h, [el('felogin_login', { pi_flexform: loginFlexform('walkers', { login: 'papers' }) })], []),
   ],
   ['search', 'plugins', 'search', (h) => [el('header', h), el('indexedsearch_pi2')]],
-  [
-    'news',
-    'plugins',
-    'news',
-    (h) => [
-      el('header', h),
-      el('news_pi1', {
-        pi_flexform: newsFlexform({
-          sDEF: { orderBy: 'datetime', orderDirection: 'desc', startingpoint: 'page:news-records' },
-          additional: { detailPid: 'page:report', limit: 3, hidePagination: 1 },
-        }),
-      }),
-    ],
-  ],
 ];
 const showcaseContent = [
   el('kumano_page_top', { tx_themekumanokodo_variant: 'text', header: t((x) => sc(x).title), bodytext: t((x) => sc(x).intro) }),
@@ -987,6 +958,42 @@ const showcaseContent = [
   ),
   ...showcaseBlocks.flatMap(([id, element, variant, build]) => build(shown(id, element, variant))),
 ];
+
+// The trail reports as pages built from elements, as Storybook's Site › Report.
+const longDate = (lang, iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, { dateStyle: 'long' }).format(new Date(iso));
+const reportOf = (x, i) => x.reports.items[i];
+const categoryOf = (x, i) => x.reports.categories[reportOf(x, i).category];
+const reportTeasers = () =>
+  c.en.reports.items.map((r, i) => ({
+    image: photo(c.en.photos[r.photos[0]]),
+    title: t((x) => reportOf(x, i).title),
+    text: t((x) => reportOf(x, i).teaser),
+    meta: t((x, l) => longDate(l, reportOf(x, i).date)),
+    badge: t((x) => categoryOf(x, i)),
+    link: `page:report-${r.slug}`,
+  }));
+const reportContent = (i) => {
+  const r = c.en.reports.items[i];
+  const older = c.en.reports.items[i + 1];
+  const [first, ...rest] = r.photos;
+  return [
+    el('kumano_page_top', {
+      tx_themekumanokodo_variant: 'text',
+      subheader: t((x, l) => `${longDate(l, reportOf(x, i).date)} · ${categoryOf(x, i)}`),
+      header: t((x) => reportOf(x, i).title),
+      bodytext: t((x) => reportOf(x, i).teaser),
+    }),
+    section({ space_before_class: 'flush-top' }, [
+      images('figure', [first], { bodytext: t((x) => x.photos[first].caption ?? '') }),
+      text(paragraphs((x) => reportOf(x, i).text)),
+    ]),
+    images('gallery', rest, { ...sunk, header: t((x) => x.ui.newsPhotos) }),
+    listEl('links', {}, [
+      { title: t((x) => x.ui.newsAll), link: 'page:reports', direction: 'back' },
+      ...(older ? [{ title: t((x) => `${x.ui.newsNext}: ${reportOf(x, i + 1).title}`), link: `page:report-${older.slug}` }] : []),
+    ]),
+  ];
+};
 
 const pages = [
   page(
@@ -1083,37 +1090,16 @@ const pages = [
     'home',
     t((x) => x.reports.title),
     {
-      content: [
-        text(t((x) => `<p>${esc(x.reports.intro)}</p>`)),
-        el('news_pi1', {
-          pi_flexform: newsFlexform({
-            sDEF: { orderBy: 'datetime', orderDirection: 'desc', startingpoint: 'page:news-records' },
-            additional: { detailPid: 'page:report', 'list.paginate.itemsPerPage': 3, hidePagination: 0 },
-          }),
-        }),
-      ],
+      content: [text(t((x) => `<p>${esc(x.reports.intro)}</p>`)), cards('teaser', 3, { space_before_class: 'flush-top' }, reportTeasers())],
     },
   ),
-  // EXT:news shows a report here; the layout without page header lets the report bring its own.
-  page(
-    'report',
-    'reports',
-    t((x) => x.reports.title),
-    {
-      navHide: true,
-      layout: 'Landing',
-      content: [
-        el('news_newsdetail', {
-          pi_flexform: newsFlexform({ sDEF: { startingpoint: 'page:news-records' }, additional: { backPid: 'page:reports' } }),
-        }),
-      ],
-    },
-  ),
-  page(
-    'news-records',
-    'home',
-    t(() => 'Trail reports (records)'),
-    { navHide: true, doktype: 254 },
+  ...c.en.reports.items.map((r, i) =>
+    page(
+      `report-${r.slug}`,
+      'reports',
+      t((x) => x.reports.items[i].title),
+      { navHide: true, layout: 'Landing', content: reportContent(i) },
+    ),
   ),
   page(
     'newsletter',
@@ -1373,61 +1359,9 @@ const site = {
     'kumanoKodo.brand.upright': '熊野古道',
     'kumanoKodo.brand.footerWordmark': true,
     'kumanoKodo.privacy.page': 'page:privacy',
-    'news.pages.detail': 'page:report',
   },
   errorHandling: { 404: 'not-found', 403: 'login' },
   sets: ['typo3/theme-kumano-kodo-demo'],
-  // As the news manual's quick start: readable report and page URLs, each limited to its page.
-  routeEnhancers: {
-    NewsDetail: {
-      type: 'Extbase',
-      limitToPages: ['report'],
-      extension: 'News',
-      plugin: 'Pi1',
-      routes: [{ routePath: '/{news-title}', _controller: 'News::detail', _arguments: { 'news-title': 'news' } }],
-      aspects: { 'news-title': { type: 'NewsTitle' } },
-    },
-    NewsList: {
-      type: 'Extbase',
-      limitToPages: ['reports'],
-      extension: 'News',
-      plugin: 'Pi1',
-      routes: [{ routePath: '/page-{page}', _controller: 'News::list', _arguments: { page: 'currentPage' } }],
-      defaultController: 'News::list',
-      defaults: { page: '' },
-      requirements: { page: '\\d+' },
-      // Page 1 is the list page itself, so it has one address only.
-      aspects: { page: { type: 'StaticRangeMapper', start: '2', end: '100' } },
-    },
-  },
-};
-
-// The trail reports as EXT:news records: the first photo is the preview, the others the gallery below.
-const reportOf = (x, i) => x.reports.items[i];
-const tagKeys = [...new Set(c.en.reports.items.flatMap((r) => r.tags))];
-const news = {
-  folder: 'news-records',
-  categories: Object.fromEntries(Object.keys(c.en.reports.categories).map((key) => [key, t((x) => x.reports.categories[key])])),
-  tags: Object.fromEntries(
-    tagKeys.map((tag) => {
-      const [i, j] = c.en.reports.items.flatMap((r, ri) => r.tags.map((tt, ti) => (tt === tag ? [ri, ti] : null))).find(Boolean);
-      return [tag, t((x) => reportOf(x, i).tags[j])];
-    }),
-  ),
-  items: c.en.reports.items.map((r, i) => ({
-    slug: r.slug,
-    datetime: r.date,
-    title: t((x) => reportOf(x, i).title),
-    teaser: t((x) => reportOf(x, i).teaser),
-    bodytext: t((x) =>
-      reportOf(x, i)
-        .text.map((p) => `<p>${esc(p)}</p>`)
-        .join(''),
-    ),
-    categories: [r.category],
-    tags: r.tags,
-    images: r.photos.map((name, n) => ({ photo: name, showinpreview: n === 0 ? 1 : 0 })),
-  })),
 };
 
 // The walk form: English in the definition, every language in its XLIFF, all from the Storybook content.
@@ -1617,7 +1551,7 @@ const count = (elements) => elements.reduce((n, e) => n + 1 + count(Object.value
 // A placeholder clip made from four trip photos; on day 2 it stands in the opening figure, its photo as poster.
 const videos = { trail: { file: 'img/video/trail.mp4', width: 1280, height: 720 } };
 
-await writeFile(out, `${JSON.stringify({ site, photos, files, videos, pages, frontendUsers, news }, null, '\t')}\n`);
+await writeFile(out, `${JSON.stringify({ site, photos, files, videos, pages, frontendUsers }, null, '\t')}\n`);
 console.log(
   `Demo: ${pages.length} pages, ${count(pages.flatMap((p) => p.content))} content elements, ${Object.keys(photos).length} photos → ${out}`,
 );

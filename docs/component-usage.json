@@ -188,11 +188,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -245,6 +240,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -420,11 +430,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -472,6 +477,21 @@
 		{
 			"id": "templates--home-mono",
 			"name": "Home · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -647,11 +667,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -699,6 +714,21 @@
 		{
 			"id": "templates--home-mono",
 			"name": "Home · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -980,11 +1010,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -1037,6 +1062,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -1256,11 +1296,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -1308,6 +1343,21 @@
 		{
 			"id": "templates--home-mono",
 			"name": "Home · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -1483,11 +1533,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -1540,6 +1585,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -1715,11 +1775,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -1772,6 +1827,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -1954,11 +2024,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -2011,6 +2076,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -2176,11 +2256,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -2204,6 +2279,21 @@
 			"id": "site--report-fog-on-the-pass",
 			"name": "Report · Fog on the pass",
 			"group": "Site"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
+			"group": "Templates"
 		}
 	],
 	"Atoms/Select": [
@@ -2395,11 +2485,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -2452,6 +2537,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -2735,11 +2835,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -2792,6 +2887,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -3004,38 +3114,23 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-what-we-packed",
-			"name": "Report · What we packed",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-the-last-bus",
-			"name": "Report · The last bus",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-the-oldest-bath",
-			"name": "Report · The oldest bath",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-a-land-crab",
-			"name": "Report · A land crab",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-fog-on-the-pass",
-			"name": "Report · Fog on the pass",
-			"group": "Site"
-		},
-		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -3102,29 +3197,9 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--report-what-we-packed",
-			"name": "Report · What we packed",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-the-last-bus",
-			"name": "Report · The last bus",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-the-oldest-bath",
-			"name": "Report · The oldest bath",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-a-land-crab",
-			"name": "Report · A land crab",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-fog-on-the-pass",
-			"name": "Report · Fog on the pass",
-			"group": "Site"
+			"id": "templates--news-detail",
+			"name": "News · Detail",
+			"group": "Templates"
 		}
 	],
 	"Molecules/FAQ Item": [
@@ -3241,6 +3316,11 @@
 			"id": "site--report-fog-on-the-pass",
 			"name": "Report · Fog on the pass",
 			"group": "Site"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
+			"group": "Templates"
 		}
 	],
 	"Molecules/Form": [
@@ -3340,6 +3420,11 @@
 			"id": "site--report-fog-on-the-pass",
 			"name": "Report · Fog on the pass",
 			"group": "Site"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
+			"group": "Templates"
 		}
 	],
 	"Molecules/Highlight": [
@@ -3537,6 +3622,11 @@
 		{
 			"id": "templates--home-mono",
 			"name": "Home · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -3782,11 +3872,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -3834,6 +3919,21 @@
 		{
 			"id": "templates--home-mono",
 			"name": "Home · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -4046,11 +4146,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -4074,18 +4169,33 @@
 			"id": "site--report-fog-on-the-pass",
 			"name": "Report · Fog on the pass",
 			"group": "Site"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
+			"group": "Templates"
 		}
 	],
 	"Molecules/Pagination": [
 		{
-			"id": "site--reports",
-			"name": "Trail reports",
-			"group": "Site"
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
 		}
 	],
 	"Molecules/Person Card": [
@@ -4321,11 +4431,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -4378,6 +4483,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -4543,11 +4663,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -4571,6 +4686,21 @@
 			"id": "site--report-fog-on-the-pass",
 			"name": "Report · Fog on the pass",
 			"group": "Site"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
+			"group": "Templates"
 		}
 	],
 	"Molecules/Search Results": [
@@ -4689,6 +4819,11 @@
 		{
 			"id": "templates--home-mono",
 			"name": "Home · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -4915,11 +5050,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -4967,6 +5097,21 @@
 		{
 			"id": "templates--home-mono",
 			"name": "Home · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -5207,38 +5352,23 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-what-we-packed",
-			"name": "Report · What we packed",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-the-last-bus",
-			"name": "Report · The last bus",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-the-oldest-bath",
-			"name": "Report · The oldest bath",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-a-land-crab",
-			"name": "Report · A land crab",
-			"group": "Site"
-		},
-		{
-			"id": "site--report-fog-on-the-pass",
-			"name": "Report · Fog on the pass",
-			"group": "Site"
-		},
-		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -5513,11 +5643,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -5570,6 +5695,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -5745,11 +5885,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -5802,6 +5937,21 @@
 		{
 			"id": "templates--starter-mono",
 			"name": "Starter · Mono",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
 			"group": "Templates"
 		}
 	],
@@ -5984,11 +6134,6 @@
 			"group": "Site"
 		},
 		{
-			"id": "site--reports-page-2",
-			"name": "Trail reports · Page 2",
-			"group": "Site"
-		},
-		{
 			"id": "site--report-what-we-packed",
 			"name": "Report · What we packed",
 			"group": "Site"
@@ -6012,6 +6157,21 @@
 			"id": "site--report-fog-on-the-pass",
 			"name": "Report · Fog on the pass",
 			"group": "Site"
+		},
+		{
+			"id": "templates--news-list",
+			"name": "News · List",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-list-page-2",
+			"name": "News · List, page 2",
+			"group": "Templates"
+		},
+		{
+			"id": "templates--news-detail",
+			"name": "News · Detail",
+			"group": "Templates"
 		}
 	]
 }

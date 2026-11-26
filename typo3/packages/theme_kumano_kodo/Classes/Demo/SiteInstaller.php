@@ -19,16 +19,16 @@ final readonly class SiteInstaller
     public const DEMO = 'demo';
     public const STARTER = 'starter';
     private const FOLDER = ['demo' => 'Demo', 'starter' => 'Starter'];
-    private const REQUIRED = ['demo' => ['impexp', 'news', 'form'], 'starter' => ['impexp']];
+    private const REQUIRED = ['demo' => ['impexp', 'form'], 'starter' => ['impexp']];
     // Settings that hold a page uid; the core remaps only the root page.
-    private const PAGE_SETTINGS = ['kumanoKodo.newsletter.target', 'kumanoKodo.search.page', 'kumanoKodo.privacy.page', 'news.pages.detail'];
+    private const PAGE_SETTINGS = ['kumanoKodo.newsletter.target', 'kumanoKodo.search.page', 'kumanoKodo.privacy.page'];
 
     public function __construct(
         private PackageManager $packageManager,
         private SiteConfiguration $siteConfiguration,
         private SiteSettingsFactory $siteSettingsFactory,
         private SiteWriter $siteWriter,
-        private WalkForm $walkForm,
+        private ?WalkForm $walkForm = null,
     ) {}
 
     /** @return list<string> extensions the kind needs that are not installed */
@@ -90,7 +90,7 @@ final readonly class SiteInstaller
         $this->siteWriter->writeSettings($identifier, $settings);
 
         // EXT:form keeps impexp from writing form records, so the walk form is stored again for the imported element.
-        if ($kind === self::DEMO) {
+        if ($kind === self::DEMO && $this->walkForm !== null) {
             $exported = $this->walkForm->templateUid();
             $this->walkForm->restoreAfterImport($exported, (int)($map['tt_content'][$exported] ?? 0));
         }

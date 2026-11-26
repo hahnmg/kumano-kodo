@@ -34,7 +34,7 @@
         <kk:portraitCard image="{card.image -> f:first()}" label="{card.label}" meta="{card.meta}" title="{card.title}" href="{href}" text="{card.text}"/>
     </f:case>
     <f:defaultCase>
-        <kk:teaserCard image="{card.image -> f:first()}" title="{card.title}" subtitle="{card.text}" meta="{card.meta}" badge="{card.badge}" href="{href}" edge="{data.tx_themekumanokodo_edge}"/>
+        <kk:teaserCard image="{card.image -> f:first()}" title="{card.title}" subtitle="{card.text}" meta="{card.meta}" badge="{card.badge}" href="{href}" edge="{data.tx_themekumanokodo_edge}" level="{f:if(condition: '{data.header} && {data.header_layout} != 100', then: 3, else: 2)}"/>
     </f:defaultCase>
 </f:switch>
 </html>

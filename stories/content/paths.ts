@@ -75,7 +75,6 @@ export const routes: Record<string, string> = {
   ...Object.fromEntries(practicalSlugs.map((s) => [paths.practicalPage(s), `site--practical-${s}`])),
   '/photos': 'site--photos',
   '/reports': 'site--reports',
-  '/reports/page/2': 'site--reports-page-2',
   '/newsletter': 'site--newsletter',
   '/kohechi': 'site--kohechi',
   '/search': 'site--search',

@@ -19,24 +19,20 @@ Sets
 ====
 
 Each feature is a set to switch on in the site's settings; each builds on the
-theme.
+theme. Sets for third-party extensions such as news come with the package
+`kumano-kodo/theme-extras` (:ref:`extensions`).
 
 `typo3/theme-kumano-kodo` · Kumano Kodo
     The theme. It loads fluid_styled_content, felogin, indexed_search, form and
     the sitemap of seo before itself where they are installed; none of them is
     required.
 
-`kumano-kodo/news` · Kumano Kodo · News
-    News of georgringer/news drawn with the theme's components: a teaser list
-    with pages, and a detail page with its gallery below. Needs the extension
-    news.
-
 `typo3/theme-kumano-kodo-journal` · Kumano Kodo · Journal
     The travel journal's own elements: a route map with linked stations and
     days, and numbered chapters.
 
 `typo3/theme-kumano-kodo-demo` · Kumano Kodo · Demo
-    What the demo site uses: the theme, the journal elements and news.
+    What the demo site uses: the theme and the journal elements.
 
 Demo and starter
 ================
@@ -54,7 +50,7 @@ The demo
     page, a contact form and a log-in with a published account (user `pilgrim`,
     password `Kumano-Kodo-2024`) that leads to a page only logged-in visitors
     see. Unknown addresses answer with its page "Page not found". It needs the
-    extensions impexp, news and form.
+    extensions impexp and form.
 
 The starter
     Five pages with placeholder texts to replace (home, about us, contact,

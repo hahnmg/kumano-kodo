@@ -110,9 +110,10 @@ it is built this way: `docs/adr/2026-09-30-typo3-sitepackage.md`,
 `docs/adr/2026-09-30-typo3-content-model.md`,
 `docs/adr/2026-09-30-typo3-content-form.md`.
 
-| Package                                         | Is                                                                                                                                                         |
-| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `typo3/theme-kumano-kodo` (`theme_kumano_kodo`) | The one extension. Sets: theme, news, journal, demo. Demo and starter are created by `kumano:demo:create` / `kumano:starter:create` or Sites › Kumano Kodo |
+| Package                                           | Is                                                                                                                                                   |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `typo3/theme-kumano-kodo` (`theme_kumano_kodo`)   | The one extension. Sets: theme, journal, demo. Demo and starter are created by `kumano:demo:create` / `kumano:starter:create` or Sites › Kumano Kodo |
+| `kumano-kodo/theme-extras` (`kumano_kodo_extras`) | Sets for third-party extensions, outside the core: news                                                                                              |
 
 ```
 ddev start               # installs TYPO3 and creates the demo on the first start

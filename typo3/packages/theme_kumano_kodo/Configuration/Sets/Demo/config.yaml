@@ -1,7 +1,6 @@
 name: typo3/theme-kumano-kodo-demo
 label: 'Kumano Kodo · Demo'
-# What the demo site from kumano:demo:create uses: the theme, the journal elements and news.
+# What the demo site uses: the theme and the journal elements.
 dependencies:
   - typo3/theme-kumano-kodo
   - typo3/theme-kumano-kodo-journal
-  - kumano-kodo/news

@@ -1,6 +1,6 @@
 plugin.tx_news {
   view {
-    templateRootPaths.20 = EXT:theme_kumano_kodo/Resources/Private/Extensions/News/Templates/
+    templateRootPaths.20 = EXT:kumano_kodo_extras/Resources/Private/Extensions/News/Templates/
   }
   settings {
     displayDummyIfNoMedia = 0

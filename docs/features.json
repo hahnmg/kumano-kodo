@@ -51,7 +51,7 @@
 		},
 		{
 			"title": "Extensions",
-			"summary": "Forms with every element type and steps, login, search, news, the XML sitemap and structured data, all in the theme's own markup.",
+			"summary": "Forms with every element type and steps, login, search, the XML sitemap and structured data, all in the theme's own markup; news through the extras package.",
 			"features": [
 				{
 					"text": "Forms with every element type, in steps",
@@ -66,8 +66,8 @@
 					"story": "site--search"
 				},
 				{
-					"text": "News, as trail reports",
-					"story": "site--reports"
+					"text": "News, through the extras package",
+					"manual": "Extensions/Index.html"
 				},
 				{
 					"text": "XML sitemap and structured data",

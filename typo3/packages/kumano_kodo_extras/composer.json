@@ -1,0 +1,16 @@
+{
+	"name": "kumano-kodo/theme-extras",
+	"description": "Kumano Kodo extras - What the theme offers for third-party extensions, outside the TYPO3 core",
+	"type": "typo3-cms-extension",
+	"license": "GPL-2.0-or-later",
+	"version": "0.1.0",
+	"require": {
+		"georgringer/news": "^14.1",
+		"typo3/theme-kumano-kodo": "@dev"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "kumano_kodo_extras"
+		}
+	}
+}

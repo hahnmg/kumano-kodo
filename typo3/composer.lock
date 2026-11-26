@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bec9de57574a772fdcdf8810de9ed05b",
+    "content-hash": "2ca3ce44542540c3cbba8de5ded2d9c2",
     "packages": [
         {
             "name": "b13/container",
@@ -1379,6 +1379,32 @@
                 }
             ],
             "time": "2026-08-24T11:02:13+00:00"
+        },
+        {
+            "name": "kumano-kodo/theme-extras",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/kumano_kodo_extras",
+                "reference": "5516ebe135558ecb60d979e7ecd3aa8913663247"
+            },
+            "require": {
+                "georgringer/news": "^14.1",
+                "typo3/theme-kumano-kodo": "@dev"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "kumano_kodo_extras"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Kumano Kodo extras - What the theme offers for third-party extensions, outside the TYPO3 core",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "lolli42/finediff",
@@ -7419,21 +7445,21 @@
             "dist": {
                 "type": "path",
                 "url": "packages/theme_kumano_kodo",
-                "reference": "fcc4e28fd09e72c90f76a9834e7217d4c35e34f3"
+                "reference": "375c89df389458e3017daf4b564d70f50d6f6474"
             },
             "require": {
                 "b13/container": "^4.1",
+                "typo3/cms-backend": "^14.3",
                 "typo3/cms-core": "^14.3",
                 "typo3/cms-fluid": "^14.3",
                 "typo3/cms-frontend": "^14.3",
                 "typo3/cms-rte-ckeditor": "^14.3"
             },
             "suggest": {
-                "georgringer/news": "News and blog posts with the theme's components: the site set kumano-kodo/news",
                 "typo3/cms-form": "Forms in the theme's markup; the demo's forms need it",
                 "typo3/cms-impexp": "Needed by kumano:demo:create and kumano:starter:create"
             },
-            "type": "typo3-cms-framework",
+            "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
                     "extension-key": "theme_kumano_kodo",
@@ -8822,6 +8848,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "kumano-kodo/theme-extras": 20,
         "typo3/theme-kumano-kodo": 20
     },
     "prefer-stable": true,

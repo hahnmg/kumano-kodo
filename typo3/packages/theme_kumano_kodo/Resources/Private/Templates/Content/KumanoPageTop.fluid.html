@@ -9,6 +9,10 @@
         <f:case value="text">
             <f:variable name="link" value="{record.tx_themekumanokodo_links -> f:first()}"/>
             <f:variable name="body">
+                <f:if condition="{record.subheader}">
+                    <f:render partial="Kumano/Css" arguments="{names: 'section-heading'}"/>
+                    <p class="section-heading-eyebrow type-label">{record.subheader}</p>
+                </f:if>
                 <h1 class="type-h2">{record.header}</h1>
                 <p class="type-lead">{text -> f:format.raw()}</p>
                 <f:if condition="{link}">

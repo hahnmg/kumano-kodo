@@ -10,8 +10,9 @@ Content
     from the text editor.
 
 Extensions
-    Forms with every element type and steps, login, search, news, the XML
-    sitemap and structured data, all in the theme's own markup.
+    Forms with every element type and steps, login, search, the XML sitemap and
+    structured data, all in the theme's own markup; news through the extras
+    package.
 
 Accessibility
     WCAG 2.2 AA as the target: contrast checked in every theme and mode,

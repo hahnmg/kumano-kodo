@@ -51,8 +51,7 @@ const pages: Record<string, (c: Content) => string> = {
   register: registerPage,
   ways: waysPage,
   showcase: showcasePage,
-  reports: (c: Content) => reportsPage(1, c),
-  'reports page 2': (c: Content) => reportsPage(2, c),
+  reports: reportsPage,
   ...Object.fromEntries(reportSlugs.map((s) => [`report ${s}`, (c: Content) => reportPage(s, c)])),
 };
 

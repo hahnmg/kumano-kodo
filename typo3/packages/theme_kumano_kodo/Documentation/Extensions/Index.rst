@@ -42,10 +42,12 @@ Container (b13/container)
     Required. The containers Section and Columns are built on it.
 
 News (georgringer/news)
-    Add the site set **Kumano Kodo · News** (`kumano-kodo/news`) to the site:
-    the list shows the news as teaser cards with pages below, a news item shows
-    its preview images and text with date, category and tags beside, and its
-    other images as a gallery below. Put the detail plugin on a page with the
-    layout **Landing**, so the news item brings its own page header and
-    breadcrumb. Readable URLs need the route enhancers of the news manual's
-    quick start, limited to the list and the detail page.
+    Comes with the package `kumano-kodo/theme-extras`, which stays outside the
+    theme. Add its site set **Kumano Kodo · News**
+    (`kumano-kodo/theme-extras-news`) to the site: the list shows the news as
+    teaser cards with pages below, a news item shows its preview images and text
+    with date, category and tags beside, and its other images as a gallery
+    below. Put the detail plugin on a page with the layout **Landing**, so the
+    news item brings its own page header and breadcrumb. Readable URLs need the
+    route enhancers of the news manual's quick start, limited to the list and
+    the detail page.

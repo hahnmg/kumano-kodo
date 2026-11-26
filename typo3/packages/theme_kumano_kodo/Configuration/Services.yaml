@@ -6,6 +6,8 @@ services:
 
   TYPO3\CMS\ThemeKumanoKodo\:
     resource: '../Classes/*'
+    # These need EXT:form; Services.php registers them only where it is installed.
+    exclude: '../Classes/Demo/{WalkForm.php,BuildCommand.php}'
 
   TYPO3\CMS\ThemeKumanoKodo\DataProcessing\ThemeProcessor:
     tags:
