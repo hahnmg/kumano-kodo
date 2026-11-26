@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TYPO3\CMS\ThemeKumanoKodo\Demo;
+namespace KumanoKodo\Build;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -21,8 +21,9 @@ use TYPO3\CMS\Core\Resource\File;
 use TYPO3\CMS\Core\Resource\StorageRepository;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\ThemeKumanoKodoDemo\WalkForm;
 
-// Input comes from scripts/export-demo.mjs; Resources/Private/Demo/data.xml is the impexp export of the result.
+// Input comes from scripts/export-demo.mjs; the demo package's Initialisation/data.xml is the impexp export of the result.
 
 #[AsCommand(name: 'kumano:demo:build', description: 'Build the Kumano Kodo demo pages and content from Build/Demo/content.json')]
 final class BuildCommand extends Command
@@ -86,7 +87,7 @@ final class BuildCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         Bootstrap::initializeBackendAuthentication();
-        $json = $input->getOption('starter') ? dirname(__DIR__, 2) . '/Resources/Private/Starter/starter.json' : $input->getOption('json');
+        $json = $input->getOption('starter') ? Environment::getProjectPath() . '/packages/theme_kumano_kodo/Resources/Private/Starter/starter.json' : $input->getOption('json');
         $demo = json_decode((string)file_get_contents($json), true, 512, JSON_THROW_ON_ERROR);
 
         try {

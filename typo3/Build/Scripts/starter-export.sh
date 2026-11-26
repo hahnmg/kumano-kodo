@@ -16,7 +16,6 @@ rm -rf "$target/data.xml" "$target/Site"
 mv public/fileadmin/user_upload/_temp_/importexport/data.xml "$target/"
 mkdir -p "$target/Site" && cp -R config/sites/kumano-kodo "$target/Site/"
 
-# This instance develops the demo; put it back.
-$typo3 kumano:demo:build --replace
-$typo3 cache:flush
 echo "Exported starter root page $root to $target"
+# This instance develops the demo; put it back, exported again so its walk form and data.xml keep the same uid.
+Build/Scripts/demo-export.sh

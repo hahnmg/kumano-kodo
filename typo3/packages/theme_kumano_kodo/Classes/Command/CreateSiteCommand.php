@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\ThemeKumanoKodo\Demo\SiteInstaller;
 
-// kumano:demo:create and kumano:starter:create; the backend module calls the same installer.
+// kumano:starter:create; the backend module calls the same installer.
 abstract class CreateSiteCommand extends Command
 {
     public function __construct(private readonly SiteInstaller $installer)

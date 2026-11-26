@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TYPO3\CMS\ThemeKumanoKodo\Demo;
+namespace TYPO3\CMS\ThemeKumanoKodoDemo;
 
 use Doctrine\DBAL\ParameterType;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -16,7 +16,7 @@ use TYPO3\CMS\Form\Command\TransferFormDefinitionCommand;
 // impexp from writing form records.
 final readonly class WalkForm
 {
-    public const TEMPLATE = 'EXT:theme_kumano_kodo/Resources/Private/Forms/Demo/walk.form.yaml';
+    public const TEMPLATE = 'EXT:theme_kumano_kodo_demo/Resources/Private/Forms/walk.form.yaml';
     public const IDENTIFIER = 'walk';
     /** What the plugins carry in Build/Demo/content.json until the form has a uid. */
     public const PLACEHOLDER = 'form:walk';
@@ -49,8 +49,12 @@ final readonly class WalkForm
         return $uid;
     }
 
-    // An import: the element has a new uid, and the plugins still name the form record of the exported instance.
-    public function restoreAfterImport(int $exportedElement, int $importedElement): void
+    /**
+     * An import: the element has a new uid, and the plugins still name the form record of the exported instance.
+     *
+     * @param list<int> $importedContent only these plugins are pointed at the form, not those of other sites
+     */
+    public function restoreAfterImport(int $exportedElement, int $importedElement, array $importedContent): void
     {
         $uid = $this->createRecord();
         $connection = $this->connectionPool->getConnectionForTable(self::TABLE);
@@ -58,7 +62,7 @@ final readonly class WalkForm
         $configuration = (string)preg_replace('/"contentElementUid":\s*"?' . $exportedElement . '"?/', '"contentElementUid":' . $importedElement, (string)($row['configuration'] ?? ''));
         // A JSON column: passed as text, or the connection would encode the encoded definition once more.
         $connection->update(self::TABLE, ['configuration' => $configuration], ['uid' => $uid], ['configuration' => ParameterType::STRING]);
-        $this->replaceInPlugins(fn(string $value): bool => ctype_digit($value), $uid);
+        $this->replaceInPlugins(fn(string $value): bool => ctype_digit($value), $uid, $importedContent);
     }
 
     // The core's transfer command writes the record in its own format, under a unique identifier such as walk_1, as
@@ -90,11 +94,17 @@ final readonly class WalkForm
         return array_values(array_filter($rows, static fn(array $row): bool => preg_match('/^' . self::IDENTIFIER . '(_\d+)?$/', (string)$row['identifier']) === 1));
     }
 
-    /** @param \Closure(string): bool $matches which persistence identifiers point at this form */
-    private function replaceInPlugins(\Closure $matches, int $uid): void
+    /**
+     * @param \Closure(string): bool $matches which persistence identifiers point at this form
+     * @param list<int>|null $only the plugins to look at, null for all
+     */
+    private function replaceInPlugins(\Closure $matches, int $uid, ?array $only = null): void
     {
         $connection = $this->connectionPool->getConnectionForTable('tt_content');
         foreach ($connection->select(['uid', 'pi_flexform'], 'tt_content', ['CType' => 'form_formframework'])->fetchAllAssociative() as $row) {
+            if ($only !== null && !in_array((int)$row['uid'], $only, true)) {
+                continue;
+            }
             $flexform = (string)preg_replace_callback(
                 '/(<field index="settings\.persistenceIdentifier">\s*<value index="vDEF">)([^<]*)(<\/value>)/',
                 fn(array $m): string => $matches($m[2]) ? $m[1] . $uid . $m[3] : $m[0],

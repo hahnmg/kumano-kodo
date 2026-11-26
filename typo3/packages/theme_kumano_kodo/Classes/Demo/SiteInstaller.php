@@ -12,14 +12,14 @@ use TYPO3\CMS\Core\Site\SiteSettingsFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Impexp\Utility\ImportExportUtility;
 
-// Creates the demo or the starter as a site of its own: the pages and files from the extension's export, and the
-// site configuration with every page reference pointed at the imported pages. Installing the extension adds no pages.
+// Creates the starter as a site of its own: the pages and files from the extension's export, and the site
+// configuration with every page reference pointed at the imported pages. Installing the extension adds no pages;
+// the demo comes with the package typo3/theme-kumano-kodo-demo.
 final readonly class SiteInstaller
 {
-    public const DEMO = 'demo';
     public const STARTER = 'starter';
-    private const FOLDER = ['demo' => 'Demo', 'starter' => 'Starter'];
-    private const REQUIRED = ['demo' => ['impexp', 'form'], 'starter' => ['impexp']];
+    private const FOLDER = ['starter' => 'Starter'];
+    private const REQUIRED = ['starter' => ['impexp']];
     // Settings that hold a page uid; the core remaps only the root page.
     private const PAGE_SETTINGS = ['kumanoKodo.newsletter.target', 'kumanoKodo.search.page', 'kumanoKodo.privacy.page'];
 
@@ -28,7 +28,6 @@ final readonly class SiteInstaller
         private SiteConfiguration $siteConfiguration,
         private SiteSettingsFactory $siteSettingsFactory,
         private SiteWriter $siteWriter,
-        private ?WalkForm $walkForm = null,
     ) {}
 
     /** @return list<string> extensions the kind needs that are not installed */
@@ -52,7 +51,7 @@ final readonly class SiteInstaller
     public function create(string $kind, string $identifier, string $base): array
     {
         if (!isset(self::FOLDER[$kind])) {
-            throw new \InvalidArgumentException('Unknown kind "' . $kind . '", use demo or starter.', 1792051201);
+            throw new \InvalidArgumentException('Unknown kind "' . $kind . '", use starter.', 1792051201);
         }
         if (($missing = $this->missingExtensions($kind)) !== []) {
             throw new \RuntimeException('Install these extensions first: ' . implode(', ', $missing) . '.', 1792051202);
@@ -65,8 +64,7 @@ final readonly class SiteInstaller
         $importer = GeneralUtility::makeInstance(ImportExportUtility::class);
         $importer->disableSiteConfigurationImport();
         $importer->importT3DFile($source . 'data.xml', 0);
-        $map = $importer->getImport()?->getImportMapId() ?? [];
-        $pages = $map['pages'] ?? [];
+        $pages = $importer->getImport()?->getImportMapId()['pages'] ?? [];
 
         $shipped = glob($source . 'Site/*', GLOB_ONLYDIR)[0] ?? '';
         $target = Environment::getConfigPath() . '/sites/' . $identifier;
@@ -88,12 +86,6 @@ final readonly class SiteInstaller
             $settings[$name] = (int)($pages[(int)$settings[$name]] ?? $settings[$name]);
         }
         $this->siteWriter->writeSettings($identifier, $settings);
-
-        // EXT:form keeps impexp from writing form records, so the walk form is stored again for the imported element.
-        if ($kind === self::DEMO && $this->walkForm !== null) {
-            $exported = $this->walkForm->templateUid();
-            $this->walkForm->restoreAfterImport($exported, (int)($map['tt_content'][$exported] ?? 0));
-        }
         return ['identifier' => $identifier, 'rootPageId' => (int)$configuration['rootPageId']];
     }
 

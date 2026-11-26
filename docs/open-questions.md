@@ -35,6 +35,9 @@ Nothing decided is waiting to be built.
 - **Visual Editor**: texts render through `f:render.text`; component text
   arguments take `string|UnsafeHTML`; components whose text sat in a `<p>` take
   blocks. `friendsoftypo3/visual-editor` is a development dependency only.
+- **Demo**: a package of its own, `typo3/theme-kumano-kodo-demo`, imported on
+  setup; `kumano:demo:build` in the development-only `kumano-kodo/build`. See
+  `docs/adr/2026-11-26-demo-package.md`.
 
 ### 2026-10-15
 

@@ -1,0 +1,20 @@
+{
+	"name": "kumano-kodo/build",
+	"description": "Kumano Kodo build - Builds the demo and the starter from content.json; for this repository only, never shipped",
+	"type": "typo3-cms-extension",
+	"license": "GPL-2.0-or-later",
+	"version": "0.1.0",
+	"require": {
+		"typo3/theme-kumano-kodo-demo": "@dev"
+	},
+	"autoload": {
+		"psr-4": {
+			"KumanoKodo\\Build\\": "Classes/"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "kumano_kodo_build"
+		}
+	}
+}

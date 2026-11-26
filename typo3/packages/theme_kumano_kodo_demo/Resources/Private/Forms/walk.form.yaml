@@ -7,7 +7,7 @@ renderingOptions:
   submitButtonLabel: Send registration
   translation:
     translationFiles:
-      '20': EXT:theme_kumano_kodo/Resources/Private/Language/Demo/form_walk.xlf
+      '20': EXT:theme_kumano_kodo_demo/Resources/Private/Language/form_walk.xlf
 finishers:
   - identifier: Confirmation
     options:
@@ -159,7 +159,7 @@ renderables:
         type: ContentElement
         label: ''
         properties:
-          contentElementUid: 3994
+          contentElementUid: 8284
       - identifier: notes
         type: Textarea
         label: Anything else

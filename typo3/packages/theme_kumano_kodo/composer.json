@@ -26,7 +26,8 @@
 		}
 	},
 	"suggest": {
-		"typo3/cms-impexp": "Needed by kumano:demo:create and kumano:starter:create",
-		"typo3/cms-form": "Forms in the theme's markup; the demo's forms need it"
+		"typo3/cms-impexp": "Needed by kumano:starter:create",
+		"typo3/cms-form": "Forms in the theme's markup",
+		"typo3/theme-kumano-kodo-demo": "The demo site, imported on installation"
 	}
 }

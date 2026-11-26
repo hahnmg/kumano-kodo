@@ -1,0 +1,23 @@
+{
+	"name": "typo3/theme-kumano-kodo-demo",
+	"description": "Kumano Kodo demo - The trail journal for the theme Kumano Kodo, installed as a site: pages in English, German and Japanese with photos",
+	"type": "typo3-cms-extension",
+	"license": "GPL-2.0-or-later",
+	"version": "0.1.0",
+	"require": {
+		"typo3/cms-core": "^14.3",
+		"typo3/cms-form": "^14.3",
+		"typo3/cms-impexp": "^14.3",
+		"typo3/theme-kumano-kodo": "@dev"
+	},
+	"autoload": {
+		"psr-4": {
+			"TYPO3\\CMS\\ThemeKumanoKodoDemo\\": "Classes/"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "theme_kumano_kodo_demo"
+		}
+	}
+}

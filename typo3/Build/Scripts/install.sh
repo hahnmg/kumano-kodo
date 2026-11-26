@@ -15,12 +15,10 @@ if [ ! -f config/system/settings.php ]; then
     TYPO3_SETUP_ADMIN_EMAIL=admin@kumano-kodo.ddev.site TYPO3_PROJECT_NAME="Kumano Kodo" \
     TYPO3_SERVER_TYPE=other vendor/bin/typo3 setup --no-interaction
     mkdir -p var && printf '%s\n' "$password" > var/admin-password
-    # The extension adds no pages; this project develops the demo, so it creates it as the site kumano-kodo on "/".
-    # KUMANO_DEMO=starter creates the five placeholder pages to build on instead.
-    if [ "${KUMANO_DEMO:-full}" = "starter" ]; then
-        vendor/bin/typo3 kumano:starter:create --identifier=kumano-kodo --base=/
-    else
-        vendor/bin/typo3 kumano:demo:create --identifier=kumano-kodo --base=/
+    # setup imported the demo package as the site kumano-kodo on "/". KUMANO_STARTER=1 adds the five placeholder
+    # pages to build on, as the site kumano-kodo-starter on /starter/.
+    if [ "${KUMANO_STARTER:-}" = "1" ]; then
+        vendor/bin/typo3 kumano:starter:create --identifier=kumano-kodo-starter --base=/starter/
     fi
     echo "Backend: https://kumano-kodo.ddev.site/typo3 · admin / $password (also in typo3/var/admin-password)"
 else
@@ -34,7 +32,6 @@ vendor/bin/typo3 cache:flush
 db() { mysql --host=db --user=db --password=db db --batch --skip-column-names -e "$1" 2>/dev/null; }
 empty_index="$(db 'SELECT COUNT(*) FROM index_phash' || echo skip)"
 
-# The first page request downloads the web fonts to this server; do it now rather than for the first visitor.
 # The demo site answers on the project URL in DDEV (its base variant), so requests go there rather than to localhost.
 url="${DDEV_PRIMARY_URL:-http://localhost}"
 curl -sk -o /dev/null "$url/" || true

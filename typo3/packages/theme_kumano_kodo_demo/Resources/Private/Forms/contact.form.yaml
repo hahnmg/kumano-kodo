@@ -1,4 +1,4 @@
-# The demo's contact form; labels in EXT:theme_kumano_kodo/Resources/Private/Language/Demo/form_contact.xlf.
+# The demo's contact form; labels in EXT:theme_kumano_kodo_demo/Resources/Private/Language/form_contact.xlf.
 identifier: contact
 label: Contact
 type: Form
@@ -7,7 +7,7 @@ renderingOptions:
   submitButtonLabel: 'Send'
   translation:
     translationFiles:
-      20: 'EXT:theme_kumano_kodo/Resources/Private/Language/Demo/form_contact.xlf'
+      20: 'EXT:theme_kumano_kodo_demo/Resources/Private/Language/form_contact.xlf'
 finishers:
   -
     identifier: Confirmation

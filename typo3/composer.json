@@ -32,7 +32,8 @@
 		"typo3/cms-seo": "^14.3",
 		"typo3/cms-setup": "^14.3",
 		"typo3/cms-tstemplate": "^14.3",
-		"typo3/theme-kumano-kodo": "@dev"
+		"typo3/theme-kumano-kodo": "@dev",
+		"typo3/theme-kumano-kodo-demo": "@dev"
 	},
 	"config": {
 		"allow-plugins": {
@@ -54,6 +55,7 @@
 	},
 	"require-dev": {
 		"friendsoftypo3/visual-editor": "^1.11",
+		"kumano-kodo/build": "@dev",
 		"typo3/coding-standards": "^0.9.0"
 	}
 }

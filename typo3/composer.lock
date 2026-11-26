@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d7abb27bd5e477ee750058c5f095a4a",
+    "content-hash": "18c886fd7c4d58809544a5443e4bc83f",
     "packages": [
         {
             "name": "b13/container",
@@ -7445,7 +7445,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/theme_kumano_kodo",
-                "reference": "375c89df389458e3017daf4b564d70f50d6f6474"
+                "reference": "80b92ba63147c983ca5bf7d71b4dfebeae741cb5"
             },
             "require": {
                 "b13/container": "^4.1",
@@ -7456,8 +7456,9 @@
                 "typo3/cms-rte-ckeditor": "^14.3"
             },
             "suggest": {
-                "typo3/cms-form": "Forms in the theme's markup; the demo's forms need it",
-                "typo3/cms-impexp": "Needed by kumano:demo:create and kumano:starter:create"
+                "typo3/cms-form": "Forms in the theme's markup",
+                "typo3/cms-impexp": "Needed by kumano:starter:create",
+                "typo3/theme-kumano-kodo-demo": "The demo site, imported on installation"
             },
             "type": "typo3-cms-extension",
             "extra": {
@@ -7477,6 +7478,39 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Kumano Kodo for TYPO3: a theme built from the Kumano Kodo design system",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "typo3/theme-kumano-kodo-demo",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/theme_kumano_kodo_demo",
+                "reference": "44304e900aaf3bf29506362a3e65b7c1d907f0c8"
+            },
+            "require": {
+                "typo3/cms-core": "^14.3",
+                "typo3/cms-form": "^14.3",
+                "typo3/cms-impexp": "^14.3",
+                "typo3/theme-kumano-kodo": "@dev"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "theme_kumano_kodo_demo"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\ThemeKumanoKodoDemo\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Kumano Kodo demo - The trail journal for the theme Kumano Kodo, installed as a site: pages in English, German and Japanese with photos",
             "transport-options": {
                 "relative": true
             }
@@ -8092,6 +8126,36 @@
             },
             "time": "2026-11-16T22:07:06+00:00",
             "published-time": "2026-11-16T22:08:12+00:00"
+        },
+        {
+            "name": "kumano-kodo/build",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/kumano_kodo_build",
+                "reference": "0d5df891b078298133adfb734df73540e5a76625"
+            },
+            "require": {
+                "typo3/theme-kumano-kodo-demo": "@dev"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "kumano_kodo_build"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KumanoKodo\\Build\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Kumano Kodo build - Builds the demo and the starter from content.json; for this repository only, never shipped",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "react/cache",
@@ -8920,8 +8984,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "kumano-kodo/build": 20,
         "kumano-kodo/theme-extras": 20,
-        "typo3/theme-kumano-kodo": 20
+        "typo3/theme-kumano-kodo": 20,
+        "typo3/theme-kumano-kodo-demo": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

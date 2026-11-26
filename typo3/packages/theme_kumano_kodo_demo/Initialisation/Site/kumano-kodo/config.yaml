@@ -9,11 +9,11 @@ errorHandling:
   -
     errorCode: 403
     errorHandler: Page
-    errorContentSource: 't3://page?uid=535'
+    errorContentSource: 't3://page?uid=1120'
   -
     errorCode: 404
     errorHandler: Page
-    errorContentSource: 't3://page?uid=541'
+    errorContentSource: 't3://page?uid=1126'
 languages:
   -
     languageId: 0
@@ -41,5 +41,5 @@ languages:
     base: /ja/
     flag: jp
     fallbackType: strict
-rootPageId: 451
+rootPageId: 1036
 websiteTitle: 'Kumano Kodo'

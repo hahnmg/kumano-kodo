@@ -106,17 +106,19 @@ renders every page in every language and fails on any link that points nowhere.
 what they do for users is in the manual,
 `typo3/packages/theme_kumano_kodo/Documentation/` (docs.typo3.org format). Why
 it is built this way: `docs/adr/2026-09-30-typo3-sitepackage.md`,
-`docs/adr/2026-10-15-one-extension.md`,
+`docs/adr/2026-10-15-one-extension.md`, `docs/adr/2026-11-26-demo-package.md`,
 `docs/adr/2026-09-30-typo3-content-model.md`,
 `docs/adr/2026-09-30-typo3-content-form.md`.
 
-| Package                                           | Is                                                                                                                                                   |
-| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `typo3/theme-kumano-kodo` (`theme_kumano_kodo`)   | The one extension. Sets: theme, journal, demo. Demo and starter are created by `kumano:demo:create` / `kumano:starter:create` or Sites › Kumano Kodo |
-| `kumano-kodo/theme-extras` (`kumano_kodo_extras`) | Sets for third-party extensions, outside the core: news                                                                                              |
+| Package                                                   | Is                                                                                                        |
+| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `typo3/theme-kumano-kodo` (`theme_kumano_kodo`)           | The theme. Sets: theme, journal. The starter is created by `kumano:starter:create` or Sites › Kumano Kodo |
+| `typo3/theme-kumano-kodo-demo` (`theme_kumano_kodo_demo`) | The demo site in `Initialisation/`, imported on setup; the set demo                                       |
+| `kumano-kodo/theme-extras` (`kumano_kodo_extras`)         | Sets for third-party extensions, outside the core: news                                                   |
+| `kumano-kodo/build` (`kumano_kodo_build`)                 | `kumano:demo:build` for the exports below; development only, never shipped                                |
 
 ```
-ddev start               # installs TYPO3 and creates the demo on the first start
+ddev start               # installs TYPO3 and imports the demo package on the first start
 ```
 
 The site answers at https://kumano-kodo.ddev.site in EN, `/de/` and `/ja/`; the
@@ -126,9 +128,9 @@ holds every Storybook site page, reachable from its menus: the previous home as
 an overview (`/at-a-glance`), the remaining components (`/ways-to-walk-it`) and
 a form with every EXT:form element type (`/register`). The log-in takes the
 published walker account `pilgrim` (`stories/content/demo-login.ts`). Set
-`KUMANO_DEMO=starter` before the first start
-(`ddev config --web-environment-add=KUMANO_DEMO=starter`) to build the starter
-pages instead.
+`KUMANO_STARTER=1` before the first start
+(`ddev config --web-environment-add=KUMANO_STARTER=1`) to add the starter pages
+as the site `kumano-kodo-starter` on `/starter/`.
 
 | Command                                                         | Does                                                                                                                                                                      |
 | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -1,0 +1,8 @@
+name: typo3/theme-kumano-kodo-demo-form
+label: 'Kumano Kodo demo — forms'
+priority: 60
+
+persistenceManager:
+  allowedExtensionPaths:
+    # The demo's own forms: a contact form with a topic, and the walk registration with every element type.
+    30: 'EXT:theme_kumano_kodo_demo/Resources/Private/Forms/'

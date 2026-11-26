@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Rebuilds the demo from Build/Demo/content.json and writes it into the extension, where kumano:demo:create reads it.
+# Rebuilds the demo from Build/Demo/content.json and writes it into the demo package, which the core imports on setup.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 
 typo3=vendor/bin/typo3
-target=packages/theme_kumano_kodo/Resources/Private/Demo
+target=packages/theme_kumano_kodo_demo/Initialisation
 $typo3 kumano:demo:build --replace
 root=$($typo3 site:show kumano-kodo | sed -n 's/.*rootPageId: *\([0-9]*\).*/\1/p')
 
@@ -15,7 +15,7 @@ $typo3 impexp:export data --type=xml --pid="$root" --levels=999 \
     --table=tx_themekumanokodo_station --table=tx_themekumanokodo_day_mark --table=sys_file_reference \
     --table=fe_groups --table=fe_users \
     --include-related=sys_file --include-related=sys_file_metadata \
-    --save-files-outside-export-file --title="Kumano Kodo demo" --dependency=theme_kumano_kodo
+    --save-files-outside-export-file --title="Kumano Kodo demo" --dependency=theme_kumano_kodo_demo
 
 rm -rf "$target/data.xml" "$target/data.xml.files" "$target/Site"
 mv public/fileadmin/user_upload/_temp_/importexport/data.xml public/fileadmin/user_upload/_temp_/importexport/data.xml.files "$target/"
