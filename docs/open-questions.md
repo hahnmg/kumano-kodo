@@ -5,16 +5,17 @@ earlier ones stay.
 
 ## Waiting
 
-| Topic                                                                                 | Waiting for                                                            | Until then                            |
-| ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------- |
-| Themes that differ more (colour, type, header, vertical rhythm, type on large images) | Annett's direction                                                     | Nothing is built                      |
-| Japanese texts checked by a native speaker                                            | Alexander finds reviewers; a table of every Japanese text goes to them | Known problem in the manual           |
-| A real YouTube clip for Atoms › Video › External                                      | Alexander                                                              | The story keeps a placeholder id      |
-| Core content elements without fluid_styled_content                                    | What TYPO3 v15's core does                                             | Kumano renders its own elements only  |
-| npm audit (braces, source-map-js, development only)                                   | Dependabot                                                             | No manual upgrade                     |
-| Containers (b13/container) in the core theme                                          | Alexander with Benni Mack                                              | Untouched; nothing new builds on them |
-| Japanese web font: bundle Noto Sans JP or use system fonts                            | Alexander                                                              | Runtime download stays                |
-| Photo licence: CC BY 4.0, GPL or CC0                                                  | Alexander                                                              | CC BY 4.0                             |
+| Topic                                                                                                                              | Waiting for                                                            | Until then                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Themes that differ more (colour, type, header, vertical rhythm, type on large images)                                              | Annett's direction                                                     | Nothing is built                                            |
+| Japanese texts checked by a native speaker                                                                                         | Alexander finds reviewers; a table of every Japanese text goes to them | Known problem in the manual                                 |
+| A real YouTube clip for Atoms › Video › External                                                                                   | Alexander                                                              | The story keeps a placeholder id                            |
+| Core content elements without fluid_styled_content                                                                                 | What TYPO3 v15's core does                                             | Kumano renders its own elements only                        |
+| npm audit (braces, source-map-js, development only)                                                                                | Dependabot                                                             | No manual upgrade                                           |
+| Containers (b13/container) in the core theme                                                                                       | Alexander with Benni Mack                                              | Untouched; nothing new builds on them                       |
+| Japanese web font: bundle Noto Sans JP or use system fonts                                                                         | Alexander                                                              | Runtime download stays                                      |
+| Photo licence: CC BY 4.0, GPL or CC0                                                                                               | Alexander                                                              | CC BY 4.0                                                   |
+| Visual Editor 1.11.1 fails on rich-text fields with the RTE preset `minimal` (no `editor.externalPlugins`, TextViewHelper.php:342) | Visual editing moving into the core (#111576)                          | No workaround in the theme; rich text not editable in place |
 
 ## Decided, to do
 
