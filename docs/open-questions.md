@@ -15,6 +15,7 @@ earlier ones stay.
 | Containers (b13/container) in the core theme                                                                                       | Alexander with Benni Mack                                              | Untouched; nothing new builds on them                       |
 | Japanese web font: bundle Noto Sans JP or use system fonts                                                                         | Alexander                                                              | Runtime download stays                                      |
 | Photo licence: CC BY 4.0, GPL or CC0                                                                                               | Alexander                                                              | CC BY 4.0                                                   |
+| Contrast of text on photos (hero figures): axe measures it against the page behind the photo                                       | A check that reads the photo and its scrim                             | Excluded from the contrast rule only; checked by eye        |
 | Visual Editor 1.11.1 fails on rich-text fields with the RTE preset `minimal` (no `editor.externalPlugins`, TextViewHelper.php:342) | Visual editing moving into the core (#111576)                          | No workaround in the theme; rich text not editable in place |
 
 ## Decided, to do

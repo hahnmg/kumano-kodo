@@ -1,0 +1,49 @@
+name: TYPO3
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # The lowest PHP the packages allow; the lock file is resolved for it (config.platform).
+  php:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: typo3
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: intl, pdo_sqlite, gd
+          coverage: none
+      - run: composer install --no-interaction --no-progress
+      - name: Lint
+        run: find packages -name '*.php' -not -path '*/Documentation-GENERATED-temp/*' -print0 | xargs -0 -n1 php -l
+      - run: composer cs
+      - run: composer phpstan
+      - run: composer test:functional
+
+  # Axe with colour contrast against the rendered site, in every theme and scheme.
+  accessibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ddev/github-action-setup-ddev@v1
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:typo3

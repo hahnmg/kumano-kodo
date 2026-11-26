@@ -50,12 +50,22 @@
 	"scripts": {
 		"cs": "php-cs-fixer fix --dry-run --diff",
 		"cs:fix": "php-cs-fixer fix",
+		"phpstan": "phpstan analyse --no-progress --memory-limit=1G",
+		"test:functional": "typo3DatabaseDriver=pdo_sqlite phpunit -c Build/phpunit/FunctionalTests.xml",
 		"demo:export": "Build/Scripts/demo-export.sh",
 		"starter:export": "Build/Scripts/starter-export.sh"
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"TYPO3\\CMS\\ThemeKumanoKodo\\Tests\\": "packages/theme_kumano_kodo/Tests/",
+			"TYPO3\\CMS\\ThemeKumanoKodoDemo\\Tests\\": "packages/theme_kumano_kodo_demo/Tests/"
+		}
 	},
 	"require-dev": {
 		"friendsoftypo3/visual-editor": "^1.11",
 		"kumano-kodo/build": "@dev",
-		"typo3/coding-standards": "^0.9.0"
+		"phpstan/phpstan": "^2.1",
+		"typo3/coding-standards": "^0.9.0",
+		"typo3/testing-framework": "^9.7"
 	}
 }

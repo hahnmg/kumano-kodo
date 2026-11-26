@@ -7,3 +7,7 @@ img/original/
 
 # Local render of the docs.typo3.org manual
 Documentation-GENERATED-temp/
+
+# Playwright
+test-results/
+playwright-report/

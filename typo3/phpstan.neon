@@ -1,0 +1,15 @@
+# Level 5, as the TYPO3 core's own Build/phpstan/phpstan.neon.
+parameters:
+  level: 5
+  # The lowest PHP the packages allow.
+  phpVersion: 80200
+  paths:
+    - packages/theme_kumano_kodo/Classes
+    - packages/theme_kumano_kodo/Configuration
+    - packages/theme_kumano_kodo/Tests
+    - packages/theme_kumano_kodo_demo/Classes
+    - packages/theme_kumano_kodo_demo/Tests
+    - packages/kumano_kodo_extras
+    - packages/kumano_kodo_build/Classes
+  excludePaths:
+    - packages/*/Documentation-GENERATED-temp

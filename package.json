@@ -18,11 +18,14 @@
 		"lint": "eslint . && stylelint \"stories/**/*.css\" \"src/**/*.css\" && node scripts/check-filenames.mjs && node scripts/check-fluid.mjs && node scripts/wrap-rst.mjs --check && prettier --check \"**/*.{ts,mjs,css,json,md}\"",
 		"size": "node scripts/check-size.mjs",
 		"test": "npm run tokens && vitest run",
+		"test:typo3": "playwright test",
 		"images": "node scripts/build-images.mjs",
 		"fonts": "node scripts/build-fonts.mjs"
 	},
 	"devDependencies": {
+		"@axe-core/playwright": "^4.14.1",
 		"@eslint/js": "^10.0.1",
+		"@playwright/test": "^1.65.1",
 		"@storybook/addon-docs": "^10.6.0",
 		"@storybook/html-vite": "^10.6.0",
 		"axe-core": "^4.13.0",
