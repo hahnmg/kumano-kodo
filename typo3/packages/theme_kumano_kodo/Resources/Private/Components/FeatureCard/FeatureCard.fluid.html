@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>A card that shows a place: image, title and text; featured sets it larger.</f:comment>
-<f:argument name="title" type="string" description="The title."/>
-<f:argument name="text" type="string" optional="{true}" description="A short description."/>
+<f:argument name="title" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The title."/>
+<f:argument name="text" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="A short description."/>
 <f:argument name="image" type="object" optional="{true}" description="A file or file reference."/>
 <f:argument name="emphasis" type="string" optional="{true}" default="default" description="default or featured."/>
 <f:argument name="rule" type="bool" optional="{true}" default="{false}" description="A hairline above the card."/>

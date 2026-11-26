@@ -1,9 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>Navigation between sibling pages under a heading; the items are subNavItem components.</f:comment>
-<f:argument name="title" type="string" description="Heading, also the name of the navigation."/>
+<f:argument name="title" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="Heading, also the name of the navigation."/>
 
 <f:asset.css identifier="kumano-sub-nav" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/sub-nav.css"/>
-<nav class="sub-nav" aria-label="{title}">
+<nav class="sub-nav" aria-label="{title -> f:format.stripTags() -> f:format.htmlentitiesDecode()}">
     <h2 class="sub-nav-title type-h4">{title}</h2>
     <ul class="sub-nav-list">
         <f:slot/>

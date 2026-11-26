@@ -41,6 +41,12 @@ Third-party
 Container (b13/container)
     Required. The containers Section and Columns are built on it.
 
+Visual Editor (friendsoftypo3/visual-editor)
+    Edits the texts of the elements in place: titles, eyebrows, rich text and
+    the texts of cards, lists, figures and questions. In the form stay: image
+    captions from the file, the fact list Pairs, group titles of Links in
+    columns, the route map and the navigation.
+
 News (georgringer/news)
     Comes with the package `kumano-kodo/theme-extras`, which stays outside the
     theme. Add its site set **Kumano Kodo · News**

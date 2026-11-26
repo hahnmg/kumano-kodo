@@ -39,6 +39,10 @@
     margin: 0;
 }
 
+.hero-teaser .type-lead p + p {
+    margin-top: var(--space-12);
+}
+
 .hero-eyebrow {
     padding-bottom: var(--space-24);
     opacity: 0.88;
@@ -46,7 +50,6 @@
 
 .hero-title {
     padding-bottom: var(--space-32);
-    white-space: pre-line;
 }
 
 .hero-teaser {

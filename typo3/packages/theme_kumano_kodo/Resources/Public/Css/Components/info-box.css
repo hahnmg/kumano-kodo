@@ -11,6 +11,14 @@
     margin: 0;
 }
 
+.info-box-text p {
+    margin: 0;
+}
+
+.info-box-text p + p {
+    margin-top: var(--space-12);
+}
+
 .info-box-title {
     color: var(--color-accent);
 }

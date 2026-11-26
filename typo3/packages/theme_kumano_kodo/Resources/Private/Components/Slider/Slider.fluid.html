@@ -1,15 +1,15 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>Cards in a row that scrolls, with arrows beside the heading and dots below; the cards go in the slot.</f:comment>
-<f:argument name="title" type="string" description="The heading, also the name of the card row."/>
+<f:argument name="title" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The heading, also the name of the card row."/>
 <f:argument name="count" type="string|int" description="Number of cards, for the dots."/>
-<f:argument name="eyebrow" type="string" optional="{true}" description="Short line above the heading."/>
+<f:argument name="eyebrow" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="Short line above the heading."/>
 
 <f:asset.css identifier="kumano-slider" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/slider.css"/>
 <f:asset.script identifier="kumano-slider" src="EXT:theme_kumano_kodo/Resources/Public/JavaScript/slider.js" type="module"/>
 <f:variable name="card">{f:translate(key: 'card', domain: 'theme_kumano_kodo.messages')}</f:variable>
 <div class="slider" data-slider>
     <kk:sectionHeading title="{title}" eyebrow="{eyebrow}" controls="{true}"/>
-    <div class="rail slider-track" tabindex="0" role="group" aria-label="{title}">
+    <div class="rail slider-track" tabindex="0" role="group" aria-label="{title -> f:format.stripTags() -> f:format.htmlentitiesDecode()}">
         <f:slot/>
     </div>
     <div class="slider-indicator">

@@ -7,14 +7,14 @@
                 <f:comment>Icon and title touch; the space before the text is wanted.</f:comment>
                 <f:spaceless>
                     <kk:icon name="clock" size="16"/>
-                    <strong class="type-button">{record.header}</strong>
+                    <strong class="type-button">{record -> f:render.text(field: 'header')}</strong>
                 </f:spaceless>
-                <span class="type-small">{record.subheader}</span>
+                <span class="type-small">{record -> f:render.text(field: 'subheader')}</span>
             </p>
         </f:then>
         <f:else>
             <f:variable name="body">
-                <kk:sectionHeading title="{record.header}" eyebrow="{record.subheader}" aside="{data.tx_themekumanokodo_aside}"/>
+                <kk:sectionHeading title="{record -> f:render.text(field: 'header')}" eyebrow="{record -> f:render.text(field: 'subheader')}" aside="{data.tx_themekumanokodo_aside}"/>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
         </f:else>

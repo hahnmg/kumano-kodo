@@ -17,7 +17,7 @@ A short label on a filled ground, such as a status.
         - Type
         - Meaning
     *   - ``label``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The text.
 
 kk:bleedImage
@@ -64,7 +64,7 @@ The call to action of a section: a link with href, a button without.
         - Type
         - Meaning
     *   - ``label``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The text.
     *   - ``href``
         - string
@@ -92,13 +92,13 @@ its photos, which open in the lightbox.
         - string, required
         - Anchor, also ties the title to the chapter.
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The heading.
     *   - ``number``
         - string|int
         - The large number; decorative.
     *   - ``date``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A line above the title.
     *   - ``images``
         - iterable
@@ -147,16 +147,16 @@ target.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title.
     *   - ``linkLabel``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The link text.
     *   - ``href``
         - string, required
         - The target.
     *   - ``text``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A short text.
     *   - ``variant``
         - string, default ``default``
@@ -210,10 +210,10 @@ One question of a faqList; open shows its answer from the start.
         - Type
         - Meaning
     *   - ``question``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The question.
     *   - ``answer``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The answer.
     *   - ``open``
         - bool|int, default ``{false}``
@@ -239,10 +239,10 @@ A card that shows a place: image, title and text; featured sets it larger.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title.
     *   - ``text``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A short description.
     *   - ``image``
         - object
@@ -330,13 +330,13 @@ in the fragment actions, stat components in the fragment stats.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title, the page heading unless level is 2.
     *   - ``image``
         - object, required
         - A file or file reference.
     *   - ``eyebrow``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - Short line above the title.
     *   - ``level``
         - string|int, default ``1``
@@ -357,7 +357,7 @@ buttons in the fragment actions.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title; the first slide's is the page heading unless level is 2.
     *   - ``image``
         - object, required
@@ -369,7 +369,7 @@ buttons in the fragment actions.
         - string|int, required
         - Number of slides.
     *   - ``eyebrow``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - Short line above the title.
     *   - ``level``
         - string|int, default ``1``
@@ -415,10 +415,10 @@ A statement with the theme emblem: eyebrow, title and the text in the slot.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The statement.
     *   - ``eyebrow``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - Short line above.
 
 Slots: ``default``.
@@ -478,13 +478,13 @@ A fact with an icon in a circle: label, value and an optional note.
         - string, required
         - Name of an icon, as for icon.
     *   - ``label``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - What the fact is about.
     *   - ``value``
-        - string|int, required
+        - string|int|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The fact.
     *   - ``note``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A short addition below.
 
 kk:image
@@ -531,7 +531,7 @@ fragment links.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title.
 
 Slots: ``links``, ``default``.
@@ -548,7 +548,7 @@ A link at the foot of an infoBox.
         - Type
         - Meaning
     *   - ``label``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The text.
     *   - ``href``
         - string, required
@@ -609,7 +609,7 @@ back.
         - Type
         - Meaning
     *   - ``label``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The text.
     *   - ``href``
         - string, required
@@ -656,7 +656,7 @@ A large link with an icon in a circle and an arrow.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The link text.
     *   - ``href``
         - string, required
@@ -696,7 +696,7 @@ mediaListItem components, a link to more in the fragment more.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The heading of the list.
 
 Slots: ``more``, ``default``.
@@ -713,13 +713,13 @@ One row of a mediaList.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The heading of the row.
     *   - ``href``
         - string, required
         - The target.
     *   - ``meta``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A short line below.
     *   - ``image``
         - object
@@ -738,7 +738,7 @@ Its styles ship in global.css.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title, set before the text.
 
 Slots: ``default``.
@@ -777,13 +777,13 @@ and an optional upright name.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title, the page heading.
     *   - ``eyebrow``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - Short line above the title.
     *   - ``meta``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A small line below the lede.
     *   - ``upright``
         - string
@@ -845,13 +845,13 @@ A person with a round photo, role and focus.
         - Type
         - Meaning
     *   - ``name``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The name.
     *   - ``role``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - What the person does.
     *   - ``focus``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A line about the person.
     *   - ``image``
         - object
@@ -869,7 +869,7 @@ A tall card for a stage: image, label, figures, title and text.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title.
     *   - ``href``
         - string
@@ -878,13 +878,13 @@ A tall card for a stage: image, label, figures, title and text.
         - object
         - A file or file reference.
     *   - ``label``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A label above, such as Day 2.
     *   - ``meta``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - Figures beside the label, such as the distance.
     *   - ``text``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A short description.
 
 kk:quote
@@ -899,7 +899,7 @@ A quotation set large; the quote in the slot, its source as an argument.
         - Type
         - Meaning
     *   - ``source``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - Who said it, or where.
 
 Slots: ``default``.
@@ -989,10 +989,10 @@ arrows beside it.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The heading.
     *   - ``eyebrow``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - Short line above the heading.
     *   - ``aside``
         - string
@@ -1017,13 +1017,13 @@ cards go in the slot.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The heading, also the name of the card row.
     *   - ``count``
         - string|int, required
         - Number of cards, for the dots.
     *   - ``eyebrow``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - Short line above the heading.
 
 Slots: ``default``.
@@ -1084,10 +1084,10 @@ A figure with its label: large on the page ground, on-image over a photo.
         - Type
         - Meaning
     *   - ``value``
-        - string|int, required
+        - string|int|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The figure.
     *   - ``label``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - What it counts.
     *   - ``variant``
         - string, default ``large``
@@ -1113,7 +1113,7 @@ components.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - Heading, also the name of the navigation.
 
 Slots: ``default``.
@@ -1130,7 +1130,7 @@ A link in a subNav; the current page is marked.
         - Type
         - Meaning
     *   - ``label``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The text.
     *   - ``href``
         - string, required
@@ -1152,7 +1152,7 @@ optional badge.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The title, also the link text.
     *   - ``href``
         - string, required
@@ -1161,13 +1161,13 @@ optional badge.
         - object
         - A file or file reference.
     *   - ``subtitle``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A line below the title.
     *   - ``meta``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A small line at the foot, such as a date.
     *   - ``badge``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A short label beside the meta line.
     *   - ``level``
         - string|int, default ``3``
@@ -1189,7 +1189,7 @@ link.
         - Type
         - Meaning
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The heading.
     *   - ``image``
         - mixed
@@ -1198,7 +1198,7 @@ link.
         - string, default ``left``
         - left or right.
     *   - ``linkLabel``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - The link text.
     *   - ``href``
         - string
@@ -1225,16 +1225,16 @@ One entry of a timeline: date, title, text and time.
         - Type
         - Meaning
     *   - ``date``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - Label above, such as Day 1 · 20 April.
     *   - ``title``
-        - string, required
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML, required
         - The heading.
     *   - ``text``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A short description.
     *   - ``time``
-        - string
+        - string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML
         - A note below, such as a time span.
 
 kk:video

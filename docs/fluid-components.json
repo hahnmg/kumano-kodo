@@ -5,7 +5,7 @@
 		"arguments": [
 			{
 				"name": "label",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The text."
 			}
@@ -44,7 +44,7 @@
 		"arguments": [
 			{
 				"name": "label",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The text."
 			},
@@ -83,7 +83,7 @@
 			},
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The heading."
 			},
@@ -95,7 +95,7 @@
 			},
 			{
 				"name": "date",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A line above the title."
 			},
@@ -146,13 +146,13 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title."
 			},
 			{
 				"name": "linkLabel",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The link text."
 			},
@@ -164,7 +164,7 @@
 			},
 			{
 				"name": "text",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A short text."
 			},
@@ -223,13 +223,13 @@
 		"arguments": [
 			{
 				"name": "question",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The question."
 			},
 			{
 				"name": "answer",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The answer."
 			},
@@ -255,13 +255,13 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title."
 			},
 			{
 				"name": "text",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A short description."
 			},
@@ -355,7 +355,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title, the page heading unless level is 2."
 			},
@@ -367,7 +367,7 @@
 			},
 			{
 				"name": "eyebrow",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "Short line above the title."
 			},
@@ -387,7 +387,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title; the first slide's is the page heading unless level is 2."
 			},
@@ -411,7 +411,7 @@
 			},
 			{
 				"name": "eyebrow",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "Short line above the title."
 			},
@@ -450,13 +450,13 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The statement."
 			},
 			{
 				"name": "eyebrow",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "Short line above."
 			}
@@ -520,19 +520,19 @@
 			},
 			{
 				"name": "label",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "What the fact is about."
 			},
 			{
 				"name": "value",
-				"type": "string|int",
+				"type": "string|int|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The fact."
 			},
 			{
 				"name": "note",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A short addition below."
 			}
@@ -590,7 +590,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title."
 			}
@@ -603,7 +603,7 @@
 		"arguments": [
 			{
 				"name": "label",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The text."
 			},
@@ -668,7 +668,7 @@
 		"arguments": [
 			{
 				"name": "label",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The text."
 			},
@@ -713,7 +713,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The link text."
 			},
@@ -758,7 +758,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The heading of the list."
 			}
@@ -771,7 +771,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The heading of the row."
 			},
@@ -783,7 +783,7 @@
 			},
 			{
 				"name": "meta",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A short line below."
 			},
@@ -802,7 +802,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title, set before the text."
 			}
@@ -834,19 +834,19 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title, the page heading."
 			},
 			{
 				"name": "eyebrow",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "Short line above the title."
 			},
 			{
 				"name": "meta",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A small line below the lede."
 			},
@@ -910,19 +910,19 @@
 		"arguments": [
 			{
 				"name": "name",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The name."
 			},
 			{
 				"name": "role",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "What the person does."
 			},
 			{
 				"name": "focus",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A line about the person."
 			},
@@ -941,7 +941,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title."
 			},
@@ -959,19 +959,19 @@
 			},
 			{
 				"name": "label",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A label above, such as Day 2."
 			},
 			{
 				"name": "meta",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "Figures beside the label, such as the distance."
 			},
 			{
 				"name": "text",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A short description."
 			}
@@ -984,7 +984,7 @@
 		"arguments": [
 			{
 				"name": "source",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "Who said it, or where."
 			}
@@ -1080,13 +1080,13 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The heading."
 			},
 			{
 				"name": "eyebrow",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "Short line above the heading."
 			},
@@ -1119,7 +1119,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The heading, also the name of the card row."
 			},
@@ -1131,7 +1131,7 @@
 			},
 			{
 				"name": "eyebrow",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "Short line above the heading."
 			}
@@ -1185,13 +1185,13 @@
 		"arguments": [
 			{
 				"name": "value",
-				"type": "string|int",
+				"type": "string|int|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The figure."
 			},
 			{
 				"name": "label",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "What it counts."
 			},
@@ -1217,7 +1217,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "Heading, also the name of the navigation."
 			}
@@ -1230,7 +1230,7 @@
 		"arguments": [
 			{
 				"name": "label",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The text."
 			},
@@ -1256,7 +1256,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The title, also the link text."
 			},
@@ -1274,19 +1274,19 @@
 			},
 			{
 				"name": "subtitle",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A line below the title."
 			},
 			{
 				"name": "meta",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A small line at the foot, such as a date."
 			},
 			{
 				"name": "badge",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A short label beside the meta line."
 			},
@@ -1313,7 +1313,7 @@
 		"arguments": [
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The heading."
 			},
@@ -1332,7 +1332,7 @@
 			},
 			{
 				"name": "linkLabel",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "The link text."
 			},
@@ -1357,25 +1357,25 @@
 		"arguments": [
 			{
 				"name": "date",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "Label above, such as Day 1 · 20 April."
 			},
 			{
 				"name": "title",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": true,
 				"description": "The heading."
 			},
 			{
 				"name": "text",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A short description."
 			},
 			{
 				"name": "time",
-				"type": "string",
+				"type": "string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML",
 				"required": false,
 				"description": "A note below, such as a time span."
 			}

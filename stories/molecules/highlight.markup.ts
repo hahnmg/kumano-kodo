@@ -12,4 +12,4 @@ export const highlight = ({ eyebrow, title, text, level = 2 }: HighlightProps): 
   `<div class="highlight">${logoBird('highlight-emblem')}<div class="highlight-body">` +
   (eyebrow ? `<p class="highlight-eyebrow type-label">${esc(eyebrow)}</p>` : '') +
   `<h${level} class="highlight-title type-h3">${esc(title)}</h${level}>` +
-  `<p class="highlight-text type-lead">${esc(text)}</p></div></div>`;
+  `<div class="highlight-text type-lead"><p>${esc(text)}</p></div></div></div>`;

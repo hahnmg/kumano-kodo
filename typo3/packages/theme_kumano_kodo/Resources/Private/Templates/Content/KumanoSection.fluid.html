@@ -19,7 +19,7 @@
         <f:then>
             <f:variable name="body">
                 <kk:stack gap="heading">
-                    <kk:sectionHeading title="{record.header}" eyebrow="{record.subheader}" aside="{data.tx_themekumanokodo_aside}"/>
+                    <kk:sectionHeading title="{record -> f:render.text(field: 'header')}" eyebrow="{record -> f:render.text(field: 'subheader')}" aside="{data.tx_themekumanokodo_aside}"/>
                     {column -> f:format.raw()}
                 </kk:stack>
             </f:variable>

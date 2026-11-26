@@ -4,7 +4,7 @@
     <f:variable name="list">
         <kk:faqList>
             <f:for each="{record.tx_themekumanokodo_questions}" as="item">
-                <kk:faqItem question="{item.question}" answer="{item.answer}" open="{item.open}"/>
+                <kk:faqItem question="{item -> f:render.text(field: 'question')}" answer="{item -> f:render.text(field: 'answer')}" open="{item.open}"/>
             </f:for>
         </kk:faqList>
     </f:variable>
@@ -16,14 +16,14 @@
                         <f:if condition="{record.bodytext}">
                             <f:then>
                                 <kk:stack gap="16">
-                                    <kk:sectionHeading title="{record.header}" eyebrow="{record.subheader}"/>
+                                    <kk:sectionHeading title="{record -> f:render.text(field: 'header')}" eyebrow="{record -> f:render.text(field: 'subheader')}"/>
                                     <kk:richText>
-                                        <f:format.html>{record.bodytext}</f:format.html>
+                                        {record -> f:render.text(field: 'bodytext')}
                                     </kk:richText>
                                 </kk:stack>
                             </f:then>
                             <f:else>
-                                <kk:sectionHeading title="{record.header}" eyebrow="{record.subheader}"/>
+                                <kk:sectionHeading title="{record -> f:render.text(field: 'header')}" eyebrow="{record -> f:render.text(field: 'subheader')}"/>
                             </f:else>
                         </f:if>
                     </f:fragment>

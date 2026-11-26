@@ -7,34 +7,34 @@
         <f:variable name="ruled" value="{f:if(condition: '{card.emphasis} == ruled', then: 1, else: 0)}"/>
         <kk:featureCard
             image="{card.image -> f:first()}"
-            title="{card.title}"
-            text="{card.text}"
+            title="{card -> f:render.text(field: 'title')}"
+            text="{card -> f:render.text(field: 'text')}"
             emphasis="{f:if(condition: '{card.emphasis} == featured', then: 'featured', else: 'default')}"
             rule="{ruled}"
             tall="{ruled}"
         />
     </f:case>
     <f:case value="person">
-        <kk:personCard image="{card.image -> f:first()}" name="{card.title}" role="{card.meta}" focus="{card.text}"/>
+        <kk:personCard image="{card.image -> f:first()}" name="{card -> f:render.text(field: 'title')}" role="{card -> f:render.text(field: 'meta')}" focus="{card -> f:render.text(field: 'text')}"/>
     </f:case>
     <f:case value="cta">
         <kk:ctaCard
-            title="{card.title}"
-            text="{card.text}"
-            linkLabel="{f:if(condition: card.link_label, then: card.link_label, else: '{f:translate(key: \'readMore\', domain: \'theme_kumano_kodo.messages\')}')}"
+            title="{card -> f:render.text(field: 'title')}"
+            text="{card -> f:render.text(field: 'text')}"
+            linkLabel="{f:if(condition: card.link_label, then: '{card -> f:render.text(field: \'link_label\')}', else: '{f:translate(key: \'readMore\', domain: \'theme_kumano_kodo.messages\')}')}"
             href="{href}"
             variant="{f:if(condition: '{card.emphasis} == featured', then: 'featured', else: 'default')}"
             edge="{data.tx_themekumanokodo_edge}"
         />
     </f:case>
     <f:case value="tile">
-        <kk:linkTile title="{card.title}" href="{href}" icon="{card.icon}" edge="{data.tx_themekumanokodo_edge}"/>
+        <kk:linkTile title="{card -> f:render.text(field: 'title')}" href="{href}" icon="{card.icon}" edge="{data.tx_themekumanokodo_edge}"/>
     </f:case>
     <f:case value="stage">
-        <kk:portraitCard image="{card.image -> f:first()}" label="{card.label}" meta="{card.meta}" title="{card.title}" href="{href}" text="{card.text}"/>
+        <kk:portraitCard image="{card.image -> f:first()}" label="{card -> f:render.text(field: 'label')}" meta="{card -> f:render.text(field: 'meta')}" title="{card -> f:render.text(field: 'title')}" href="{href}" text="{card -> f:render.text(field: 'text')}"/>
     </f:case>
     <f:defaultCase>
-        <kk:teaserCard image="{card.image -> f:first()}" title="{card.title}" subtitle="{card.text}" meta="{card.meta}" badge="{card.badge}" href="{href}" edge="{data.tx_themekumanokodo_edge}" level="{f:if(condition: '{data.header} && {data.header_layout} != 100', then: 3, else: 2)}"/>
+        <kk:teaserCard image="{card.image -> f:first()}" title="{card -> f:render.text(field: 'title')}" subtitle="{card -> f:render.text(field: 'text')}" meta="{card -> f:render.text(field: 'meta')}" badge="{card -> f:render.text(field: 'badge')}" href="{href}" edge="{data.tx_themekumanokodo_edge}" level="{f:if(condition: '{data.header} && {data.header_layout} != 100', then: 3, else: 2)}"/>
     </f:defaultCase>
 </f:switch>
 </html>

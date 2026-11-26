@@ -39,6 +39,14 @@
     color: var(--color-muted);
 }
 
+.site-footer-about p {
+    margin: 0;
+}
+
+.site-footer-about p + p {
+    margin-top: var(--space-12);
+}
+
 .site-footer-column h2 {
     padding-bottom: var(--space-6);
     color: var(--color-muted);

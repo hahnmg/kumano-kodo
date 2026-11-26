@@ -619,7 +619,7 @@ export const reportPage = (slug: string, c: Content = content()): string => {
     section({
       content:
         `<p class="section-heading-eyebrow type-label">${esc(`${longDate(c, r.date)} · ${category}`)}</p>` +
-        `<h1 class="type-h2">${esc(r.title)}</h1><p class="type-lead">${esc(r.teaser)}</p>`,
+        `<h1 class="type-h2">${esc(r.title)}</h1><div class="type-lead"><p>${esc(r.teaser)}</p></div>`,
     }) +
       section({
         space: 'flush-top',
@@ -1051,7 +1051,7 @@ export const showcasePage = (c: Content = content()): string => {
     1,
     // The page top "Title and text" carries the page's h1.
     section({
-      content: `<h1 class="type-h2">${esc(s.title)}</h1><p class="type-lead">${esc(s.intro)}</p>`,
+      content: `<h1 class="type-h2">${esc(s.title)}</h1><div class="type-lead"><p>${esc(s.intro)}</p></div>`,
     }) +
       section({
         space: 'flush-top',

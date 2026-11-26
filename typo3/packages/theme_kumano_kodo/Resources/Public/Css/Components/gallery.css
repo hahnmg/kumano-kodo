@@ -23,6 +23,14 @@
     color: var(--color-muted);
 }
 
+.gallery-caption p {
+    margin: 0;
+}
+
+.gallery-caption p + p {
+    margin-top: var(--space-12);
+}
+
 @media (width <= 900px) {
     .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));

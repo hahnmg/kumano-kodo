@@ -17,3 +17,10 @@
 .notice-body {
     margin: 0;
 }
+
+/* The text runs on after its title, as one line. */
+.notice-text,
+.notice-text p {
+    display: inline;
+    margin: 0;
+}

@@ -1,14 +1,14 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>A box with a title, the text in the slot and infoBoxLink components in the fragment links.</f:comment>
-<f:argument name="title" type="string" description="The title."/>
+<f:argument name="title" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The title."/>
 
 <f:asset.css identifier="kumano-info-box" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/info-box.css"/>
 <f:variable name="links" value="{f:slot(name: 'links')}"/>
 <aside class="info-box">
     <h2 class="info-box-title type-label">{title}</h2>
-    <p class="info-box-text type-small">
+    <div class="info-box-text type-small">
         <f:slot/>
-    </p>
+    </div>
     <f:if condition="{links -> f:format.trim()}">
         <ul class="info-box-links">
             {links -> f:format.raw()}

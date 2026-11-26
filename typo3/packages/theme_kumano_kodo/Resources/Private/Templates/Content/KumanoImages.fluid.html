@@ -6,7 +6,7 @@
     <f:comment>The element's text is the caption; without it the first image's description, for a video its poster's.</f:comment>
     <f:if condition="{record.bodytext}">
         <f:then>
-            <f:variable name="caption">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:variable>
+            <f:variable name="caption">{record -> f:render.text(field: 'bodytext')}</f:variable>
         </f:then>
         <f:else>
             <f:variable name="caption">{f:if(condition: first.video, then: first.poster.description, else: first.description)}</f:variable>

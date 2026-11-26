@@ -8,4 +8,4 @@ export interface NoticeProps {
 
 export const notice = ({ title, text }: NoticeProps): string =>
   `<div class="notice" role="note">${icon({ name: 'alert' })}` +
-  `<p class="notice-body"><strong class="notice-title type-label">${esc(title)}</strong> <span class="type-small">${esc(text)}</span></p></div>`;
+  `<div class="notice-body"><strong class="notice-title type-label">${esc(title)}</strong> <div class="notice-text type-small"><p>${esc(text)}</p></div></div></div>`;

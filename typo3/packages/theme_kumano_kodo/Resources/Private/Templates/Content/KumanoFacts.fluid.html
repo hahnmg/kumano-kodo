@@ -6,7 +6,7 @@
             <f:variable name="body">
                 <kk:statRow>
                     <f:for each="{record.tx_themekumanokodo_facts}" as="fact">
-                        <kk:stat value="{fact.value}" label="{fact.label}"/>
+                        <kk:stat value="{fact -> f:render.text(field: 'value')}" label="{fact -> f:render.text(field: 'label')}"/>
                     </f:for>
                 </kk:statRow>
             </f:variable>
@@ -22,7 +22,7 @@
             <f:variable name="body">
                 <kk:grid columns="{data.tx_themekumanokodo_columns}">
                     <f:for each="{record.tx_themekumanokodo_facts}" as="fact">
-                        <kk:iconFact icon="{fact.icon}" label="{fact.label}" value="{fact.value}" note="{fact.note}"/>
+                        <kk:iconFact icon="{fact.icon}" label="{fact -> f:render.text(field: 'label')}" value="{fact -> f:render.text(field: 'value')}" note="{fact -> f:render.text(field: 'note')}"/>
                     </f:for>
                 </kk:grid>
             </f:variable>

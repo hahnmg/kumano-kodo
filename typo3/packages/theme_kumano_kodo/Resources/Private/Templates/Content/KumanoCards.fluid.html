@@ -4,7 +4,7 @@
     <f:if condition="{data.tx_themekumanokodo_columns} == 'slider'">
         <f:then>
             <f:variable name="body">
-                <kk:slider title="{record.header}" eyebrow="{record.subheader}" count="{record.tx_themekumanokodo_entries -> f:count()}">
+                <kk:slider title="{record -> f:render.text(field: 'header')}" eyebrow="{record -> f:render.text(field: 'subheader')}" count="{record.tx_themekumanokodo_entries -> f:count()}">
                     <f:for each="{record.tx_themekumanokodo_entries}" as="card">
                         <f:render partial="Kumano/Card" arguments="{card: card, data: data}"/>
                     </f:for>

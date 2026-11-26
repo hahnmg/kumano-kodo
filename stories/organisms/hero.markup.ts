@@ -5,6 +5,9 @@ import { sliderDots } from '../atoms/slider-dots.markup';
 import { button } from '../atoms/button.markup';
 import { stat } from '../molecules/stat.markup';
 
+// The editor's line breaks, as TYPO3's f:render.text gives them.
+const lines = (text: string): string => esc(text).replace(/\n/g, '<br>\n');
+
 export interface HeroProps {
   image: Image;
   eyebrow: string;
@@ -19,8 +22,8 @@ export interface HeroProps {
 export const hero = ({ image, eyebrow, title, teaser, actions, stats, level = 1 }: HeroProps): string =>
   `<section class="hero">${img(image, 'hero-image', '100vw', true)}<div class="hero-shade"></div><div class="hero-content">` +
   `<p class="hero-eyebrow type-label">${esc(eyebrow)}</p>` +
-  `<h${level} class="hero-title type-hero">${esc(title)}</h${level}>` +
-  `<div class="hero-teaser"><p class="type-lead">${esc(teaser)}</p><div class="hero-actions">` +
+  `<h${level} class="hero-title type-hero">${lines(title)}</h${level}>` +
+  `<div class="hero-teaser"><div class="type-lead"><p>${esc(teaser)}</p></div><div class="hero-actions">` +
   actions.map((a, i) => button({ ...a, variant: i === 0 ? 'light' : 'outline' })).join('') +
   `</div></div>` +
   `<div class="hero-stats">${stats.map((s) => stat({ ...s, variant: 'on-image' })).join('')}</div>` +
@@ -67,8 +70,8 @@ export const heroSlides = ({ slides, stats, labels, level = 1 }: HeroSlidesProps
         `<div${attrs({ class: 'hero-slide', role: 'group', 'aria-roledescription': 'slide', 'aria-label': fill(labels.slide, i + 1, slides.length) })}>` +
         `${img(s.image, 'hero-image', '100vw', i === 0)}<div class="hero-shade"></div><div class="hero-content">` +
         `<p class="hero-eyebrow type-label">${esc(s.eyebrow)}</p>` +
-        `<${tag} class="hero-title type-hero">${esc(s.title)}</${tag}>` +
-        `<div class="hero-teaser"><p class="type-lead">${esc(s.teaser)}</p><div class="hero-actions">` +
+        `<${tag} class="hero-title type-hero">${lines(s.title)}</${tag}>` +
+        `<div class="hero-teaser"><div class="type-lead"><p>${esc(s.teaser)}</p></div><div class="hero-actions">` +
         s.actions.map((a, j) => button({ ...a, variant: j === 0 ? 'light' : 'outline' })).join('') +
         `</div></div></div></div>`
       );

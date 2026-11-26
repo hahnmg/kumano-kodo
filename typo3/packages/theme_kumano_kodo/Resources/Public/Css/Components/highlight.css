@@ -36,6 +36,14 @@
     color: var(--color-muted);
 }
 
+.highlight-text p {
+    margin: 0;
+}
+
+.highlight-text p + p {
+    margin-top: var(--space-12);
+}
+
 @media (width <= 900px) {
     .highlight {
         grid-template-columns: minmax(0, 1fr);

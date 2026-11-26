@@ -1,9 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>One entry of a timeline: date, title, text and time.</f:comment>
-<f:argument name="date" type="string" description="Label above, such as Day 1 · 20 April."/>
-<f:argument name="title" type="string" description="The heading."/>
-<f:argument name="text" type="string" optional="{true}" description="A short description."/>
-<f:argument name="time" type="string" optional="{true}" description="A note below, such as a time span."/>
+<f:argument name="date" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="Label above, such as Day 1 · 20 April."/>
+<f:argument name="title" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The heading."/>
+<f:argument name="text" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="A short description."/>
+<f:argument name="time" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="A note below, such as a time span."/>
 
 <li class="timeline-item">
     <p class="timeline-item-date type-label">{date}</p>

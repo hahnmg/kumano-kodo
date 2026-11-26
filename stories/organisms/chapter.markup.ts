@@ -35,6 +35,6 @@ export const chapter = ({ id, number, date, title, text, photos, labels }: Chapt
   `<section${attrs({ class: 'chapter', 'aria-labelledby': id })}><div class="chapter-inner">` +
   `<div class="chapter-head"><p class="chapter-number type-hero" aria-hidden="true">${esc(number)}</p>` +
   `<div class="chapter-text"><p class="chapter-date type-caption">${esc(date)}</p>` +
-  `<h2${attrs({ id, class: 'chapter-title type-h3' })}>${esc(title)}</h2><p class="type-lead">${esc(text)}</p></div></div>` +
+  `<h2${attrs({ id, class: 'chapter-title type-h3' })}>${esc(title)}</h2><div class="type-lead"><p>${esc(text)}</p></div></div></div>` +
   `<div${attrs({ class: 'chapter-media', ...lightboxGroupAttrs(labels) })}>${photos.map(photo).join('')}</div>` +
   `</div></section>`;

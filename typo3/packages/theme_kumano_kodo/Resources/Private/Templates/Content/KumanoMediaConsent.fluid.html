@@ -7,7 +7,7 @@
     <f:variable name="body">
         <div class="media-consent">
             <kk:richText>
-                <f:format.html>{record.bodytext}</f:format.html>
+                {record -> f:render.text(field: 'bodytext')}
             </kk:richText>
             <label class="choice choice-checkbox">
                 <input class="choice-input" type="checkbox" name="media-consent">

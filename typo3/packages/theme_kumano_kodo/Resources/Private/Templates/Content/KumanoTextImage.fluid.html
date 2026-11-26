@@ -2,15 +2,18 @@
 <f:layout name="Content/Default"/>
 <f:section name="Main">
     <f:variable name="link" value="{record.tx_themekumanokodo_links -> f:first()}"/>
+    <f:if condition="{link}">
+        <f:variable name="linkLabel" value="{link -> f:render.text(field: 'title')}"/>
+    </f:if>
     <f:variable name="body">
         <kk:textMedia
-            title="{record.header}"
+            title="{record -> f:render.text(field: 'header')}"
             image="{k:media(items: record.image) -> f:first()}"
             imageSide="{f:if(condition: '{data.imageorient} == 25', then: 'right', else: 'left')}"
-            linkLabel="{link.title}"
+            linkLabel="{linkLabel}"
             href="{f:if(condition: link, then: '{f:uri.typolink(parameter: link.link)}')}"
         >
-            <f:format.html>{record.bodytext}</f:format.html>
+            {record -> f:render.text(field: 'bodytext')}
         </kk:textMedia>
     </f:variable>
     <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>

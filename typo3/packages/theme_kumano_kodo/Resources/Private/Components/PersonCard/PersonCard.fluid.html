@@ -1,8 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>A person with a round photo, role and focus.</f:comment>
-<f:argument name="name" type="string" description="The name."/>
-<f:argument name="role" type="string" optional="{true}" description="What the person does."/>
-<f:argument name="focus" type="string" optional="{true}" description="A line about the person."/>
+<f:argument name="name" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The name."/>
+<f:argument name="role" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="What the person does."/>
+<f:argument name="focus" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="A line about the person."/>
 <f:argument name="image" type="object" optional="{true}" description="A file or file reference, shown round."/>
 
 <f:asset.css identifier="kumano-person-card" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/person-card.css"/>

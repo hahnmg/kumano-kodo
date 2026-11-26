@@ -4,15 +4,15 @@
     <f:switch expression="{data.colPos}">
         <f:case value="20">
             <div class="site-footer-column">
-                <h2 class="type-label">{record.header}</h2>
+                <h2 class="type-label">{record -> f:render.text(field: 'header')}</h2>
                 <ul>
                     <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
                         <li class="type-small">
                             <f:if condition="{entry.link}">
                                 <f:then>
-                                    <a href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a>
+                                    <a href="{f:uri.typolink(parameter: entry.link)}">{entry -> f:render.text(field: 'title')}</a>
                                 </f:then>
-                                <f:else>{entry.title}</f:else>
+                                <f:else>{entry -> f:render.text(field: 'title')}</f:else>
                             </f:if>
                         </li>
                     </f:for>
@@ -20,11 +20,11 @@
             </div>
         </f:case>
         <f:case value="22">
-            <p>{record.header}</p>
+            <p>{record -> f:render.text(field: 'header')}</p>
             <ul>
                 <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
                     <li>
-                        <a href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a>
+                        <a href="{f:uri.typolink(parameter: entry.link)}">{entry -> f:render.text(field: 'title')}</a>
                     </li>
                 </f:for>
             </ul>
@@ -35,7 +35,7 @@
                     <f:variable name="body">
                         <kk:timeline>
                             <f:for each="{record.tx_themekumanokodo_entries}" as="day">
-                                <kk:timelineItem date="{day.label}" title="{day.title}" text="{day.text}" time="{day.meta}"/>
+                                <kk:timelineItem date="{day -> f:render.text(field: 'label')}" title="{day -> f:render.text(field: 'title')}" text="{day -> f:render.text(field: 'text')}" time="{day -> f:render.text(field: 'meta')}"/>
                             </f:for>
                         </kk:timeline>
                     </f:variable>
@@ -51,7 +51,7 @@
                     <f:variable name="body">
                         <kk:cluster>
                             <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
-                                <kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
+                                <kk:link label="{entry -> f:render.text(field: 'title')}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
                             </f:for>
                         </kk:cluster>
                     </f:variable>
@@ -61,7 +61,7 @@
                     <f:variable name="body">
                         <kk:stack gap="40">
                             <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
-                                <kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
+                                <kk:link label="{entry -> f:render.text(field: 'title')}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
                             </f:for>
                         </kk:stack>
                     </f:variable>
@@ -74,7 +74,7 @@
                                 <kk:linkGroup title="{label}">
                                     <f:for each="{entries}" as="entry">
                                         <li>
-                                            <kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
+                                            <kk:link label="{entry -> f:render.text(field: 'title')}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
                                         </li>
                                     </f:for>
                                 </kk:linkGroup>
@@ -86,10 +86,10 @@
                 <f:case value="subnav">
                     <f:variable name="current">{f:uri.page()}</f:variable>
                     <f:variable name="body">
-                        <kk:subNav title="{record.header}">
+                        <kk:subNav title="{record -> f:render.text(field: 'header')}">
                             <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
                                 <f:variable name="href">{f:uri.typolink(parameter: entry.link)}</f:variable>
-                                <kk:subNavItem label="{entry.title}" href="{href}" current="{f:if(condition: '{href} == {current}', then: 1, else: 0)}"/>
+                                <kk:subNavItem label="{entry -> f:render.text(field: 'title')}" href="{href}" current="{f:if(condition: '{href} == {current}', then: 1, else: 0)}"/>
                             </f:for>
                         </kk:subNav>
                     </f:variable>
@@ -98,15 +98,15 @@
                 <f:defaultCase>
                     <f:variable name="more" value="{record.tx_themekumanokodo_links -> f:first()}"/>
                     <f:variable name="body">
-                        <kk:mediaList title="{record.header}">
+                        <kk:mediaList title="{record -> f:render.text(field: 'header')}">
                             <f:fragment>
                                 <f:for each="{record.tx_themekumanokodo_entries}" as="item">
-                                    <kk:mediaListItem title="{item.title}" meta="{item.meta}" href="{f:uri.typolink(parameter: item.link)}" image="{item.image -> f:first()}"/>
+                                    <kk:mediaListItem title="{item -> f:render.text(field: 'title')}" meta="{item -> f:render.text(field: 'meta')}" href="{f:uri.typolink(parameter: item.link)}" image="{item.image -> f:first()}"/>
                                 </f:for>
                             </f:fragment>
                             <f:fragment name="more">
                                 <f:if condition="{more}">
-                                    <kk:link label="{more.title}" href="{f:uri.typolink(parameter: more.link)}"/>
+                                    <kk:link label="{more -> f:render.text(field: 'title')}" href="{f:uri.typolink(parameter: more.link)}"/>
                                 </f:if>
                             </f:fragment>
                         </kk:mediaList>

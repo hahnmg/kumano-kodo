@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>The heading of a section: an optional eyebrow above, an aside or the slider arrows beside it.</f:comment>
-<f:argument name="title" type="string" description="The heading."/>
-<f:argument name="eyebrow" type="string" optional="{true}" description="Short line above the heading."/>
+<f:argument name="title" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The heading."/>
+<f:argument name="eyebrow" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="Short line above the heading."/>
 <f:argument name="aside" type="string" optional="{true}" description="Short text beside the heading."/>
 <f:argument name="level" type="string|int" optional="{true}" default="2" description="Heading level: 1 or 2."/>
 <f:argument name="controls" type="bool|int" optional="{true}" default="{false}" description="Shows the previous and next arrows of a slider."/>

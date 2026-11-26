@@ -1,11 +1,11 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>A card that links to a page: image, title, subtitle and a meta line with an optional badge.</f:comment>
-<f:argument name="title" type="string" description="The title, also the link text."/>
+<f:argument name="title" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The title, also the link text."/>
 <f:argument name="href" type="string" description="The target."/>
 <f:argument name="image" type="object" optional="{true}" description="A file or file reference."/>
-<f:argument name="subtitle" type="string" optional="{true}" description="A line below the title."/>
-<f:argument name="meta" type="string" optional="{true}" description="A small line at the foot, such as a date."/>
-<f:argument name="badge" type="string" optional="{true}" description="A short label beside the meta line."/>
+<f:argument name="subtitle" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="A line below the title."/>
+<f:argument name="meta" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="A small line at the foot, such as a date."/>
+<f:argument name="badge" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="A short label beside the meta line."/>
 <f:argument name="level" type="string|int" optional="{true}" default="3" description="Heading level: 2, 3 or none."/>
 <f:argument name="edge" type="bool" optional="{true}" default="{false}" description="A bar in the accent beside the card."/>
 

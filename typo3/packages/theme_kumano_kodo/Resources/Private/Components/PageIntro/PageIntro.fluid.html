@@ -1,8 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>The opening of a journal page: eyebrow, title, the lede in the slot, a meta line and an optional upright name.</f:comment>
-<f:argument name="title" type="string" description="The title, the page heading."/>
-<f:argument name="eyebrow" type="string" optional="{true}" description="Short line above the title."/>
-<f:argument name="meta" type="string" optional="{true}" description="A small line below the lede."/>
+<f:argument name="title" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The title, the page heading."/>
+<f:argument name="eyebrow" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="Short line above the title."/>
+<f:argument name="meta" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" optional="{true}" description="A small line below the lede."/>
 <f:argument name="upright" type="string" optional="{true}" description="A name set upright at the edge; decorative."/>
 
 <f:asset.css identifier="kumano-page-intro" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/page-intro.css"/>
@@ -13,9 +13,9 @@
             <h1 class="type-hero">{title}</h1>
         </div>
         <div class="page-intro-lede">
-            <p class="type-lead">
+            <div class="type-lead">
                 <f:slot/>
-            </p>
+            </div>
             <p class="page-intro-meta type-caption">{meta}</p>
         </div>
         <f:if condition="{upright}">

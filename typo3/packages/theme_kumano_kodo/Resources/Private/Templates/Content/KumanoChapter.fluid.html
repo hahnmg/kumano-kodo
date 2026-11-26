@@ -4,9 +4,9 @@
     <kk:chapter
         id="{f:if(condition: data.tx_themekumanokodo_anchor, then: data.tx_themekumanokodo_anchor, else: 'c{data.uid}')}"
         number="{number}"
-        date="{record.subheader}"
-        title="{record.header}"
+        date="{record -> f:render.text(field: 'subheader')}"
+        title="{record -> f:render.text(field: 'header')}"
         images="{record.image}"
-    >{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</kk:chapter>
+    >{record -> f:render.text(field: 'bodytext')}</kk:chapter>
 </f:section>
 </html>

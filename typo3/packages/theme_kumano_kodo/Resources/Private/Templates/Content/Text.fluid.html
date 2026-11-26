@@ -3,12 +3,12 @@
 <f:section name="Main">
     <f:if condition="{data.colPos} == 20">
         <f:then>
-            <p class="site-footer-about type-small">{record.bodytext -> f:format.stripTags() -> f:format.trim()}</p>
+            <div class="site-footer-about type-small">{record -> f:render.text(field: 'bodytext')}</div>
         </f:then>
         <f:else>
             <f:variable name="body">
                 <kk:richText>
-                    <f:format.html>{record.bodytext}</f:format.html>
+                    {record -> f:render.text(field: 'bodytext')}
                 </kk:richText>
             </f:variable>
             <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>

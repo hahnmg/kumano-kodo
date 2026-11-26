@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ca3ce44542540c3cbba8de5ded2d9c2",
+    "content-hash": "9d7abb27bd5e477ee750058c5f095a4a",
     "packages": [
         {
             "name": "b13/container",
@@ -8020,6 +8020,78 @@
                 }
             ],
             "time": "2026-09-22T09:54:55+00:00"
+        },
+        {
+            "name": "friendsoftypo3/visual-editor",
+            "version": "1.11.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfTYPO3/visual_editor.git",
+                "reference": "a56ed8f09235107de214007751615aa5d4b4a1a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/visual_editor/zipball/a56ed8f09235107de214007751615aa5d4b4a1a6",
+                "reference": "a56ed8f09235107de214007751615aa5d4b4a1a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "typo3/cms-backend": "^13.4.22 || ^14.3.0",
+                "typo3/cms-core": "^13.4.22 || ^14.3.0",
+                "typo3/cms-extbase": "^13.4.22 || ^14.3.0",
+                "typo3/cms-fluid": "^13.4.22 || ^14.3.0",
+                "typo3/cms-frontend": "^13.4.22 || ^14.3.0",
+                "typo3/cms-rte-ckeditor": "^13.4.22 || ^14.3.0"
+            },
+            "require-dev": {
+                "b13/container": "^3.2.3",
+                "phpunit/phpunit": "^11.5.55",
+                "pluswerk/grumphp-config": "^10.2.7 || ^11.0.8",
+                "saschaegerer/phpstan-typo3": "^2.1.1 || ^3.0.1",
+                "ssch/typo3-rector": "^3.14.1",
+                "typo3/cms-install": "^13.4.28 || ^14.3.3",
+                "typo3/cms-workspaces": "^13.4.28 || ^14.3.3",
+                "typo3/testing-framework": "^9.5.0",
+                "typo3fluid/fluid": "^4.6.1 || ^5.3.1"
+            },
+            "suggest": {
+                "wapplersystems/multisite-belogin": "You should install this extension, if you have multiple domains in your TYPO3 installation."
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "visual_editor",
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\VisualEditor\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "TYPO3 CMS Visual Editor - Brings a modern WYSIWYG editing experience to TYPO3 CMS.",
+            "keywords": [
+                "TYPO3 CMS",
+                "cms",
+                "core",
+                "editor",
+                "extension",
+                "typo3",
+                "visual",
+                "visual editor",
+                "wysiwyg"
+            ],
+            "support": {
+                "issues": "https://github.com/FriendsOfTYPO3/visual_editor/issues",
+                "source": "https://github.com/FriendsOfTYPO3/visual_editor/tree/1.11.1"
+            },
+            "time": "2026-11-16T22:07:06+00:00",
+            "published-time": "2026-11-16T22:08:12+00:00"
         },
         {
             "name": "react/cache",

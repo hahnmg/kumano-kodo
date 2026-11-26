@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
 <f:comment>A figure with its label: large on the page ground, on-image over a photo.</f:comment>
-<f:argument name="value" type="string|int" description="The figure."/>
-<f:argument name="label" type="string" description="What it counts."/>
+<f:argument name="value" type="string|int|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="The figure."/>
+<f:argument name="label" type="string|TYPO3Fluid\Fluid\Core\Parser\UnsafeHTML" description="What it counts."/>
 <f:argument name="variant" type="string" optional="{true}" default="large" description="large or on-image."/>
 
 <f:asset.css identifier="kumano-stat" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/stat.css"/>

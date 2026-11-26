@@ -25,6 +25,10 @@
     margin: 0;
 }
 
+.quote-text p + p {
+    margin-top: var(--space-12);
+}
+
 .quote-source {
     color: var(--color-muted);
 }

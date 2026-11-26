@@ -38,6 +38,14 @@
     color: var(--color-muted);
 }
 
+.figure-caption p {
+    margin: 0;
+}
+
+.figure-caption p + p {
+    margin-top: var(--space-12);
+}
+
 .figure-unruled {
     padding-top: 0;
     border-top: 0;

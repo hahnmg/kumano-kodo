@@ -89,6 +89,8 @@ const buildPartials = async () => {
     // One tag per line, as the hand-written components; TrimComponentOutput trims the line breaks around them.
     const argument = (name, type, description, fallback) =>
       `<f:argument name="${name}" type="${type}"${fallback === undefined ? '' : ` optional="{true}"${fallback === null ? '' : ` default="${fallback}"`}`} description="${description}"/>`;
+    // A text the template renders with f:render.text arrives as UnsafeHTML; as plain string Fluid would escape it twice.
+    const text = 'string|TYPO3Fluid\\Fluid\\Core\\Parser\\UnsafeHTML';
     const indent = (body) => {
       const control = /(<\/?f:(?:if|then|else|switch|case|defaultCase)\b[^>]*>)/;
       let depth = 0;
@@ -163,14 +165,14 @@ const buildPartials = async () => {
     await component(
       'Badge',
       'A short label on a filled ground, such as a status.',
-      [argument('label', 'string', 'The text.')],
+      [argument('label', text, 'The text.')],
       fill(badge({ label: '__LABEL__' })),
     );
     await component(
       'Link',
       'A text link in the accent with an arrow: forward by default, back with direction back.',
       [
-        argument('label', 'string', 'The text.'),
+        argument('label', text, 'The text.'),
         argument('href', 'string', 'The target.'),
         argument('direction', 'string', 'forward or back.', 'forward'),
       ],
@@ -196,7 +198,7 @@ const buildPartials = async () => {
       'Button',
       'The call to action of a section: a link with href, a button without.',
       [
-        argument('label', 'string', 'The text.'),
+        argument('label', text, 'The text.'),
         argument('href', 'string', 'Turns the button into a link.', null),
         argument('variant', 'string', 'primary or secondary on the page ground, light or outline on photos.', 'primary'),
         argument('type', 'string', 'button or submit, without href.', 'button'),

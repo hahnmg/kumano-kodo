@@ -23,3 +23,11 @@
     padding-inline: max(var(--gutter), (100% - var(--container-page)) / 2);
     color: var(--color-muted);
 }
+
+.bleed-image-caption p {
+    margin: 0;
+}
+
+.bleed-image-caption p + p {
+    margin-top: var(--space-12);
+}
