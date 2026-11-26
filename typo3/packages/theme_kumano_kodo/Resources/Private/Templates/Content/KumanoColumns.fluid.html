@@ -1,0 +1,50 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:variable name="first">
+        <f:if condition="{columns.201}">
+            <f:if condition="{columns.201.records -> f:count()} == 1">
+                <f:then>
+                    <f:render.contentArea contentArea="{columns.201}"/>
+                </f:then>
+                <f:else>
+                    <kk:stack gap="column">
+                        <f:render.contentArea contentArea="{columns.201}"/>
+                    </kk:stack>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:variable>
+    <f:variable name="second">
+        <f:if condition="{columns.202}">
+            <f:if condition="{columns.202.records -> f:count()} == 1">
+                <f:then>
+                    <f:render.contentArea contentArea="{columns.202}"/>
+                </f:then>
+                <f:else>
+                    <kk:stack gap="column">
+                        <f:render.contentArea contentArea="{columns.202}"/>
+                    </kk:stack>
+                </f:else>
+            </f:if>
+        </f:if>
+    </f:variable>
+    <f:if condition="{data.tx_themekumanokodo_layout} == 'hero'">
+        <f:then>
+            <kk:heroSplit>
+                <f:fragment name="text">{first -> f:format.raw()}</f:fragment>
+                <f:fragment name="panel">{second -> f:format.raw()}</f:fragment>
+            </kk:heroSplit>
+        </f:then>
+        <f:else>
+            <f:variable name="body">
+                <kk:split ratio="{data.tx_themekumanokodo_layout}" align="{data.tx_themekumanokodo_align}" colour="{data.tx_themekumanokodo_colour}">
+                    <f:fragment name="first">{first -> f:format.raw()}</f:fragment>
+                    <f:fragment name="second">{second -> f:format.raw()}</f:fragment>
+                </kk:split>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

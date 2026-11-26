@@ -71,32 +71,36 @@ const el = (type, fields = {}, extra = {}) => ({
   ...extra,
 });
 // Buttons and the link below a list are entries of the element's Links.
-const links = (...items) => ({ tx_kumanokodo_links: items });
+const links = (...items) => ({ tx_themekumanokodo_links: items });
 const list = (pickList, map) => pickList(c.en).map((_, i) => map((x) => pickList(x)[i], i));
 const section = (fields, children) => el('kumano_section', fields, { children: { 201: children } });
 const columns = (layout, fields, first, second) =>
-  el('kumano_columns', { tx_kumanokodo_layout: layout, ...fields }, { children: { 201: first, 202: second } });
+  el('kumano_columns', { tx_themekumanokodo_layout: layout, ...fields }, { children: { 201: first, 202: second } });
 const text = (html, fields = {}) => el('text', { bodytext: html, ...fields });
 const sunk = { frame_class: 'sunk' };
 
 const heading = (pick) => ({
   header: t((x) => pick(x).title),
   ...(pick(c.en).eyebrow ? { subheader: t((x) => pick(x).eyebrow) } : {}),
-  ...(pick(c.en).aside ? { tx_kumanokodo_aside: t((x) => pick(x).aside) } : {}),
+  ...(pick(c.en).aside ? { tx_themekumanokodo_aside: t((x) => pick(x).aside) } : {}),
 });
 const hiddenHeading = (pick) => ({ header: t(pick), header_layout: '100' });
 
 const cards = (style, shownAs, fields, items) =>
   el(
     'kumano_cards',
-    { tx_kumanokodo_variant: style, tx_kumanokodo_columns: String(shownAs), ...fields },
-    { items: { tx_kumanokodo_entries: items } },
+    { tx_themekumanokodo_variant: style, tx_themekumanokodo_columns: String(shownAs), ...fields },
+    { items: { tx_themekumanokodo_entries: items } },
   );
 const listEl = (variant, fields, items, more = []) =>
-  el('kumano_list', { tx_kumanokodo_variant: variant, ...fields }, { items: { tx_kumanokodo_entries: items, ...links(...more) } });
+  el(
+    'kumano_list',
+    { tx_themekumanokodo_variant: variant, ...fields },
+    { items: { tx_themekumanokodo_entries: items, ...links(...more) } },
+  );
 const facts = (variant, fields, items) =>
-  el('kumano_facts', { tx_kumanokodo_variant: variant, ...fields }, { items: { tx_kumanokodo_facts: items } });
-const images = (variant, names, fields = {}) => el('kumano_images', { tx_kumanokodo_variant: variant, ...fields }, { image: names });
+  el('kumano_facts', { tx_themekumanokodo_variant: variant, ...fields }, { items: { tx_themekumanokodo_facts: items } });
+const images = (variant, names, fields = {}) => el('kumano_images', { tx_themekumanokodo_variant: variant, ...fields }, { image: names });
 
 const teasers = (pickList) =>
   list(pickList, (p) => ({
@@ -132,11 +136,11 @@ const routeMap = (fields, day) =>
     {
       ...fields,
       bodytext: t((x) => x.kumano.route.label),
-      tx_kumanokodo_path: c.en.kumano.route.path,
+      tx_themekumanokodo_path: c.en.kumano.route.path,
     },
     {
       items: {
-        tx_kumanokodo_stations: list(
+        tx_themekumanokodo_stations: list(
           (x) => x.kumano.route.stations,
           (s, i) => ({
             name: t((x) => s(x).name),
@@ -149,7 +153,7 @@ const routeMap = (fields, day) =>
             link: link(routeLinks.stations[i]),
           }),
         ),
-        tx_kumanokodo_day_marks: list(
+        tx_themekumanokodo_day_marks: list(
           (x) => x.kumano.route.days,
           (d, i) => ({ label: t((x) => d(x).label), x: d(c.en).x, link: link(routeLinks.days[i]) }),
         ),
@@ -160,7 +164,7 @@ const routeMap = (fields, day) =>
 const questions = (fields) =>
   el('kumano_questions', fields, {
     items: {
-      tx_kumanokodo_questions: list(
+      tx_themekumanokodo_questions: list(
         (x) => x.kumano.faq,
         (f) => ({ question: t((x) => f(x).question), answer: t((x) => f(x).answer), open: f(c.en).open ? 1 : 0 }),
       ),
@@ -171,18 +175,24 @@ const chapter = (i, id) =>
   el(
     'kumano_chapter',
     {
-      tx_kumanokodo_anchor: id,
+      tx_themekumanokodo_anchor: id,
       subheader: t((x) => `${x.kumano.days[i].date} · ${x.kumano.days[i].time}`),
       header: t((x) => x.kumano.days[i].route),
       bodytext: t((x) => x.home.draft.chapters[i]),
     },
-    { image: dayPhotos[i].map(([name, span, shift]) => ({ photo: name, tx_kumanokodo_span: span, tx_kumanokodo_shift: shift ?? 0 })) },
+    {
+      image: dayPhotos[i].map(([name, span, shift]) => ({
+        photo: name,
+        tx_themekumanokodo_span: span,
+        tx_themekumanokodo_shift: shift ?? 0,
+      })),
+    },
   );
 
 const coda = t((x) => `${x.home.draft.coda} ${x.photos['evening-rooftops'].caption ?? ''}`);
 const highlight = () =>
   el('kumano_callout', {
-    tx_kumanokodo_variant: 'highlight',
+    tx_themekumanokodo_variant: 'highlight',
     ...sunk,
     ...(c.en.home.crow.eyebrow ? { subheader: t((x) => x.home.crow.eyebrow) } : {}),
     header: t((x) => x.home.crow.title),
@@ -192,11 +202,11 @@ const highlight = () =>
 // ---------- pages ----------
 const journal = [
   el('kumano_page_top', {
-    tx_kumanokodo_variant: 'opener',
+    tx_themekumanokodo_variant: 'opener',
     subheader: t((x) => x.home.draft.kicker),
     header: t((x) => x.home.draft.title),
     bodytext: t((x) => x.home.draft.lede),
-    tx_kumanokodo_meta: t((x) => `${x.kumano.hero.eyebrow} · ${x.home.draft.allPhotos}`),
+    tx_themekumanokodo_meta: t((x) => `${x.kumano.hero.eyebrow} · ${x.home.draft.allPhotos}`),
   }),
   chapter(0, 'day-1'),
   images('fullwidth', ['sea-of-clouds']),
@@ -240,7 +250,7 @@ const routeContent = [
     [
       el(
         'kumano_page_top',
-        { tx_kumanokodo_variant: 'text', header: t((x) => s(x).title), bodytext: t((x) => s(x).text) },
+        { tx_themekumanokodo_variant: 'text', header: t((x) => s(x).title), bodytext: t((x) => s(x).text) },
         { items: links({ title: t((x) => s(x).action), link: link(paths.days) }) },
       ),
     ],
@@ -255,15 +265,20 @@ const routeContent = [
   ),
   facts(
     'icons',
-    { ...hiddenHeading((x) => s(x).factsLabel), tx_kumanokodo_columns: '4' },
+    { ...hiddenHeading((x) => s(x).factsLabel), tx_themekumanokodo_columns: '4' },
     list(
       (x) => x.guide.facts,
       (f) => ({ icon: f(c.en).icon, label: t((x) => f(x).label), value: t((x) => f(x).value), note: t((x) => f(x).note) }),
     ),
   ),
-  cards('teaser', 4, { space_before_class: 'flush-top', header: t((x) => s(x).stages.title), tx_kumanokodo_edge: 1 }, teasers(dayTeasers)),
-  routeMap({ tx_kumanokodo_anchor: 'map', ...heading((x) => ({ title: x.home.map.title, aside: x.home.map.aside })) }),
-  cards('cta', 3, { ...sunk, header: t((x) => s(x).prep.title), tx_kumanokodo_edge: 1 }, prepCards()),
+  cards(
+    'teaser',
+    4,
+    { space_before_class: 'flush-top', header: t((x) => s(x).stages.title), tx_themekumanokodo_edge: 1 },
+    teasers(dayTeasers),
+  ),
+  routeMap({ tx_themekumanokodo_anchor: 'map', ...heading((x) => ({ title: x.home.map.title, aside: x.home.map.aside })) }),
+  cards('cta', 3, { ...sunk, header: t((x) => s(x).prep.title), tx_themekumanokodo_edge: 1 }, prepCards()),
   tiles({ header: t((x) => s(x).plan) }),
 ];
 
@@ -289,7 +304,7 @@ const stageCards = () =>
       link: link(st(c.en).href),
     }),
   );
-const group = (id, pickTitle, pickItems) => cards('teaser', 4, { tx_kumanokodo_anchor: id, header: t(pickTitle) }, teasers(pickItems));
+const group = (id, pickTitle, pickItems) => cards('teaser', 4, { tx_themekumanokodo_anchor: id, header: t(pickTitle) }, teasers(pickItems));
 // As the text editor writes a table; the theme's parseFunc adds the Table component's class and wrapper.
 const stagesTable = (x) =>
   `<table><thead><tr>${x.site.days.stagesTable.head.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>` +
@@ -298,7 +313,7 @@ const stagesTable = (x) =>
 const daysContent = [
   text(t((x) => `<p>${esc(x.site.days.intro)}</p>`)),
   text(t(stagesTable), { header: t((x) => x.site.days.stagesTable.title) }),
-  cards('stage', 'slider', { tx_kumanokodo_anchor: 'days', header: t((x) => g(x).days) }, stageCards()),
+  cards('stage', 'slider', { tx_themekumanokodo_anchor: 'days', header: t((x) => g(x).days) }, stageCards()),
   group(
     'places',
     (x) => g(x).places,
@@ -336,13 +351,13 @@ const dayContent = (n) => {
         ]),
         el(
           'kumano_callout',
-          { tx_kumanokodo_variant: 'infobox', header: t((x) => sd(x).tipTitle), bodytext: t((x) => sd(x).tips[i]) },
+          { tx_themekumanokodo_variant: 'infobox', header: t((x) => sd(x).tipTitle), bodytext: t((x) => sd(x).tips[i]) },
           { items: links({ title: t((x) => x.site.practical.title), link: link(paths.practical) }) },
         ),
       ],
     ),
     el('kumano_callout', {
-      tx_kumanokodo_variant: 'quote',
+      tx_themekumanokodo_variant: 'quote',
       bodytext: t((x) => sd(x).quotes[i].quote),
       header: t((x) => sd(x).quotes[i].source),
     }),
@@ -382,10 +397,10 @@ const placeContent = (slug) => {
 
 const practicalContent = [
   text(t((x) => `<p>${esc(x.site.practical.intro)}</p>`)),
-  tiles({ space_before_class: 'flush-top', tx_kumanokodo_edge: 1 }),
+  tiles({ space_before_class: 'flush-top', tx_themekumanokodo_edge: 1 }),
   columns(
     'heading-content',
-    { ...sunk, tx_kumanokodo_colour: 'first' },
+    { ...sunk, tx_themekumanokodo_colour: 'first' },
     [el('header', { header: t((x) => x.home.practical.title) })],
     [questions({})],
   ),
@@ -401,7 +416,7 @@ const practicalSubContent = (slug) => [
         ? [
             el(
               'kumano_list',
-              { tx_kumanokodo_variant: 'downloads' },
+              { tx_themekumanokodo_variant: 'downloads' },
               { media: t((x) => x.pages.detail.downloads.map((d) => fileSlug(d.href))) },
             ),
           ]
@@ -462,7 +477,7 @@ const photoHero = (fields = {}, slides = true) =>
   el(
     'kumano_page_top',
     {
-      tx_kumanokodo_variant: 'hero',
+      tx_themekumanokodo_variant: 'hero',
       ...fields,
       subheader: t((x) => x.kumano.hero.eyebrow),
       header: t((x) => x.kumano.hero.title),
@@ -471,15 +486,15 @@ const photoHero = (fields = {}, slides = true) =>
     {
       image: [photo(c.en.kumano.hero.image)],
       items: {
-        tx_kumanokodo_links: list(
+        tx_themekumanokodo_links: list(
           (x) => x.kumano.hero.actions,
           (a) => ({ title: t((x) => a(x).label), link: link(a(c.en).href, 'at-a-glance') }),
         ),
-        tx_kumanokodo_facts: list(
+        tx_themekumanokodo_facts: list(
           (x) => x.kumano.hero.stats,
           (a) => ({ label: t((x) => a(x).label), value: t((x) => a(x).value) }),
         ),
-        ...(slides ? { tx_kumanokodo_entries: moreSlides } : {}),
+        ...(slides ? { tx_themekumanokodo_entries: moreSlides } : {}),
       },
     },
   );
@@ -493,7 +508,7 @@ const v3 = [
   ),
   highlight(),
   el('kumano_callout', {
-    tx_kumanokodo_variant: 'quote',
+    tx_themekumanokodo_variant: 'quote',
     space_before_class: 'large',
     bodytext: t((x) => x.home.quote.quote),
     header: t((x) => x.home.quote.source),
@@ -526,7 +541,7 @@ const v3 = [
     'slider',
     {
       ...sunk,
-      tx_kumanokodo_anchor: 'stages',
+      tx_themekumanokodo_anchor: 'stages',
       header: t((x) => x.home.stages.title),
       subheader: t((x) => x.home.stages.eyebrow),
     },
@@ -543,7 +558,7 @@ const v3 = [
     ),
   ]),
   questions({
-    tx_kumanokodo_anchor: 'faq',
+    tx_themekumanokodo_anchor: 'faq',
     ...sunk,
     subheader: t((x) => x.home.practical.eyebrow),
     header: t((x) => x.home.practical.title),
@@ -631,7 +646,7 @@ const formFlexform = (identifier) =>
   `<field index="settings.persistenceIdentifier"><value index="vDEF">${identifier}</value></field>` +
   '<field index="settings.overrideFinishers"><value index="vDEF">0</value></field></language></sheet></data></T3FlexForms>';
 
-// The form with every element type; KumanoKodo\\Theme\\Demo\\WalkForm stores it in the form database and puts its uid here.
+// The form with every element type; TYPO3\\CMS\\ThemeKumanoKodo\\Demo\\WalkForm stores it in the form database and puts its uid here.
 const walkFormTarget = 'form:walk';
 
 // FlexForm values of the news plugins, sheet by sheet; page:<key> becomes the uid of that page in the build.
@@ -652,7 +667,7 @@ const newsFlexform = (sheets) =>
 // Every element in each of its variants, one below the other; an element that brings its own heading sits in a section.
 const sc = (x) => x.site.showcase;
 const shown = (id, element, variant) => ({
-  tx_kumanokodo_anchor: `showcase-${id}`,
+  tx_themekumanokodo_anchor: `showcase-${id}`,
   subheader: t((x) => sc(x).elements[element]),
   header: t((x) => (typeof variant === 'function' ? variant(x) : sc(x).variants[variant])),
 });
@@ -732,7 +747,7 @@ const showcaseBlocks = [
     (h) => [el('header', { ...h, space_before_class: 'default' }), images('fullwidth', ['evening-rooftops'])],
   ],
   ['teaser', 'cards', 'teaser', (h) => cards('teaser', 4, h, teasers(dayTeasers))],
-  ['teaser-edge', 'cards', 'teaserEdge', (h) => cards('teaser', 4, { ...h, tx_kumanokodo_edge: 1 }, teasers(dayTeasers))],
+  ['teaser-edge', 'cards', 'teaserEdge', (h) => cards('teaser', 4, { ...h, tx_themekumanokodo_edge: 1 }, teasers(dayTeasers))],
   ['place', 'cards', 'place', (h) => section(h, [columns('wide-narrow', {}, [place(0)], [place(1)])])],
   [
     'person',
@@ -755,9 +770,9 @@ const showcaseBlocks = [
       ),
   ],
   ['cta', 'cards', 'cta', (h) => cards('cta', 3, { ...sunk, ...h }, prepCards())],
-  ['cta-edge', 'cards', 'ctaEdge', (h) => cards('cta', 3, { ...h, tx_kumanokodo_edge: 1 }, prepCards())],
+  ['cta-edge', 'cards', 'ctaEdge', (h) => cards('cta', 3, { ...h, tx_themekumanokodo_edge: 1 }, prepCards())],
   ['tile', 'cards', 'tile', (h) => tiles(h)],
-  ['tile-edge', 'cards', 'tileEdge', (h) => tiles({ ...h, tx_kumanokodo_edge: 1 })],
+  ['tile-edge', 'cards', 'tileEdge', (h) => tiles({ ...h, tx_themekumanokodo_edge: 1 })],
   ['stage', 'cards', 'stage', (h) => cards('stage', 'slider', h, stageCards())],
   [
     'media',
@@ -799,7 +814,7 @@ const showcaseBlocks = [
     (h) =>
       el(
         'kumano_list',
-        { tx_kumanokodo_variant: 'downloads', ...h },
+        { tx_themekumanokodo_variant: 'downloads', ...h },
         { media: t((x) => x.pages.detail.downloads.map((d) => fileSlug(d.href))) },
       ),
   ],
@@ -827,7 +842,7 @@ const showcaseBlocks = [
     (h) =>
       facts(
         'icons',
-        { ...h, tx_kumanokodo_columns: '4' },
+        { ...h, tx_themekumanokodo_columns: '4' },
         list(
           (x) => x.guide.facts,
           (f) => ({ icon: f(c.en).icon, label: t((x) => f(x).label), value: t((x) => f(x).value), note: t((x) => f(x).note) }),
@@ -859,7 +874,7 @@ const showcaseBlocks = [
       section(h, [
         el(
           'kumano_callout',
-          { tx_kumanokodo_variant: 'infobox', header: t((x) => x.site.day.tipTitle), bodytext: t((x) => x.site.day.tips[1]) },
+          { tx_themekumanokodo_variant: 'infobox', header: t((x) => x.site.day.tipTitle), bodytext: t((x) => x.site.day.tips[1]) },
           { items: links({ title: t((x) => x.site.practical.title), link: 'page:practical' }) },
         ),
       ]),
@@ -871,7 +886,7 @@ const showcaseBlocks = [
     (h) =>
       section(h, [
         el('kumano_callout', {
-          tx_kumanokodo_variant: 'notice',
+          tx_themekumanokodo_variant: 'notice',
           header: t((x) => x.guide.footer.notice.title),
           bodytext: t((x) => x.guide.footer.notice.text),
         }),
@@ -884,7 +899,7 @@ const showcaseBlocks = [
     (h) =>
       section(h, [
         el('kumano_callout', {
-          tx_kumanokodo_variant: 'quote',
+          tx_themekumanokodo_variant: 'quote',
           bodytext: t((x) => x.home.quote.quote),
           header: t((x) => x.home.quote.source),
         }),
@@ -904,7 +919,7 @@ const showcaseBlocks = [
     (h) =>
       columns(
         'heading-content',
-        { ...h, tx_kumanokodo_colour: 'first' },
+        { ...h, tx_themekumanokodo_colour: 'first' },
         [el('header', { subheader: t((x) => x.home.practical.eyebrow), header: t((x) => x.home.practical.title) })],
         [questions({})],
       ),
@@ -932,7 +947,7 @@ const showcaseBlocks = [
       columns(
         'content-sidebar',
         h,
-        [el('form_formframework', { pi_flexform: formFlexform('EXT:kumano_kodo/Resources/Private/Forms/Demo/contact.form.yaml') })],
+        [el('form_formframework', { pi_flexform: formFlexform('EXT:theme_kumano_kodo/Resources/Private/Forms/Demo/contact.form.yaml') })],
         [],
       ),
   ],
@@ -959,7 +974,7 @@ const showcaseBlocks = [
   ],
 ];
 const showcaseContent = [
-  el('kumano_page_top', { tx_kumanokodo_variant: 'text', header: t((x) => sc(x).title), bodytext: t((x) => sc(x).intro) }),
+  el('kumano_page_top', { tx_themekumanokodo_variant: 'text', header: t((x) => sc(x).title), bodytext: t((x) => sc(x).intro) }),
   // The table of contents: one column per element, its label on each entry.
   listEl(
     'link-groups',
@@ -1148,7 +1163,7 @@ const pages = [
           [el('felogin_login', { pi_flexform: loginFlexform('walkers', { login: 'papers' }) })],
           [
             el('kumano_callout', {
-              tx_kumanokodo_variant: 'infobox',
+              tx_themekumanokodo_variant: 'infobox',
               header: t((x) => x.ui.demoAccess),
               bodytext: t((x) => fillIn(x.ui.demoAccessText, demoLogin.username, demoLogin.password)),
               fe_group: hideAtLogin,
@@ -1173,7 +1188,7 @@ const pages = [
             text(t((x) => `<p>${esc(x.ui.papersText)}</p>`)),
             el(
               'kumano_list',
-              { tx_kumanokodo_variant: 'downloads' },
+              { tx_themekumanokodo_variant: 'downloads' },
               { media: t((x) => x.pages.detail.downloads.map((d) => fileSlug(d.href))) },
             ),
           ],
@@ -1221,7 +1236,7 @@ const pages = [
           {},
           [
             el('form_formframework', {
-              pi_flexform: formFlexform('EXT:kumano_kodo/Resources/Private/Forms/Demo/contact.form.yaml'),
+              pi_flexform: formFlexform('EXT:theme_kumano_kodo/Resources/Private/Forms/Demo/contact.form.yaml'),
             }),
           ],
           [text(t((x) => `<p>${esc(contact(x).links[1].label)}</p>`))],
@@ -1270,7 +1285,7 @@ const pages = [
         el(
           'kumano_callout',
           {
-            tx_kumanokodo_variant: 'infobox',
+            tx_themekumanokodo_variant: 'infobox',
             header: t((x) => x.walkForm.luggageTitle),
             bodytext: t((x) => x.walkForm.luggageText),
           },
@@ -1332,7 +1347,7 @@ const frame = [
   })),
   el(
     'kumano_callout',
-    { tx_kumanokodo_variant: 'notice', header: t((x) => footer(x).notice.title), bodytext: t((x) => footer(x).notice.text) },
+    { tx_themekumanokodo_variant: 'notice', header: t((x) => footer(x).notice.title), bodytext: t((x) => footer(x).notice.text) },
     { colPos: 21 },
   ),
   {
@@ -1361,7 +1376,7 @@ const site = {
     'news.pages.detail': 'page:report',
   },
   errorHandling: { 404: 'not-found', 403: 'login' },
-  sets: ['kumano-kodo/demo'],
+  sets: ['typo3/theme-kumano-kodo-demo'],
   // As the news manual's quick start: readable report and page URLs, each limited to its page.
   routeEnhancers: {
     NewsDetail: {
@@ -1430,7 +1445,7 @@ const walkForm = () => {
     prototypeName: 'standard',
     renderingOptions: {
       submitButtonLabel: w(c.en).submit,
-      translation: { translationFiles: { 20: 'EXT:kumano_kodo/Resources/Private/Language/Demo/form_walk.xlf' } },
+      translation: { translationFiles: { 20: 'EXT:theme_kumano_kodo/Resources/Private/Language/Demo/form_walk.xlf' } },
     },
     finishers: [{ identifier: 'Confirmation', options: { message: w(c.en).sentText } }],
     renderables: [
@@ -1583,13 +1598,13 @@ const walkForm = () => {
       .join('\n');
     return (
       `<?xml version="1.0" encoding="UTF-8"?>\n<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n` +
-      `  <file source-language="en"${lang === 'en' ? '' : ` target-language="${lang}"`} datatype="plaintext" original="form_walk" product-name="kumano_kodo">\n    <body>\n${body}\n    </body>\n  </file>\n</xliff>\n`
+      `  <file source-language="en"${lang === 'en' ? '' : ` target-language="${lang}"`} datatype="plaintext" original="form_walk" product-name="theme_kumano_kodo">\n    <body>\n${body}\n    </body>\n  </file>\n</xliff>\n`
     );
   };
   return { definition, xliff };
 };
 
-const demoPackage = join(root, 'typo3/packages/kumano_kodo');
+const demoPackage = join(root, 'typo3/packages/theme_kumano_kodo');
 const { definition, xliff } = walkForm();
 await writeFile(
   join(demoPackage, 'Resources/Private/Forms/Demo/walk.form.yaml'),

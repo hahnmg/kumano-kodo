@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>One entry of the Cards element, as the card of its variant.</f:comment>
+<f:variable name="href">{f:uri.typolink(parameter: card.link)}</f:variable>
+<f:switch expression="{data.tx_themekumanokodo_variant}">
+    <f:case value="place">
+        <f:comment>The editor's "ruled" is the card below a pair: the default card with rule and tall photo.</f:comment>
+        <f:variable name="ruled" value="{f:if(condition: '{card.emphasis} == ruled', then: 1, else: 0)}"/>
+        <kk:featureCard
+            image="{card.image -> f:first()}"
+            title="{card.title}"
+            text="{card.text}"
+            emphasis="{f:if(condition: '{card.emphasis} == featured', then: 'featured', else: 'default')}"
+            rule="{ruled}"
+            tall="{ruled}"
+        />
+    </f:case>
+    <f:case value="person">
+        <kk:personCard image="{card.image -> f:first()}" name="{card.title}" role="{card.meta}" focus="{card.text}"/>
+    </f:case>
+    <f:case value="cta">
+        <kk:ctaCard
+            title="{card.title}"
+            text="{card.text}"
+            linkLabel="{f:if(condition: card.link_label, then: card.link_label, else: '{f:translate(key: \'readMore\', domain: \'theme_kumano_kodo.messages\')}')}"
+            href="{href}"
+            variant="{f:if(condition: '{card.emphasis} == featured', then: 'featured', else: 'default')}"
+            edge="{data.tx_themekumanokodo_edge}"
+        />
+    </f:case>
+    <f:case value="tile">
+        <kk:linkTile title="{card.title}" href="{href}" icon="{card.icon}" edge="{data.tx_themekumanokodo_edge}"/>
+    </f:case>
+    <f:case value="stage">
+        <kk:portraitCard image="{card.image -> f:first()}" label="{card.label}" meta="{card.meta}" title="{card.title}" href="{href}" text="{card.text}"/>
+    </f:case>
+    <f:defaultCase>
+        <kk:teaserCard image="{card.image -> f:first()}" title="{card.title}" subtitle="{card.text}" meta="{card.meta}" badge="{card.badge}" href="{href}" edge="{data.tx_themekumanokodo_edge}"/>
+    </f:defaultCase>
+</f:switch>
+</html>

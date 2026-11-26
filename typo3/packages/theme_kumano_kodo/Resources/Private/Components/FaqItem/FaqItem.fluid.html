@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>One question of a faqList; open shows its answer from the start.</f:comment>
+<f:argument name="question" type="string" description="The question."/>
+<f:argument name="answer" type="string" description="The answer."/>
+<f:argument name="open" type="bool|int" optional="{true}" default="{false}" description="Shows the answer from the start."/>
+
+<k:element tag="details" attributes="{class: 'faq-item'}" flags="{f:if(condition: open, then: 'open')}">
+    <summary class="faq-item-question">
+        <span class="type-h4-regular">{question}</span>
+        <kk:icon name="chevron-down" size="20"/>
+    </summary>
+    <p class="faq-item-answer type-body">{answer}</p>
+</k:element>
+</html>

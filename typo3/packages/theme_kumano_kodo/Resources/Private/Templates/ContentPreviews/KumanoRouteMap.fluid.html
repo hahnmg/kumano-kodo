@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<ul class="badge-list">
+    <li>
+        <span class="badge badge-default">{f:translate(key: 'preview.stations', domain: 'theme_kumano_kodo.journal_fields')}: {record.tx_themekumanokodo_stations -> f:count()}</span>
+    </li>
+    <li>
+        <span class="badge badge-default">{f:translate(key: 'preview.days', domain: 'theme_kumano_kodo.journal_fields')}: {record.tx_themekumanokodo_day_marks -> f:count()}</span>
+    </li>
+</ul>
+<p>
+    <f:for each="{record.tx_themekumanokodo_stations}" as="station" iteration="i">{station.name}
+        <f:if condition="!{i.isLast}"> → </f:if>
+    </f:for>
+</p>
+</html>

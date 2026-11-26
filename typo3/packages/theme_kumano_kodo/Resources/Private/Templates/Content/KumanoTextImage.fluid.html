@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:variable name="link" value="{record.tx_themekumanokodo_links -> f:first()}"/>
+    <f:variable name="body">
+        <kk:textMedia
+            title="{record.header}"
+            image="{k:media(items: record.image) -> f:first()}"
+            imageSide="{f:if(condition: '{data.imageorient} == 25', then: 'right', else: 'left')}"
+            linkLabel="{link.title}"
+            href="{f:if(condition: link, then: '{f:uri.typolink(parameter: link.link)}')}"
+        >
+            <f:format.html>{record.bodytext}</f:format.html>
+        </kk:textMedia>
+    </f:variable>
+    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+</f:section>
+</html>

@@ -1,0 +1,32 @@
+{
+	"name": "typo3/theme-kumano-kodo",
+	"description": "Kumano Kodo for TYPO3: a theme built from the Kumano Kodo design system",
+	"type": "typo3-cms-extension",
+	"license": "GPL-2.0-or-later",
+	"version": "0.1.0",
+	"require": {
+		"b13/container": "^4.1",
+		"typo3/cms-core": "^14.3",
+		"typo3/cms-fluid": "^14.3",
+		"typo3/cms-frontend": "^14.3",
+		"typo3/cms-rte-ckeditor": "^14.3"
+	},
+	"autoload": {
+		"psr-4": {
+			"TYPO3\\CMS\\ThemeKumanoKodo\\": "Classes/"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "theme_kumano_kodo",
+			"Package": {
+				"providesPackages": {}
+			}
+		}
+	},
+	"suggest": {
+		"georgringer/news": "News and blog posts with the theme's components: the site set kumano-kodo/news",
+		"typo3/cms-impexp": "Needed by kumano:demo:create and kumano:starter:create",
+		"typo3/cms-form": "Forms in the theme's markup; the demo's forms need it"
+	}
+}

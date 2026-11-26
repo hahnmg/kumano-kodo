@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>The Search Form molecule with the hidden fields the plugin reads; the extended search stays out of the design.</f:comment>
+<f:variable name="label">{f:translate(key: 'search', domain: 'theme_kumano_kodo.messages')}</f:variable>
+<f:form action="search" method="post" id="tx_indexedsearch" pageUid="{settings.targetPid}" class="search-form" additionalAttributes="{role: 'search', aria-label: '{f:translate(key: \'searchResults\', domain: \'theme_kumano_kodo.messages\')}'}">
+    <f:form.hidden name="search[_sections]" value="0"/>
+    <f:form.hidden name="search[_freeIndexUid]" id="tx_indexedsearch_freeIndexUid" value="_"/>
+    <f:form.hidden name="search[pointer]" id="tx_indexedsearch_pointer" value="0"/>
+    <f:form.hidden name="search[ext]" value="{searchParams.ext}"/>
+    <f:form.hidden name="search[searchType]" value="{searchParams.searchType}"/>
+    <f:form.hidden name="search[defaultOperand]" value="{searchParams.defaultOperand}"/>
+    <f:form.hidden name="search[mediaType]" value="{searchParams.mediaType}"/>
+    <f:form.hidden name="search[sortOrder]" value="{searchParams.sortOrder}"/>
+    <f:form.hidden name="search[group]" value="{searchParams.group}"/>
+    <f:form.hidden name="search[desc]" value="{searchParams.desc}"/>
+    <f:form.hidden name="search[numberOfResults]" value="{searchParams.numberOfResults}"/>
+    <f:form.hidden name="search[extendedSearch]" value="{searchParams.extendedSearch}"/>
+    <label class="field">
+        <span class="field-label type-label">{label}</span>
+        <span class="field-box">
+            <kk:icon name="search" size="18"/>
+            <f:form.textfield type="search" name="search[sword]" value="{searchParams.sword}" class="field-control type-small" placeholder="{f:translate(key: 'searchPlaceholder', domain: 'theme_kumano_kodo.messages')}"/>
+        </span>
+    </label>
+    <button class="button type-button button-primary" type="submit" name="tx_indexedsearch_pi2[search][submitButton]" value="1">{label}</button>
+</f:form>
+</html>

@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>A chapter of the journal: a large number, date, title, the text in the slot and its photos, which open in the lightbox.</f:comment>
+<f:argument name="id" type="string" description="Anchor, also ties the title to the chapter."/>
+<f:argument name="title" type="string" description="The heading."/>
+<f:argument name="number" type="string|int" optional="{true}" description="The large number; decorative."/>
+<f:argument name="date" type="string" optional="{true}" description="A line above the title."/>
+<f:argument name="images" type="iterable" optional="{true}" description="File references; their span (1 to 12) and shift set the layout."/>
+
+<f:asset.css identifier="kumano-chapter" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/chapter.css"/>
+<section class="chapter" aria-labelledby="{id}">
+    <div class="chapter-inner">
+        <div class="chapter-head">
+            <p class="chapter-number type-hero" aria-hidden="true">{number}</p>
+            <div class="chapter-text">
+                <p class="chapter-date type-caption">{date}</p>
+                <h2 id="{id}" class="chapter-title type-h3">{title}</h2>
+                <p class="type-lead">
+                    <f:slot/>
+                </p>
+            </div>
+        </div>
+        <kk:lightboxGroup tag="div" class="chapter-media">
+            <f:for each="{images}" as="image">
+                <f:variable name="span">{image.properties.tx_themekumanokodo_span -> f:or(alternative: 6)}</f:variable>
+                <f:variable name="orientation">{f:if(condition: '{image.properties.height} > {image.properties.width}', then: 'portrait', else: 'landscape')}</f:variable>
+                <f:variable name="shift">{image.properties.tx_themekumanokodo_shift -> f:or(alternative: 0)}</f:variable>
+                <figure class="chapter-media-item chapter-media-item-{orientation} chapter-media-item-shift-{shift}" style="--span: {span}">
+                    <kk:lightboxLink
+                        image="{image}"
+                        class="chapter-image"
+                        sizes="(width <= 600px) {f:if(condition: '{orientation} == portrait', then: '50vw', else: '100vw')}, calc({span} / 12 * min(100vw, 1328px))"/>
+                    <f:if condition="{image.description}">
+                        <figcaption class="chapter-caption type-caption">{image.description}</figcaption>
+                    </f:if>
+                </figure>
+            </f:for>
+        </kk:lightboxGroup>
+    </div>
+</section>
+</html>

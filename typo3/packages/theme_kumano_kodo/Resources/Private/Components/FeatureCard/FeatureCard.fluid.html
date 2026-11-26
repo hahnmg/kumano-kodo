@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>A card that shows a place: image, title and text; featured sets it larger.</f:comment>
+<f:argument name="title" type="string" description="The title."/>
+<f:argument name="text" type="string" optional="{true}" description="A short description."/>
+<f:argument name="image" type="object" optional="{true}" description="A file or file reference."/>
+<f:argument name="emphasis" type="string" optional="{true}" default="default" description="default or featured."/>
+<f:argument name="rule" type="bool" optional="{true}" default="{false}" description="A hairline above the card."/>
+<f:argument name="tall" type="bool" optional="{true}" default="{false}" description="A taller photo, as the card below a pair has."/>
+
+<f:asset.css identifier="kumano-feature-card" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/feature-card.css"/>
+<article class="feature-card feature-card-{emphasis}{f:if(condition: rule, then: ' feature-card-ruled')}{f:if(condition: tall, then: ' feature-card-tall')}">
+    <f:if condition="{image}">
+        <kk:image image="{image}" class="feature-card-image"/>
+    </f:if>
+    <h3 class="feature-card-title {f:if(condition: '{emphasis} == featured', then: 'type-h3', else: 'type-h4')}">{title}</h3>
+    <p class="feature-card-text type-small">{text}</p>
+</article>
+</html>

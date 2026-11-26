@@ -1,0 +1,59 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:variable name="navPage" value="{item.record}"/>
+<f:if condition="{flyout} == 'dropdown'">
+    <f:then>
+        <div class="nav-flyout nav-flyout-dropdown">
+            <f:for each="{navPage.tx_themekumanokodo_flyout_columns}" as="column" iteration="i">
+                <f:if condition="{i.isFirst}">
+                    <f:render section="Links" arguments="{links: column.links}"/>
+                </f:if>
+            </f:for>
+        </div>
+    </f:then>
+    <f:else>
+        <div class="nav-flyout nav-flyout-mega">
+            <div class="nav-flyout-grid">
+                <f:for each="{navPage.tx_themekumanokodo_flyout_columns}" as="column">
+                    <div class="nav-flyout-column">
+                        <p class="nav-flyout-title type-label">{column.title}</p>
+                        <f:render section="Links" arguments="{links: column.links}"/>
+                    </div>
+                </f:for>
+                <f:if condition="{navPage.tx_themekumanokodo_flyout_text_title}">
+                    <div class="nav-flyout-text">
+                        <p class="nav-flyout-title type-label">{navPage.tx_themekumanokodo_flyout_text_title}</p>
+                        <div class="rich-text">
+                            <f:format.html>{navPage.tx_themekumanokodo_flyout_text}</f:format.html>
+                        </div>
+                        <f:if condition="{navPage.tx_themekumanokodo_flyout_overview}">
+                            <kk:link label="{navPage.tx_themekumanokodo_flyout_overview_label}" href="{f:uri.typolink(parameter: navPage.tx_themekumanokodo_flyout_overview)}"/>
+                        </f:if>
+                    </div>
+                </f:if>
+                <f:if condition="{navPage.tx_themekumanokodo_flyout_teaser_title}">
+                    <div class="nav-flyout-teaser">
+                        <kk:teaserCard
+                            image="{navPage.tx_themekumanokodo_flyout_teaser_image -> f:first()}"
+                            title="{navPage.tx_themekumanokodo_flyout_teaser_title}"
+                            subtitle="{navPage.tx_themekumanokodo_flyout_teaser_subtitle}"
+                            meta="{navPage.tx_themekumanokodo_flyout_teaser_meta}"
+                            badge="{navPage.tx_themekumanokodo_flyout_teaser_badge}"
+                            href="{f:uri.typolink(parameter: navPage.tx_themekumanokodo_flyout_teaser_link)}"
+                            level="none"
+                        />
+                    </div>
+                </f:if>
+            </div>
+        </div>
+    </f:else>
+</f:if>
+<f:section name="Links">
+    <ul class="nav-flyout-links">
+        <f:for each="{links}" as="entry">
+            <li>
+                <a class="nav-flyout-link type-small" href="{f:uri.typolink(parameter: entry.link)}">{entry.label}</a>
+            </li>
+        </f:for>
+    </ul>
+</f:section>
+</html>

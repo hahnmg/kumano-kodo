@@ -1,0 +1,6 @@
+TCEFORM.tt_content.CType.keepItems := addToList(kumano_route_map,kumano_chapter)
+
+mod.web_layout.tt_content.preview {
+  kumano_route_map = EXT:theme_kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoRouteMap.fluid.html
+  kumano_chapter = EXT:theme_kumano_kodo/Resources/Private/Templates/ContentPreviews/KumanoChapter.fluid.html
+}

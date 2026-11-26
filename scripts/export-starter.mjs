@@ -4,14 +4,14 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const out = join(root, 'typo3/packages/kumano_kodo/Resources/Private/Starter/starter.json');
+const out = join(root, 'typo3/packages/theme_kumano_kodo/Resources/Private/Starter/starter.json');
 
 const t = (en, de, ja) => ({ en, de, ja });
 const p = (text) => ({ en: `<p>${text.en}</p>`, de: `<p>${text.de}</p>`, ja: `<p>${text.ja}</p>` });
 const el = (type, fields = {}, extra = {}) => ({ type, fields, ...extra });
 const text = (body) => el('text', { bodytext: p(body) });
 const links = (header, items, colPos) => ({
-  ...el('kumano_list', { tx_kumanokodo_variant: 'links', header }, { items: { tx_kumanokodo_entries: items } }),
+  ...el('kumano_list', { tx_themekumanokodo_variant: 'links', header }, { items: { tx_themekumanokodo_entries: items } }),
   colPos,
 });
 const page = (key, parent, slug, title, extra = {}) => ({
@@ -34,7 +34,7 @@ const titles = {
 };
 const formFlexform =
   '<?xml version="1.0" encoding="utf-8" standalone="yes" ?><T3FlexForms><data><sheet index="sDEF"><language index="lDEF">' +
-  '<field index="settings.persistenceIdentifier"><value index="vDEF">EXT:kumano_kodo/Resources/Private/Forms/contact.form.yaml</value></field>' +
+  '<field index="settings.persistenceIdentifier"><value index="vDEF">EXT:theme_kumano_kodo/Resources/Private/Forms/contact.form.yaml</value></field>' +
   '<field index="settings.overrideFinishers"><value index="vDEF">0</value></field></language></sheet></data></T3FlexForms>';
 
 // The frame's texts live on the root page and slide down to every page, as in the full demo.
@@ -87,7 +87,7 @@ const pages = [
     content: [
       el(
         'kumano_columns',
-        { tx_kumanokodo_layout: 'content-sidebar' },
+        { tx_themekumanokodo_layout: 'content-sidebar' },
         {
           children: {
             201: [el('form_formframework', { pi_flexform: formFlexform })],

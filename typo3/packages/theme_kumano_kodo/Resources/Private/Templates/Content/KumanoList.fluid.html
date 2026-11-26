@@ -1,0 +1,120 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:switch expression="{data.colPos}">
+        <f:case value="20">
+            <div class="site-footer-column">
+                <h2 class="type-label">{record.header}</h2>
+                <ul>
+                    <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
+                        <li class="type-small">
+                            <f:if condition="{entry.link}">
+                                <f:then>
+                                    <a href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a>
+                                </f:then>
+                                <f:else>{entry.title}</f:else>
+                            </f:if>
+                        </li>
+                    </f:for>
+                </ul>
+            </div>
+        </f:case>
+        <f:case value="22">
+            <p>{record.header}</p>
+            <ul>
+                <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
+                    <li>
+                        <a href="{f:uri.typolink(parameter: entry.link)}">{entry.title}</a>
+                    </li>
+                </f:for>
+            </ul>
+        </f:case>
+        <f:defaultCase>
+            <f:switch expression="{data.tx_themekumanokodo_variant}">
+                <f:case value="days">
+                    <f:variable name="body">
+                        <kk:timeline>
+                            <f:for each="{record.tx_themekumanokodo_entries}" as="day">
+                                <kk:timelineItem date="{day.label}" title="{day.title}" text="{day.text}" time="{day.meta}"/>
+                            </f:for>
+                        </kk:timeline>
+                    </f:variable>
+                    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+                </f:case>
+                <f:case value="downloads">
+                    <f:variable name="body">
+                        <kk:downloadList files="{record.media}"/>
+                    </f:variable>
+                    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+                </f:case>
+                <f:case value="links">
+                    <f:variable name="body">
+                        <kk:cluster>
+                            <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
+                                <kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
+                            </f:for>
+                        </kk:cluster>
+                    </f:variable>
+                    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+                </f:case>
+                <f:case value="links-stacked">
+                    <f:variable name="body">
+                        <kk:stack gap="40">
+                            <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
+                                <kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
+                            </f:for>
+                        </kk:stack>
+                    </f:variable>
+                    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+                </f:case>
+                <f:case value="link-groups">
+                    <f:variable name="body">
+                        <kk:linkGroups>
+                            <f:groupedFor each="{record.tx_themekumanokodo_entries}" as="entries" groupBy="label" groupKey="label">
+                                <kk:linkGroup title="{label}">
+                                    <f:for each="{entries}" as="entry">
+                                        <li>
+                                            <kk:link label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}" direction="{entry.direction}"/>
+                                        </li>
+                                    </f:for>
+                                </kk:linkGroup>
+                            </f:groupedFor>
+                        </kk:linkGroups>
+                    </f:variable>
+                    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+                </f:case>
+                <f:case value="subnav">
+                    <f:variable name="current">{f:uri.page()}</f:variable>
+                    <f:variable name="body">
+                        <kk:subNav title="{record.header}">
+                            <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
+                                <f:variable name="href">{f:uri.typolink(parameter: entry.link)}</f:variable>
+                                <kk:subNavItem label="{entry.title}" href="{href}" current="{f:if(condition: '{href} == {current}', then: 1, else: 0)}"/>
+                            </f:for>
+                        </kk:subNav>
+                    </f:variable>
+                    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+                </f:case>
+                <f:defaultCase>
+                    <f:variable name="more" value="{record.tx_themekumanokodo_links -> f:first()}"/>
+                    <f:variable name="body">
+                        <kk:mediaList title="{record.header}">
+                            <f:fragment>
+                                <f:for each="{record.tx_themekumanokodo_entries}" as="item">
+                                    <kk:mediaListItem title="{item.title}" meta="{item.meta}" href="{f:uri.typolink(parameter: item.link)}" image="{item.image -> f:first()}"/>
+                                </f:for>
+                            </f:fragment>
+                            <f:fragment name="more">
+                                <f:if condition="{more}">
+                                    <kk:link label="{more.title}" href="{f:uri.typolink(parameter: more.link)}"/>
+                                </f:if>
+                            </f:fragment>
+                        </kk:mediaList>
+                    </f:variable>
+                    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+                </f:defaultCase>
+            </f:switch>
+        </f:defaultCase>
+    </f:switch>
+</f:section>
+</html>

@@ -1,0 +1,9 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<kk:pageHeader title="{page.pageRecord.title}" breadcrumb="{breadcrumb}">
+    <f:fragment name="chips">
+        <f:for each="{currentPage.0.record.tx_themekumanokodo_chips}" as="chip">
+            <kk:chip label="{chip.title}" href="{f:uri.typolink(parameter: chip.link)}" active="{chip.active}"/>
+        </f:for>
+    </f:fragment>
+</kk:pageHeader>
+</html>

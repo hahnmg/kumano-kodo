@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:variable name="text">{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</f:variable>
+    <f:switch expression="{data.tx_themekumanokodo_variant}">
+        <f:case value="quote">
+            <f:variable name="body">
+                <kk:quote source="{record.header}">{text -> f:format.raw()}</kk:quote>
+            </f:variable>
+        </f:case>
+        <f:case value="infobox">
+            <f:variable name="body">
+                <kk:infoBox title="{record.header}">
+                    <f:fragment>{text -> f:format.raw()}</f:fragment>
+                    <f:fragment name="links">
+                        <f:for each="{record.tx_themekumanokodo_links}" as="entry">
+                            <kk:infoBoxLink label="{entry.title}" href="{f:uri.typolink(parameter: entry.link)}"/>
+                        </f:for>
+                    </f:fragment>
+                </kk:infoBox>
+            </f:variable>
+        </f:case>
+        <f:case value="notice">
+            <f:variable name="body">
+                <kk:notice title="{record.header}">{text -> f:format.raw()}</kk:notice>
+            </f:variable>
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="body">
+                <kk:highlight title="{record.header}" eyebrow="{record.subheader}">{text -> f:format.raw()}</kk:highlight>
+            </f:variable>
+        </f:defaultCase>
+    </f:switch>
+    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+</f:section>
+</html>

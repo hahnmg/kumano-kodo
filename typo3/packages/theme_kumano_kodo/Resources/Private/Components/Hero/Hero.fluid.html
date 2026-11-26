@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>The opening photo of a page: eyebrow and title, the teaser in the slot, buttons in the fragment actions, stat components in the fragment stats.</f:comment>
+<f:argument name="title" type="string" description="The title, the page heading unless level is 2."/>
+<f:argument name="image" type="object" description="A file or file reference."/>
+<f:argument name="eyebrow" type="string" optional="{true}" description="Short line above the title."/>
+<f:argument name="level" type="string|int" optional="{true}" default="1" description="1, or 2 where something above already carries the page's h1."/>
+
+<f:asset.css identifier="kumano-hero" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/hero.css"/>
+<f:asset.css identifier="kumano-stat" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/stat.css"/>
+<section class="hero">
+    <kk:image image="{image}" class="hero-image" sizes="100vw" eager="{true}"/>
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow type-label">{eyebrow}</p>
+        <f:if condition="{level} == 2">
+            <f:then>
+                <h2 class="hero-title type-hero">{title}</h2>
+            </f:then>
+            <f:else>
+                <h1 class="hero-title type-hero">{title}</h1>
+            </f:else>
+        </f:if>
+        <div class="hero-teaser">
+            <p class="type-lead">
+                <f:slot/>
+            </p>
+            <div class="hero-actions">
+                <f:slot name="actions"/>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <f:slot name="stats"/>
+        </div>
+    </div>
+</section>
+</html>

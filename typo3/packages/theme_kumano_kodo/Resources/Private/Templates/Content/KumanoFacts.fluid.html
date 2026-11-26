@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:switch expression="{data.tx_themekumanokodo_variant}">
+        <f:case value="figures">
+            <f:variable name="body">
+                <kk:statRow>
+                    <f:for each="{record.tx_themekumanokodo_facts}" as="fact">
+                        <kk:stat value="{fact.value}" label="{fact.label}"/>
+                    </f:for>
+                </kk:statRow>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+        </f:case>
+        <f:case value="pairs">
+            <f:variable name="body">
+                <kk:factList title="{record.header}" facts="{record.tx_themekumanokodo_facts}"/>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:case>
+        <f:defaultCase>
+            <f:variable name="body">
+                <kk:grid columns="{data.tx_themekumanokodo_columns}">
+                    <f:for each="{record.tx_themekumanokodo_facts}" as="fact">
+                        <kk:iconFact icon="{fact.icon}" label="{fact.label}" value="{fact.value}" note="{fact.note}"/>
+                    </f:for>
+                </kk:grid>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+        </f:defaultCase>
+    </f:switch>
+</f:section>
+</html>

@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>The heading of a section: an optional eyebrow above, an aside or the slider arrows beside it.</f:comment>
+<f:argument name="title" type="string" description="The heading."/>
+<f:argument name="eyebrow" type="string" optional="{true}" description="Short line above the heading."/>
+<f:argument name="aside" type="string" optional="{true}" description="Short text beside the heading."/>
+<f:argument name="level" type="string|int" optional="{true}" default="2" description="Heading level: 1 or 2."/>
+<f:argument name="controls" type="bool|int" optional="{true}" default="{false}" description="Shows the previous and next arrows of a slider."/>
+
+<f:asset.css identifier="kumano-section-heading" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/section-heading.css"/>
+<f:variable name="variant">{f:if(condition: controls, then: 'with-controls', else: '{f:if(condition: aside, then: \'with-aside\', else: \'default\')}')}</f:variable>
+<header class="section-heading section-heading-{variant}">
+    <div class="section-heading-main">
+        <f:if condition="{eyebrow}">
+            <p class="section-heading-eyebrow type-label">{eyebrow}</p>
+        </f:if>
+        <f:if condition="{level} == 1">
+            <f:then>
+                <h1 class="section-heading-title type-h2">{title}</h1>
+            </f:then>
+            <f:else>
+                <h2 class="section-heading-title type-h2">{title}</h2>
+            </f:else>
+        </f:if>
+    </div>
+    <f:if condition="{variant} == 'with-aside'">
+        <p class="section-heading-aside type-small">{aside}</p>
+    </f:if>
+    <f:if condition="{variant} == 'with-controls'">
+        <div class="section-heading-controls">
+            <kk:iconButton direction="previous" label="{f:translate(key: 'previous', domain: 'theme_kumano_kodo.messages')}"/>
+            <kk:iconButton direction="next" label="{f:translate(key: 'next', domain: 'theme_kumano_kodo.messages')}"/>
+        </div>
+    </f:if>
+</header>
+</html>

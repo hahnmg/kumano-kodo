@@ -1,0 +1,15 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>Two columns side by side, stacked on narrow screens: fill the fragments first and second.</f:comment>
+<f:argument name="ratio" type="string" optional="{true}" default="even" description="content-sidebar, text-media, heading-content, wide-narrow, narrow-wide or even."/>
+<f:argument name="align" type="string" optional="{true}" default="start" description="Vertical alignment: start, center or end."/>
+<f:argument name="colour" type="string" optional="{true}" description="first or second: that column becomes a box in the accent, its content light on it."/>
+
+<div class="split split-{ratio} split-align-{align}{f:if(condition: colour, then: ' split-colour-{colour}')}">
+    <div>
+        <f:slot name="first"/>
+    </div>
+    <div>
+        <f:slot name="second"/>
+    </div>
+</div>
+</html>

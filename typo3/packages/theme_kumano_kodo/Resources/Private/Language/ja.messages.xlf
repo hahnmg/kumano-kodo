@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="messages" product-name="theme_kumano_kodo">
+    <body>
+      <trans-unit id="mainNav">
+        <source>Main navigation</source>
+        <target>メインナビゲーション</target>
+      </trans-unit>
+      <trans-unit id="language">
+        <source>Language</source>
+        <target>言語</target>
+      </trans-unit>
+      <trans-unit id="menu">
+        <source>Menu</source>
+        <target>メニュー</target>
+      </trans-unit>
+      <trans-unit id="darkMode">
+        <source>Dark mode</source>
+        <target>ダークモード</target>
+      </trans-unit>
+      <trans-unit id="backToTop">
+        <source>Back to top</source>
+        <target>ページの先頭へ</target>
+      </trans-unit>
+      <trans-unit id="playVideo">
+        <source>Play video</source>
+        <target>動画を再生</target>
+      </trans-unit>
+      <trans-unit id="videoConsent">
+        <source>This video loads from %1$s, which then receives your IP address and may set cookies.</source>
+        <target>この動画は%1$sから読み込まれます。その際、%1$sにIPアドレスが送信され、Cookieが保存される場合があります。</target>
+      </trans-unit>
+      <trans-unit id="videoConsentRemember">
+        <source>Always load external videos</source>
+        <target>外部の動画を常に読み込む</target>
+      </trans-unit>
+      <trans-unit id="videoConsentLoad">
+        <source>Load video</source>
+        <target>動画を読み込む</target>
+      </trans-unit>
+      <trans-unit id="videoConsentPrivacy">
+        <source>Privacy policy</source>
+        <target>プライバシーポリシー</target>
+      </trans-unit>
+      <trans-unit id="mediaConsentTitle">
+        <source>External videos</source>
+        <target>外部の動画</target>
+      </trans-unit>
+      <trans-unit id="mediaConsentText">
+        <source>Videos from YouTube or Vimeo load only when you ask for them. Tick the box to load them straight away on this device.</source>
+        <target>YouTubeやVimeoの動画は、ご希望の場合にのみ読み込まれます。チェックを入れると、この端末ではすぐに読み込まれます。</target>
+      </trans-unit>
+      <trans-unit id="mediaConsentToggle">
+        <source>Load external videos automatically</source>
+        <target>外部の動画を自動で読み込む</target>
+      </trans-unit>
+      <trans-unit id="skipToContent">
+        <source>Skip to content</source>
+        <target>本文へ移動</target>
+      </trans-unit>
+      <trans-unit id="uploadDrop">
+        <source>Drag a file here or</source>
+        <target>ここにファイルをドラッグするか</target>
+      </trans-unit>
+      <trans-unit id="uploadChoose">
+        <source>choose one</source>
+        <target>選択</target>
+      </trans-unit>
+      <trans-unit id="formSteps">
+        <source>Steps</source>
+        <target>ステップ</target>
+      </trans-unit>
+      <trans-unit id="newsAll">
+        <source>All reports</source>
+        <target>すべての記録</target>
+      </trans-unit>
+      <trans-unit id="newsPrevious">
+        <source>Previous report</source>
+        <target>前の記録</target>
+      </trans-unit>
+      <trans-unit id="newsNext">
+        <source>Next report</source>
+        <target>次の記録</target>
+      </trans-unit>
+      <trans-unit id="newsPhotos">
+        <source>Photos from this report</source>
+        <target>この記録の写真</target>
+      </trans-unit>
+      <trans-unit id="newsDate">
+        <source>Date</source>
+        <target>日付</target>
+      </trans-unit>
+      <trans-unit id="newsCategory">
+        <source>Category</source>
+        <target>カテゴリー</target>
+      </trans-unit>
+      <trans-unit id="newsTags">
+        <source>Tags</source>
+        <target>タグ</target>
+      </trans-unit>
+      <trans-unit id="newsPages">
+        <source>Pages</source>
+        <target>ページ</target>
+      </trans-unit>
+      <trans-unit id="newsPreviousPage">
+        <source>Previous page</source>
+        <target>前のページ</target>
+      </trans-unit>
+      <trans-unit id="newsNextPage">
+        <source>Next page</source>
+        <target>次のページ</target>
+      </trans-unit>
+      <trans-unit id="newsDatePattern">
+        <source>d MMMM y</source>
+        <target>y年M月d日</target>
+      </trans-unit>
+      <trans-unit id="newsListSeparator">
+        <source>, </source>
+        <target>、</target>
+      </trans-unit>
+      <trans-unit id="trailStatus">
+        <source>Trail status and contact</source>
+        <target>道の状況と連絡先</target>
+      </trans-unit>
+      <trans-unit id="inSection">
+        <source>In this section</source>
+        <target>このセクション</target>
+      </trans-unit>
+      <trans-unit id="breadcrumb">
+        <source>Breadcrumb</source>
+        <target>パンくずリスト</target>
+      </trans-unit>
+      <trans-unit id="pages">
+        <source>Pages</source>
+        <target>ページ</target>
+      </trans-unit>
+      <trans-unit id="previousPage">
+        <source>Previous page</source>
+        <target>前のページ</target>
+      </trans-unit>
+      <trans-unit id="nextPage">
+        <source>Next page</source>
+        <target>次のページ</target>
+      </trans-unit>
+      <trans-unit id="previous">
+        <source>Previous</source>
+        <target>前へ</target>
+      </trans-unit>
+      <trans-unit id="next">
+        <source>Next</source>
+        <target>次へ</target>
+      </trans-unit>
+      <trans-unit id="close">
+        <source>Close</source>
+        <target>閉じる</target>
+      </trans-unit>
+      <trans-unit id="card">
+        <source>Card</source>
+        <target>カード</target>
+      </trans-unit>
+      <trans-unit id="readMore">
+        <source>Read more</source>
+        <target>続きを読む</target>
+      </trans-unit>
+      <trans-unit id="slideshow">
+        <source>Photos of the walk</source>
+        <target>歩いた道の写真</target>
+      </trans-unit>
+      <trans-unit id="slideOf">
+        <source>Slide %1$s of %2$s</source>
+        <target>%2$s枚中%1$s枚目</target>
+      </trans-unit>
+      <trans-unit id="slide">
+        <source>Slide</source>
+        <target>写真</target>
+      </trans-unit>
+      <trans-unit id="pause">
+        <source>Pause</source>
+        <target>一時停止</target>
+      </trans-unit>
+      <trans-unit id="play">
+        <source>Play</source>
+        <target>再生</target>
+      </trans-unit>
+      <trans-unit id="emailAddress">
+        <source>Email address</source>
+        <target>メールアドレス</target>
+      </trans-unit>
+      <trans-unit id="emailPlaceholder">
+        <source>name@example.com</source>
+        <target>name@example.jp</target>
+      </trans-unit>
+      <trans-unit id="consent">
+        <source>I would like to receive the newsletter and have read the privacy policy.</source>
+        <target>ニュースレターの受信を希望し、プライバシーポリシーを読みました。</target>
+      </trans-unit>
+      <trans-unit id="subscribe">
+        <source>Subscribe</source>
+        <target>登録する</target>
+      </trans-unit>
+      <trans-unit id="search">
+        <source>Search</source>
+        <target>検索</target>
+      </trans-unit>
+      <trans-unit id="searchPlaceholder">
+        <source>Search days, places and tips</source>
+        <target>日程・場所・ヒントを検索</target>
+      </trans-unit>
+      <trans-unit id="searchSummary">
+        <source>%1$s results for “%2$s”</source>
+        <target>「%2$s」の検索結果 %1$s 件</target>
+      </trans-unit>
+      <trans-unit id="searchSummaryOne">
+        <source>1 result for “%1$s”</source>
+        <target>「%1$s」の検索結果 1 件</target>
+      </trans-unit>
+      <trans-unit id="searchEmpty">
+        <source>Nothing found for “%1$s”. A place or a day works best, for example Hongu.</source>
+        <target>「%1$s」に一致する結果はありません。本宮など、場所や日程で検索してください。</target>
+      </trans-unit>
+      <trans-unit id="searchResults">
+        <source>Search results</source>
+        <target>検索結果</target>
+      </trans-unit>
+      <trans-unit id="logIn">
+        <source>Log in</source>
+        <target>ログイン</target>
+      </trans-unit>
+      <trans-unit id="username">
+        <source>Username</source>
+        <target>ユーザー名</target>
+      </trans-unit>
+      <trans-unit id="password">
+        <source>Password</source>
+        <target>パスワード</target>
+      </trans-unit>
+      <trans-unit id="stayLoggedIn">
+        <source>Stay logged in</source>
+        <target>ログインしたままにする</target>
+      </trans-unit>
+      <trans-unit id="forgotPassword">
+        <source>Forgot your password?</source>
+        <target>パスワードをお忘れですか？</target>
+      </trans-unit>
+      <trans-unit id="loginFailed">
+        <source>Login failed</source>
+        <target>ログインできませんでした</target>
+      </trans-unit>
+      <trans-unit id="loginFailedText">
+        <source>Username or password were not accepted.</source>
+        <target>ユーザー名またはパスワードが正しくありません。</target>
+      </trans-unit>
+      <trans-unit id="loggedInAs">
+        <source>Logged in as %1$s</source>
+        <target>%1$s としてログイン中</target>
+      </trans-unit>
+      <trans-unit id="logOut">
+        <source>Log out</source>
+        <target>ログアウト</target>
+      </trans-unit>
+      <trans-unit id="demoAccess">
+        <source>Demo access</source>
+        <target>デモ用アカウント</target>
+      </trans-unit>
+      <trans-unit id="demoAccessText">
+        <source>Username %1$s · password %2$s</source>
+        <target>ユーザー名 %1$s・パスワード %2$s</target>
+      </trans-unit>
+      <trans-unit id="notFoundTitle">
+        <source>Page not found</source>
+        <target>ページが見つかりません</target>
+      </trans-unit>
+      <trans-unit id="notFoundText">
+        <source>This path is not on the map: the page may have moved, or the address has a typo. Search the journal above, or start again from here.</source>
+        <target>この道は地図に載っていません。ページが移動したか、アドレスが間違っている可能性があります。上の検索を使うか、ここからもう一度始めてください。</target>
+      </trans-unit>
+      <trans-unit id="papersTitle">
+        <source>Travel papers</source>
+        <target>旅の資料</target>
+      </trans-unit>
+      <trans-unit id="papersText">
+        <source>Welcome back. Here are the papers from our walk: the stage map, how we got there, and what to pack for rain. The days below lead back to each stage.</source>
+        <target>おかえりなさい。私たちの旅の資料はこちらです。区間地図、アクセス、雨の日の持ち物リスト。下の各日から、それぞれの行程に戻れます。</target>
+      </trans-unit>
+      <trans-unit id="papersLink">
+        <source>Your travel papers</source>
+        <target>あなたの旅の資料</target>
+      </trans-unit>
+      <trans-unit id="requiredNote">
+        <source>Fields marked * are required.</source>
+        <target>* の項目は必須です。</target>
+      </trans-unit>
+      <trans-unit id="fieldRequired">
+        <source>Please fill in this field.</source>
+        <target>この項目を入力してください。</target>
+      </trans-unit>
+      <trans-unit id="emailInvalid">
+        <source>Please enter a valid email address.</source>
+        <target>有効なメールアドレスを入力してください。</target>
+      </trans-unit>
+      <trans-unit id="send">
+        <source>Send</source>
+        <target>送信</target>
+      </trans-unit>
+      <trans-unit id="formSent">
+        <source>Message sent</source>
+        <target>送信しました</target>
+      </trans-unit>
+      <trans-unit id="formSentText">
+        <source>Thank you. Your message has arrived.</source>
+        <target>ありがとうございます。メッセージを受け取りました。</target>
+      </trans-unit>
+      <trans-unit id="name">
+        <source>Name</source>
+        <target>名前</target>
+      </trans-unit>
+      <trans-unit id="topic">
+        <source>Topic</source>
+        <target>テーマ</target>
+      </trans-unit>
+      <trans-unit id="message">
+        <source>Message</source>
+        <target>メッセージ</target>
+      </trans-unit>
+      <trans-unit id="contactConsent">
+        <source>I agree that my details are used to answer my message.</source>
+        <target>メッセージへの返信のために入力内容が使われることに同意します。</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

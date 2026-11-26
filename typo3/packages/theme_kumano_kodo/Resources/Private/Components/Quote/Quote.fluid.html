@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>A quotation set large; the quote in the slot, its source as an argument.</f:comment>
+<f:argument name="source" type="string" description="Who said it, or where."/>
+
+<f:asset.css identifier="kumano-quote" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/quote.css"/>
+<figure class="quote">
+    <blockquote class="quote-text type-quote">
+        <p>
+            <f:slot/>
+        </p>
+    </blockquote>
+    <figcaption class="quote-source type-label">{source}</figcaption>
+</figure>
+</html>

@@ -1,0 +1,48 @@
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+  layoutRootPaths.10 = EXT:theme_kumano_kodo/Resources/Private/Templates/Layouts/
+  partialRootPaths.10 = EXT:theme_kumano_kodo/Resources/Private/Templates/Partials/
+  templateRootPaths.10 = EXT:theme_kumano_kodo/Resources/Private/Templates/Content/
+
+  # kumano_list renders Content/KumanoList.fluid.html; plugins set templateName = Generic themselves.
+  templateName.ifEmpty.cObject = TEXT
+  templateName.ifEmpty.cObject {
+    field = CType
+    required = 1
+    case = uppercamelcase
+  }
+
+  dataProcessing.10 = record-transformation
+
+  # Site settings the elements need; content templates do not see the page's settings.
+  settings.newsletterTarget = {$kumanoKodo.newsletter.target}
+  settings.upright = {$kumanoKodo.brand.upright}
+}
+
+tt_content = CASE
+tt_content.key.field = CType
+tt_content.default =< lib.contentElement
+
+# Containers get their columns as content areas (EXT:container), rendered like the page's own areas.
+tt_content.kumano_section < lib.contentElement
+tt_content.kumano_section.dataProcessing.20 = container-content-area
+tt_content.kumano_section.dataProcessing.20.as = columns
+
+tt_content.kumano_columns < tt_content.kumano_section
+
+# The core plugins render with the theme's markup.
+plugin.tx_indexedsearch.view {
+  templateRootPaths.20 = EXT:theme_kumano_kodo/Resources/Private/Extensions/IndexedSearch/Templates/
+  partialRootPaths.20 = EXT:theme_kumano_kodo/Resources/Private/Extensions/IndexedSearch/Partials/
+  partialRootPaths.30 = EXT:theme_kumano_kodo/Resources/Private/Templates/Partials/
+}
+plugin.tx_felogin_login.view {
+  templateRootPaths.20 = EXT:theme_kumano_kodo/Resources/Private/Extensions/Felogin/Templates/
+  partialRootPaths.30 = EXT:theme_kumano_kodo/Resources/Private/Templates/Partials/
+}
+
+# Tables from the text editor get the Table component's class and its scrolling wrapper.
+lib.parseFunc_RTE.externalBlocks.table.stdWrap {
+  HTMLparser.tags.table.fixAttrib.class.default = table
+  wrap = <div class="table-wrap">|</div>
+}

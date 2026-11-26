@@ -1,0 +1,29 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>A tall card for a stage: image, label, figures, title and text.</f:comment>
+<f:argument name="title" type="string" description="The title."/>
+<f:argument name="href" type="string" optional="{true}" description="Links the title; the whole card is then the target."/>
+<f:argument name="image" type="object" optional="{true}" description="A file or file reference."/>
+<f:argument name="label" type="string" optional="{true}" description="A label above, such as Day 2."/>
+<f:argument name="meta" type="string" optional="{true}" description="Figures beside the label, such as the distance."/>
+<f:argument name="text" type="string" optional="{true}" description="A short description."/>
+
+<f:asset.css identifier="kumano-portrait-card" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/portrait-card.css"/>
+<article class="portrait-card">
+    <f:if condition="{image}">
+        <kk:image image="{image}" class="portrait-card-image" sizes="(width <= 600px) 80vw, 420px"/>
+    </f:if>
+    <div class="portrait-card-meta">
+        <p class="portrait-card-label type-label">{label}</p>
+        <p class="portrait-card-stats type-caption">{meta}</p>
+    </div>
+    <h3 class="portrait-card-title type-h4">
+        <f:if condition="{href}">
+            <f:then>
+                <a href="{href}">{title}</a>
+            </f:then>
+            <f:else>{title}</f:else>
+        </f:if>
+    </h3>
+    <p class="portrait-card-text type-small">{text}</p>
+</article>
+</html>

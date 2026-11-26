@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<ul class="badge-list">
+    <li>
+        <span class="badge badge-info">{f:translate(key: 'tt_content.tx_themekumanokodo_variant.{record.tx_themekumanokodo_variant}', domain: 'theme_kumano_kodo.backend_fields')}</span>
+    </li>
+    <li>
+        <span class="badge badge-default">{f:translate(key: 'preview.entries', domain: 'theme_kumano_kodo.backend_fields')}: {record.tx_themekumanokodo_entries -> f:count()}</span>
+    </li>
+</ul>
+<f:if condition="{record.tx_themekumanokodo_entries}">
+    <ul class="list-group">
+        <f:for each="{record.tx_themekumanokodo_entries}" as="entry">
+            <li class="list-group-item d-flex gap-3 align-items-start">
+                <f:for each="{entry.image}" as="image" iteration="i">
+                    <f:if condition="{i.isFirst}">
+                        <f:image image="{image}" width="48c" height="36c" alt=""/>
+                    </f:if>
+                </f:for>
+                <div>
+                    <strong>{entry.title}</strong>
+                    <f:if condition="{entry.meta}"> · {entry.meta}</f:if>
+                    <f:if condition="{entry.label}">
+                        <br>
+                        {entry.label}
+                    </f:if>
+                    <f:if condition="{entry.link.url}">
+                        <br>
+                        <f:if condition="{entry.link.url}">
+                            <code>{entry.link.url}</code>
+                        </f:if>
+                    </f:if>
+                </div>
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+<f:if condition="{record.media}">
+    <ul class="list-group">
+        <f:for each="{record.media}" as="file">
+            <li class="list-group-item">
+                <strong>{f:if(condition: file.title, then: file.title, else: file.name)}</strong> · {file.extension -> f:format.case(mode: 'upper')} · {file.size -> f:format.bytes(units: 'B,KB,MB,GB')}
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+</html>

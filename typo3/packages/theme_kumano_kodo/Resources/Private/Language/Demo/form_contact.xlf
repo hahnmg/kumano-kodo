@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="form_contact" product-name="theme_kumano_kodo">
+    <body>
+      <trans-unit id="contact.renderingOptions.submitButtonLabel">
+        <source>Send</source>
+      </trans-unit>
+      <trans-unit id="contact.element.name.properties.label">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="contact.element.email.properties.label">
+        <source>Email address</source>
+      </trans-unit>
+      <trans-unit id="contact.element.email.properties.placeholder">
+        <source>name@example.com</source>
+      </trans-unit>
+      <trans-unit id="contact.element.topic.properties.label">
+        <source>Topic</source>
+      </trans-unit>
+      <trans-unit id="contact.element.topic.properties.options.getting-there">
+        <source>Getting there and buses</source>
+      </trans-unit>
+      <trans-unit id="contact.element.topic.properties.options.accommodation">
+        <source>Accommodation</source>
+      </trans-unit>
+      <trans-unit id="contact.element.topic.properties.options.trail-markers">
+        <source>Trail markers and safety</source>
+      </trans-unit>
+      <trans-unit id="contact.element.topic.properties.options.maps">
+        <source>Maps and timetables</source>
+      </trans-unit>
+      <trans-unit id="contact.element.message.properties.label">
+        <source>Message</source>
+      </trans-unit>
+      <trans-unit id="contact.element.consent.properties.label">
+        <source>I agree that my details are used to answer my message.</source>
+      </trans-unit>
+      <trans-unit id="contact.finisher.Confirmation.message">
+        <source>Thank you. Your message has arrived.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

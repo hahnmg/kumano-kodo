@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<ul class="badge-list">
+    <li>
+        <span class="badge badge-info">{f:translate(key: 'tt_content.tx_themekumanokodo_variant.{record.tx_themekumanokodo_variant}', domain: 'theme_kumano_kodo.backend_fields')}</span>
+    </li>
+</ul>
+<f:if condition="{record.bodytext}">
+    <p>{record.bodytext -> f:format.stripTags() -> f:format.crop(maxCharacters: 240) -> f:format.htmlspecialchars(doubleEncode: false)}</p>
+</f:if>
+<f:if condition="{record.tx_themekumanokodo_links}">
+    <ul class="list-group">
+        <f:for each="{record.tx_themekumanokodo_links}" as="link">
+            <li class="list-group-item d-flex gap-3 align-items-start">
+                <div>
+                    <strong>{link.title}</strong>
+                    <f:if condition="{link.link.url}">
+                        <br>
+                        <f:if condition="{link.link.url}">
+                            <code>{link.link.url}</code>
+                        </f:if>
+                    </f:if>
+                </div>
+            </li>
+        </f:for>
+    </ul>
+</f:if>
+</html>

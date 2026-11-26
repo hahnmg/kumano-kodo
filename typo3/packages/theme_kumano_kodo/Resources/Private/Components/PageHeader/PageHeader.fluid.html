@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>The head of a content page: breadcrumb, title and chip components in the fragment chips.</f:comment>
+<f:argument name="title" type="string" description="The title, the page heading."/>
+<f:argument name="breadcrumb" type="iterable" optional="{true}" description="Entries for the breadcrumb, as there."/>
+
+<f:variable name="chips" value="{f:slot(name: 'chips')}"/>
+<div class="page-header">
+    <div class="page-header-inner">
+        <f:if condition="{breadcrumb}">
+            <kk:breadcrumb items="{breadcrumb}"/>
+        </f:if>
+        <h1 class="page-header-title type-h2">{title}</h1>
+        <f:if condition="{chips -> f:format.trim()}">
+            <nav class="page-header-chips" aria-label="{f:translate(key: 'inSection', domain: 'theme_kumano_kodo.messages')}">
+                {chips -> f:format.raw()}
+            </nav>
+        </f:if>
+    </div>
+</div>
+</html>

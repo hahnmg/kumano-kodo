@@ -1,0 +1,12 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <kk:chapter
+        id="{f:if(condition: data.tx_themekumanokodo_anchor, then: data.tx_themekumanokodo_anchor, else: 'c{data.uid}')}"
+        number="{number}"
+        date="{record.subheader}"
+        title="{record.header}"
+        images="{record.image}"
+    >{record.bodytext -> f:format.stripTags(allowedTags: '<strong><em><b><i><a><br>') -> f:format.html(parseFuncTSPath: 'lib.parseFunc')}</kk:chapter>
+</f:section>
+</html>

@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:if condition="{data.colPos} == 30">
+        <f:then>
+            <p class="topbar-hours">
+                <f:comment>Icon and title touch; the space before the text is wanted.</f:comment>
+                <f:spaceless>
+                    <kk:icon name="clock" size="16"/>
+                    <strong class="type-button">{record.header}</strong>
+                </f:spaceless>
+                <span class="type-small">{record.subheader}</span>
+            </p>
+        </f:then>
+        <f:else>
+            <f:variable name="body">
+                <kk:sectionHeading title="{record.header}" eyebrow="{record.subheader}" aside="{data.tx_themekumanokodo_aside}"/>
+            </f:variable>
+            <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 0, bleed: 0, body: body}"/>
+        </f:else>
+    </f:if>
+</f:section>
+</html>

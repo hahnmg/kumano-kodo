@@ -1,0 +1,18 @@
+plugin.tx_news {
+  view {
+    templateRootPaths.20 = EXT:theme_kumano_kodo/Resources/Private/Extensions/News/Templates/
+  }
+  settings {
+    displayDummyIfNoMedia = 0
+    list.paginate.insertAbove = 0
+    list.paginate.insertBelow = 1
+    detail.showPrevNext = 1
+  }
+}
+
+# Without a report the detail page answers 404, so the page itself stays out of the page sitemap.
+plugin.tx_seo.config.xmlSitemap.sitemaps.pages.config.excludePagesRecursive := addToList({$news.pages.detail})
+
+# The news templates draw their own sections, the detail page also its page header.
+tt_content.news_pi1.templateName = Plugin
+tt_content.news_newsdetail.templateName = Plugin

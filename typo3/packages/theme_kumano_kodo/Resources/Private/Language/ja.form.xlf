@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="ja" datatype="plaintext" original="form" product-name="theme_kumano_kodo">
+    <body>
+      <trans-unit id="validation.error.1221560910">
+        <source>Please fill in this field.</source>
+        <target>この項目を入力してください。</target>
+      </trans-unit>
+      <trans-unit id="validation.error.1221560718">
+        <source>Please fill in this field.</source>
+        <target>この項目を入力してください。</target>
+      </trans-unit>
+      <trans-unit id="validation.error.1347992400">
+        <source>Please fill in this field.</source>
+        <target>この項目を入力してください。</target>
+      </trans-unit>
+      <trans-unit id="validation.error.1347992453">
+        <source>Please fill in this field.</source>
+        <target>この項目を入力してください。</target>
+      </trans-unit>
+      <trans-unit id="validation.error.1221559976">
+        <source>Please enter a valid email address.</source>
+        <target>有効なメールアドレスを入力してください。</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

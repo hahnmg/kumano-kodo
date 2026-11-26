@@ -1,0 +1,6 @@
+name: kumano-kodo/news
+label: 'Kumano Kodo · News'
+# EXT:news drawn with the theme's components: a teaser list with pages, and a detail page with its gallery below.
+dependencies:
+  - typo3/theme-kumano-kodo
+  - georgringer/news

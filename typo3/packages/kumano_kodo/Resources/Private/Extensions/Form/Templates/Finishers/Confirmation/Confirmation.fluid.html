@@ -1,8 +1,0 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:comment>The confirmation takes the form's place as an Info Box; the message is the form's own.</f:comment>
-<f:asset.css identifier="kumano-info-box" href="EXT:kumano_kodo/Resources/Public/Css/Components/info-box.css"/>
-<aside class="info-box" id="{form.identifier}" role="status">
-<h2 class="info-box-title type-label">{f:translate(key: 'formSent', domain: 'kumano_kodo.messages')}</h2>
-<p class="info-box-text type-small">{message -> f:sanitize.html() -> f:transform.html()}</p>
-</aside>
-</html>

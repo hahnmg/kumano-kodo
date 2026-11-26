@@ -1,0 +1,10 @@
+name: typo3/theme-kumano-kodo
+label: 'Kumano Kodo'
+# Loaded first where installed: the core extensions the theme supports, and fluid_styled_content, so a set depending
+# on it cannot reset lib.contentElement after ours (forge.typo3.org/issues/109670).
+optionalDependencies:
+  - typo3/fluid-styled-content
+  - typo3/felogin
+  - typo3/indexed-search
+  - typo3/form
+  - typo3/seo-sitemap

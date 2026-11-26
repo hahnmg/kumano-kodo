@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers" data-namespace-typo3-fluid="true">
+<ul class="badge-list">
+    <li>
+        <span class="badge badge-default">{f:translate(key: 'preview.questions', domain: 'theme_kumano_kodo.backend_fields')}: {record.tx_themekumanokodo_questions -> f:count()}</span>
+    </li>
+</ul>
+<f:if condition="{record.bodytext}">
+    <p>{record.bodytext -> f:format.stripTags() -> f:format.crop(maxCharacters: 160) -> f:format.htmlspecialchars(doubleEncode: false)}</p>
+</f:if>
+<f:if condition="{record.tx_themekumanokodo_questions}">
+    <div class="table-fit">
+        <table class="table table-sm table-striped">
+            <tbody>
+                <f:for each="{record.tx_themekumanokodo_questions}" as="question">
+                    <tr>
+                        <td>
+                            <strong>{question.question}</strong>
+                        </td>
+                        <td>{question.answer -> f:format.stripTags() -> f:format.crop(maxCharacters: 100) -> f:format.htmlspecialchars(doubleEncode: false)}</td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+    </div>
+</f:if>
+</html>

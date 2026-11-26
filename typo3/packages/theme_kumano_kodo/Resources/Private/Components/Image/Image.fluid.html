@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>A responsive image: 1200px wide as src, 640, 1200 and 2400 in srcset.</f:comment>
+<f:argument name="image" type="object" description="A file or file reference."/>
+<f:argument name="class" type="string" optional="{true}" description="Class of the img element."/>
+<f:argument name="sizes" type="string" optional="{true}" default="(width <= 900px) 100vw, 50vw" description="How wide the image is shown, so the browser picks the smallest sharp file."/>
+<f:argument name="width" type="string|int" optional="{true}" description="Width attribute; default 1200."/>
+<f:argument name="height" type="string|int" optional="{true}" description="Height attribute; default the scaled height."/>
+<f:argument name="eager" type="bool|int" optional="{true}" default="{false}" description="Loads at once, for the first image of a page."/>
+
+<f:variable name="scaled" value="{image.properties.height * 1200 / image.properties.width}"/>
+<img
+    class="{class}"
+    src="{f:uri.image(image: image, maxWidth: 1200)}"
+    srcset="{f:uri.image(image: image, maxWidth: 640)} 640w, {f:uri.image(image: image, maxWidth: 1200)} 1200w, {f:uri.image(image: image, maxWidth: 2400)} 2400w"
+    sizes="{sizes}"
+    alt="{image.alternative}"
+    width="{width -> f:or(alternative: 1200)}"
+    height="{height -> f:or(alternative: '{scaled -> f:round()}')}"
+    loading="{f:if(condition: eager, then: 'eager', else: 'lazy')}"
+    decoding="async"
+>
+</html>

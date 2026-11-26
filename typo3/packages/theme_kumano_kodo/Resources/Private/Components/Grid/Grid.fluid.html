@@ -1,0 +1,8 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>Children in equal columns: 2, 3 or 4, fewer on narrow screens.</f:comment>
+<f:argument name="columns" type="string|int" optional="{true}" default="3" description="Number of columns: 2, 3 or 4."/>
+
+<div class="grid grid-{columns}">
+    <f:slot/>
+</div>
+</html>

@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>A fact with an icon in a circle: label, value and an optional note.</f:comment>
+<f:argument name="icon" type="string" description="Name of an icon, as for icon."/>
+<f:argument name="label" type="string" description="What the fact is about."/>
+<f:argument name="value" type="string|int" description="The fact."/>
+<f:argument name="note" type="string" optional="{true}" description="A short addition below."/>
+
+<f:asset.css identifier="kumano-icon-fact" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/icon-fact.css"/>
+<div class="icon-fact">
+    <span class="icon-circle">
+        <kk:icon name="{icon}" size="24"/>
+    </span>
+    <div class="icon-fact-text">
+        <p class="icon-fact-label type-label">{label}</p>
+        <p class="icon-fact-value type-button">{value}</p>
+        <f:if condition="{note}">
+            <p class="icon-fact-note type-caption">{note}</p>
+        </f:if>
+    </div>
+</div>
+</html>

@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { build, createServer } from 'vite';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const pkg = join(root, 'typo3/packages/kumano_kodo');
+const pkg = join(root, 'typo3/packages/theme_kumano_kodo');
 const css = join(pkg, 'Resources/Public/Css');
 const js = join(pkg, 'Resources/Public/JavaScript');
 const partials = join(pkg, 'Resources/Private/Templates/Partials/Kumano');
@@ -260,7 +260,7 @@ const contactFormLabelsOf = ({ ui }) => ({
   'kumano-contact.element.consent.properties.label': ui.contactConsent,
   'kumano-contact.finisher.Confirmation.message': ui.formSentText,
 });
-const writeXliff = async (language, name, pick, { content, locales }, product = 'kumano_kodo') => {
+const writeXliff = async (language, name, pick, { content, locales }, product = 'theme_kumano_kodo') => {
   const source = pick(content('en'));
   for (const locale of Object.keys(locales)) {
     const ui = pick(content(locale));
@@ -499,7 +499,7 @@ const buildSettings = async (themes) => {
   await writeFile(
     join(set, 'labels.xlf'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">\n` +
-      `  <file source-language="en" datatype="plaintext" original="labels" product-name="kumano_kodo">\n    <body>\n${units.join('\n')}\n    </body>\n  </file>\n</xliff>\n`,
+      `  <file source-language="en" datatype="plaintext" original="labels" product-name="theme_kumano_kodo">\n    <body>\n${units.join('\n')}\n    </body>\n  </file>\n</xliff>\n`,
   );
 };
 

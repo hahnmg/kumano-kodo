@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import reference from '../../docs/fluid-components.json';
 
-const sources = import.meta.glob('../../typo3/packages/kumano_kodo/Resources/Private/Components/*/*.fluid.html', {
+const sources = import.meta.glob('../../typo3/packages/theme_kumano_kodo/Resources/Private/Components/*/*.fluid.html', {
   query: '?raw',
   import: 'default',
   eager: true,

@@ -1,0 +1,22 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>An element on the page is its own section; inside a container, or in the frame columns, it renders bare.</f:comment>
+<f:if condition="{heading} && {record.header} && {data.header_layout} != 100">
+    <f:then>
+        <f:variable name="inner">
+            <kk:stack gap="heading">
+                <kk:sectionHeading title="{record.header}" eyebrow="{record.subheader}" aside="{data.tx_themekumanokodo_aside}"/>
+                {body -> f:format.raw()}
+            </kk:stack>
+        </f:variable>
+    </f:then>
+    <f:else>
+        <f:variable name="inner">{body -> f:format.raw()}</f:variable>
+    </f:else>
+</f:if>
+<f:if condition="{data.tx_container_parent} || {data.colPos} >= 20">
+    <f:then>{inner -> f:format.raw()}</f:then>
+    <f:else>
+        <kk:section tone="{f:if(condition: '{data.frame_class} == sunk', then: 'sunk', else: 'paper')}" space="{f:if(condition: data.space_before_class, then: data.space_before_class, else: 'default')}" bleed="{bleed}" label="{f:if(condition: '{data.header_layout} == 100', then: record.header)}" id="{data.tx_themekumanokodo_anchor}">{inner -> f:format.raw()}</kk:section>
+    </f:else>
+</f:if>
+</html>

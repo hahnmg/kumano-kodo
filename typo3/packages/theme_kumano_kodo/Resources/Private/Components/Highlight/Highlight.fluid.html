@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:k="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>A statement with the theme emblem: eyebrow, title and the text in the slot.</f:comment>
+<f:argument name="title" type="string" description="The statement."/>
+<f:argument name="eyebrow" type="string" optional="{true}" description="Short line above."/>
+
+<f:asset.css identifier="kumano-highlight" href="EXT:theme_kumano_kodo/Resources/Public/Css/Components/highlight.css"/>
+<div class="highlight">
+    <kk:logoBird class="highlight-emblem"/>
+    <div class="highlight-body">
+        <f:if condition="{eyebrow}">
+            <p class="highlight-eyebrow type-label">{eyebrow}</p>
+        </f:if>
+        <h2 class="highlight-title type-h3">{title}</h2>
+        <p class="highlight-text type-lead">
+            <f:slot/>
+        </p>
+    </div>
+</div>
+</html>

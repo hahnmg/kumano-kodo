@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>The Login Form molecule. A failed attempt shows the notice; other felogin messages stay with its flash messages.</f:comment>
+<f:flashMessages/>
+<f:form class="login-form" target="_top" fieldNamePrefix="" action="login" requestToken="{requestToken}" spellcheck="false">
+    <f:if condition="{messageKey} == 'error'">
+        <div class="notice" role="note">
+            <kk:icon name="alert" size="24"/>
+            <p class="notice-body">
+                <strong class="notice-title type-label">{f:translate(key: 'loginFailed', domain: 'theme_kumano_kodo.messages')}</strong>
+                <span class="type-small">{f:translate(key: 'loginFailedText', domain: 'theme_kumano_kodo.messages')}</span>
+            </p>
+        </div>
+    </f:if>
+    <label class="field">
+        <span class="field-label type-label">{f:translate(key: 'username', domain: 'theme_kumano_kodo.messages')}</span>
+        <span class="field-box">
+            <f:form.textfield name="user" required="true" autocomplete="username" class="field-control type-lead"/>
+        </span>
+    </label>
+    <label class="field">
+        <span class="field-label type-label">{f:translate(key: 'password', domain: 'theme_kumano_kodo.messages')}</span>
+        <span class="field-box">
+            <f:form.password name="pass" required="required" autocomplete="current-password" class="field-control type-lead"/>
+        </span>
+    </label>
+    <f:if condition="{permaloginStatus} > -1">
+        <label class="choice choice-checkbox">
+            <f:form.hidden name="permalogin" value="0"/>
+            <f:form.checkbox name="permalogin" value="1" checked="{f:if(condition: '{permaloginStatus} == 1', then: 1, else: 0)}" class="choice-input"/>
+            <span class="choice-label type-caption">{f:translate(key: 'stayLoggedIn', domain: 'theme_kumano_kodo.messages')}</span>
+        </label>
+    </f:if>
+    <div class="login-form-actions">
+        <button class="button type-button button-primary" type="submit" name="submit" value="1">{f:translate(key: 'logIn', domain: 'theme_kumano_kodo.messages')}</button>
+        <f:if condition="{settings.showForgotPassword}">
+            <kk:link label="{f:translate(key: 'forgotPassword', domain: 'theme_kumano_kodo.messages')}" href="{f:uri.action(action: 'recovery', controller: 'PasswordRecovery')}"/>
+        </f:if>
+    </div>
+    <f:form.hidden name="logintype" value="login"/>
+    <f:if condition="{redirectURL}!=''">
+        <f:form.hidden name="redirect_url" value="{redirectURL}"/>
+    </f:if>
+    <f:if condition="{referer}!=''">
+        <f:form.hidden name="referer" value="{referer}"/>
+    </f:if>
+    <f:if condition="{redirectReferrer}!=''">
+        <f:form.hidden name="redirectReferrer" value="off"/>
+    </f:if>
+    <f:if condition="{noRedirect}!=''">
+        <f:form.hidden name="noredirect" value="1"/>
+    </f:if>
+</f:form>
+</html>

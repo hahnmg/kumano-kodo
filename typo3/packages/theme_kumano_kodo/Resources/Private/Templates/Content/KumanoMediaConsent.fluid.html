@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:kk="http://typo3.org/ns/TYPO3/CMS/ThemeKumanoKodo/Components" data-namespace-typo3-fluid="true">
+<f:comment>The switch for "always load external videos", for the privacy page; video.js shows and changes the stored answer.</f:comment>
+<f:layout name="Content/Default"/>
+<f:section name="Main">
+    <f:render partial="Kumano/Css" arguments="{names: 'media-consent'}"/>
+    <f:asset.script identifier="kumano-video" src="EXT:theme_kumano_kodo/Resources/Public/JavaScript/video.js" type="module"/>
+    <f:variable name="body">
+        <div class="media-consent">
+            <kk:richText>
+                <f:format.html>{record.bodytext}</f:format.html>
+            </kk:richText>
+            <label class="choice choice-checkbox">
+                <input class="choice-input" type="checkbox" name="media-consent">
+                <span class="choice-label type-caption">{f:translate(key: 'mediaConsentToggle', domain: 'theme_kumano_kodo.messages')}</span>
+            </label>
+        </div>
+    </f:variable>
+    <f:render partial="Kumano/Section" arguments="{record: record, data: data, heading: 1, bleed: 0, body: body}"/>
+</f:section>
+</html>

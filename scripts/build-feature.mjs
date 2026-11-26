@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import * as fontkit from 'fontkit';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const pkg = join(root, 'typo3/packages/kumano_kodo');
+const pkg = join(root, 'typo3/packages/theme_kumano_kodo');
 const cache = join(root, 'node_modules/.cache/kumano-fonts');
 const out = join(pkg, 'Documentation/Images/Themes.svg');
 const { themes } = JSON.parse(await readFile(join(pkg, 'Resources/Private/Themes/themes.json'), 'utf8'));

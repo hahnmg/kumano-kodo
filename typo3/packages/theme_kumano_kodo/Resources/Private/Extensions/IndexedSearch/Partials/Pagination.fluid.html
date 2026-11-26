@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment>The Pagination molecule; indexed_search's script turns a click into a new search at that page.</f:comment>
+<f:if condition="{pagination.lastPageNumber} > 1">
+    <nav class="pagination" aria-label="{f:translate(key: 'pages', domain: 'theme_kumano_kodo.messages')}">
+        <ol class="pagination-list">
+            <f:if condition="{pagination.previousPageNumber}">
+                <li>
+                    <a class="pagination-item type-button tx-indexedsearch-page-selector" href="#" data-prefix="tx_indexedsearch" data-pointer="{pagination.previousPageNumber - 1}" data-free-index-uid="{freeIndexUid}" aria-label="{f:translate(key: 'previousPage', domain: 'theme_kumano_kodo.messages')}">←</a>
+                </li>
+            </f:if>
+            <f:for each="{pagination.allPageNumbers}" as="page">
+                <li>
+                    <f:if condition="{page} == {searchParams.pointer + 1}">
+                        <f:then>
+                            <a class="pagination-item type-button" href="#" aria-current="page">{page}</a>
+                        </f:then>
+                        <f:else>
+                            <a class="pagination-item type-button tx-indexedsearch-page-selector" href="#" data-prefix="tx_indexedsearch" data-pointer="{page - 1}" data-free-index-uid="{freeIndexUid}">{page}</a>
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:for>
+            <f:if condition="{pagination.nextPageNumber}">
+                <li>
+                    <a class="pagination-item type-button tx-indexedsearch-page-selector" href="#" data-prefix="tx_indexedsearch" data-pointer="{pagination.nextPageNumber - 1}" data-free-index-uid="{freeIndexUid}" aria-label="{f:translate(key: 'nextPage', domain: 'theme_kumano_kodo.messages')}">→</a>
+                </li>
+            </f:if>
+        </ol></nav>
+</f:if>
+</html>

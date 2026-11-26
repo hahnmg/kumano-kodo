@@ -108,7 +108,7 @@ export const wrapRst = (source) => {
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-  const docs = join(root, 'typo3/packages/kumano_kodo/Documentation');
+  const docs = join(root, 'typo3/packages/theme_kumano_kodo/Documentation');
   const check = process.argv.includes('--check');
   const files = [];
   const walk = async (dir) => {

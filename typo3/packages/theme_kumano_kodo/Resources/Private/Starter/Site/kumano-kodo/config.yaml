@@ -1,0 +1,36 @@
+base: /
+baseVariants:
+  -
+    base: '%env(DDEV_PRIMARY_URL)%/'
+    condition: 'getenv("IS_DDEV_PROJECT") == "true"'
+dependencies:
+  - typo3/theme-kumano-kodo
+languages:
+  -
+    languageId: 0
+    title: English
+    navigationTitle: EN
+    locale: en_US.UTF-8
+    hreflang: en
+    base: /
+    flag: en-us-gb
+  -
+    languageId: 1
+    title: Deutsch
+    navigationTitle: DE
+    locale: de_DE.UTF-8
+    hreflang: de
+    base: /de/
+    flag: de
+    fallbackType: strict
+  -
+    languageId: 2
+    title: 日本語
+    navigationTitle: JA
+    locale: ja_JP.UTF-8
+    hreflang: ja
+    base: /ja/
+    flag: jp
+    fallbackType: strict
+rootPageId: 226
+websiteTitle: 'Your site'

@@ -16,7 +16,7 @@
 			"404": "not-found"
 		},
 		"sets": [
-			"kumano-kodo/demo"
+			"typo3/theme-kumano-kodo-demo"
 		],
 		"routeEnhancers": {
 			"NewsDetail": {
@@ -515,7 +515,7 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links",
+						"tx_themekumanokodo_variant": "links",
 						"header": {
 							"en": "The route",
 							"de": "Die Route",
@@ -523,7 +523,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Nakahechi",
@@ -549,14 +549,14 @@
 								"link": "page:route#map"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					},
 					"colPos": 20
 				},
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links",
+						"tx_themekumanokodo_variant": "links",
 						"header": {
 							"en": "Practical",
 							"de": "Praktisches",
@@ -564,7 +564,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Getting there and buses",
@@ -590,14 +590,14 @@
 								"link": "page:newsletter"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					},
 					"colPos": 20
 				},
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links",
+						"tx_themekumanokodo_variant": "links",
 						"header": {
 							"en": "Contact",
 							"de": "Kontakt",
@@ -605,7 +605,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "post@kumano-kodo.example",
@@ -649,14 +649,14 @@
 								"fe_group": "-2"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					},
 					"colPos": 20
 				},
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "notice",
+						"tx_themekumanokodo_variant": "notice",
 						"header": {
 							"en": "Trail conditions:",
 							"de": "Wegzustand:",
@@ -673,7 +673,7 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links",
+						"tx_themekumanokodo_variant": "links",
 						"header": {
 							"en": "© 2024 Kumano Kodo Trail journal",
 							"de": "© 2024 Kumano Kodo Wandertagebuch",
@@ -681,7 +681,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Imprint",
@@ -707,14 +707,14 @@
 								"link": "page:accessibility"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					},
 					"colPos": 22
 				},
 				{
 					"type": "kumano_page_top",
 					"fields": {
-						"tx_kumanokodo_variant": "opener",
+						"tx_themekumanokodo_variant": "opener",
 						"subheader": {
 							"en": "Kumano Kodo · Nakahechi",
 							"de": "Kumano Kodo · Nakahechi",
@@ -730,7 +730,7 @@
 							"de": "<p>Vier Tage zu Fuß von Takijiri nach Nachi, durch die Zedern der Kii-Halbinsel. Siebenundzwanzig Fotos, in der Reihenfolge, in der sie entstanden sind.</p>",
 							"ja": "<p>滝尻から那智まで、紀伊半島の杉林を四日間歩いた。撮った順に並べた二十七枚の写真。</p>"
 						},
-						"tx_kumanokodo_meta": {
+						"tx_themekumanokodo_meta": {
 							"en": "Kii Peninsula · Wakayama · April 2024 · 27 photos",
 							"de": "Kii-Halbinsel · Wakayama · April 2024 · 27 Fotos",
 							"ja": "紀伊半島 · 和歌山 · 2024年4月 · 写真27枚"
@@ -740,7 +740,7 @@
 				{
 					"type": "kumano_chapter",
 					"fields": {
-						"tx_kumanokodo_anchor": "day-1",
+						"tx_themekumanokodo_anchor": "day-1",
 						"subheader": {
 							"en": "Day 1 · 20 April · from 15:40",
 							"de": "Tag 1 · 20. April · ab 15:40",
@@ -760,20 +760,20 @@
 					"image": [
 						{
 							"photo": "trailhead-river",
-							"tx_kumanokodo_span": 8,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 8,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "signpost",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 1
 						}
 					]
 				},
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "fullwidth"
+						"tx_themekumanokodo_variant": "fullwidth"
 					},
 					"image": [
 						"sea-of-clouds"
@@ -782,7 +782,7 @@
 				{
 					"type": "kumano_chapter",
 					"fields": {
-						"tx_kumanokodo_anchor": "day-2",
+						"tx_themekumanokodo_anchor": "day-2",
 						"subheader": {
 							"en": "Day 2 · 21 April · 07:02–17:28",
 							"de": "Tag 2 · 21. April · 07:02–17:28",
@@ -802,45 +802,45 @@
 					"image": [
 						{
 							"photo": "misty-valley",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "roadside-markers",
-							"tx_kumanokodo_span": 3,
-							"tx_kumanokodo_shift": 2
+							"tx_themekumanokodo_span": 3,
+							"tx_themekumanokodo_shift": 2
 						},
 						{
 							"photo": "stone-path-walkers",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "forest-stream",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "land-crab",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 2
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 2
 						},
 						{
 							"photo": "vending-machines",
-							"tx_kumanokodo_span": 3,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 3,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "chikatsuyu-gate",
-							"tx_kumanokodo_span": 12,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 12,
+							"tx_themekumanokodo_shift": 0
 						}
 					]
 				},
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "highlight",
+						"tx_themekumanokodo_variant": "highlight",
 						"frame_class": "sunk",
 						"subheader": {
 							"en": "Yatagarasu",
@@ -862,7 +862,7 @@
 				{
 					"type": "kumano_chapter",
 					"fields": {
-						"tx_kumanokodo_anchor": "day-3",
+						"tx_themekumanokodo_anchor": "day-3",
 						"subheader": {
 							"en": "Day 3 · 22 April · 07:18–16:05",
 							"de": "Tag 3 · 22. April · 07:18–16:05",
@@ -882,70 +882,70 @@
 					"image": [
 						{
 							"photo": "morning-bus",
-							"tx_kumanokodo_span": 3,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 3,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "cedar-canopy",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "walker-in-mist",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "root-path",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 2
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 2
 						},
 						{
 							"photo": "oji-shrine",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "cobbled-path",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "sunlit-path",
-							"tx_kumanokodo_span": 8,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 8,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "ridge-view",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "fern-frond",
-							"tx_kumanokodo_span": 3,
-							"tx_kumanokodo_shift": 2
+							"tx_themekumanokodo_span": 3,
+							"tx_themekumanokodo_shift": 2
 						},
 						{
 							"photo": "yunomine-street",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "river-bridge",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "outdoor-bath",
-							"tx_kumanokodo_span": 6,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 6,
+							"tx_themekumanokodo_shift": 0
 						}
 					]
 				},
 				{
 					"type": "kumano_chapter",
 					"fields": {
-						"tx_kumanokodo_anchor": "day-4",
+						"tx_themekumanokodo_anchor": "day-4",
 						"subheader": {
 							"en": "Day 4 · 23 April · 10:55–15:48",
 							"de": "Tag 4 · 23. April · 10:55–15:48",
@@ -965,30 +965,30 @@
 					"image": [
 						{
 							"photo": "seaside-station",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "nachi-pagoda",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "harbour-ferry",
-							"tx_kumanokodo_span": 7,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 7,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "ryokan-room",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 1
 						}
 					]
 				},
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "fullwidth",
+						"tx_themekumanokodo_variant": "fullwidth",
 						"bodytext": {
 							"en": "<p>Two days later, the last evening. The light came out for twenty minutes. April 25, 17:37</p>",
 							"de": "<p>Zwei Tage später, der letzte Abend. Für zwanzig Minuten kam das Licht heraus. 25. April, 17:37</p>",
@@ -1007,7 +1007,7 @@
 							"de": "Wo es langging",
 							"ja": "歩いた道"
 						},
-						"tx_kumanokodo_aside": {
+						"tx_themekumanokodo_aside": {
 							"en": "The order of the stations and the day boundaries are right, the geometry is not. For navigation you need the tourism office map.",
 							"de": "Die Reihenfolge der Stationen und die Tagesgrenzen stimmen, die Geometrie nicht. Zum Navigieren braucht man die Karte des Tourismusbüros.",
 							"ja": "地点の順序と日の区切りは正確だが、形は正確ではない。道案内には観光協会の地図が必要。"
@@ -1017,10 +1017,10 @@
 							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
 							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
 						},
-						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+						"tx_themekumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
 					},
 					"items": {
-						"tx_kumanokodo_stations": [
+						"tx_themekumanokodo_stations": [
 							{
 								"name": {
 									"en": "Takijiri",
@@ -1106,7 +1106,7 @@
 								"link": "page:place-nachi"
 							}
 						],
-						"tx_kumanokodo_day_marks": [
+						"tx_themekumanokodo_day_marks": [
 							{
 								"label": {
 									"en": "Day 1 · 3.7 km",
@@ -1166,7 +1166,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_questions": [
+						"tx_themekumanokodo_questions": [
 							{
 								"question": {
 									"en": "Do I need to book accommodation in advance?",
@@ -1260,14 +1260,14 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "hero"
+						"tx_themekumanokodo_layout": "hero"
 					},
 					"children": {
 						"201": [
 							{
 								"type": "kumano_page_top",
 								"fields": {
-									"tx_kumanokodo_variant": "text",
+									"tx_themekumanokodo_variant": "text",
 									"header": {
 										"en": "The Nakahechi in four days",
 										"de": "Der Nakahechi in vier Tagen",
@@ -1280,7 +1280,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "See the days",
@@ -1297,7 +1297,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "media",
+									"tx_themekumanokodo_variant": "media",
 									"header": {
 										"en": "Ways to walk it",
 										"de": "Wege, ihn zu gehen",
@@ -1305,7 +1305,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"image": "stone-path-walkers",
 											"title": {
@@ -1349,7 +1349,7 @@
 											"link": "page:kohechi"
 										}
 									],
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "All days and places",
@@ -1367,17 +1367,17 @@
 				{
 					"type": "kumano_facts",
 					"fields": {
-						"tx_kumanokodo_variant": "icons",
+						"tx_themekumanokodo_variant": "icons",
 						"header": {
 							"en": "At a glance",
 							"de": "Auf einen Blick",
 							"ja": "ひと目でわかる"
 						},
 						"header_layout": "100",
-						"tx_kumanokodo_columns": "4"
+						"tx_themekumanokodo_columns": "4"
 					},
 					"items": {
-						"tx_kumanokodo_facts": [
+						"tx_themekumanokodo_facts": [
 							{
 								"icon": "clock",
 								"label": {
@@ -1456,18 +1456,18 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "teaser",
-						"tx_kumanokodo_columns": "4",
+						"tx_themekumanokodo_variant": "teaser",
+						"tx_themekumanokodo_columns": "4",
 						"space_before_class": "flush-top",
 						"header": {
 							"en": "Four days, Takijiri to Nachi",
 							"de": "Vier Tage, Takijiri bis Nachi",
 							"ja": "四日間、滝尻から那智へ"
 						},
-						"tx_kumanokodo_edge": 1
+						"tx_themekumanokodo_edge": 1
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "signpost",
 								"title": {
@@ -1550,13 +1550,13 @@
 				{
 					"type": "kumano_route_map",
 					"fields": {
-						"tx_kumanokodo_anchor": "map",
+						"tx_themekumanokodo_anchor": "map",
 						"header": {
 							"en": "Schematic, not to scale",
 							"de": "Schematisch, nicht maßstäblich",
 							"ja": "概略図、縮尺なし"
 						},
-						"tx_kumanokodo_aside": {
+						"tx_themekumanokodo_aside": {
 							"en": "The order of the stations and the day boundaries are right, the geometry is not. For navigation you need the tourism office map.",
 							"de": "Die Reihenfolge der Stationen und die Tagesgrenzen stimmen, die Geometrie nicht. Zum Navigieren braucht man die Karte des Tourismusbüros.",
 							"ja": "地点の順序と日の区切りは正確だが、形は正確ではない。道案内には観光協会の地図が必要。"
@@ -1566,10 +1566,10 @@
 							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
 							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
 						},
-						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+						"tx_themekumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
 					},
 					"items": {
-						"tx_kumanokodo_stations": [
+						"tx_themekumanokodo_stations": [
 							{
 								"name": {
 									"en": "Takijiri",
@@ -1655,7 +1655,7 @@
 								"link": "page:place-nachi"
 							}
 						],
-						"tx_kumanokodo_day_marks": [
+						"tx_themekumanokodo_day_marks": [
 							{
 								"label": {
 									"en": "Day 1 · 3.7 km",
@@ -1707,18 +1707,18 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "cta",
-						"tx_kumanokodo_columns": "3",
+						"tx_themekumanokodo_variant": "cta",
+						"tx_themekumanokodo_columns": "3",
 						"frame_class": "sunk",
 						"header": {
 							"en": "Before you go",
 							"de": "Vor dem Aufbruch",
 							"ja": "出発前に"
 						},
-						"tx_kumanokodo_edge": 1
+						"tx_themekumanokodo_edge": 1
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Book accommodation",
@@ -1782,8 +1782,8 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "tile",
-						"tx_kumanokodo_columns": "2",
+						"tx_themekumanokodo_variant": "tile",
+						"tx_themekumanokodo_columns": "2",
 						"header": {
 							"en": "Plan the walk",
 							"de": "Die Wanderung planen",
@@ -1791,7 +1791,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"icon": "map-pin",
 								"title": {
@@ -2009,9 +2009,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "stage",
-						"tx_kumanokodo_columns": "slider",
-						"tx_kumanokodo_anchor": "days",
+						"tx_themekumanokodo_variant": "stage",
+						"tx_themekumanokodo_columns": "slider",
+						"tx_themekumanokodo_anchor": "days",
 						"header": {
 							"en": "Days",
 							"de": "Tage",
@@ -2019,7 +2019,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "signpost",
 								"label": {
@@ -2146,9 +2146,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "teaser",
-						"tx_kumanokodo_columns": "4",
-						"tx_kumanokodo_anchor": "places",
+						"tx_themekumanokodo_variant": "teaser",
+						"tx_themekumanokodo_columns": "4",
+						"tx_themekumanokodo_anchor": "places",
 						"header": {
 							"en": "Places",
 							"de": "Orte",
@@ -2156,7 +2156,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "chikatsuyu-gate",
 								"title": {
@@ -2220,9 +2220,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "teaser",
-						"tx_kumanokodo_columns": "4",
-						"tx_kumanokodo_anchor": "stays",
+						"tx_themekumanokodo_variant": "teaser",
+						"tx_themekumanokodo_columns": "4",
+						"tx_themekumanokodo_anchor": "stays",
 						"header": {
 							"en": "Stays",
 							"de": "Unterkünfte",
@@ -2230,7 +2230,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "misty-valley",
 								"title": {
@@ -2347,14 +2347,14 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "figure-plain"
+									"tx_themekumanokodo_variant": "figure-plain"
 								},
 								"image": [
 									"trailhead-river"
@@ -2375,7 +2375,7 @@
 							{
 								"type": "kumano_facts",
 								"fields": {
-									"tx_kumanokodo_variant": "pairs",
+									"tx_themekumanokodo_variant": "pairs",
 									"header": {
 										"en": "The day in figures",
 										"de": "Der Tag in Zahlen",
@@ -2383,7 +2383,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_facts": [
+									"tx_themekumanokodo_facts": [
 										{
 											"label": {
 												"en": "Date",
@@ -2438,7 +2438,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "infobox",
+									"tx_themekumanokodo_variant": "infobox",
 									"header": {
 										"en": "Tip for this day",
 										"de": "Tipp für diesen Tag",
@@ -2451,7 +2451,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "Practical",
@@ -2469,7 +2469,7 @@
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "quote",
+						"tx_themekumanokodo_variant": "quote",
 						"bodytext": {
 							"en": "<p>“Up here the clouds come to the village, not the other way round.”</p>",
 							"de": "<p>„Hier oben kommen die Wolken zum Dorf, nicht umgekehrt.“</p>",
@@ -2495,10 +2495,10 @@
 							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
 							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
 						},
-						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+						"tx_themekumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
 					},
 					"items": {
-						"tx_kumanokodo_stations": [
+						"tx_themekumanokodo_stations": [
 							{
 								"name": {
 									"en": "Takijiri",
@@ -2584,7 +2584,7 @@
 								"link": "page:place-nachi"
 							}
 						],
-						"tx_kumanokodo_day_marks": [
+						"tx_themekumanokodo_day_marks": [
 							{
 								"label": {
 									"en": "Day 1 · 3.7 km",
@@ -2636,7 +2636,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "gallery",
+						"tx_themekumanokodo_variant": "gallery",
 						"frame_class": "sunk",
 						"header": {
 							"en": "The day in photos",
@@ -2651,10 +2651,10 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links"
+						"tx_themekumanokodo_variant": "links"
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Next day",
@@ -2665,7 +2665,7 @@
 								"direction": "forward"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				}
 			],
@@ -2725,14 +2725,14 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "figure-plain"
+									"tx_themekumanokodo_variant": "figure-plain"
 								},
 								"image": [
 									"video:trail",
@@ -2754,7 +2754,7 @@
 							{
 								"type": "kumano_facts",
 								"fields": {
-									"tx_kumanokodo_variant": "pairs",
+									"tx_themekumanokodo_variant": "pairs",
 									"header": {
 										"en": "The day in figures",
 										"de": "Der Tag in Zahlen",
@@ -2762,7 +2762,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_facts": [
+									"tx_themekumanokodo_facts": [
 										{
 											"label": {
 												"en": "Date",
@@ -2817,7 +2817,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "infobox",
+									"tx_themekumanokodo_variant": "infobox",
 									"header": {
 										"en": "Tip for this day",
 										"de": "Tipp für diesen Tag",
@@ -2830,7 +2830,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "Practical",
@@ -2848,7 +2848,7 @@
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "quote",
+						"tx_themekumanokodo_variant": "quote",
 						"bodytext": {
 							"en": "<p>“The crab was here first. Walk around it.”</p>",
 							"de": "<p>„Die Krabbe war zuerst da. Geh außen herum.“</p>",
@@ -2874,10 +2874,10 @@
 							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
 							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
 						},
-						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+						"tx_themekumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
 					},
 					"items": {
-						"tx_kumanokodo_stations": [
+						"tx_themekumanokodo_stations": [
 							{
 								"name": {
 									"en": "Takijiri",
@@ -2963,7 +2963,7 @@
 								"link": "page:place-nachi"
 							}
 						],
-						"tx_kumanokodo_day_marks": [
+						"tx_themekumanokodo_day_marks": [
 							{
 								"label": {
 									"en": "Day 1 · 3.7 km",
@@ -3015,7 +3015,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "gallery",
+						"tx_themekumanokodo_variant": "gallery",
 						"frame_class": "sunk",
 						"header": {
 							"en": "The day in photos",
@@ -3036,10 +3036,10 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links"
+						"tx_themekumanokodo_variant": "links"
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Previous day",
@@ -3059,7 +3059,7 @@
 								"direction": "forward"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				}
 			],
@@ -3119,14 +3119,14 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "figure-plain"
+									"tx_themekumanokodo_variant": "figure-plain"
 								},
 								"image": [
 									"morning-bus"
@@ -3147,7 +3147,7 @@
 							{
 								"type": "kumano_facts",
 								"fields": {
-									"tx_kumanokodo_variant": "pairs",
+									"tx_themekumanokodo_variant": "pairs",
 									"header": {
 										"en": "The day in figures",
 										"de": "Der Tag in Zahlen",
@@ -3155,7 +3155,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_facts": [
+									"tx_themekumanokodo_facts": [
 										{
 											"label": {
 												"en": "Date",
@@ -3210,7 +3210,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "infobox",
+									"tx_themekumanokodo_variant": "infobox",
 									"header": {
 										"en": "Tip for this day",
 										"de": "Tipp für diesen Tag",
@@ -3223,7 +3223,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "Practical",
@@ -3241,7 +3241,7 @@
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "quote",
+						"tx_themekumanokodo_variant": "quote",
 						"bodytext": {
 							"en": "<p>“Twenty-five kilometres, and the bath does not care how you got here.”</p>",
 							"de": "<p>„Fünfundzwanzig Kilometer – dem Bad ist egal, wie du hergekommen bist.“</p>",
@@ -3267,10 +3267,10 @@
 							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
 							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
 						},
-						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+						"tx_themekumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
 					},
 					"items": {
-						"tx_kumanokodo_stations": [
+						"tx_themekumanokodo_stations": [
 							{
 								"name": {
 									"en": "Takijiri",
@@ -3356,7 +3356,7 @@
 								"link": "page:place-nachi"
 							}
 						],
-						"tx_kumanokodo_day_marks": [
+						"tx_themekumanokodo_day_marks": [
 							{
 								"label": {
 									"en": "Day 1 · 3.7 km",
@@ -3408,7 +3408,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "gallery",
+						"tx_themekumanokodo_variant": "gallery",
 						"frame_class": "sunk",
 						"header": {
 							"en": "The day in photos",
@@ -3433,10 +3433,10 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links"
+						"tx_themekumanokodo_variant": "links"
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Previous day",
@@ -3456,7 +3456,7 @@
 								"direction": "forward"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				}
 			],
@@ -3516,14 +3516,14 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "figure-plain"
+									"tx_themekumanokodo_variant": "figure-plain"
 								},
 								"image": [
 									"seaside-station"
@@ -3544,7 +3544,7 @@
 							{
 								"type": "kumano_facts",
 								"fields": {
-									"tx_kumanokodo_variant": "pairs",
+									"tx_themekumanokodo_variant": "pairs",
 									"header": {
 										"en": "The day in figures",
 										"de": "Der Tag in Zahlen",
@@ -3552,7 +3552,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_facts": [
+									"tx_themekumanokodo_facts": [
 										{
 											"label": {
 												"en": "Date",
@@ -3607,7 +3607,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "infobox",
+									"tx_themekumanokodo_variant": "infobox",
 									"header": {
 										"en": "Tip for this day",
 										"de": "Tipp für diesen Tag",
@@ -3620,7 +3620,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "Practical",
@@ -3638,7 +3638,7 @@
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "quote",
+						"tx_themekumanokodo_variant": "quote",
 						"bodytext": {
 							"en": "<p>“Two passes, one bus. Do not miss the bus.”</p>",
 							"de": "<p>„Zwei Pässe, ein Bus. Den Bus nicht verpassen.“</p>",
@@ -3664,10 +3664,10 @@
 							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
 							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
 						},
-						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+						"tx_themekumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
 					},
 					"items": {
-						"tx_kumanokodo_stations": [
+						"tx_themekumanokodo_stations": [
 							{
 								"name": {
 									"en": "Takijiri",
@@ -3753,7 +3753,7 @@
 								"link": "page:place-nachi"
 							}
 						],
-						"tx_kumanokodo_day_marks": [
+						"tx_themekumanokodo_day_marks": [
 							{
 								"label": {
 									"en": "Day 1 · 3.7 km",
@@ -3805,7 +3805,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "gallery",
+						"tx_themekumanokodo_variant": "gallery",
 						"frame_class": "sunk",
 						"header": {
 							"en": "The day in photos",
@@ -3822,10 +3822,10 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links"
+						"tx_themekumanokodo_variant": "links"
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Previous day",
@@ -3836,7 +3836,7 @@
 								"direction": "back"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				}
 			],
@@ -3896,7 +3896,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "fullwidth"
+						"tx_themekumanokodo_variant": "fullwidth"
 					},
 					"image": [
 						"vending-machines"
@@ -3905,7 +3905,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -3922,7 +3922,7 @@
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "gallery"
+									"tx_themekumanokodo_variant": "gallery"
 								},
 								"image": [
 									"chikatsuyu-gate",
@@ -3936,10 +3936,10 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links"
+						"tx_themekumanokodo_variant": "links"
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Days and places",
@@ -3959,7 +3959,7 @@
 								"direction": "forward"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				}
 			],
@@ -3984,7 +3984,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "fullwidth"
+						"tx_themekumanokodo_variant": "fullwidth"
 					},
 					"image": [
 						"yunomine-street"
@@ -3993,7 +3993,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -4010,7 +4010,7 @@
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "gallery"
+									"tx_themekumanokodo_variant": "gallery"
 								},
 								"image": [
 									"river-bridge",
@@ -4024,10 +4024,10 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links"
+						"tx_themekumanokodo_variant": "links"
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Days and places",
@@ -4047,7 +4047,7 @@
 								"direction": "forward"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				}
 			],
@@ -4072,7 +4072,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "fullwidth"
+						"tx_themekumanokodo_variant": "fullwidth"
 					},
 					"image": [
 						"nachi-pagoda"
@@ -4081,7 +4081,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -4098,7 +4098,7 @@
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "gallery"
+									"tx_themekumanokodo_variant": "gallery"
 								},
 								"image": [
 									"harbour-ferry",
@@ -4112,10 +4112,10 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links"
+						"tx_themekumanokodo_variant": "links"
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Days and places",
@@ -4135,7 +4135,7 @@
 								"direction": "forward"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				}
 			],
@@ -4175,10 +4175,10 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "links"
+									"tx_themekumanokodo_variant": "links"
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"title": {
 												"en": "The route",
@@ -4189,7 +4189,7 @@
 											"direction": "back"
 										}
 									],
-									"tx_kumanokodo_links": []
+									"tx_themekumanokodo_links": []
 								}
 							}
 						]
@@ -4227,13 +4227,13 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "tile",
-						"tx_kumanokodo_columns": "2",
+						"tx_themekumanokodo_variant": "tile",
+						"tx_themekumanokodo_columns": "2",
 						"space_before_class": "flush-top",
-						"tx_kumanokodo_edge": 1
+						"tx_themekumanokodo_edge": 1
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"icon": "map-pin",
 								"title": {
@@ -4276,9 +4276,9 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "heading-content",
+						"tx_themekumanokodo_layout": "heading-content",
 						"frame_class": "sunk",
-						"tx_kumanokodo_colour": "first"
+						"tx_themekumanokodo_colour": "first"
 					},
 					"children": {
 						"201": [
@@ -4298,7 +4298,7 @@
 								"type": "kumano_questions",
 								"fields": {},
 								"items": {
-									"tx_kumanokodo_questions": [
+									"tx_themekumanokodo_questions": [
 										{
 											"question": {
 												"en": "Do I need to book accommodation in advance?",
@@ -4465,7 +4465,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -4484,7 +4484,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "subnav",
+									"tx_themekumanokodo_variant": "subnav",
 									"header": {
 										"en": "Practical",
 										"de": "Praktisches",
@@ -4492,7 +4492,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"title": {
 												"en": "Getting there and buses",
@@ -4526,7 +4526,7 @@
 											"link": "page:practical-maps"
 										}
 									],
-									"tx_kumanokodo_links": []
+									"tx_themekumanokodo_links": []
 								}
 							}
 						]
@@ -4554,7 +4554,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -4573,7 +4573,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "subnav",
+									"tx_themekumanokodo_variant": "subnav",
 									"header": {
 										"en": "Practical",
 										"de": "Praktisches",
@@ -4581,7 +4581,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"title": {
 												"en": "Getting there and buses",
@@ -4615,7 +4615,7 @@
 											"link": "page:practical-maps"
 										}
 									],
-									"tx_kumanokodo_links": []
+									"tx_themekumanokodo_links": []
 								}
 							}
 						]
@@ -4643,7 +4643,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -4662,7 +4662,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "subnav",
+									"tx_themekumanokodo_variant": "subnav",
 									"header": {
 										"en": "Practical",
 										"de": "Praktisches",
@@ -4670,7 +4670,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"title": {
 												"en": "Getting there and buses",
@@ -4704,7 +4704,7 @@
 											"link": "page:practical-maps"
 										}
 									],
-									"tx_kumanokodo_links": []
+									"tx_themekumanokodo_links": []
 								}
 							}
 						]
@@ -4732,7 +4732,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -4749,7 +4749,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "downloads"
+									"tx_themekumanokodo_variant": "downloads"
 								},
 								"media": {
 									"en": [
@@ -4774,7 +4774,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "subnav",
+									"tx_themekumanokodo_variant": "subnav",
 									"header": {
 										"en": "Practical",
 										"de": "Praktisches",
@@ -4782,7 +4782,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"title": {
 												"en": "Getting there and buses",
@@ -4816,7 +4816,7 @@
 											"link": "page:practical-maps"
 										}
 									],
-									"tx_kumanokodo_links": []
+									"tx_themekumanokodo_links": []
 								}
 							}
 						]
@@ -4854,7 +4854,7 @@
 				{
 					"type": "kumano_chapter",
 					"fields": {
-						"tx_kumanokodo_anchor": "photos-day-1",
+						"tx_themekumanokodo_anchor": "photos-day-1",
 						"subheader": {
 							"en": "Day 1 · 20 April · from 15:40",
 							"de": "Tag 1 · 20. April · ab 15:40",
@@ -4874,20 +4874,20 @@
 					"image": [
 						{
 							"photo": "trailhead-river",
-							"tx_kumanokodo_span": 8,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 8,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "signpost",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 1
 						}
 					]
 				},
 				{
 					"type": "kumano_chapter",
 					"fields": {
-						"tx_kumanokodo_anchor": "photos-day-2",
+						"tx_themekumanokodo_anchor": "photos-day-2",
 						"subheader": {
 							"en": "Day 2 · 21 April · 07:02–17:28",
 							"de": "Tag 2 · 21. April · 07:02–17:28",
@@ -4907,45 +4907,45 @@
 					"image": [
 						{
 							"photo": "misty-valley",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "roadside-markers",
-							"tx_kumanokodo_span": 3,
-							"tx_kumanokodo_shift": 2
+							"tx_themekumanokodo_span": 3,
+							"tx_themekumanokodo_shift": 2
 						},
 						{
 							"photo": "stone-path-walkers",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "forest-stream",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "land-crab",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 2
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 2
 						},
 						{
 							"photo": "vending-machines",
-							"tx_kumanokodo_span": 3,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 3,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "chikatsuyu-gate",
-							"tx_kumanokodo_span": 12,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 12,
+							"tx_themekumanokodo_shift": 0
 						}
 					]
 				},
 				{
 					"type": "kumano_chapter",
 					"fields": {
-						"tx_kumanokodo_anchor": "photos-day-3",
+						"tx_themekumanokodo_anchor": "photos-day-3",
 						"subheader": {
 							"en": "Day 3 · 22 April · 07:18–16:05",
 							"de": "Tag 3 · 22. April · 07:18–16:05",
@@ -4965,70 +4965,70 @@
 					"image": [
 						{
 							"photo": "morning-bus",
-							"tx_kumanokodo_span": 3,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 3,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "cedar-canopy",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "walker-in-mist",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "root-path",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 2
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 2
 						},
 						{
 							"photo": "oji-shrine",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "cobbled-path",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "sunlit-path",
-							"tx_kumanokodo_span": 8,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 8,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "ridge-view",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "fern-frond",
-							"tx_kumanokodo_span": 3,
-							"tx_kumanokodo_shift": 2
+							"tx_themekumanokodo_span": 3,
+							"tx_themekumanokodo_shift": 2
 						},
 						{
 							"photo": "yunomine-street",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "river-bridge",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "outdoor-bath",
-							"tx_kumanokodo_span": 6,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 6,
+							"tx_themekumanokodo_shift": 0
 						}
 					]
 				},
 				{
 					"type": "kumano_chapter",
 					"fields": {
-						"tx_kumanokodo_anchor": "photos-day-4",
+						"tx_themekumanokodo_anchor": "photos-day-4",
 						"subheader": {
 							"en": "Day 4 · 23 April · 10:55–15:48",
 							"de": "Tag 4 · 23. April · 10:55–15:48",
@@ -5048,30 +5048,30 @@
 					"image": [
 						{
 							"photo": "seaside-station",
-							"tx_kumanokodo_span": 4,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 4,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "nachi-pagoda",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 1
 						},
 						{
 							"photo": "harbour-ferry",
-							"tx_kumanokodo_span": 7,
-							"tx_kumanokodo_shift": 0
+							"tx_themekumanokodo_span": 7,
+							"tx_themekumanokodo_shift": 0
 						},
 						{
 							"photo": "ryokan-room",
-							"tx_kumanokodo_span": 5,
-							"tx_kumanokodo_shift": 1
+							"tx_themekumanokodo_span": 5,
+							"tx_themekumanokodo_shift": 1
 						}
 					]
 				},
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "fullwidth"
+						"tx_themekumanokodo_variant": "fullwidth"
 					},
 					"image": [
 						"sea-of-clouds"
@@ -5080,7 +5080,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "fullwidth",
+						"tx_themekumanokodo_variant": "fullwidth",
 						"bodytext": {
 							"en": "<p>Two days later, the last evening. The light came out for twenty minutes. April 25, 17:37</p>",
 							"de": "<p>Zwei Tage später, der letzte Abend. Für zwanzig Minuten kam das Licht heraus. 25. April, 17:37</p>",
@@ -5351,7 +5351,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -5366,7 +5366,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "infobox",
+									"tx_themekumanokodo_variant": "infobox",
 									"header": {
 										"en": "Demo access",
 										"de": "Demo-Zugang",
@@ -5401,7 +5401,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -5418,7 +5418,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "downloads"
+									"tx_themekumanokodo_variant": "downloads"
 								},
 								"media": {
 									"en": [
@@ -5452,8 +5452,8 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "teaser",
-						"tx_kumanokodo_columns": "4",
+						"tx_themekumanokodo_variant": "teaser",
+						"tx_themekumanokodo_columns": "4",
 						"header": {
 							"en": "Days",
 							"de": "Tage",
@@ -5461,7 +5461,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "signpost",
 								"title": {
@@ -5574,10 +5574,10 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "links-stacked"
+									"tx_themekumanokodo_variant": "links-stacked"
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"title": {
 												"en": "Home",
@@ -5603,7 +5603,7 @@
 											"link": "page:practical"
 										}
 									],
-									"tx_kumanokodo_links": []
+									"tx_themekumanokodo_links": []
 								}
 							}
 						]
@@ -5641,14 +5641,14 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
 							{
 								"type": "form_formframework",
 								"fields": {
-									"pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:kumano_kodo/Resources/Private/Forms/Demo/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
+									"pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:theme_kumano_kodo/Resources/Private/Forms/Demo/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
 								}
 							}
 						],
@@ -5688,7 +5688,7 @@
 				{
 					"type": "kumano_page_top",
 					"fields": {
-						"tx_kumanokodo_variant": "hero",
+						"tx_themekumanokodo_variant": "hero",
 						"subheader": {
 							"en": "Kii Peninsula · Wakayama · April 2024",
 							"de": "Kii-Halbinsel · Wakayama · April 2024",
@@ -5709,7 +5709,7 @@
 						"sea-of-clouds"
 					],
 					"items": {
-						"tx_kumanokodo_links": [
+						"tx_themekumanokodo_links": [
 							{
 								"title": {
 									"en": "See the days",
@@ -5727,7 +5727,7 @@
 								"link": "page:at-a-glance#faq"
 							}
 						],
-						"tx_kumanokodo_facts": [
+						"tx_themekumanokodo_facts": [
 							{
 								"label": {
 									"en": "On foot",
@@ -5777,7 +5777,7 @@
 								}
 							}
 						],
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "stone-path-walkers",
 								"meta": {
@@ -5832,7 +5832,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "text-media",
+						"tx_themekumanokodo_layout": "text-media",
 						"header": {
 							"en": "A path in use for a thousand years",
 							"de": "Ein Pfad, der seit tausend Jahren begangen wird",
@@ -5861,7 +5861,7 @@
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "figure",
+									"tx_themekumanokodo_variant": "figure",
 									"bodytext": {
 										"en": "<p>Nakahechi, April 21, 11:47</p>",
 										"de": "<p>Nakahechi, 21. April, 11:47</p>",
@@ -5878,7 +5878,7 @@
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "highlight",
+						"tx_themekumanokodo_variant": "highlight",
 						"frame_class": "sunk",
 						"subheader": {
 							"en": "Yatagarasu",
@@ -5900,7 +5900,7 @@
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "quote",
+						"tx_themekumanokodo_variant": "quote",
 						"space_before_class": "large",
 						"bodytext": {
 							"en": "<p>“Dinner is at six. The bath is open until eleven.”</p>",
@@ -5924,10 +5924,10 @@
 							{
 								"type": "kumano_facts",
 								"fields": {
-									"tx_kumanokodo_variant": "figures"
+									"tx_themekumanokodo_variant": "figures"
 								},
 								"items": {
-									"tx_kumanokodo_facts": [
+									"tx_themekumanokodo_facts": [
 										{
 											"value": {
 												"en": "68",
@@ -5982,20 +5982,20 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "days",
+									"tx_themekumanokodo_variant": "days",
 									"header": {
 										"en": "How the four days went",
 										"de": "Wie die vier Tage verliefen",
 										"ja": "四日間の記録"
 									},
-									"tx_kumanokodo_aside": {
+									"tx_themekumanokodo_aside": {
 										"en": "Times from the photos, not from a plan.",
 										"de": "Uhrzeiten aus den Fotos, nicht aus einem Plan.",
 										"ja": "時刻は計画ではなく、写真から。"
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"label": {
 												"en": "Day 1 · 20 April",
@@ -6085,7 +6085,7 @@
 											}
 										}
 									],
-									"tx_kumanokodo_links": []
+									"tx_themekumanokodo_links": []
 								}
 							}
 						]
@@ -6094,10 +6094,10 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "stage",
-						"tx_kumanokodo_columns": "slider",
+						"tx_themekumanokodo_variant": "stage",
+						"tx_themekumanokodo_columns": "slider",
 						"frame_class": "sunk",
-						"tx_kumanokodo_anchor": "stages",
+						"tx_themekumanokodo_anchor": "stages",
 						"header": {
 							"en": "Four days, Takijiri to Nachi",
 							"de": "Vier Tage, Takijiri bis Nachi",
@@ -6110,7 +6110,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "signpost",
 								"label": {
@@ -6247,7 +6247,7 @@
 							"de": "Wegekarte",
 							"ja": "ルートマップ"
 						},
-						"tx_kumanokodo_aside": {
+						"tx_themekumanokodo_aside": {
 							"en": "The order of the stations and the day boundaries are right, the geometry is not. For navigation you need the tourism office map.",
 							"de": "Die Reihenfolge der Stationen und die Tagesgrenzen stimmen, die Geometrie nicht. Zum Navigieren braucht man die Karte des Tourismusbüros.",
 							"ja": "地点の順序と日の区切りは正確だが、形は正確ではない。道案内には観光協会の地図が必要。"
@@ -6257,10 +6257,10 @@
 							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
 							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
 						},
-						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+						"tx_themekumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
 					},
 					"items": {
-						"tx_kumanokodo_stations": [
+						"tx_themekumanokodo_stations": [
 							{
 								"name": {
 									"en": "Takijiri",
@@ -6346,7 +6346,7 @@
 								"link": "page:place-nachi"
 							}
 						],
-						"tx_kumanokodo_day_marks": [
+						"tx_themekumanokodo_day_marks": [
 							{
 								"label": {
 									"en": "Day 1 · 3.7 km",
@@ -6415,18 +6415,18 @@
 							{
 								"type": "kumano_columns",
 								"fields": {
-									"tx_kumanokodo_layout": "wide-narrow"
+									"tx_themekumanokodo_layout": "wide-narrow"
 								},
 								"children": {
 									"201": [
 										{
 											"type": "kumano_cards",
 											"fields": {
-												"tx_kumanokodo_variant": "place",
-												"tx_kumanokodo_columns": "2"
+												"tx_themekumanokodo_variant": "place",
+												"tx_themekumanokodo_columns": "2"
 											},
 											"items": {
-												"tx_kumanokodo_entries": [
+												"tx_themekumanokodo_entries": [
 													{
 														"image": "nachi-pagoda",
 														"title": {
@@ -6449,11 +6449,11 @@
 										{
 											"type": "kumano_cards",
 											"fields": {
-												"tx_kumanokodo_variant": "place",
-												"tx_kumanokodo_columns": "2"
+												"tx_themekumanokodo_variant": "place",
+												"tx_themekumanokodo_columns": "2"
 											},
 											"items": {
-												"tx_kumanokodo_entries": [
+												"tx_themekumanokodo_entries": [
 													{
 														"image": "yunomine-street",
 														"title": {
@@ -6477,18 +6477,18 @@
 							{
 								"type": "kumano_columns",
 								"fields": {
-									"tx_kumanokodo_layout": "narrow-wide"
+									"tx_themekumanokodo_layout": "narrow-wide"
 								},
 								"children": {
 									"201": [
 										{
 											"type": "kumano_cards",
 											"fields": {
-												"tx_kumanokodo_variant": "place",
-												"tx_kumanokodo_columns": "2"
+												"tx_themekumanokodo_variant": "place",
+												"tx_themekumanokodo_columns": "2"
 											},
 											"items": {
-												"tx_kumanokodo_entries": [
+												"tx_themekumanokodo_entries": [
 													{
 														"image": "chikatsuyu-gate",
 														"title": {
@@ -6511,7 +6511,7 @@
 										{
 											"type": "kumano_images",
 											"fields": {
-												"tx_kumanokodo_variant": "figure",
+												"tx_themekumanokodo_variant": "figure",
 												"bodytext": {
 													"en": "<p>Nakahechi, April 21, 12:03 · Nakahechi, April 22, 08:26</p>",
 													"de": "<p>Nakahechi, 21. April, 12:03 · Nakahechi, 22. April, 08:26</p>",
@@ -6532,7 +6532,7 @@
 				{
 					"type": "kumano_questions",
 					"fields": {
-						"tx_kumanokodo_anchor": "faq",
+						"tx_themekumanokodo_anchor": "faq",
 						"frame_class": "sunk",
 						"subheader": {
 							"en": "Practical",
@@ -6551,7 +6551,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_questions": [
+						"tx_themekumanokodo_questions": [
 							{
 								"question": {
 									"en": "Do I need to book accommodation in advance?",
@@ -6660,7 +6660,7 @@
 						"yunomine-street"
 					],
 					"items": {
-						"tx_kumanokodo_links": [
+						"tx_themekumanokodo_links": [
 							{
 								"title": {
 									"en": "Read more",
@@ -6675,14 +6675,14 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "even"
+						"tx_themekumanokodo_layout": "even"
 					},
 					"children": {
 						"201": [
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "media",
+									"tx_themekumanokodo_variant": "media",
 									"header": {
 										"en": "Ways to walk it",
 										"de": "Wege, ihn zu gehen",
@@ -6690,7 +6690,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"image": "stone-path-walkers",
 											"title": {
@@ -6734,7 +6734,7 @@
 											"link": "page:kohechi"
 										}
 									],
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "All days and places",
@@ -6751,11 +6751,11 @@
 							{
 								"type": "kumano_cards",
 								"fields": {
-									"tx_kumanokodo_variant": "person",
-									"tx_kumanokodo_columns": "2"
+									"tx_themekumanokodo_variant": "person",
+									"tx_themekumanokodo_columns": "2"
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"image": "ryokan-room",
 											"title": {
@@ -6802,7 +6802,7 @@
 				{
 					"type": "kumano_page_top",
 					"fields": {
-						"tx_kumanokodo_variant": "text",
+						"tx_themekumanokodo_variant": "text",
 						"header": {
 							"en": "Content showcase",
 							"de": "Inhalte im Überblick",
@@ -6818,7 +6818,7 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "link-groups",
+						"tx_themekumanokodo_variant": "link-groups",
 						"header": {
 							"en": "Contents",
 							"de": "Inhalt",
@@ -6827,7 +6827,7 @@
 						"space_before_class": "flush-top"
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"label": {
 									"en": "Page top",
@@ -7492,13 +7492,13 @@
 								"link": "#showcase-news"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				},
 				{
 					"type": "header",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-hero",
+						"tx_themekumanokodo_anchor": "showcase-hero",
 						"subheader": {
 							"en": "Page top",
 							"de": "Seitenkopf",
@@ -7514,7 +7514,7 @@
 				{
 					"type": "kumano_page_top",
 					"fields": {
-						"tx_kumanokodo_variant": "hero",
+						"tx_themekumanokodo_variant": "hero",
 						"header_layout": "2",
 						"subheader": {
 							"en": "Kii Peninsula · Wakayama · April 2024",
@@ -7536,7 +7536,7 @@
 						"sea-of-clouds"
 					],
 					"items": {
-						"tx_kumanokodo_links": [
+						"tx_themekumanokodo_links": [
 							{
 								"title": {
 									"en": "See the days",
@@ -7554,7 +7554,7 @@
 								"link": "page:at-a-glance#faq"
 							}
 						],
-						"tx_kumanokodo_facts": [
+						"tx_themekumanokodo_facts": [
 							{
 								"label": {
 									"en": "On foot",
@@ -7609,7 +7609,7 @@
 				{
 					"type": "header",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-hero-slides",
+						"tx_themekumanokodo_anchor": "showcase-hero-slides",
 						"subheader": {
 							"en": "Page top",
 							"de": "Seitenkopf",
@@ -7625,7 +7625,7 @@
 				{
 					"type": "kumano_page_top",
 					"fields": {
-						"tx_kumanokodo_variant": "hero",
+						"tx_themekumanokodo_variant": "hero",
 						"header_layout": "2",
 						"subheader": {
 							"en": "Kii Peninsula · Wakayama · April 2024",
@@ -7647,7 +7647,7 @@
 						"sea-of-clouds"
 					],
 					"items": {
-						"tx_kumanokodo_links": [
+						"tx_themekumanokodo_links": [
 							{
 								"title": {
 									"en": "See the days",
@@ -7665,7 +7665,7 @@
 								"link": "page:at-a-glance#faq"
 							}
 						],
-						"tx_kumanokodo_facts": [
+						"tx_themekumanokodo_facts": [
 							{
 								"label": {
 									"en": "On foot",
@@ -7715,7 +7715,7 @@
 								}
 							}
 						],
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "stone-path-walkers",
 								"meta": {
@@ -7775,7 +7775,7 @@
 							"de": "<p>Zwischen Takijiri und Hongu quert der Weg Pässe, die kaum höher als 700 Meter sind, und trotzdem wirkt er abgelegen. Die Wälder sind gepflanzte Sugi-Zedern, dicht an dicht; wenn sich Nebel zwischen sie legt, sieht man keine zwanzig Meter weit.</p><p>Unterwegs kommt man an den Oji vorbei, kleinen Schreinen am Weg, an denen Pilger früher beteten. Meist sind es eine Lichtung, ein Stein und ein hölzernes Torii, leicht zu übersehen, wenn man auf die Füße schaut.</p>",
 							"ja": "<p>滝尻から本宮まで、道は標高700メートルにも満たない峠を越えていくのに、どこか人里離れた感じがする。森は植林された杉が密に並び、霧が立ち込めると二十メートル先も見えない。</p><p>道中では王子を通り過ぎる。かつて参詣者が祈った道端の小さな社だ。たいていは空き地と石と木の鳥居だけで、足元ばかり見ていると見落としてしまう。</p>"
 						},
-						"tx_kumanokodo_anchor": "showcase-text",
+						"tx_themekumanokodo_anchor": "showcase-text",
 						"subheader": {
 							"en": "Text",
 							"de": "Text",
@@ -7796,7 +7796,7 @@
 							"de": "<table><thead><tr><th>Tag</th><th>Abschnitt</th><th>Strecke</th></tr></thead><tbody><tr><td>Tag 1</td><td>Takijiri → Takahara</td><td>3,7 km</td></tr><tr><td>Tag 2</td><td>Takahara → Chikatsuyu</td><td>9,8 km</td></tr><tr><td>Tag 3</td><td>Chikatsuyu → Hongu</td><td>rund 25 km</td></tr><tr><td>Tag 4</td><td>Kogumotori-goe</td><td>rund 13 km</td></tr><tr><td>Tag 4</td><td>Ogumotori-goe → Nachi</td><td>rund 14,5 km</td></tr></tbody></table>",
 							"ja": "<table><thead><tr><th>日</th><th>区間</th><th>距離</th></tr></thead><tbody><tr><td>1日目</td><td>滝尻 → 高原</td><td>3.7 km</td></tr><tr><td>2日目</td><td>高原 → 近露</td><td>9.8 km</td></tr><tr><td>3日目</td><td>近露 → 本宮</td><td>約25 km</td></tr><tr><td>4日目</td><td>小雲取越</td><td>約13 km</td></tr><tr><td>4日目</td><td>大雲取越 → 那智</td><td>約14.5 km</td></tr></tbody></table>"
 						},
-						"tx_kumanokodo_anchor": "showcase-table",
+						"tx_themekumanokodo_anchor": "showcase-table",
 						"subheader": {
 							"en": "Text",
 							"de": "Text",
@@ -7812,7 +7812,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-image-left",
+						"tx_themekumanokodo_anchor": "showcase-image-left",
 						"subheader": {
 							"en": "Text and image",
 							"de": "Text und Bild",
@@ -7845,7 +7845,7 @@
 									"yunomine-street"
 								],
 								"items": {
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "Read more",
@@ -7863,7 +7863,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-image-right",
+						"tx_themekumanokodo_anchor": "showcase-image-right",
 						"subheader": {
 							"en": "Text and image",
 							"de": "Text und Bild",
@@ -7896,7 +7896,7 @@
 									"chikatsuyu-gate"
 								],
 								"items": {
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "Read more",
@@ -7914,7 +7914,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-long-text",
+						"tx_themekumanokodo_anchor": "showcase-long-text",
 						"subheader": {
 							"en": "Text and image",
 							"de": "Text und Bild",
@@ -7953,7 +7953,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-video",
+						"tx_themekumanokodo_anchor": "showcase-video",
 						"subheader": {
 							"en": "Text and image",
 							"de": "Text und Bild",
@@ -7993,7 +7993,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-figure",
+						"tx_themekumanokodo_anchor": "showcase-figure",
 						"subheader": {
 							"en": "Images",
 							"de": "Bilder",
@@ -8010,7 +8010,7 @@
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "figure",
+									"tx_themekumanokodo_variant": "figure",
 									"bodytext": {
 										"en": "<p>Nakahechi, April 21, 11:47</p>",
 										"de": "<p>Nakahechi, 21. April, 11:47</p>",
@@ -8027,7 +8027,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-figure-plain",
+						"tx_themekumanokodo_anchor": "showcase-figure-plain",
 						"subheader": {
 							"en": "Images",
 							"de": "Bilder",
@@ -8044,7 +8044,7 @@
 							{
 								"type": "kumano_images",
 								"fields": {
-									"tx_kumanokodo_variant": "figure-plain"
+									"tx_themekumanokodo_variant": "figure-plain"
 								},
 								"image": [
 									"misty-valley",
@@ -8057,8 +8057,8 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "gallery",
-						"tx_kumanokodo_anchor": "showcase-gallery",
+						"tx_themekumanokodo_variant": "gallery",
+						"tx_themekumanokodo_anchor": "showcase-gallery",
 						"subheader": {
 							"en": "Images",
 							"de": "Bilder",
@@ -8084,7 +8084,7 @@
 				{
 					"type": "header",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-fullwidth",
+						"tx_themekumanokodo_anchor": "showcase-fullwidth",
 						"subheader": {
 							"en": "Images",
 							"de": "Bilder",
@@ -8101,7 +8101,7 @@
 				{
 					"type": "kumano_images",
 					"fields": {
-						"tx_kumanokodo_variant": "fullwidth"
+						"tx_themekumanokodo_variant": "fullwidth"
 					},
 					"image": [
 						"evening-rooftops"
@@ -8110,9 +8110,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "teaser",
-						"tx_kumanokodo_columns": "4",
-						"tx_kumanokodo_anchor": "showcase-teaser",
+						"tx_themekumanokodo_variant": "teaser",
+						"tx_themekumanokodo_columns": "4",
+						"tx_themekumanokodo_anchor": "showcase-teaser",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8125,7 +8125,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "signpost",
 								"title": {
@@ -8208,9 +8208,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "teaser",
-						"tx_kumanokodo_columns": "4",
-						"tx_kumanokodo_anchor": "showcase-teaser-edge",
+						"tx_themekumanokodo_variant": "teaser",
+						"tx_themekumanokodo_columns": "4",
+						"tx_themekumanokodo_anchor": "showcase-teaser-edge",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8221,10 +8221,10 @@
 							"de": "Teaser mit Farbkante",
 							"ja": "ティーザー（カラーエッジ）"
 						},
-						"tx_kumanokodo_edge": 1
+						"tx_themekumanokodo_edge": 1
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "signpost",
 								"title": {
@@ -8307,7 +8307,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-place",
+						"tx_themekumanokodo_anchor": "showcase-place",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8324,18 +8324,18 @@
 							{
 								"type": "kumano_columns",
 								"fields": {
-									"tx_kumanokodo_layout": "wide-narrow"
+									"tx_themekumanokodo_layout": "wide-narrow"
 								},
 								"children": {
 									"201": [
 										{
 											"type": "kumano_cards",
 											"fields": {
-												"tx_kumanokodo_variant": "place",
-												"tx_kumanokodo_columns": "2"
+												"tx_themekumanokodo_variant": "place",
+												"tx_themekumanokodo_columns": "2"
 											},
 											"items": {
-												"tx_kumanokodo_entries": [
+												"tx_themekumanokodo_entries": [
 													{
 														"image": "nachi-pagoda",
 														"title": {
@@ -8358,11 +8358,11 @@
 										{
 											"type": "kumano_cards",
 											"fields": {
-												"tx_kumanokodo_variant": "place",
-												"tx_kumanokodo_columns": "2"
+												"tx_themekumanokodo_variant": "place",
+												"tx_themekumanokodo_columns": "2"
 											},
 											"items": {
-												"tx_kumanokodo_entries": [
+												"tx_themekumanokodo_entries": [
 													{
 														"image": "yunomine-street",
 														"title": {
@@ -8389,9 +8389,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "person",
-						"tx_kumanokodo_columns": "2",
-						"tx_kumanokodo_anchor": "showcase-person",
+						"tx_themekumanokodo_variant": "person",
+						"tx_themekumanokodo_columns": "2",
+						"tx_themekumanokodo_anchor": "showcase-person",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8404,7 +8404,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "ryokan-room",
 								"title": {
@@ -8429,10 +8429,10 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "cta",
-						"tx_kumanokodo_columns": "3",
+						"tx_themekumanokodo_variant": "cta",
+						"tx_themekumanokodo_columns": "3",
 						"frame_class": "sunk",
-						"tx_kumanokodo_anchor": "showcase-cta",
+						"tx_themekumanokodo_anchor": "showcase-cta",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8445,7 +8445,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Book accommodation",
@@ -8509,9 +8509,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "cta",
-						"tx_kumanokodo_columns": "3",
-						"tx_kumanokodo_anchor": "showcase-cta-edge",
+						"tx_themekumanokodo_variant": "cta",
+						"tx_themekumanokodo_columns": "3",
+						"tx_themekumanokodo_anchor": "showcase-cta-edge",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8522,10 +8522,10 @@
 							"de": "Handlungsaufruf mit Farbkante",
 							"ja": "行動の呼びかけ（カラーエッジ）"
 						},
-						"tx_kumanokodo_edge": 1
+						"tx_themekumanokodo_edge": 1
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Book accommodation",
@@ -8589,9 +8589,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "tile",
-						"tx_kumanokodo_columns": "2",
-						"tx_kumanokodo_anchor": "showcase-tile",
+						"tx_themekumanokodo_variant": "tile",
+						"tx_themekumanokodo_columns": "2",
+						"tx_themekumanokodo_anchor": "showcase-tile",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8604,7 +8604,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"icon": "map-pin",
 								"title": {
@@ -8647,9 +8647,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "tile",
-						"tx_kumanokodo_columns": "2",
-						"tx_kumanokodo_anchor": "showcase-tile-edge",
+						"tx_themekumanokodo_variant": "tile",
+						"tx_themekumanokodo_columns": "2",
+						"tx_themekumanokodo_anchor": "showcase-tile-edge",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8660,10 +8660,10 @@
 							"de": "Link-Kachel mit Farbkante",
 							"ja": "リンクタイル（カラーエッジ）"
 						},
-						"tx_kumanokodo_edge": 1
+						"tx_themekumanokodo_edge": 1
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"icon": "map-pin",
 								"title": {
@@ -8706,9 +8706,9 @@
 				{
 					"type": "kumano_cards",
 					"fields": {
-						"tx_kumanokodo_variant": "stage",
-						"tx_kumanokodo_columns": "slider",
-						"tx_kumanokodo_anchor": "showcase-stage",
+						"tx_themekumanokodo_variant": "stage",
+						"tx_themekumanokodo_columns": "slider",
+						"tx_themekumanokodo_anchor": "showcase-stage",
 						"subheader": {
 							"en": "Cards",
 							"de": "Karten",
@@ -8721,7 +8721,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"image": "signpost",
 								"label": {
@@ -8848,7 +8848,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-media",
+						"tx_themekumanokodo_anchor": "showcase-media",
 						"subheader": {
 							"en": "List",
 							"de": "Liste",
@@ -8865,7 +8865,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "media",
+									"tx_themekumanokodo_variant": "media",
 									"header": {
 										"en": "Ways to walk it",
 										"de": "Wege, ihn zu gehen",
@@ -8873,7 +8873,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"image": "stone-path-walkers",
 											"title": {
@@ -8917,7 +8917,7 @@
 											"link": "page:kohechi"
 										}
 									],
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "All days and places",
@@ -8935,8 +8935,8 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "days",
-						"tx_kumanokodo_anchor": "showcase-days",
+						"tx_themekumanokodo_variant": "days",
+						"tx_themekumanokodo_anchor": "showcase-days",
 						"subheader": {
 							"en": "List",
 							"de": "Liste",
@@ -8949,7 +8949,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"label": {
 									"en": "Day 1 · 20 April",
@@ -9039,14 +9039,14 @@
 								}
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				},
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "downloads",
-						"tx_kumanokodo_anchor": "showcase-downloads",
+						"tx_themekumanokodo_variant": "downloads",
+						"tx_themekumanokodo_anchor": "showcase-downloads",
 						"subheader": {
 							"en": "List",
 							"de": "Liste",
@@ -9079,8 +9079,8 @@
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links",
-						"tx_kumanokodo_anchor": "showcase-links",
+						"tx_themekumanokodo_variant": "links",
+						"tx_themekumanokodo_anchor": "showcase-links",
 						"subheader": {
 							"en": "List",
 							"de": "Liste",
@@ -9093,7 +9093,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Getting there and buses",
@@ -9127,14 +9127,14 @@
 								"link": "page:practical-maps"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				},
 				{
 					"type": "kumano_list",
 					"fields": {
-						"tx_kumanokodo_variant": "links-stacked",
-						"tx_kumanokodo_anchor": "showcase-links-stacked",
+						"tx_themekumanokodo_variant": "links-stacked",
+						"tx_themekumanokodo_anchor": "showcase-links-stacked",
 						"subheader": {
 							"en": "List",
 							"de": "Liste",
@@ -9147,7 +9147,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_entries": [
+						"tx_themekumanokodo_entries": [
 							{
 								"title": {
 									"en": "Getting there and buses",
@@ -9181,13 +9181,13 @@
 								"link": "page:practical-maps"
 							}
 						],
-						"tx_kumanokodo_links": []
+						"tx_themekumanokodo_links": []
 					}
 				},
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-subnav",
+						"tx_themekumanokodo_anchor": "showcase-subnav",
 						"subheader": {
 							"en": "List",
 							"de": "Liste",
@@ -9204,7 +9204,7 @@
 							{
 								"type": "kumano_list",
 								"fields": {
-									"tx_kumanokodo_variant": "subnav",
+									"tx_themekumanokodo_variant": "subnav",
 									"header": {
 										"en": "Practical",
 										"de": "Praktisches",
@@ -9212,7 +9212,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_entries": [
+									"tx_themekumanokodo_entries": [
 										{
 											"title": {
 												"en": "Getting there and buses",
@@ -9246,7 +9246,7 @@
 											"link": "page:practical-maps"
 										}
 									],
-									"tx_kumanokodo_links": []
+									"tx_themekumanokodo_links": []
 								}
 							}
 						]
@@ -9255,8 +9255,8 @@
 				{
 					"type": "kumano_facts",
 					"fields": {
-						"tx_kumanokodo_variant": "figures",
-						"tx_kumanokodo_anchor": "showcase-figures",
+						"tx_themekumanokodo_variant": "figures",
+						"tx_themekumanokodo_anchor": "showcase-figures",
 						"subheader": {
 							"en": "Facts",
 							"de": "Fakten",
@@ -9269,7 +9269,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_facts": [
+						"tx_themekumanokodo_facts": [
 							{
 								"value": {
 									"en": "68",
@@ -9324,8 +9324,8 @@
 				{
 					"type": "kumano_facts",
 					"fields": {
-						"tx_kumanokodo_variant": "icons",
-						"tx_kumanokodo_anchor": "showcase-icons",
+						"tx_themekumanokodo_variant": "icons",
+						"tx_themekumanokodo_anchor": "showcase-icons",
 						"subheader": {
 							"en": "Facts",
 							"de": "Fakten",
@@ -9336,10 +9336,10 @@
 							"de": "Symbole",
 							"ja": "アイコン"
 						},
-						"tx_kumanokodo_columns": "4"
+						"tx_themekumanokodo_columns": "4"
 					},
 					"items": {
-						"tx_kumanokodo_facts": [
+						"tx_themekumanokodo_facts": [
 							{
 								"icon": "clock",
 								"label": {
@@ -9418,7 +9418,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-pairs",
+						"tx_themekumanokodo_anchor": "showcase-pairs",
 						"subheader": {
 							"en": "Facts",
 							"de": "Fakten",
@@ -9435,10 +9435,10 @@
 							{
 								"type": "kumano_facts",
 								"fields": {
-									"tx_kumanokodo_variant": "pairs"
+									"tx_themekumanokodo_variant": "pairs"
 								},
 								"items": {
-									"tx_kumanokodo_facts": [
+									"tx_themekumanokodo_facts": [
 										{
 											"label": {
 												"en": "Day 1 · 20 April",
@@ -9496,7 +9496,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-highlight",
+						"tx_themekumanokodo_anchor": "showcase-highlight",
 						"subheader": {
 							"en": "Callout",
 							"de": "Hervorhebung",
@@ -9513,7 +9513,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "highlight",
+									"tx_themekumanokodo_variant": "highlight",
 									"frame_class": "sunk",
 									"subheader": {
 										"en": "Yatagarasu",
@@ -9538,7 +9538,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-infobox",
+						"tx_themekumanokodo_anchor": "showcase-infobox",
 						"subheader": {
 							"en": "Callout",
 							"de": "Hervorhebung",
@@ -9555,7 +9555,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "infobox",
+									"tx_themekumanokodo_variant": "infobox",
 									"header": {
 										"en": "Tip for this day",
 										"de": "Tipp für diesen Tag",
@@ -9568,7 +9568,7 @@
 									}
 								},
 								"items": {
-									"tx_kumanokodo_links": [
+									"tx_themekumanokodo_links": [
 										{
 											"title": {
 												"en": "Practical",
@@ -9586,7 +9586,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-notice",
+						"tx_themekumanokodo_anchor": "showcase-notice",
 						"subheader": {
 							"en": "Callout",
 							"de": "Hervorhebung",
@@ -9603,7 +9603,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "notice",
+									"tx_themekumanokodo_variant": "notice",
 									"header": {
 										"en": "Trail conditions:",
 										"de": "Wegzustand:",
@@ -9622,7 +9622,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-quote",
+						"tx_themekumanokodo_anchor": "showcase-quote",
 						"subheader": {
 							"en": "Callout",
 							"de": "Hervorhebung",
@@ -9639,7 +9639,7 @@
 							{
 								"type": "kumano_callout",
 								"fields": {
-									"tx_kumanokodo_variant": "quote",
+									"tx_themekumanokodo_variant": "quote",
 									"bodytext": {
 										"en": "<p>“Dinner is at six. The bath is open until eleven.”</p>",
 										"de": "<p>„Abendessen gibt es um sechs. Das Bad ist bis elf offen.“</p>",
@@ -9658,7 +9658,7 @@
 				{
 					"type": "kumano_questions",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-questions",
+						"tx_themekumanokodo_anchor": "showcase-questions",
 						"subheader": {
 							"en": "Questions",
 							"de": "Fragen",
@@ -9671,7 +9671,7 @@
 						}
 					},
 					"items": {
-						"tx_kumanokodo_questions": [
+						"tx_themekumanokodo_questions": [
 							{
 								"question": {
 									"en": "Do I need to book accommodation in advance?",
@@ -9730,8 +9730,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "even",
-						"tx_kumanokodo_anchor": "showcase-columns-even",
+						"tx_themekumanokodo_layout": "even",
+						"tx_themekumanokodo_anchor": "showcase-columns-even",
 						"subheader": {
 							"en": "Columns",
 							"de": "Spalten",
@@ -9773,8 +9773,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar",
-						"tx_kumanokodo_anchor": "showcase-columns-content-sidebar",
+						"tx_themekumanokodo_layout": "content-sidebar",
+						"tx_themekumanokodo_anchor": "showcase-columns-content-sidebar",
 						"subheader": {
 							"en": "Columns",
 							"de": "Spalten",
@@ -9816,8 +9816,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "text-media",
-						"tx_kumanokodo_anchor": "showcase-columns-text-media",
+						"tx_themekumanokodo_layout": "text-media",
+						"tx_themekumanokodo_anchor": "showcase-columns-text-media",
 						"subheader": {
 							"en": "Columns",
 							"de": "Spalten",
@@ -9859,8 +9859,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "heading-content",
-						"tx_kumanokodo_anchor": "showcase-columns-heading-content",
+						"tx_themekumanokodo_layout": "heading-content",
+						"tx_themekumanokodo_anchor": "showcase-columns-heading-content",
 						"subheader": {
 							"en": "Columns",
 							"de": "Spalten",
@@ -9902,8 +9902,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "wide-narrow",
-						"tx_kumanokodo_anchor": "showcase-columns-wide-narrow",
+						"tx_themekumanokodo_layout": "wide-narrow",
+						"tx_themekumanokodo_anchor": "showcase-columns-wide-narrow",
 						"subheader": {
 							"en": "Columns",
 							"de": "Spalten",
@@ -9945,8 +9945,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "narrow-wide",
-						"tx_kumanokodo_anchor": "showcase-columns-narrow-wide",
+						"tx_themekumanokodo_layout": "narrow-wide",
+						"tx_themekumanokodo_anchor": "showcase-columns-narrow-wide",
 						"subheader": {
 							"en": "Columns",
 							"de": "Spalten",
@@ -9988,8 +9988,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "heading-content",
-						"tx_kumanokodo_anchor": "showcase-columns-colour",
+						"tx_themekumanokodo_layout": "heading-content",
+						"tx_themekumanokodo_anchor": "showcase-columns-colour",
 						"subheader": {
 							"en": "Columns",
 							"de": "Spalten",
@@ -10000,7 +10000,7 @@
 							"de": "Farbspalte",
 							"ja": "カラーカラム"
 						},
-						"tx_kumanokodo_colour": "first"
+						"tx_themekumanokodo_colour": "first"
 					},
 					"children": {
 						"201": [
@@ -10025,7 +10025,7 @@
 								"type": "kumano_questions",
 								"fields": {},
 								"items": {
-									"tx_kumanokodo_questions": [
+									"tx_themekumanokodo_questions": [
 										{
 											"question": {
 												"en": "Do I need to book accommodation in advance?",
@@ -10088,7 +10088,7 @@
 					"type": "kumano_section",
 					"fields": {
 						"frame_class": "sunk",
-						"tx_kumanokodo_anchor": "showcase-section-sunk",
+						"tx_themekumanokodo_anchor": "showcase-section-sunk",
 						"subheader": {
 							"en": "Section",
 							"de": "Abschnitt",
@@ -10118,7 +10118,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-newsletter",
+						"tx_themekumanokodo_anchor": "showcase-newsletter",
 						"subheader": {
 							"en": "Newsletter",
 							"de": "Newsletter",
@@ -10148,7 +10148,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-external-videos",
+						"tx_themekumanokodo_anchor": "showcase-external-videos",
 						"subheader": {
 							"en": "External videos",
 							"de": "Externe Videos",
@@ -10178,7 +10178,7 @@
 				{
 					"type": "kumano_route_map",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-route-map",
+						"tx_themekumanokodo_anchor": "showcase-route-map",
 						"subheader": {
 							"en": "Journal",
 							"de": "Tagebuch",
@@ -10194,10 +10194,10 @@
 							"de": "<p>Schematische Karte der Route mit sechs Stationen</p>",
 							"ja": "<p>六つの地点を結ぶルートの概略図</p>"
 						},
-						"tx_kumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
+						"tx_themekumanokodo_path": "M40 200 C 140 190, 170 110, 250 100 S 360 160, 430 140 C 500 120, 520 60, 610 70 S 730 150, 800 120 C 870 90, 920 110, 960 86"
 					},
 					"items": {
-						"tx_kumanokodo_stations": [
+						"tx_themekumanokodo_stations": [
 							{
 								"name": {
 									"en": "Takijiri",
@@ -10283,7 +10283,7 @@
 								"link": "page:place-nachi"
 							}
 						],
-						"tx_kumanokodo_day_marks": [
+						"tx_themekumanokodo_day_marks": [
 							{
 								"label": {
 									"en": "Day 1 · 3.7 km",
@@ -10335,7 +10335,7 @@
 				{
 					"type": "kumano_section",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-chapter",
+						"tx_themekumanokodo_anchor": "showcase-chapter",
 						"subheader": {
 							"en": "Journal",
 							"de": "Tagebuch",
@@ -10352,7 +10352,7 @@
 							{
 								"type": "kumano_chapter",
 								"fields": {
-									"tx_kumanokodo_anchor": "showcase-chapter-day-2",
+									"tx_themekumanokodo_anchor": "showcase-chapter-day-2",
 									"subheader": {
 										"en": "Day 2 · 21 April · 07:02–17:28",
 										"de": "Tag 2 · 21. April · 07:02–17:28",
@@ -10372,38 +10372,38 @@
 								"image": [
 									{
 										"photo": "misty-valley",
-										"tx_kumanokodo_span": 4,
-										"tx_kumanokodo_shift": 0
+										"tx_themekumanokodo_span": 4,
+										"tx_themekumanokodo_shift": 0
 									},
 									{
 										"photo": "roadside-markers",
-										"tx_kumanokodo_span": 3,
-										"tx_kumanokodo_shift": 2
+										"tx_themekumanokodo_span": 3,
+										"tx_themekumanokodo_shift": 2
 									},
 									{
 										"photo": "stone-path-walkers",
-										"tx_kumanokodo_span": 5,
-										"tx_kumanokodo_shift": 1
+										"tx_themekumanokodo_span": 5,
+										"tx_themekumanokodo_shift": 1
 									},
 									{
 										"photo": "forest-stream",
-										"tx_kumanokodo_span": 5,
-										"tx_kumanokodo_shift": 0
+										"tx_themekumanokodo_span": 5,
+										"tx_themekumanokodo_shift": 0
 									},
 									{
 										"photo": "land-crab",
-										"tx_kumanokodo_span": 4,
-										"tx_kumanokodo_shift": 2
+										"tx_themekumanokodo_span": 4,
+										"tx_themekumanokodo_shift": 2
 									},
 									{
 										"photo": "vending-machines",
-										"tx_kumanokodo_span": 3,
-										"tx_kumanokodo_shift": 1
+										"tx_themekumanokodo_span": 3,
+										"tx_themekumanokodo_shift": 1
 									},
 									{
 										"photo": "chikatsuyu-gate",
-										"tx_kumanokodo_span": 12,
-										"tx_kumanokodo_shift": 0
+										"tx_themekumanokodo_span": 12,
+										"tx_themekumanokodo_shift": 0
 									}
 								]
 							}
@@ -10413,8 +10413,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar",
-						"tx_kumanokodo_anchor": "showcase-form",
+						"tx_themekumanokodo_layout": "content-sidebar",
+						"tx_themekumanokodo_anchor": "showcase-form",
 						"subheader": {
 							"en": "Plugins",
 							"de": "Plugins",
@@ -10431,7 +10431,7 @@
 							{
 								"type": "form_formframework",
 								"fields": {
-									"pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:kumano_kodo/Resources/Private/Forms/Demo/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
+									"pi_flexform": "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?><T3FlexForms><data><sheet index=\"sDEF\"><language index=\"lDEF\"><field index=\"settings.persistenceIdentifier\"><value index=\"vDEF\">EXT:theme_kumano_kodo/Resources/Private/Forms/Demo/contact.form.yaml</value></field><field index=\"settings.overrideFinishers\"><value index=\"vDEF\">0</value></field></language></sheet></data></T3FlexForms>"
 								}
 							}
 						],
@@ -10441,8 +10441,8 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar",
-						"tx_kumanokodo_anchor": "showcase-login",
+						"tx_themekumanokodo_layout": "content-sidebar",
+						"tx_themekumanokodo_anchor": "showcase-login",
 						"subheader": {
 							"en": "Plugins",
 							"de": "Plugins",
@@ -10469,7 +10469,7 @@
 				{
 					"type": "header",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-search",
+						"tx_themekumanokodo_anchor": "showcase-search",
 						"subheader": {
 							"en": "Plugins",
 							"de": "Plugins",
@@ -10489,7 +10489,7 @@
 				{
 					"type": "header",
 					"fields": {
-						"tx_kumanokodo_anchor": "showcase-news",
+						"tx_themekumanokodo_anchor": "showcase-news",
 						"subheader": {
 							"en": "Plugins",
 							"de": "Plugins",
@@ -10530,7 +10530,7 @@
 				{
 					"type": "kumano_columns",
 					"fields": {
-						"tx_kumanokodo_layout": "content-sidebar"
+						"tx_themekumanokodo_layout": "content-sidebar"
 					},
 					"children": {
 						"201": [
@@ -10566,7 +10566,7 @@
 				{
 					"type": "kumano_callout",
 					"fields": {
-						"tx_kumanokodo_variant": "infobox",
+						"tx_themekumanokodo_variant": "infobox",
 						"header": {
 							"en": "Luggage",
 							"de": "Gepäck",
