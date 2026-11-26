@@ -10,8 +10,8 @@ whether a site needs a consent banner depends on everything else it runs.
 Fonts
 =====
 
-The typefaces are Google Fonts, downloaded once by the server into `typo3temp/`
-and delivered from the site itself. Visitors never contact Google.
+The typefaces ship with the extension and are delivered from the site itself;
+neither the server nor its visitors contact Google.
 
 Videos
 ======

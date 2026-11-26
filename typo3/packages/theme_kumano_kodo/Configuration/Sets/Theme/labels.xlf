@@ -210,19 +210,91 @@
         <source>Display typeface</source>
       </trans-unit>
       <trans-unit id="settings.description.kumanoKodo.font.display">
-        <source>Headings, hero, quote and wordmark. A Google Fonts family name, loaded from this server. Empty: Caramel Fraunces, Forest Instrument Sans, Ocean Sora, Violet Space Grotesk, Mono Inter.</source>
+        <source>Headings, hero, quote and wordmark. Empty: Caramel Fraunces, Forest Instrument Sans, Ocean Sora, Violet Space Grotesk, Mono Inter.</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.display.enum.">
+        <source>Theme</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.display.enum.Fraunces">
+        <source>Fraunces</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.display.enum.Instrument Sans">
+        <source>Instrument Sans</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.display.enum.Inter">
+        <source>Inter</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.display.enum.Noto Sans JP">
+        <source>Noto Sans JP</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.display.enum.Sora">
+        <source>Sora</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.display.enum.Space Grotesk">
+        <source>Space Grotesk</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.display.enum.Space Mono">
+        <source>Space Mono</source>
       </trans-unit>
       <trans-unit id="settings.kumanoKodo.font.body">
         <source>Text typeface</source>
       </trans-unit>
       <trans-unit id="settings.description.kumanoKodo.font.body">
-        <source>Body text, captions, buttons. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Inter, Mono Inter.</source>
+        <source>Body text, captions, buttons. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Inter, Mono Inter.</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.body.enum.">
+        <source>Theme</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.body.enum.Fraunces">
+        <source>Fraunces</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.body.enum.Instrument Sans">
+        <source>Instrument Sans</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.body.enum.Inter">
+        <source>Inter</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.body.enum.Noto Sans JP">
+        <source>Noto Sans JP</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.body.enum.Sora">
+        <source>Sora</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.body.enum.Space Grotesk">
+        <source>Space Grotesk</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.body.enum.Space Mono">
+        <source>Space Mono</source>
       </trans-unit>
       <trans-unit id="settings.kumanoKodo.font.meta">
         <source>Label typeface</source>
       </trans-unit>
       <trans-unit id="settings.description.kumanoKodo.font.meta">
-        <source>Small uppercase labels. A Google Fonts family name, loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Space Mono, Mono Inter.</source>
+        <source>Small uppercase labels. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet Space Mono, Mono Inter.</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.meta.enum.">
+        <source>Theme</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.meta.enum.Fraunces">
+        <source>Fraunces</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.meta.enum.Instrument Sans">
+        <source>Instrument Sans</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.meta.enum.Inter">
+        <source>Inter</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.meta.enum.Noto Sans JP">
+        <source>Noto Sans JP</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.meta.enum.Sora">
+        <source>Sora</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.meta.enum.Space Grotesk">
+        <source>Space Grotesk</source>
+      </trans-unit>
+      <trans-unit id="settings.kumanoKodo.font.meta.enum.Space Mono">
+        <source>Space Mono</source>
       </trans-unit>
       <trans-unit id="settings.kumanoKodo.font.displayWeight">
         <source>Display weight</source>

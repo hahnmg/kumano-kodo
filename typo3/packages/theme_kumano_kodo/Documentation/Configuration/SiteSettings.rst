@@ -226,27 +226,34 @@ Typefaces
     :type: string
     :Default: (empty)
 
-    Display typeface. Headings, hero, quote and wordmark. A Google Fonts family
-    name, loaded from this server. Empty: Caramel Fraunces, Forest Instrument
-    Sans, Ocean Sora, Violet Space Grotesk, Mono Inter.
+    Display typeface. Headings, hero, quote and wordmark. Empty: Caramel
+    Fraunces, Forest Instrument Sans, Ocean Sora, Violet Space Grotesk, Mono
+    Inter.
+
+    One of ``, `Fraunces`, `Instrument Sans`, `Inter`, `Noto Sans JP`, `Sora`,
+    `Space Grotesk`, `Space Mono`.
 
 .. confval:: kumanoKodo.font.body
     :name: kumanokodo-font-body
     :type: string
     :Default: (empty)
 
-    Text typeface. Body text, captions, buttons. A Google Fonts family name,
-    loaded from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter,
-    Violet Inter, Mono Inter.
+    Text typeface. Body text, captions, buttons. Empty: Caramel Inter, Forest
+    Inter, Ocean Inter, Violet Inter, Mono Inter.
+
+    One of ``, `Fraunces`, `Instrument Sans`, `Inter`, `Noto Sans JP`, `Sora`,
+    `Space Grotesk`, `Space Mono`.
 
 .. confval:: kumanoKodo.font.meta
     :name: kumanokodo-font-meta
     :type: string
     :Default: (empty)
 
-    Label typeface. Small uppercase labels. A Google Fonts family name, loaded
-    from this server. Empty: Caramel Inter, Forest Inter, Ocean Inter, Violet
-    Space Mono, Mono Inter.
+    Label typeface. Small uppercase labels. Empty: Caramel Inter, Forest Inter,
+    Ocean Inter, Violet Space Mono, Mono Inter.
+
+    One of ``, `Fraunces`, `Instrument Sans`, `Inter`, `Noto Sans JP`, `Sora`,
+    `Space Grotesk`, `Space Mono`.
 
 .. confval:: kumanoKodo.font.displayWeight
     :name: kumanokodo-font-displayweight

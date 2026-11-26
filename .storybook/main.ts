@@ -7,6 +7,7 @@ const config: StorybookConfig = {
   staticDirs: [
     { from: '../img', to: '/img' },
     { from: '../files', to: '/files' },
+    { from: '../typo3/packages/theme_kumano_kodo/Resources/Public/Fonts', to: '/fonts' },
     { from: './favicon.svg', to: '/favicon.svg' },
     { from: './typo3-logo.svg', to: '/typo3-logo.svg' },
   ],

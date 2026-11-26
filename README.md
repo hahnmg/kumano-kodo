@@ -138,6 +138,7 @@ pages instead.
 | `npm run review:ja`                                             | Writes `docs/review/japanese.csv`: every Japanese text beside its English source, with a column for comments, for native speakers                                         |
 | `ddev exec -d /var/www/html/typo3 composer cs`                  | Checks the PHP against typo3/coding-standards; `cs:fix` corrects it                                                                                                       |
 | `npm run docs`                                                  | Renders the manual (Docker) into the package's `Documentation-GENERATED-temp/`                                                                                            |
+| `npm run fonts`                                                 | Downloads the seven typefaces once from Google Fonts into the package, with their licences; TYPO3 and Storybook serve them from there                                     |
 | `npm run docs:feature`                                          | Draws the manual's start image, the start page in each theme (fetches the fonts once)                                                                                     |
 
 - **Imports keep their links**: impexp remaps only the root page of an imported
@@ -181,4 +182,5 @@ placeholder clip made from four of the photos.
 ## License
 
 Code: GPL-2.0-or-later, as the TYPO3 core (`LICENSE`). Photos and video: CC BY
-4.0, © 2024 Alexander Hahn (`img/LICENSE.md`).
+4.0, © 2024 Alexander Hahn (`img/LICENSE.md`). Fonts: SIL Open Font License 1.1,
+one `OFL.txt` per family in `Resources/Public/Fonts`.

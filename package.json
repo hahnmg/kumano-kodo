@@ -18,7 +18,8 @@
 		"lint": "eslint . && stylelint \"stories/**/*.css\" \"src/**/*.css\" && node scripts/check-filenames.mjs && node scripts/check-fluid.mjs && node scripts/wrap-rst.mjs --check && prettier --check \"**/*.{ts,mjs,css,json,md}\"",
 		"size": "node scripts/check-size.mjs",
 		"test": "npm run tokens && vitest run",
-		"images": "node scripts/build-images.mjs"
+		"images": "node scripts/build-images.mjs",
+		"fonts": "node scripts/build-fonts.mjs"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

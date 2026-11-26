@@ -137,14 +137,41 @@ settings:
     type: string
     default: ''
     category: kumanoKodo.fonts
+    enum:
+      - ''
+      - 'Fraunces'
+      - 'Instrument Sans'
+      - 'Inter'
+      - 'Noto Sans JP'
+      - 'Sora'
+      - 'Space Grotesk'
+      - 'Space Mono'
   kumanoKodo.font.body:
     type: string
     default: ''
     category: kumanoKodo.fonts
+    enum:
+      - ''
+      - 'Fraunces'
+      - 'Instrument Sans'
+      - 'Inter'
+      - 'Noto Sans JP'
+      - 'Sora'
+      - 'Space Grotesk'
+      - 'Space Mono'
   kumanoKodo.font.meta:
     type: string
     default: ''
     category: kumanoKodo.fonts
+    enum:
+      - ''
+      - 'Fraunces'
+      - 'Instrument Sans'
+      - 'Inter'
+      - 'Noto Sans JP'
+      - 'Sora'
+      - 'Space Grotesk'
+      - 'Space Mono'
   kumanoKodo.font.displayWeight:
     type: string
     default: ''

@@ -15,7 +15,6 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 use TYPO3\CMS\ThemeKumanoKodo\Theme\SiteLogo;
 use TYPO3\CMS\ThemeKumanoKodo\Theme\ThemePresets;
-use TYPO3\CMS\ThemeKumanoKodo\Theme\WebFontService;
 
 // Theme site settings become custom properties over the chosen theme; empty ones keep the theme's value.
 final class ThemeProcessor implements DataProcessorInterface
@@ -26,7 +25,6 @@ final class ThemeProcessor implements DataProcessorInterface
 
     public function __construct(
         private readonly ThemePresets $presets,
-        private readonly WebFontService $webFonts,
         private readonly SiteLogo $logo,
         private readonly SystemResourceFactory $resources,
         private readonly ConnectionPool $connectionPool,
@@ -58,7 +56,6 @@ final class ThemeProcessor implements DataProcessorInterface
             }
         }
 
-        $fonts = [];
         $display = $this->family($setting('font.display'));
         $meta = $this->family($setting('font.meta'));
         $body = $this->family($setting('font.body'));
@@ -77,12 +74,7 @@ final class ThemeProcessor implements DataProcessorInterface
         if ($weight >= 100 && $weight <= 900) {
             $root['--display-weight'] = (string)$weight;
         }
-        $fonts[$display ?: $theme['font']['display']][] = 400;
-        $fonts[$display ?: $theme['font']['display']][] = $weight ?: $theme['font']['displayWeight'];
-        $fonts[$meta ?: $theme['font']['meta']][] = 400;
-        $text = $body ?: $theme['font']['body'];
-        $fonts[$text] = [...($fonts[$text] ?? []), 400, 500, 600];
-        $fonts['Noto Sans JP'] = [400, 500, 600];
+        $fonts = [$display ?: $theme['font']['display'], $meta ?: $theme['font']['meta'], $body ?: $theme['font']['body'], 'Noto Sans JP'];
 
         $unit = $this->pixels($setting('spacing.unit'));
         if ($unit !== null) {
@@ -111,7 +103,7 @@ final class ThemeProcessor implements DataProcessorInterface
         }
         $processedData[$processorConfiguration['as'] ?? 'theme'] = [
             'css' => $css,
-            'fonts' => $this->stylesheets($fonts, $display === '' && $weight === 0),
+            'fonts' => $this->stylesheets($fonts),
             'logo' => $this->logo->markup($site->getRootPageId()),
             // The core's website title, per language where one is set; the theme keeps no second copy.
             'name' => $this->websiteTitle($cObj, $site),
@@ -122,7 +114,6 @@ final class ThemeProcessor implements DataProcessorInterface
         return $processedData;
     }
 
-    /** @param array<string, list<int>> $fonts family => weights */
     // Without a setting, the search lives on the first page of the site that holds the search plugin.
     private function searchPage(Site $site): int
     {
@@ -164,19 +155,20 @@ final class ThemeProcessor implements DataProcessorInterface
         return trim($title) !== '' ? $title : (string)($site->getConfiguration()['websiteTitle'] ?? '');
     }
 
-    private function stylesheets(array $fonts, bool $themeDisplay): array
+    /**
+     * @param list<string> $families
+     * @return list<string>
+     */
+    private function stylesheets(array $families): array
     {
-        $urls = [];
-        foreach ($fonts as $family => $weights) {
-            $weights = array_values(array_unique($weights));
-            sort($weights);
-            $known = $this->presets->fontSpec($family);
-            // The Storybook request carries axes like Fraunces' optical size; keep it where it covers the weights.
-            $spec = $known !== null && ($themeDisplay || !str_contains($known, 'wght')) ? $known : 'wght@' . implode(';', $weights);
-            $url = WebFontService::url($family, $spec);
-            $urls[] = $this->webFonts->local($url) ?? $url;
+        $stylesheets = [];
+        foreach (array_unique($families) as $family) {
+            $directory = $this->presets->fontDirectory($family);
+            if ($directory !== null) {
+                $stylesheets[] = 'EXT:theme_kumano_kodo/Resources/Public/Fonts/' . $directory . '/font.css';
+            }
         }
-        return $urls;
+        return $stylesheets;
     }
 
     private function stack(string $family): string
@@ -184,9 +176,10 @@ final class ThemeProcessor implements DataProcessorInterface
         return '"' . $family . '", "Noto Sans JP", system-ui, sans-serif';
     }
 
+    // Only a shipped family: any other name would fall back to a system font the theme was not set in.
     private function family(string $value): string
     {
-        return preg_match('/^[A-Za-z0-9 ]{1,60}$/', $value) === 1 ? $value : '';
+        return $this->presets->fontDirectory($value) !== null ? $value : '';
     }
 
     private function isColor(string $value): bool

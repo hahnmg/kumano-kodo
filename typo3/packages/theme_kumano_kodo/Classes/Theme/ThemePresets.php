@@ -15,8 +15,8 @@ final class ThemePresets
         return $themes[$name] ?? $themes['caramel'];
     }
 
-    /** Axes and weights the Storybook preview requests for a family, '' when it takes the default. */
-    public function fontSpec(string $family): ?string
+    /** The folder under Resources/Public/Fonts that ships a family, null for one the theme does not ship. */
+    public function fontDirectory(string $family): ?string
     {
         return $this->data()['fonts'][$family] ?? null;
     }

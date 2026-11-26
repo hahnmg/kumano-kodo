@@ -294,13 +294,15 @@ const buildLabels = async (sources) => {
 const buildThemes = async () => {
   const data = JSON.parse(await readFile(join(root, 'docs/figma-export/variables.json'), 'utf8'));
   const theme = data.collections.Theme;
-  const head = await readFile(join(root, '.storybook/preview-head.html'), 'utf8');
-  // Axes and weights per family exactly as the Storybook preview requests them.
+  // The families scripts/build-fonts.mjs shipped, each with its folder under Resources/Public/Fonts.
+  const fontRoot = join(pkg, 'Resources/Public/Fonts');
   const fonts = Object.fromEntries(
-    [...head.matchAll(/family=([^&"]+)/g)].map(([, spec]) => {
-      const [family, axes = ''] = decodeURIComponent(spec).split(':');
-      return [family.replaceAll('+', ' '), axes];
-    }),
+    await Promise.all(
+      (await readdir(fontRoot)).map(async (dir) => [
+        (await readFile(join(fontRoot, dir, 'font.css'), 'utf8')).match(/font-family: '([^']+)'/)[1],
+        dir,
+      ]),
+    ),
   );
   const weights = { Regular: 400, Medium: 500, SemiBold: 600, 'Semi Bold': 600, Bold: 700 };
   const roles = ['paper', 'surface', 'sunk', 'ink', 'muted', 'line', 'hair', 'secondary', 'accent'];
@@ -330,11 +332,11 @@ const buildThemes = async () => {
   const out = join(pkg, 'Resources/Private/Themes');
   await mkdir(out, { recursive: true });
   await writeFile(join(out, 'themes.json'), `${JSON.stringify({ fonts, themes }, null, '\t')}\n`);
-  await buildSettings(themes);
+  await buildSettings(themes, fonts);
 };
 
 // The set's settings and their labels; every theme override names the value each theme uses when it is empty.
-const buildSettings = async (themes) => {
+const buildSettings = async (themes, fonts) => {
   const set = join(pkg, 'Configuration/Sets/Theme');
   const names = Object.keys(themes);
   const title = (s) => s[0].toUpperCase() + s.slice(1);
@@ -387,14 +389,16 @@ const buildSettings = async (themes) => {
     }
   }
   const font = (role, label, note) =>
-    add(
-      `font.${role}`,
-      'fonts',
-      'string',
-      '',
-      label,
-      `${note} A Google Fonts family name, loaded from this server. Empty: ${per((t) => t.font[role])}.`,
-    );
+    add(`font.${role}`, 'fonts', 'string', '', label, `${note} Empty: ${per((t) => t.font[role])}.`, {
+      enum: {
+        '': 'Theme',
+        ...Object.fromEntries(
+          Object.keys(fonts)
+            .sort()
+            .map((family) => [family, family]),
+        ),
+      },
+    });
   font('display', 'Display typeface', 'Headings, hero, quote and wordmark.');
   font('body', 'Text typeface', 'Body text, captions, buttons.');
   font('meta', 'Label typeface', 'Small uppercase labels.');
