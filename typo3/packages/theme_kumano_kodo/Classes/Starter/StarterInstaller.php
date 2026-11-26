@@ -31,7 +31,7 @@ final readonly class StarterInstaller
     /** @return list<string> extensions the starter needs that are not installed */
     public function missingExtensions(): array
     {
-        return array_values(array_filter(self::REQUIRED, fn(string $key): bool => !$this->packageManager->isPackageActive($key)));
+        return array_filter(self::REQUIRED, fn(string $key): bool => !$this->packageManager->isPackageActive($key));
     }
 
     /** @return array{identifier: string, base: string} a free identifier, and a base that does not take "/" from a site */

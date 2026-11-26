@@ -34,7 +34,7 @@ final class StructuredDataProcessor implements DataProcessorInterface
             '@type' => 'WebPage',
             '@id' => $url((int)$page['uid']) . '#webpage',
             'url' => $url((int)$page['uid']),
-            'name' => $page['seo_title'] ?: $page['title'],
+            'name' => ($page['seo_title'] ?? '') ?: $page['title'],
             'description' => $page['description'] ?? '',
             'inLanguage' => $language->getHreflang(),
             'isPartOf' => ['@id' => $home . '#website'],
